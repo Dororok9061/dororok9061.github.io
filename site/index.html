@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; media-src 'self'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests"
+    >
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="color-scheme" content="dark light">
+    <meta name="theme-color" content="#07111f">
+    <meta
+      name="description"
+      content="류형록의 통합 Engineering Portfolio. FPGA RTL/DV, FMCW Radar, Embedded Systems, Biomedical AI, 전자전기공학 프로젝트의 공개 검증 근거를 한곳에서 확인합니다."
+    >
+    <meta name="author" content="Hyeongrok Ryu">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:title" content="류형록 | Engineering Portfolio">
+    <meta
+      property="og:description"
+      content="Hardware · Sensing · Signal Processing — 공개 근거와 검증 경계를 함께 제시하는 전자전기공학 포트폴리오"
+    >
+    <meta property="og:url" content="https://tontonjeong.github.io/">
+    <meta property="og:image" content="https://tontonjeong.github.io/assets/images/og.jpg">
+    <meta property="og:image:alt" content="류형록 Engineering Portfolio 메인 화면">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://tontonjeong.github.io/">
+    <link rel="alternate" hreflang="ko" href="https://tontonjeong.github.io/">
+    <link rel="alternate" hreflang="en" href="https://tontonjeong.github.io/en/">
+    <link rel="alternate" hreflang="x-default" href="https://tontonjeong.github.io/">
+    <link rel="icon" href="/assets/images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="/assets/css/site.css">
+    <script src="/assets/js/site.js" defer></script>
+    <title>류형록 | Hardware · Sensing · Signal Processing</title>
+  </head>
+  <body itemscope itemtype="https://schema.org/Person">
+    <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+    <noscript>
+      <p class="noscript-note">JavaScript 없이도 모든 콘텐츠와 링크를 이용할 수 있습니다. 테마 전환만 비활성화됩니다.</p>
+    </noscript>
+
+    <header class="site-header">
+      <nav class="nav shell" aria-label="주요 탐색">
+        <a class="brand" href="/" aria-label="류형록 포트폴리오 홈">
+          <span class="brand-mark" aria-hidden="true">HR</span>
+          <span class="brand-copy">Engineering Portfolio</span>
+        </a>
+        <div class="nav-links">
+          <a href="#expertise">역량</a>
+          <a href="#projects">프로젝트</a>
+          <a href="#publications">논문</a>
+          <a href="#evidence">검증 원칙</a>
+          <a href="#about">소개</a>
+        </div>
+        <div class="nav-tools">
+          <a class="tool-link" href="https://github.com/Tontonjeong" aria-label="류형록 GitHub 프로필">GH</a>
+          <a class="tool-link" href="/en/" lang="en" hreflang="en" aria-label="영어 페이지">EN</a>
+          <button
+            class="theme-toggle"
+            type="button"
+            data-theme-toggle
+            data-light-label="밝은 테마로 전환"
+            data-dark-label="어두운 테마로 전환"
+            aria-label="밝은 테마로 전환"
+          >LIGHT</button>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-grid shell">
+          <div>
+            <p class="eyebrow">Electrical &amp; Electronic Engineering</p>
+            <h1 id="hero-title" itemprop="name">
+              류형록
+              <span>하드웨어 · 센서 · 신호처리 엔지니어</span>
+            </h1>
+            <p class="hero-lead" itemprop="description">
+              문제 정의에서 회로·펌웨어·RTL·신호처리·검증까지 연결합니다.
+              공개된 소스, 실행 결과, 측정 근거와 아직 검증되지 않은 경계를 분리해 설명합니다.
+            </p>
+            <ul class="hero-meta">
+              <li>단국대학교 전자전기공학전공 학사과정</li>
+              <li>휴먼앤시스템 연구소 학부생 연구 인턴</li>
+            </ul>
+            <div class="actions">
+              <a class="button primary" href="#projects">대표 프로젝트 보기 <span aria-hidden="true">↓</span></a>
+              <a class="button" href="https://github.com/Tontonjeong">GitHub 근거 확인 <span aria-hidden="true">↗</span></a>
+              <a class="button" href="https://app.notion.com/p/3ab518ac7a598121b666e4c7cce8324c">Notion 상세 문서 <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+
+          <aside class="identity-card" aria-label="류형록 포트폴리오 식별 카드">
+            <div class="identity-visual" role="img" aria-label="류형록의 이니셜 HR을 사용한 포트폴리오 식별 그래픽">
+              <div class="identity-monogram" aria-hidden="true">HR</div>
+            </div>
+            <div class="identity-note">
+              <strong>Hyeongrok Ryu</strong>
+              <span>Seoul · Republic of Korea</span>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <div class="metric-strip shell" aria-label="포트폴리오 요약">
+        <div class="metric"><strong>6</strong><span>연결된 공학 분야</span></div>
+        <div class="metric"><strong>5</strong><span>공개 Engineering 저장소</span></div>
+        <div class="metric"><strong>2</strong><span>제1저자 연구 기록</span></div>
+        <div class="metric"><strong>KO/EN</strong><span>프로젝트별 이중언어 탐색</span></div>
+      </div>
+
+      <section class="section" id="expertise" aria-labelledby="expertise-title">
+        <div class="shell">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Core Capabilities</p>
+              <h2 id="expertise-title">신호가 시스템이 되는 전 과정을 봅니다.</h2>
+            </div>
+            <p>
+              아날로그 센서 입력부터 embedded acquisition, DSP/feature pipeline,
+              RTL 검증과 시스템 요구도까지 하나의 evidence chain으로 연결합니다.
+            </p>
+          </div>
+          <div class="capability-grid">
+            <article class="capability">
+              <span class="capability-index">01 / RTL</span>
+              <h3>FPGA · Digital Verification</h3>
+              <p>Parameterized SystemVerilog, reference model, self-checking testbench, deterministic regression.</p>
+            </article>
+            <article class="capability">
+              <span class="capability-index">02 / DSP</span>
+              <h3>Radar · Biomedical Signal</h3>
+              <p>ECG·SCG·FMCW alignment, phase displacement, beat segmentation, detector fusion, SQI.</p>
+            </article>
+            <article class="capability">
+              <span class="capability-index">03 / SENSING</span>
+              <h3>Analog Front-End · Firmware</h3>
+              <p>PPG AFE, STM32/ESP32 acquisition, timing-aware filtering, serial and network data paths.</p>
+            </article>
+            <article class="capability">
+              <span class="capability-index">04 / AI</span>
+              <h3>Biomedical AI</h3>
+              <p>IBI·HRV feature construction, CNN+Transformer evaluation, metric provenance separation.</p>
+            </article>
+            <article class="capability">
+              <span class="capability-index">05 / EMBEDDED</span>
+              <h3>Real-Time Embedded Systems</h3>
+              <p>Raspberry Pi two-node architecture, EAR vision, TCP/IP, GPIO/I²C alarm integration.</p>
+            </article>
+            <article class="capability">
+              <span class="capability-index">06 / SE</span>
+              <h3>Systems Engineering</h3>
+              <p>Requirements traceability, quantitative trade-off, reliability and maintainability analysis.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt" id="projects" aria-labelledby="projects-title">
+        <div class="shell">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Selected Work</p>
+              <h2 id="projects-title">검증 근거로 읽는 프로젝트</h2>
+            </div>
+            <p>
+              각 카드는 문제, 직접 기여, 공개 증거와 검증 한계를 함께 보여줍니다.
+              사진은 구현 존재를 증명하지만 정확도나 성능 전체를 대신하지 않습니다.
+            </p>
+          </div>
+
+          <div class="project-grid">
+            <article class="project-card" data-project="fpga">
+              <div class="project-media">
+                <picture>
+                  <source srcset="/assets/images/projects/fpga-architecture.webp" type="image/webp">
+                  <img
+                    src="/assets/images/projects/fpga-architecture.jpg"
+                    width="1440"
+                    height="620"
+                    loading="lazy"
+                    decoding="async"
+                    alt="Shift Register, Circular Queue, Memory-Based 구조로 발전하는 FPGA delay logic architecture"
+                  >
+                </picture>
+              </div>
+              <div class="project-body">
+                <div class="project-kicker">
+                  <span class="tag pass">Executed</span>
+                  <span class="tag">FPGA · RTL · DV</span>
+                </div>
+                <h3>FPGA Programmable Delay Logic</h3>
+                <p class="project-summary">
+                  동일한 cycle delay contract를 Shift Register, Circular Queue,
+                  Memory-Based Driver/Checker 구조로 발전시켰습니다.
+                </p>
+                <ul class="evidence-list">
+                  <li><strong>Evidence</strong><span>Icarus Verilog: 20 checks, 26 equivalence checks, 3 scenarios PASS</span></li>
+                  <li><strong>Boundary</strong><span>Quartus synthesis·timing·power·Fmax·PPA는 보고서 부재로 BLOCKED</span></li>
+                </ul>
+                <div class="project-links">
+                  <a href="https://tontonjeong.github.io/fpga-delay-logic-design-verification/">한국어 Pages ↗</a>
+                  <a href="https://tontonjeong.github.io/fpga-delay-logic-design-verification/en/">English ↗</a>
+                  <a href="https://github.com/Tontonjeong/fpga-delay-logic-design-verification">Repository ↗</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card" data-project="radar">
+              <div class="project-media">
+                <picture>
+                  <source srcset="/assets/images/projects/radar-hardware.webp" type="image/webp">
+                  <img
+                    src="/assets/images/projects/radar-hardware.jpg"
+                    width="1600"
+                    height="1067"
+                    loading="lazy"
+                    decoding="async"
+                    alt="ECG, SCG, FMCW Radar 실제 실험 하드웨어와 센서 구성"
+                  >
+                </picture>
+              </div>
+              <div class="project-body">
+                <div class="project-kicker">
+                  <span class="tag pass">Source + Hardware</span>
+                  <span class="tag">Radar DSP</span>
+                </div>
+                <h3>FMCW Radar Cardiac Timing</h3>
+                <p class="project-summary">
+                  ECG·SCG·비접촉 FMCW Radar를 beat-relative axis에 정렬하고
+                  radar morphology에서 AO/AC 후보 시점을 분석합니다.
+                </p>
+                <ul class="evidence-list">
+                  <li><strong>Evidence</strong><span>분석 소스, STM32/ESP32 firmware, 설정 문서, privacy-reviewed hardware photos</span></li>
+                  <li><strong>Boundary</strong><span>AO/AC는 direct valve imaging이 아닌 morphology-based candidate timing</span></li>
+                </ul>
+                <div class="project-links">
+                  <a href="https://tontonjeong.github.io/fmcw-radar-aoac-cardiac-analysis/">한국어 Pages ↗</a>
+                  <a href="https://tontonjeong.github.io/fmcw-radar-aoac-cardiac-analysis/en/">English ↗</a>
+                  <a href="https://github.com/Tontonjeong/fmcw-radar-aoac-cardiac-analysis">Repository ↗</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card" data-project="ppg">
+              <div class="project-media">
+                <picture>
+                  <source srcset="/assets/images/projects/ppg-pipeline.webp" type="image/webp">
+                  <img
+                    src="/assets/images/projects/ppg-pipeline.jpg"
+                    width="1600"
+                    height="1000"
+                    loading="lazy"
+                    decoding="async"
+                    alt="PPG sensor, STM32 firmware, HRV preprocessing, CNN Transformer 평가를 잇는 연구 pipeline"
+                  >
+                </picture>
+              </div>
+              <div class="project-body">
+                <div class="project-kicker">
+                  <span class="tag pass">Paper + Code</span>
+                  <span class="tag">Biomedical AI</span>
+                </div>
+                <h3>PPG–HRV Cognitive Load</h3>
+                <p class="project-summary">
+                  Earlobe PPG acquisition부터 IBI/HRV feature construction,
+                  CNN+Transformer classification까지 timing integrity를 추적합니다.
+                </p>
+                <ul class="evidence-list">
+                  <li><strong>Evidence</strong><span>AFE·firmware·Python, fold CSV, 공개 논문 PDF</span></li>
+                  <li><strong>Boundary</strong><span>Paper AUC/F1과 별도 code archive metric은 평가 조건이 달라 합치지 않음</span></li>
+                </ul>
+                <div class="project-links">
+                  <a href="https://tontonjeong.github.io/PPG-HRV-Cognitive-Load-CNN/">한국어 Pages ↗</a>
+                  <a href="https://tontonjeong.github.io/PPG-HRV-Cognitive-Load-CNN/en/">English ↗</a>
+                  <a href="https://github.com/Tontonjeong/PPG-HRV-Cognitive-Load-CNN">Repository ↗</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card" data-project="embedded">
+              <div class="project-media">
+                <picture>
+                  <source srcset="/assets/images/projects/embedded-prototype.webp" type="image/webp">
+                  <img
+                    src="/assets/images/projects/embedded-prototype.jpg"
+                    width="984"
+                    height="560"
+                    loading="lazy"
+                    decoding="async"
+                    alt="Raspberry Pi, LCD, sensor wiring으로 구현한 졸음 모니터링 prototype"
+                  >
+                </picture>
+              </div>
+              <div class="project-body">
+                <div class="project-kicker">
+                  <span class="tag pass">Source + Prototype</span>
+                  <span class="tag">Embedded Systems</span>
+                </div>
+                <h3>Real-Time Drowsiness Monitor</h3>
+                <p class="project-summary">
+                  PPG와 EAR vision을 두 대의 Raspberry Pi sensing/analysis 구조,
+                  TCP/IP, GPIO/I²C alarm path로 통합했습니다.
+                </p>
+                <ul class="evidence-list">
+                  <li><strong>Evidence</strong><span>C/C++ source, architecture docs, 회로·LCD·prototype photos</span></li>
+                  <li><strong>Boundary</strong><span>Latency·sensitivity·specificity·false-alarm rate는 공개 증거 없음</span></li>
+                </ul>
+                <div class="project-links">
+                  <a href="https://tontonjeong.github.io/Sleep-monitoring-and-prevention-device/">한국어 Pages ↗</a>
+                  <a href="https://tontonjeong.github.io/Sleep-monitoring-and-prevention-device/en/">English ↗</a>
+                  <a href="https://github.com/Tontonjeong/Sleep-monitoring-and-prevention-device">Repository ↗</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card" data-project="defense">
+              <div class="project-media">
+                <div class="defense-visual" role="img" aria-label="Requirements, quantitative analysis, verification으로 이어지는 방위산업 시스템 엔지니어링 흐름">
+                  <div class="defense-node">REQUIREMENTS</div>
+                  <div class="defense-node">ANALYSIS</div>
+                  <div class="defense-node">VERIFICATION</div>
+                </div>
+              </div>
+              <div class="project-body">
+                <div class="project-kicker">
+                  <span class="tag">Source-Derived</span>
+                  <span class="tag boundary">Educational Scenario</span>
+                </div>
+                <h3>Defense Systems Engineering</h3>
+                <p class="project-summary">
+                  Counter-UAS, EW jammer, KF-21 reliability 사례를 요구도,
+                  정량 근거, 검증, 한계 구조로 재편했습니다.
+                </p>
+                <ul class="evidence-list">
+                  <li><strong>Evidence</strong><span>원 보고서 값, 독립 재계산, 공개용 redraw, traceability</span></li>
+                  <li><strong>Boundary</strong><span>교육용 가상 조건이며 실제 체계 제원·공식 성능·운용 절차가 아님</span></li>
+                </ul>
+                <div class="project-links">
+                  <a href="https://app.notion.com/p/3ab518ac7a5981c0aecfff5207b14f54">Notion Case Studies ↗</a>
+                  <a href="https://github.com/Tontonjeong/Tontonjeong">Portfolio Registry ↗</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card" data-project="coursework">
+              <div class="project-media">
+                <picture>
+                  <source srcset="/assets/images/projects/coursework-hero.webp" type="image/webp">
+                  <img
+                    src="/assets/images/projects/coursework-hero.jpg"
+                    width="1600"
+                    height="760"
+                    loading="lazy"
+                    decoding="async"
+                    alt="VHDL, Power, Control, RF, Sensor Systems로 구성된 전자전기공학 학부 과제 포트폴리오"
+                  >
+                </picture>
+              </div>
+              <div class="project-body">
+                <div class="project-kicker">
+                  <span class="tag">Evidence Catalog</span>
+                  <span class="tag">Coursework</span>
+                </div>
+                <h3>Electrical Engineering Coursework</h3>
+                <p class="project-summary">
+                  VHDL verification, transformer calculation, power-flow debugging,
+                  motor control, RF network, AESA-SAR proposal를 근거 등급으로 구분합니다.
+                </p>
+                <ul class="evidence-list">
+                  <li><strong>Evidence</strong><span>GHDL test, 독립 계산, 기존 Cadence archive, 공개용 diagram</span></li>
+                  <li><strong>Boundary</strong><span>새 Cadence/VNA 결과와 production-grid validation은 주장하지 않음</span></li>
+                </ul>
+                <div class="project-links">
+                  <a href="https://tontonjeong.github.io/electrical-engineering-coursework-portfolio/">한국어 Pages ↗</a>
+                  <a href="https://tontonjeong.github.io/electrical-engineering-coursework-portfolio/en/">English ↗</a>
+                  <a href="https://github.com/Tontonjeong/electrical-engineering-coursework-portfolio">Repository ↗</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="publications" aria-labelledby="publications-title">
+        <div class="shell">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Publications</p>
+              <h2 id="publications-title">선정 제1저자 연구</h2>
+            </div>
+            <p>
+              공개 자료로 확인되지 않는 venue, DOI, issue, page 정보는 임의로 채우지 않았습니다.
+            </p>
+          </div>
+          <ol class="publication-list">
+            <li class="publication">
+              <div>
+                <h3>Classification of Cognitive Task Performance using HRV Features: A Convolutional Neural Network Approach</h3>
+                <p>Biomedical AI · First author · 공개 paper PDF</p>
+              </div>
+              <a href="https://github.com/Tontonjeong/PPG-HRV-Cognitive-Load-CNN/blob/main/references/paper.pdf">Paper ↗</a>
+            </li>
+            <li class="publication">
+              <div>
+                <h3>Analysis of Aortic Valve Opening and Closure Using Cardiac Signals Acquired by Non-Contact FMCW Radar</h3>
+                <p>Radar signal processing · First author · 2026 · citation record</p>
+              </div>
+              <a href="https://github.com/Tontonjeong/fmcw-radar-aoac-cardiac-analysis#citation">Citation ↗</a>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section alt" id="evidence" aria-labelledby="evidence-title">
+        <div class="shell evidence-panel">
+          <div class="evidence-intro">
+            <p class="eyebrow">Evidence Policy</p>
+            <h2 id="evidence-title">확인된 것과 아직 확인되지 않은 것을 분리합니다.</h2>
+            <p>Source availability, 실행, synthesis, 측정은 서로 다른 상태입니다.</p>
+            <div class="status-key" aria-label="검증 상태">
+              <span class="status source">SOURCE AVAILABLE</span>
+              <span class="status executed">EXECUTED</span>
+              <span class="status">MEASURED</span>
+              <span class="status blocked">BLOCKED</span>
+            </div>
+          </div>
+          <div class="evidence-rules">
+            <ol>
+              <li><strong>수치는 공개 근거로 추적합니다.</strong> CSV, log, waveform, photo, report 또는 재현 script가 있는 주장만 정량화합니다.</li>
+              <li><strong>검증 단계를 합치지 않습니다.</strong> RTL simulation, synthesis, PPA, hardware measurement를 별도 상태로 기록합니다.</li>
+              <li><strong>사진의 역할을 제한합니다.</strong> 구현·장비 존재를 보여주지만 성능, 정확도, 임상 유효성을 대신하지 않습니다.</li>
+              <li><strong>자료가 없으면 명시합니다.</strong> Not reported, Needs confirmation, BLOCKED를 PASS로 바꾸지 않습니다.</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about" aria-labelledby="about-title">
+        <div class="shell">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">About</p>
+              <h2 id="about-title">공학적 판단과 검증 경계를 함께 문서화합니다.</h2>
+            </div>
+            <p>
+              채용 담당자는 핵심 역량을 빠르게 확인하고, 엔지니어는 저장소·문서·실행 근거까지
+              단계적으로 내려갈 수 있도록 설계했습니다.
+            </p>
+          </div>
+          <div class="about-grid">
+            <article class="about-card">
+              <h3>Education</h3>
+              <p>단국대학교 전자전기공학부<br>전자전기공학전공 학사과정</p>
+              <small>B.S. Candidate — 졸업 학위 완료로 단독 표기하지 않습니다.</small>
+            </article>
+            <article class="about-card">
+              <h3>Research</h3>
+              <p>휴먼앤시스템 연구소<br>학부생 연구 인턴</p>
+              <small>공식 영문 연구소명은 확인 전까지 내부 문서에서 provisional translation으로 관리합니다.</small>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-grid shell">
+        <p>© 2026 Hyeongrok Ryu. Evidence-first engineering portfolio.</p>
+        <div class="footer-links">
+          <a href="https://github.com/Tontonjeong">GitHub</a>
+          <a href="https://app.notion.com/p/3ab518ac7a598121b666e4c7cce8324c">Notion</a>
+          <a href="/docs/security/">Security</a>
+          <a href="/en/" lang="en">English</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+

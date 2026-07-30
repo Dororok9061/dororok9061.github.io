@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; frame-src 'none'; upgrade-insecure-requests"
+    >
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="description" content="류형록 Engineering Portfolio의 공개 보안·개인정보·공급망 운영 원칙">
+    <meta name="color-scheme" content="dark light">
+    <link rel="canonical" href="https://tontonjeong.github.io/docs/security/">
+    <link rel="icon" href="/assets/images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="/assets/css/site.css">
+    <script src="/assets/js/site.js" defer></script>
+    <title>Security &amp; Data Policy | Hyeongrok Ryu</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+    <header class="site-header">
+      <nav class="nav shell" aria-label="보안 문서 탐색">
+        <a class="brand" href="/">
+          <span class="brand-mark" aria-hidden="true">HR</span>
+          <span class="brand-copy">Security &amp; Data Policy</span>
+        </a>
+        <div class="nav-tools">
+          <a class="tool-link" href="/" aria-label="홈">HOME</a>
+          <button
+            class="theme-toggle"
+            type="button"
+            data-theme-toggle
+            data-light-label="밝은 테마로 전환"
+            data-dark-label="어두운 테마로 전환"
+            aria-label="밝은 테마로 전환"
+          >LIGHT</button>
+        </div>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="hero">
+        <div class="shell">
+          <p class="eyebrow">Public Security Baseline</p>
+          <h1>보안·데이터 보호 원칙</h1>
+          <p class="hero-lead">
+            이 사이트는 정적 HTML, CSS, 최소 Vanilla JavaScript만 사용합니다.
+            로그인, 데이터베이스, 사용자 입력, 결제, 업로드, 자체 Contact backend가 없습니다.
+          </p>
+        </div>
+      </section>
+      <section class="section alt">
+        <div class="shell capability-grid">
+          <article class="capability">
+            <span class="capability-index">TRANSPORT</span>
+            <h3>HTTPS only</h3>
+            <p>GitHub Pages HTTPS를 사용하고 배포 후 HTTP redirect, 인증서, Mixed Content를 자동 검사합니다.</p>
+          </article>
+          <article class="capability">
+            <span class="capability-index">BROWSER</span>
+            <h3>최소 실행 코드</h3>
+            <p>외부 script, analytics, 광고, chat, blockchain runtime, offline worker를 사용하지 않습니다.</p>
+          </article>
+          <article class="capability">
+            <span class="capability-index">DATA</span>
+            <h3>공개 allowlist</h3>
+            <p>승인된 설명과 sanitized 파생 asset만 배포하며 raw archive, license, token, 연구 원자료는 제외합니다.</p>
+          </article>
+          <article class="capability">
+            <span class="capability-index">SUPPLY CHAIN</span>
+            <h3>고정된 배포 구성</h3>
+            <p>Runtime package dependency 없이 빌드하며 GitHub Actions는 full commit SHA로 고정합니다.</p>
+          </article>
+          <article class="capability">
+            <span class="capability-index">LIMIT</span>
+            <h3>플랫폼 책임 분리</h3>
+            <p>GitHub Pages 가용성·엣지 방어, GitHub 계정, DNS, 로컬 PC, 외부 서비스의 책임을 분리합니다.</p>
+          </article>
+          <article class="capability">
+            <span class="capability-index">REPORTING</span>
+            <h3>과장 없는 상태</h3>
+            <p>적용하지 못한 통제는 PASS가 아니라 BLOCKED 또는 PLATFORM LIMITATION으로 기록합니다.</p>
+          </article>
+        </div>
+      </section>
+      <section class="section">
+        <div class="shell evidence-panel">
+          <div class="evidence-intro">
+            <p class="eyebrow">Data Classes</p>
+            <h2>공개 파일도 기본은 비공개에서 시작합니다.</h2>
+            <p>소유권·공개 승인·metadata 검사를 통과한 파생본만 PUBLIC로 분류합니다.</p>
+          </div>
+          <div class="evidence-rules">
+            <ol>
+              <li><strong>PUBLIC</strong> — 승인된 소개, 프로젝트 요약, 공개 저장소 링크, sanitized asset</li>
+              <li><strong>INTERNAL</strong> — QA log, 미완료 초안, 운영 checklist</li>
+              <li><strong>CONFIDENTIAL</strong> — private archive, 미공개 연구, 원본 EDA 파일, 원본 사진</li>
+              <li><strong>RESTRICTED</strong> — API key, token, private key, recovery code, EDA license, 고위험 개인정보</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-grid shell">
+        <p>상세 Threat Model과 검증 결과는 공개 저장소에서 관리합니다.</p>
+        <div class="footer-links">
+          <a href="https://github.com/Tontonjeong/Tontonjeong.github.io/tree/main/docs/security">Security documents ↗</a>
+          <a href="/">홈</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
