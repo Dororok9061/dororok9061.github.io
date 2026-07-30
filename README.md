@@ -60,6 +60,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass `
 - [Threat model](docs/security/THREAT_MODEL.md)
 - [Security architecture](docs/security/SECURITY_ARCHITECTURE.md)
 - [Data classification](docs/security/DATA_CLASSIFICATION.md)
+- [Deployment verification report](docs/security/VERIFICATION_REPORT_2026-07-31.md)
 
 ## Public evidence rule
 
