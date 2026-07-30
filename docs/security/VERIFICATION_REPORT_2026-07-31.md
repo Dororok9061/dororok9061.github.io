@@ -4,6 +4,8 @@
 
 - Public site: <https://tontonjeong.github.io/>
 - Release pull request: [#3](https://github.com/Tontonjeong/Tontonjeong.github.io/pull/3)
+- Verification-report pull request:
+  [#4](https://github.com/Tontonjeong/Tontonjeong.github.io/pull/4)
 - Main merge commit: `234ac48a4ce39acb56dbfe411b7cc353c9ec4110`
 - Main validation and deployment run:
   [30561360113](https://github.com/Tontonjeong/Tontonjeong.github.io/actions/runs/30561360113)
