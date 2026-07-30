@@ -1,0 +1,39 @@
+{% assign project = include.project %}
+{% if include.lang == 'en' %}
+  {% assign project_title = project.title_en %}
+  {% assign project_domain = project.domain_en %}
+  {% assign project_summary = project.summary_en %}
+  {% assign project_alt = project.alt_en %}
+  {% assign project_url = project.en_url %}
+  {% assign detail_label = 'Read case study' %}
+{% else %}
+  {% assign project_title = project.title_ko %}
+  {% assign project_domain = project.domain_ko %}
+  {% assign project_summary = project.summary_ko %}
+  {% assign project_alt = project.alt_ko %}
+  {% assign project_url = project.ko_url %}
+  {% assign detail_label = '프로젝트 상세 보기' %}
+{% endif %}
+<article class="project-card">
+  {% if project.image_webp %}
+  <a class="project-card__media" href="{{ project_url | relative_url }}" tabindex="-1" aria-hidden="true">
+    <picture>
+      <source srcset="{{ project.image_webp | relative_url }}" type="image/webp">
+      <img src="{{ project.image_jpg | relative_url }}" alt="{{ project_alt }}" width="{{ project.image_width }}" height="{{ project.image_height }}" loading="lazy">
+    </picture>
+  </a>
+  {% else %}
+  <div class="project-card__diagram" role="img" aria-label="{% if include.lang == 'en' %}Requirements, analysis, and verification flow{% else %}요구도, 분석, 검증 흐름{% endif %}">
+    <span>Requirements</span><span>Analysis</span><span>Verification</span>
+  </div>
+  {% endif %}
+  <div class="project-card__body">
+    <div class="project-card__meta">
+      <span class="evidence-badge evidence-badge--{{ project.status_class }}">{{ project.status }}</span>
+      <span>{{ project_domain }}</span>
+    </div>
+    <h2><a href="{{ project_url | relative_url }}">{{ project_title }}</a></h2>
+    <p>{{ project_summary }}</p>
+    <a class="text-link" href="{{ project_url | relative_url }}">{{ detail_label }} <span aria-hidden="true">→</span></a>
+  </div>
+</article>

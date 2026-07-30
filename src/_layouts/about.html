@@ -1,0 +1,22 @@
+---
+layout: default
+---
+<main id="main" class="page page-shell">
+  <header class="page-heading">
+    <p class="eyebrow">{{ page.eyebrow }}</p>
+    <h1>{{ page.title }}</h1>
+    <p class="page-heading__lead">{{ page.lead }}</p>
+  </header>
+  <div class="about-layout">
+    <figure class="about-layout__portrait">
+      <picture>
+        <source srcset="{{ '/assets/images/profile/hyeongrok-ryu.webp' | relative_url }}" type="image/webp">
+        <img src="{{ '/assets/images/profile/hyeongrok-ryu.jpg' | relative_url }}" alt="{% if page.lang == 'en' %}Formal portrait of Hyeongrok Ryu{% else %}류형록 증명사진{% endif %}" width="720" height="900">
+      </picture>
+      <figcaption>{% if page.lang == 'en' %}Formal profile photograph · Metadata removed{% else %}공식 증명사진 · 위치·촬영 metadata 제거{% endif %}</figcaption>
+    </figure>
+    <div class="prose">
+      {{ content }}
+    </div>
+  </div>
+</main>

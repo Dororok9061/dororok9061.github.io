@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<main id="main" class="page page-shell">
+  <article class="post">
+    <nav class="breadcrumbs" aria-label="{% if page.lang == 'en' %}Breadcrumb{% else %}현재 위치{% endif %}">
+      <a href="{% if page.lang == 'en' %}{{ '/en/blog/' | relative_url }}{% else %}{{ '/blog/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}Blog{% else %}블로그{% endif %}</a>
+    </nav>
+    <header class="post-heading">
+      <p class="eyebrow">{{ page.categories | join: " · " }}</p>
+      <h1>{{ page.title }}</h1>
+      <p>{{ page.date | date: "%Y-%m-%d" }} · {{ page.author }}</p>
+      {% if page.description %}<p class="page-heading__lead">{{ page.description }}</p>{% endif %}
+    </header>
+    <div class="prose post__content">
+      {{ content }}
+    </div>
+  </article>
+</main>

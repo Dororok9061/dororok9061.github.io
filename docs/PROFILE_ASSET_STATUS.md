@@ -1,26 +1,31 @@
 # Profile Asset Status
 
-Status: `BLOCKED`
+Status: `PASS`
 
-The formal profile photograph is stored in a protected OneDrive location. The
-source was not opened, copied, modified, or uploaded during this work.
+Updated: 2026-07-31.
 
-The public GitHub avatar was inspected as an alternative and rejected because
-it is an illustrated character, not the supplied formal portrait. No generated
-or substituted face was used.
+The user explicitly identified and approved the supplied formal photograph for
+Hero and About use. The OneDrive original was read but never modified, moved,
+renamed, or deleted. Processing was performed only from a workspace backup
+copy.
 
-The site currently uses a non-biometric `HR` monogram. This preserves truthful
-identity without exposing the wrong person or altering facial features.
+## Integrity record
 
-## Required input to unblock
+- original/backup SHA-256:
+  `dce885ba3fcbd52ea3cf36ff1cd06594a68fe5500aa892080047b06e60fcfdb8`
+- original and backup hashes matched before processing
+- public portrait JPEG: 720×900, EXIF entries 0,
+  SHA-256 `4b6dc2c45cdde6aa0e6ffde1a7968131df1e16afec4873eb45ca02a69dee2f01`
+- public portrait WebP: 720×900, EXIF entries 0,
+  SHA-256 `5c27f46766f229fc28c8a006f0882e0e9bd1afe66bd972bc808ed16edd4fa3dd`
+- public square WebP: 480×480, EXIF entries 0,
+  SHA-256 `879e4353e9dafa4570422f681ccd11d7d39c1b387dbe91936b49ca2886498ce4`
 
-Provide a user-approved copy outside OneDrive in a workspace path. The
-processing step will:
+## Processing boundary
 
-1. preserve the original
-2. strip EXIF/XMP and embedded thumbnails
-3. create an 800×800 square crop
-4. create a portrait crop at approximately 900×1100 or the original ratio
-5. export WebP quality about 85 with PNG/JPEG fallbacks
-6. verify that no facial, skin, eye, clothing, or background generation occurred
+Applied operations were metadata removal, deterministic crop, resize, color-mode
+conversion, and JPEG/WebP encoding. No face generation, face swap, retouching,
+skin/eye alteration, clothing alteration, or background synthesis was used.
 
+The public photograph is personal identity information. Direct asset URLs are
+public and cacheable; publishing it does not grant third parties reuse rights.

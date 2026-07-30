@@ -1,0 +1,30 @@
+{% if page.lang == 'en' %}
+  {% assign nav_items = site.data.nav_en %}
+  {% assign home_url = '/en/' %}
+  {% assign nav_label = 'Primary navigation' %}
+  {% assign menu_label = 'Open navigation menu' %}
+{% else %}
+  {% assign nav_items = site.data.nav_ko %}
+  {% assign home_url = '/' %}
+  {% assign nav_label = '주요 탐색' %}
+  {% assign menu_label = '탐색 메뉴 열기' %}
+{% endif %}
+<header class="header site-header">
+  <div class="site-header__inner">
+    <a class="site-brand" href="{{ home_url | relative_url }}" aria-label="{% if page.lang == 'en' %}Hyeongrok Ryu portfolio home{% else %}류형록 포트폴리오 홈{% endif %}">
+      <span class="site-brand__mark" aria-hidden="true">HR</span>
+      <span class="site-brand__text">
+        <strong>{% if page.lang == 'en' %}Hyeongrok Ryu{% else %}류형록{% endif %}</strong>
+        <span>Engineering Portfolio</span>
+      </span>
+    </a>
+    <button class="site-menu-toggle" id="site-menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="{{ menu_label }}">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+    <nav class="site-navigation" id="site-navigation" aria-label="{{ nav_label }}">
+      {% include nav.html items=nav_items %}
+    </nav>
+  </div>
+</header>

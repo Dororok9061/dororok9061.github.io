@@ -1,0 +1,80 @@
+---
+layout: default
+---
+{% assign project = site.data.projects | where: 'id', page.project_id | first %}
+{% if page.lang == 'en' %}
+  {% assign project_title = project.title_en %}
+  {% assign project_domain = project.domain_en %}
+  {% assign project_summary = project.summary_en %}
+  {% assign project_alt = project.alt_en %}
+  {% assign project_evidence = project.evidence_en %}
+  {% assign project_contribution = project.contribution_en %}
+  {% assign project_boundary = project.boundary_en %}
+  {% assign category_base = '/en/blog/category/' %}
+{% else %}
+  {% assign project_title = project.title_ko %}
+  {% assign project_domain = project.domain_ko %}
+  {% assign project_summary = project.summary_ko %}
+  {% assign project_alt = project.alt_ko %}
+  {% assign project_evidence = project.evidence_ko %}
+  {% assign project_contribution = project.contribution_ko %}
+  {% assign project_boundary = project.boundary_ko %}
+  {% assign category_base = '/blog/category/' %}
+{% endif %}
+<main id="main" class="page page-shell">
+  <nav class="breadcrumbs" aria-label="{% if page.lang == 'en' %}Breadcrumb{% else %}현재 위치{% endif %}">
+    <a href="{% if page.lang == 'en' %}{{ '/en/' | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}Home{% else %}홈{% endif %}</a>
+    <span aria-hidden="true">/</span>
+    <a href="{% if page.lang == 'en' %}{{ '/en/projects/' | relative_url }}{% else %}{{ '/projects/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}Projects{% else %}프로젝트{% endif %}</a>
+  </nav>
+  <header class="project-heading">
+    <div>
+      <p class="eyebrow">{{ project_domain }}</p>
+      <h1>{{ project_title }}</h1>
+      <p class="page-heading__lead">{{ project_summary }}</p>
+      <span class="evidence-badge evidence-badge--{{ project.status_class }}">{{ project.status }}</span>
+    </div>
+    {% if project.image_webp %}
+    <picture>
+      <source srcset="{{ project.image_webp | relative_url }}" type="image/webp">
+      <img src="{{ project.image_jpg | relative_url }}" alt="{{ project_alt }}" width="{{ project.image_width }}" height="{{ project.image_height }}">
+    </picture>
+    {% else %}
+    <div class="project-heading__diagram" role="img" aria-label="{% if page.lang == 'en' %}Requirements to verification flow{% else %}요구도에서 검증까지의 흐름{% endif %}">
+      <span>Requirements</span><span>Analysis</span><span>Verification</span>
+    </div>
+    {% endif %}
+  </header>
+
+  <div class="case-study-grid">
+    <section aria-labelledby="contribution-title">
+      <h2 id="contribution-title">{% if page.lang == 'en' %}Engineering contribution{% else %}Engineering Contribution{% endif %}</h2>
+      <ul>{% for item in project_contribution %}<li>{{ item }}</li>{% endfor %}</ul>
+    </section>
+    <section aria-labelledby="evidence-title">
+      <h2 id="evidence-title">{% if page.lang == 'en' %}Public evidence{% else %}Public Evidence{% endif %}</h2>
+      <ul>{% for item in project_evidence %}<li>{{ item }}</li>{% endfor %}</ul>
+    </section>
+  </div>
+  <section class="boundary-panel" aria-labelledby="boundary-title">
+    <h2 id="boundary-title">{% if page.lang == 'en' %}Validation boundary{% else %}Validation Boundary{% endif %}</h2>
+    <p>{{ project_boundary }}</p>
+  </section>
+  <section aria-labelledby="project-links-title">
+    <h2 id="project-links-title">{% if page.lang == 'en' %}Evidence links{% else %}근거 링크{% endif %}</h2>
+    <div class="button-row">
+      <a class="portfolio-button portfolio-button--primary" href="{{ project.repository }}">Repository</a>
+      {% if page.lang == 'en' and project.pages_en %}<a class="portfolio-button" href="{{ project.pages_en }}">Project Pages</a>{% endif %}
+      {% if page.lang != 'en' and project.pages_ko %}<a class="portfolio-button" href="{{ project.pages_ko }}">Project Pages</a>{% endif %}
+      {% if project.notion %}<a class="portfolio-button" href="{{ project.notion }}">Notion</a>{% endif %}
+    </div>
+    <div class="filter-links">
+      {% for category in project.categories %}
+      <a href="{{ category_base | append: category | append: '/' | relative_url }}">{{ category }}</a>
+      {% endfor %}
+    </div>
+  </section>
+  <div class="prose">
+    {{ content }}
+  </div>
+</main>

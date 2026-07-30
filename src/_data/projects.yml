@@ -1,0 +1,245 @@
+- id: fpga-delay-logic
+  title_ko: FPGA Programmable Delay Logic
+  title_en: FPGA Programmable Delay Logic
+  domain_ko: FPGA · RTL · Digital Verification
+  domain_en: FPGA · RTL · Digital Verification
+  summary_ko: 동일한 cycle-delay contract를 Shift Register, Circular Queue, Memory-Based Driver/Checker 구조로 발전시킨 parameterized SystemVerilog 설계입니다.
+  summary_en: A parameterized SystemVerilog design that evolves one cycle-delay contract across shift-register, circular-queue, and memory-based Driver/Checker architectures.
+  status: EXECUTED
+  status_class: executed
+  image_webp: /assets/images/projects/fpga-architecture.webp
+  image_jpg: /assets/images/projects/fpga-architecture.jpg
+  image_width: 1440
+  image_height: 620
+  alt_ko: Shift Register, Circular Queue, Memory-Based 구조로 발전하는 FPGA delay logic architecture
+  alt_en: FPGA delay-logic architecture progressing from a shift register to circular queue and memory-based design
+  evidence_ko:
+    - "Project 1: Icarus Verilog 20 checks PASS"
+    - "Project 2: 26 architecture-equivalence checks PASS"
+    - "Project 3: 3 file-driven scenarios PASS"
+  evidence_en:
+    - "Project 1: 20 Icarus Verilog checks passed"
+    - "Project 2: 26 architecture-equivalence checks passed"
+    - "Project 3: three file-driven scenarios passed"
+  contribution_ko:
+    - Parameterized SystemVerilog RTL
+    - Independent reference model
+    - Self-checking testbench와 deterministic regression
+  contribution_en:
+    - Parameterized SystemVerilog RTL
+    - Independent reference model
+    - Self-checking testbench and deterministic regression
+  boundary_ko: Functional simulation만 실행했습니다. Quartus synthesis, timing, power, Fmax와 수치 PPA는 도구 보고서가 없어 BLOCKED입니다.
+  boundary_en: Functional simulation was executed. Quartus synthesis, timing, power, Fmax, and numerical PPA remain BLOCKED because no tool reports are available.
+  categories: [fpga, digital-verification]
+  ko_url: /projects/fpga-delay-logic/
+  en_url: /en/projects/fpga-delay-logic/
+  repository: https://github.com/Tontonjeong/fpga-delay-logic-design-verification
+  pages_ko: https://tontonjeong.github.io/fpga-delay-logic-design-verification/
+  pages_en: https://tontonjeong.github.io/fpga-delay-logic-design-verification/en/
+  notion: https://app.notion.com/p/3ab518ac7a59813bb1aee84b34002b7e
+
+- id: fmcw-radar
+  title_ko: FMCW Radar Cardiac Timing
+  title_en: FMCW Radar Cardiac Timing
+  domain_ko: Radar · Biomedical Signal Processing
+  domain_en: Radar · Biomedical Signal Processing
+  summary_ko: ECG·SCG·비접촉 FMCW Radar를 beat-relative axis에 정렬하고 radar morphology에서 AO/AC 후보 시점을 분석합니다.
+  summary_en: Aligns ECG, SCG, and non-contact FMCW radar on a beat-relative axis and analyzes morphology-based AO/AC candidate timing.
+  status: SOURCE + HARDWARE
+  status_class: source
+  image_webp: /assets/images/projects/radar-hardware.webp
+  image_jpg: /assets/images/projects/radar-hardware.jpg
+  image_width: 1600
+  image_height: 1067
+  alt_ko: ECG, SCG, FMCW Radar 실제 실험 하드웨어와 센서 구성
+  alt_en: ECG, SCG, and FMCW radar experimental hardware and sensor setup
+  evidence_ko:
+    - 분석 source와 설정·export 문서
+    - STM32·ESP32 acquisition firmware
+    - 개인정보 검토를 거친 실제 하드웨어 사진
+  evidence_en:
+    - Analysis source plus configuration and export documentation
+    - STM32 and ESP32 acquisition firmware
+    - Privacy-reviewed photographs of the experimental hardware
+  contribution_ko:
+    - ECG R-peak anchor와 SCG reference
+    - Radar phase displacement와 beat segmentation
+    - Detector fusion, SQI, CTI export
+  contribution_en:
+    - ECG R-peak anchoring and SCG reference timing
+    - Radar phase displacement and beat segmentation
+    - Detector fusion, SQI, and CTI export
+  boundary_ko: AO/AC는 direct valve imaging이 아닌 morphology-based candidate timing입니다. 임상 성능과 독립 echo/ICG/PCG validation은 주장하지 않습니다.
+  boundary_en: AO/AC values are morphology-based candidate timings, not direct valve imaging. Clinical performance and independent echo/ICG/PCG validation are not claimed.
+  categories: [signal-processing, research]
+  ko_url: /projects/fmcw-radar/
+  en_url: /en/projects/fmcw-radar/
+  repository: https://github.com/Tontonjeong/fmcw-radar-aoac-cardiac-analysis
+  pages_ko: https://tontonjeong.github.io/fmcw-radar-aoac-cardiac-analysis/
+  pages_en: https://tontonjeong.github.io/fmcw-radar-aoac-cardiac-analysis/en/
+  notion: https://app.notion.com/p/3ab518ac7a5981528979fa5acf99aaa1
+
+- id: ppg-hrv
+  title_ko: PPG–HRV Cognitive Load
+  title_en: PPG–HRV Cognitive Load
+  domain_ko: Biomedical Embedded AI
+  domain_en: Biomedical Embedded AI
+  summary_ko: Earlobe PPG acquisition부터 IBI·HRV feature construction, CNN+Transformer classification까지 timing integrity를 추적합니다.
+  summary_en: Traces timing integrity from earlobe PPG acquisition through IBI/HRV feature construction and CNN+Transformer classification.
+  status: PAPER + CODE
+  status_class: measured
+  image_webp: /assets/images/projects/ppg-pipeline.webp
+  image_jpg: /assets/images/projects/ppg-pipeline.jpg
+  image_width: 1600
+  image_height: 1000
+  alt_ko: PPG sensor, STM32 firmware, HRV preprocessing, CNN Transformer 평가를 잇는 연구 pipeline
+  alt_en: Research pipeline connecting a PPG sensor, STM32 firmware, HRV preprocessing, and CNN Transformer evaluation
+  evidence_ko:
+    - PPG AFE·STM32 firmware·Python source
+    - Fold 결과 CSV와 공개 논문 PDF
+    - Group-level aggregate 시각자료
+  evidence_en:
+    - PPG AFE, STM32 firmware, and Python source
+    - Fold-result CSV files and a public paper PDF
+    - Group-level aggregate visual evidence
+  contribution_ko:
+    - IBI·HRV preprocessing과 feature construction
+    - CNN+Transformer evaluation pipeline
+    - Paper 결과와 code archive 결과의 provenance 분리
+  contribution_en:
+    - IBI/HRV preprocessing and feature construction
+    - CNN+Transformer evaluation pipeline
+    - Separation of paper metrics from code-archive metrics
+  boundary_ko: Paper summary의 AUC/F1과 code archive의 5-fold metric은 평가 조건이 달라 같은 결과로 합치지 않습니다.
+  boundary_en: Paper-summary AUC/F1 and code-archive five-fold metrics use different evaluation conditions and are not presented as the same result.
+  categories: [biomedical-ai, embedded]
+  ko_url: /projects/ppg-hrv/
+  en_url: /en/projects/ppg-hrv/
+  repository: https://github.com/Tontonjeong/PPG-HRV-Cognitive-Load-CNN
+  pages_ko: https://tontonjeong.github.io/PPG-HRV-Cognitive-Load-CNN/
+  pages_en: https://tontonjeong.github.io/PPG-HRV-Cognitive-Load-CNN/en/
+  notion: https://app.notion.com/p/3ab518ac7a5981f78fe5f1d0730f5631
+
+- id: drowsiness-monitor
+  title_ko: Real-Time Drowsiness Monitor
+  title_en: Real-Time Drowsiness Monitor
+  domain_ko: Embedded Systems · Edge Sensing
+  domain_en: Embedded Systems · Edge Sensing
+  summary_ko: PPG와 EAR vision을 두 대의 Raspberry Pi sensing/analysis 구조, TCP/IP, GPIO·I²C alarm path로 통합했습니다.
+  summary_en: Integrates PPG and EAR vision across a two-node Raspberry Pi sensing/analysis architecture with TCP/IP and GPIO/I²C alarm paths.
+  status: SOURCE + PROTOTYPE
+  status_class: source
+  image_webp: /assets/images/projects/embedded-prototype.webp
+  image_jpg: /assets/images/projects/embedded-prototype.jpg
+  image_width: 984
+  image_height: 560
+  alt_ko: Raspberry Pi, LCD, sensor wiring으로 구현한 졸음 모니터링 prototype
+  alt_en: Drowsiness-monitoring prototype built with Raspberry Pi boards, an LCD, and sensor wiring
+  evidence_ko:
+    - C/C++ source와 architecture 문서
+    - 회로·LCD·prototype 사진
+    - TCP/IP, GPIO, I²C data and alarm paths
+  evidence_en:
+    - C/C++ source and architecture documentation
+    - Circuit, LCD, and prototype photographs
+    - TCP/IP, GPIO, and I²C data and alarm paths
+  contribution_ko:
+    - PPG server와 image/EAR processing
+    - Two-node file IPC·network architecture
+    - LCD·alarm integration path 문서화
+  contribution_en:
+    - PPG server and image/EAR processing
+    - Two-node file IPC and network architecture
+    - Documentation of the LCD and alarm integration path
+  boundary_ko: Latency, sensitivity, specificity, false-alarm rate는 공개 근거가 없어 수치로 주장하지 않습니다.
+  boundary_en: Latency, sensitivity, specificity, and false-alarm rate are not quantified because public evidence is unavailable.
+  categories: [embedded, sensing]
+  ko_url: /projects/drowsiness-monitor/
+  en_url: /en/projects/drowsiness-monitor/
+  repository: https://github.com/Tontonjeong/Sleep-monitoring-and-prevention-device
+  pages_ko: https://tontonjeong.github.io/Sleep-monitoring-and-prevention-device/
+  pages_en: https://tontonjeong.github.io/Sleep-monitoring-and-prevention-device/en/
+  notion: https://app.notion.com/p/3ab518ac7a5981579714fd0ab395ac09
+
+- id: defense-systems
+  title_ko: Defense Systems Engineering
+  title_en: Defense Systems Engineering
+  domain_ko: Requirements · Trade-off · Reliability
+  domain_en: Requirements · Trade-off · Reliability
+  summary_ko: Counter-UAS, EW jammer, KF-21 reliability 사례를 요구도·정량 근거·검증·한계 구조로 재편한 교육용 case study입니다.
+  summary_en: Educational case studies that reorganize Counter-UAS, EW jammer, and KF-21 reliability work around requirements, quantitative basis, verification, and limits.
+  status: SOURCE-DERIVED
+  status_class: source
+  image_webp:
+  image_jpg:
+  image_width:
+  image_height:
+  alt_ko:
+  alt_en:
+  evidence_ko:
+    - 원 보고서 값과 독립 재계산
+    - 공개용 diagram과 traceability
+    - 요구도·trade-off·FMEA 기반 검증 구조
+  evidence_en:
+    - Source-report values and independent recalculation
+    - Public redraws and traceability
+    - Requirements, trade-off, and FMEA-oriented verification structure
+  contribution_ko:
+    - Problem → Requirements → Quantitative Basis 구조화
+    - Threshold/objective와 verification boundary 분리
+    - Reliability·maintainability 재계산
+  contribution_en:
+    - Problem → Requirements → Quantitative Basis structuring
+    - Separation of threshold/objective values from verification boundaries
+    - Reliability and maintainability recalculation
+  boundary_ko: 교육용 가상 조건이며 실제 체계 제원, 공식 성능 또는 구현 가능한 운용 절차가 아닙니다.
+  boundary_en: These are educational scenarios, not official system specifications, performance claims, or deployable operating procedures.
+  categories: [systems-engineering, defense]
+  ko_url: /projects/defense-systems/
+  en_url: /en/projects/defense-systems/
+  repository: https://github.com/Tontonjeong/Tontonjeong
+  pages_ko:
+  pages_en:
+  notion: https://app.notion.com/p/3ab518ac7a5981c0aecfff5207b14f54
+
+- id: coursework
+  title_ko: Electrical Engineering Coursework
+  title_en: Electrical Engineering Coursework
+  domain_ko: VHDL · Power · Control · RF · Sensors
+  domain_en: VHDL · Power · Control · RF · Sensors
+  summary_ko: VHDL verification, transformer calculation, power-flow debugging, motor control, RF network, AESA-SAR proposal를 근거 등급별로 정리합니다.
+  summary_en: Organizes VHDL verification, transformer calculations, power-flow debugging, motor control, RF networks, and an AESA-SAR proposal by evidence level.
+  status: EVIDENCE CATALOG
+  status_class: source
+  image_webp: /assets/images/projects/coursework-hero.webp
+  image_jpg: /assets/images/projects/coursework-hero.jpg
+  image_width: 1600
+  image_height: 760
+  alt_ko: VHDL, Power, Control, RF, Sensor Systems로 구성된 전자전기공학 학부 과제 포트폴리오
+  alt_en: Electrical engineering coursework portfolio spanning VHDL, power, control, RF, and sensor systems
+  evidence_ko:
+    - GHDL test와 독립 계산
+    - 기존 Cadence archive와 공개용 redraw
+    - Source-Derived·Rerun·Proposal 상태 분리
+  evidence_en:
+    - GHDL tests and independent calculations
+    - Existing Cadence archives and public redraws
+    - Separation of Source-Derived, Rerun, and Proposal states
+  contribution_ko:
+    - 전공별 자료 inventory와 evidence classification
+    - 재실행 결과와 기존 archive 분리
+    - 과장 없는 validation boundary 문서화
+  contribution_en:
+    - Domain-based inventory and evidence classification
+    - Separation of rerun results from existing archives
+    - Documentation of validation boundaries without overclaiming
+  boundary_ko: 새 Cadence·VNA 측정 결과와 production-grid validation은 주장하지 않습니다.
+  boundary_en: No new Cadence or VNA measurements and no production-grid validation are claimed.
+  categories: [coursework, electrical-engineering]
+  ko_url: /projects/coursework/
+  en_url: /en/projects/coursework/
+  repository: https://github.com/Tontonjeong/electrical-engineering-coursework-portfolio
+  pages_ko: https://tontonjeong.github.io/electrical-engineering-coursework-portfolio/
+  pages_en: https://tontonjeong.github.io/electrical-engineering-coursework-portfolio/en/
+  notion: https://app.notion.com/p/3ab518ac7a5981a095f3c2cca6aaa35d

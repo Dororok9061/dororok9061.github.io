@@ -4,6 +4,9 @@ Thumbs.db
 .vscode/
 _reference_themes/
 _site/
+.bundle/
+.jekyll-cache/
+vendor/bundle/
 *.log
 *.tmp
 *.map
@@ -24,4 +27,3 @@ _site/
 *.rar
 .env
 .env.*
-

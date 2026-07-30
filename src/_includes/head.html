@@ -1,0 +1,38 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta
+  http-equiv="Content-Security-Policy"
+  content="default-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; media-src 'self'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests"
+>
+{% assign page_title = page.seo_title | default: page.title | default: site.title %}
+{% assign page_description = page.description | default: site.description %}
+{% assign canonical_url = page.url | absolute_url %}
+{% assign social_image = page.image | default: '/assets/images/og.jpg' | absolute_url %}
+<title>{{ page_title | escape }}{% unless page_title == site.title %} | {{ site.short_title | escape }}{% endunless %}</title>
+<meta name="description" content="{{ page_description | strip_html | normalize_whitespace | escape }}">
+<meta name="author" content="{{ site.author.name | escape }}">
+<meta name="robots" content="{% if page.noindex %}noindex, nofollow{% else %}index, follow, max-image-preview:large{% endif %}">
+<link rel="canonical" href="{{ canonical_url }}">
+{% if page.alternate_url %}
+<link rel="alternate" hreflang="{{ page.alternate_lang }}" href="{{ page.alternate_url | absolute_url }}">
+{% endif %}
+<link rel="alternate" hreflang="{{ page.lang }}" href="{{ canonical_url }}">
+<link rel="alternate" hreflang="x-default" href="{{ '/' | absolute_url }}">
+<link rel="alternate" type="application/atom+xml" title="{{ site.title | escape }}" href="{{ '/feed.xml' | absolute_url }}">
+<meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+<meta property="og:site_name" content="{{ site.title | escape }}">
+<meta property="og:title" content="{{ page_title | escape }}">
+<meta property="og:description" content="{{ page_description | strip_html | normalize_whitespace | escape }}">
+<meta property="og:url" content="{{ canonical_url }}">
+<meta property="og:image" content="{{ social_image }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="{% if page.lang == 'en' %}en_US{% else %}ko_KR{% endif %}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ page_title | escape }}">
+<meta name="twitter:description" content="{{ page_description | strip_html | normalize_whitespace | escape }}">
+<meta name="twitter:image" content="{{ social_image }}">
+<link rel="icon" type="image/png" href="{{ site.favicon | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/fonts/fonts.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/portfolio.css' | relative_url }}">
