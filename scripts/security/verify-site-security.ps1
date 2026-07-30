@@ -36,11 +36,15 @@ function Add-Finding {
 function Get-RelativePath {
     param([string]$Path)
 
-    $rootUri = [uri](($resolvedRoot.TrimEnd('\') + '\'))
-    $fileUri = [uri]$Path
-    return [uri]::UnescapeDataString(
-        $rootUri.MakeRelativeUri($fileUri).ToString()
-    ).Replace('/', '\')
+    $fullPath = [System.IO.Path]::GetFullPath($Path)
+    if (-not $fullPath.StartsWith(
+        $resolvedRoot,
+        [System.StringComparison]::OrdinalIgnoreCase
+    )) {
+        throw "Path is outside the scan root: $fullPath"
+    }
+
+    return $fullPath.Substring($resolvedRoot.Length).TrimStart('\', '/')
 }
 
 function Get-HeadResult {
