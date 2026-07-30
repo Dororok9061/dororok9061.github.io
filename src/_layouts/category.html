@@ -1,0 +1,22 @@
+---
+layout: default
+---
+<main id="main" class="page page-shell">
+  <header class="page-heading">
+    <p class="eyebrow">Blog Category</p>
+    <h1>{{ page.title }}</h1>
+    <p class="page-heading__lead">{{ page.lead }}</p>
+  </header>
+  <div class="post-list">
+    {% assign category_posts = site.categories[page.category_slug] | where: 'lang', page.lang %}
+    {% for post in category_posts %}
+    <article>
+      <p class="post-card__meta">{{ post.date | date: "%Y-%m-%d" }}</p>
+      <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+      <p>{{ post.excerpt | strip_html }}</p>
+    </article>
+    {% else %}
+    <p>{% if page.lang == 'en' %}No posts in this category yet. Project pages remain available through the project index.{% else %}이 카테고리의 글은 준비 중입니다. 프로젝트 상세는 프로젝트 인덱스에서 확인할 수 있습니다.{% endif %}</p>
+    {% endfor %}
+  </div>
+</main>

@@ -1,10 +1,10 @@
 # Theme and Reference Audit
 
-Audit date: 2026-07-30.
+Audit updated: 2026-07-31.
 
-No reviewed theme code, CSS, JavaScript, font, icon, or personal content was
-copied into the final site. The final implementation is an independent static
-design.
+The final Jekyll build uses `jekyll-theme-simplex` as an installed Gem Theme.
+Other reviewed portfolio references remain idea-only and contribute no code,
+assets, or personal content.
 
 ## 1. jekyll-theme-simplex
 
@@ -18,22 +18,30 @@ design.
 - Runtime dependency: Jekyll `~> 4.0`
 - Bundled assets observed: Roboto family files, jQuery slim 3.4.1, Lity, Ionicons-derived arrows
 
-Applicable ideas:
+Used from the Gem:
 
-- responsive content width
-- dark/light color system
-- image-forward project reading
-- Open Graph and readable typography
+- compiled Simplex SCSS, color variables, responsive reading primitives
+- Roboto, Roboto Slab, and Roboto Mono WOFF2 files
+- the source Gem's MIT license and theme attribution
+- Jekyll 4 theme resolution through `theme: jekyll-theme-simplex`
 
-Excluded:
+Repository-owned overrides:
 
-- theme code and layouts
-- jQuery and Lity
-- bundled fonts and icons
-- Jekyll plugin surface
+- semantic KO/EN layouts, navigation, cards, metadata, CSP, and project IA
+- accessible mobile-menu behavior in one small first-party Vanilla JS file
+- responsive portfolio layer loaded after the theme stylesheet
 
-Reason: the portfolio can satisfy the same UX with native HTML/CSS and one
-small Vanilla JavaScript file, avoiding package and theme supply-chain surface.
+Excluded from the published artifact:
+
+- jQuery, Lity, and the stock theme helper script
+- unused Simplex arrow/logo SVGs
+- legacy WOFF and TTF fallbacks; WOFF2 remains
+- stock layouts that do not meet this site's language, accessibility, or
+  metadata requirements
+
+The exact Gem and all transitive dependencies are locked in `Gemfile.lock`.
+The build plugin filters only known, unused static theme assets; it does not
+replace Simplex SCSS or theme resolution.
 
 ## 2. pRoJEct-NeGYa
 
@@ -86,4 +94,3 @@ also exceeds the needs of a public static portfolio.
 
 GitHub's current Pages and Actions documentation takes precedence over the
 older article for deployment and security settings.
-

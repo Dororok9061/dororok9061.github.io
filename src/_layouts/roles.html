@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<main id="main" class="page page-shell">
+  <header class="page-heading">
+    <p class="eyebrow">{{ page.eyebrow }}</p>
+    <h1>{{ page.title }}</h1>
+    <p class="page-heading__lead">{{ page.lead }}</p>
+  </header>
+  <div class="role-list">
+    {% for role in site.data.roles %}
+    <section>
+      <span>0{{ forloop.index }}</span>
+      <div>
+        <h2>{% if page.lang == 'en' %}{{ role.title_en }}{% else %}{{ role.title_ko }}{% endif %}</h2>
+        <p>{% if page.lang == 'en' %}{{ role.summary_en }}{% else %}{{ role.summary_ko }}{% endif %}</p>
+        <ul>
+          {% for project_id in role.projects %}
+            {% assign project = site.data.projects | where: 'id', project_id | first %}
+            <li><a href="{% if page.lang == 'en' %}{{ project.en_url | relative_url }}{% else %}{{ project.ko_url | relative_url }}{% endif %}">{% if page.lang == 'en' %}{{ project.title_en }}{% else %}{{ project.title_ko }}{% endif %}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </section>
+    {% endfor %}
+  </div>
+</main>

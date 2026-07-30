@@ -1,0 +1,21 @@
+- title: About
+  url: /en/about/
+- title: Projects
+  url: /en/projects/
+  children:
+    - title: All Projects
+      url: /en/projects/
+    - title: Research
+      url: /en/lab/
+    - title: Coursework
+      url: /en/coursework/
+    - title: Defense Systems
+      url: /en/defense/
+- title: Publications
+  url: /en/publications/
+- title: Roles
+  url: /en/roles/
+- title: Blog
+  url: /en/blog/
+- title: 한국어
+  url: /

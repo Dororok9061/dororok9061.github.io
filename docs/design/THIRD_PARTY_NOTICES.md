@@ -2,11 +2,15 @@
 
 ## Final site code
 
-The final HTML, CSS, JavaScript, test script, and documentation are original
-for this repository and released under the repository MIT License.
+Repository-owned layouts, includes, CSS overlays, JavaScript, tests, content,
+and documentation are original for this repository and released under the
+repository MIT License.
 
-No code, CSS, JavaScript, font, icon, image, or personal copy from the reviewed
-external portfolio themes was included.
+The generated `assets/style.css` and six WOFF2 font files come from the installed
+`jekyll-theme-simplex 0.9.8.15` Gem. Simplex is Copyright © Ondrej Golasowski
+and is used under the MIT License. Roboto, Roboto Slab, and Roboto Mono remain
+subject to their upstream font licenses. The stock theme jQuery, Lity, helper
+script, legacy WOFF/TTF files, and icons are not published.
 
 ## Project assets
 
@@ -21,6 +25,8 @@ the generated site derivatives.
 | `ppg-pipeline.*` | `PPG-HRV-Cognitive-Load-CNN/docs/figures/infographics/end_to_end_overview.png` | `3c6e6bcebbce000e7a1c3552a69aad6e030d527a` | User-owned project documentation; repository MIT |
 | `embedded-prototype.*` | `Sleep-monitoring-and-prevention-device/docs/assets/photos/KakaoTalk_20251220_185920430.jpg` | `278758514b4196854b0084e1d38e4363607aa9dc` | User-owned project evidence; repository license not detected |
 | `coursework-hero.*` | `electrical-engineering-coursework-portfolio/docs/assets/hero/coursework_portfolio_hero.webp` | `ca512e69093758769f146934b118ef14a9f21229` | Custom reuse notice; no rights granted for third-party material |
+| `profile/hyeongrok-ryu.*` | user-supplied formal photograph | local source hash recorded in `docs/PROFILE_ASSET_STATUS.md` | Identity photograph; no reuse rights granted |
+| `og.jpg` | screenshot of this site's Simplex-based Hero | generated from the local build | Includes the approved profile derivative; no reuse rights granted to the portrait |
 
 The portfolio use of these assets does not grant broader reuse rights where the
 source repository has no license or restricts third-party material.
@@ -33,7 +39,6 @@ owners. Their mention does not imply endorsement.
 
 ## External theme references
 
-- `jekyll-theme-simplex`: MIT; no final code or assets copied
+- `jekyll-theme-simplex 0.9.8.15`: MIT; actual Gem Theme and required SCSS/WOFF2 assets used
 - `pRoJEct-NeGYa`: MIT; no final code or assets copied
 - `keemtj/portfolio`: no license detected; no final code or assets copied
-

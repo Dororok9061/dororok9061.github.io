@@ -1,0 +1,21 @@
+- title: 소개
+  url: /about/
+- title: 프로젝트
+  url: /projects/
+  children:
+    - title: 전체 프로젝트
+      url: /projects/
+    - title: 연구실·연구
+      url: /lab/
+    - title: 전공과목
+      url: /coursework/
+    - title: 방산 시스템
+      url: /defense/
+- title: 논문
+  url: /publications/
+- title: 직무별 보기
+  url: /roles/
+- title: 블로그
+  url: /blog/
+- title: English
+  url: /en/

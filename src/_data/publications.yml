@@ -1,0 +1,23 @@
+- index: "01"
+  title: "Classification of Cognitive Task Performance using HRV Features: A Convolutional Neural Network Approach"
+  role_ko: 제1저자
+  role_en: First author
+  domain_ko: Biomedical AI
+  domain_en: Biomedical AI
+  year:
+  venue:
+  url: https://github.com/Tontonjeong/PPG-HRV-Cognitive-Load-CNN/blob/main/references/paper.pdf
+  note_ko: 공개 PDF에서 확인 가능한 제목과 저자 역할만 표시하며 venue·DOI·권호·페이지는 임의로 채우지 않습니다.
+  note_en: Only the title and author role supported by the public PDF are shown; venue, DOI, issue, and page details are not invented.
+
+- index: "02"
+  title: "Analysis of Aortic Valve Opening and Closure Using Cardiac Signals Acquired by Non-Contact FMCW Radar"
+  role_ko: 제1저자
+  role_en: First author
+  domain_ko: Radar Signal Processing
+  domain_en: Radar Signal Processing
+  year: "2026"
+  venue:
+  url: https://github.com/Tontonjeong/fmcw-radar-aoac-cardiac-analysis#citation
+  note_ko: 공개 repository citation record를 근거로 하며 확인되지 않은 DOI·권호·페이지는 표시하지 않습니다.
+  note_en: Based on the public repository citation record; unverified DOI, issue, and page details are omitted.

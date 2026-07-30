@@ -1,0 +1,68 @@
+title: Hyeongrok Ryu Engineering Portfolio
+short_title: Hyeongrok Ryu
+description: Evidence-first engineering portfolio covering FPGA RTL/DV, FMCW radar, embedded systems, biomedical AI, coursework, and systems engineering.
+url: https://tontonjeong.github.io
+baseurl: ""
+lang: ko
+timezone: Asia/Seoul
+encoding: utf-8
+copyright: "© 2026 Hyeongrok Ryu"
+
+theme: jekyll-theme-simplex
+
+author:
+  name: Hyeongrok Ryu
+  name_ko: 류형록
+  github: https://github.com/Tontonjeong
+  notion: https://app.notion.com/p/3ab518ac7a598121b666e4c7cce8324c
+
+logo_img:
+favicon: /assets/images/favicon.png
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+permalink: /blog/:year/:month/:day/:title/
+strict_front_matter: true
+show_excerpts: true
+
+feed:
+  path: feed.xml
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: page
+      lang: ko
+      image: /assets/images/og.jpg
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      author: Hyeongrok Ryu
+      image: /assets/images/og.jpg
+
+exclude:
+  - assets/js/jquery.slim.min.js
+  - assets/js/lity.min.js
+  - assets/js/lity.min.css
+  - assets/js/tools.js
+  - assets/fonts/Roboto-Regular.ttf
+  - assets/fonts/Roboto-Regular.woff
+  - assets/fonts/Roboto-Bold.ttf
+  - assets/fonts/Roboto-Bold.woff
+  - assets/fonts/RobotoSlab-Regular.ttf
+  - assets/fonts/RobotoSlab-Regular.woff
+  - assets/fonts/RobotoSlab-Bold.ttf
+  - assets/fonts/RobotoSlab-Bold.woff
+  - assets/fonts/RobotoMono-Regular.ttf
+  - assets/fonts/RobotoMono-Regular.woff
+  - assets/fonts/RobotoMono-Bold.ttf
+  - assets/fonts/RobotoMono-Bold.woff
+
+sass:
+  style: compressed
+  sourcemap: never

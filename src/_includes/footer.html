@@ -1,0 +1,19 @@
+<footer class="footer site-footer">
+  <div class="site-footer__inner">
+    <div>
+      <strong>{{ site.author.name }}</strong>
+      <p>{% if page.lang == 'en' %}Evidence-first engineering portfolio.{% else %}공개 근거와 검증 경계를 분리하는 Engineering Portfolio.{% endif %}</p>
+    </div>
+    <nav aria-label="{% if page.lang == 'en' %}Footer navigation{% else %}바닥글 탐색{% endif %}">
+      <a href="{{ site.author.github }}">GitHub</a>
+      <a href="{{ site.author.notion }}">Notion</a>
+      <a href="{{ '/security/' | relative_url }}">Security</a>
+      <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+    </nav>
+    <p class="site-footer__credit">
+      {{ site.copyright }} ·
+      <a href="https://github.com/andreondra/jekyll-theme-simplex">Simplex</a>
+      theme by Golasowski, MIT License.
+    </p>
+  </div>
+</footer>

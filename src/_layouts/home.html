@@ -1,0 +1,140 @@
+---
+layout: default
+---
+<main id="main" class="portfolio-main">
+  <section class="portfolio-hero" aria-labelledby="hero-title">
+    <div class="portfolio-hero__content">
+      <p class="eyebrow">Electrical &amp; Electronic Engineering</p>
+      <h1 id="hero-title">
+        {% if page.lang == 'en' %}
+        Hyeongrok Ryu
+        <span>Hardware · Sensing · Signal Processing</span>
+        {% else %}
+        류형록
+        <span>하드웨어 · 센서 · 신호처리 엔지니어</span>
+        {% endif %}
+      </h1>
+      <p class="portfolio-hero__lead">
+        {% if page.lang == 'en' %}
+        I connect circuits, firmware, RTL, signal processing, and verification while keeping public evidence separate from unverified claims.
+        {% else %}
+        회로·펌웨어·RTL·신호처리·검증을 연결하고, 공개 근거와 아직 확인되지 않은 주장을 분리해 설명합니다.
+        {% endif %}
+      </p>
+      <ul class="hero-facts">
+        {% if page.lang == 'en' %}
+        <li>B.S. Candidate, Electrical and Electronic Engineering, Dankook University</li>
+        <li>Undergraduate Research Intern, Human &amp; Systems Laboratory</li>
+        {% else %}
+        <li>단국대학교 전자전기공학전공 학사과정</li>
+        <li>휴먼앤시스템 연구소 학부생 연구 인턴</li>
+        {% endif %}
+      </ul>
+      <div class="button-row">
+        <a class="portfolio-button portfolio-button--primary" href="{% if page.lang == 'en' %}{{ '/en/projects/' | relative_url }}{% else %}{{ '/projects/' | relative_url }}{% endif %}">
+          {% if page.lang == 'en' %}Explore projects{% else %}프로젝트 탐색{% endif %}
+        </a>
+        <a class="portfolio-button" href="{{ site.author.github }}">GitHub</a>
+        <a class="portfolio-button" href="{{ site.author.notion }}">Notion</a>
+      </div>
+    </div>
+    <figure class="portfolio-hero__portrait">
+      <picture>
+        <source srcset="{{ '/assets/images/profile/hyeongrok-ryu.webp' | relative_url }}" type="image/webp">
+        <img src="{{ '/assets/images/profile/hyeongrok-ryu.jpg' | relative_url }}" alt="{% if page.lang == 'en' %}Formal portrait of Hyeongrok Ryu in a navy suit and tie{% else %}남색 정장과 넥타이를 착용한 류형록의 증명사진{% endif %}" width="720" height="900">
+      </picture>
+      <figcaption>{% if page.lang == 'en' %}Hyeongrok Ryu · Seoul, Republic of Korea{% else %}류형록 · 대한민국 서울{% endif %}</figcaption>
+    </figure>
+  </section>
+
+  <section class="content-section" aria-labelledby="domains-title">
+    <div class="section-heading">
+      <p class="eyebrow">{% if page.lang == 'en' %}Engineering Domains{% else %}Engineering Domains{% endif %}</p>
+      <h2 id="domains-title">{% if page.lang == 'en' %}Work organized by engineering evidence{% else %}공학 근거를 중심으로 분류한 분야{% endif %}</h2>
+      <p>{% if page.lang == 'en' %}Each domain connects to independent project, publication, coursework, and role pages.{% else %}각 분야는 독립된 프로젝트·논문·전공과목·직무 페이지로 이어집니다.{% endif %}</p>
+    </div>
+    <div class="domain-grid">
+      {% for role in site.data.roles %}
+      <article class="domain-card">
+        <span class="domain-card__index">0{{ forloop.index }}</span>
+        <h3>{% if page.lang == 'en' %}{{ role.title_en }}{% else %}{{ role.title_ko }}{% endif %}</h3>
+        <p>{% if page.lang == 'en' %}{{ role.summary_en }}{% else %}{{ role.summary_ko }}{% endif %}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="content-section content-section--wide" aria-labelledby="selected-projects-title">
+    <div class="section-heading section-heading--with-link">
+      <div>
+        <p class="eyebrow">Selected Projects</p>
+        <h2 id="selected-projects-title">{% if page.lang == 'en' %}Projects with traceable evidence{% else %}검증 근거를 따라갈 수 있는 프로젝트{% endif %}</h2>
+      </div>
+      <a class="text-link" href="{% if page.lang == 'en' %}{{ '/en/projects/' | relative_url }}{% else %}{{ '/projects/' | relative_url }}{% endif %}">
+        {% if page.lang == 'en' %}View all projects{% else %}전체 프로젝트 보기{% endif %} <span aria-hidden="true">→</span>
+      </a>
+    </div>
+    <div class="project-grid">
+      {% for project in site.data.projects limit: 4 %}
+        {% include project-card.html project=project lang=page.lang %}
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="content-section split-section" aria-labelledby="publications-title">
+    <div class="section-heading">
+      <p class="eyebrow">Publications</p>
+      <h2 id="publications-title">{% if page.lang == 'en' %}Selected first-author research{% else %}선정 제1저자 연구{% endif %}</h2>
+    </div>
+    <ol class="publication-list">
+      {% for publication in site.data.publications %}
+      <li>
+        <span>{{ publication.index }}</span>
+        <div>
+          <h3>{{ publication.title }}</h3>
+          <p>{% if page.lang == 'en' %}{{ publication.domain_en }} · {{ publication.role_en }}{% else %}{{ publication.domain_ko }} · {{ publication.role_ko }}{% endif %}{% if publication.year %} · {{ publication.year }}{% endif %}</p>
+        </div>
+        <a href="{{ publication.url }}">{% if page.lang == 'en' %}Evidence{% else %}근거{% endif %} <span aria-hidden="true">↗</span></a>
+      </li>
+      {% endfor %}
+    </ol>
+  </section>
+
+  <section class="content-section evidence-section" aria-labelledby="evidence-title">
+    <div>
+      <p class="eyebrow">Evidence Policy</p>
+      <h2 id="evidence-title">{% if page.lang == 'en' %}Verified evidence and unresolved boundaries stay separate.{% else %}확인된 근거와 아직 확인되지 않은 경계를 분리합니다.{% endif %}</h2>
+    </div>
+    <div>
+      <ul class="evidence-key">
+        <li><span class="evidence-badge evidence-badge--source">SOURCE AVAILABLE</span></li>
+        <li><span class="evidence-badge evidence-badge--executed">EXECUTED</span></li>
+        <li><span class="evidence-badge evidence-badge--measured">MEASURED</span></li>
+        <li><span class="evidence-badge evidence-badge--blocked">BLOCKED</span></li>
+      </ul>
+      <p>{% if page.lang == 'en' %}Source availability, execution, synthesis, measurement, and deployment are recorded as different states. Missing evidence is never converted into PASS.{% else %}Source availability, 실행, synthesis, 측정, 배포는 서로 다른 상태로 기록합니다. 자료가 없으면 PASS로 바꾸지 않습니다.{% endif %}</p>
+    </div>
+  </section>
+
+  <section class="content-section" aria-labelledby="latest-title">
+    <div class="section-heading section-heading--with-link">
+      <div>
+        <p class="eyebrow">Engineering Notes</p>
+        <h2 id="latest-title">{% if page.lang == 'en' %}Latest technical notes{% else %}최신 기술 노트{% endif %}</h2>
+      </div>
+      <a class="text-link" href="{% if page.lang == 'en' %}{{ '/en/blog/' | relative_url }}{% else %}{{ '/blog/' | relative_url }}{% endif %}">
+        {% if page.lang == 'en' %}Open the blog{% else %}블로그 보기{% endif %} <span aria-hidden="true">→</span>
+      </a>
+    </div>
+    <div class="post-grid">
+      {% assign visible_posts = site.posts | where: 'lang', page.lang %}
+      {% for post in visible_posts limit: 3 %}
+      <article class="post-card">
+        <p class="post-card__meta">{{ post.date | date: "%Y-%m-%d" }} · {{ post.categories | join: " / " }}</p>
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        <p>{{ post.excerpt | strip_html | truncate: 180 }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+</main>

@@ -74,6 +74,12 @@ function Get-HeadResult {
 }
 
 $allFiles = Get-ChildItem -LiteralPath $resolvedRoot -Recurse -File -Force
+if (-not $BuiltSite) {
+    $allFiles = $allFiles | Where-Object {
+        $candidate = Get-RelativePath -Path $_.FullName
+        $candidate -notmatch '^(?i)(?:\.git|\.bundle|vendor|_site)[\\/]'
+    }
+}
 $textExtensions = @(
     '.html', '.htm', '.css', '.js', '.mjs', '.json', '.xml',
     '.md', '.liquid', '.yml', '.yaml', '.rb', '.txt'
@@ -196,7 +202,8 @@ foreach ($file in $allFiles) {
         }
     }
 
-    if ($extension -in @('.html', '.htm')) {
+    $isJekyllTemplateFragment = $relative -match '(?i)(?:^|[\\/])_(?:includes|layouts)[\\/]'
+    if ($extension -in @('.html', '.htm') -and -not $isJekyllTemplateFragment) {
         if ($content -notmatch '(?i)<meta\b[^>]*http-equiv\s*=\s*["'']Content-Security-Policy["'']') {
             Add-Finding -Severity Medium -Rule 'csp-meta-missing' -File $relative `
                 -Message 'No CSP meta policy found. GitHub Pages cannot provide arbitrary response headers.'
