@@ -46,18 +46,19 @@
 
 ## 공개 전 Declassification
 
-다음 조건이 모두 확인된 경우에만 `PUBLIC`으로 분류한다.
+다음 조건이 모두 확인된 경우에만 `PUBLIC`으로 분류한다. 아래 표시는
+2026-07-30 배포 allowlist 21개 파일에만 적용된다.
 
-- [ ] 작성자·소유자·라이선스와 공개 권한이 확인됨
-- [ ] 개인정보·건강/생체정보·연구 참가자 정보가 없음
-- [ ] API key, token, password, license 문자열, 내부 URL이 없음
-- [ ] 로컬 절대 경로, 사용자명, 장비 serial, 계정 ID가 없음
-- [ ] 이미지 EXIF·XMP·thumbnail·편집 이력이 제거됨
-- [ ] screenshot의 창 제목·최근 파일·license 정보가 검토됨
-- [ ] source map, debug file, 원본 archive가 빌드에 포함되지 않음
-- [ ] 직접 asset URL로 열어도 공개해도 되는 내용임
-- [ ] 영문·국문 설명이 과장 없이 공개 근거와 일치함
-- [ ] `scripts/security/verify-site-security.ps1` 소스·빌드 검사가 통과함
+- [x] 작성자·소유자·라이선스와 공개 권한이 확인됨
+- [x] 개인정보·건강/생체정보·연구 참가자 정보가 없음
+- [x] API key, token, password, license 문자열, 내부 URL이 없음
+- [x] 로컬 절대 경로, 사용자명, 장비 serial, 계정 ID가 없음
+- [x] 이미지 EXIF·XMP·thumbnail·편집 이력이 제거됨
+- [x] screenshot의 창 제목·최근 파일·license 정보가 검토됨
+- [x] source map, debug file, 원본 archive가 빌드에 포함되지 않음
+- [x] 직접 asset URL로 열어도 공개해도 되는 내용임
+- [x] 영문·국문 설명이 과장 없이 공개 근거와 일치함
+- [x] `scripts/security/verify-site-security.ps1` 소스·빌드 검사가 통과함
 
 확인할 수 없는 항목은 PASS가 아니라 `BLOCKED`로 기록한다.
 
@@ -69,4 +70,3 @@
    Preview와 CDN cache 범위를 조사한다.
 4. 공개된 개인정보·연구데이터의 owner와 필요한 당사자에게 통지한다.
 5. 원인과 통제 실패를 Threat Model과 Attack Surface Register에 반영한다.
-

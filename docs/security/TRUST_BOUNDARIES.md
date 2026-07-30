@@ -48,17 +48,17 @@ flowchart TB
 | ID | 경계 | 신뢰 수준 | 허용 흐름 | 금지 흐름 | Owner | 상태 |
 |---|---|---|---|---|---|---|
 | TB-01 | 방문자 Browser | 비신뢰 | 정적 GET, HTTPS 외부 링크 | 사용자 HTML, credential, state-changing request | 방문자/사이트 소유자 | 설계 완료 |
-| TB-02 | GitHub Pages Hosting | 공개 플랫폼 | 검증된 정적 산출물 제공 | 비밀, 인증, 민감 transaction | GitHub/사이트 소유자 | BLOCKED — 사이트 없음 |
-| TB-03 | GitHub Repository | 변경 통제 필요 | 승인된 소스·문서·sanitized asset | token, license, raw PII, private archive | 사이트 소유자 | BLOCKED — 저장소 없음 |
-| TB-04 | GitHub Actions Runner | 일시적·권한 보유 | 최소 권한 build/scan/deploy | 장기 secret, self-hosted public runner, 비신뢰 privileged checkout | GitHub/사이트 소유자 | BLOCKED |
-| TB-05 | Ruby/Jekyll/Node Dependency | 외부 공급망 | 잠금·검토된 최소 패키지 | floating version, 무출처 binary, postinstall 남용 | 사이트 소유자/maintainer | BLOCKED |
+| TB-02 | GitHub Pages Hosting | 공개 플랫폼 | 검증된 정적 산출물 제공 | 비밀, 인증, 민감 transaction | GitHub/사이트 소유자 | PASS — HTTPS Pages 배포 검증 |
+| TB-03 | GitHub Repository | 변경 통제 필요 | 승인된 소스·문서·sanitized asset | token, license, raw PII, private archive | 사이트 소유자 | PASS — allowlist와 보안 scan 검증 |
+| TB-04 | GitHub Actions Runner | 일시적·권한 보유 | 최소 권한 build/scan/deploy | 장기 secret, self-hosted public runner, 비신뢰 privileged checkout | GitHub/사이트 소유자 | PASS — hosted runner·최소 권한·SHA 고정 |
+| TB-05 | Ruby/Jekyll/Node Dependency | 외부 공급망 | 잠금·검토된 최소 패키지 | floating version, 무출처 binary, postinstall 남용 | 사이트 소유자/maintainer | PASS — site build dependency 없음 |
 | TB-06 | 사용자 지정 Domain 및 DNS | 외부 제어면 | 검증된 domain→Pages | dangling DNS, 미검증 domain, 공유 credential | 사이트 소유자/registrar | ACCEPTED — 현재 custom domain 없음 |
 | TB-07 | Public Notion | 공개 외부 서비스 | 승인된 공개 문서 HTTPS 링크 | private page 우회 링크, embed script | Notion 계정 소유자 | PLATFORM LIMITATION |
 | TB-08 | 외부 GitHub Project Pages | 공개 외부 서비스 | 승인된 HTTPS 링크 | 외부 코드의 본 사이트 origin 실행 | 각 repo owner | PLATFORM LIMITATION |
 | TB-09 | Local Development PC | 고신뢰 필요 | 검토된 파일을 작업 사본으로 복사 | 비밀의 repo/build 유입, 원본 직접 변형 | 사용자 | BLOCKED — 설정 미검증 |
 | TB-10 | Private Source Archive | 비공개 | 승인·redaction된 파생본만 TB-09로 이동 | archive 자체를 public repo/build로 이동 | 사용자/자료 owner | BLOCKED |
 | TB-11 | Quartus·EDA License Storage | Restricted | 라이선스 도구가 로컬에서만 사용 | repo, Actions, Pages, log, screenshot 포함 | 사용자/발급기관 | BLOCKED — 보관 통제 미검증 |
-| TB-12 | Third-Party Theme·Template Source | 비신뢰 공급망 | 라이선스 확인 후 아이디어/허용 코드만 | 라이선스 불명 코드·asset 복사 | 사이트 소유자/upstream | BLOCKED |
+| TB-12 | Third-Party Theme·Template Source | 비신뢰 공급망 | 라이선스 확인 후 아이디어/허용 코드만 | 라이선스 불명 코드·asset 복사 | 사이트 소유자/upstream | PASS — 독립 구현·감사 기록 |
 
 ## 경계 통과 체크
 
@@ -73,4 +73,3 @@ Private에서 Public 방향의 모든 파일은 다음을 통과해야 한다.
 7. 빌드 후 `_site`를 별도 재검사
 
 한 단계라도 확인할 수 없으면 `BLOCKED`로 남긴다.
-

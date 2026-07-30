@@ -6,8 +6,9 @@
 위험을 줄이고 검증 가능한 통제를 유지하는 것이며, 완전한 침해 방지나 DDoS
 완전 차단을 보장하지 않는다.
 
-현재 확인일은 2026-07-30(Asia/Seoul)이다. 루트 Pages 저장소와 실제 배포가
-없으므로 저장소·빌드·배포에 적용해야 하는 통제는 `BLOCKED`로 기록한다.
+현재 확인일은 2026-07-30(Asia/Seoul)이다. 루트 Pages 저장소와 실제 배포,
+HTTP→HTTPS 전환, TLS 1.3, 정적 검사와 Actions 배포를 확인했다. GitHub 계정과
+로컬 기기처럼 이 작업에서 원격 검증할 수 없는 통제는 `BLOCKED`로 유지한다.
 
 ## 최소 아키텍처
 
@@ -17,7 +18,7 @@ flowchart LR
   P -->|"정적 HTML/CSS/최소 JS"| V
   R["GitHub Repository"] -->|"검토된 commit"| A["GitHub Actions Runner"]
   A -->|"검증된 정적 산출물"| P
-  D["Ruby/Jekyll/Node dependencies"] -->|"잠금 파일 기반 build"| A
+  D["GitHub-maintained Actions"] -->|"full commit SHA"| A
   N["Public Notion"] -. "HTTPS 외부 링크" .-> V
   G["외부 GitHub Project Pages"] -. "HTTPS 외부 링크" .-> V
   L["Local Development PC"] -->|"검토된 source만 push"| R
@@ -40,15 +41,15 @@ flowchart LR
 
 | 계층 | 필수 통제 | 상태 |
 |---|---|---|
-| 전송 | Pages 생성, Enforce HTTPS, HTTP→HTTPS 리디렉션, 인증서·호스트명·만료 검증 | BLOCKED — 저장소/배포 없음 |
-| 콘텐츠 | 상대 URL 또는 HTTPS만 허용, Mixed Content 검사, 외부 실행 스크립트 기본 금지 | BLOCKED — 빌드 산출물 없음 |
-| 브라우저 | 사용자 입력 없음, DOM HTML sink 금지, `eval` 금지, 최소 Vanilla JS | BLOCKED — 소스 없음 |
-| CSP | 빌드 결과에 맞춘 엄격한 CSP를 문서 최상단 meta로 적용 | BLOCKED — 소스 없음 |
+| 전송 | Pages 생성, Enforce HTTPS, HTTP→HTTPS 리디렉션, 인증서·호스트명·만료 검증 | PASS — HTTP 301, HTTPS 200, TLS 1.3, `*.github.io` 인증서 검증 |
+| 콘텐츠 | 상대 URL 또는 HTTPS만 허용, Mixed Content 검사, 외부 실행 스크립트 기본 금지 | PASS — source/build scan 및 공개 브라우저 검사 0건 |
+| 브라우저 | 사용자 입력 없음, DOM HTML sink 금지, `eval` 금지, 최소 Vanilla JS | PASS — 한 개의 자체 Vanilla JS만 사용 |
+| CSP | 빌드 결과에 맞춘 엄격한 CSP를 문서 최상단 meta로 적용 | PASS — 한국어·영어·404·보안 페이지 적용 |
 | Clickjacking | `frame-ancestors 'none'` 또는 `X-Frame-Options: DENY` 응답 헤더 | PLATFORM LIMITATION — GitHub Pages에서 임의 응답 헤더 설정 불가 |
-| 저장소 | 기본 브랜치 보호, 강제 푸시·삭제 제한, 최소 권한, 비밀 탐지, 보안 정책 | BLOCKED — 저장소 없음 |
-| Actions | `permissions: contents: read`, SHA 고정 Action, 비신뢰 코드와 secret 분리, self-hosted runner 금지 | BLOCKED — 저장소 없음 |
-| 공급망 | 최소 의존성, 잠금 파일, Dependabot, 라이선스·출처 검토 | BLOCKED — manifest 없음 |
-| 데이터 | 공개 allowlist, EXIF 제거, raw/비공개/라이선스 파일 빌드 제외, history 검사 | BLOCKED — 공개 자산 inventory 없음 |
+| 저장소 | 기본 브랜치 보호, 강제 푸시·삭제 제한, 최소 권한, 비밀 탐지, 보안 정책 | PASS — public repo, 보안 정책, ruleset 및 private vulnerability reporting |
+| Actions | `permissions: contents: read`, SHA 고정 Action, 비신뢰 코드와 secret 분리, self-hosted runner 금지 | PASS — hosted runner, 최소 job 권한, 4개 Action full SHA, 배포 run 성공 |
+| 공급망 | 최소 의존성, 잠금 파일, Dependabot, 라이선스·출처 검토 | PASS — runtime/build package 0개, 공식 Action만 SHA 고정, theme audit 완료 |
+| 데이터 | 공개 allowlist, EXIF 제거, raw/비공개/라이선스 파일 빌드 제외, history 검사 | PASS — 21개 공개 파일 검사, 공개 파생 이미지 metadata 제거 |
 | 운영 | GitHub 2FA/passkey, 복구 코드 오프라인 보관, 기기 암호화·잠금·백업 | BLOCKED — 계정/기기 설정은 원격 검증 불가 |
 
 ### 권장 CSP 기준
@@ -102,4 +103,3 @@ Clickjacking 응답 헤더를 대체하지 못한다.
   https://docs.github.com/en/actions/reference/security/secure-use
 - CSP Level 3 meta 제한:
   https://www.w3.org/TR/CSP3/#meta-element
-
