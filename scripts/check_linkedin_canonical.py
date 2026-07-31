@@ -11,7 +11,8 @@ private_notion = re.compile(r"https?://(?:app\.)?notion\.(?:com|so|site)/", re.I
 errors: list[str] = []
 seen = 0
 for path in ROOT.rglob("*"):
-    if not path.is_file() or any(part in {".git", "_site", "work", "vendor"} for part in path.parts):
+    relative = path.relative_to(ROOT)
+    if not path.is_file() or any(part in {".git", "_site", "work", "vendor"} for part in relative.parts):
         continue
     if path.suffix.lower() not in {".md", ".html", ".yml", ".yaml", ".json", ".txt"}:
         continue
@@ -19,9 +20,9 @@ for path in ROOT.rglob("*"):
     for url in linkedin.findall(text):
         seen += 1
         if url != CANONICAL:
-            errors.append(f"{path.relative_to(ROOT)}: non-canonical LinkedIn URL")
+            errors.append(f"{relative}: non-canonical LinkedIn URL")
     if private_notion.search(text):
-        errors.append(f"{path.relative_to(ROOT)}: internal or unverified Notion URL")
+        errors.append(f"{relative}: internal or unverified Notion URL")
 if not seen:
     errors.append("no LinkedIn URL found")
 
