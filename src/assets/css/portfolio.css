@@ -917,6 +917,235 @@ summary:focus-visible {
   }
 }
 
+.blog-tools,
+.chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding: 0;
+  list-style: none;
+}
+
+.blog-tools {
+  margin: 0 0 2rem;
+}
+
+.blog-tools a,
+.chip-list a,
+.chip-list li {
+  padding: 0.45rem 0.75rem;
+  border: 1px solid var(--portfolio-border);
+  border-radius: 999px;
+}
+
+.blog-search {
+  margin: 0 0 clamp(2rem, 6vw, 4rem);
+  padding: 1rem;
+  border: 1px solid var(--portfolio-border);
+  background: var(--portfolio-surface);
+}
+
+.blog-search label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.blog-search input {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--portfolio-border);
+  color: var(--portfolio-text);
+  background: var(--c-pageBackground);
+}
+
+.search-results {
+  margin-bottom: 0;
+}
+
+.search-results li {
+  padding: 0.75rem 0;
+  border-top: 1px solid var(--portfolio-border);
+}
+
+.search-results a,
+.search-results small {
+  display: block;
+}
+
+.search-results p,
+.small-note {
+  color: var(--portfolio-muted);
+  font-size: 0.86rem;
+}
+
+.taxonomy-grid,
+.series-grid,
+.learning-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 3rem;
+}
+
+.taxonomy-grid article,
+.series-grid article,
+.learning-grid article {
+  padding: 1rem;
+  border: 1px solid var(--portfolio-border);
+  background: var(--portfolio-surface);
+}
+
+.taxonomy-grid h2,
+.taxonomy-grid h3,
+.series-grid h3,
+.learning-grid h2,
+.learning-grid h3 {
+  margin-top: 0;
+}
+
+.status-line,
+.status-banner {
+  color: var(--portfolio-accent);
+  font-family: var(--f-mono);
+  font-size: 0.76rem;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.status-banner,
+.boundary-note {
+  padding: 1rem;
+  border-left: 0.25rem solid var(--portfolio-accent);
+  background: var(--portfolio-surface);
+}
+
+.post-facts,
+.compact-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 1.5rem 0;
+  border-top: 1px solid var(--portfolio-border);
+}
+
+.post-facts div,
+.compact-facts div {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--portfolio-border);
+}
+
+.post-facts dt,
+.compact-facts dt {
+  font-weight: 700;
+}
+
+.post-facts dd,
+.compact-facts dd {
+  margin: 0.25rem 0 0;
+  overflow-wrap: anywhere;
+}
+
+.post-toc,
+.category-index,
+.series-meta {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  border: 1px solid var(--portfolio-border);
+  background: var(--portfolio-surface);
+}
+
+.post-toc summary,
+.category-index summary,
+.series-meta summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.post__content img {
+  width: 100%;
+  height: auto;
+  max-height: 42rem;
+  object-fit: contain;
+}
+
+.post__content figure {
+  margin: 2rem 0;
+}
+
+.post__content figcaption {
+  margin-top: 0.5rem;
+  color: var(--portfolio-muted);
+  font-size: 0.85rem;
+}
+
+.post__content table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+}
+
+.post__content th,
+.post__content td {
+  padding: 0.6rem;
+  border: 1px solid var(--portfolio-border);
+  text-align: left;
+}
+
+.series-navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 2rem 0;
+  padding: 1rem 0;
+  border-block: 1px solid var(--portfolio-border);
+}
+
+.series-list,
+.roadmap-steps {
+  padding: 0;
+  list-style: none;
+}
+
+.series-list li,
+.roadmap-steps li {
+  display: grid;
+  grid-template-columns: 2.5rem minmax(0, 1fr);
+  gap: 0.75rem;
+  padding: 0.8rem 0;
+  border-top: 1px solid var(--portfolio-border);
+}
+
+.series-list small {
+  display: block;
+  color: var(--portfolio-muted);
+}
+
+.series-list .is-planned {
+  color: var(--portfolio-muted);
+}
+
+.learning-paths li,
+.archive-list li {
+  margin-block: 0.6rem;
+}
+
+@media (max-width: 48rem) {
+  .taxonomy-grid,
+  .series-grid,
+  .learning-grid,
+  .post-facts,
+  .compact-facts {
+    grid-template-columns: 1fr;
+  }
+
+  .series-navigation {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

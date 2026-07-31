@@ -2,21 +2,22 @@
 layout: default
 ---
 <main id="main" class="page page-shell">
-  <header class="page-heading">
-    <p class="eyebrow">Blog Category</p>
-    <h1>{{ page.title }}</h1>
-    <p class="page-heading__lead">{{ page.lead }}</p>
-  </header>
+  <header class="page-heading"><p class="eyebrow">Blog Category</p><h1>{{ page.title }}</h1><p class="page-heading__lead">{{ page.lead | default: page.description }}</p></header>
+  {% if page.category_data and page.category_data.children %}
+  <details class="category-index" open><summary>{% if page.lang == 'en' %}Subcategories{% else %}하위 카테고리{% endif %}</summary><ul class="chip-list">
+    {% for child in page.category_data.children %}<li><a href="{% if page.lang == 'en' %}{{ '/en/blog/category/' | append: page.category_data.id | append: '/' | append: child.id | append: '/' | relative_url }}{% else %}{{ '/blog/category/' | append: page.category_data.id | append: '/' | append: child.id | append: '/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}{{ child.title_en }}{% else %}{{ child.title_ko }}{% endif %}</a></li>{% endfor %}
+  </ul></details>
+  {% endif %}
   <div class="post-list">
-    {% assign category_posts = site.categories[page.category_slug] | where: 'lang', page.lang %}
+    {% assign category_posts = site.posts | where: 'lang', page.lang %}
     {% for post in category_posts %}
-    <article>
-      <p class="post-card__meta">{{ post.date | date: "%Y-%m-%d" }}</p>
-      <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-      <p>{{ post.excerpt | strip_html }}</p>
-    </article>
-    {% else %}
-    <p>{% if page.lang == 'en' %}No posts in this category yet. Project pages remain available through the project index.{% else %}이 카테고리의 글은 준비 중입니다. 프로젝트 상세는 프로젝트 인덱스에서 확인할 수 있습니다.{% endif %}</p>
+      {% assign category_match = false %}
+      {% if page.primary_category and post.primary_category == page.primary_category %}{% assign category_match = true %}{% endif %}
+      {% if page.subcategory and post.subcategory != page.subcategory %}{% assign category_match = false %}{% endif %}
+      {% if page.post_type and post.post_type == page.post_type %}{% assign category_match = true %}{% endif %}
+      {% if page.category_slug and post.categories contains page.category_slug %}{% assign category_match = true %}{% endif %}
+      {% if category_match and post.draft != true %}<article><p class="post-card__meta">{{ post.updated | default: post.date | date: "%Y-%m-%d" }}{% if post.series %} · {{ post.series }} {{ post.series_order }}{% endif %}</p><h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2><p>{{ post.description | default: post.excerpt | strip_html }}</p></article>{% endif %}
     {% endfor %}
   </div>
+  <p class="small-note">{% if page.lang == 'en' %}Empty steps remain planned in the roadmap; no placeholder posts are published.{% else %}자료가 없는 단계는 Roadmap의 planned 상태로 남기며 빈 글을 공개하지 않습니다.{% endif %}</p>
 </main>

@@ -31,6 +31,7 @@ SECRET_PATTERNS = {
     "private key": re.compile(r"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----"),
     "GitHub token": re.compile(r"\bgh[pousr]_[A-Za-z0-9_]{20,}\b"),
     "AWS access key": re.compile(r"\b(?:AKIA|ASIA)[A-Z0-9]{16}\b"),
+    "Google API key": re.compile(r"\bAIza[0-9A-Za-z_-]{20,}\b"),
 }
 DANGEROUS_CODE = re.compile(
     r"\b(?:innerHTML|outerHTML|insertAdjacentHTML|document\.write|eval\s*\(|new\s+Function\s*\()",
@@ -40,6 +41,7 @@ HTTP_RESOURCE = re.compile(
     r"(?:\b(?:src|href|action|poster)\s*=\s*[\"']\s*http://|url\(\s*[\"']?http://)",
     re.IGNORECASE,
 )
+MAX_SITE_BYTES = 8_000_000
 
 
 class PageParser(HTMLParser):
@@ -137,8 +139,13 @@ def check_site(root: Path) -> list[str]:
     files = [path for path in root.rglob("*") if path.is_file()]
     total_bytes = sum(path.stat().st_size for path in files)
 
-    if total_bytes > 3_000_000:
-        errors.append(f"public site is {total_bytes} bytes; expected at most 3 MB")
+    # The Gem theme and preserved evidence images are counted once across the
+    # whole multi-page build. Keep a tight aggregate cap while the 1 MB per-file
+    # rule below prevents any single unoptimized asset from hiding inside it.
+    if total_bytes > MAX_SITE_BYTES:
+        errors.append(
+            f"public site is {total_bytes} bytes; expected at most {MAX_SITE_BYTES} bytes"
+        )
 
     for path in files:
         relative = path.relative_to(root).as_posix()

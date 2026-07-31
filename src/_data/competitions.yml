@@ -1,0 +1,105 @@
+- id: outta-basic-p1
+  title_ko: OUTTA Basic P-1 — 수어 이미지 분류
+  title_en: OUTTA Basic P-1 — Sign-language Image Classification
+  official_title_status: NOT_VERIFIED
+  platform: Kaggle
+  visibility: PUBLIC_SUMMARY_ONLY
+  slug: 2024-outta-basic-p-1
+  task: 28×28 grayscale sign-language image classification; the historical notebook resized inputs for VGG16
+  source_evidence: HISTORICAL_NOTEBOOK_AND_CURRENT_LOCAL_RERUN
+  notebook_classification: USER_MODIFIED_COURSE_STARTER_CODE
+  cells: 27
+  code_cells: 17
+  executed_code_cells: 16
+  output_objects: 13
+  stored_errors: 0
+  local_execution_status: CURRENT_LOCAL_REPRODUCTION_COMPLETE
+  recorded_result: "1 epoch; train loss 2.5738204723; train accuracy 0.2780599031"
+  submission_artifact: "submission_p1_improved.csv generated and schema/hash verified; 7,172 rows"
+  current_reproduction: LOCAL_STRATIFIED_HOLDOUT_REPRODUCED
+  submission_status: LOCAL_SUBMISSION_ARTIFACT_VERIFIED_KAGGLE_UPLOAD_BLOCKED
+  secret_status: NO_SECRET_PATTERN_DETECTED
+  rerun_evidence_status: LOCAL_STRATIFIED_HOLDOUT_REPRODUCED
+  rerun_timestamp_utc: "2026-07-31T18:45:34.376690+00:00"
+  rerun_protocol: "80/20 stratified random-row holdout; seed 42"
+  rerun_model: "HOG(9 orientations, 4×4 cells, 2×2 blocks) + RBF-SVM(C=10)"
+  rerun_baseline: "accuracy 0.0472; balanced accuracy 0.0417; macro-F1 0.0038"
+  rerun_improved: "accuracy 1.0000; balanced accuracy 1.0000; macro-F1 1.0000"
+  rerun_result_file: experiments/outta-basic-2024/results/p1_results.json
+  rerun_notebook: experiments/outta-basic-2024/notebooks/p1_improved.ipynb
+  limitation_ko: 원 데이터에 촬영자·원본 그룹 ID가 없어 증강·유사 이미지의 분할 간 누수를 배제할 수 없습니다. 100%는 무작위 행 분할의 로컬 결과이며 일반화 성능이나 Kaggle 점수가 아닙니다.
+  limitation_en: The dataset provides no signer or source-group identifier, so leakage by augmented or near-duplicate images cannot be ruled out. The 100% result is local random-row holdout evidence, not generalization or a Kaggle score.
+  best_score: ""
+  rank: ""
+  metric: ""
+  status: LOCAL_REPRODUCTION_VERIFIED_KAGGLE_AUTH_BLOCKED
+- id: outta-basic-p2
+  title_ko: OUTTA Basic P-2 — 구인공고 진위 분류
+  title_en: OUTTA Basic P-2 — Real/Fake Job Posting Classification
+  official_title_status: NOT_VERIFIED
+  platform: Kaggle
+  visibility: PUBLIC_SUMMARY_ONLY
+  slug: real-or-fake-fake-jobposting-prediction
+  task: binary text classification with BERT
+  source_evidence: HISTORICAL_PARTIAL_NOTEBOOK_AND_CURRENT_LOCAL_RERUN
+  notebook_classification: USER_MODIFIED_COURSE_STARTER_CODE
+  cells: 80
+  code_cells: 49
+  executed_code_cells: 37
+  output_objects: 30
+  stored_errors: 0
+  local_execution_status: CURRENT_LOCAL_REPRODUCTION_COMPLETE
+  recorded_result: "train 12,516 rows; test 5,364 rows; training stopped at 51/352 steps (14%)"
+  submission_artifact: "submission_p2_improved.csv generated and schema/hash verified; 5,364 rows"
+  current_reproduction: LOCAL_STRATIFIED_GROUP_HOLDOUT_REPRODUCED
+  submission_status: LOCAL_SUBMISSION_ARTIFACT_VERIFIED_KAGGLE_UPLOAD_BLOCKED
+  secret_status: SECRET_DETECTED_RAW_NOTEBOOK_EXCLUDED_SANITIZED_RERUN_CLEAN
+  rerun_evidence_status: LOCAL_STRATIFIED_HOLDOUT_REPRODUCED
+  rerun_timestamp_utc: "2026-07-31T18:51:03.765580+00:00"
+  rerun_protocol: "description-grouped stratified train/calibration/holdout; 8,009/2,003/2,504 rows; seed 42"
+  rerun_model: "word+character TF-IDF + class-weighted LinearSVC; threshold selected on calibration F1"
+  rerun_baseline: "accuracy 0.9525; balanced accuracy 0.5000; F1 0.0000; recall 0.0000"
+  rerun_improved: "accuracy 0.9896; balanced accuracy 0.9307; F1 0.8879; precision 0.9115; recall 0.8655; AP 0.9187"
+  rerun_result_file: experiments/outta-basic-2024/results/p2_results.json
+  rerun_notebook: experiments/outta-basic-2024/notebooks/p2_improved.ipynb
+  limitation_ko: 동일 description은 한 분할에만 배치했습니다. 원본 노트북의 평문 API 키는 개선본에 포함하지 않았지만 소유자가 기존 키를 폐기·재발급해야 합니다. Kaggle 업로드와 leaderboard 평가는 미검증입니다.
+  limitation_en: Exact duplicate descriptions stay in one split. The sanitized rerun contains no API key, but the owner must revoke and replace the credential exposed in the original notebook. Kaggle upload and leaderboard evaluation remain unverified.
+  best_score: ""
+  rank: ""
+  metric: ""
+  status: LOCAL_REPRODUCTION_VERIFIED_RAW_SECRET_AND_KAGGLE_AUTH_BLOCKED
+- id: outta-basic-p3
+  title_ko: OUTTA Basic P-3 — 음악 장르 분류
+  title_en: OUTTA Basic P-3 — Music Genre Classification
+  official_title_status: NOT_VERIFIED
+  platform: Kaggle
+  visibility: PUBLIC_SUMMARY_ONLY
+  slug: 2024-outta-basic-p-3
+  task: audio classification from rhythm and spectral features
+  source_evidence: HISTORICAL_NOTEBOOK_AND_CURRENT_LOCAL_RERUN
+  notebook_classification: USER_MODIFIED_COURSE_STARTER_CODE
+  cells: 31
+  code_cells: 17
+  executed_code_cells: 17
+  output_objects: 29
+  stored_errors: 0
+  local_execution_status: CURRENT_LOCAL_REPRODUCTION_COMPLETE
+  recorded_result: "10 epochs; final train loss 1.4227865277; final train accuracy 0.5087527352"
+  submission_artifact: "submission_p3_improved.csv generated and schema/hash verified; 300 rows"
+  current_reproduction: LOCAL_STRATIFIED_HOLDOUT_REPRODUCED
+  submission_status: LOCAL_SUBMISSION_ARTIFACT_VERIFIED_KAGGLE_UPLOAD_BLOCKED
+  secret_status: NO_SECRET_PATTERN_DETECTED
+  rerun_evidence_status: LOCAL_STRATIFIED_HOLDOUT_REPRODUCED
+  rerun_timestamp_utc: "2026-07-31T18:51:53.198368+00:00"
+  rerun_protocol: "80/20 stratified holdout plus five-fold training-only C selection; seed 42"
+  rerun_model: "MFCC, delta, chroma and spectral summaries + StandardScaler + RBF-SVM(C=3)"
+  rerun_baseline: "accuracy 0.1038; balanced accuracy 0.1000; macro-F1 0.0188"
+  rerun_improved: "accuracy 0.8142; balanced accuracy 0.8120; macro-F1 0.8108"
+  rerun_result_file: experiments/outta-basic-2024/results/p3_results.json
+  rerun_notebook: experiments/outta-basic-2024/notebooks/p3_improved.ipynb
+  limitation_ko: 장르별 트랙·아티스트 그룹 메타데이터가 없어 아티스트 조건부 분할은 수행하지 못했습니다. 결과는 로컬 무작위 층화 홀드아웃이며 Kaggle 점수가 아닙니다.
+  limitation_en: Track or artist group metadata was unavailable, so artist-conditioned splitting was not possible. The result is a local random stratified holdout, not a Kaggle score.
+  best_score: ""
+  rank: ""
+  metric: ""
+  status: LOCAL_REPRODUCTION_VERIFIED_KAGGLE_AUTH_BLOCKED

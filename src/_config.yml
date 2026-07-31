@@ -24,6 +24,11 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
 
+collections:
+  blog_series:
+    output: true
+    permalink: /blog/series/:name/
+
 permalink: /blog/:year/:month/:day/:title/
 strict_front_matter: true
 show_excerpts: true
@@ -45,6 +50,12 @@ defaults:
       layout: post
       author: Hyeongrok Ryu
       image: /assets/images/og.jpg
+  - scope:
+      path: ""
+      type: blog_series
+    values:
+      layout: series
+      lang: ko
 
 exclude:
   - assets/js/jquery.slim.min.js

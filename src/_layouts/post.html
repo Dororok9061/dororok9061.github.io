@@ -3,17 +3,29 @@ layout: default
 ---
 <main id="main" class="page page-shell">
   <article class="post">
-    <nav class="breadcrumbs" aria-label="{% if page.lang == 'en' %}Breadcrumb{% else %}현재 위치{% endif %}">
-      <a href="{% if page.lang == 'en' %}{{ '/en/blog/' | relative_url }}{% else %}{{ '/blog/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}Blog{% else %}블로그{% endif %}</a>
-    </nav>
+    <nav class="breadcrumbs" aria-label="{% if page.lang == 'en' %}Breadcrumb{% else %}현재 위치{% endif %}"><a href="{% if page.lang == 'en' %}{{ '/en/blog/' | relative_url }}{% else %}{{ '/blog/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}Blog{% else %}블로그{% endif %}</a></nav>
     <header class="post-heading">
-      <p class="eyebrow">{{ page.categories | join: " · " }}</p>
+      <p class="eyebrow">{{ page.primary_category | default: page.categories.first }}{% if page.subcategory %} · {{ page.subcategory }}{% endif %}</p>
       <h1>{{ page.title }}</h1>
-      <p>{{ page.date | date: "%Y-%m-%d" }} · {{ page.author }}</p>
+      <p>{{ page.date | date: "%Y-%m-%d" }}{% if page.updated %} · {% if page.lang == 'en' %}updated{% else %}수정{% endif %} {{ page.updated | date: "%Y-%m-%d" }}{% endif %} · {{ page.author }}</p>
       {% if page.description %}<p class="page-heading__lead">{{ page.description }}</p>{% endif %}
     </header>
-    <div class="prose post__content">
-      {{ content }}
-    </div>
+    <dl class="post-facts">
+      <div><dt>Series</dt><dd>{% if page.series %}<a href="{% if page.lang == 'en' %}{{ '/en/blog/series/' | append: page.series | append: '/' | relative_url }}{% else %}{{ '/blog/series/' | append: page.series | append: '/' | relative_url }}{% endif %}">{{ page.series }} · {{ page.series_order }}</a>{% else %}—{% endif %}</dd></div>
+      <div><dt>{% if page.lang == 'en' %}Type / level{% else %}유형 / 난이도{% endif %}</dt><dd>{{ page.post_type }} · {{ page.difficulty }}</dd></div>
+      <div><dt>Evidence</dt><dd>{{ page.evidence_status }}</dd></div>
+      <div><dt>Tools</dt><dd>{{ page.tools | join: ', ' }}</dd></div>
+    </dl>
+    {% if page.toc %}<details class="post-toc" open><summary>{% if page.lang == 'en' %}On this page{% else %}목차{% endif %}</summary><ol>{% for item in page.toc %}<li><a href="#{{ item.id }}">{% if page.lang == 'en' and item.title_en %}{{ item.title_en }}{% else %}{{ item.title }}{% endif %}</a></li>{% endfor %}</ol></details>{% endif %}
+    <div class="prose post__content">{{ content }}</div>
+    {% if page.source_materials %}<section class="post-sources" aria-labelledby="post-sources-heading"><h2 id="post-sources-heading">{% if page.lang == 'en' %}Sources used{% else %}사용한 자료{% endif %}</h2><ul>{% for source in page.source_materials %}<li>{% if source.public_url %}<a href="{{ source.public_url }}">{{ source.title }}</a>{% else %}{{ source.title }}{% endif %} — {{ source.type }}{% if source.used_for %}; {{ source.used_for }}{% endif %}</li>{% endfor %}</ul></section>{% endif %}
+    {% assign selected_series = site.data.blog_series | where: 'id', page.series | first %}
+    {% if selected_series %}{% assign previous_order = page.series_order | minus: 1 %}{% assign next_order = page.series_order | plus: 1 %}
+    <nav class="series-navigation" aria-label="{% if page.lang == 'en' %}Series navigation{% else %}시리즈 이동{% endif %}">
+      {% for item in selected_series.posts %}{% if item.status == 'published' and item.order == previous_order %}<a rel="prev" href="{% if page.lang == 'en' %}{{ item.url_en }}{% else %}{{ item.url_ko }}{% endif %}">← {% if page.lang == 'en' %}{{ item.title_en }}{% else %}{{ item.title_ko }}{% endif %}</a>{% endif %}{% endfor %}
+      <a href="{% if page.lang == 'en' %}{{ '/en/blog/series/' | append: page.series | append: '/' }}{% else %}{{ '/blog/series/' | append: page.series | append: '/' }}{% endif %}">{% if page.lang == 'en' %}Full series{% else %}시리즈 전체{% endif %}</a>
+      {% for item in selected_series.posts %}{% if item.status == 'published' and item.order == next_order %}<a rel="next" href="{% if page.lang == 'en' %}{{ item.url_en }}{% else %}{{ item.url_ko }}{% endif %}">{% if page.lang == 'en' %}{{ item.title_en }}{% else %}{{ item.title_ko }}{% endif %} →</a>{% endif %}{% endfor %}
+    </nav>{% endif %}
+    {% if page.related_projects %}<section class="related-projects"><h2>{% if page.lang == 'en' %}Related projects{% else %}관련 프로젝트{% endif %}</h2><ul>{% for project_id in page.related_projects %}{% assign project = site.data.projects | where: 'id', project_id | first %}{% if project %}<li><a href="{% if page.lang == 'en' %}{{ project.en_url }}{% else %}{{ project.ko_url }}{% endif %}">{% if page.lang == 'en' %}{{ project.title_en }}{% else %}{{ project.title_ko }}{% endif %}</a></li>{% endif %}{% endfor %}</ul></section>{% endif %}
   </article>
 </main>

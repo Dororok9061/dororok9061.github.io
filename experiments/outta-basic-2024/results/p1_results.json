@@ -1,0 +1,42 @@
+{
+  "project": "OUTTA Basic P1",
+  "evidence_status": "LOCAL_STRATIFIED_HOLDOUT_REPRODUCED",
+  "leaderboard_status": "NOT_VERIFIED_NO_AUTHENTICATED_KAGGLE_SUBMISSION",
+  "timestamp_utc": "2026-07-31T18:45:34.376690+00:00",
+  "seed": 42,
+  "data": {
+    "train_rows": 27455,
+    "test_rows": 7172,
+    "features": 784,
+    "classes": 24,
+    "train_sha256": "4c2897f19fab2b0ae2a7e4fa82e969043315d9f3a1a9cc0948b576bf1189a7e5",
+    "test_sha256": "f81ad57711d17f5a4e41e619910f86580712d49030edf3b9d54411140e6fa3d0"
+  },
+  "split": {
+    "type": "stratified_holdout",
+    "validation_fraction": 0.2
+  },
+  "baseline": {
+    "model": "most_frequent",
+    "accuracy": 0.04716809324348935,
+    "balanced_accuracy": 0.041666666666666664,
+    "macro_f1": 0.0037536231884057972
+  },
+  "improved": {
+    "model": "HOG(9,4x4,2x2)+RBF-SVM(C=10)",
+    "accuracy": 1.0,
+    "balanced_accuracy": 1.0,
+    "macro_f1": 1.0
+  },
+  "submission": {
+    "path": "submission_p1_improved.csv",
+    "rows": 7172,
+    "sha256": "92ee62d8f1dfdc189b261759b0b0099c540b11866309ab4409b9183605256e64"
+  },
+  "runtime": {
+    "python": "3.12.13",
+    "numpy": "2.4.6",
+    "pandas": "3.0.5",
+    "scikit_learn": "1.9.0"
+  }
+}

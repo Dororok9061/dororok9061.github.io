@@ -1,0 +1,79 @@
+- id: outta-basic-2024
+  title_ko: 2024 OUTTA AI 부트캠프 딥러닝반 Basic
+  title_en: 2024 OUTTA AI Bootcamp — Deep Learning Basic
+  provider: OUTTA
+  type: Bootcamp
+  year: 2024
+  start_date: ""
+  end_date: 2024-08-31
+  duration: ""
+  delivery: Under verification
+  topics: [deep-learning, image-classification, nlp, audio-classification]
+  completion_status: CERTIFICATE_VERIFIED
+  certificate: VERIFIED_PRIVATE_ORIGINAL
+  evidence_status: COURSE_COMPLETION_VERIFIED
+  project_evidence: THREE_USER_MODIFIED_NOTEBOOKS_WITH_MIXED_HISTORICAL_EXECUTION
+  public_boundary_ko: 수료증 원본의 QR과 식별정보, 강의자료, 데이터셋은 공개하지 않습니다.
+  public_boundary_en: Certificate QR/identifiers, instructor materials, and datasets are not published.
+  featured: true
+  display_order: 20
+
+- id: kaist-generative-ai-2024-winter
+  title_ko: 2024년 겨울방학 생성 AI 완벽가이드
+  title_en: 2024 Winter Generative AI Complete Guide
+  provider: KAIST SW교육센터 IT Academy
+  type: External Course
+  year: 2025
+  start_date: 2025-01-06
+  end_date: 2025-01-17
+  duration: 20 hours
+  delivery: Under verification
+  topics: [generative-ai]
+  completion_status: CERTIFICATE_VERIFIED
+  certificate: VERIFIED_PRIVATE_ORIGINAL
+  evidence_status: COURSE_COMPLETION_VERIFIED
+  project_evidence: NOT_VERIFIED
+  public_boundary_ko: 수료 사실과 과정 메타데이터만 공개합니다.
+  public_boundary_en: Only completion and course metadata are public.
+  featured: false
+  display_order: 30
+
+- id: kaist-generative-models-2025
+  title_ko: VAE부터 Stable Diffusion까지, 생성모델의 AtoZ
+  title_en: Generative Models A to Z — From VAE to Stable Diffusion
+  provider: KAIST SW교육센터 IT Academy
+  type: External Course
+  year: 2025
+  start_date: 2025-07-07
+  end_date: 2025-07-11
+  duration: 20 hours
+  delivery: Hybrid
+  topics: [vae, gan, pix2pix, diffusion, stable-diffusion, pytorch]
+  completion_status: CERTIFICATE_VERIFIED
+  certificate: VERIFIED_PRIVATE_ORIGINAL
+  evidence_status: COURSE_COMPLETION_AND_CURRICULUM_VERIFIED
+  project_evidence: NOT_VERIFIED
+  public_boundary_ko: 비공개 Notion의 연락처·화상회의·Drive·첨부파일은 복제하지 않습니다.
+  public_boundary_en: Private Notion contacts, meeting links, Drive links, and attachments are not copied.
+  featured: true
+  display_order: 10
+
+- id: defense-practice-2026
+  title_ko: 방위산업 실무 — 핵심기술 이해 및 신뢰도확보 설계
+  title_en: Defense Industry Practice — Core Technology and Reliability Design
+  provider: 렛유인에듀
+  type: External Course
+  year: 2026
+  start_date: 2026-06-29
+  end_date: 2026-07-19
+  duration: ""
+  delivery: Online
+  topics: [defense-systems, reliability, requirements]
+  completion_status: CERTIFICATE_VERIFIED
+  certificate: VERIFIED_PRIVATE_ORIGINAL
+  evidence_status: COURSE_COMPLETION_VERIFIED
+  project_evidence: EDUCATIONAL_CASE_STUDIES_SEPARATE
+  public_boundary_ko: 수료증 원본 식별정보와 비공개 강의자료는 공개하지 않습니다.
+  public_boundary_en: Certificate identifiers and private course materials are not published.
+  featured: false
+  display_order: 40

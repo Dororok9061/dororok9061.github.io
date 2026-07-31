@@ -72,6 +72,11 @@ layout: default
     </ol>
   </section>
 
+  <section class="content-section" aria-labelledby="external-learning-title">
+    <div class="section-heading section-heading--with-link"><div><p class="eyebrow">External Learning</p><h2 id="external-learning-title">{% if page.lang == 'en' %}Verified external learning{% else %}검증된 외부교육{% endif %}</h2></div><a class="text-link" href="{% if page.lang == 'en' %}{{ '/en/learning/' | relative_url }}{% else %}{{ '/learning/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}View evidence records{% else %}근거 기록 보기{% endif %} <span aria-hidden="true">→</span></a></div>
+    <div class="learning-grid">{% assign featured_learning = site.data.learning_programs | where: 'featured', true | sort: 'display_order' %}{% for program in featured_learning %}<article><p class="status-line">{{ program.evidence_status }}</p><h3>{% if page.lang == 'en' %}{{ program.title_en }}{% else %}{{ program.title_ko }}{% endif %}</h3><p>{{ program.provider }}{% if program.duration != empty %} · {{ program.duration }}{% endif %}</p><p class="small-note">{% if page.lang == 'en' %}Completion evidence does not imply project or competition results.{% else %}수료 근거는 프로젝트·경진대회 결과를 의미하지 않습니다.{% endif %}</p></article>{% endfor %}</div>
+  </section>
+
   <aside class="evidence-compact" aria-label="Evidence policy"><strong>Evidence Policy:</strong> {% if page.lang == 'en' %}Source, execution, measurement, and blocked states remain distinct; missing evidence is never reported as PASS.{% else %}Source·실행·측정·BLOCKED 상태를 구분하며, 없는 근거를 PASS로 바꾸지 않습니다.{% endif %} <a href="{% if page.lang == 'en' %}{{ '/en/security/' | relative_url }}{% else %}{{ '/security/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}Read policy{% else %}정책 보기{% endif %}</a></aside>
 
   <section class="content-section" aria-labelledby="latest-title">

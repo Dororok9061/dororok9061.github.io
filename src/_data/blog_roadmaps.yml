@@ -1,0 +1,100 @@
+- id: major
+  title_ko: 전공 기초 로드맵
+  title_en: Major Foundations Roadmap
+  goal_ko: 회로·신호·제어·전자기 개념을 설계 과목과 연결합니다.
+  goal_en: Connect circuit, signal, control, and electromagnetic foundations to design work.
+  prerequisites_ko: 미적분, 선형대수, 기초 물리
+  prerequisites_en: Calculus, linear algebra, and introductory physics
+  source_status: SOURCE_AVAILABLE
+  steps:
+    - { title_ko: 회로이론과 전자회로, title_en: Circuit Theory and Electronics, status: studying }
+    - { title_ko: 신호 및 시스템과 제어, title_en: Signals, Systems, and Control, status: studying }
+    - { title_ko: 전자기·고주파·센서, title_en: Electromagnetics, RF, and Sensors, status: planned }
+- id: fpga
+  title_ko: FPGA · RTL · DV 로드맵
+  title_en: FPGA, RTL, and DV Roadmap
+  goal_ko: 디지털논리에서 VHDL·SystemVerilog self-checking verification까지 확장합니다.
+  goal_en: Progress from digital logic to self-checking VHDL/SystemVerilog verification.
+  prerequisites_ko: 디지털논리
+  prerequisites_en: Digital logic
+  source_status: PUBLIC_EXECUTION_EVIDENCE
+  steps:
+    - { title_ko: VHDL 조합·순차논리, title_en: VHDL Combinational and Sequential Logic, status: planned }
+    - { title_ko: SystemVerilog Delay Logic, title_en: SystemVerilog Delay Logic, status: published, series: systemverilog-delay-dv }
+    - { title_ko: Assertions·Protocol·PPA, title_en: Assertions, Protocols, and PPA, status: planned }
+- id: stm32
+  title_ko: STM32 · Embedded 로드맵
+  title_en: STM32 and Embedded Roadmap
+  goal_ko: 주변장치 설정에서 시간 정확성을 보존한 센서 신호취득까지 진행합니다.
+  goal_en: From peripheral configuration to timing-aware sensor acquisition.
+  prerequisites_ko: C, 디지털논리, 기초 회로
+  prerequisites_en: C, digital logic, and basic circuits
+  source_status: SOURCE_AVAILABLE
+  steps:
+    - { title_ko: Clock·GPIO·Interrupt, title_en: Clock, GPIO, and Interrupts, status: planned }
+    - { title_ko: ADC·Timer·UART·DMA, title_en: ADC, Timers, UART, and DMA, status: planned }
+    - { title_ko: Sensor Acquisition·CMSIS-DSP, title_en: Sensor Acquisition and CMSIS-DSP, status: planned }
+- id: ai
+  title_ko: AI · Vision · Generative AI 로드맵
+  title_en: AI, Vision, and Generative AI Roadmap
+  goal_ko: 판별형 CNN, Vision, 생성형 모델을 데이터·평가 기준과 함께 분리 학습합니다.
+  goal_en: Separate discriminative CNN, vision, and generative paths with data and evaluation criteria.
+  prerequisites_ko: Python, 확률·통계, 선형대수
+  prerequisites_en: Python, probability, statistics, and linear algebra
+  source_status: COURSE_COMPLETION_VERIFIED_RESULTS_PARTIAL
+  steps:
+    - { title_ko: CNN과 Model Evaluation, title_en: CNN and Model Evaluation, status: published, series: cnn-discriminative-ai }
+    - { title_ko: Computer Vision, title_en: Computer Vision, status: planned, series: computer-vision }
+    - { title_ko: VAE·GAN·Diffusion·DiT, title_en: VAE, GAN, Diffusion, and DiT, status: planned, series: generative-ai }
+- id: pads
+  title_ko: PADS · PCB 로드맵
+  title_en: PADS and PCB Roadmap
+  goal_ko: 부품·Footprint부터 DRC·Gerber까지 사용자 설계 산출물로 추적합니다.
+  goal_en: Trace user-created design artifacts from parts and footprints through DRC and Gerber.
+  prerequisites_ko: 전자회로, 부품 datasheet 읽기
+  prerequisites_en: Electronics and component datasheet reading
+  source_status: LOCAL_SOURCE_REVIEW_REQUIRED
+  publication_boundary_ko: 설치 ZIP·벤더 문서·로컬 경로가 보이는 화면은 제외합니다.
+  publication_boundary_en: Installer archives, vendor documents, and screens exposing local paths are excluded.
+  steps:
+    - { title_ko: Logic·Part·CAE Decal, title_en: Logic, Parts, and CAE Decals, status: planned }
+    - { title_ko: Footprint·Schematic·Netlist, title_en: Footprints, Schematics, and Netlists, status: planned }
+    - { title_ko: Layout·DRC·Gerber, title_en: Layout, DRC, and Gerber, status: planned }
+- id: control
+  title_ko: 제어 · 전동기 · 전력전자 로드맵
+  title_en: Control, Motor, and Power Electronics Roadmap
+  goal_ko: 모델링에서 전류·속도 이중루프와 전력변환 한계까지 연결합니다.
+  goal_en: Connect modeling to cascaded current/speed loops and power-conversion limits.
+  prerequisites_ko: 회로이론, 미분방정식, 제어공학
+  prerequisites_en: Circuit theory, differential equations, and control
+  source_status: SOURCE_AVAILABLE
+  steps:
+    - { title_ko: Transfer Function·State Space, title_en: Transfer Functions and State Space, status: planned }
+    - { title_ko: DC Motor·H-Bridge·PI, title_en: DC Motor, H-Bridge, and PI, status: planned }
+    - { title_ko: Saturation·Anti-Windup·Field Weakening, title_en: Saturation, Anti-Windup, and Field Weakening, status: planned }
+- id: rf-radar
+  title_ko: RF · Microwave · Radar 로드맵
+  title_en: RF, Microwave, and Radar Roadmap
+  goal_ko: 전송선·정합·S-parameter에서 FMCW range·phase·beat 분석까지 진행합니다.
+  goal_en: Progress from transmission lines, matching, and S-parameters to FMCW range, phase, and beat analysis.
+  prerequisites_ko: 전자기학, 신호 및 시스템
+  prerequisites_en: Electromagnetics and signals and systems
+  source_status: MIXED_ARCHIVE_AND_PUBLIC_SOURCE
+  publication_boundary_ko: mmWave 폴더의 성적표와 제3자 논문·매뉴얼 화면은 공개하지 않습니다.
+  publication_boundary_en: Transcript images and third-party paper/manual captures in the mmWave archive are not published.
+  steps:
+    - { title_ko: Transmission Line·Smith Chart, title_en: Transmission Lines and Smith Chart, status: planned }
+    - { title_ko: Microstrip·S-parameter·Divider, title_en: Microstrip, S-parameters, and Dividers, status: studying }
+    - { title_ko: FMCW Range·Phase·Beat Alignment, title_en: FMCW Range, Phase, and Beat Alignment, status: published, series: fmcw-radar-signal-processing }
+- id: research
+  title_ko: 연구 · 논문 · 프로젝트 기록 로드맵
+  title_en: Research, Paper, and Project Log Roadmap
+  goal_ko: 자료 검토, 구현, 실험, 검증과 공개 경계를 분리해 남깁니다.
+  goal_en: Separate source review, implementation, experiments, validation, and publication boundaries.
+  prerequisites_ko: 해당 분야 기초와 source provenance 기록
+  prerequisites_en: Domain foundations and source-provenance records
+  source_status: PUBLIC_SUMMARY_ONLY_WHEN_REQUIRED
+  steps:
+    - { title_ko: 공식문서·논문 읽기, title_en: Official Documents and Papers, status: studying }
+    - { title_ko: 구현·실험 기록, title_en: Implementation and Experiment Logs, status: studying }
+    - { title_ko: 검증·한계·재현성, title_en: Validation, Limits, and Reproducibility, status: published }

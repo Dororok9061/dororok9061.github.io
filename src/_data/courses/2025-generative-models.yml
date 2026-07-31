@@ -1,0 +1,69 @@
+id: 2025-generative-models
+title_ko: 2025 생성모델 집중과정 — VAE부터 Stable Diffusion까지
+title_en: 2025 Generative Models Intensive — From VAE to Stable Diffusion
+dates: 2025-07-07/2025-07-11
+duration_hours: 20
+tools: [Python, PyTorch, Google Colab]
+course_status: CURRICULUM_VERIFIED_DAY_MAPPING_PARTIAL
+source_page_status: READ_ONLY_FETCHED
+source_heading_count: 38
+source_child_pages: 2
+source_attachment_count: 26
+source_pptx_count: 11
+source_pdf_count: 13
+source_notebook_count: 2
+source_colab_count: 14
+materialization_status: BLOCKED_EXPIRED_OR_CONNECTOR_ONLY_ATTACHMENTS
+public_permission: SUMMARY_ONLY
+days:
+  - day: 1
+    date: 2025-07-07
+    title_ko: Day 1 — 생성모델 개요와 딥러닝 기초
+    title_en: Day 1 — Generative Models and Deep-Learning Foundations
+    overview_ko: 원본 페이지의 명시적 Day 1 heading 아래에서 확인한 주제입니다.
+    overview_en: Topics confirmed below the source page's explicit Day 1 heading.
+    mapping_status: SOURCE_MAPPED
+    topic_pages:
+      - { id: generative-model-overview, order: 1, title_ko: 생성 모델 개요, title_en: Generative Model Overview, status: STUDIED_ONLY }
+      - { id: deep-learning-foundations, order: 2, title_ko: 딥러닝 기초, title_en: Deep-Learning Foundations, status: STUDIED_ONLY }
+      - { id: dataset-visualization, order: 3, title_ko: 데이터셋 시각화, title_en: Dataset Visualization, status: STUDIED_ONLY }
+  - day: 2
+    date: 2025-07-08
+    title_ko: Day 2 — Source mapping blocked
+    title_en: Day 2 — Source Mapping Blocked
+    overview_ko: 원본 페이지에 Day 2 heading이 없어 일반 지식이나 파일명의 D2를 날짜로 추정하지 않습니다.
+    overview_en: The source page has no Day 2 heading; lecture filenames are not treated as dates.
+    mapping_status: BLOCKED_SOURCE_DAY_HEADING_ABSENT
+    topic_pages: []
+  - day: 3
+    date: 2025-07-09
+    title_ko: Day 3 — Source mapping blocked
+    title_en: Day 3 — Source Mapping Blocked
+    overview_ko: 원본 페이지에 Day 3 heading이 없어 주제 순서를 추정하지 않습니다.
+    overview_en: The source page has no Day 3 heading, so topic order is not inferred.
+    mapping_status: BLOCKED_SOURCE_DAY_HEADING_ABSENT
+    topic_pages: []
+  - day: 4
+    date: 2025-07-10
+    title_ko: Day 4 — Source mapping blocked
+    title_en: Day 4 — Source Mapping Blocked
+    overview_ko: 원본 페이지에 Day 4 heading이 없어 주제 순서를 추정하지 않습니다.
+    overview_en: The source page has no Day 4 heading, so topic order is not inferred.
+    mapping_status: BLOCKED_SOURCE_DAY_HEADING_ABSENT
+    topic_pages: []
+  - day: 5
+    date: 2025-07-11
+    title_ko: Day 5 — Source mapping blocked
+    title_en: Day 5 — Source Mapping Blocked
+    overview_ko: 원본 페이지에 Day 5 heading이 없어 주제 순서를 추정하지 않습니다.
+    overview_en: The source page has no Day 5 heading, so topic order is not inferred.
+    mapping_status: BLOCKED_SOURCE_DAY_HEADING_ABSENT
+    topic_pages: []
+unassigned_source_topics:
+  - { id: autoregressive-models, title_ko: 자가 회귀 모델, title_en: Autoregressive Models }
+  - { id: maximum-likelihood-estimation, title_ko: Maximum Likelihood Estimation, title_en: Maximum Likelihood Estimation }
+  - { id: variational-autoencoders, title_ko: 변분 인코더, title_en: Variational Autoencoders }
+  - { id: generative-adversarial-networks, title_ko: 적대적 생성 모델, title_en: Generative Adversarial Networks }
+  - { id: pix2pix, title_ko: Pix2Pix, title_en: Pix2Pix }
+  - { id: diffusion-models, title_ko: 확산 모델, title_en: Diffusion Models }
+  - { id: other-topics, title_ko: 다른 주제들, title_en: Other Topics }

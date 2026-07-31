@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<main id="main" class="page page-shell">
+  <header class="page-heading"><p class="eyebrow">Engineering Study Log</p><h1>{{ page.title }}</h1></header>
+  {% assign prefix = '/blog/' %}{% if page.lang == 'en' %}{% assign prefix = '/en/blog/' %}{% endif %}
+  {% case page.mode %}
+  {% when 'start-here' %}
+    <div class="prose"><p>{% if page.lang == 'en' %}Study and implementation notes in electrical engineering, FPGA, embedded systems, AI, RF/radar, control, and PCB design. Start with a roadmap; a planned step has no placeholder link.{% else %}전자전기공학 전공 공부와 설계·실습 과정을 자료, 코드, 회로, 파형, 측정 결과와 함께 기록합니다. 먼저 분야별 로드맵을 고르세요. planned 단계에는 빈 글 링크를 만들지 않습니다.{% endif %}</p></div>
+    <ol class="learning-paths"><li>{% if page.lang == 'en' %}Digital logic → VHDL → FPGA → DV{% else %}디지털논리 → VHDL → FPGA → DV{% endif %}</li><li>{% if page.lang == 'en' %}STM32 basics → ADC/UART → CMSIS-DSP → acquisition{% else %}STM32 기초 → ADC/UART → CMSIS-DSP → 센서수집{% endif %}</li><li>CNN → Vision → Transformer → Generative AI</li><li>PADS Logic → Library → Footprint → Layout → Gerber</li><li>{% if page.lang == 'en' %}Control basics → PI → DC motor → cascaded loops{% else %}제어기초 → PI → DC Motor → 이중루프{% endif %}</li><li>{% if page.lang == 'en' %}Transmission line → Smith chart → S-parameter → Radar{% else %}전송선 → Smith Chart → S-parameter → Radar{% endif %}</li></ol>
+    <p><a class="button-link" href="{{ prefix | append: 'roadmaps/' | relative_url }}">{% if page.lang == 'en' %}Choose a roadmap{% else %}로드맵 선택{% endif %}</a></p>
+  {% when 'roadmaps' %}
+    <div class="taxonomy-grid">{% for roadmap in site.data.blog_roadmaps %}<article><p class="status-line">{{ roadmap.source_status }}</p><h2><a href="{{ prefix | append: 'roadmaps/' | append: roadmap.id | append: '/' | relative_url }}">{% if page.lang == 'en' %}{{ roadmap.title_en }}{% else %}{{ roadmap.title_ko }}{% endif %}</a></h2><p>{% if page.lang == 'en' %}{{ roadmap.goal_en }}{% else %}{{ roadmap.goal_ko }}{% endif %}</p></article>{% endfor %}</div>
+  {% when 'categories' %}
+    <div class="taxonomy-grid">{% assign categories = site.data.blog_taxonomy | sort: 'order' %}{% for category in categories %}<article><h2><a href="{{ prefix | append: 'category/' | append: category.id | append: '/' | relative_url }}">{% if page.lang == 'en' %}{{ category.title_en }}{% else %}{{ category.title_ko }}{% endif %}</a></h2><p>{% if page.lang == 'en' %}{{ category.description_en }}{% else %}{{ category.description_ko }}{% endif %}</p><p class="small-note">{{ category.children | size }} subcategories</p></article>{% endfor %}</div>
+  {% when 'archive' %}
+    {% assign posts = site.posts | where: 'lang', page.lang %}{% assign years = posts | group_by_exp: 'post', 'post.date | date: "%Y"' %}{% for year in years %}<section><h2>{{ year.name }}</h2><ol class="archive-list">{% for post in year.items %}{% unless post.draft %}<li><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%m-%d" }}</time> <a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>{% endunless %}{% endfor %}</ol></section>{% endfor %}
+  {% when 'tags' %}
+    <div class="tag-index">{% assign tags = site.tags | sort %}{% for tag in tags %}{% assign localized = tag[1] | where: 'lang', page.lang %}{% if localized.size > 0 %}<section><h2 id="{{ tag[0] | slugify }}">{{ tag[0] }} <span>{{ localized.size }}</span></h2><ul>{% for post in localized %}<li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>{% endfor %}</ul></section>{% endif %}{% endfor %}</div>
+  {% endcase %}
+</main>
