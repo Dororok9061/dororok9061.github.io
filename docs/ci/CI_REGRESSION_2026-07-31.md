@@ -1,8 +1,11 @@
 # CI regression record: absolute-path exclusion
 
-Date investigated: 2026-08-01  
-Affected run: [GitHub Actions 30638965397](https://github.com/Tontonjeong/Tontonjeong.github.io/actions/runs/30638965397)  
-Affected commit: `11ff401a26c5f272e93ea4b55d6ff8cb048a3884`  
+Date investigated: 2026-08-01
+
+Affected run: [GitHub Actions 30638965397](https://github.com/Tontonjeong/Tontonjeong.github.io/actions/runs/30638965397)
+
+Affected commit: `11ff401a26c5f272e93ea4b55d6ff8cb048a3884`
+
 Failed job/step: `validate` / `Validate recruiter and publication metadata`
 
 ## Observed failure
