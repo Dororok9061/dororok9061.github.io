@@ -10,5 +10,6 @@ alternate_url: /publications/
 alternate_lang: ko
 ---
 
-The unverified DBpia record URL and complete page range for the FMCW paper are
-explicitly marked instead of being inferred.
+The CICS DBpia record and its exact URL were verified separately. The FMCW
+paper's complete proceedings range was verified as pp. 2413–2414 from the
+source PDF, while its DBpia record and URL statuses remain distinct.

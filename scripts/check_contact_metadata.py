@@ -11,6 +11,8 @@ required = {
     "graduation": "expected_graduation_iso: 2027-02-25",
     "availability": "available_from_iso: 2027-02",
     "degree": "B.S. Candidate in Electrical and Electronic Engineering, Dankook University",
+    "public Notion URL": "public_notion_url: https://fierce-rodent-308.notion.site/Engineering-Portfolio-FPGA-Radar-Embedded-Systems-Biomedical-AI-3ab518ac7a598121b666e4c7cce8324c",
+    "public Notion status": "public_notion_status: VERIFIED_PUBLIC_2026-08-01",
 }
 errors = [f"profile missing {name}" for name, value in required.items() if value not in profile]
 
@@ -30,4 +32,4 @@ if errors:
     for error in errors:
         print(f"FAIL: {error}")
     sys.exit(1)
-print("PASS: approved contact, degree, graduation, and availability metadata are wired to KO/EN pages")
+print("PASS: approved contact, degree, dates, and verified public Notion metadata are wired to KO/EN pages")

@@ -12,12 +12,17 @@ required = [
     "Hyeong-Rok Ryu\n    - Woo-Seok Kang\n    - Kyung-Ho Kim",
     "venue_ko: CICS’25 정보 및 제어 학술대회",
     "pages: 291–292",
+    "dbpia_url: https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12564300",
+    "dbpia_record_status: VERIFIED_PRESENT",
+    "dbpia_url_status: VERIFIED_EXACT",
     "value: \"0.85\"",
     "value: \"0.82\"",
     "id: kiee2026-fmcw-aoac",
     "2026년도 대한전기학회 제57회 하계학술대회",
-    "pages: Proceedings page begins at p. 2413",
-    "page_verification_status: FULL_PAGE_RANGE_UNDER_VERIFICATION",
+    "pages: 2413–2414",
+    "page_verification_status: VERIFIED_FROM_PROCEEDINGS_PDF",
+    "dbpia_record_status: NOT_FOUND_BY_EXACT_TITLE_SEARCH",
+    "dbpia_url_status: NOT_VERIFIED",
     "value: 600 s",
     "value: \"848\"",
 ]
@@ -31,11 +36,13 @@ if text.count("user_author_position: 1") != 2:
 for banned in ("Journal Article", "SCI Paper", "SCIE Paper", "KCI Journal", "Peer-Reviewed Journal"):
     if banned in text:
         errors.append(f"misclassification found: {banned}")
-if "dbpia_url: \"\"" not in text or "dbpia_status: UNDER_VERIFICATION" not in text:
-    errors.append("unverified DBpia URL must remain blank and explicitly under verification")
+if text.count("dbpia_record_status:") != 2 or text.count("dbpia_url_status:") != 2:
+    errors.append("each publication must separate DBpia record and exact-URL status")
+if text.count("dbpia_url: \"\"") != 1:
+    errors.append("only the FMCW DBpia URL may remain blank")
 
 if errors:
     for error in errors:
         print(f"FAIL: {error}")
     sys.exit(1)
-print("PASS: two first-author conference-proceedings and poster-presentation records are internally consistent")
+print("PASS: two first-author proceedings records, page ranges, and separate DBpia record/URL statuses are consistent")

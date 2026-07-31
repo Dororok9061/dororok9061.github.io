@@ -31,8 +31,12 @@
   role_ko: 제1저자 · 포스터 제작 · 발표 참여
   role_en: First author · Poster preparation · Presentation participation
   official_url: https://cics.kiee.or.kr/
-  dbpia_url: ""
-  dbpia_status: UNDER_VERIFICATION
+  dbpia_url: https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12564300
+  dbpia_record_status: VERIFIED_PRESENT
+  dbpia_url_status: VERIFIED_EXACT
+  dbpia_verified_on: 2026-08-01
+  dbpia_record_note_ko: DBpia에서 제목·저자·pp. 291–292가 일치하는 Record 1건을 확인했습니다.
+  dbpia_record_note_en: One DBpia record was verified with matching title, authors, and pp. 291–292.
   paper_pdf: https://github.com/Tontonjeong/PPG-HRV-Cognitive-Load-CNN/blob/main/references/paper.pdf
   poster_pdf: ""
   project_url: /projects/ppg-hrv/
@@ -41,8 +45,8 @@
   en_url: /en/publications/cics25-cnn-hrv/
   cover_image: /assets/img/publications/cics25_cnn_first_page.webp
   cover_image_fallback: /assets/img/publications/cics25_cnn_first_page.jpg
-  cover_width: 1132
-  cover_height: 1600
+  cover_width: 700
+  cover_height: 990
   cover_alt_ko: CICS’25 학술대회 논문 첫 페이지로, 제목과 제1저자 류형록을 포함한 저자 정보가 보인다
   cover_alt_en: First page of the CICS’25 conference proceedings paper showing the title and Hyeong-Rok Ryu as first author
   cover_caption_ko: CICS’25 논문 첫 페이지 — 제1저자 류형록
@@ -59,8 +63,9 @@
   methods_en: PPG timing and IBI/HRV preprocessing produce features used as inputs to the CNN.
   results_ko: 논문 Abstract에 보고된 평균 AUC는 0.85, F1-Score는 0.82입니다.
   results_en: The paper abstract reports an average AUC of 0.85 and an F1-score of 0.82.
-  boundary_ko: 이 수치는 논문 보고 성능이며 Repository의 별도 archive 결과와 합치지 않습니다.
-  boundary_en: These are paper-reported results and are not merged with separate repository archive metrics.
+  boundary_ko: 평균 AUC 0.85와 F1-Score 0.82는 제공된 논문 PDF의 Abstract·Conclusion 값입니다. DBpia Record abstract의 AUC 0.99·F1 0.992 및 PDF 본문의 Fold 5 수치와 서로 다른 평가 범위이므로 하나의 성능값으로 합치지 않습니다.
+  boundary_en: Average AUC 0.85 and F1-score 0.82 come from the supplied paper PDF's abstract and conclusion. They are not merged with the DBpia-record abstract's AUC 0.99/F1 0.992 or the PDF's Fold 5 values because those represent different evaluation scopes.
+  metric_reconciliation_status: SOURCE_SCOPE_DIFFERENCE_RECORDED
   metrics:
     - label_ko: 평균 AUC
       label_en: Average AUC
@@ -99,29 +104,36 @@
   conference_dates_en: July 8–11, 2026
   location_ko: 용평리조트, 강원도 평창
   location_en: Yongpyong Resort, Pyeongchang, Gangwon-do, Republic of Korea
-  pages: Proceedings page begins at p. 2413
-  page_verification_status: FULL_PAGE_RANGE_UNDER_VERIFICATION
+  pages: 2413–2414
+  page_verification_status: VERIFIED_FROM_PROCEEDINGS_PDF
+  page_verified_on: 2026-08-01
   status: published_and_presented
   role_ko: 제1저자 · 포스터 제작 · 발표 참여
   role_en: First author · Poster preparation · Presentation participation
   official_url: https://conf.kiee.or.kr/
   dbpia_url: ""
-  dbpia_status: NOT_APPLICABLE_OR_UNVERIFIED
+  dbpia_record_status: NOT_FOUND_BY_EXACT_TITLE_SEARCH
+  dbpia_url_status: NOT_VERIFIED
+  dbpia_verified_on: 2026-08-01
+  dbpia_record_note_ko: 2026-08-01 DBpia exact-title 검색 결과는 0건이며, Record 존재와 정확한 URL은 확인되지 않았습니다.
+  dbpia_record_note_en: The 2026-08-01 DBpia exact-title search returned zero records; record existence and an exact URL remain unverified.
   paper_pdf: ""
   poster_pdf: ""
   project_url: /projects/fmcw-radar/
   github_url: https://github.com/Tontonjeong/fmcw-radar-aoac-cardiac-analysis
   ko_url: /publications/kiee2026-fmcw-aoac/
   en_url: /en/publications/kiee2026-fmcw-aoac/
-  cover_image: ""
-  cover_image_fallback: ""
-  cover_width:
-  cover_height:
-  cover_alt_ko: ""
-  cover_alt_en: ""
-  cover_caption_ko: ""
-  cover_caption_en: ""
-  evidence_images: []
+  cover_image: /assets/img/publications/kiee2026_fmcw_first_page.webp
+  cover_image_fallback: /assets/img/publications/kiee2026_fmcw_first_page.jpg
+  cover_width: 570
+  cover_height: 782
+  cover_alt_ko: 대한전기학회 2026 하계학술대회 FMCW 논문 첫 페이지로, 제목과 제1저자 류형록을 포함한 저자 정보가 보인다
+  cover_alt_en: First page of the KIEE 2026 Summer Conference FMCW paper showing the title and Hyeong-Rok Ryu as first author
+  cover_caption_ko: 대한전기학회 2026 하계학술대회 논문 첫 페이지 — 제1저자 류형록
+  cover_caption_en: First page of the KIEE 2026 Summer Conference paper — Hyeong-Rok Ryu as first author
+  cover_source_status: VERIFIED_FROM_USER_PROVIDED_IMAGE
+  evidence_images:
+    - /assets/img/publications/kiee2026_fmcw_first_page.webp
   abstract_ko: ECG R-peak 기준으로 ECG·SCG·FMCW Radar 신호를 정렬하고 848개 대응 beat에서 morphology 기반 AO/AC 후보 시점 분포를 분석한 연구입니다.
   abstract_en: This study aligns ECG, SCG, and FMCW radar signals to ECG R-peaks and analyzes morphology-based AO/AC candidate timing across 848 corresponding beats.
   research_problem_ko: 비접촉 FMCW Radar의 심장 미세변위 파형에서 판막 사건과 관련된 후보 시점을 일관되게 분석하는 절차를 다뤘습니다.

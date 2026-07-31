@@ -73,6 +73,7 @@ layout: default
     <div><dt>{% if page.lang == 'en' %}Location{% else %}장소{% endif %}</dt><dd>{{ publication_location }}</dd></div>
     <div><dt>{% if page.lang == 'en' %}Publication type{% else %}논문 유형{% endif %}</dt><dd>{{ publication.type }}</dd></div>
     <div><dt>{% if page.lang == 'en' %}Pages{% else %}페이지{% endif %}</dt><dd>{{ publication.pages }}{% if publication.page_verification_status == 'FULL_PAGE_RANGE_UNDER_VERIFICATION' %} · Full page range under verification{% endif %}</dd></div>
+    <div><dt>DBpia Record</dt><dd>{% if page.lang == 'en' %}{{ publication.dbpia_record_note_en }}{% else %}{{ publication.dbpia_record_note_ko }}{% endif %}<br><span>Record: {{ publication.dbpia_record_status }} · URL: {{ publication.dbpia_url_status }}</span></dd></div>
     <div><dt>{% if page.lang == 'en' %}My role{% else %}본인 역할{% endif %}</dt><dd>{{ publication_role }}</dd></div>
   </dl>
 
@@ -85,6 +86,6 @@ layout: default
     <section><h2>{% if page.lang == 'en' %}Validation Boundary{% else %}검증 경계{% endif %}</h2><p>{{ boundary }}</p></section>
   </div>
 
-  <section aria-labelledby="publication-links-title"><h2 id="publication-links-title">{% if page.lang == 'en' %}Evidence and related work{% else %}근거와 관련 작업{% endif %}</h2><div class="button-row"><a class="portfolio-button portfolio-button--primary" href="{{ publication.official_url }}" target="_blank" rel="noopener noreferrer">Official Conference</a>{% if publication.paper_pdf != empty %}<a class="portfolio-button" href="{{ publication.paper_pdf }}" target="_blank" rel="noopener noreferrer">Paper PDF</a>{% endif %}<a class="portfolio-button" href="{{ publication.github_url }}" target="_blank" rel="noopener noreferrer">Repository</a><a class="portfolio-button" href="{% if page.lang == 'en' %}{{ publication.project_url | prepend: '/en' | relative_url }}{% else %}{{ publication.project_url | relative_url }}{% endif %}">Project</a></div></section>
+  <section aria-labelledby="publication-links-title"><h2 id="publication-links-title">{% if page.lang == 'en' %}Evidence and related work{% else %}근거와 관련 작업{% endif %}</h2><div class="button-row"><a class="portfolio-button portfolio-button--primary" href="{{ publication.official_url }}" target="_blank" rel="noopener noreferrer">Official Conference</a>{% if publication.dbpia_url != empty %}<a class="portfolio-button" href="{{ publication.dbpia_url }}" target="_blank" rel="noopener noreferrer">DBpia Record</a>{% endif %}{% if publication.paper_pdf != empty %}<a class="portfolio-button" href="{{ publication.paper_pdf }}" target="_blank" rel="noopener noreferrer">Paper PDF</a>{% endif %}<a class="portfolio-button" href="{{ publication.github_url }}" target="_blank" rel="noopener noreferrer">Repository</a><a class="portfolio-button" href="{% if page.lang == 'en' %}{{ publication.project_url | prepend: '/en' | relative_url }}{% else %}{{ publication.project_url | relative_url }}{% endif %}">Project</a></div></section>
   <div class="prose">{{ content }}</div>
 </main>
