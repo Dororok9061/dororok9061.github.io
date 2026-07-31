@@ -36,6 +36,14 @@ jobs:
       - name: Validate generated site
         run: python3 scripts/check_site.py _site
 
+      - name: Validate recruiter and publication metadata
+        run: |
+          python3 scripts/check_contact_metadata.py
+          python3 scripts/check_recruitment_dates.py
+          python3 scripts/check_linkedin_canonical.py
+          python3 scripts/check_publication_metadata.py
+          python3 scripts/check_publication_images.py
+
       - name: Scan source and public build
         shell: pwsh
         run: |
