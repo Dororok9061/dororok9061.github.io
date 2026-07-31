@@ -2,6 +2,7 @@
 layout: default
 ---
 <main id="main" class="page page-shell">
+  {% assign profile = site.data.profile %}
   <header class="page-heading">
     <p class="eyebrow">{{ page.eyebrow }}</p>
     <h1>{{ page.title }}</h1>
@@ -16,7 +17,18 @@ layout: default
       <figcaption>{% if page.lang == 'en' %}Formal profile photograph · Metadata removed{% else %}공식 증명사진 · 위치·촬영 metadata 제거{% endif %}</figcaption>
     </figure>
     <div class="prose">
+      <dl class="profile-facts">
+        <div><dt>{% if page.lang == 'en' %}Education{% else %}전공{% endif %}</dt><dd>{% if page.lang == 'en' %}{{ profile.degree_en }}{% else %}{{ profile.degree_ko }}{% endif %}</dd></div>
+        <div><dt>{% if page.lang == 'en' %}Research affiliation{% else %}연구 소속{% endif %}</dt><dd>{% if page.lang == 'en' %}{{ profile.laboratory_en }}{% else %}{{ profile.laboratory_ko }}{% endif %}</dd></div>
+        <div><dt>{% if page.lang == 'en' %}Expected graduation{% else %}졸업 예정{% endif %}</dt><dd>{% if page.lang == 'en' %}{{ profile.expected_graduation_en }}{% else %}{{ profile.expected_graduation_ko }}{% endif %}</dd></div>
+        <div><dt>{% if page.lang == 'en' %}Available from{% else %}입사 가능{% endif %}</dt><dd>{% if page.lang == 'en' %}{{ profile.available_from_en }}{% else %}{{ profile.available_from_ko }}{% endif %}</dd></div>
+        <div><dt>Email</dt><dd><a href="mailto:{{ profile.email }}">{{ profile.email }}</a></dd></div>
+        <div><dt>LinkedIn</dt><dd><a href="{{ profile.linkedin }}" target="_blank" rel="noopener noreferrer">{% if page.lang == 'en' %}Public profile{% else %}공개 프로필{% endif %}</a></dd></div>
+        <div><dt>{% if page.lang == 'en' %}Primary focus{% else %}주력 직무{% endif %}</dt><dd>{{ profile.primary_focus_en }}</dd></div>
+        <div><dt>{% if page.lang == 'en' %}Secondary focus{% else %}보조 직무{% endif %}</dt><dd>{{ profile.secondary_focus_en }}</dd></div>
+      </dl>
       {{ content }}
+      <div class="button-row"><a class="portfolio-button portfolio-button--primary" href="{% if page.lang == 'en' %}{{ '/en/contact/' | relative_url }}{% else %}{{ '/contact/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}Contact and recruitment{% else %}연락처 및 채용 정보{% endif %}</a><a class="portfolio-button" href="{{ profile.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a></div>
     </div>
   </div>
 </main>

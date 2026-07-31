@@ -12,6 +12,7 @@ layout: default
     <section>
       <span>0{{ forloop.index }}</span>
       <div>
+        <p class="career-tier">{{ role.tier }}</p>
         <h2>{% if page.lang == 'en' %}{{ role.title_en }}{% else %}{{ role.title_ko }}{% endif %}</h2>
         <p>{% if page.lang == 'en' %}{{ role.summary_en }}{% else %}{{ role.summary_ko }}{% endif %}</p>
         <ul>
@@ -20,6 +21,7 @@ layout: default
             <li><a href="{% if page.lang == 'en' %}{{ project.en_url | relative_url }}{% else %}{{ project.ko_url | relative_url }}{% endif %}">{% if page.lang == 'en' %}{{ project.title_en }}{% else %}{{ project.title_ko }}{% endif %}</a></li>
           {% endfor %}
         </ul>
+        <a class="text-link" href="{% if page.lang == 'en' %}{{ '/en/contact/' | relative_url }}{% else %}{{ '/contact/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}Discuss this role{% else %}이 직무로 연락하기{% endif %} <span aria-hidden="true">→</span></a>
       </div>
     </section>
     {% endfor %}

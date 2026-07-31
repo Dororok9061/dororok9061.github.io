@@ -1,18 +1,21 @@
+{% assign profile = site.data.profile %}
 <footer class="footer site-footer">
   <div class="site-footer__inner">
     <div>
-      <strong>{{ site.author.name }}</strong>
-      <p>{% if page.lang == 'en' %}Evidence-first engineering portfolio.{% else %}공개 근거와 검증 경계를 분리하는 Engineering Portfolio.{% endif %}</p>
+      <strong>{{ profile.name_en }}</strong>
+      <p>{% if page.lang == 'en' %}Radar and embedded signal processing · FPGA RTL and digital verification.{% else %}Radar·Embedded Signal Processing · FPGA RTL·Digital Verification{% endif %}</p>
     </div>
     <nav aria-label="{% if page.lang == 'en' %}Footer navigation{% else %}바닥글 탐색{% endif %}">
-      <a href="{{ site.author.github }}">GitHub</a>
-      <a href="{{ site.author.notion }}">Notion</a>
-      <a href="{{ '/security/' | relative_url }}">Security</a>
-      <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+      <a href="mailto:{{ profile.email }}">Email</a>
+      <a href="{{ profile.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="{{ profile.github }}" target="_blank" rel="noopener noreferrer">GitHub</a>
+      {% if profile.public_notion_url != empty %}<a href="{{ profile.public_notion_url }}" target="_blank" rel="noopener noreferrer">Notion</a>{% endif %}
+      <a href="{% if page.lang == 'en' %}{{ '/en/publications/' | relative_url }}{% else %}{{ '/publications/' | relative_url }}{% endif %}">Publications</a>
+      <a href="{% if page.lang == 'en' %}{{ '/en/security/' | relative_url }}{% else %}{{ '/security/' | relative_url }}{% endif %}">Security</a>
     </nav>
     <p class="site-footer__credit">
       {{ site.copyright }} ·
-      <a href="https://github.com/andreondra/jekyll-theme-simplex">Simplex</a>
+      <a href="https://github.com/andreondra/jekyll-theme-simplex" target="_blank" rel="noopener noreferrer">Simplex</a>
       theme by Golasowski, MIT License.
     </p>
   </div>

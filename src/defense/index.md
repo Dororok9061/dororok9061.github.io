@@ -20,4 +20,3 @@ alternate_lang: en
 실제 체계 제원, 공식 성능 또는 구현 가능한 운용 절차로 해석해서는 안 됩니다.
 
 - [Defense Systems project page](/projects/defense-systems/)
-- [Detailed Notion case studies](https://app.notion.com/p/3ab518ac7a5981c0aecfff5207b14f54)

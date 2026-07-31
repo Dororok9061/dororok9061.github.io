@@ -948,3 +948,411 @@ summary:focus-visible {
     width: 100%;
   }
 }
+
+/* Recruiter contact and research-publication extensions. */
+.availability-badge,
+.career-tier,
+.career-focus-grid__label {
+  display: inline-flex;
+  width: fit-content;
+  margin: 0 0 0.8rem;
+  padding: 0.3rem 0.65rem;
+  border: 1px solid var(--portfolio-accent);
+  border-radius: 999px;
+  color: var(--portfolio-accent);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.portfolio-hero--recruiting h1 {
+  margin-bottom: 0.55rem;
+}
+
+.hero-focus {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-bottom: 1.1rem;
+  font-family: var(--f-header);
+  font-size: clamp(1.15rem, 2.2vw, 1.65rem);
+}
+
+.hero-focus span {
+  color: var(--portfolio-muted);
+  font-size: 0.86em;
+}
+
+.hero-actions {
+  margin-top: 1.5rem;
+}
+
+.career-focus-grid,
+.home-metric-grid,
+.publication-index-grid,
+.contact-links-grid,
+.project-narrative {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.career-focus-grid article,
+.home-metric-card,
+.publication-index-grid section,
+.contact-links-grid section,
+.project-narrative section {
+  padding: clamp(1.1rem, 3vw, 1.7rem);
+  border: 1px solid var(--portfolio-border);
+  border-radius: var(--portfolio-radius);
+  background: var(--portfolio-surface);
+}
+
+.career-focus-grid h3,
+.home-metric-card h3,
+.publication-index-grid h2,
+.project-narrative h2 {
+  margin-top: 0;
+}
+
+.home-metric-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.metric-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: 1rem 0;
+}
+
+.metric-list div {
+  min-width: 6.5rem;
+  padding: 0.65rem 0.8rem;
+  border-left: 0.2rem solid var(--portfolio-accent);
+  background: color-mix(in srgb, var(--portfolio-accent) 8%, transparent);
+}
+
+.metric-list dt {
+  color: var(--portfolio-muted);
+  font-size: 0.76rem;
+}
+
+.metric-list dd {
+  margin: 0;
+  font-family: var(--f-header);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.publication-stack {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.publication-card {
+  display: grid;
+  grid-template-columns: minmax(13rem, 0.72fr) minmax(0, 1.65fr);
+  overflow: hidden;
+  border: 1px solid var(--portfolio-border);
+  border-radius: var(--portfolio-radius);
+  background: var(--portfolio-surface);
+}
+
+.publication-card__preview {
+  display: flex;
+  min-height: 22rem;
+  padding: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 1px solid var(--portfolio-border);
+  background: color-mix(in srgb, var(--portfolio-text) 4%, var(--portfolio-surface));
+}
+
+.publication-card__preview img,
+.publication-preview img {
+  width: 100%;
+  height: auto;
+  max-height: 32rem;
+  object-fit: contain;
+  background: #fff;
+}
+
+.publication-card__zoom,
+.publication-preview button {
+  width: 100%;
+  margin-top: 0.75rem;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--portfolio-border);
+  color: var(--portfolio-text);
+  background: transparent;
+  cursor: pointer;
+}
+
+.publication-card__placeholder {
+  display: grid;
+  min-height: 18rem;
+  padding: 1.5rem;
+  place-content: center;
+  gap: 0.5rem;
+  border: 1px dashed var(--portfolio-border);
+  text-align: center;
+}
+
+.publication-card__placeholder span,
+.publication-card__venue,
+.publication-card__authors,
+.publication-card__role,
+.verification-note {
+  color: var(--portfolio-muted);
+}
+
+.publication-card__content {
+  padding: clamp(1.2rem, 3vw, 2rem);
+}
+
+.publication-card__content h2 {
+  margin: 0.65rem 0;
+  font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+}
+
+.badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.verification-note {
+  padding: 0.7rem 0.85rem;
+  border-left: 0.2rem solid var(--portfolio-border);
+  font-size: 0.86rem;
+}
+
+.research-summary,
+.contact-callout,
+.evidence-compact {
+  margin: 0 0 clamp(2rem, 6vw, 4rem);
+  padding: clamp(1.2rem, 4vw, 2rem);
+  border: 1px solid var(--portfolio-border);
+  border-radius: var(--portfolio-radius);
+  background: var(--portfolio-surface);
+}
+
+.publication-index-grid {
+  margin-top: clamp(2rem, 6vw, 4rem);
+}
+
+.research-timeline {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.research-timeline li {
+  display: grid;
+  grid-template-columns: 6.5rem minmax(0, 1fr);
+  gap: 1rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--portfolio-border);
+}
+
+.research-timeline time {
+  color: var(--portfolio-accent);
+  font-family: var(--f-header);
+  font-weight: 700;
+}
+
+.research-timeline h3,
+.research-timeline p {
+  margin: 0;
+}
+
+.evidence-compact {
+  width: min(100% - 2rem, var(--portfolio-max));
+  margin-inline: auto;
+}
+
+.profile-facts,
+.contact-facts,
+.publication-facts {
+  display: grid;
+  margin: 0 0 2rem;
+  border-top: 1px solid var(--portfolio-border);
+}
+
+.profile-facts div,
+.contact-facts div,
+.publication-facts div {
+  display: grid;
+  grid-template-columns: minmax(9rem, 0.45fr) minmax(0, 1fr);
+  gap: 1rem;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--portfolio-border);
+}
+
+.profile-facts dt,
+.contact-facts dt,
+.publication-facts dt {
+  font-weight: 700;
+}
+
+.profile-facts dd,
+.contact-facts dd,
+.publication-facts dd {
+  min-width: 0;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.contact-callout {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.contact-callout h2,
+.contact-callout p {
+  margin-bottom: 0.4rem;
+}
+
+.publication-detail__heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(14rem, 0.55fr);
+  gap: clamp(1.5rem, 5vw, 4rem);
+  align-items: start;
+  margin-bottom: 2rem;
+}
+
+.publication-preview {
+  margin: 0;
+}
+
+.publication-preview figcaption,
+.project-gallery figcaption {
+  margin-top: 0.5rem;
+  color: var(--portfolio-muted);
+  font-size: 0.82rem;
+}
+
+.publication-sections,
+.project-narrative {
+  margin: 2rem 0;
+}
+
+.inline-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  padding: 0;
+  list-style: none;
+}
+
+.inline-list li {
+  padding: 0.25rem 0.55rem;
+  border: 1px solid var(--portfolio-border);
+  border-radius: 999px;
+}
+
+.project-gallery {
+  margin: 2rem 0;
+}
+
+.project-gallery > div {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.project-gallery figure {
+  margin: 0;
+  padding: 1rem;
+  border: 1px solid var(--portfolio-border);
+  background: var(--portfolio-surface);
+}
+
+.project-gallery img {
+  width: 100%;
+  max-height: 34rem;
+  object-fit: contain;
+}
+
+.lightbox {
+  width: min(94vw, 72rem);
+  max-height: 94vh;
+  padding: 2.75rem 1rem 1rem;
+  border: 1px solid var(--portfolio-border);
+  color: var(--portfolio-text);
+  background: var(--c-pageBackground);
+}
+
+.lightbox::backdrop {
+  background: rgb(0 0 0 / 0.82);
+}
+
+.lightbox figure {
+  margin: 0;
+}
+
+.lightbox__image {
+  width: 100%;
+  max-height: calc(94vh - 7rem);
+  object-fit: contain;
+}
+
+.lightbox__close {
+  position: absolute;
+  top: 0.45rem;
+  right: 0.6rem;
+  width: 2.1rem;
+  height: 2.1rem;
+  border: 1px solid var(--portfolio-border);
+  border-radius: 50%;
+  color: var(--portfolio-text);
+  background: var(--c-pageBackground);
+  cursor: pointer;
+}
+
+@media (max-width: 64rem) {
+  .home-metric-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 48rem) {
+  .career-focus-grid,
+  .publication-index-grid,
+  .contact-links-grid,
+  .project-narrative,
+  .publication-detail__heading,
+  .publication-card,
+  .project-gallery > div {
+    grid-template-columns: 1fr;
+  }
+
+  .publication-card__preview {
+    min-height: 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--portfolio-border);
+  }
+
+  .publication-card__preview img {
+    max-height: 30rem;
+  }
+
+  .contact-callout {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 30rem) {
+  .profile-facts div,
+  .contact-facts div,
+  .publication-facts div,
+  .research-timeline li {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+}

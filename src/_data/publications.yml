@@ -1,23 +1,146 @@
-- index: "01"
-  title: "Classification of Cognitive Task Performance using HRV Features: A Convolutional Neural Network Approach"
-  role_ko: 제1저자
-  role_en: First author
-  domain_ko: Biomedical AI
-  domain_en: Biomedical AI
-  year:
-  venue:
-  url: https://github.com/Tontonjeong/PPG-HRV-Cognitive-Load-CNN/blob/main/references/paper.pdf
-  note_ko: 공개 PDF에서 확인 가능한 제목과 저자 역할만 표시하며 venue·DOI·권호·페이지는 임의로 채우지 않습니다.
-  note_en: Only the title and author role supported by the public PDF are shown; venue, DOI, issue, and page details are not invented.
+- id: cics25-cnn-hrv
+  index: "01"
+  title_ko: CNN 기반 HRV 분석을 통한 인지 과제 수행 능력 예측에 관한 연구
+  title_en: "Classification of Cognitive Task Performance using HRV Features: A Convolutional Neural Network Approach"
+  authors_ko:
+    - 류형록
+    - 강우석
+    - 김경호
+  authors_en:
+    - Hyeong-Rok Ryu
+    - Woo-Seok Kang
+    - Kyung-Ho Kim
+  profile_author_name: Hyeongrok Ryu
+  publication_author_name: Hyeong-Rok Ryu
+  user_author_position: 1
+  type: Conference Proceedings Paper
+  presentation_type: Poster Presentation
+  venue_ko: CICS’25 정보 및 제어 학술대회
+  venue_en: Conference on Information and Control Systems 2025
+  organizers: 대한전기학회·대한전자공학회 공동주관
+  proceedings: 정보 및 제어 논문집
+  year: "2025"
+  month: "10"
+  conference_dates_ko: 2025년 10월 22일–25일
+  conference_dates_en: October 22–25, 2025
+  location_ko: 델피노리조트, 강원도 고성
+  location_en: Delpino Resort, Goseong, Gangwon-do, Republic of Korea
+  pages: 291–292
+  page_verification_status: VERIFIED_FROM_PAPER_METADATA
+  status: published_and_presented
+  role_ko: 제1저자 · 포스터 제작 · 발표 참여
+  role_en: First author · Poster preparation · Presentation participation
+  official_url: https://cics.kiee.or.kr/
+  dbpia_url: ""
+  dbpia_status: UNDER_VERIFICATION
+  paper_pdf: https://github.com/Tontonjeong/PPG-HRV-Cognitive-Load-CNN/blob/main/references/paper.pdf
+  poster_pdf: ""
+  project_url: /projects/ppg-hrv/
+  github_url: https://github.com/Tontonjeong/PPG-HRV-Cognitive-Load-CNN
+  ko_url: /publications/cics25-cnn-hrv/
+  en_url: /en/publications/cics25-cnn-hrv/
+  cover_image: /assets/img/publications/cics25_cnn_first_page.webp
+  cover_image_fallback: /assets/img/publications/cics25_cnn_first_page.jpg
+  cover_width: 1132
+  cover_height: 1600
+  cover_alt_ko: CICS’25 학술대회 논문 첫 페이지로, 제목과 제1저자 류형록을 포함한 저자 정보가 보인다
+  cover_alt_en: First page of the CICS’25 conference proceedings paper showing the title and Hyeong-Rok Ryu as first author
+  cover_caption_ko: CICS’25 논문 첫 페이지 — 제1저자 류형록
+  cover_caption_en: First page of the CICS’25 paper — Hyeong-Rok Ryu as first author
+  evidence_images:
+    - /assets/img/publications/cics25_cnn_first_page.webp
+  abstract_ko: PPG에서 추출한 HRV 특징을 사용해 인지 과제 수행 능력을 분류하고 CNN 접근법을 평가한 연구입니다.
+  abstract_en: This study classifies cognitive task performance from PPG-derived HRV features and evaluates a convolutional neural network approach.
+  research_problem_ko: 생리신호 기반 HRV 특징이 인지 과제 수행 상태를 구분하는 데 유효한지 분석했습니다.
+  research_problem_en: The work examines whether physiological HRV features can distinguish cognitive task performance states.
+  architecture_ko: PPG 취득 → IBI 산출 → HRV 특징 구성 → CNN 분류 → 평가 지표 산출의 흐름입니다.
+  architecture_en: The pipeline proceeds from PPG acquisition to IBI extraction, HRV feature construction, CNN classification, and metric reporting.
+  methods_ko: PPG 기반 timing과 IBI·HRV 전처리를 거친 특징을 CNN 입력으로 구성했습니다.
+  methods_en: PPG timing and IBI/HRV preprocessing produce features used as inputs to the CNN.
+  results_ko: 논문 Abstract에 보고된 평균 AUC는 0.85, F1-Score는 0.82입니다.
+  results_en: The paper abstract reports an average AUC of 0.85 and an F1-score of 0.82.
+  boundary_ko: 이 수치는 논문 보고 성능이며 Repository의 별도 archive 결과와 합치지 않습니다.
+  boundary_en: These are paper-reported results and are not merged with separate repository archive metrics.
+  metrics:
+    - label_ko: 평균 AUC
+      label_en: Average AUC
+      value: "0.85"
+      provenance: PAPER_REPORTED
+    - label_ko: F1-Score
+      label_en: F1-Score
+      value: "0.82"
+      provenance: PAPER_REPORTED
+  featured: true
 
-- index: "02"
-  title: "Analysis of Aortic Valve Opening and Closure Using Cardiac Signals Acquired by Non-Contact FMCW Radar"
-  role_ko: 제1저자
-  role_en: First author
-  domain_ko: Radar Signal Processing
-  domain_en: Radar Signal Processing
+- id: kiee2026-fmcw-aoac
+  index: "02"
+  title_ko: FMCW 레이더 비접촉 측정 기반 심박 신호의 대동맥판 개방 및 폐쇄 시점 분석에 관한 연구
+  title_en: Analysis of Aortic Valve Opening and Closure Using Cardiac Signals Acquired by Non-Contact FMCW Radar
+  authors_ko:
+    - 류형록
+    - 강우석
+    - 김경호
+  authors_en:
+    - Hyeong-Rok Ryu
+    - Woo-Seok Kang
+    - Kyung-Ho Kim
+  profile_author_name: Hyeongrok Ryu
+  publication_author_name: Hyeong-Rok Ryu
+  user_author_position: 1
+  type: Conference Proceedings Paper
+  presentation_type: Poster Presentation
+  venue_ko: 2026년도 대한전기학회 제57회 하계학술대회
+  venue_en: The 57th KIEE Summer Conference 2026
+  organizers: 대한전기학회
+  proceedings: 2026년도 대한전기학회 하계학술대회 논문집
   year: "2026"
-  venue:
-  url: https://github.com/Tontonjeong/fmcw-radar-aoac-cardiac-analysis#citation
-  note_ko: 공개 repository citation record를 근거로 하며 확인되지 않은 DOI·권호·페이지는 표시하지 않습니다.
-  note_en: Based on the public repository citation record; unverified DOI, issue, and page details are omitted.
+  month: "07"
+  conference_dates_ko: 2026년 7월 8일–11일
+  conference_dates_en: July 8–11, 2026
+  location_ko: 용평리조트, 강원도 평창
+  location_en: Yongpyong Resort, Pyeongchang, Gangwon-do, Republic of Korea
+  pages: Proceedings page begins at p. 2413
+  page_verification_status: FULL_PAGE_RANGE_UNDER_VERIFICATION
+  status: published_and_presented
+  role_ko: 제1저자 · 포스터 제작 · 발표 참여
+  role_en: First author · Poster preparation · Presentation participation
+  official_url: https://conf.kiee.or.kr/
+  dbpia_url: ""
+  dbpia_status: NOT_APPLICABLE_OR_UNVERIFIED
+  paper_pdf: ""
+  poster_pdf: ""
+  project_url: /projects/fmcw-radar/
+  github_url: https://github.com/Tontonjeong/fmcw-radar-aoac-cardiac-analysis
+  ko_url: /publications/kiee2026-fmcw-aoac/
+  en_url: /en/publications/kiee2026-fmcw-aoac/
+  cover_image: ""
+  cover_image_fallback: ""
+  cover_width:
+  cover_height:
+  cover_alt_ko: ""
+  cover_alt_en: ""
+  cover_caption_ko: ""
+  cover_caption_en: ""
+  evidence_images: []
+  abstract_ko: ECG R-peak 기준으로 ECG·SCG·FMCW Radar 신호를 정렬하고 848개 대응 beat에서 morphology 기반 AO/AC 후보 시점 분포를 분석한 연구입니다.
+  abstract_en: This study aligns ECG, SCG, and FMCW radar signals to ECG R-peaks and analyzes morphology-based AO/AC candidate timing across 848 corresponding beats.
+  research_problem_ko: 비접촉 FMCW Radar의 심장 미세변위 파형에서 판막 사건과 관련된 후보 시점을 일관되게 분석하는 절차를 다뤘습니다.
+  research_problem_en: The work studies a repeatable procedure for analyzing valve-event-related candidate timings in non-contact FMCW radar cardiac displacement waveforms.
+  architecture_ko: ECG·SCG·BGT60TR13C Radar 동시취득 → ECG R-peak 정렬 → beat segmentation → Radar morphology 후보 분석입니다.
+  architecture_en: The pipeline uses concurrent ECG, SCG, and BGT60TR13C radar acquisition, ECG R-peak alignment, beat segmentation, and radar morphology candidate analysis.
+  methods_ko: 600초 동시취득 신호에서 대응되는 848개 beat를 구성하고 AO/AC 관련 후보 시점의 분포를 분석했습니다.
+  methods_en: From 600 seconds of concurrent acquisition, 848 corresponding beats were assembled for AO/AC-related candidate timing analysis.
+  results_ko: 공개 근거가 지원하는 결과는 600초 동시취득과 848개 대응 beat 분석입니다.
+  results_en: Public evidence supports 600 seconds of concurrent acquisition and analysis of 848 corresponding beats.
+  boundary_ko: Radar-derived AO/AC candidate timing이며 대동맥판 직접 영상화, 임상적 valve detection 또는 의료기기 성능을 의미하지 않습니다.
+  boundary_en: These are radar-derived AO/AC candidate timings, not direct valve imaging, clinical valve detection, or medical-device performance.
+  metrics:
+    - label_ko: 동시취득
+      label_en: Concurrent acquisition
+      value: 600 s
+      provenance: PAPER_REPORTED
+    - label_ko: 대응 Beat
+      label_en: Corresponding beats
+      value: "848"
+      provenance: PAPER_REPORTED
+  featured: true

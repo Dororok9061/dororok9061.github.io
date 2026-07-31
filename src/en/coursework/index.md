@@ -26,4 +26,3 @@ production-grid evidence is not presented as measured.
 
 - [Coursework project page](/en/projects/coursework/)
 - [Full coursework repository](https://github.com/Tontonjeong/electrical-engineering-coursework-portfolio)
-- [Detailed Notion page](https://app.notion.com/p/3ab518ac7a5981a095f3c2cca6aaa35d)

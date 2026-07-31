@@ -10,6 +10,12 @@ layout: default
   {% assign project_evidence = project.evidence_en %}
   {% assign project_contribution = project.contribution_en %}
   {% assign project_boundary = project.boundary_en %}
+  {% assign project_problem = project.problem_en %}
+  {% assign project_architecture = project.architecture_en %}
+  {% assign project_stack = project.stack_en %}
+  {% assign project_data_flow = project.data_flow_en %}
+  {% assign project_methods = project.methods_en %}
+  {% assign project_results = project.results_en %}
   {% assign category_base = '/en/blog/category/' %}
 {% else %}
   {% assign project_title = project.title_ko %}
@@ -19,6 +25,12 @@ layout: default
   {% assign project_evidence = project.evidence_ko %}
   {% assign project_contribution = project.contribution_ko %}
   {% assign project_boundary = project.boundary_ko %}
+  {% assign project_problem = project.problem_ko %}
+  {% assign project_architecture = project.architecture_ko %}
+  {% assign project_stack = project.stack_ko %}
+  {% assign project_data_flow = project.data_flow_ko %}
+  {% assign project_methods = project.methods_ko %}
+  {% assign project_results = project.results_ko %}
   {% assign category_base = '/blog/category/' %}
 {% endif %}
 <main id="main" class="page page-shell">
@@ -46,6 +58,24 @@ layout: default
     {% endif %}
   </header>
 
+  {% if project_problem %}
+  <div class="project-narrative">
+    <section><p class="eyebrow">01</p><h2>{% if page.lang == 'en' %}Problem{% else %}문제 정의{% endif %}</h2><p>{{ project_problem }}</p></section>
+    <section><p class="eyebrow">02</p><h2>{% if page.lang == 'en' %}Architecture{% else %}Architecture{% endif %}</h2><p>{{ project_architecture }}</p></section>
+    <section><p class="eyebrow">03</p><h2>{% if page.lang == 'en' %}Hardware and Software{% else %}Hardware · Software{% endif %}</h2><ul class="inline-list">{% for item in project_stack %}<li>{{ item }}</li>{% endfor %}</ul></section>
+    <section><p class="eyebrow">04</p><h2>{% if page.lang == 'en' %}Data Flow{% else %}Data Flow{% endif %}</h2><p>{{ project_data_flow }}</p></section>
+    <section><p class="eyebrow">05</p><h2>{% if page.lang == 'en' %}Methods{% else %}Methods{% endif %}</h2><ul>{% for item in project_methods %}<li>{{ item }}</li>{% endfor %}</ul></section>
+    <section><p class="eyebrow">06</p><h2>{% if page.lang == 'en' %}Results{% else %}Results{% endif %}</h2><ul>{% for item in project_results %}<li>{{ item }}</li>{% endfor %}</ul></section>
+  </div>
+  {% endif %}
+
+  {% if project.gallery %}
+  <section class="project-gallery" aria-labelledby="project-gallery-title">
+    <h2 id="project-gallery-title">{% if page.lang == 'en' %}Architecture and evidence views{% else %}Architecture · Evidence View{% endif %}</h2>
+    <div>{% for image in project.gallery %}<figure><picture><source srcset="{{ image.webp | relative_url }}" type="image/webp"><img src="{{ image.jpg | relative_url }}" alt="{% if page.lang == 'en' %}{{ image.alt_en }}{% else %}{{ image.alt_ko }}{% endif %}" width="{{ image.width }}" height="{{ image.height }}" loading="lazy"></picture><figcaption>{% if page.lang == 'en' %}{{ image.caption_en }}{% else %}{{ image.caption_ko }}{% endif %}</figcaption></figure>{% endfor %}</div>
+  </section>
+  {% endif %}
+
   <div class="case-study-grid">
     <section aria-labelledby="contribution-title">
       <h2 id="contribution-title">{% if page.lang == 'en' %}Engineering contribution{% else %}Engineering Contribution{% endif %}</h2>
@@ -63,10 +93,9 @@ layout: default
   <section aria-labelledby="project-links-title">
     <h2 id="project-links-title">{% if page.lang == 'en' %}Evidence links{% else %}근거 링크{% endif %}</h2>
     <div class="button-row">
-      <a class="portfolio-button portfolio-button--primary" href="{{ project.repository }}">Repository</a>
-      {% if page.lang == 'en' and project.pages_en %}<a class="portfolio-button" href="{{ project.pages_en }}">Project Pages</a>{% endif %}
-      {% if page.lang != 'en' and project.pages_ko %}<a class="portfolio-button" href="{{ project.pages_ko }}">Project Pages</a>{% endif %}
-      {% if project.notion %}<a class="portfolio-button" href="{{ project.notion }}">Notion</a>{% endif %}
+      <a class="portfolio-button portfolio-button--primary" href="{{ project.repository }}" target="_blank" rel="noopener noreferrer">Repository</a>
+      {% if page.lang == 'en' and project.pages_en %}<a class="portfolio-button" href="{{ project.pages_en }}" target="_blank" rel="noopener noreferrer">Project Pages</a>{% endif %}
+      {% if page.lang != 'en' and project.pages_ko %}<a class="portfolio-button" href="{{ project.pages_ko }}" target="_blank" rel="noopener noreferrer">Project Pages</a>{% endif %}
     </div>
     <div class="filter-links">
       {% for category in project.categories %}

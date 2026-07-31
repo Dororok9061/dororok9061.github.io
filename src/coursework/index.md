@@ -26,4 +26,3 @@ alternate_lang: en
 
 - [Coursework project page](/projects/coursework/)
 - [Full coursework repository](https://github.com/Tontonjeong/electrical-engineering-coursework-portfolio)
-- [Detailed Notion page](https://app.notion.com/p/3ab518ac7a5981a095f3c2cca6aaa35d)

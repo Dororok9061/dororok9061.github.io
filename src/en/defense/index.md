@@ -21,4 +21,3 @@ reports. They must not be interpreted as real-system specifications, official
 performance, or deployable operating procedures.
 
 - [Defense Systems project page](/en/projects/defense-systems/)
-- [Detailed Notion case studies](https://app.notion.com/p/3ab518ac7a5981c0aecfff5207b14f54)

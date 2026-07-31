@@ -9,8 +9,8 @@
   status_class: executed
   image_webp: /assets/images/projects/fpga-architecture.webp
   image_jpg: /assets/images/projects/fpga-architecture.jpg
-  image_width: 1440
-  image_height: 620
+  image_width: 1200
+  image_height: 517
   alt_ko: Shift Register, Circular Queue, Memory-Based 구조로 발전하는 FPGA delay logic architecture
   alt_en: FPGA delay-logic architecture progressing from a shift register to circular queue and memory-based design
   evidence_ko:
@@ -31,13 +31,45 @@
     - Self-checking testbench and deterministic regression
   boundary_ko: Functional simulation만 실행했습니다. Quartus synthesis, timing, power, Fmax와 수치 PPA는 도구 보고서가 없어 BLOCKED입니다.
   boundary_en: Functional simulation was executed. Quartus synthesis, timing, power, Fmax, and numerical PPA remain BLOCKED because no tool reports are available.
+  problem_ko: 동일한 cycle-delay 동작을 여러 RTL architecture로 구현하면서 latency contract와 결과 일치성을 독립적으로 검증하는 문제입니다.
+  problem_en: The project implements one cycle-delay contract across multiple RTL architectures while independently checking latency and output equivalence.
+  architecture_ko: Shift Register → Circular Queue → Memory-Based Driver/Checker로 architecture를 확장하고 독립 reference model과 비교합니다.
+  architecture_en: The architecture progresses from a shift register to a circular queue and a memory-based Driver/Checker, compared against an independent reference model.
+  stack_ko: [SystemVerilog, Icarus Verilog, VHDL, GHDL, Quartus, ModelSim/Questa]
+  stack_en: [SystemVerilog, Icarus Verilog, VHDL, GHDL, Quartus, ModelSim/Questa]
+  data_flow_ko: Parameter와 입력 vector → DUT와 reference model → cycle-aligned checker → deterministic PASS/FAIL log.
+  data_flow_en: Parameters and input vectors → DUT and reference model → cycle-aligned checker → deterministic PASS/FAIL log.
+  methods_ko:
+    - Width·depth·delay parameter를 바꿔도 유지되는 RTL contract 정의
+    - DUT와 분리된 reference model 및 self-checking testbench 작성
+    - File-driven scenario와 architecture-equivalence regression 실행
+  methods_en:
+    - Defined an RTL contract that remains stable across width, depth, and delay parameters
+    - Built an independent reference model and self-checking testbench
+    - Executed file-driven scenarios and architecture-equivalence regressions
+  results_ko:
+    - Project 1 Icarus Verilog 20 checks PASS
+    - Project 2 architecture-equivalence 26 checks PASS
+    - Project 3 file-driven 3 scenarios PASS
+  results_en:
+    - Project 1 passed 20 Icarus Verilog checks
+    - Project 2 passed 26 architecture-equivalence checks
+    - Project 3 passed three file-driven scenarios
+  gallery:
+    - webp: /assets/images/projects/fpga-waveform.webp
+      jpg: /assets/images/projects/fpga-waveform.jpg
+      width: 1200
+      height: 578
+      alt_ko: FPGA programmable delay logic의 file-driven verification waveform과 timing marker
+      alt_en: File-driven verification waveform and timing markers for the FPGA programmable delay logic
+      caption_ko: Project 3 file-driven dynamic delay verification waveform
+      caption_en: Project 3 file-driven dynamic delay verification waveform
   categories: [fpga, digital-verification]
   ko_url: /projects/fpga-delay-logic/
   en_url: /en/projects/fpga-delay-logic/
   repository: https://github.com/Tontonjeong/fpga-delay-logic-design-verification
   pages_ko: https://tontonjeong.github.io/fpga-delay-logic-design-verification/
   pages_en: https://tontonjeong.github.io/fpga-delay-logic-design-verification/en/
-  notion: https://app.notion.com/p/3ab518ac7a59813bb1aee84b34002b7e
 
 - id: fmcw-radar
   title_ko: FMCW Radar Cardiac Timing
@@ -50,8 +82,8 @@
   status_class: source
   image_webp: /assets/images/projects/radar-hardware.webp
   image_jpg: /assets/images/projects/radar-hardware.jpg
-  image_width: 1600
-  image_height: 1067
+  image_width: 1200
+  image_height: 800
   alt_ko: ECG, SCG, FMCW Radar 실제 실험 하드웨어와 센서 구성
   alt_en: ECG, SCG, and FMCW radar experimental hardware and sensor setup
   evidence_ko:
@@ -72,13 +104,53 @@
     - Detector fusion, SQI, and CTI export
   boundary_ko: AO/AC는 direct valve imaging이 아닌 morphology-based candidate timing입니다. 임상 성능과 독립 echo/ICG/PCG validation은 주장하지 않습니다.
   boundary_en: AO/AC values are morphology-based candidate timings, not direct valve imaging. Clinical performance and independent echo/ICG/PCG validation are not claimed.
+  problem_ko: 비접촉 FMCW Radar 심장 미세변위 파형에서 ECG·SCG와 시간 정렬 가능한 AO/AC 관련 후보 시점을 분석하는 문제입니다.
+  problem_en: The project analyzes AO/AC-related candidate timings in non-contact FMCW radar cardiac displacement waveforms aligned with ECG and SCG.
+  architecture_ko: ECG·SCG·BGT60TR13C Radar 동시취득 → ECG R-peak 기준 정렬 → beat segmentation → phase displacement와 morphology 후보 분석 → SQI·CTI export.
+  architecture_en: Concurrent ECG/SCG/BGT60TR13C radar acquisition → ECG R-peak alignment → beat segmentation → phase-displacement and morphology candidate analysis → SQI/CTI export.
+  stack_ko: [BGT60TR13C, STM32F411, ESP-32S, MPU6050, Python, NumPy, SciPy]
+  stack_en: [BGT60TR13C, STM32F411, ESP-32S, MPU6050, Python, NumPy, SciPy]
+  data_flow_ko: 동시취득된 600초 신호를 공통 시간축에 맞추고 848개 대응 beat를 구성해 후보 시점 분포를 분석합니다.
+  data_flow_en: Six hundred seconds of concurrent signals are aligned to a common time axis, producing 848 corresponding beats for candidate-timing distribution analysis.
+  methods_ko:
+    - ECG R-peak anchor와 SCG reference timing 구성
+    - Radar phase displacement 산출과 beat-relative segmentation
+    - Detector fusion, signal quality index와 candidate timing interval export
+  methods_en:
+    - Constructed ECG R-peak anchors and SCG reference timings
+    - Calculated radar phase displacement and beat-relative segments
+    - Exported detector fusion, signal-quality indices, and candidate timing intervals
+  results_ko:
+    - ECG·SCG·Radar 600초 동시취득
+    - 848개 대응 beat 분석
+    - Radar-derived AO/AC candidate timing 분포 구성
+  results_en:
+    - 600 seconds of concurrent ECG, SCG, and radar acquisition
+    - 848 corresponding beats analyzed
+    - Radar-derived AO/AC candidate timing distributions constructed
+  gallery:
+    - webp: /assets/images/projects/fmcw-experiment.webp
+      jpg: /assets/images/projects/fmcw-experiment.jpg
+      width: 1000
+      height: 1000
+      alt_ko: STM32 보드와 ECG 전극을 포함한 FMCW Radar 심장신호 동시취득 실험 구성
+      alt_en: FMCW radar cardiac-signal acquisition setup with an STM32 board and ECG electrodes
+      caption_ko: 개인정보 검토를 거친 실제 ECG·SCG·Radar 동시취득 하드웨어
+      caption_en: Privacy-reviewed hardware for concurrent ECG, SCG, and radar acquisition
+    - webp: /assets/images/projects/fmcw-waveform.webp
+      jpg: /assets/images/projects/fmcw-waveform.jpg
+      width: 1011
+      height: 642
+      alt_ko: 공통 시간축에 표시된 ECG SCG Radar 심장신호 waveform
+      alt_en: ECG, SCG, and radar cardiac waveforms on a common time axis
+      caption_ko: ECG R-peak 기준 multimodal waveform 정렬 예시
+      caption_en: Example multimodal waveform alignment anchored to ECG R-peaks
   categories: [signal-processing, research]
   ko_url: /projects/fmcw-radar/
   en_url: /en/projects/fmcw-radar/
   repository: https://github.com/Tontonjeong/fmcw-radar-aoac-cardiac-analysis
   pages_ko: https://tontonjeong.github.io/fmcw-radar-aoac-cardiac-analysis/
   pages_en: https://tontonjeong.github.io/fmcw-radar-aoac-cardiac-analysis/en/
-  notion: https://app.notion.com/p/3ab518ac7a5981528979fa5acf99aaa1
 
 - id: ppg-hrv
   title_ko: PPG–HRV Cognitive Load
@@ -91,8 +163,8 @@
   status_class: measured
   image_webp: /assets/images/projects/ppg-pipeline.webp
   image_jpg: /assets/images/projects/ppg-pipeline.jpg
-  image_width: 1600
-  image_height: 1000
+  image_width: 1200
+  image_height: 750
   alt_ko: PPG sensor, STM32 firmware, HRV preprocessing, CNN Transformer 평가를 잇는 연구 pipeline
   alt_en: Research pipeline connecting a PPG sensor, STM32 firmware, HRV preprocessing, and CNN Transformer evaluation
   evidence_ko:
@@ -113,13 +185,45 @@
     - Separation of paper metrics from code-archive metrics
   boundary_ko: Paper summary의 AUC/F1과 code archive의 5-fold metric은 평가 조건이 달라 같은 결과로 합치지 않습니다.
   boundary_en: Paper-summary AUC/F1 and code-archive five-fold metrics use different evaluation conditions and are not presented as the same result.
+  problem_ko: PPG timing에서 안정적인 IBI·HRV 특징을 구성하고 인지 과제 수행 상태 분류 모델까지 provenance를 유지하는 문제입니다.
+  problem_en: The project preserves provenance from PPG timing through IBI/HRV feature construction to cognitive-task classification.
+  architecture_ko: Earlobe PPG sensor·AFE → STM32 취득 → IBI·HRV preprocessing → CNN+Transformer 평가 → fold result와 paper metric 분리.
+  architecture_en: Earlobe PPG sensor/AFE → STM32 acquisition → IBI/HRV preprocessing → CNN+Transformer evaluation → separate fold-result and paper-metric provenance.
+  stack_ko: [PPG AFE, STM32, Python, HRV, CNN, Transformer]
+  stack_en: [PPG AFE, STM32, Python, HRV, CNN, Transformer]
+  data_flow_ko: PPG sample timing을 보존해 peak·IBI를 계산하고 HRV 특징과 sequence를 분류 모델에 전달합니다.
+  data_flow_en: PPG sample timing is preserved through peak/IBI calculation before HRV features and sequences enter the classifier.
+  methods_ko:
+    - PPG acquisition timing과 peak-derived IBI 전처리
+    - Time-domain·frequency-domain HRV feature construction
+    - CNN+Transformer 평가 및 결과 provenance 분리
+  methods_en:
+    - Preprocessed PPG acquisition timing and peak-derived IBIs
+    - Constructed time- and frequency-domain HRV features
+    - Evaluated CNN+Transformer models while separating result provenance
+  results_ko:
+    - 논문 보고 평균 AUC 0.85
+    - 논문 보고 F1-Score 0.82
+    - PPG·STM32·HRV·CNN end-to-end 연구 pipeline 공개
+  results_en:
+    - Paper-reported average AUC of 0.85
+    - Paper-reported F1-score of 0.82
+    - Public PPG/STM32/HRV/CNN end-to-end research pipeline
+  gallery:
+    - webp: /assets/images/projects/ppg-architecture.webp
+      jpg: /assets/images/projects/ppg-architecture.jpg
+      width: 878
+      height: 363
+      alt_ko: PPG 취득부터 HRV 전처리와 CNN 모델 평가까지의 연구 architecture
+      alt_en: Research architecture from PPG acquisition through HRV preprocessing and CNN evaluation
+      caption_ko: PPG acquisition·IBI/HRV preprocessing·model evaluation architecture
+      caption_en: PPG acquisition, IBI/HRV preprocessing, and model-evaluation architecture
   categories: [biomedical-ai, embedded]
   ko_url: /projects/ppg-hrv/
   en_url: /en/projects/ppg-hrv/
   repository: https://github.com/Tontonjeong/PPG-HRV-Cognitive-Load-CNN
   pages_ko: https://tontonjeong.github.io/PPG-HRV-Cognitive-Load-CNN/
   pages_en: https://tontonjeong.github.io/PPG-HRV-Cognitive-Load-CNN/en/
-  notion: https://app.notion.com/p/3ab518ac7a5981f78fe5f1d0730f5631
 
 - id: drowsiness-monitor
   title_ko: Real-Time Drowsiness Monitor
@@ -154,13 +258,45 @@
     - Documentation of the LCD and alarm integration path
   boundary_ko: Latency, sensitivity, specificity, false-alarm rate는 공개 근거가 없어 수치로 주장하지 않습니다.
   boundary_en: Latency, sensitivity, specificity, and false-alarm rate are not quantified because public evidence is unavailable.
+  problem_ko: PPG와 camera 기반 EAR 신호를 분리된 두 Raspberry Pi node에서 취득·분석하고 alarm path로 통합하는 문제입니다.
+  problem_en: The project acquires and analyzes PPG and camera-based EAR signals across two Raspberry Pi nodes and integrates the resulting alarm path.
+  architecture_ko: PPG sensing node와 image/EAR analysis node를 TCP/IP와 file IPC로 연결하고 GPIO·I²C를 통해 LCD와 alarm 출력을 구성합니다.
+  architecture_en: A PPG sensing node and an image/EAR analysis node communicate through TCP/IP and file IPC, with GPIO/I²C driving LCD and alarm outputs.
+  stack_ko: [Raspberry Pi, C/C++, OpenCV, TCP/IP, GPIO, I²C, LCD]
+  stack_en: [Raspberry Pi, C/C++, OpenCV, TCP/IP, GPIO, I²C, LCD]
+  data_flow_ko: PPG·camera sensing → node별 preprocessing → network/file IPC → fatigue decision path → LCD·alarm output.
+  data_flow_en: PPG/camera sensing → per-node preprocessing → network/file IPC → fatigue-decision path → LCD/alarm output.
+  methods_ko:
+    - PPG server와 image/EAR processing module 통합
+    - Two-node communication과 상태 전달 경로 문서화
+    - LCD·alarm interface와 실제 prototype 구성 확인
+  methods_en:
+    - Integrated PPG-server and image/EAR-processing modules
+    - Documented two-node communication and state transfer
+    - Confirmed LCD/alarm interfaces and the physical prototype structure
+  results_ko:
+    - C/C++ source와 two-node architecture 공개
+    - TCP/IP·GPIO·I²C data/alarm path 확인
+    - 실제 prototype·LCD·sensor wiring 사진 확인
+  results_en:
+    - Public C/C++ source and two-node architecture
+    - TCP/IP, GPIO, and I²C data/alarm paths documented
+    - Physical prototype, LCD, and sensor wiring photographs confirmed
+  gallery:
+    - webp: /assets/images/projects/drowsiness-contact-sheet.webp
+      jpg: /assets/images/projects/drowsiness-contact-sheet.jpg
+      width: 780
+      height: 1100
+      alt_ko: Raspberry Pi 졸음 모니터링 prototype, LCD, sensor wiring과 source 화면을 모은 contact sheet
+      alt_en: Contact sheet of the Raspberry Pi drowsiness-monitoring prototype, LCD, sensor wiring, and source views
+      caption_ko: 실제 prototype과 공개 source 근거 contact sheet
+      caption_en: Contact sheet of physical-prototype and public-source evidence
   categories: [embedded, sensing]
   ko_url: /projects/drowsiness-monitor/
   en_url: /en/projects/drowsiness-monitor/
   repository: https://github.com/Tontonjeong/Sleep-monitoring-and-prevention-device
   pages_ko: https://tontonjeong.github.io/Sleep-monitoring-and-prevention-device/
   pages_en: https://tontonjeong.github.io/Sleep-monitoring-and-prevention-device/en/
-  notion: https://app.notion.com/p/3ab518ac7a5981579714fd0ab395ac09
 
 - id: defense-systems
   title_ko: Defense Systems Engineering
@@ -201,7 +337,6 @@
   repository: https://github.com/Tontonjeong/Tontonjeong
   pages_ko:
   pages_en:
-  notion: https://app.notion.com/p/3ab518ac7a5981c0aecfff5207b14f54
 
 - id: coursework
   title_ko: Electrical Engineering Coursework
@@ -214,8 +349,8 @@
   status_class: source
   image_webp: /assets/images/projects/coursework-hero.webp
   image_jpg: /assets/images/projects/coursework-hero.jpg
-  image_width: 1600
-  image_height: 760
+  image_width: 1200
+  image_height: 570
   alt_ko: VHDL, Power, Control, RF, Sensor Systems로 구성된 전자전기공학 학부 과제 포트폴리오
   alt_en: Electrical engineering coursework portfolio spanning VHDL, power, control, RF, and sensor systems
   evidence_ko:
@@ -242,4 +377,3 @@
   repository: https://github.com/Tontonjeong/electrical-engineering-coursework-portfolio
   pages_ko: https://tontonjeong.github.io/electrical-engineering-coursework-portfolio/
   pages_en: https://tontonjeong.github.io/electrical-engineering-coursework-portfolio/en/
-  notion: https://app.notion.com/p/3ab518ac7a5981a095f3c2cca6aaa35d
