@@ -38,6 +38,7 @@ jobs:
 
       - name: Validate recruiter and publication metadata
         run: |
+          python3 -m unittest discover -s tests -p 'test_*.py'
           python3 scripts/check_contact_metadata.py
           python3 scripts/check_recruitment_dates.py
           python3 scripts/check_linkedin_canonical.py

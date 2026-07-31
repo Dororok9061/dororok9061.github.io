@@ -49,8 +49,10 @@
     <div class="button-row">
       <a class="portfolio-button portfolio-button--primary" href="{{ publication_url | relative_url }}">{{ details_label }}</a>
       <a class="portfolio-button" href="{{ publication.official_url }}" target="_blank" rel="noopener noreferrer">Official Conference</a>
+      {% if publication.dbpia_url != empty %}<a class="portfolio-button" href="{{ publication.dbpia_url }}" target="_blank" rel="noopener noreferrer">DBpia</a>{% endif %}
       {% if publication.paper_pdf != empty %}<a class="portfolio-button" href="{{ publication.paper_pdf }}" target="_blank" rel="noopener noreferrer">Paper</a>{% endif %}
       <a class="portfolio-button" href="{{ publication.github_url }}" target="_blank" rel="noopener noreferrer">Code</a>
     </div>
+    <p class="verification-note">{% if include.lang == 'en' %}{{ publication.dbpia_record_note_en }}{% else %}{{ publication.dbpia_record_note_ko }}{% endif %}</p>
   </div>
 </article>
