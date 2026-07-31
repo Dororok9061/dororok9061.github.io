@@ -7,23 +7,59 @@ layout: default
     <h1>{{ page.title }}</h1>
     <p class="page-heading__lead">{{ page.lead }}</p>
   </header>
-  <div class="filter-links">
-    {% assign category_slugs = 'fpga,signal-processing,embedded,biomedical-ai,systems-engineering,coursework' | split: ',' %}
-    {% for category in category_slugs %}
-    <a href="{% if page.lang == 'en' %}{{ '/en/blog/category/' | append: category | append: '/' | relative_url }}{% else %}{{ '/blog/category/' | append: category | append: '/' | relative_url }}{% endif %}">{{ category }}</a>
-    {% endfor %}
-  </div>
+  {% assign blog_prefix = '/blog/' %}{% if page.lang == 'en' %}{% assign blog_prefix = '/en/blog/' %}{% endif %}
+  <nav class="blog-tools" aria-label="{% if page.lang == 'en' %}Blog tools{% else %}블로그 도구{% endif %}">
+    <a href="{{ blog_prefix | append: 'start-here/' | relative_url }}">{% if page.lang == 'en' %}Start here{% else %}처음 오셨다면{% endif %}</a>
+    <a href="{{ blog_prefix | append: 'roadmaps/' | relative_url }}">{% if page.lang == 'en' %}Roadmaps{% else %}로드맵{% endif %}</a>
+    <a href="{{ blog_prefix | append: 'categories/' | relative_url }}">{% if page.lang == 'en' %}Categories{% else %}카테고리{% endif %}</a>
+    <a href="{{ blog_prefix | append: 'archive/' | relative_url }}">Archive</a>
+    <a href="{{ blog_prefix | append: 'tags/' | relative_url }}">Tags</a>
+  </nav>
+
+  <section class="blog-search" data-blog-search data-index-url="{{ '/blog/search-index.json' | relative_url }}" data-lang="{{ page.lang }}">
+    <label for="blog-search-input">{% if page.lang == 'en' %}Search titles, tools, and tags{% else %}제목·도구·태그 검색{% endif %}</label>
+    <input id="blog-search-input" type="search" autocomplete="off" data-blog-search-input>
+    <p class="small-note" data-blog-search-status>{% if page.lang == 'en' %}Category and archive pages work without JavaScript.{% else %}JavaScript가 꺼져도 카테고리와 Archive를 이용할 수 있습니다.{% endif %}</p>
+    <ol class="search-results" data-blog-search-results></ol>
+  </section>
+
+  <section aria-labelledby="blog-categories-heading">
+    <div class="section-heading"><p class="eyebrow">Taxonomy</p><h2 id="blog-categories-heading">{% if page.lang == 'en' %}Learning areas{% else %}분야별 학습 기록{% endif %}</h2></div>
+    <div class="taxonomy-grid">
+      {% assign ordered_categories = site.data.blog_taxonomy | sort: 'order' %}
+      {% for category in ordered_categories %}
+      <article>
+        <h3><a href="{{ blog_prefix | append: 'category/' | append: category.id | append: '/' | relative_url }}">{% if page.lang == 'en' %}{{ category.title_en }}{% else %}{{ category.title_ko }}{% endif %}</a></h3>
+        <p>{% if page.lang == 'en' %}{{ category.description_en }}{% else %}{{ category.description_ko }}{% endif %}</p>
+        <p class="small-note">{{ category.children | size }} {% if page.lang == 'en' %}subcategories{% else %}개 하위 카테고리{% endif %}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section aria-labelledby="blog-series-heading">
+    <div class="section-heading"><p class="eyebrow">Series</p><h2 id="blog-series-heading">{% if page.lang == 'en' %}Study sequences{% else %}학습 순서{% endif %}</h2></div>
+    <div class="series-grid">
+      {% assign ordered_series = site.data.blog_series | sort: 'order' %}
+      {% for series in ordered_series limit: 6 %}
+      <article><p class="status-line">{{ series.status }}</p><h3><a href="{{ blog_prefix | append: 'series/' | append: series.id | append: '/' | relative_url }}">{% if page.lang == 'en' %}{{ series.title_en }}{% else %}{{ series.title_ko }}{% endif %}</a></h3><p>{% if page.lang == 'en' %}{{ series.summary_en }}{% else %}{{ series.summary_ko }}{% endif %}</p></article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <div class="section-heading"><p class="eyebrow">Latest</p><h2>{% if page.lang == 'en' %}Recent study and implementation notes{% else %}최근 학습·구현 기록{% endif %}</h2></div>
   <div class="post-list">
     {% assign visible_posts = site.posts | where: 'lang', page.lang %}
     {% for post in visible_posts %}
+    {% unless post.draft or post.primary_category == 'portfolio-methodology' %}
     <article>
-      <p class="post-card__meta">{{ post.date | date: "%Y-%m-%d" }} · {{ post.categories | join: " / " }}</p>
+      {% if post.thumbnail %}<img src="{{ post.thumbnail | relative_url }}" alt="{{ post.image_alt }}" width="640" height="360" loading="lazy">{% endif %}
+      <p class="post-card__meta">{{ post.updated | default: post.date | date: "%Y-%m-%d" }} · {{ post.primary_category | default: post.categories.first }}{% if post.series %} · {{ post.series }} {{ post.series_order }}{% endif %}</p>
       <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-      <p>{{ post.excerpt | strip_html }}</p>
+      <p>{{ post.description | default: post.excerpt | strip_html }}</p>
       <a class="text-link" href="{{ post.url | relative_url }}">{% if page.lang == 'en' %}Read note{% else %}노트 읽기{% endif %} <span aria-hidden="true">→</span></a>
     </article>
-    {% else %}
-    <p>{% if page.lang == 'en' %}No notes are published yet.{% else %}아직 공개된 노트가 없습니다.{% endif %}</p>
-    {% endfor %}
+    {% endunless %}
+    {% else %}<p>{% if page.lang == 'en' %}No notes are published yet.{% else %}아직 공개된 노트가 없습니다.{% endif %}</p>{% endfor %}
   </div>
 </main>

@@ -1,0 +1,49 @@
+{
+  "project": "OUTTA Basic P3",
+  "evidence_status": "LOCAL_STRATIFIED_HOLDOUT_REPRODUCED",
+  "leaderboard_status": "NOT_VERIFIED_NO_AUTHENTICATED_KAGGLE_SUBMISSION",
+  "timestamp_utc": "2026-07-31T18:51:53.198368+00:00",
+  "seed": 42,
+  "data": {
+    "train_files": 914,
+    "test_files": 300,
+    "classes": 10,
+    "sample_submission_sha256": "231a05df57451d0311d4ca75b53e627baac6edccab480f990d52b314cf057d24"
+  },
+  "audio": {
+    "sample_rate": 22050,
+    "duration_seconds": 30.0
+  },
+  "split": {
+    "type": "stratified_holdout",
+    "validation_fraction": 0.2
+  },
+  "baseline": {
+    "model": "most_frequent",
+    "accuracy": 0.10382513661202186,
+    "balanced_accuracy": 0.1,
+    "macro_f1": 0.01881188118811881
+  },
+  "improved": {
+    "model": "MFCC+delta+chroma+spectral summaries + StandardScaler + RBF-SVM",
+    "selected_parameters": {
+      "svc__C": 3.0
+    },
+    "training_cv_accuracy": 0.759155717081353,
+    "accuracy": 0.8142076502732241,
+    "balanced_accuracy": 0.8120399036807706,
+    "macro_f1": 0.8108101685246215
+  },
+  "submission": {
+    "path": "submission_p3_improved.csv",
+    "rows": 300,
+    "sha256": "bcc7474f8573c12e94eb007c41fe5ace45247e02d7b54ad8780a19362dae5ded"
+  },
+  "runtime": {
+    "python": "3.12.13",
+    "numpy": "2.4.6",
+    "pandas": "3.0.5",
+    "scikit_learn": "1.9.0",
+    "librosa": "0.11.0"
+  }
+}

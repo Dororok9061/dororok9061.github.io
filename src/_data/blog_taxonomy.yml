@@ -1,0 +1,256 @@
+- id: major-foundations
+  order: 10
+  title_ko: 전공 기초
+  title_en: Major Foundations
+  description_ko: 회로·신호·제어·전자기·전기기기·센서의 기초를 연결합니다.
+  description_en: Foundations in circuits, signals, control, electromagnetics, machines, and sensors.
+  children:
+    - { id: circuit-theory, title_ko: 회로이론, title_en: Circuit Theory }
+    - { id: electronic-circuits, title_ko: 전자회로, title_en: Electronic Circuits }
+    - { id: digital-logic, title_ko: 디지털논리, title_en: Digital Logic }
+    - { id: signals-and-systems, title_ko: 신호 및 시스템, title_en: Signals and Systems }
+    - { id: control-theory, title_ko: 제어공학, title_en: Control Theory }
+    - { id: electromagnetics, title_ko: 전자기학, title_en: Electromagnetics }
+    - { id: electrical-machines, title_ko: 전기기기, title_en: Electrical Machines }
+    - { id: power-systems, title_ko: 전력시스템, title_en: Power Systems }
+    - { id: sensor-engineering, title_ko: 센서공학, title_en: Sensor Engineering }
+    - { id: rf-foundations, title_ko: 고주파 기초, title_en: RF Foundations }
+
+- id: fpga-rtl-dv
+  order: 20
+  title_ko: FPGA · RTL · Digital Verification
+  title_en: FPGA · RTL · Digital Verification
+  description_ko: VHDL·SystemVerilog 설계와 독립 reference model 기반 검증 기록입니다.
+  description_en: VHDL and SystemVerilog design with independent reference-model verification.
+  children:
+    - { id: fpga-roadmap, title_ko: FPGA 로드맵, title_en: FPGA Roadmap }
+    - { id: vhdl, title_ko: VHDL, title_en: VHDL }
+    - { id: verilog, title_ko: Verilog, title_en: Verilog }
+    - { id: systemverilog, title_ko: SystemVerilog, title_en: SystemVerilog }
+    - { id: combinational-logic, title_ko: 조합논리, title_en: Combinational Logic }
+    - { id: sequential-logic, title_ko: 순차논리, title_en: Sequential Logic }
+    - { id: fsm, title_ko: FSM, title_en: FSM }
+    - { id: testbench, title_ko: Testbench, title_en: Testbench }
+    - { id: reference-model, title_ko: Reference Model, title_en: Reference Model }
+    - { id: driver-checker, title_ko: Driver와 Checker, title_en: Driver and Checker }
+    - { id: assertions, title_ko: Assertions, title_en: Assertions }
+    - { id: vivado, title_ko: Vivado, title_en: Vivado }
+    - { id: quartus, title_ko: Quartus, title_en: Quartus }
+    - { id: modelsim-questa, title_ko: ModelSim·Questa, title_en: ModelSim and Questa }
+    - { id: ghdl-icarus, title_ko: GHDL·Icarus, title_en: GHDL and Icarus }
+    - { id: timing-constraints, title_ko: Timing Constraints, title_en: Timing Constraints }
+    - { id: ppa, title_ko: PPA, title_en: PPA }
+    - { id: memory-interface, title_ko: Memory Interface, title_en: Memory Interface }
+    - { id: axi-amba, title_ko: AXI·AMBA, title_en: AXI and AMBA }
+    - { id: fpga-troubleshooting, title_ko: FPGA 문제해결, title_en: FPGA Troubleshooting }
+
+- id: stm32-embedded
+  order: 30
+  title_ko: STM32 · Embedded Systems
+  title_en: STM32 · Embedded Systems
+  description_ko: MCU 주변장치, 센서 취득, 통신과 임베디드 통합을 기록합니다.
+  description_en: MCU peripherals, sensor acquisition, communications, and embedded integration.
+  children:
+    - { id: stm32-roadmap, title_ko: STM32 로드맵, title_en: STM32 Roadmap }
+    - { id: cubemx-cubeide, title_ko: CubeMX·CubeIDE, title_en: CubeMX and CubeIDE }
+    - { id: clock, title_ko: Clock, title_en: Clock }
+    - { id: gpio, title_ko: GPIO, title_en: GPIO }
+    - { id: interrupt, title_ko: Interrupt, title_en: Interrupt }
+    - { id: timer-pwm, title_ko: Timer·PWM, title_en: Timer and PWM }
+    - { id: adc, title_ko: ADC, title_en: ADC }
+    - { id: dma, title_ko: DMA, title_en: DMA }
+    - { id: uart, title_ko: UART, title_en: UART }
+    - { id: spi, title_ko: SPI, title_en: SPI }
+    - { id: i2c, title_ko: I2C, title_en: I2C }
+    - { id: can, title_ko: CAN, title_en: CAN }
+    - { id: cmsis-dsp, title_ko: CMSIS-DSP, title_en: CMSIS-DSP }
+    - { id: freertos, title_ko: FreeRTOS, title_en: FreeRTOS }
+    - { id: sensor-acquisition, title_ko: 센서 신호취득, title_en: Sensor Acquisition }
+    - { id: embedded-network, title_ko: 임베디드 네트워크, title_en: Embedded Networking }
+    - { id: debugging, title_ko: Debugging, title_en: Debugging }
+    - { id: performance, title_ko: Performance, title_en: Performance }
+    - { id: embedded-troubleshooting, title_ko: 임베디드 문제해결, title_en: Embedded Troubleshooting }
+
+- id: ai-deep-learning
+  order: 40
+  title_ko: AI · Deep Learning · Computer Vision
+  title_en: AI · Deep Learning · Computer Vision
+  description_ko: 판별형 모델, Vision, 생성형 모델을 서로 다른 학습경로로 관리합니다.
+  description_en: Separate learning paths for discriminative AI, vision, and generative models.
+  children:
+    - { id: ai-roadmap, title_ko: AI 로드맵, title_en: AI Roadmap }
+    - { id: python-numpy, title_ko: Python·NumPy, title_en: Python and NumPy }
+    - { id: pytorch, title_ko: PyTorch, title_en: PyTorch }
+    - { id: machine-learning-basics, title_ko: 머신러닝 기초, title_en: Machine Learning Basics }
+    - { id: discriminative-models, title_ko: 판별형 모델, title_en: Discriminative Models }
+    - { id: cnn, title_ko: CNN, title_en: CNN }
+    - { id: model-evaluation, title_ko: 모델 평가, title_en: Model Evaluation }
+    - { id: computer-vision, title_ko: Computer Vision, title_en: Computer Vision }
+    - { id: image-classification, title_ko: 이미지 분류, title_en: Image Classification }
+    - { id: object-detection, title_ko: 객체탐지, title_en: Object Detection }
+    - { id: segmentation, title_ko: Segmentation, title_en: Segmentation }
+    - { id: pose-estimation, title_ko: Pose Estimation, title_en: Pose Estimation }
+    - { id: transformer, title_ko: Transformer, title_en: Transformer }
+    - { id: vit, title_ko: Vision Transformer, title_en: Vision Transformer }
+    - { id: generative-ai, title_ko: 생성형 AI, title_en: Generative AI }
+    - { id: autoencoder-vae, title_ko: Autoencoder·VAE, title_en: Autoencoder and VAE }
+    - { id: gan, title_ko: GAN, title_en: GAN }
+    - { id: diffusion, title_ko: Diffusion, title_en: Diffusion }
+    - { id: dit, title_ko: Diffusion Transformer, title_en: Diffusion Transformer }
+    - { id: multimodal-ai, title_ko: Multimodal AI, title_en: Multimodal AI }
+    - { id: sensor-fusion-ai, title_ko: Sensor Fusion AI, title_en: Sensor Fusion AI }
+    - { id: on-device-ai, title_ko: On-device AI, title_en: On-device AI }
+    - { id: onnx, title_ko: ONNX, title_en: ONNX }
+    - { id: model-optimization, title_ko: 모델 최적화, title_en: Model Optimization }
+    - { id: ai-troubleshooting, title_ko: AI 문제해결, title_en: AI Troubleshooting }
+
+- id: pcb-pads
+  order: 50
+  title_ko: PCB · PADS · 회로설계 Tool
+  title_en: PCB · PADS · Circuit Design Tools
+  description_ko: 회로도부터 PCB Library, Layout, DRC, Gerber까지의 설계 흐름입니다.
+  description_en: Schematic, PCB library, layout, DRC, and Gerber workflow.
+  children:
+    - { id: pcb-roadmap, title_ko: PCB 로드맵, title_en: PCB Roadmap }
+    - { id: pads-overview, title_ko: PADS 개요, title_en: PADS Overview }
+    - { id: pads-logic, title_ko: PADS Logic, title_en: PADS Logic }
+    - { id: library-part, title_ko: Library Part, title_en: Library Part }
+    - { id: symbol, title_ko: Symbol, title_en: Symbol }
+    - { id: decal-footprint, title_ko: Decal·Footprint, title_en: Decal and Footprint }
+    - { id: schematic, title_ko: Schematic, title_en: Schematic }
+    - { id: packaging-netlist, title_ko: Packaging·Netlist, title_en: Packaging and Netlist }
+    - { id: stackup, title_ko: Stackup, title_en: Stackup }
+    - { id: placement, title_ko: Placement, title_en: Placement }
+    - { id: routing, title_ko: Routing, title_en: Routing }
+    - { id: power-plane, title_ko: Power Plane, title_en: Power Plane }
+    - { id: copper, title_ko: Copper, title_en: Copper }
+    - { id: design-rule, title_ko: Design Rule, title_en: Design Rule }
+    - { id: drc, title_ko: DRC, title_en: DRC }
+    - { id: cam-gerber, title_ko: CAM·Gerber, title_en: CAM and Gerber }
+    - { id: fabrication-output, title_ko: 제조 출력물, title_en: Fabrication Output }
+    - { id: pcb-review, title_ko: PCB Review, title_en: PCB Review }
+    - { id: pads-troubleshooting, title_ko: PADS 문제해결, title_en: PADS Troubleshooting }
+
+- id: control-motor-power
+  order: 60
+  title_ko: 제어 · 전동기 · 전력전자
+  title_en: Control · Motor Drives · Power Electronics
+  description_ko: 모델링, PI 제어, 전동기와 전력변환 실습 기록입니다.
+  description_en: Modeling, PI control, motor drives, and power-conversion notes.
+  children:
+    - { id: control-roadmap, title_ko: 제어 로드맵, title_en: Control Roadmap }
+    - { id: transfer-function, title_ko: 전달함수, title_en: Transfer Function }
+    - { id: state-space, title_ko: 상태공간, title_en: State Space }
+    - { id: pid-pi, title_ko: PID·PI, title_en: PID and PI }
+    - { id: digital-control, title_ko: 디지털 제어, title_en: Digital Control }
+    - { id: dc-motor, title_ko: DC Motor, title_en: DC Motor }
+    - { id: current-control, title_ko: 전류제어, title_en: Current Control }
+    - { id: speed-control, title_ko: 속도제어, title_en: Speed Control }
+    - { id: cascaded-control, title_ko: 이중루프 제어, title_en: Cascaded Control }
+    - { id: h-bridge, title_ko: H-Bridge, title_en: H-Bridge }
+    - { id: field-weakening, title_ko: 약자속, title_en: Field Weakening }
+    - { id: anti-windup, title_ko: Anti-Windup, title_en: Anti-Windup }
+    - { id: torque-ripple, title_ko: Torque Ripple, title_en: Torque Ripple }
+    - { id: matlab, title_ko: MATLAB, title_en: MATLAB }
+    - { id: psim, title_ko: PSIM, title_en: PSIM }
+    - { id: motor-troubleshooting, title_ko: 전동기 제어 문제해결, title_en: Motor Troubleshooting }
+
+- id: rf-radar-signal
+  order: 70
+  title_ko: RF · Microwave · Radar · 신호처리
+  title_en: RF · Microwave · Radar · Signal Processing
+  description_ko: 전송선·S-parameter부터 FMCW Radar 신호처리까지 연결합니다.
+  description_en: From transmission lines and S-parameters to FMCW radar signal processing.
+  children:
+    - { id: rf-roadmap, title_ko: RF 로드맵, title_en: RF Roadmap }
+    - { id: transmission-line, title_ko: 전송선, title_en: Transmission Line }
+    - { id: smith-chart, title_ko: Smith Chart, title_en: Smith Chart }
+    - { id: impedance-matching, title_ko: 임피던스 정합, title_en: Impedance Matching }
+    - { id: microstrip, title_ko: Microstrip, title_en: Microstrip }
+    - { id: s-parameter, title_ko: S-parameter, title_en: S-parameter }
+    - { id: wilkinson, title_ko: Wilkinson Divider, title_en: Wilkinson Divider }
+    - { id: branch-line-hybrid, title_ko: Branch-Line Hybrid, title_en: Branch-Line Hybrid }
+    - { id: cadence-virtuoso, title_ko: Cadence Virtuoso, title_en: Cadence Virtuoso }
+    - { id: radar-basics, title_ko: Radar 기초, title_en: Radar Basics }
+    - { id: fmcw-radar, title_ko: FMCW Radar, title_en: FMCW Radar }
+    - { id: range-fft, title_ko: Range FFT, title_en: Range FFT }
+    - { id: phase-processing, title_ko: 위상 처리, title_en: Phase Processing }
+    - { id: beamforming, title_ko: Beamforming, title_en: Beamforming }
+    - { id: radar-signal-processing, title_ko: Radar 신호처리, title_en: Radar Signal Processing }
+    - { id: ecg-scg-radar, title_ko: ECG·SCG·Radar, title_en: ECG, SCG, and Radar }
+    - { id: beat-alignment, title_ko: Beat Alignment, title_en: Beat Alignment }
+    - { id: radar-troubleshooting, title_ko: Radar 문제해결, title_en: Radar Troubleshooting }
+
+- id: research-project-log
+  order: 80
+  title_ko: 연구 · 논문 · 프로젝트 기록
+  title_en: Research · Papers · Project Logs
+  description_ko: 논문 읽기, 실험, 구현과 검증 경계를 시간순으로 기록합니다.
+  description_en: Paper reading, experiments, implementation, and validation boundaries.
+  children:
+    - { id: paper-review, title_ko: 논문 리뷰, title_en: Paper Review }
+    - { id: official-document-study, title_ko: 공식문서 학습, title_en: Official Document Study }
+    - { id: experiment-log, title_ko: 실험 기록, title_en: Experiment Log }
+    - { id: project-log, title_ko: 프로젝트 기록, title_en: Project Log }
+    - { id: implementation-log, title_ko: 구현 기록, title_en: Implementation Log }
+    - { id: validation-log, title_ko: 검증 기록, title_en: Validation Log }
+    - { id: conference, title_ko: 학술대회, title_en: Conference }
+    - { id: poster, title_ko: 포스터, title_en: Poster }
+    - { id: research-retrospective, title_ko: 연구 회고, title_en: Research Retrospective }
+
+- id: tools-troubleshooting
+  order: 90
+  title_ko: Tool · 개발환경 · 문제해결
+  title_en: Tools · Environments · Troubleshooting
+  description_ko: 설치, 빌드, 시뮬레이터와 하드웨어 디버깅 기록입니다.
+  description_en: Installation, builds, simulators, and hardware debugging.
+  children:
+    - { id: git-github, title_ko: Git·GitHub, title_en: Git and GitHub }
+    - { id: sourcetree, title_ko: SourceTree, title_en: SourceTree }
+    - { id: windows, title_ko: Windows, title_en: Windows }
+    - { id: linux, title_ko: Linux, title_en: Linux }
+    - { id: python-environment, title_ko: Python 환경, title_en: Python Environment }
+    - { id: visual-studio, title_ko: Visual Studio, title_en: Visual Studio }
+    - { id: matlab, title_ko: MATLAB, title_en: MATLAB }
+    - { id: cadence, title_ko: Cadence, title_en: Cadence }
+    - { id: vivado, title_ko: Vivado, title_en: Vivado }
+    - { id: quartus, title_ko: Quartus, title_en: Quartus }
+    - { id: modelsim, title_ko: ModelSim, title_en: ModelSim }
+    - { id: pads, title_ko: PADS, title_en: PADS }
+    - { id: powerworld, title_ko: PowerWorld, title_en: PowerWorld }
+    - { id: psim, title_ko: PSIM, title_en: PSIM }
+    - { id: build-error, title_ko: Build Error, title_en: Build Error }
+    - { id: installation-error, title_ko: 설치 오류, title_en: Installation Error }
+    - { id: hardware-debugging, title_ko: 하드웨어 디버깅, title_en: Hardware Debugging }
+
+- id: portfolio-methodology
+  order: 100
+  title_ko: 포트폴리오 기록 원칙
+  title_en: Portfolio Methodology
+  description_ko: 자료 출처와 실행·측정·미검증 상태를 분리하는 보조 기준입니다.
+  description_en: Supporting rules that separate provenance, execution, measurement, and unknowns.
+  children:
+    - { id: evidence-status, title_ko: Evidence Status, title_en: Evidence Status }
+    - { id: source-provenance, title_ko: Source Provenance, title_en: Source Provenance }
+    - { id: publication-boundary, title_ko: 공개 경계, title_en: Publication Boundary }
+    - { id: result-classification, title_ko: 결과 분류, title_en: Result Classification }
+    - { id: reproducibility, title_ko: 재현성, title_en: Reproducibility }
+
+- id: external-learning
+  order: 110
+  title_ko: 외부교육 · 경진대회
+  title_en: External Learning · Competitions
+  description_ko: 수료, 과제, 프로젝트, 제출, 점수를 서로 다른 증거 단계로 기록합니다.
+  description_en: Separates course completion, assignments, projects, submissions, and scores.
+  children:
+    - { id: bootcamp, title_ko: 부트캠프, title_en: Bootcamp }
+    - { id: google-classroom, title_ko: Google Classroom, title_en: Google Classroom }
+    - { id: kaggle, title_ko: Kaggle, title_en: Kaggle }
+    - { id: competition-log, title_ko: 경진대회 기록, title_en: Competition Log }
+    - { id: course-review, title_ko: 과정 리뷰, title_en: Course Review }
+    - { id: certificate, title_ko: 수료증, title_en: Certificate }
+    - { id: colab, title_ko: Colab, title_en: Colab }
+    - { id: notebook, title_ko: Notebook, title_en: Notebook }
+    - { id: assignment, title_ko: 과제, title_en: Assignment }
+    - { id: ai-training, title_ko: AI 교육, title_en: AI Training }
+    - { id: generative-models, title_ko: 생성모델, title_en: Generative Models }

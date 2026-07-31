@@ -2,8 +2,8 @@
 layout: blog
 title: Engineering Blog
 eyebrow: Engineering Notes
-lead: Design decisions, verification methods, evidence states, and public technical records.
-description: Technical notes on FPGA, signal processing, embedded systems, biomedical AI, and systems engineering.
+lead: Study and implementation notes in electrical engineering, FPGA, embedded systems, AI, RF/radar, control, and PCB design.
+description: Engineering study and design notes with sources, code, circuits, waveforms, and measured results.
 permalink: /en/blog/
 lang: en
 alternate_url: /blog/

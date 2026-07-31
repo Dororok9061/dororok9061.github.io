@@ -1,0 +1,57 @@
+{
+  "project": "OUTTA Basic P2",
+  "evidence_status": "LOCAL_STRATIFIED_HOLDOUT_REPRODUCED",
+  "leaderboard_status": "NOT_VERIFIED_NO_AUTHENTICATED_KAGGLE_SUBMISSION",
+  "secret_status": "CLEAN_RERUN_NO_API_KEY_REQUIRED",
+  "timestamp_utc": "2026-07-31T18:51:03.765580+00:00",
+  "seed": 42,
+  "data": {
+    "train_rows": 12516,
+    "test_rows": 5364,
+    "positive_rows": 595,
+    "positive_rate": 0.04753914988814318,
+    "train_sha256": "c53ddbadd8058585870d974136f8abc1f66f38d758f110451c3250aa85d3296e",
+    "test_sha256": "92370efd9090c9d64788047dd510a5590025d6058977489e2f40398706f54de5"
+  },
+  "split": {
+    "type": "stratified_group_train_calibration_holdout",
+    "group_key": "normalized exact description hash; missing descriptions remain unique by job_id",
+    "train_rows": 8009,
+    "calibration_rows": 2003,
+    "holdout_rows": 2504,
+    "threshold_selected_on": "calibration_f1"
+  },
+  "baseline": {
+    "model": "most_frequent",
+    "accuracy": 0.9524760383386581,
+    "balanced_accuracy": 0.5,
+    "f1": 0.0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "average_precision": 0.04752396166134185,
+    "roc_auc": 0.5
+  },
+  "improved": {
+    "model": "word+character TF-IDF + class-weighted LinearSVC",
+    "decision_threshold": -0.15304541369132318,
+    "accuracy": 0.9896166134185304,
+    "balanced_accuracy": 0.9306766731849974,
+    "f1": 0.8879310344827587,
+    "precision": 0.911504424778761,
+    "recall": 0.865546218487395,
+    "average_precision": 0.9186958988345509,
+    "roc_auc": 0.9768581646495076
+  },
+  "submission": {
+    "path": "submission_p2_improved.csv",
+    "rows": 5364,
+    "positive_predictions": 247,
+    "sha256": "fd6eb9cc8c7873b066ef6a0bef7e1458792fd0e976fef3e4fa91ef4a2739f309"
+  },
+  "runtime": {
+    "python": "3.12.13",
+    "numpy": "2.4.6",
+    "pandas": "3.0.5",
+    "scikit_learn": "1.9.0"
+  }
+}

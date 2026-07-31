@@ -1,0 +1,10 @@
+---
+layout: default
+---
+{% assign roadmap = site.data.blog_roadmaps | where: 'id', page.roadmap_id | first %}
+<main id="main" class="page page-shell">
+  <header class="page-heading"><p class="eyebrow">Roadmap · {{ roadmap.source_status }}</p><h1>{% if page.lang == 'en' %}{{ roadmap.title_en }}{% else %}{{ roadmap.title_ko }}{% endif %}</h1><p class="page-heading__lead">{% if page.lang == 'en' %}{{ roadmap.goal_en }}{% else %}{{ roadmap.goal_ko }}{% endif %}</p></header>
+  <dl class="post-facts"><div><dt>{% if page.lang == 'en' %}Prerequisites{% else %}선수지식{% endif %}</dt><dd>{% if page.lang == 'en' %}{{ roadmap.prerequisites_en }}{% else %}{{ roadmap.prerequisites_ko }}{% endif %}</dd></div><div><dt>Source status</dt><dd>{{ roadmap.source_status }}</dd></div></dl>
+  {% if roadmap.publication_boundary_ko %}<aside class="boundary-note"><h2>{% if page.lang == 'en' %}Publication boundary{% else %}공개 경계{% endif %}</h2><p>{% if page.lang == 'en' %}{{ roadmap.publication_boundary_en }}{% else %}{{ roadmap.publication_boundary_ko }}{% endif %}</p></aside>{% endif %}
+  <ol class="roadmap-steps">{% for step in roadmap.steps %}<li><span class="status-line">{{ step.status }}</span><strong>{% if page.lang == 'en' %}{{ step.title_en }}{% else %}{{ step.title_ko }}{% endif %}</strong>{% if step.series and step.status == 'published' %} <a href="{% if page.lang == 'en' %}{{ '/en/blog/series/' | append: step.series | append: '/' }}{% else %}{{ '/blog/series/' | append: step.series | append: '/' }}{% endif %}">{% if page.lang == 'en' %}Open series{% else %}시리즈 보기{% endif %}</a>{% endif %}</li>{% endfor %}</ol>
+</main>

@@ -44,6 +44,45 @@ jobs:
           python3 scripts/check_publication_metadata.py
           python3 scripts/check_publication_images.py
 
+      - name: Validate structured engineering blog
+        run: |
+          python3 scripts/blog/validate_blog_frontmatter.py
+          python3 scripts/blog/validate_blog_taxonomy.py
+          python3 scripts/blog/validate_blog_series.py
+          python3 scripts/blog/validate_series_order.py
+          python3 scripts/blog/check_blog_assets.py
+          python3 scripts/blog/check_blog_sources.py
+          python3 scripts/blog/check_blog_links.py
+          python3 scripts/blog/check_blog_i18n.py
+          python3 scripts/blog/check_blog_search_index.py
+          python3 scripts/blog/check_blog_copy_style.py
+          python3 scripts/blog/check_post_depth.py
+
+      - name: Validate external learning publication boundaries
+        run: |
+          python3 scripts/learning/validate_learning_programs.py
+          python3 scripts/learning/validate_competitions.py
+          python3 scripts/learning/check_classroom_privacy.py
+          python3 scripts/learning/check_kaggle_secrets.py
+          python3 scripts/learning/check_kaggle_metrics.py
+          python3 scripts/learning/check_outta_reruns.py
+          python3 scripts/learning/check_learning_assets.py
+          python3 scripts/learning/check_certificates.py
+          python3 scripts/learning/check_learning_i18n.py
+          python3 scripts/learning/check_publication_boundaries.py
+          python3 scripts/learning/inventory_course_sources.py
+          python3 scripts/learning/extract_pptx_content.py
+          python3 scripts/learning/extract_pdf_content.py
+          python3 scripts/learning/extract_course_figures.py
+          python3 scripts/learning/map_course_topics.py
+          python3 scripts/learning/check_day_topic_coverage.py
+          python3 scripts/learning/check_slide_coverage.py
+          python3 scripts/learning/check_pdf_page_coverage.py
+          python3 scripts/learning/check_figure_coverage.py
+          python3 scripts/learning/check_practice_file_coverage.py
+          python3 scripts/learning/check_notion_blog_parity.py
+          python3 scripts/learning/check_private_course_data.py
+
       - name: Scan source and public build
         shell: pwsh
         run: |

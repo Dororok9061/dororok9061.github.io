@@ -1,0 +1,18 @@
+---
+layout: default
+---
+{% assign course = site.data.courses[page.course_id] %}
+{% assign day_record = course.days | where: 'day', page.day | first %}
+<main id="main" class="page page-shell">
+  <header class="page-heading">
+    <p class="eyebrow">{% if page.lang == 'en' %}Course Study Record{% else %}과정 학습 기록{% endif %}</p>
+    <h1>{% if page.lang == 'en' %}{{ day_record.title_en }}{% else %}{{ day_record.title_ko }}{% endif %}</h1>
+    <p class="page-heading__lead">{% if page.lang == 'en' %}{{ day_record.overview_en }}{% else %}{{ day_record.overview_ko }}{% endif %}</p>
+  </header>
+  <p class="status-banner">{{ day_record.mapping_status }}</p>
+  <dl class="post-facts"><div><dt>Date</dt><dd>{{ day_record.date }}</dd></div><div><dt>Course</dt><dd>{% if page.lang == 'en' %}{{ course.title_en }}{% else %}{{ course.title_ko }}{% endif %}</dd></div><div><dt>Source</dt><dd>{{ course.source_page_status }}</dd></div><div><dt>Attachments</dt><dd>{{ course.source_attachment_count }} inventoried · {{ course.materialization_status }}</dd></div></dl>
+  <h2>{% if page.lang == 'en' %}Source-mapped topics{% else %}Source에 매핑된 주제{% endif %}</h2>
+  {% if day_record.topic_pages.size > 0 %}<ol>{% assign topics = day_record.topic_pages | sort: 'order' %}{% for topic in topics %}<li><strong>{% if page.lang == 'en' %}{{ topic.title_en }}{% else %}{{ topic.title_ko }}{% endif %}</strong> — {{ topic.status }}</li>{% endfor %}</ol>{% else %}<p>{% if page.lang == 'en' %}No topic is assigned because the source page does not expose this Day heading. The missing mapping is kept blocked instead of inferred.{% else %}원본 페이지에 이 Day heading이 없어 주제를 배정하지 않았습니다. 누락된 매핑은 추정하지 않고 BLOCKED로 유지합니다.{% endif %}</p>{% endif %}
+  <aside class="boundary-note"><h2>{% if page.lang == 'en' %}Evidence boundary{% else %}증거 경계{% endif %}</h2><p>{% if page.lang == 'en' %}Course files, private Colab/Drive links, instructor contacts, and signed attachment URLs are not published. STUDIED_ONLY does not claim execution or reproduced output.{% else %}강좌 파일, 비공개 Colab·Drive 링크, 강사 연락처, signed attachment URL은 공개하지 않습니다. STUDIED_ONLY는 실행 또는 재현 결과를 뜻하지 않습니다.{% endif %}</p></aside>
+  <p><a href="{% if page.lang == 'en' %}{{ '/en/learning/bootcamps/kaist-generative-models-2025/' | relative_url }}{% else %}{{ '/learning/bootcamps/kaist-generative-models-2025/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}Back to course evidence record{% else %}과정 근거 기록으로 돌아가기{% endif %}</a></p>
+</main>

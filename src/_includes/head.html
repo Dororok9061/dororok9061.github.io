@@ -2,7 +2,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta
   http-equiv="Content-Security-Policy"
-  content="default-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; media-src 'self'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests"
+  content="default-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; media-src 'self'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests"
 >
 {% assign page_title = page.seo_title | default: page.title | default: site.title %}
 {% assign page_description = page.description | default: site.description %}
@@ -15,6 +15,21 @@
 <link rel="canonical" href="{{ canonical_url }}">
 {% if page.alternate_url %}
 <link rel="alternate" hreflang="{{ page.alternate_lang }}" href="{{ page.alternate_url | absolute_url }}">
+{% endif %}
+{% if page.layout == 'post' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": {{ page.title | jsonify }},
+  "description": {{ page.description | jsonify }},
+  "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+  "dateModified": {{ page.updated | default: page.date | date_to_xmlschema | jsonify }},
+  "inLanguage": {{ page.lang | jsonify }},
+  "author": {"@type": "Person", "name": {{ site.author.name | jsonify }}},
+  "mainEntityOfPage": {{ canonical_url | jsonify }}
+}
+</script>
 {% endif %}
 <link rel="alternate" hreflang="{{ page.lang }}" href="{{ canonical_url }}">
 <link rel="alternate" hreflang="x-default" href="{{ '/' | absolute_url }}">
