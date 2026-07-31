@@ -77,7 +77,7 @@ $allFiles = Get-ChildItem -LiteralPath $resolvedRoot -Recurse -File -Force
 if (-not $BuiltSite) {
     $allFiles = $allFiles | Where-Object {
         $candidate = Get-RelativePath -Path $_.FullName
-        $candidate -notmatch '^(?i)(?:\.git|\.bundle|vendor|_site)[\\/]'
+        $candidate -notmatch '^(?i)(?:\.git|\.bundle|vendor|_site|work)[\\/]'
     }
 }
 $textExtensions = @(

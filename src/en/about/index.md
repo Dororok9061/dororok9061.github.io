@@ -2,38 +2,40 @@
 layout: about
 title: About
 eyebrow: Profile
-lead: An undergraduate electrical engineering researcher connecting problem definition to public verification evidence.
-description: Education, research interests, engineering approach, and evidence boundaries for Hyeongrok Ryu.
+lead: An undergraduate electrical engineering researcher focused on radar and embedded signal processing, with FPGA RTL and digital verification as a secondary track.
+description: Education, affiliation, graduation and availability dates, career focus, and evidence boundaries for Hyeongrok Ryu.
 permalink: /en/about/
 lang: en
 alternate_url: /about/
 alternate_lang: ko
 ---
 
-## Education
+## Research and career direction
 
-I am a B.S. candidate in Electrical and Electronic Engineering at Dankook
-University. The wording intentionally does not imply that the degree has already
-been completed.
+My primary focus is **Radar · Embedded Signal Processing Engineering**, connecting
+FMCW radar, BGT60TR13C, concurrent ECG/SCG/radar acquisition, STM32F411,
+ESP-32S/MPU6050, beat alignment, and sensor fusion.
 
-## Research
+My secondary focus is **FPGA RTL · Digital Verification Engineering**, spanning
+SystemVerilog, VHDL, parameterized RTL, drivers, checkers, reference models,
+file-driven verification, Icarus, GHDL, Quartus, and ModelSim/Questa.
 
-As an undergraduate research intern at the Human & Systems Laboratory, I work
-across radar signal processing, biomedical sensing, embedded acquisition, and
-data-validation pipelines. `Human & Systems Laboratory` is maintained as a
-provisional translation until an official English name is confirmed.
+## Supporting Competencies
+
+RF/microwave circuit design, embedded hardware and firmware, biomedical signal
+processing, automotive electronics, motor control and power electronics,
+electrical machines, defense systems engineering, and reliability/systems
+engineering support the two focus tracks.
 
 ## Engineering approach
 
-1. I separate Source Available, Executed, Measured, and BLOCKED states.
-2. RTL simulation, synthesis, PPA, and hardware measurement are recorded independently.
-3. Quantitative claims require traceable public evidence such as CSV files, logs, waveforms, photographs, or reports.
-4. Individual contributions to team projects are not expanded beyond what public material supports.
+Source Available, Executed, Measured, and BLOCKED are separate states. RTL
+simulation, synthesis, PPA, and hardware measurement are never collapsed into one
+claim, and individual contributions and metrics stay within public evidence.
 
 ## Links
 
 - [GitHub Profile](https://github.com/Tontonjeong)
-- [Detailed Notion Portfolio](https://app.notion.com/p/3ab518ac7a598121b666e4c7cce8324c)
 - [Publications](/en/publications/)
 - [Role-oriented Portfolio](/en/roles/)
 

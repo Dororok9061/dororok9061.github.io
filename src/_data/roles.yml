@@ -1,28 +1,33 @@
 - id: rtl-dv
+  tier: SECONDARY
   title_ko: FPGA RTL·DV Engineer
   title_en: FPGA RTL/DV Engineer
   summary_ko: Parameterized RTL, reference model, self-checking testbench, architecture equivalence와 deterministic regression.
   summary_en: Parameterized RTL, reference models, self-checking testbenches, architecture equivalence, and deterministic regression.
   projects: [fpga-delay-logic, coursework]
 - id: signal-processing
+  tier: PRIMARY
   title_ko: Radar·Biomedical Signal Processing Engineer
   title_en: Radar and Biomedical Signal Processing Engineer
   summary_ko: ECG·SCG·FMCW 정렬, phase displacement, beat segmentation, SQI와 morphology 기반 후보 시점 분석.
   summary_en: ECG/SCG/FMCW alignment, phase displacement, beat segmentation, SQI, and morphology-based candidate timing.
   projects: [fmcw-radar, ppg-hrv]
 - id: embedded
+  tier: SUPPORTING
   title_ko: Embedded Systems Engineer
   title_en: Embedded Systems Engineer
   summary_ko: STM32·ESP32·Raspberry Pi acquisition, TCP/IP, GPIO·I²C, sensor-to-alarm integration.
   summary_en: STM32, ESP32, and Raspberry Pi acquisition with TCP/IP, GPIO/I²C, and sensor-to-alarm integration.
   projects: [drowsiness-monitor, ppg-hrv, fmcw-radar]
 - id: biomedical-ai
+  tier: SUPPORTING
   title_ko: Biomedical AI Engineer
   title_en: Biomedical AI Engineer
   summary_ko: PPG timing integrity, IBI·HRV feature construction, CNN+Transformer evaluation과 metric provenance.
   summary_en: PPG timing integrity, IBI/HRV feature construction, CNN+Transformer evaluation, and metric provenance.
   projects: [ppg-hrv]
 - id: systems
+  tier: SUPPORTING
   title_ko: Systems Engineer
   title_en: Systems Engineer
   summary_ko: 요구도 traceability, 정량 trade-off, verification boundary, reliability·maintainability.

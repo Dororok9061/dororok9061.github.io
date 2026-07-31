@@ -7,6 +7,13 @@
   <a class="skip-link" href="#main">{% if page.lang == 'en' %}Skip to content{% else %}본문으로 건너뛰기{% endif %}</a>
   {% include header.html %}
   {{ content }}
+  <dialog class="lightbox" id="publication-lightbox" aria-labelledby="lightbox-caption">
+    <button class="lightbox__close" type="button" data-lightbox-close aria-label="{% if page.lang == 'en' %}Close image preview{% else %}이미지 미리보기 닫기{% endif %}">×</button>
+    <figure>
+      <img class="lightbox__image" src="{{ '/assets/images/og.jpg' | relative_url }}" alt="{% if page.lang == 'en' %}Publication evidence preview{% else %}논문 근거 이미지 미리보기{% endif %}" width="1200" height="630">
+      <figcaption id="lightbox-caption"></figcaption>
+    </figure>
+  </dialog>
   {% include footer.html %}
   <script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
 </body>

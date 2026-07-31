@@ -2,13 +2,13 @@
 layout: publications
 title: Publications
 eyebrow: Research
-lead: First-author research supported by a public PDF or repository citation record.
-description: Publicly supported first-author publication records for Hyeongrok Ryu.
+lead: Two first-author conference proceedings papers and poster presentations with traceable publication evidence.
+description: First-author CICS’25 and KIEE Summer Conference proceedings papers and poster presentation records.
 permalink: /en/publications/
 lang: en
 alternate_url: /publications/
 alternate_lang: ko
 ---
 
-Unverified venue, DOI, issue, and page information is intentionally omitted.
-Future bibliographic details will be added only with a traceable public record.
+The unverified DBpia record URL and complete page range for the FMCW paper are
+explicitly marked instead of being inferred.

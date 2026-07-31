@@ -1,0 +1,90 @@
+---
+layout: default
+---
+{% assign publication = site.data.publications | where: 'id', page.publication_id | first %}
+{% if page.lang == 'en' %}
+  {% assign publication_title = publication.title_en %}
+  {% assign publication_authors = publication.authors_en %}
+  {% assign publication_venue = publication.venue_en %}
+  {% assign publication_dates = publication.conference_dates_en %}
+  {% assign publication_location = publication.location_en %}
+  {% assign publication_role = publication.role_en %}
+  {% assign publication_abstract = publication.abstract_en %}
+  {% assign research_problem = publication.research_problem_en %}
+  {% assign architecture = publication.architecture_en %}
+  {% assign methods = publication.methods_en %}
+  {% assign results = publication.results_en %}
+  {% assign boundary = publication.boundary_en %}
+  {% assign cover_alt = publication.cover_alt_en %}
+  {% assign cover_caption = publication.cover_caption_en %}
+{% else %}
+  {% assign publication_title = publication.title_ko %}
+  {% assign publication_authors = publication.authors_ko %}
+  {% assign publication_venue = publication.venue_ko %}
+  {% assign publication_dates = publication.conference_dates_ko %}
+  {% assign publication_location = publication.location_ko %}
+  {% assign publication_role = publication.role_ko %}
+  {% assign publication_abstract = publication.abstract_ko %}
+  {% assign research_problem = publication.research_problem_ko %}
+  {% assign architecture = publication.architecture_ko %}
+  {% assign methods = publication.methods_ko %}
+  {% assign results = publication.results_ko %}
+  {% assign boundary = publication.boundary_ko %}
+  {% assign cover_alt = publication.cover_alt_ko %}
+  {% assign cover_caption = publication.cover_caption_ko %}
+{% endif %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": {{ publication.title_en | jsonify }},
+  "name": {{ publication_title | jsonify }},
+  "author": [{% for author in publication.authors_en %}{"@type":"Person","name":{{ author | jsonify }}}{% unless forloop.last %},{% endunless %}{% endfor %}],
+  "datePublished": {{ publication.year | append: '-' | append: publication.month | append: '-01' | jsonify }},
+  "genre": "Conference Proceedings Paper",
+  "isPartOf": {"@type":"CreativeWork","name":{{ publication_venue | jsonify }}},
+  "pagination": {{ publication.pages | jsonify }},
+  "url": {{ page.url | absolute_url | jsonify }}
+}
+</script>
+<main id="main" class="page page-shell publication-detail">
+  <nav class="breadcrumbs" aria-label="{% if page.lang == 'en' %}Breadcrumb{% else %}현재 위치{% endif %}">
+    <a href="{% if page.lang == 'en' %}{{ '/en/' | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}Home{% else %}홈{% endif %}</a><span aria-hidden="true">/</span>
+    <a href="{% if page.lang == 'en' %}{{ '/en/publications/' | relative_url }}{% else %}{{ '/publications/' | relative_url }}{% endif %}">Publications</a>
+  </nav>
+  <header class="publication-detail__heading">
+    <div>
+      <p class="eyebrow">{{ publication_venue }}</p>
+      <h1>{{ publication_title }}</h1>
+      <p class="publication-card__authors">{{ publication_authors | join: ', ' }}</p>
+      <div class="badge-row"><span class="evidence-badge evidence-badge--measured">{% if page.lang == 'en' %}First Author{% else %}제1저자{% endif %}</span><span class="evidence-badge evidence-badge--source">Conference Proceedings</span><span class="evidence-badge evidence-badge--source">Poster Presentation</span></div>
+    </div>
+    {% if publication.cover_image != empty %}
+    <figure class="publication-preview">
+      <picture><source srcset="{{ publication.cover_image | relative_url }}" type="image/webp"><img src="{{ publication.cover_image_fallback | relative_url }}" alt="{{ cover_alt }}" width="{{ publication.cover_width }}" height="{{ publication.cover_height }}"></picture>
+      <figcaption>{{ cover_caption }}</figcaption>
+      <button type="button" data-lightbox="{{ publication.cover_image_fallback | relative_url }}" data-lightbox-alt="{{ cover_alt | escape }}" data-lightbox-caption="{{ cover_caption | escape }}">{% if page.lang == 'en' %}Open full preview{% else %}원본 확대{% endif %}</button>
+    </figure>
+    {% endif %}
+  </header>
+
+  <dl class="publication-facts">
+    <div><dt>{% if page.lang == 'en' %}Venue and date{% else %}학회·일정{% endif %}</dt><dd>{{ publication_venue }} · {{ publication_dates }}</dd></div>
+    <div><dt>{% if page.lang == 'en' %}Location{% else %}장소{% endif %}</dt><dd>{{ publication_location }}</dd></div>
+    <div><dt>{% if page.lang == 'en' %}Publication type{% else %}논문 유형{% endif %}</dt><dd>{{ publication.type }}</dd></div>
+    <div><dt>{% if page.lang == 'en' %}Pages{% else %}페이지{% endif %}</dt><dd>{{ publication.pages }}{% if publication.page_verification_status == 'FULL_PAGE_RANGE_UNDER_VERIFICATION' %} · Full page range under verification{% endif %}</dd></div>
+    <div><dt>{% if page.lang == 'en' %}My role{% else %}본인 역할{% endif %}</dt><dd>{{ publication_role }}</dd></div>
+  </dl>
+
+  <div class="case-study-grid publication-sections">
+    <section><h2>{% if page.lang == 'en' %}Abstract Summary{% else %}초록 요약{% endif %}</h2><p>{{ publication_abstract }}</p></section>
+    <section><h2>{% if page.lang == 'en' %}Research Problem{% else %}연구 문제{% endif %}</h2><p>{{ research_problem }}</p></section>
+    <section><h2>{% if page.lang == 'en' %}System Architecture{% else %}시스템 구조{% endif %}</h2><p>{{ architecture }}</p></section>
+    <section><h2>{% if page.lang == 'en' %}Methods{% else %}연구 방법{% endif %}</h2><p>{{ methods }}</p></section>
+    <section><h2>{% if page.lang == 'en' %}Results{% else %}결과{% endif %}</h2><p>{{ results }}</p><dl class="metric-list">{% for metric in publication.metrics %}<div><dt>{% if page.lang == 'en' %}{{ metric.label_en }}{% else %}{{ metric.label_ko }}{% endif %}</dt><dd>{{ metric.value }}</dd></div>{% endfor %}</dl></section>
+    <section><h2>{% if page.lang == 'en' %}Validation Boundary{% else %}검증 경계{% endif %}</h2><p>{{ boundary }}</p></section>
+  </div>
+
+  <section aria-labelledby="publication-links-title"><h2 id="publication-links-title">{% if page.lang == 'en' %}Evidence and related work{% else %}근거와 관련 작업{% endif %}</h2><div class="button-row"><a class="portfolio-button portfolio-button--primary" href="{{ publication.official_url }}" target="_blank" rel="noopener noreferrer">Official Conference</a>{% if publication.paper_pdf != empty %}<a class="portfolio-button" href="{{ publication.paper_pdf }}" target="_blank" rel="noopener noreferrer">Paper PDF</a>{% endif %}<a class="portfolio-button" href="{{ publication.github_url }}" target="_blank" rel="noopener noreferrer">Repository</a><a class="portfolio-button" href="{% if page.lang == 'en' %}{{ publication.project_url | prepend: '/en' | relative_url }}{% else %}{{ publication.project_url | relative_url }}{% endif %}">Project</a></div></section>
+  <div class="prose">{{ content }}</div>
+</main>

@@ -1,0 +1,65 @@
+{% assign publication = include.publication %}
+{% if include.lang == 'en' %}
+  {% assign publication_title = publication.title_en %}
+  {% assign publication_authors = publication.authors_en %}
+  {% assign publication_venue = publication.venue_en %}
+  {% assign publication_role = publication.role_en %}
+  {% assign publication_summary = publication.abstract_en %}
+  {% assign publication_url = publication.en_url %}
+  {% assign cover_alt = publication.cover_alt_en %}
+  {% assign cover_caption = publication.cover_caption_en %}
+  {% assign details_label = 'Publication details' %}
+  {% assign preview_label = 'Open first-page preview' %}
+{% else %}
+  {% assign publication_title = publication.title_ko %}
+  {% assign publication_authors = publication.authors_ko %}
+  {% assign publication_venue = publication.venue_ko %}
+  {% assign publication_role = publication.role_ko %}
+  {% assign publication_summary = publication.abstract_ko %}
+  {% assign publication_url = publication.ko_url %}
+  {% assign cover_alt = publication.cover_alt_ko %}
+  {% assign cover_caption = publication.cover_caption_ko %}
+  {% assign details_label = '논문 상세 보기' %}
+  {% assign preview_label = '첫 페이지 미리보기 열기' %}
+{% endif %}
+<article class="publication-card">
+  <div class="publication-card__preview">
+    {% if publication.cover_image != empty %}
+    <picture>
+      <source srcset="{{ publication.cover_image | relative_url }}" type="image/webp">
+      <img src="{{ publication.cover_image_fallback | relative_url }}" alt="{{ cover_alt }}" width="{{ publication.cover_width }}" height="{{ publication.cover_height }}" loading="lazy">
+    </picture>
+    <button class="publication-card__zoom" type="button" data-lightbox="{{ publication.cover_image_fallback | relative_url }}" data-lightbox-alt="{{ cover_alt | escape }}" data-lightbox-caption="{{ cover_caption | escape }}">{{ preview_label }}</button>
+    {% else %}
+    <div class="publication-card__placeholder" role="img" aria-label="{% if include.lang == 'en' %}First-page preview is unavailable pending source verification{% else %}원본 검증 전이라 첫 페이지 미리보기를 제공하지 않음{% endif %}">
+      <strong>PREVIEW BLOCKED</strong>
+      <span>{% if include.lang == 'en' %}Source image not available in the supplied files{% else %}제공된 파일에서 원본 이미지를 확인하지 못함{% endif %}</span>
+    </div>
+    {% endif %}
+  </div>
+  <div class="publication-card__content">
+    <div class="badge-row">
+      <span class="evidence-badge evidence-badge--measured">{% if include.lang == 'en' %}First Author{% else %}제1저자{% endif %}</span>
+      <span class="evidence-badge evidence-badge--source">Conference Proceedings</span>
+      <span class="evidence-badge evidence-badge--source">Poster Presentation</span>
+    </div>
+    <p class="publication-card__venue">{{ publication_venue }} · {{ publication.year }}</p>
+    <h2><a href="{{ publication_url | relative_url }}">{{ publication_title }}</a></h2>
+    <p class="publication-card__authors">{{ publication_authors | join: ', ' }}</p>
+    <p>{{ publication_summary }}</p>
+    <dl class="metric-list">
+      {% for metric in publication.metrics %}
+      <div><dt>{% if include.lang == 'en' %}{{ metric.label_en }}{% else %}{{ metric.label_ko }}{% endif %}</dt><dd>{{ metric.value }}</dd></div>
+      {% endfor %}
+    </dl>
+    <p class="publication-card__role">{{ publication_role }}</p>
+    <div class="button-row">
+      <a class="portfolio-button portfolio-button--primary" href="{{ publication_url | relative_url }}">{{ details_label }}</a>
+      <a class="portfolio-button" href="{{ publication.official_url }}" target="_blank" rel="noopener noreferrer">Official Conference</a>
+      {% if publication.paper_pdf != empty %}<a class="portfolio-button" href="{{ publication.paper_pdf }}" target="_blank" rel="noopener noreferrer">Paper</a>{% endif %}
+      <a class="portfolio-button" href="{{ publication.github_url }}" target="_blank" rel="noopener noreferrer">Code</a>
+    </div>
+    {% if publication.dbpia_url == empty and publication.id == 'cics25-cnn-hrv' %}<p class="verification-note">DBpia record URL: UNDER VERIFICATION — no URL is inferred.</p>{% endif %}
+    {% if publication.page_verification_status == 'FULL_PAGE_RANGE_UNDER_VERIFICATION' %}<p class="verification-note">{{ publication.pages }} · Full page range under verification.</p>{% endif %}
+  </div>
+</article>

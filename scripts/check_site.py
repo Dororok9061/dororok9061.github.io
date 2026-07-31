@@ -81,9 +81,12 @@ class PageParser(HTMLParser):
             if name == "style":
                 self.errors.append(f"inline style on <{tag}>")
         if tag == "script":
-            if not values.get("src"):
-                self.errors.append("inline script is not allowed")
-            elif urlparse(values["src"]).scheme:
+            is_structured_data = values.get("type", "").lower() == "application/ld+json"
+            script_src = values.get("src", "")
+            if not script_src:
+                if not is_structured_data:
+                    self.errors.append("inline script is not allowed")
+            elif urlparse(script_src).scheme:
                 self.errors.append("external script is not allowed")
         if tag == "style":
             self.errors.append("inline <style> is not allowed")

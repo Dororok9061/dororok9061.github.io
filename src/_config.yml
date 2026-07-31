@@ -1,6 +1,6 @@
 title: Hyeongrok Ryu Engineering Portfolio
 short_title: Hyeongrok Ryu
-description: Evidence-first engineering portfolio covering FPGA RTL/DV, FMCW radar, embedded systems, biomedical AI, coursework, and systems engineering.
+description: Hyeongrok Ryu's bilingual engineering portfolio for radar and embedded signal processing, FPGA RTL and digital verification, research, and publications.
 url: https://tontonjeong.github.io
 baseurl: ""
 lang: ko
@@ -14,7 +14,8 @@ author:
   name: Hyeongrok Ryu
   name_ko: 류형록
   github: https://github.com/Tontonjeong
-  notion: https://app.notion.com/p/3ab518ac7a598121b666e4c7cce8324c
+  email: hnryu0515@gmail.com
+  linkedin: https://www.linkedin.com/in/hyeongrok-ryu-842231224/
 
 logo_img:
 favicon: /assets/images/favicon.png

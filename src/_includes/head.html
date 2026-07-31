@@ -36,3 +36,31 @@
 <link rel="stylesheet" href="{{ '/assets/fonts/fonts.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/assets/css/portfolio.css' | relative_url }}">
+{% assign profile = site.data.profile %}
+{% if page.url == '/' or page.url == '/en/' or page.url contains '/about/' or page.url contains '/contact/' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": {{ profile.name_en | jsonify }},
+  "alternateName": {{ profile.name_ko | jsonify }},
+  "url": {{ site.url | append: page.url | jsonify }},
+  "image": {{ '/assets/images/profile/hyeongrok-ryu.jpg' | absolute_url | jsonify }},
+  "email": {{ profile.email | prepend: 'mailto:' | jsonify }},
+  "affiliation": {
+    "@type": "CollegeOrUniversity",
+    "name": "Dankook University"
+  },
+  "memberOf": {
+    "@type": "Organization",
+    "name": "Human & Systems Laboratory"
+  },
+  "jobTitle": "Undergraduate Research Intern",
+  "sameAs": [
+    {{ profile.github | jsonify }},
+    {{ profile.linkedin | jsonify }}{% if profile.public_notion_url != empty %},
+    {{ profile.public_notion_url | jsonify }}{% endif %}
+  ]
+}
+</script>
+{% endif %}

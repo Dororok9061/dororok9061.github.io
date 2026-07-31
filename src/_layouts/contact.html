@@ -1,0 +1,29 @@
+---
+layout: default
+---
+{% assign profile = site.data.profile %}
+<main id="main" class="page page-shell contact-page">
+  <header class="page-heading"><p class="eyebrow">{{ page.eyebrow }}</p><h1>{{ page.title }}</h1><p class="page-heading__lead">{{ page.lead }}</p></header>
+  <section class="contact-callout" aria-labelledby="contact-cta-title">
+    <div><p class="availability-badge">{% if page.lang == 'en' %}{{ profile.availability_en }}{% else %}{{ profile.availability_ko }}{% endif %}</p><h2 id="contact-cta-title">{% if page.lang == 'en' %}Recruitment, research, and industry collaboration{% else %}채용·산학협력·연구 관련 연락{% endif %}</h2><p><a href="mailto:{{ profile.email }}">{{ profile.email }}</a></p></div>
+    <div class="button-row"><a class="portfolio-button portfolio-button--primary" href="mailto:{{ profile.email }}">Email</a><a class="portfolio-button" href="{{ profile.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a></div>
+  </section>
+  <dl class="contact-facts">
+    <div><dt>{% if page.lang == 'en' %}Name{% else %}이름{% endif %}</dt><dd>{% if page.lang == 'en' %}{{ profile.name_en }}{% else %}{{ profile.name_ko }}{% endif %}</dd></div>
+    <div><dt>{% if page.lang == 'en' %}Education{% else %}학력{% endif %}</dt><dd>{% if page.lang == 'en' %}{{ profile.degree_en }}{% else %}{{ profile.degree_ko }}{% endif %}</dd></div>
+    <div><dt>{% if page.lang == 'en' %}Research affiliation{% else %}연구 소속{% endif %}</dt><dd>{% if page.lang == 'en' %}{{ profile.laboratory_en }}{% else %}{{ profile.laboratory_ko }}{% endif %}</dd></div>
+    <div><dt>{% if page.lang == 'en' %}Expected graduation{% else %}졸업 예정일{% endif %}</dt><dd>{% if page.lang == 'en' %}{{ profile.expected_graduation_en }}{% else %}{{ profile.expected_graduation_ko }}{% endif %}</dd></div>
+    <div><dt>{% if page.lang == 'en' %}Available from{% else %}입사 가능 시점{% endif %}</dt><dd>{% if page.lang == 'en' %}{{ profile.available_from_en }}{% else %}{{ profile.available_from_ko }}{% endif %}</dd></div>
+    <div><dt>{% if page.lang == 'en' %}Recruitment email{% else %}채용 이메일{% endif %}</dt><dd><a href="mailto:{{ profile.email }}">{{ profile.email }}</a></dd></div>
+    <div><dt>LinkedIn</dt><dd><a href="{{ profile.linkedin }}" target="_blank" rel="noopener noreferrer">{{ profile.linkedin }}</a></dd></div>
+    <div><dt>GitHub</dt><dd><a href="{{ profile.github }}" target="_blank" rel="noopener noreferrer">Tontonjeong</a></dd></div>
+    {% if profile.public_notion_url != empty %}<div><dt>Public Notion</dt><dd><a href="{{ profile.public_notion_url }}" target="_blank" rel="noopener noreferrer">Portfolio</a></dd></div>{% endif %}
+    <div><dt>{% if page.lang == 'en' %}Career interests{% else %}관심 직무{% endif %}</dt><dd>{{ profile.primary_focus_en }} · {{ profile.secondary_focus_en }}</dd></div>
+    <div><dt>{% if page.lang == 'en' %}Industry interests{% else %}관심 산업{% endif %}</dt><dd>{% if page.lang == 'en' %}{{ profile.industries_en }}{% else %}{{ profile.industries_ko }}{% endif %}</dd></div>
+  </dl>
+  <div class="contact-links-grid">
+    <section><h2>{% if page.lang == 'en' %}Key projects{% else %}주요 프로젝트{% endif %}</h2><ul><li><a href="{% if page.lang == 'en' %}{{ '/en/projects/fmcw-radar/' | relative_url }}{% else %}{{ '/projects/fmcw-radar/' | relative_url }}{% endif %}">FMCW Radar Cardiac Timing</a></li><li><a href="{% if page.lang == 'en' %}{{ '/en/projects/fpga-delay-logic/' | relative_url }}{% else %}{{ '/projects/fpga-delay-logic/' | relative_url }}{% endif %}">FPGA Programmable Delay Logic</a></li><li><a href="{% if page.lang == 'en' %}{{ '/en/projects/ppg-hrv/' | relative_url }}{% else %}{{ '/projects/ppg-hrv/' | relative_url }}{% endif %}">PPG–HRV Cognitive Load</a></li></ul></section>
+    <section><h2>{% if page.lang == 'en' %}Key publications{% else %}주요 논문{% endif %}</h2><ul>{% for publication in site.data.publications %}<li><a href="{% if page.lang == 'en' %}{{ publication.en_url | relative_url }}{% else %}{{ publication.ko_url | relative_url }}{% endif %}">{% if page.lang == 'en' %}{{ publication.title_en }}{% else %}{{ publication.title_ko }}{% endif %}</a></li>{% endfor %}</ul></section>
+  </div>
+  <aside class="verification-note">{% if page.lang == 'en' %}This static site has no contact form, account, database, or message storage. Email and LinkedIn are the only contact paths.{% else %}이 정적 사이트에는 Contact Form, 계정, Database 또는 메시지 저장 기능이 없습니다. Email과 LinkedIn만 연락 경로로 사용합니다.{% endif %}</aside>
+</main>
