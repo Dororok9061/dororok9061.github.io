@@ -6,6 +6,7 @@ _reference_themes/
 _site/
 .bundle/
 .jekyll-cache/
+__pycache__/
 vendor/bundle/
 /work/
 *.log
