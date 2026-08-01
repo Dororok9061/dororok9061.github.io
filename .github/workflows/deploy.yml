@@ -38,6 +38,7 @@ jobs:
 
       - name: Validate recruiter and publication metadata
         run: |
+          python3 -m unittest discover -s tests -p 'test_*.py'
           python3 scripts/check_contact_metadata.py
           python3 scripts/check_recruitment_dates.py
           python3 scripts/check_linkedin_canonical.py
@@ -56,6 +57,7 @@ jobs:
           python3 scripts/blog/check_blog_i18n.py
           python3 scripts/blog/check_blog_search_index.py
           python3 scripts/blog/check_blog_copy_style.py
+          python3 scripts/blog/check_human_study_voice.py src _site
           python3 scripts/blog/check_post_depth.py
 
       - name: Validate external learning publication boundaries

@@ -3,7 +3,7 @@ layout: about
 title: 소개
 eyebrow: About
 lead: Radar·Embedded Signal Processing를 주력으로, FPGA RTL·Digital Verification을 함께 준비하는 전자전기공학 학부생 연구자입니다.
-description: 류형록의 전공, 연구 소속, 졸업 예정일, 입사 가능 시점, 집중 직무와 공개 검증 경계를 소개합니다.
+description: 류형록의 전공, 연구 소속, 졸업 예정일, 입사 가능 시점과 집중 직무를 소개합니다.
 permalink: /about/
 lang: ko
 alternate_url: /en/about/
@@ -29,9 +29,9 @@ Engineering을 보완 역량으로 관리합니다.
 
 ## Engineering approach
 
-Source Available, Executed, Measured, BLOCKED를 구분합니다. RTL simulation,
-synthesis, PPA, hardware measurement를 같은 상태로 합치지 않으며, 공개 근거가
-지원하는 범위 안에서만 팀 프로젝트의 개인 기여와 정량 결과를 설명합니다.
+자료가 남아 있는 설계, 다시 실행한 simulation, 실제 장비 측정을 구분해 적습니다.
+RTL simulation 결과를 synthesis·PPA·hardware measurement로 확대 해석하지 않고,
+확인한 파일과 실행 결과 안에서 팀 프로젝트의 개인 기여와 수치를 설명합니다.
 
 ## Links
 

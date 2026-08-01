@@ -89,7 +89,7 @@
 - id: research
   title_ko: 연구 · 논문 · 프로젝트 기록 로드맵
   title_en: Research, Paper, and Project Log Roadmap
-  goal_ko: 자료 검토, 구현, 실험, 검증과 공개 경계를 분리해 남깁니다.
+  goal_ko: 자료 검토, 구현, 실험과 확인한 결과를 순서대로 남깁니다.
   goal_en: Separate source review, implementation, experiments, validation, and publication boundaries.
   prerequisites_ko: 해당 분야 기초와 source provenance 기록
   prerequisites_en: Domain foundations and source-provenance records

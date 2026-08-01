@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Autoregressive factorization과 MLE</title><desc id="desc">이전 값을 조건으로 다음 값을 예측하고 로그확률을 합하는 흐름</desc><rect width="1200" height="630" rx="32" fill="#f4f1ea"/>
+  <text x="600" y="90" fill="#111" font-family="Arial,sans-serif" font-size="38" font-weight="700" text-anchor="middle">p(x) = p(x₁) p(x₂|x₁) p(x₃|x₁,x₂) …</text>
+  <g fill="#fff" stroke="#1e6f9f" stroke-width="4"><circle cx="190" cy="270" r="70"/><circle cx="460" cy="270" r="70"/><circle cx="730" cy="270" r="70"/><circle cx="1000" cy="270" r="70"/></g><g fill="#111" font-family="Arial,sans-serif" font-size="34" font-weight="700" text-anchor="middle"><text x="190" y="282">x₁</text><text x="460" y="282">x₂</text><text x="730" y="282">x₃</text><text x="1000" y="282">xₜ</text></g>
+  <g stroke="#e06f54" stroke-width="8" marker-end="url(#a)"><path d="M260 270h120"/><path d="M530 270h120"/><path d="M800 270h120"/></g><defs><marker id="a" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0l12 6-12 6z" fill="#e06f54"/></marker></defs>
+  <rect x="215" y="440" width="770" height="95" rx="20" fill="#17324d"/><text x="600" y="500" fill="#fff" font-family="Arial,sans-serif" font-size="30" text-anchor="middle">NLL = − Σ log pθ(xₜ | x&lt;t)</text>
+</svg>

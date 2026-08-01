@@ -5,7 +5,7 @@ layout: default
   <header class="page-heading"><p class="eyebrow">Blog Category</p><h1>{{ page.title }}</h1><p class="page-heading__lead">{{ page.lead | default: page.description }}</p></header>
   {% if page.category_data and page.category_data.children %}
   <details class="category-index" open><summary>{% if page.lang == 'en' %}Subcategories{% else %}하위 카테고리{% endif %}</summary><ul class="chip-list">
-    {% for child in page.category_data.children %}<li><a href="{% if page.lang == 'en' %}{{ '/en/blog/category/' | append: page.category_data.id | append: '/' | append: child.id | append: '/' | relative_url }}{% else %}{{ '/blog/category/' | append: page.category_data.id | append: '/' | append: child.id | append: '/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}{{ child.title_en }}{% else %}{{ child.title_ko }}{% endif %}</a></li>{% endfor %}
+    {% assign language_posts = site.posts | where: 'lang', page.lang %}{% assign parent_posts = language_posts | where: 'primary_category', page.category_data.id %}{% for child in page.category_data.children %}{% assign child_posts = parent_posts | where: 'subcategory', child.id %}{% if child_posts.size > 0 %}<li><a href="{% if page.lang == 'en' %}{{ '/en/blog/category/' | append: page.category_data.id | append: '/' | append: child.id | append: '/' | relative_url }}{% else %}{{ '/blog/category/' | append: page.category_data.id | append: '/' | append: child.id | append: '/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}{{ child.title_en }}{% else %}{{ child.title_ko }}{% endif %} <small>{{ child_posts.size }}</small></a></li>{% endif %}{% endfor %}
   </ul></details>
   {% endif %}
   <div class="post-list">
@@ -19,5 +19,4 @@ layout: default
       {% if category_match and post.draft != true %}<article><p class="post-card__meta">{{ post.updated | default: post.date | date: "%Y-%m-%d" }}{% if post.series %} · {{ post.series }} {{ post.series_order }}{% endif %}</p><h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2><p>{{ post.description | default: post.excerpt | strip_html }}</p></article>{% endif %}
     {% endfor %}
   </div>
-  <p class="small-note">{% if page.lang == 'en' %}Empty steps remain planned in the roadmap; no placeholder posts are published.{% else %}자료가 없는 단계는 Roadmap의 planned 상태로 남기며 빈 글을 공개하지 않습니다.{% endif %}</p>
 </main>

@@ -2,7 +2,7 @@
 layout: page
 title: Coursework Portfolio
 eyebrow: Electrical Engineering Coursework
-lead: Undergraduate assignments and laboratories organized by domain and evidence status.
+lead: Undergraduate assignments and laboratories organized by domain, with design, execution, and measurement described separately.
 description: Electrical engineering coursework across VHDL, power, control, RF, and sensors.
 permalink: /en/coursework/
 lang: en

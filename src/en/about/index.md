@@ -29,9 +29,9 @@ engineering support the two focus tracks.
 
 ## Engineering approach
 
-Source Available, Executed, Measured, and BLOCKED are separate states. RTL
-simulation, synthesis, PPA, and hardware measurement are never collapsed into one
-claim, and individual contributions and metrics stay within public evidence.
+I distinguish surviving design material, rerun simulation, and physical
+measurement. An RTL simulation is not presented as synthesis, PPA, or hardware
+measurement, and individual contributions stay within the files and runs I checked.
 
 ## Links
 

@@ -10,5 +10,6 @@ alternate_url: /en/publications/
 alternate_lang: en
 ---
 
-확인되지 않은 DBpia Record URL과 FMCW 논문의 전체 페이지 범위는 추정하지 않고
-검증 상태를 함께 표시합니다.
+CICS 논문의 DBpia Record 존재와 정확한 URL을 각각 검증했으며, FMCW 논문의
+전체 페이지 범위는 원본 Proceedings PDF에서 pp. 2413–2414로 확인했습니다.
+FMCW 논문의 DBpia Record는 exact-title 검색 결과와 URL 검증 상태를 분리해 표시합니다.

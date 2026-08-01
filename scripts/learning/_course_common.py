@@ -22,5 +22,5 @@ def require(tokens: list[str]) -> list[str]:
     return [f"course data missing {token}" for token in tokens if token not in content]
 
 
-def blocked_materialization() -> bool:
-    return scalar("materialization_status").startswith("BLOCKED_")
+def private_sources_not_republished() -> bool:
+    return scalar("materialization_status") == "PRIVATE_SOURCE_LINKS_NOT_REPUBLISHED"

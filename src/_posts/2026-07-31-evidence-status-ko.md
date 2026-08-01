@@ -1,7 +1,7 @@
 ---
-title: 프로젝트 결과에 SOURCE·EXECUTED·MEASURED·BLOCKED를 표시하는 기준
-title_en: Criteria for SOURCE, EXECUTED, MEASURED, and BLOCKED project results
-description: 자료 provenance와 별개로 source 존재, software 실행, hardware 측정, tool 차단 상태를 판정하는 기준.
+title: 설계 파일, 재실행 결과와 실제 측정을 섞지 않는 방법
+title_en: How I keep design files, reruns, and physical measurements separate
+description: 남아 있는 파일과 새 실행 로그, 실제 장비 측정을 프로젝트 설명에 연결한 방법.
 date: 2026-07-31 00:10:00 +0900
 updated: 2026-08-01 18:10:00 +0900
 study_date: 2026-07-31
@@ -22,73 +22,56 @@ tools: [GitHub, Icarus Verilog, GHDL, Quartus, Jekyll]
 hardware: [BGT60TR13C, STM32F411, Raspberry Pi]
 software_versions: []
 source_materials:
-  - { title: Public engineering project pages, type: portfolio-data, public_url: /projects/, file_reference: site data, pages: "", used_for: status examples }
-  - { title: Security and verification policy, type: policy, public_url: /security/, file_reference: public page, pages: "", used_for: blocked and platform-limit language }
+  - { title: Public engineering project pages, type: portfolio-data, public_url: /projects/, file_reference: site data, pages: "", used_for: project examples }
+  - { title: Security and verification policy, type: policy, public_url: /security/, file_reference: public page, pages: "", used_for: platform limits }
 prerequisites: [source provenance]
-learning_objectives: [source와 실행 구분, simulation과 measurement 구분, blocked 상태 유지]
+learning_objectives: [source와 실행 구분, simulation과 measurement 구분, 확인하지 못한 수치 표시]
 related_projects: [fpga-delay-logic, fmcw-radar, drowsiness-monitor, ppg-hrv]
 related_posts: [coursework-evidence-levels]
 tags: [evidence-status, reproducibility, systemverilog, fmcw-radar]
 cover_image: /assets/images/projects/fpga-architecture.webp
 thumbnail: /assets/images/projects/fpga-architecture.webp
-image_alt: FPGA delay logic의 세 architecture와 독립 검증 흐름
+image_alt: FPGA delay logic의 세 architecture와 독립 확인 흐름
 draft: false
 revision_history:
   - { date: 2026-07-31, change: 최초 공개 }
-  - { date: 2026-08-01, change: provenance 글과 분리하고 실제 프로젝트 판정표 추가 }
+  - { date: 2026-08-01, change: 상태 코드 중심 글을 실제 기록 방법 중심으로 다시 작성 }
 toc:
-  - { id: two-axes, title: Provenance와 Status는 다른 축 }
-  - { id: criteria, title: 네 상태의 판정 기준 }
-  - { id: examples, title: 실제 프로젝트 예시 }
-  - { id: badges, title: Badge 표시 규칙 }
-  - { id: limits, title: 남아 있는 한계 }
+  - { id: start, title: 파일을 찾은 뒤 먼저 한 일 }
+  - { id: three, title: 세 종류를 나눈 기준 }
+  - { id: examples, title: 프로젝트에 적용한 예 }
+  - { id: writing, title: 수치를 쓰는 방법 }
+  - { id: limits, title: 계속 확인할 부분 }
 ---
 
-## Provenance와 Status는 다른 축 {#two-axes}
+## 파일을 찾은 뒤 먼저 한 일 {#start}
 
-Archive·Rerun·Redraw·Proposal은 자료가 어디에서 왔는지를 말한다. SOURCE·EXECUTED·MEASURED·BLOCKED는 해당 주장까지 무엇을 확인했는지를 말한다. 예를 들어 과거 Cadence 화면은 `Existing Archive + SOURCE AVAILABLE`일 수 있고, Icarus regression log는 `Rerun + EXECUTED`일 수 있다.
+예전 과제 폴더를 열면 source, 화면 캡처, 보고서, 새 실행 로그가 한곳에 섞여 있었다. 나는 파일이 있다는 이유만으로 “다시 실행했다”고 쓰지 않기로 했다. 생성 시점과 도구를 먼저 적고, 현재 환경에서 실행한 것은 명령과 새 로그를 따로 묶었다.
 
-두 축을 분리하면 “source가 있으니 실행됐다”거나 “사진이 있으니 성능을 측정했다”는 점프를 막을 수 있다.
+<figure><picture><source srcset="/assets/images/projects/fpga-architecture.webp" type="image/webp"><img src="/assets/images/projects/fpga-architecture.jpg" alt="Shift Register, Circular Queue, Memory-Based Driver Checker 구조의 FPGA delay logic" width="1200" height="517" loading="lazy"></picture><figcaption>구조도는 설계 차이를 설명하고, 실제 동작 확인은 regression log가 맡는다.</figcaption></figure>
 
-## 네 상태의 판정 기준 {#criteria}
+## 세 종류를 나눈 기준 {#three}
 
-| Status | 최소 근거 | 대표 질문 |
-|---|---|---|
-| SOURCE AVAILABLE | 공개 source, 문서, 입력 설명 | 무엇을 검토하거나 재현할 수 있는가? |
-| EXECUTED | 환경, 명령·절차, 관찰 결과 | 명시한 조건에서 실제로 실행했는가? |
-| MEASURED | 장비·조건·단위·결과·원자료 경계 | 물리량 또는 성능을 실제로 측정했는가? |
-| BLOCKED | 필요한 도구·원본·권한과 실패 이유 | 무엇이 없어서 판정을 멈췄는가? |
+첫째는 설계와 당시 화면이다. 회로, RTL, Cadence 캡처가 남아 있으면 무엇을 만들었는지 설명할 수 있다. 둘째는 새 실행이다. 도구 버전, 명령, 입력, 출력 로그가 함께 있어야 현재 환경에서 돌린 결과라고 적었다. 셋째는 장비 측정이다. 장비명, 설정, 단위와 원자료가 없으면 simulation 수치를 물리 측정으로 바꾸지 않았다.
 
-`BLOCKED`는 실패를 숨기는 상태가 아니다. Quartus report가 없으면 timing·power·Fmax를 비워 두고 필요한 report를 적는다. GitHub Pages에서 설정할 수 없는 header는 `PLATFORM LIMITATION`으로 분리한다.
-
-## 실제 프로젝트 예시 {#examples}
+## 프로젝트에 적용한 예 {#examples}
 
 ### FPGA Delay Logic
 
-Public SystemVerilog source와 testbench가 있고 Icarus regression에서 Project 1의 20 checks, Project 2의 26 equivalence checks, Project 3의 3 scenarios가 실행됐다. 따라서 functional simulation은 EXECUTED다. Quartus synthesis, timing, power, Fmax, numerical PPA는 report가 없어 BLOCKED다.
+SystemVerilog source와 testbench를 Icarus로 실행해 Project 1의 20개 check, Project 2의 26개 equivalence check, Project 3의 3개 scenario를 확인했다. Quartus timing·power·Fmax report는 찾지 못했으므로 그 수치를 쓰지 않았다.
 
-<figure><picture><source srcset="/assets/images/projects/fpga-architecture.webp" type="image/webp"><img src="/assets/images/projects/fpga-architecture.jpg" alt="Shift Register, Circular Queue, Memory-Based Driver Checker 구조의 FPGA delay logic" width="1200" height="517" loading="lazy"></picture><figcaption>구조도는 설계 설명 근거다. 실행 판정은 별도 regression log에 연결한다.</figcaption></figure>
+### FMCW Radar
 
-### FMCW Radar Cardiac Timing
+분석 코드, 취득 firmware, 설정 문서와 hardware 사진을 확인했다. 논문에는 600초 동시취득과 848개 대응 beat가 보고돼 있다. Radar morphology에서 얻은 AO·AC 후보 시점을 valve의 직접 측정값이나 임상 성능으로 부르지 않았다.
 
-분석 source, acquisition firmware, 설정 문서와 privacy-reviewed hardware 사진은 SOURCE + HARDWARE를 지원한다. 논문 보고 기준 600초 동시취득과 848개 대응 beat가 있다. 다만 AO·AC는 radar morphology에서 얻은 candidate timing이며, echo·ICG·PCG 독립 reference가 없는 상태에서 direct valve measurement나 임상 성능으로 표시하지 않는다.
+### PPG-HRV
 
-### Two-node Drowsiness Monitor
+논문 초록의 AUC 0.85와 F1 0.82는 논문에 보고된 값으로 적었다. 별도 fold CSV와 섞거나 현재 환경에서 재학습한 수치처럼 쓰지 않았다.
 
-C/C++ source, TCP/IP·file IPC·GPIO·I2C 경로, 실제 prototype 사진은 통합 존재를 지원한다. latency, sensitivity, specificity, false-alarm rate 측정 근거는 없어 수치 badge를 만들지 않는다.
+## 수치를 쓰는 방법 {#writing}
 
-### PPG-HRV Cognitive Load
+수치 옆에는 어디서 나온 값인지 한 문장으로 붙였다. simulation pass 수, 논문 보고 지표, 장비 측정값을 서로 다른 표나 문장에 놓았다. 실행하지 않은 합성이나 장비 시험은 빈칸을 억지로 채우지 않고 다음에 필요한 report와 조건을 메모했다.
 
-논문 Abstract가 보고한 AUC 0.85와 F1 0.82는 `PAPER_REPORTED`다. 별도 fold CSV의 평가 조건과 합치지 않는다. 논문 수치는 존재하지만 현재 환경 재학습 결과라고 부르지 않는다.
+## 계속 확인할 부분 {#limits}
 
-## Badge 표시 규칙 {#badges}
-
-- Badge는 가장 강한 상태 하나로 전체 프로젝트를 덮지 않는다.
-- 기능 simulation, synthesis, hardware measurement를 항목별로 나눈다.
-- 논문 수치는 `PAPER_REPORTED` 출처를 붙인다.
-- BLOCKED 항목은 필요한 도구·report·reference를 함께 표시한다.
-- `PASS`는 실제 검사 또는 실행 결과가 있을 때만 사용한다.
-
-## 남아 있는 한계 {#limits}
-
-이 기준은 공개 근거를 읽기 쉽게 만드는 기록 체계이지 완전한 재현성 보증이 아니다. 외부 repository가 변경되거나 원본 장비·license가 사라지면 재실행이 막힐 수 있다. 상태를 갱신할 때는 기존 증거를 지우지 않고 날짜와 검증 방법을 추가한다.
+외부 저장소, licensed tool, 물리 장비는 나중에 사용할 수 없게 될 수 있다. 그래서 새로 실행할 때마다 기존 파일을 덮어쓰지 않고 날짜가 붙은 로그와 환경 정보를 추가한다. 이 방식은 모든 결과의 영구 재현을 보장하지 않지만, 내가 어디까지 직접 확인했는지는 다시 따라갈 수 있게 한다.
