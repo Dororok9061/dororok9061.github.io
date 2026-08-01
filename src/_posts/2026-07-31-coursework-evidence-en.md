@@ -59,7 +59,7 @@ toc:
 
 A coursework archive mixes artifacts created at different times and in different environments. A Vivado waveform may survive only as a historical screen, while VHDL source can be rerun with GHDL. A Cadence result may be an archived simulation, and a Python calculation may only check equations copied from a report. None of those is automatically a hardware measurement.
 
-Treating every surviving file as “experiment completed” hides the point at which reproduction can begin. The portfolio therefore records artifact provenance first and applies SOURCE, EXECUTED, MEASURED, or BLOCKED as a separate axis.
+Treating every surviving file as “experiment completed” hides the point at which reproduction can begin. I first record how the artifact was created, then describe fresh execution and physical measurement with their own commands, logs, and conditions.
 
 <figure><picture><source srcset="/assets/images/projects/coursework-hero.webp" type="image/webp"><img src="/assets/images/projects/coursework-hero.jpg" alt="Coursework map linking VHDL, power, control, RF, and sensor systems to evidence states" width="1200" height="570" loading="lazy"></picture><figcaption>Engineering domain and artifact provenance answer different questions and are not collapsed into one badge.</figcaption></figure>
 

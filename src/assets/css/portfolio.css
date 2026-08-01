@@ -960,6 +960,56 @@ summary:focus-visible {
   background: var(--c-pageBackground);
 }
 
+.blog-with-sidebar {
+  display: grid;
+  grid-template-columns: minmax(13rem, 17rem) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: start;
+}
+
+.study-sidebar {
+  position: sticky;
+  top: 6rem;
+  max-height: calc(100vh - 7rem);
+  overflow: auto;
+  padding: 1rem;
+  border: 1px solid var(--portfolio-border);
+  background: var(--portfolio-surface);
+}
+
+.study-sidebar h2 {
+  margin-top: 0;
+  font-size: 1.05rem;
+}
+
+.study-sidebar ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.study-sidebar > ul > li + li {
+  margin-top: 0.65rem;
+  padding-top: 0.65rem;
+  border-top: 1px solid var(--portfolio-border);
+}
+
+.study-sidebar li ul {
+  margin: 0.35rem 0 0 0.75rem;
+}
+
+.study-sidebar a {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.25rem 0;
+}
+
+.study-sidebar small {
+  color: var(--portfolio-muted);
+  font-variant-numeric: tabular-nums;
+}
+
 .search-results {
   margin-bottom: 0;
 }
@@ -1132,6 +1182,15 @@ summary:focus-visible {
 }
 
 @media (max-width: 48rem) {
+  .blog-with-sidebar {
+    grid-template-columns: 1fr;
+  }
+
+  .study-sidebar {
+    position: static;
+    max-height: none;
+  }
+
   .taxonomy-grid,
   .series-grid,
   .learning-grid,

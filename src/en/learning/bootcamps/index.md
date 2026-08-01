@@ -2,8 +2,8 @@
 layout: learning
 mode: bootcamps
 title: Bootcamps & External Courses
-lead: Certificate-backed completion is separated from project execution evidence.
-description: Verified external-course metadata and publication boundaries.
+lead: Concepts, notebook work, and next study steps from external courses.
+description: External courses and my study notes.
 permalink: /en/learning/bootcamps/
 lang: en
 alternate_url: /learning/bootcamps/

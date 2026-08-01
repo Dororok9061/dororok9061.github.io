@@ -23,20 +23,13 @@
   {% assign preview_label = '첫 페이지 미리보기 열기' %}
 {% endif %}
 <article class="publication-card">
-  <div class="publication-card__preview">
-    {% if publication.cover_image != empty %}
+  {% if publication.cover_image != empty %}<div class="publication-card__preview">
     <picture>
       <source srcset="{{ publication.cover_image | relative_url }}" type="image/webp">
       <img src="{{ publication.cover_image_fallback | relative_url }}" alt="{{ cover_alt }}" width="{{ publication.cover_width }}" height="{{ publication.cover_height }}" loading="lazy">
     </picture>
     <button class="publication-card__zoom" type="button" data-lightbox="{{ publication.cover_image_fallback | relative_url }}" data-lightbox-alt="{{ cover_alt | escape }}" data-lightbox-caption="{{ cover_caption | escape }}">{{ preview_label }}</button>
-    {% else %}
-    <div class="publication-card__placeholder" role="img" aria-label="{% if include.lang == 'en' %}First-page preview is unavailable pending source verification{% else %}원본 검증 전이라 첫 페이지 미리보기를 제공하지 않음{% endif %}">
-      <strong>PREVIEW BLOCKED</strong>
-      <span>{% if include.lang == 'en' %}Source image not available in the supplied files{% else %}제공된 파일에서 원본 이미지를 확인하지 못함{% endif %}</span>
-    </div>
-    {% endif %}
-  </div>
+  </div>{% endif %}
   <div class="publication-card__content">
     <div class="badge-row">
       <span class="evidence-badge evidence-badge--measured">{% if include.lang == 'en' %}First Author{% else %}제1저자{% endif %}</span>
@@ -59,7 +52,5 @@
       {% if publication.paper_pdf != empty %}<a class="portfolio-button" href="{{ publication.paper_pdf }}" target="_blank" rel="noopener noreferrer">Paper</a>{% endif %}
       <a class="portfolio-button" href="{{ publication.github_url }}" target="_blank" rel="noopener noreferrer">Code</a>
     </div>
-    {% if publication.dbpia_url == empty and publication.id == 'cics25-cnn-hrv' %}<p class="verification-note">DBpia record URL: UNDER VERIFICATION — no URL is inferred.</p>{% endif %}
-    {% if publication.page_verification_status == 'FULL_PAGE_RANGE_UNDER_VERIFICATION' %}<p class="verification-note">{{ publication.pages }} · Full page range under verification.</p>{% endif %}
   </div>
 </article>

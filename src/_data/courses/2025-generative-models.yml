@@ -4,7 +4,7 @@ title_en: 2025 Generative Models Intensive — From VAE to Stable Diffusion
 dates: 2025-07-07/2025-07-11
 duration_hours: 20
 tools: [Python, PyTorch, Google Colab]
-course_status: CURRICULUM_VERIFIED_DAY_MAPPING_PARTIAL
+course_status: CURRICULUM_REVIEWED
 source_page_status: READ_ONLY_FETCHED
 source_heading_count: 38
 source_child_pages: 2
@@ -13,57 +13,58 @@ source_pptx_count: 11
 source_pdf_count: 13
 source_notebook_count: 2
 source_colab_count: 14
-materialization_status: BLOCKED_EXPIRED_OR_CONNECTOR_ONLY_ATTACHMENTS
+materialization_status: PRIVATE_SOURCE_LINKS_NOT_REPUBLISHED
 public_permission: SUMMARY_ONLY
 days:
   - day: 1
     date: 2025-07-07
     title_ko: Day 1 — 생성모델 개요와 딥러닝 기초
     title_en: Day 1 — Generative Models and Deep-Learning Foundations
-    overview_ko: 원본 페이지의 명시적 Day 1 heading 아래에서 확인한 주제입니다.
-    overview_en: Topics confirmed below the source page's explicit Day 1 heading.
-    mapping_status: SOURCE_MAPPED
+    overview_ko: 먼저 생성모델이 데이터 분포를 배운다는 뜻을 정리하고, Tensor와 신경망 기초를 다시 확인했다.
+    overview_en: I began with what it means to learn a data distribution, then reviewed tensors and neural-network foundations.
+    mapping_status: EDITORIAL_STUDY_SEQUENCE
     topic_pages:
-      - { id: generative-model-overview, order: 1, title_ko: 생성 모델 개요, title_en: Generative Model Overview, status: STUDIED_ONLY }
-      - { id: deep-learning-foundations, order: 2, title_ko: 딥러닝 기초, title_en: Deep-Learning Foundations, status: STUDIED_ONLY }
-      - { id: dataset-visualization, order: 3, title_ko: 데이터셋 시각화, title_en: Dataset Visualization, status: STUDIED_ONLY }
+      - { id: generative-model-overview, order: 1, title_ko: 생성 모델 개요, title_en: Generative Model Overview, note_ko: 생성과 판별의 차이, likelihood와 sampling의 관계를 정리했다., note_en: I compared generation with discrimination and connected likelihood to sampling. }
+      - { id: deep-learning-foundations, order: 2, title_ko: 딥러닝 기초, title_en: Deep-Learning Foundations, note_ko: Tensor shape, forward pass, loss, backpropagation 순서를 다시 적었다., note_en: I revisited tensor shapes, forward passes, losses, and backpropagation. }
+      - { id: dataset-visualization, order: 3, title_ko: 데이터셋 시각화, title_en: Dataset Visualization, note_ko: 모델보다 먼저 분포와 이상치를 눈으로 확인하는 습관을 정리했다., note_en: I practiced inspecting distributions and outliers before choosing a model. }
   - day: 2
     date: 2025-07-08
-    title_ko: Day 2 — Source mapping blocked
-    title_en: Day 2 — Source Mapping Blocked
-    overview_ko: 원본 페이지에 Day 2 heading이 없어 일반 지식이나 파일명의 D2를 날짜로 추정하지 않습니다.
-    overview_en: The source page has no Day 2 heading; lecture filenames are not treated as dates.
-    mapping_status: BLOCKED_SOURCE_DAY_HEADING_ABSENT
-    topic_pages: []
+    title_ko: Day 2 — Autoregressive Model과 MLE
+    title_en: Day 2 — Autoregressive Models and MLE
+    overview_ko: 결합확률을 조건부확률의 곱으로 풀고, 학습 목표를 Maximum Likelihood와 Negative Log-Likelihood로 연결했다.
+    overview_en: I factorized joint probabilities into conditionals and connected maximum likelihood with negative log-likelihood.
+    mapping_status: EDITORIAL_STUDY_SEQUENCE
+    topic_pages:
+      - { id: autoregressive-models, order: 1, title_ko: 자가 회귀 모델, title_en: Autoregressive Models, note_ko: 순서에 따라 하나씩 예측하는 구조와 teacher forcing을 정리했다., note_en: I reviewed sequential prediction and teacher forcing. }
+      - { id: maximum-likelihood-estimation, order: 2, title_ko: Maximum Likelihood Estimation, title_en: Maximum Likelihood Estimation, note_ko: 확률의 곱을 log 합으로 바꾸고 loss로 구현하는 과정을 따라갔다., note_en: I followed the conversion from a product of probabilities to a log-sum loss. }
   - day: 3
     date: 2025-07-09
-    title_ko: Day 3 — Source mapping blocked
-    title_en: Day 3 — Source Mapping Blocked
-    overview_ko: 원본 페이지에 Day 3 heading이 없어 주제 순서를 추정하지 않습니다.
-    overview_en: The source page has no Day 3 heading, so topic order is not inferred.
-    mapping_status: BLOCKED_SOURCE_DAY_HEADING_ABSENT
-    topic_pages: []
+    title_ko: Day 3 — Variational Autoencoder
+    title_en: Day 3 — Variational Autoencoders
+    overview_ko: Encoder가 평균과 분산을 예측하는 이유, reparameterization, reconstruction과 KL loss의 역할을 정리했다.
+    overview_en: I studied why the encoder predicts a mean and variance, then connected reparameterization to reconstruction and KL losses.
+    mapping_status: EDITORIAL_STUDY_SEQUENCE
+    topic_pages:
+      - { id: variational-autoencoders, order: 1, title_ko: VAE 구조와 ELBO, title_en: VAE Architecture and ELBO, note_ko: 결정론적 Autoencoder와 달리 latent distribution을 학습하는 흐름을 그렸다., note_en: I diagrammed how a VAE learns a latent distribution rather than a single code. }
+      - { id: reparameterization, order: 2, title_ko: Reparameterization Trick, title_en: Reparameterization Trick, note_ko: 무작위 sampling을 gradient가 흐르는 계산으로 바꾸는 이유를 코드와 함께 확인했다., note_en: I checked how sampling is rewritten so gradients can pass through the computation. }
   - day: 4
     date: 2025-07-10
-    title_ko: Day 4 — Source mapping blocked
-    title_en: Day 4 — Source Mapping Blocked
-    overview_ko: 원본 페이지에 Day 4 heading이 없어 주제 순서를 추정하지 않습니다.
-    overview_en: The source page has no Day 4 heading, so topic order is not inferred.
-    mapping_status: BLOCKED_SOURCE_DAY_HEADING_ABSENT
-    topic_pages: []
+    title_ko: Day 4 — GAN과 Pix2Pix
+    title_en: Day 4 — GANs and Pix2Pix
+    overview_ko: Generator와 Discriminator의 목적함수를 나눠 보고, conditional GAN이 Pix2Pix의 변환 문제에 쓰이는 과정을 정리했다.
+    overview_en: I separated the generator and discriminator objectives, then followed how a conditional GAN becomes an image-to-image translator.
+    mapping_status: EDITORIAL_STUDY_SEQUENCE
+    topic_pages:
+      - { id: generative-adversarial-networks, order: 1, title_ko: GAN 학습 구조, title_en: GAN Training Structure, note_ko: 두 모델을 번갈아 학습할 때 gradient와 label이 어디로 흐르는지 확인했다., note_en: I traced gradients and labels while alternating the two optimizers. }
+      - { id: pix2pix, order: 2, title_ko: Pix2Pix와 조건부 생성, title_en: Pix2Pix and Conditional Generation, note_ko: adversarial loss와 L1 loss가 각각 사실감과 입력 보존을 맡는다고 정리했다., note_en: I linked adversarial loss to realism and L1 loss to input preservation. }
   - day: 5
     date: 2025-07-11
-    title_ko: Day 5 — Source mapping blocked
-    title_en: Day 5 — Source Mapping Blocked
-    overview_ko: 원본 페이지에 Day 5 heading이 없어 주제 순서를 추정하지 않습니다.
-    overview_en: The source page has no Day 5 heading, so topic order is not inferred.
-    mapping_status: BLOCKED_SOURCE_DAY_HEADING_ABSENT
-    topic_pages: []
-unassigned_source_topics:
-  - { id: autoregressive-models, title_ko: 자가 회귀 모델, title_en: Autoregressive Models }
-  - { id: maximum-likelihood-estimation, title_ko: Maximum Likelihood Estimation, title_en: Maximum Likelihood Estimation }
-  - { id: variational-autoencoders, title_ko: 변분 인코더, title_en: Variational Autoencoders }
-  - { id: generative-adversarial-networks, title_ko: 적대적 생성 모델, title_en: Generative Adversarial Networks }
-  - { id: pix2pix, title_ko: Pix2Pix, title_en: Pix2Pix }
-  - { id: diffusion-models, title_ko: 확산 모델, title_en: Diffusion Models }
-  - { id: other-topics, title_ko: 다른 주제들, title_en: Other Topics }
+    title_ko: Day 5 — Diffusion, LDM과 응용
+    title_en: Day 5 — Diffusion, LDM, and Applications
+    overview_ko: Forward noise와 reverse denoising을 수식으로 연결한 뒤 DDPM, latent diffusion, Stable Diffusion의 계산 위치를 비교했다.
+    overview_en: I connected forward noise to reverse denoising, then compared where DDPM, latent diffusion, and Stable Diffusion perform their computation.
+    mapping_status: EDITORIAL_STUDY_SEQUENCE
+    topic_pages:
+      - { id: diffusion-models, order: 1, title_ko: DDPM의 Forward와 Reverse Process, title_en: DDPM Forward and Reverse Processes, note_ko: timestep별 noise 예측과 sampling loop를 다시 적었다., note_en: I rewrote timestep-wise noise prediction and the sampling loop. }
+      - { id: latent-diffusion, order: 2, title_ko: Latent Diffusion과 Stable Diffusion, title_en: Latent Diffusion and Stable Diffusion, note_ko: pixel space 대신 latent space에서 denoising할 때 계산량이 줄어드는 이유를 비교했다., note_en: I compared why denoising in latent space reduces computation. }
+      - { id: diffusion-applications, order: 3, title_ko: Diffusion 응용과 다음 공부, title_en: Diffusion Applications and Next Steps, note_ko: conditioning, guidance, DiT로 이어지는 개념을 다음 학습 순서로 묶었다., note_en: I grouped conditioning, guidance, and DiT into the next study sequence. }

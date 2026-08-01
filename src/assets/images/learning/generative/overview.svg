@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">생성모델의 학습과 샘플링 흐름</title><desc id="desc">데이터, 분포 학습, 모델, 새로운 샘플을 화살표로 연결한 그림</desc>
+  <rect width="1200" height="630" rx="32" fill="#f4f1ea"/><g fill="#fff" stroke="#1e6f9f" stroke-width="4">
+  <rect x="70" y="220" width="230" height="150" rx="22"/><rect x="365" y="220" width="230" height="150" rx="22"/><rect x="660" y="220" width="230" height="150" rx="22"/><rect x="955" y="220" width="180" height="150" rx="22"/></g>
+  <g fill="#111" font-family="Arial,sans-serif" text-anchor="middle"><text x="185" y="285" font-size="30" font-weight="700">Data</text><text x="185" y="325" font-size="22">x ~ p_data</text><text x="480" y="280" font-size="28" font-weight="700">Learn</text><text x="480" y="320" font-size="22">likelihood / loss</text><text x="775" y="285" font-size="30" font-weight="700">Model</text><text x="775" y="325" font-size="22">pθ(x)</text><text x="1045" y="285" font-size="28" font-weight="700">Sample</text><text x="1045" y="325" font-size="22">x̂</text></g>
+  <g stroke="#e06f54" stroke-width="8" fill="none" marker-end="url(#a)"><path d="M300 295h55"/><path d="M595 295h55"/><path d="M890 295h55"/></g><defs><marker id="a" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0l12 6-12 6z" fill="#e06f54"/></marker></defs>
+  <text x="600" y="90" fill="#111" font-family="Arial,sans-serif" font-size="38" font-weight="700" text-anchor="middle">From observed data to new samples</text><text x="600" y="520" fill="#555" font-family="Arial,sans-serif" font-size="24" text-anchor="middle">The model learns a distribution, not a lookup table.</text>
+</svg>

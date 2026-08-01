@@ -1,7 +1,7 @@
 ---
-title: Criteria for SOURCE, EXECUTED, MEASURED, and BLOCKED project results
-title_en: Criteria for SOURCE, EXECUTED, MEASURED, and BLOCKED project results
-description: A status model that separates source presence, software execution, hardware measurement, and blocked verification from artifact provenance.
+title: How I keep design files, reruns, and physical measurements separate
+title_en: How I keep design files, reruns, and physical measurements separate
+description: A practical way to connect surviving files, fresh logs, and physical measurements to project explanations.
 date: 2026-07-31 00:11:00 +0900
 updated: 2026-08-01 18:11:00 +0900
 study_date: 2026-07-31
@@ -22,73 +22,56 @@ tools: [GitHub, Icarus Verilog, GHDL, Quartus, Jekyll]
 hardware: [BGT60TR13C, STM32F411, Raspberry Pi]
 software_versions: []
 source_materials:
-  - { title: Public engineering project pages, type: portfolio-data, public_url: /en/projects/, file_reference: site data, pages: "", used_for: status examples }
-  - { title: Security and verification policy, type: policy, public_url: /en/security/, file_reference: public page, pages: "", used_for: blocked and platform-limit language }
+  - { title: Public engineering project pages, type: portfolio-data, public_url: /en/projects/, file_reference: site data, pages: "", used_for: project examples }
+  - { title: Security and verification policy, type: policy, public_url: /en/security/, file_reference: public page, pages: "", used_for: platform limits }
 prerequisites: [source provenance]
-learning_objectives: [separate source from execution, separate simulation from measurement, retain blocked states]
+learning_objectives: [separate source from execution, separate simulation from measurement, leave unmeasured values unset]
 related_projects: [fpga-delay-logic, fmcw-radar, drowsiness-monitor, ppg-hrv]
 related_posts: [coursework-evidence-levels]
 tags: [evidence-status, reproducibility, systemverilog, fmcw-radar]
 cover_image: /assets/images/projects/fpga-architecture.webp
 thumbnail: /assets/images/projects/fpga-architecture.webp
-image_alt: Three FPGA delay-logic architectures connected to an independent verification flow
+image_alt: Three FPGA delay-logic architectures connected to an independent checking flow
 draft: false
 revision_history:
   - { date: 2026-07-31, change: Initial publication }
-  - { date: 2026-08-01, change: Separated status from provenance and added project-level decisions }
+  - { date: 2026-08-01, change: Rewrote the note around practical documentation instead of status codes }
 toc:
-  - { id: two-axes, title: Provenance and status are separate axes }
-  - { id: criteria, title: Criteria for four states }
+  - { id: start, title: What I do after finding a file }
+  - { id: three, title: Three kinds of material }
   - { id: examples, title: Project examples }
-  - { id: badges, title: Badge rules }
-  - { id: limits, title: Remaining limits }
+  - { id: writing, title: How I report numbers }
+  - { id: limits, title: What still needs checking }
 ---
 
-## Provenance and status are separate axes {#two-axes}
+## What I do after finding a file {#start}
 
-Archive, Rerun, Redraw, and Proposal describe where an artifact came from. SOURCE, EXECUTED, MEASURED, and BLOCKED describe how far a specific claim was verified. A historical Cadence screen can be `Existing Archive + SOURCE AVAILABLE`; a fresh Icarus regression log can be `Rerun + EXECUTED`.
+Old coursework folders mix source, screenshots, reports, and fresh logs. I do not call a project rerun merely because a file exists. I record when and how it was created, then bind any current execution to its command and new log.
 
-Keeping the axes separate prevents two common jumps: source code does not prove execution, and a prototype photograph does not prove measured performance.
+<figure><picture><source srcset="/assets/images/projects/fpga-architecture.webp" type="image/webp"><img src="/assets/images/projects/fpga-architecture.jpg" alt="Shift register, circular queue, and memory-based driver-checker structures" width="1200" height="517" loading="lazy"></picture><figcaption>The diagram explains architecture; regression logs establish the behavior I actually ran.</figcaption></figure>
 
-## Criteria for four states {#criteria}
+## Three kinds of material {#three}
 
-| Status | Minimum evidence | Decision question |
-|---|---|---|
-| SOURCE AVAILABLE | public source, documentation, and input description | What can be inspected or reproduced? |
-| EXECUTED | environment, command or procedure, and observed output | Was it run under the stated conditions? |
-| MEASURED | instrument, conditions, units, result, and raw-data boundary | Was a physical quantity or performance metric measured? |
-| BLOCKED | missing tool, source, permission, or reference plus reason | Why must verification stop? |
-
-BLOCKED is not a disguised PASS. Missing Quartus reports leave timing, power, Fmax, and numerical PPA blocked. A control unavailable on GitHub Pages is recorded as a platform limitation.
+Design files and historical screens explain what existed. Fresh runs need a tool version, command, input, and output. Physical measurements need an instrument, settings, units, and raw-data context. A simulation number does not become a measurement simply because a prototype photograph also exists.
 
 ## Project examples {#examples}
 
 ### FPGA Delay Logic
 
-Public RTL and testbenches are present. Icarus regressions executed 20 Project 1 checks, 26 Project 2 equivalence checks, and three Project 3 scenarios. Functional simulation is therefore EXECUTED. Quartus synthesis, timing, power, Fmax, and numerical PPA remain BLOCKED because no reports are available.
+I ran the public SystemVerilog testbenches with Icarus: 20 checks for Project 1, 26 equivalence checks for Project 2, and three file-driven scenarios for Project 3. I found no Quartus timing, power, Fmax, or resource report, so I did not publish those numbers.
 
-<figure><picture><source srcset="/assets/images/projects/fpga-architecture.webp" type="image/webp"><img src="/assets/images/projects/fpga-architecture.jpg" alt="FPGA delay logic progressing from shift register to circular queue and memory-based driver checker" width="1200" height="517" loading="lazy"></picture><figcaption>The diagram explains the structures; the execution status comes from separate regression logs.</figcaption></figure>
+### FMCW Radar
 
-### FMCW Radar Cardiac Timing
+I reviewed analysis source, acquisition firmware, configuration files, and hardware photographs. The paper reports 600 seconds of concurrent acquisition and 848 corresponding beats. Radar morphology supplies candidate AO/AC timings, not direct valve measurements or clinical performance.
 
-Analysis source, acquisition firmware, configuration documents, and privacy-reviewed hardware photographs support SOURCE + HARDWARE. Paper-reported evidence covers 600 seconds of concurrent acquisition and 848 corresponding beats. Radar-derived AO/AC values remain morphology-based candidate timings, not direct valve measurements or clinical performance.
+### PPG-HRV
 
-### Two-node Drowsiness Monitor
+The abstract reports AUC 0.85 and F1 0.82. I keep those as paper-reported values rather than merging them with a separate fold archive or calling them a current retraining result.
 
-C/C++ source, TCP/IP/file-IPC/GPIO/I2C paths, and physical prototype photographs support the integration claim. No public evidence quantifies latency, sensitivity, specificity, or false-alarm rate.
+## How I report numbers {#writing}
 
-### PPG-HRV Cognitive Load
+Every number gets a short source statement. Simulation checks, paper metrics, and physical measurements live in separate sentences or tables. When synthesis or hardware testing was not run, I leave the number unset and note the report and conditions needed for the next run.
 
-The paper abstract reports AUC 0.85 and F1 0.82. Those values are `PAPER_REPORTED` and are not merged with a separate fold-result archive or described as a current retraining result.
+## What still needs checking {#limits}
 
-## Badge rules {#badges}
-
-- Do not let one strongest state cover an entire project.
-- Track functional simulation, synthesis, and hardware measurement separately.
-- Label paper metrics as `PAPER_REPORTED`.
-- Pair BLOCKED with the missing tool, report, or reference.
-- Use PASS only for an actual test or execution result.
-
-## Remaining limits {#limits}
-
-This model makes public evidence readable; it does not guarantee permanent reproducibility. External repositories, hardware, or licensed tools may become unavailable. Status updates retain earlier evidence and add a date and verification method rather than erasing history.
+Repositories, licensed tools, and hardware may later become unavailable. I therefore keep older material and add date-stamped logs and environment details for new work. This does not promise permanent reproducibility, but it preserves the line between what I inspected and what I executed.

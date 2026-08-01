@@ -42,7 +42,7 @@ toc:
   - { id: reference, title: Independent reference model }
   - { id: regression, title: 26 equivalence checks }
   - { id: waveform, title: Reading the waveform }
-  - { id: blocked, title: Quartus verification still blocked }
+  - { id: quartus-next, title: Next Quartus run }
 ---
 
 ## Comparison problem {#problem}
@@ -88,6 +88,6 @@ This number is the explicit checker count, not assertion count or total simulati
 
 Data equality alone is insufficient. Output valid one cycle early, or stale data marked valid after reset, violates the contract. File-driven scenarios keep the input vector and delay changes stable across repeated regressions.
 
-## Quartus verification still blocked {#blocked}
+## Next Quartus run {#quartus-next}
 
-Functional simulation has execution evidence. Quartus synthesis, timing, resource utilization, power, Fmax, and numerical PPA remain BLOCKED because no reports are public. The circular queue is not claimed to use fewer registers or memory resources on a target FPGA. The next verification step is a controlled synthesis of both architectures using the same device and constraints, preserving the original reports and commands.
+I ran the functional simulation, but I did not find Quartus synthesis, timing, resource, power, Fmax, or numerical PPA reports. I therefore make no numerical claim that the circular queue uses fewer registers or memory resources on a target FPGA. The next run will synthesize both architectures for the same device and constraints while preserving the commands and original reports.

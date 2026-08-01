@@ -230,9 +230,9 @@
   description_ko: 자료 출처와 실행·측정·미검증 상태를 분리하는 보조 기준입니다.
   description_en: Supporting rules that separate provenance, execution, measurement, and unknowns.
   children:
-    - { id: evidence-status, title_ko: Evidence Status, title_en: Evidence Status }
+    - { id: evidence-status, title_ko: 확인한 범위, title_en: What Was Checked }
     - { id: source-provenance, title_ko: Source Provenance, title_en: Source Provenance }
-    - { id: publication-boundary, title_ko: 공개 경계, title_en: Publication Boundary }
+    - { id: publication-boundary, title_ko: 공개 내용 정리, title_en: Publication Scope }
     - { id: result-classification, title_ko: 결과 분류, title_en: Result Classification }
     - { id: reproducibility, title_ko: 재현성, title_en: Reproducibility }
 

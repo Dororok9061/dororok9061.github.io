@@ -2,22 +2,96 @@
 layout: default
 ---
 <main id="main" class="page page-shell">
-  <header class="page-heading"><p class="eyebrow">External Learning &amp; Competitions</p><h1>{{ page.title }}</h1><p class="page-heading__lead">{{ page.lead }}</p></header>
+  <header class="page-heading">
+    <p class="eyebrow">External Learning &amp; Competitions</p>
+    <h1>{{ page.title }}</h1>
+    <p class="page-heading__lead">{{ page.lead }}</p>
+  </header>
   {% assign prefix = '/learning/' %}{% if page.lang == 'en' %}{% assign prefix = '/en/learning/' %}{% endif %}
-  <nav class="blog-tools" aria-label="{% if page.lang == 'en' %}External learning sections{% else %}외부교육 섹션{% endif %}"><a href="{{ prefix | relative_url }}">{% if page.lang == 'en' %}Overview{% else %}전체{% endif %}</a><a href="{{ prefix | append: 'bootcamps/' | relative_url }}">Bootcamps</a><a href="{{ prefix | append: 'competitions/' | relative_url }}">Competitions</a></nav>
+  <nav class="blog-tools" aria-label="{% if page.lang == 'en' %}External learning sections{% else %}외부교육 섹션{% endif %}">
+    <a href="{{ prefix | relative_url }}">{% if page.lang == 'en' %}Overview{% else %}전체{% endif %}</a>
+    <a href="{{ prefix | append: 'bootcamps/' | relative_url }}">Bootcamps</a>
+    <a href="{{ prefix | append: 'competitions/' | relative_url }}">Competitions</a>
+  </nav>
+
   {% case page.mode %}
   {% when 'index' %}
-    <section><h2>{% if page.lang == 'en' %}Learning timeline{% else %}학습 Timeline{% endif %}</h2><ol class="research-timeline">{% assign programs = site.data.learning_programs | sort: 'display_order' %}{% for program in programs %}<li><time datetime="{{ program.end_date }}">{{ program.year }}</time><div><h3>{% if program.id == 'kaist-generative-models-2025' or program.id == 'outta-basic-2024' %}<a href="{{ prefix | append: 'bootcamps/' | append: program.id | append: '/' | relative_url }}">{% if page.lang == 'en' %}{{ program.title_en }}{% else %}{{ program.title_ko }}{% endif %}</a>{% else %}{% if page.lang == 'en' %}{{ program.title_en }}{% else %}{{ program.title_ko }}{% endif %}{% endif %}</h3><p>{{ program.provider }} · {{ program.duration | default: 'duration not stated' }} · {{ program.completion_status }}</p></div></li>{% endfor %}</ol></section>
-    <aside class="boundary-note"><h2>{% if page.lang == 'en' %}Evidence boundary{% else %}증거 경계{% endif %}</h2><p>{% if page.lang == 'en' %}A certificate verifies course completion, not assignment execution, project completion, Kaggle submission, score, or rank. Those states are tracked separately.{% else %}수료증은 과정 수료만 확인합니다. 과제 실행, 프로젝트 완료, Kaggle 제출·점수·순위는 별도 상태로 관리합니다.{% endif %}</p></aside>
+    <section>
+      <h2>{% if page.lang == 'en' %}Learning timeline{% else %}배운 과정{% endif %}</h2>
+      <ol class="research-timeline">
+        {% assign programs = site.data.learning_programs | sort: 'display_order' %}
+        {% for program in programs %}
+        <li><time datetime="{{ program.end_date }}">{{ program.year }}</time><div>
+          <h3>{% if program.id == 'kaist-generative-models-2025' or program.id == 'outta-basic-2024' %}<a href="{{ prefix | append: 'bootcamps/' | append: program.id | append: '/' | relative_url }}">{% endif %}{% if page.lang == 'en' %}{{ program.title_en }}{% else %}{{ program.title_ko }}{% endif %}{% if program.id == 'kaist-generative-models-2025' or program.id == 'outta-basic-2024' %}</a>{% endif %}</h3>
+          <p>{{ program.provider }}{% if program.duration != empty %} · {{ program.duration }}{% endif %}</p>
+        </div></li>
+        {% endfor %}
+      </ol>
+    </section>
+
   {% when 'bootcamps' %}
-    <div class="learning-grid">{% for program in site.data.learning_programs %}<article><p class="status-line">{{ program.evidence_status }}</p><h2>{% if page.lang == 'en' %}{{ program.title_en }}{% else %}{{ program.title_ko }}{% endif %}</h2><p>{{ program.provider }} · {{ program.start_date }}{% if program.end_date %}–{{ program.end_date }}{% endif %}{% if program.duration != empty %} · {{ program.duration }}{% endif %}</p><p>{% if page.lang == 'en' %}{{ program.public_boundary_en }}{% else %}{{ program.public_boundary_ko }}{% endif %}</p>{% if program.id == 'kaist-generative-models-2025' or program.id == 'outta-basic-2024' %}<a href="{{ prefix | append: 'bootcamps/' | append: program.id | append: '/' | relative_url }}">{% if page.lang == 'en' %}Open evidence record{% else %}근거 기록 보기{% endif %}</a>{% endif %}</article>{% endfor %}</div>
+    <div class="learning-grid">
+      {% for program in site.data.learning_programs %}
+      <article>
+        <p class="eyebrow">{{ program.year }} · {{ program.provider }}</p>
+        <h2>{% if page.lang == 'en' %}{{ program.title_en }}{% else %}{{ program.title_ko }}{% endif %}</h2>
+        <p>{{ program.start_date }}{% if program.end_date %}–{{ program.end_date }}{% endif %}{% if program.duration != empty %} · {{ program.duration }}{% endif %}</p>
+        <ul class="chip-list">{% for topic in program.topics limit: 6 %}<li>{{ topic }}</li>{% endfor %}</ul>
+        {% if program.id == 'kaist-generative-models-2025' or program.id == 'outta-basic-2024' %}<a href="{{ prefix | append: 'bootcamps/' | append: program.id | append: '/' | relative_url }}">{% if page.lang == 'en' %}Read my notes{% else %}학습 기록 읽기{% endif %}</a>{% endif %}
+      </article>
+      {% endfor %}
+    </div>
+
   {% when 'competitions' %}
-    <div class="learning-grid">{% for competition in site.data.competitions %}<article><p class="status-line">{{ competition.status }}</p><h2>{% if page.lang == 'en' %}{{ competition.title_en }}{% else %}{{ competition.title_ko }}{% endif %}</h2><dl class="compact-facts"><div><dt>Task</dt><dd>{{ competition.task }}</dd></div><div><dt>Local execution</dt><dd>{{ competition.local_execution_status }}</dd></div><div><dt>Kaggle submission</dt><dd>{{ competition.submission_status }}</dd></div><div><dt>Score / rank</dt><dd>{% if competition.best_score != empty %}{{ competition.best_score }} / {{ competition.rank }}{% else %}NOT VERIFIED{% endif %}</dd></div></dl><a href="{{ prefix | append: 'competitions/' | append: competition.id | append: '/' | relative_url }}">{% if page.lang == 'en' %}Open verification record{% else %}검증 기록 보기{% endif %}</a></article>{% endfor %}</div>
+    <div class="learning-grid">
+      {% for competition in site.data.competitions %}
+      <article>
+        <p class="eyebrow">Kaggle · OUTTA Basic</p>
+        <h2>{% if page.lang == 'en' %}{{ competition.title_en }}{% else %}{{ competition.title_ko }}{% endif %}</h2>
+        <p>{{ competition.task }}</p>
+        <p>{% if page.lang == 'en' %}Local rerun: {{ competition.rerun_improved }}{% else %}로컬 재실행: {{ competition.rerun_improved }}{% endif %}</p>
+        <a href="{{ prefix | append: 'competitions/' | append: competition.id | append: '/' | relative_url }}">{% if page.lang == 'en' %}Read the project note{% else %}프로젝트 기록 읽기{% endif %}</a>
+      </article>
+      {% endfor %}
+    </div>
+
   {% when 'program' %}
-    {% assign program = site.data.learning_programs | where: 'id', page.program_id | first %}<dl class="post-facts"><div><dt>Provider</dt><dd>{{ program.provider }}</dd></div><div><dt>Dates</dt><dd>{{ program.start_date }}–{{ program.end_date }}</dd></div><div><dt>Duration</dt><dd>{{ program.duration | default: 'not stated' }}</dd></div><div><dt>Completion</dt><dd>{{ program.completion_status }}</dd></div><div><dt>Project evidence</dt><dd>{{ program.project_evidence }}</dd></div></dl><h2>{% if page.lang == 'en' %}Topics verified from course metadata{% else %}과정 메타데이터로 확인한 주제{% endif %}</h2><ul class="chip-list">{% for topic in program.topics %}<li>{{ topic }}</li>{% endfor %}</ul><aside class="boundary-note"><h2>{% if page.lang == 'en' %}Publication boundary{% else %}공개 경계{% endif %}</h2><p>{% if page.lang == 'en' %}{{ program.public_boundary_en }}{% else %}{{ program.public_boundary_ko }}{% endif %}</p></aside>{% if program.id == 'kaist-generative-models-2025' %}{% assign course = site.data.courses['2025-generative-models'] %}<h2>{% if page.lang == 'en' %}Day records{% else %}Day별 기록{% endif %}</h2><ol class="learning-paths">{% for day_record in course.days %}<li><a href="{{ prefix | append: 'bootcamps/kaist-generative-models-2025/day-' | append: day_record.day | append: '/' | relative_url }}">{% if page.lang == 'en' %}{{ day_record.title_en }}{% else %}{{ day_record.title_ko }}{% endif %}</a> — {{ day_record.mapping_status }}</li>{% endfor %}</ol><p>{% if page.lang == 'en' %}Source audit: 38 headings, 2 child pages, 26 attachments (11 PPTX, 13 PDF, 2 notebooks), and 14 Colab links. Attachment export is blocked because the connector exposes expired or connector-only file references.{% else %}Source 감사: heading 38개, 하위 페이지 2개, 첨부 26개(PPTX 11, PDF 13, Notebook 2), Colab 링크 14개를 확인했습니다. 첨부 export는 만료되었거나 connector 전용인 참조만 제공되어 BLOCKED입니다.{% endif %}</p>{% endif %}{% if program.id == 'outta-basic-2024' %}<h2>{% if page.lang == 'en' %}Local material audit{% else %}로컬 자료 감사{% endif %}</h2><p>{% if page.lang == 'en' %}P-1 and P-3 retain historical execution outputs and local submission-file previews. P-2 is only partially executed and contains a plaintext API key, so its raw notebook is blocked from publication. None of these records verifies an authenticated Kaggle submission, score, or rank.{% else %}P-1과 P-3에는 과거 실행 출력과 로컬 제출 파일 미리보기가 남아 있습니다. P-2는 부분 실행 상태이며 평문 API 키가 있어 원본 공개를 차단했습니다. 어느 기록도 인증된 Kaggle 제출·점수·순위를 증명하지 않습니다.{% endif %}</p>{% endif %}
+    {% assign program = site.data.learning_programs | where: 'id', page.program_id | first %}
+    <dl class="post-facts">
+      <div><dt>Provider</dt><dd>{{ program.provider }}</dd></div>
+      <div><dt>Dates</dt><dd>{{ program.start_date }}–{{ program.end_date }}</dd></div>
+      <div><dt>Duration</dt><dd>{{ program.duration | default: '—' }}</dd></div>
+      <div><dt>{% if page.lang == 'en' %}Format{% else %}진행 방식{% endif %}</dt><dd>{{ program.delivery }}</dd></div>
+    </dl>
+    <h2>{% if page.lang == 'en' %}What I studied{% else %}공부한 주제{% endif %}</h2>
+    <ul class="chip-list">{% for topic in program.topics %}<li>{{ topic }}</li>{% endfor %}</ul>
+    {{ content }}
+    {% if program.id == 'kaist-generative-models-2025' %}
+      {% assign course = site.data.courses['2025-generative-models'] %}
+      <h2>{% if page.lang == 'en' %}Five-day study notes{% else %}5일 학습 기록{% endif %}</h2>
+      <ol class="learning-paths">{% for day_record in course.days %}<li><a href="{{ prefix | append: 'bootcamps/kaist-generative-models-2025/day-' | append: day_record.day | append: '/' | relative_url }}">{% if page.lang == 'en' %}{{ day_record.title_en }}{% else %}{{ day_record.title_ko }}{% endif %}</a><p>{% if page.lang == 'en' %}{{ day_record.overview_en }}{% else %}{{ day_record.overview_ko }}{% endif %}</p></li>{% endfor %}</ol>
+    {% endif %}
+
   {% when 'classroom' %}
-    <p class="status-banner">BLOCKED_AUTHENTICATION</p><p>{% if page.lang == 'en' %}The in-app Chrome session could not start because the browser kernel asset path was unavailable. The class title, classwork, personal submissions, grades, and feedback were not read and are not inferred.{% else %}브라우저 kernel asset 경로 오류로 로그인된 Chrome 세션을 시작하지 못했습니다. 강좌명, 과제, 본인 제출물, 성적, 피드백은 읽지 못했으며 추정해서 채우지 않았습니다.{% endif %}</p><p>{% if page.lang == 'en' %}Required evidence: the user's Google Classroom Takeout export, class Drive export, or downloaded personal submissions.{% else %}필요자료: 사용자 본인의 Google Classroom Takeout, Class Drive export 또는 내려받은 본인 제출물입니다.{% endif %}</p>
+    {{ content }}
+    <p>{% if page.lang == 'en' %}I have not copied class titles, grades, feedback, or private submissions because the signed-in Classroom page was not available in this session.{% else %}이번 작업에서는 로그인된 Classroom 화면을 열지 못해 강좌명·성적·피드백·비공개 제출물을 옮기지 않았다. 내려받은 내 자료를 확인한 뒤 공부한 내용부터 이어서 정리할 예정이다.{% endif %}</p>
+
   {% when 'competition' %}
-    {% assign competition = site.data.competitions | where: 'id', page.competition_id | first %}<p class="status-banner">{{ competition.status }}</p><dl class="post-facts"><div><dt>Platform</dt><dd>{{ competition.platform }}</dd></div><div><dt>Visibility</dt><dd>{{ competition.visibility }}</dd></div><div><dt>Task</dt><dd>{{ competition.task }}</dd></div><div><dt>Notebook class</dt><dd>{{ competition.notebook_classification }}</dd></div><div><dt>Cells</dt><dd>{{ competition.cells }} total · {{ competition.code_cells }} code · {{ competition.executed_code_cells }} with execution counts</dd></div><div><dt>Stored outputs</dt><dd>{{ competition.output_objects }} objects · {{ competition.stored_errors }} stored errors</dd></div><div><dt>Local execution</dt><dd>{{ competition.local_execution_status }}</dd></div><div><dt>Current reproduction</dt><dd>{{ competition.current_reproduction }}</dd></div><div><dt>Kaggle submission</dt><dd>{{ competition.submission_status }}</dd></div><div><dt>Metric</dt><dd>{% if competition.metric != empty %}{{ competition.metric }}{% else %}NOT VERIFIED{% endif %}</dd></div><div><dt>Score / rank</dt><dd>{% if competition.best_score != empty %}{{ competition.best_score }} / {{ competition.rank }}{% else %}NOT VERIFIED{% endif %}</dd></div></dl><h2>{% if page.lang == 'en' %}Historical notebook evidence{% else %}과거 노트북 증거{% endif %}</h2><p>{{ competition.recorded_result }}</p>{% if competition.rerun_evidence_status %}<h2>{% if page.lang == 'en' %}Current local rerun{% else %}현재 로컬 재실행{% endif %}</h2><dl class="post-facts"><div><dt>Evidence</dt><dd>{{ competition.rerun_evidence_status }}</dd></div><div><dt>Protocol</dt><dd>{{ competition.rerun_protocol }}</dd></div><div><dt>Model</dt><dd>{{ competition.rerun_model }}</dd></div><div><dt>Baseline</dt><dd>{{ competition.rerun_baseline }}</dd></div><div><dt>Improved</dt><dd>{{ competition.rerun_improved }}</dd></div><div><dt>Artifact</dt><dd>{{ competition.submission_artifact }}</dd></div></dl><p><a href="https://github.com/Tontonjeong/Tontonjeong.github.io/tree/main/experiments/outta-basic-2024">{% if page.lang == 'en' %}Open reproducible scripts, reports, and sanitized notebook{% else %}재현 스크립트·결과·정제 노트북 보기{% endif %}</a></p><aside class="boundary-note"><h2>{% if page.lang == 'en' %}Interpretation limit{% else %}해석 한계{% endif %}</h2><p>{% if page.lang == 'en' %}{{ competition.limitation_en }}{% else %}{{ competition.limitation_ko }}{% endif %}</p></aside>{% endif %}{% if competition.secret_status contains 'SECRET_DETECTED' %}<aside class="boundary-note"><h2>SECRET_DETECTED</h2><p>{% if page.lang == 'en' %}A plaintext API key was found in the raw notebook. The raw notebook remains excluded. The new rerun is secret-free, but the exposed key still requires owner revocation and replacement.{% else %}원본 노트북에서 평문 API 키를 발견해 원본 공개를 계속 차단합니다. 새 재실행본에는 비밀값이 없지만 노출된 기존 키는 소유자가 폐기·재발급해야 합니다.{% endif %}</p></aside>{% endif %}<h2>{% if page.lang == 'en' %}Verification boundary{% else %}검증 경계{% endif %}</h2><p>{% if page.lang == 'en' %}The current rerun verifies only the documented local holdout and generated submission-file schema. Kaggle authentication is unavailable, so the official title, rules, upload history, leaderboard metric, score, and rank remain unverified. Course datasets, test files, checkpoints, submissions, and raw notebooks are not redistributed.{% else %}현재 재실행은 문서화된 로컬 홀드아웃과 생성 제출 파일 스키마만 검증합니다. Kaggle 인증을 사용할 수 없어 공식 제목·규칙·업로드 이력·leaderboard metric·점수·순위는 미검증입니다. 강좌 데이터셋, test 파일, checkpoint, 제출 파일, 원본 노트북은 재배포하지 않습니다.{% endif %}</p>
+    {% assign competition = site.data.competitions | where: 'id', page.competition_id | first %}
+    <dl class="post-facts">
+      <div><dt>Platform</dt><dd>{{ competition.platform }}</dd></div>
+      <div><dt>{% if page.lang == 'en' %}Period{% else %}진행 기간{% endif %}</dt><dd>{{ competition.start_date }}–{{ competition.end_date }}</dd></div>
+      <div><dt>Host</dt><dd>{{ competition.host }}</dd></div>
+      <div><dt>Metric</dt><dd>{{ competition.metric | default: 'Accuracy' }}</dd></div>
+      <div><dt>{% if page.lang == 'en' %}Model rule{% else %}모델 조건{% endif %}</dt><dd>{% if page.lang == 'en' %}{{ competition.model_rule_en }}{% else %}{{ competition.model_rule_ko }}{% endif %}</dd></div>
+    </dl>
+    {{ content }}
+    <h2>{% if page.lang == 'en' %}What I changed for the rerun{% else %}다시 실행하면서 바꾼 점{% endif %}</h2>
+    <p>{% if page.lang == 'en' %}I compared the original notebook result with a local holdout run. I used {{ competition.rerun_model }} under {{ competition.rerun_protocol }}.{% else %}남아 있던 Notebook 결과와 새 로컬 홀드아웃 결과를 비교했다. {{ competition.rerun_protocol }} 조건에서 {{ competition.rerun_model }}을 사용했다.{% endif %}</p>
+    <dl class="post-facts"><div><dt>{% if page.lang == 'en' %}Earlier run{% else %}당시 Notebook{% endif %}</dt><dd>{{ competition.recorded_result }}</dd></div><div><dt>{% if page.lang == 'en' %}Simple baseline{% else %}단순 기준선{% endif %}</dt><dd>{{ competition.rerun_baseline }}</dd></div><div><dt>{% if page.lang == 'en' %}Reworked model{% else %}수정한 모델{% endif %}</dt><dd>{{ competition.rerun_improved }}</dd></div></dl>
+    <p>{% if page.lang == 'en' %}{{ competition.limitation_en }}{% else %}{{ competition.limitation_ko }}{% endif %}</p>
+    {% if competition.secret_status contains 'SECRET_DETECTED' %}<p>{% if page.lang == 'en' %}The old notebook contained a plaintext API key. I excluded that file and changed the public example to read credentials from an environment variable. The old key still needs to be revoked and replaced by its owner.{% else %}예전 Notebook에는 평문 API Key가 들어 있었다. 그 파일은 올리지 않고 공개 예제는 환경변수에서 값을 읽도록 고쳤다. 기존 키는 소유자 계정에서 폐기하고 새로 발급해야 한다.{% endif %}</p>{% endif %}
+    <p><a href="https://github.com/Tontonjeong/Tontonjeong.github.io/tree/main/experiments/outta-basic-2024">{% if page.lang == 'en' %}Open the rerun scripts and sanitized notebooks{% else %}재실행 코드와 정제한 Notebook 보기{% endif %}</a></p>
+    <p>{% if page.lang == 'en' %}These numbers come from my documented local split, not from the Kaggle leaderboard. I did not reproduce a signed-in submission history or rank.{% else %}위 수치는 문서화한 로컬 분할에서 얻었다. 로그인된 Kaggle 제출 이력·점수·순위까지 다시 확인한 값은 아니다.{% endif %}</p>
   {% endcase %}
 </main>

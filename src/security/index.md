@@ -21,7 +21,7 @@ alternate_lang: en
 ## 남는 제한
 
 - GitHub Pages에서 임의의 `X-Frame-Options` 또는 CSP `frame-ancestors` 응답 헤더를 설정할 수 없어 Clickjacking header 통제는 **PLATFORM LIMITATION**입니다.
-- GitHub 계정의 2FA/passkey와 로컬 PC의 디스크 암호화·자동 잠금은 사이트 build가 검증할 수 없어 **BLOCKED**입니다.
+- GitHub 계정의 2FA/passkey와 로컬 PC의 디스크 암호화·자동 잠금은 사이트 build에서 확인할 수 없습니다. 계정 소유자와 로컬 장비 관리자가 별도로 점검해야 합니다.
 - DDoS edge 방어는 GitHub의 책임 범위이며 완전 차단을 보장하지 않습니다.
 
 상세 문서는 [repository security directory](https://github.com/Tontonjeong/Tontonjeong.github.io/tree/main/docs/security)에서 확인할 수 있습니다.

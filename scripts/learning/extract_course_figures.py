@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from _common import fail
-from _course_common import blocked_materialization
+from _course_common import private_sources_not_republished
 
-errors = [] if blocked_materialization() else ["figure extraction lacks an explicit source-material blocker"]
-print("Figure extraction: BLOCKED; no private or third-party source figure is published")
+errors = [] if private_sources_not_republished() else ["private-source figure boundary changed"]
+print("Figure extraction skipped: private and third-party source figures are not republished")
 raise SystemExit(fail(errors))

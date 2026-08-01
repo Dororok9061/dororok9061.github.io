@@ -1,9 +1,9 @@
 ---
 layout: learning
 mode: classroom
-title: Google Classroom Verification Status
-lead: Assignment pages will be created only after the authenticated class title and personal submissions are read.
-description: Google Classroom authentication and evidence status.
+title: Google Classroom Study Notes
+lead: I will add course notes as I review my downloaded assignments and submissions.
+description: Google Classroom assignments and personal study notes.
 permalink: /en/learning/classroom/
 lang: en
 alternate_url: /learning/classroom/

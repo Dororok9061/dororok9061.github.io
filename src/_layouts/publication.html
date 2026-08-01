@@ -72,7 +72,7 @@ layout: default
     <div><dt>{% if page.lang == 'en' %}Venue and date{% else %}학회·일정{% endif %}</dt><dd>{{ publication_venue }} · {{ publication_dates }}</dd></div>
     <div><dt>{% if page.lang == 'en' %}Location{% else %}장소{% endif %}</dt><dd>{{ publication_location }}</dd></div>
     <div><dt>{% if page.lang == 'en' %}Publication type{% else %}논문 유형{% endif %}</dt><dd>{{ publication.type }}</dd></div>
-    <div><dt>{% if page.lang == 'en' %}Pages{% else %}페이지{% endif %}</dt><dd>{{ publication.pages }}{% if publication.page_verification_status == 'FULL_PAGE_RANGE_UNDER_VERIFICATION' %} · Full page range under verification{% endif %}</dd></div>
+    <div><dt>{% if page.lang == 'en' %}Pages{% else %}페이지{% endif %}</dt><dd>{{ publication.pages }}</dd></div>
     <div><dt>{% if page.lang == 'en' %}My role{% else %}본인 역할{% endif %}</dt><dd>{{ publication_role }}</dd></div>
   </dl>
 

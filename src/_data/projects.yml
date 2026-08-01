@@ -29,8 +29,8 @@
     - Parameterized SystemVerilog RTL
     - Independent reference model
     - Self-checking testbench and deterministic regression
-  boundary_ko: Functional simulation만 실행했습니다. Quartus synthesis, timing, power, Fmax와 수치 PPA는 도구 보고서가 없어 BLOCKED입니다.
-  boundary_en: Functional simulation was executed. Quartus synthesis, timing, power, Fmax, and numerical PPA remain BLOCKED because no tool reports are available.
+  boundary_ko: Functional simulation은 실행했습니다. Quartus synthesis, timing, power, Fmax와 수치 PPA는 도구 보고서를 찾지 못해 값을 적지 않았습니다.
+  boundary_en: I ran the functional simulation. I did not find Quartus synthesis, timing, power, Fmax, or numerical PPA reports, so those values are not reported.
   problem_ko: 동일한 cycle-delay 동작을 여러 RTL architecture로 구현하면서 latency contract와 결과 일치성을 독립적으로 검증하는 문제입니다.
   problem_en: The project implements one cycle-delay contract across multiple RTL architectures while independently checking latency and output equivalence.
   architecture_ko: Shift Register → Circular Queue → Memory-Based Driver/Checker로 architecture를 확장하고 독립 reference model과 비교합니다.

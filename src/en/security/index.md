@@ -21,7 +21,7 @@ alternate_lang: ko
 ## Residual limits
 
 - GitHub Pages cannot define arbitrary `X-Frame-Options` or CSP `frame-ancestors` response headers, so the clickjacking header control is a **PLATFORM LIMITATION**.
-- GitHub-account 2FA/passkeys and local-device encryption or auto-lock cannot be verified by the site build and remain **BLOCKED**.
+- The site build cannot verify GitHub-account 2FA/passkeys or local-device encryption and auto-lock. The account owner and device administrator must check them separately.
 - DDoS edge mitigation belongs to GitHub's platform responsibility and complete blocking is not guaranteed.
 
 Detailed records are available in the [repository security directory](https://github.com/Tontonjeong/Tontonjeong.github.io/tree/main/docs/security).

@@ -188,20 +188,21 @@
   order: 65
   title_ko: 2025 생성모델 집중과정
   title_en: 2025 Generative Models Intensive
-  summary_ko: 원본 강좌 Source에서 확인한 Day·주제와 실행 증거를 분리해 기록합니다.
-  summary_en: Source-mapped Days and topics are separated from execution evidence.
+  summary_ko: 생성모델 기초부터 Autoregressive Model, VAE, GAN, Pix2Pix, Diffusion까지 공부한 순서대로 정리합니다.
+  summary_en: My study sequence from generative-model foundations through autoregressive models, VAE, GAN, Pix2Pix, and diffusion.
   primary_category: ai-deep-learning
   subcategory: generative-ai
   difficulty: intermediate
   prerequisites: [python, pytorch, machine-learning-basics]
   tools: [PyTorch, Google Colab]
-  source_materials: [Read-only source course audit; private attachments excluded]
-  status: source-mapping-partial
+  source_materials: [Course notes and original papers]
+  status: published
   posts:
-    - { order: 1, title_ko: "Day 1: 생성모델 개요", title_en: "Day 1: Generative Model Overview", status: studied_only }
-    - { order: 2, title_ko: "Day 1: 딥러닝 기초", title_en: "Day 1: Deep-Learning Foundations", status: studied_only }
-    - { order: 3, title_ko: "Day 1: 데이터셋 시각화", title_en: "Day 1: Dataset Visualization", status: studied_only }
-    - { order: 4, title_ko: "Day 2–5: Source mapping", title_en: "Days 2–5: Source Mapping", status: blocked }
+    - { order: 1, title_ko: 생성모델과 데이터 분포부터 시작하기, title_en: Starting with Generative Models and Data Distributions, status: published, translation_key: generative-model-foundations, url_ko: /blog/2026/08/01/generative-model-foundations/, url_en: /en/blog/2026/08/01/generative-model-foundations/ }
+    - { order: 2, title_ko: Autoregressive Factorization과 MLE, title_en: Autoregressive Factorization and MLE, status: published, translation_key: autoregressive-mle, url_ko: /blog/2026/08/01/autoregressive-mle/, url_en: /en/blog/2026/08/01/autoregressive-mle/ }
+    - { order: 3, title_ko: VAE의 ELBO와 Reparameterization, title_en: VAE ELBO and Reparameterization, status: published, translation_key: vae-elbo, url_ko: /blog/2026/08/01/vae-elbo/, url_en: /en/blog/2026/08/01/vae-elbo/ }
+    - { order: 4, title_ko: GAN에서 Pix2Pix까지, title_en: From GANs to Pix2Pix, status: published, translation_key: gan-pix2pix, url_ko: /blog/2026/08/01/gan-pix2pix/, url_en: /en/blog/2026/08/01/gan-pix2pix/ }
+    - { order: 5, title_ko: DDPM에서 Latent Diffusion과 DiT까지, title_en: From DDPM to Latent Diffusion and DiT, status: published, translation_key: diffusion-latent-dit, url_ko: /blog/2026/08/01/diffusion-latent-dit/, url_en: /en/blog/2026/08/01/diffusion-latent-dit/ }
 
 - id: dc-motor-control
   order: 80
@@ -291,8 +292,8 @@
       url_ko: /blog/2026/07/31/coursework-evidence-levels/
       url_en: /en/blog/2026/07/31/coursework-evidence-levels/
     - order: 2
-      title_ko: SOURCE·EXECUTED·MEASURED·BLOCKED 기준
-      title_en: SOURCE, EXECUTED, MEASURED, and BLOCKED
+      title_ko: 설계 파일·재실행·실제 측정 구분
+      title_en: Separating design files, reruns, and measurements
       status: published
       translation_key: evidence-status
       url_ko: /blog/2026/07/31/evidence-status/

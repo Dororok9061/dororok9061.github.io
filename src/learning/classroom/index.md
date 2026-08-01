@@ -1,9 +1,9 @@
 ---
 layout: learning
 mode: classroom
-title: Google Classroom 확인 상태
-lead: 인증된 세션으로 강좌명과 본인 제출물을 확인한 뒤 과제별 페이지를 만듭니다.
-description: Google Classroom authentication and evidence status.
+title: Google Classroom 학습 기록
+lead: 내가 내려받은 과제와 제출물을 확인한 순서대로 과목별 공부 기록을 이어서 정리합니다.
+description: Google Classroom 과제와 개인 학습 기록.
 permalink: /learning/classroom/
 lang: ko
 alternate_url: /en/learning/classroom/

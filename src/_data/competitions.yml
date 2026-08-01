@@ -1,7 +1,14 @@
 - id: outta-basic-p1
-  title_ko: OUTTA Basic P-1 — 수어 이미지 분류
-  title_en: OUTTA Basic P-1 — Sign-language Image Classification
-  official_title_status: NOT_VERIFIED
+  title_ko: "[2024][Basic][P1] Sign Language Classification"
+  title_en: "[2024][Basic][P1] Sign Language Classification"
+  official_title_status: USER_SCREENSHOT_REVIEWED
+  start_date: 2024-07-04
+  end_date: 2024-08-27
+  host: sw.baek_00
+  metric: Accuracy
+  model_rule_ko: 사전학습 VGG16을 사용하며 다른 모델은 사용하지 않는 조건
+  model_rule_en: Use the pretrained VGG16 model; other models are not allowed
+  participation: { entrants: 122, participants: 101, teams: 62, submissions: 511 }
   platform: Kaggle
   visibility: PUBLIC_SUMMARY_ONLY
   slug: 2024-outta-basic-p-1
@@ -34,9 +41,16 @@
   metric: ""
   status: LOCAL_REPRODUCTION_VERIFIED_KAGGLE_AUTH_BLOCKED
 - id: outta-basic-p2
-  title_ko: OUTTA Basic P-2 — 구인공고 진위 분류
-  title_en: OUTTA Basic P-2 — Real/Fake Job Posting Classification
-  official_title_status: NOT_VERIFIED
+  title_ko: "[2024][Basic][P2] Real and Fake Job Postings"
+  title_en: "[2024][Basic][P2] Real and Fake Job Postings"
+  official_title_status: USER_SCREENSHOT_REVIEWED
+  start_date: 2024-08-11
+  end_date: 2024-08-27
+  host: sw.baek_00
+  metric: Accuracy
+  model_rule_ko: 사전학습 BERT를 사용하며 다른 모델은 사용하지 않는 조건
+  model_rule_en: Use the pretrained BERT model; other models are not allowed
+  participation: { entrants: 110, participants: 78, teams: 39, submissions: 358 }
   platform: Kaggle
   visibility: PUBLIC_SUMMARY_ONLY
   slug: real-or-fake-fake-jobposting-prediction
@@ -69,9 +83,16 @@
   metric: ""
   status: LOCAL_REPRODUCTION_VERIFIED_RAW_SECRET_AND_KAGGLE_AUTH_BLOCKED
 - id: outta-basic-p3
-  title_ko: OUTTA Basic P-3 — 음악 장르 분류
-  title_en: OUTTA Basic P-3 — Music Genre Classification
-  official_title_status: NOT_VERIFIED
+  title_ko: "[2024][Basic][P3] Music Genre Classification"
+  title_en: "[2024][Basic][P3] Music Genre Classification"
+  official_title_status: USER_SCREENSHOT_REVIEWED
+  start_date: 2024-08-11
+  end_date: 2024-08-27
+  host: sw.baek_00
+  metric: Accuracy
+  model_rule_ko: 모델을 직접 설계해 수행하는 조건
+  model_rule_en: Design and train the model directly
+  participation: { entrants: 112, participants: 85, teams: 42, submissions: 551 }
   platform: Kaggle
   visibility: PUBLIC_SUMMARY_ONLY
   slug: 2024-outta-basic-p-3

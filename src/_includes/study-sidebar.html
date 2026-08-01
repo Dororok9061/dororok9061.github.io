@@ -1,0 +1,16 @@
+{% assign sidebar_posts = site.posts | where: 'lang', page.lang %}
+<aside class="study-sidebar" aria-labelledby="study-sidebar-title">
+  <h2 id="study-sidebar-title">{% if page.lang == 'en' %}Study categories{% else %}공부 카테고리{% endif %}</h2>
+  <ul>
+    {% assign ordered_categories = site.data.blog_taxonomy | sort: 'order' %}
+    {% for category in ordered_categories %}
+      {% assign category_posts = sidebar_posts | where: 'primary_category', category.id %}
+      {% if category_posts.size > 0 %}
+      <li>
+        <a href="{% if page.lang == 'en' %}{{ '/en/blog/category/' | append: category.id | append: '/' | relative_url }}{% else %}{{ '/blog/category/' | append: category.id | append: '/' | relative_url }}{% endif %}"><span>{% if page.lang == 'en' %}{{ category.title_en }}{% else %}{{ category.title_ko }}{% endif %}</span><small>{{ category_posts.size }}</small></a>
+        {% if category.children %}<ul>{% for child in category.children %}{% assign child_posts = category_posts | where: 'subcategory', child.id %}{% if child_posts.size > 0 %}<li><a href="{% if page.lang == 'en' %}{{ '/en/blog/category/' | append: category.id | append: '/' | append: child.id | append: '/' | relative_url }}{% else %}{{ '/blog/category/' | append: category.id | append: '/' | append: child.id | append: '/' | relative_url }}{% endif %}"><span>{% if page.lang == 'en' %}{{ child.title_en }}{% else %}{{ child.title_ko }}{% endif %}</span><small>{{ child_posts.size }}</small></a></li>{% endif %}{% endfor %}</ul>{% endif %}
+      </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</aside>

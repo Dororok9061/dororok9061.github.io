@@ -23,16 +23,20 @@ layout: default
     <ol class="search-results" data-blog-search-results></ol>
   </section>
 
+  <div class="blog-with-sidebar">
+  {% include study-sidebar.html %}
+  <div class="blog-main-column">
   <section aria-labelledby="blog-categories-heading">
     <div class="section-heading"><p class="eyebrow">Taxonomy</p><h2 id="blog-categories-heading">{% if page.lang == 'en' %}Learning areas{% else %}분야별 학습 기록{% endif %}</h2></div>
     <div class="taxonomy-grid">
       {% assign ordered_categories = site.data.blog_taxonomy | sort: 'order' %}
       {% for category in ordered_categories %}
-      <article>
+      {% assign category_posts = site.posts | where: 'lang', page.lang | where: 'primary_category', category.id %}
+      {% if category_posts.size > 0 %}<article>
         <h3><a href="{{ blog_prefix | append: 'category/' | append: category.id | append: '/' | relative_url }}">{% if page.lang == 'en' %}{{ category.title_en }}{% else %}{{ category.title_ko }}{% endif %}</a></h3>
         <p>{% if page.lang == 'en' %}{{ category.description_en }}{% else %}{{ category.description_ko }}{% endif %}</p>
-        <p class="small-note">{{ category.children | size }} {% if page.lang == 'en' %}subcategories{% else %}개 하위 카테고리{% endif %}</p>
-      </article>
+        <p class="small-note">{{ category_posts.size }} {% if page.lang == 'en' %}notes{% else %}개 글{% endif %}</p>
+      </article>{% endif %}
       {% endfor %}
     </div>
   </section>
@@ -42,7 +46,7 @@ layout: default
     <div class="series-grid">
       {% assign ordered_series = site.data.blog_series | sort: 'order' %}
       {% for series in ordered_series limit: 6 %}
-      <article><p class="status-line">{{ series.status }}</p><h3><a href="{{ blog_prefix | append: 'series/' | append: series.id | append: '/' | relative_url }}">{% if page.lang == 'en' %}{{ series.title_en }}{% else %}{{ series.title_ko }}{% endif %}</a></h3><p>{% if page.lang == 'en' %}{{ series.summary_en }}{% else %}{{ series.summary_ko }}{% endif %}</p></article>
+      <article><h3><a href="{{ blog_prefix | append: 'series/' | append: series.id | append: '/' | relative_url }}">{% if page.lang == 'en' %}{{ series.title_en }}{% else %}{{ series.title_ko }}{% endif %}</a></h3><p>{% if page.lang == 'en' %}{{ series.summary_en }}{% else %}{{ series.summary_ko }}{% endif %}</p></article>
       {% endfor %}
     </div>
   </section>
@@ -61,5 +65,7 @@ layout: default
     </article>
     {% endunless %}
     {% else %}<p>{% if page.lang == 'en' %}No notes are published yet.{% else %}아직 공개된 노트가 없습니다.{% endif %}</p>{% endfor %}
+  </div>
+  </div>
   </div>
 </main>

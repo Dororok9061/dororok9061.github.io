@@ -13,7 +13,6 @@ layout: default
     <dl class="post-facts">
       <div><dt>Series</dt><dd>{% if page.series %}<a href="{% if page.lang == 'en' %}{{ '/en/blog/series/' | append: page.series | append: '/' | relative_url }}{% else %}{{ '/blog/series/' | append: page.series | append: '/' | relative_url }}{% endif %}">{{ page.series }} · {{ page.series_order }}</a>{% else %}—{% endif %}</dd></div>
       <div><dt>{% if page.lang == 'en' %}Type / level{% else %}유형 / 난이도{% endif %}</dt><dd>{{ page.post_type }} · {{ page.difficulty }}</dd></div>
-      <div><dt>Evidence</dt><dd>{{ page.evidence_status }}</dd></div>
       <div><dt>Tools</dt><dd>{{ page.tools | join: ', ' }}</dd></div>
     </dl>
     {% if page.toc %}<details class="post-toc" open><summary>{% if page.lang == 'en' %}On this page{% else %}목차{% endif %}</summary><ol>{% for item in page.toc %}<li><a href="#{{ item.id }}">{% if page.lang == 'en' and item.title_en %}{{ item.title_en }}{% else %}{{ item.title }}{% endif %}</a></li>{% endfor %}</ol></details>{% endif %}

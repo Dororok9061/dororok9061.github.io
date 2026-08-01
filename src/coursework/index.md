@@ -2,7 +2,7 @@
 layout: page
 title: 전공과목 포트폴리오
 eyebrow: Electrical Engineering Coursework
-lead: 학부 과제와 실습을 전공 분야와 Evidence Status로 분류합니다.
+lead: 학부 과제와 실습을 전공 분야별로 모으고, 직접 한 설계·실행·측정을 구분해 설명합니다.
 description: VHDL, 전력, 제어, RF, 센서 분야의 전자전기공학 학부 과제 포트폴리오.
 permalink: /coursework/
 lang: ko

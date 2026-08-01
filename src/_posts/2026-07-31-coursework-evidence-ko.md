@@ -33,9 +33,9 @@ source_materials:
     public_url: /projects/coursework/
     file_reference: site data
     pages: ""
-    used_for: 공개 경계와 관련 프로젝트 연결
+    used_for: 전공과목 페이지와 관련 프로젝트 연결
 prerequisites: [source provenance, reproducibility]
-learning_objectives: [과거 archive와 재실행 결과 구분, 재작성 그림과 측정 결과 구분, proposal 공개 경계 기록]
+learning_objectives: [과거 archive와 재실행 결과 구분, 재작성 그림과 측정 결과 구분, proposal과 구현 결과 구분]
 related_projects: [coursework]
 related_posts: [evidence-status]
 tags: [source-provenance, ghdl, cadence, powerworld]
@@ -61,7 +61,7 @@ toc:
 
 전공과목 폴더에는 서로 다른 시점과 환경에서 만든 자료가 함께 남습니다. Vivado 파형은 당시 화면만 있고, VHDL source는 GHDL로 다시 실행할 수 있으며, Cadence 결과는 기존 archive 화면만 남아 있을 수 있습니다. 보고서의 계산식을 Python으로 다시 계산한 결과와 직접 계측한 값도 같은 종류가 아닙니다.
 
-파일이 존재한다는 이유만으로 모두 “실험 완료”라고 표시하면 독자는 재현 가능한 범위를 판단할 수 없습니다. 그래서 자료의 출처를 먼저 분류하고, 실행·측정 상태는 별도의 Evidence Status로 기록합니다.
+파일이 존재한다는 이유만으로 모두 “실험 완료”라고 쓰면 내가 어디까지 다시 실행했는지 알기 어렵습니다. 그래서 파일이 만들어진 맥락을 먼저 적고, 새 실행과 장비 측정은 명령·로그·조건과 함께 따로 설명합니다.
 
 <figure>
   <picture><source srcset="/assets/images/projects/coursework-hero.webp" type="image/webp"><img src="/assets/images/projects/coursework-hero.jpg" alt="VHDL, Power, Control, RF, Sensor Systems를 evidence 상태와 함께 연결한 전공과목 포트폴리오 구조도" width="1200" height="570" loading="lazy"></picture>
@@ -96,7 +96,7 @@ toc:
 3. 새 실행을 했다면 명령·version·입력·log를 묶고 Rerun으로 기록한다.
 4. 설명용 그림은 원 수치와 재작성 규칙을 남기고 Portfolio Redraw로 표시한다.
 5. 구현·실행 자료가 없으면 Proposal에서 멈춘다.
-6. Source, Executed, Measured, BLOCKED 상태는 별도 축에서 판단한다.
+6. Source 존재, 새 실행, 장비 측정 여부를 각각 확인한다.
 
 이 순서를 적용하면 직접 asset URL로 접근하더라도 파일만 보고 새 실험으로 오해할 가능성이 줄어든다. 공개할 수 없는 원본은 repository에 넣지 않고 요약과 경계만 남긴다.
 
@@ -116,7 +116,7 @@ Public asset:
 Related project:
 ```
 
-결과 한 줄보다 `Not verified`가 중요할 때가 많다. 예를 들어 GHDL functional test를 통과했더라도 Quartus timing, power, Fmax는 보고서가 없으면 BLOCKED로 남긴다.
+결과 한 줄보다 `Not verified`가 중요할 때가 많다. 예를 들어 GHDL functional test를 통과했더라도 Quartus timing, power, Fmax 보고서가 없으면 그 수치를 쓰지 않는다.
 
 ## 확인하지 못한 내용 {#limits}
 

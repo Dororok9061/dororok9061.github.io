@@ -42,7 +42,7 @@ toc:
   - { id: reference, title: 독립 Reference Model }
   - { id: regression, title: 26개 Equivalence Test }
   - { id: waveform, title: Waveform 읽기 }
-  - { id: blocked, title: Quartus에서 남은 검증 }
+  - { id: quartus-next, title: Quartus에서 이어서 할 일 }
 ---
 
 ## 비교한 문제 {#problem}
@@ -88,6 +88,6 @@ Driver는 reset, 연속 valid, valid gap, delay 변경, buffer wrap 조건을 �
 
 파형에서는 data만 맞는지 보지 않는다. `valid_o`가 한 cycle 먼저 올라가거나 reset 직후 오래된 data가 valid와 함께 나오는 것도 contract 위반이다. File-driven scenario는 입력 vector와 delay 변경을 외부 파일로 고정해 같은 regression을 반복할 수 있게 한다.
 
-## Quartus에서 남은 검증 {#blocked}
+## Quartus에서 이어서 할 일 {#quartus-next}
 
-Functional simulation은 실행 근거가 있다. 하지만 Quartus synthesis report, timing analyzer, resource utilization, power, Fmax, numerical PPA report는 공개 근거가 없어 BLOCKED다. Circular Queue가 실제 FPGA에서 더 적은 register 또는 memory resource를 사용한다고 수치로 주장하지 않는다. 다음 단계는 동일 constraint와 device 설정으로 두 architecture를 합성하고 report 원본과 명령을 함께 보존하는 것이다.
+Functional simulation은 직접 실행했다. 아직 Quartus synthesis report, timing analyzer, resource utilization, power, Fmax, numerical PPA report는 찾지 못했다. 그래서 Circular Queue가 실제 FPGA에서 더 적은 register 또는 memory resource를 쓴다는 수치는 적지 않았다. 다음에는 같은 constraint와 device 설정으로 두 architecture를 합성하고 report 원본과 명령을 함께 보존할 예정이다.

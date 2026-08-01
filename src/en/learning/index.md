@@ -2,8 +2,8 @@
 layout: learning
 mode: index
 title: External Learning & Competitions
-lead: Course completion, assignments, projects, Kaggle submissions, scores, and ranks are recorded as separate evidence states.
-description: Evidence-first portfolio for bootcamps, external courses, Classroom, and Kaggle.
+lead: Bootcamp notes, modified notebooks, local reruns, and competition records collected in one place.
+description: Study portfolio for bootcamps, external courses, Classroom, and Kaggle.
 permalink: /en/learning/
 lang: en
 alternate_url: /learning/
