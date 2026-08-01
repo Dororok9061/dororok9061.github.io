@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Archived torque-ripple comparison</title>
+  <desc id="desc">A conceptual comparison of the archived PSIM report values, 2.28 newton metres at 10 kilohertz and 0.38 newton metres at 30 kilohertz.</desc>
+  <rect width="1200" height="630" fill="#f7f7f4"/>
+  <g font-family="Arial, sans-serif" fill="#171717">
+    <text x="70" y="82" font-size="34" font-weight="700">Switching-frequency comparison</text>
+    <text x="70" y="118" font-size="20" fill="#4b5563">values transcribed from the saved PSIM coursework report</text>
+  </g>
+  <line x1="120" y1="500" x2="1100" y2="500" stroke="#263238" stroke-width="3"/>
+  <line x1="120" y1="170" x2="120" y2="500" stroke="#263238" stroke-width="3"/>
+  <g fill="#1f6f8b"><rect x="285" y="226" width="230" height="274" rx="10"/><rect x="690" y="454" width="230" height="46" rx="10"/></g>
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <text x="400" y="212" font-size="32" font-weight="700" fill="#171717">2.28 N·m</text>
+    <text x="805" y="440" font-size="32" font-weight="700" fill="#171717">0.38 N·m</text>
+    <text x="400" y="545" font-size="24" fill="#171717">10 kHz</text><text x="805" y="545" font-size="24" fill="#171717">30 kHz</text>
+  </g>
+  <g font-family="Arial, sans-serif" fill="#4b5563" font-size="18">
+    <text x="67" y="190" transform="rotate(-90 67 190)">reported torque ripple</text>
+    <text x="70" y="595">This redraw preserves the reported comparison without presenting it as a rerun or physical measurement.</text>
+  </g>
+</svg>

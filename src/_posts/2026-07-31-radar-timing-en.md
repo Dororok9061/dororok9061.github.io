@@ -35,7 +35,7 @@ image_alt: Physical setup for concurrent ECG, SCG, and BGT60TR13C FMCW radar acq
 draft: false
 revision_history:
   - { date: 2026-07-31, change: Initial publication }
-  - { date: 2026-08-01, change: Added acquisition architecture, phase and beat flow, hardware, and waveform evidence }
+  - { date: 2026-08-01, change: "Added acquisition architecture, phase and beat flow, hardware, and waveform evidence" }
 toc:
   - { id: setup, title: Concurrent acquisition system }
   - { id: phase, title: From radar phase to beats }

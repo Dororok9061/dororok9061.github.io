@@ -2,7 +2,7 @@
 layout: learning
 mode: index
 title: External Learning & Competitions
-lead: Bootcamp notes, modified notebooks, local reruns, and competition records collected in one place.
+lead: I collected bootcamp notes, saved notebook copies with my edits, local reruns, and competition records in one place.
 description: Study portfolio for bootcamps, external courses, Classroom, and Kaggle.
 permalink: /en/learning/
 lang: en

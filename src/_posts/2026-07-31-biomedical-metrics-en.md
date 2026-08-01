@@ -35,12 +35,12 @@ image_alt: Pipeline from PPG AFE and STM32 acquisition through IBI HRV preproces
 draft: false
 revision_history:
   - { date: 2026-07-31, change: Initial publication }
-  - { date: 2026-08-01, change: Added split, fold, preprocessing, confusion-matrix, and pipeline detail }
+  - { date: 2026-08-01, change: "Added split, fold, preprocessing, confusion-matrix, and pipeline detail" }
 toc:
   - { id: question, title: Questions before comparing values }
   - { id: pipeline, title: PPG-to-classification pipeline }
   - { id: split, title: Subject splits and folds }
-  - { id: metrics, title: AUC, F1, and confusion matrices }
+  - { id: metrics, title: "AUC, F1, and confusion matrices" }
   - { id: provenance, title: Paper result and code archive }
   - { id: limits, title: Unverified items }
 ---

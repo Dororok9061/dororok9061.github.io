@@ -35,7 +35,7 @@ image_alt: Shift Register, Circular Queue, Memory-Based 구조로 발전하는 F
 draft: false
 revision_history:
   - { date: 2026-07-31, change: 최초 공개 }
-  - { date: 2026-08-01, change: interface contract, checker 절차, waveform과 26개 동등성 결과 추가 }
+  - { date: 2026-08-01, change: "interface contract, checker 절차, waveform과 26개 동등성 결과 추가" }
 toc:
   - { id: problem, title: 비교한 문제 }
   - { id: contract, title: 동일 Interface Contract }

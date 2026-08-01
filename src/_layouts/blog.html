@@ -45,9 +45,10 @@ layout: default
     <div class="section-heading"><p class="eyebrow">Series</p><h2 id="blog-series-heading">{% if page.lang == 'en' %}Study sequences{% else %}학습 순서{% endif %}</h2></div>
     <div class="series-grid">
       {% assign ordered_series = site.data.blog_series | sort: 'order' %}
-      {% for series in ordered_series limit: 6 %}
+      {% assign language_posts = site.posts | where: 'lang', page.lang %}
+      {% for series in ordered_series %}{% assign series_posts = language_posts | where: 'series', series.id %}{% if series_posts.size > 0 %}
       <article><h3><a href="{{ blog_prefix | append: 'series/' | append: series.id | append: '/' | relative_url }}">{% if page.lang == 'en' %}{{ series.title_en }}{% else %}{{ series.title_ko }}{% endif %}</a></h3><p>{% if page.lang == 'en' %}{{ series.summary_en }}{% else %}{{ series.summary_ko }}{% endif %}</p></article>
-      {% endfor %}
+      {% endif %}{% endfor %}
     </div>
   </section>
 

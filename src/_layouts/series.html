@@ -4,7 +4,8 @@ layout: default
 {% assign series = site.data.blog_series | where: 'id', page.series_id | first %}
 <main id="main" class="page page-shell">
   <header class="page-heading"><p class="eyebrow">Series</p><h1>{% if page.lang == 'en' %}{{ series.title_en }}{% else %}{{ series.title_ko }}{% endif %}</h1><p class="page-heading__lead">{% if page.lang == 'en' %}{{ series.summary_en }}{% else %}{{ series.summary_ko }}{% endif %}</p></header>
-  {% assign published = series.posts | where: 'status', 'published' %}<p class="series-progress">{% if page.lang == 'en' %}{{ published.size }} notes{% else %}공개 글 {{ published.size }}개{% endif %}</p>
-  <ol class="series-list">{% for item in published %}<li><span>{{ item.order }}</span><div><strong><a href="{% if page.lang == 'en' %}{{ item.url_en }}{% else %}{{ item.url_ko }}{% endif %}">{% if page.lang == 'en' %}{{ item.title_en }}{% else %}{{ item.title_ko }}{% endif %}</a></strong></div></li>{% endfor %}</ol>
+  {% assign language_posts = site.posts | where: 'lang', page.lang %}{% assign published = language_posts | where: 'series', page.series_id | sort: 'series_order' %}<p class="series-progress">{% if page.lang == 'en' %}{{ published.size }} notes{% else %}공개 글 {{ published.size }}개{% endif %}</p>
+  <ol class="series-list">{% for item in published %}<li><span>{{ item.series_order }}</span><div><strong><a href="{{ item.url | relative_url }}">{{ item.title }}</a></strong></div></li>{% endfor %}</ol>
+  {% if published.size == 0 %}<p>{% if page.lang == 'en' %}This older series URL is kept for existing links. Continue from the <a href="{{ '/en/blog/' | relative_url }}">current study notes</a>.{% else %}기존 링크를 위해 이 시리즈 주소를 유지했습니다. <a href="{{ '/blog/' | relative_url }}">현재 공부글 목록</a>에서 이어서 볼 수 있습니다.{% endif %}</p>{% endif %}
   <details class="series-meta"><summary>{% if page.lang == 'en' %}Sources, tools, and prerequisites{% else %}자료·도구·선수지식{% endif %}</summary><dl><dt>Tools</dt><dd>{{ series.tools | join: ', ' }}</dd><dt>Sources</dt><dd>{{ series.source_materials | join: '; ' }}</dd><dt>Prerequisites</dt><dd>{{ series.prerequisites | join: ', ' }}</dd></dl></details>
 </main>

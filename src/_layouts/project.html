@@ -16,7 +16,6 @@ layout: default
   {% assign project_data_flow = project.data_flow_en %}
   {% assign project_methods = project.methods_en %}
   {% assign project_results = project.results_en %}
-  {% assign category_base = '/en/blog/category/' %}
 {% else %}
   {% assign project_title = project.title_ko %}
   {% assign project_domain = project.domain_ko %}
@@ -31,7 +30,6 @@ layout: default
   {% assign project_data_flow = project.data_flow_ko %}
   {% assign project_methods = project.methods_ko %}
   {% assign project_results = project.results_ko %}
-  {% assign category_base = '/blog/category/' %}
 {% endif %}
 <main id="main" class="page page-shell">
   <nav class="breadcrumbs" aria-label="{% if page.lang == 'en' %}Breadcrumb{% else %}현재 위치{% endif %}">
@@ -96,11 +94,6 @@ layout: default
       <a class="portfolio-button portfolio-button--primary" href="{{ project.repository }}" target="_blank" rel="noopener noreferrer">Repository</a>
       {% if page.lang == 'en' and project.pages_en %}<a class="portfolio-button" href="{{ project.pages_en }}" target="_blank" rel="noopener noreferrer">Project Pages</a>{% endif %}
       {% if page.lang != 'en' and project.pages_ko %}<a class="portfolio-button" href="{{ project.pages_ko }}" target="_blank" rel="noopener noreferrer">Project Pages</a>{% endif %}
-    </div>
-    <div class="filter-links">
-      {% for category in project.categories %}
-      <a href="{{ category_base | append: category | append: '/' | relative_url }}">{{ category }}</a>
-      {% endfor %}
     </div>
   </section>
   <div class="prose">

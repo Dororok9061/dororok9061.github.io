@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Two separate PADS study examples</title>
+  <desc id="desc">The left panel independently shows a six-pad SOIC footprint with dimensions. The right panel independently shows OPA2333 stages, filtering, logic, and a layout boundary. No shared package relationship is asserted.</desc>
+  <rect width="1200" height="630" fill="#f7f6f2"/>
+  <rect x="48" y="66" width="528" height="506" rx="18" fill="#ffffff" stroke="#c9c5bd" stroke-width="2"/>
+  <rect x="624" y="66" width="528" height="506" rx="18" fill="#ffffff" stroke="#c9c5bd" stroke-width="2"/>
+  <text x="76" y="114" fill="#111111" font-family="system-ui,Segoe UI,Arial,sans-serif" font-size="27" font-weight="700">A. SOIC 6-pin decal</text>
+  <text x="652" y="114" fill="#111111" font-family="system-ui,Segoe UI,Arial,sans-serif" font-size="27" font-weight="700">B. PPG schematic flow</text>
+  <rect x="232" y="196" width="160" height="246" rx="12" fill="#edf5fb" stroke="#1677a8" stroke-width="3"/>
+  <circle cx="258" cy="224" r="8" fill="#d14f45"/>
+  <g fill="#d38f32" stroke="#9a621e" stroke-width="2">
+    <rect x="136" y="204" width="92" height="48" rx="5"/>
+    <rect x="136" y="294" width="92" height="48" rx="5"/>
+    <rect x="136" y="384" width="92" height="48" rx="5"/>
+    <rect x="396" y="204" width="92" height="48" rx="5"/>
+    <rect x="396" y="294" width="92" height="48" rx="5"/>
+    <rect x="396" y="384" width="92" height="48" rx="5"/>
+  </g>
+  <g fill="#111111" font-family="system-ui,Segoe UI,Arial,sans-serif" font-size="18" text-anchor="middle">
+    <text x="182" y="235">1</text><text x="182" y="325">2</text><text x="182" y="415">3</text>
+    <text x="442" y="235">6</text><text x="442" y="325">5</text><text x="442" y="415">4</text>
+  </g>
+  <g fill="#5b554d" font-family="system-ui,Segoe UI,Arial,sans-serif" font-size="18">
+    <text x="112" y="482">Pad W 0.6 mm · L 1.05 mm</text>
+    <text x="112" y="514">Pin pitch 1.27 mm · Row pitch 2.65 mm</text>
+  </g>
+  <g fill="#eef4ec" stroke="#4c7b54" stroke-width="2">
+    <rect x="660" y="192" width="132" height="70" rx="9"/>
+    <rect x="824" y="192" width="132" height="70" rx="9"/>
+    <rect x="988" y="192" width="132" height="70" rx="9"/>
+    <rect x="742" y="346" width="132" height="70" rx="9"/>
+    <rect x="906" y="346" width="132" height="70" rx="9"/>
+  </g>
+  <g fill="none" stroke="#1677a8" stroke-width="4" marker-end="url(#arrow)">
+    <path d="M792 227 H816"/>
+    <path d="M956 227 H980"/>
+    <path d="M1054 268 C1054 312 996 330 972 342"/>
+    <path d="M906 381 H882"/>
+  </g>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#1677a8"/>
+    </marker>
+  </defs>
+  <g fill="#111111" font-family="system-ui,Segoe UI,Arial,sans-serif" font-size="18" text-anchor="middle">
+    <text x="726" y="221">PPG input</text><text x="726" y="245">OPA2333</text>
+    <text x="890" y="221">Filter / gain</text><text x="890" y="245">OPA2333</text>
+    <text x="1054" y="221">Logic</text><text x="1054" y="245">SN74LVC</text>
+    <text x="972" y="375">Netlist</text><text x="972" y="399">connectivity</text>
+    <text x="808" y="375">Placement</text><text x="808" y="399">layout view</text>
+  </g>
+  <text x="600" y="610" fill="#5b554d" font-family="system-ui,Segoe UI,Arial,sans-serif" font-size="18" text-anchor="middle">Separate captures · no shared package relationship asserted · design screen ≠ fabrication or measurement</text>
+</svg>

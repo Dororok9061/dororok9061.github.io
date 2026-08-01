@@ -11,4 +11,6 @@ for path, _, body in post_records():
             errors.append(f"{path.name}: repeated generic phrase {phrase}")
     if private.search(body):
         errors.append(f"{path.name}: private path, identifier, or key marker")
+    if "\\[" in body or "\\]" in body:
+        errors.append(f"{path.name}: unsupported display-LaTeX delimiter; use readable HTML text")
 raise SystemExit(fail(errors))

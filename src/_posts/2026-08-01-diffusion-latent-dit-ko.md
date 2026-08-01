@@ -35,7 +35,7 @@ thumbnail: /assets/images/learning/generative/diffusion.svg
 image_alt: Diffusion forward noise와 reverse denoising, latent diffusion 흐름
 draft: false
 revision_history:
-  - { date: 2026-08-01, change: DDPM, LDM, DiT 원 논문을 한 흐름으로 연결 }
+  - { date: 2026-08-01, change: "DDPM, LDM, DiT 원 논문을 한 흐름으로 연결" }
 toc:
   - { id: forward, title: Forward process }
   - { id: reverse, title: Reverse process }

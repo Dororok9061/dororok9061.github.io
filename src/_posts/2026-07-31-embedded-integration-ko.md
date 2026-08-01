@@ -35,7 +35,7 @@ image_alt: Raspberry Pi, LCD와 sensor wiring으로 구성한 졸음 모니터�
 draft: false
 revision_history:
   - { date: 2026-07-31, change: 최초 공개 }
-  - { date: 2026-08-01, change: node 역할, data path, failure boundary와 prototype 사진 추가 }
+  - { date: 2026-08-01, change: "node 역할, data path, failure boundary와 prototype 사진 추가" }
 toc:
   - { id: goal, title: 두 Node로 나눈 이유 }
   - { id: nodes, title: PPG Node와 Camera Node }
