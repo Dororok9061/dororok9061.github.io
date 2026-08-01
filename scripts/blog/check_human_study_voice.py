@@ -11,12 +11,15 @@ ROOT = Path(__file__).resolve().parents[2]
 PUBLIC_SUFFIXES = {".html", ".markdown", ".md"}
 EXCLUDED_PARTS = {
     ".git",
-    "docs",
     "manifests",
     "scripts",
     "work",
 }
-EXCLUDED_NAMES = {"ci-logs", "ci_logs"}
+EXCLUDED_NAMES = {"ci logs", "ci-logs", "ci_logs"}
+EXCLUDED_PATHS = {
+    ("docs", "qa"),
+    ("docs", "security"),
+}
 
 FORBIDDEN = (
     "실제로 누락이 없으면",
@@ -28,6 +31,24 @@ FORBIDDEN = (
     "증거 경계",
     "근거 기록",
     "로컬 자료 감사",
+    "기록합니다",
+    "연결합니다",
+    "관리합니다",
+    "구분합니다",
+    "근거를 연결합니다",
+    "공개 근거",
+    "검증 가능한",
+    "지원하는 범위",
+    "확인한 파일 안에서",
+    "범위를 제한합니다",
+    "주장하지 않습니다",
+    "확대 해석하지 않습니다",
+    "본 사이트에는",
+    "이 정적 사이트에는",
+    "한곳에서 확인할 수 있습니다",
+    "저널로 분류하지 않습니다",
+    "URL 검증 상태",
+    "페이지 범위를 확인했습니다",
     "Evidence Status",
     "Remaining Source Materials",
     "Public Impact",
@@ -51,6 +72,18 @@ FORBIDDEN = (
     "깊이 이해",
     "최적의 솔루션",
     "미래를 선도",
+    "Public Evidence",
+    "Validation Boundary",
+    "Documentation Policy",
+    "provenance",
+    "source-backed",
+    "archived evidence",
+    "privacy-reviewed",
+    "traceable",
+    "evidence boundary",
+    "within supported scope",
+    "not claimed",
+    "separated provenance",
 )
 
 
@@ -62,10 +95,32 @@ def public_files(path: Path):
     for candidate in path.rglob("*"):
         if not candidate.is_file() or candidate.suffix.lower() not in PUBLIC_SUFFIXES:
             continue
-        relative_parts = {part.lower() for part in candidate.relative_to(path).parts}
+        relative_parts_tuple = tuple(
+            part.lower() for part in candidate.relative_to(path).parts
+        )
+        relative_parts = set(relative_parts_tuple)
         if relative_parts & EXCLUDED_PARTS or relative_parts & EXCLUDED_NAMES:
             continue
+        if any(
+            relative_parts_tuple[index : index + len(excluded)] == excluded
+            for excluded in EXCLUDED_PATHS
+            for index in range(len(relative_parts_tuple) - len(excluded) + 1)
+        ):
+            continue
         yield candidate
+
+
+def is_unpublished(text: str) -> bool:
+    if not text.startswith("---\n"):
+        return False
+    parts = text.split("---", 2)
+    if len(parts) < 3:
+        return False
+    header = parts[1]
+    return any(
+        line.strip().casefold() in {"draft: true", "published: false"}
+        for line in header.splitlines()
+    )
 
 
 def main(argv: list[str]) -> int:
@@ -81,6 +136,8 @@ def main(argv: list[str]) -> int:
                 continue
             seen.add(resolved)
             text = path.read_text(encoding="utf-8", errors="replace")
+            if is_unpublished(text):
+                continue
             folded = text.casefold()
             for phrase in FORBIDDEN:
                 needle = phrase.casefold()

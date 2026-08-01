@@ -23,8 +23,8 @@
   tier: SUPPORTING
   title_ko: Biomedical AI Engineer
   title_en: Biomedical AI Engineer
-  summary_ko: PPG timing integrity, IBI·HRV feature construction, CNN+Transformer evaluation과 metric provenance.
-  summary_en: PPG timing integrity, IBI/HRV feature construction, CNN+Transformer evaluation, and metric provenance.
+  summary_ko: PPG timing integrity, IBI·HRV feature 구성, CNN+Transformer 평가와 metric 계산 조건 비교.
+  summary_en: PPG timing integrity, IBI/HRV feature construction, CNN+Transformer evaluation, and metric-condition comparison.
   projects: [ppg-hrv]
 - id: systems
   tier: SUPPORTING

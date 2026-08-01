@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Electronic Circuits II concept map</title>
+  <desc id="desc">A conceptual signal path connecting a differential input, feedback, filtering, and an output stage.</desc>
+  <rect width="1200" height="675" fill="#f3f1eb"/>
+  <rect x="44" y="42" width="1112" height="591" rx="28" fill="#081526"/>
+  <g font-family="Arial, sans-serif">
+    <text x="84" y="112" fill="#65d4ff" font-size="22" font-weight="700" letter-spacing="3">SIGNAL PATH MAP</text>
+    <text x="84" y="170" fill="#ffffff" font-size="44" font-weight="700">Electronic Circuits II</text>
+    <text x="84" y="210" fill="#b9c7d8" font-size="21">Differential input, feedback, filtering, and output drive</text>
+
+    <circle cx="124" cy="359" r="32" fill="#10243b" stroke="#65d4ff" stroke-width="5"/>
+    <text x="114" y="369" fill="#ffffff" font-size="30">Σ</text>
+    <text x="104" y="312" fill="#7ee0a3" font-size="22">+</text>
+    <text x="104" y="414" fill="#ff8fa3" font-size="28">−</text>
+    <line x1="156" y1="359" x2="222" y2="359" stroke="#dce7f2" stroke-width="6"/>
+
+    <rect x="222" y="284" width="212" height="150" rx="18" fill="#10243b" stroke="#3c5774"/>
+    <text x="250" y="344" fill="#ffffff" font-size="24" font-weight="700">Differential</text>
+    <text x="250" y="380" fill="#9db0c5" font-size="18">input stage</text>
+    <line x1="434" y1="359" x2="500" y2="359" stroke="#dce7f2" stroke-width="6"/>
+    <path d="M500 359 L481 347 V371 Z" fill="#ffca6b"/>
+
+    <rect x="500" y="284" width="212" height="150" rx="18" fill="#10243b" stroke="#3c5774"/>
+    <text x="528" y="344" fill="#ffffff" font-size="24" font-weight="700">Active filter</text>
+    <path d="M536 390 H568 C590 390 592 344 614 344 S638 390 660 390 H678" fill="none" stroke="#65d4ff" stroke-width="5"/>
+    <line x1="712" y1="359" x2="778" y2="359" stroke="#dce7f2" stroke-width="6"/>
+    <path d="M778 359 L759 347 V371 Z" fill="#ffca6b"/>
+
+    <rect x="778" y="284" width="212" height="150" rx="18" fill="#10243b" stroke="#3c5774"/>
+    <text x="806" y="344" fill="#ffffff" font-size="24" font-weight="700">Output stage</text>
+    <text x="806" y="380" fill="#9db0c5" font-size="18">load and drive</text>
+    <line x1="990" y1="359" x2="1080" y2="359" stroke="#dce7f2" stroke-width="6"/>
+    <circle cx="1092" cy="359" r="12" fill="#7ee0a3"/>
+
+    <path d="M1036 359 V492 H124 V391" fill="none" stroke="#ff8fa3" stroke-width="5" stroke-dasharray="12 9"/>
+    <rect x="480" y="475" width="244" height="70" rx="16" fill="#10243b" stroke="#ff8fa3"/>
+    <text x="528" y="519" fill="#ffffff" font-size="22" font-weight="700">Feedback path</text>
+    <text x="84" y="575" fill="#8fa4bb" font-size="17">Concept diagram; blocks show relationships rather than a specific built circuit.</text>
+  </g>
+</svg>

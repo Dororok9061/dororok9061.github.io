@@ -125,7 +125,7 @@
   summary_ko: 다이오드에서 단일 트랜지스터 증폭기까지, 내가 회로 동작을 다시 공부하기 좋은 순서로 정리한다.
   summary_en: I organize a study path from diodes to single-transistor amplifiers in the order that makes the circuit behavior easiest to revisit.
   kind: study-roadmap
-  thumbnail: /assets/images/study/coursework/electronic-circuits-1.webp
+  thumbnail: /assets/images/study/coursework/electronic-circuits-1.svg
   sequence_note_ko: 단위 번호는 개념을 이어 보기 위한 공부 순서이며 당시 수업의 실제 주차를 뜻하지 않는다.
   sequence_note_en: Unit numbers form a concept-study sequence and do not claim the original class schedule.
   units:
@@ -245,7 +245,7 @@
   summary_ko: 차동 증폭기와 Feedback부터 Filter와 출력단까지, 여러 단을 하나의 Signal path로 읽는 연습을 정리한다.
   summary_en: I study differential stages, feedback, filters, and output stages as one connected signal path.
   kind: study-roadmap
-  thumbnail: /assets/images/study/coursework/electronic-circuits-2.webp
+  thumbnail: /assets/images/study/coursework/electronic-circuits-2.svg
   sequence_note_ko: 단위 번호는 개념 의존관계에 맞춘 공부 순서이며 실제 강의 주차표로 쓰지 않는다.
   sequence_note_en: Unit numbers follow concept dependencies rather than the historical lecture calendar.
   units:
@@ -365,7 +365,7 @@
   summary_ko: 저장된 강의 파일을 바탕으로 표본화, Baseband 전송, 디지털 변조와 오류율을 한 흐름으로 다시 공부한다.
   summary_en: I use the saved course file to reconnect sampling, baseband transmission, digital modulation, and error-rate analysis.
   kind: course-record
-  thumbnail: /assets/images/study/coursework/digital-communications.webp
+  thumbnail: /assets/images/study/coursework/digital-communications.svg
   sequence_note_ko: 단위 번호는 남은 파일의 주제를 개념 순서로 확장한 학습 경로이며 실제 출석 주차를 나타내지 않는다.
   sequence_note_en: Unit numbers expand topics from the saved file into a concept sequence, not an attendance-week record.
   units:
@@ -845,7 +845,7 @@
   summary_ko: Switching device에서 Converter와 Inverter까지, 전력의 흐름과 소자 Stress를 함께 보는 공부 순서를 정리한다.
   summary_en: I organize a study path from switching devices to converters and inverters while tracking power flow and device stress together.
   kind: study-roadmap
-  thumbnail: /assets/images/study/coursework/power-electronics.webp
+  thumbnail: /assets/images/study/coursework/power-electronics.svg
   sequence_note_ko: 단위 번호는 회로 간 의존관계에 맞춘 공부 순서이며 당시 강의의 실제 주차를 뜻하지 않는다.
   sequence_note_en: Unit numbers follow circuit dependencies and do not claim the original lecture schedule.
   units:
@@ -1202,118 +1202,29 @@
   order: 110
   title_ko: 임베디드시스템
   title_en: Embedded Systems
-  summary_ko: MCU의 Clock과 Peripheral부터 DMA, 통신, DSP까지 내가 다시 구현하기 좋은 순서로 정리한다.
-  summary_en: I organize a reimplementation path from MCU clocks and peripherals through DMA, communications, and DSP.
-  kind: study-roadmap
-  thumbnail: /assets/images/study/coursework/embedded-systems.webp
-  sequence_note_ko: 단위 번호는 MCU 기능의 의존관계를 따른 공부 순서이며 특정 학기의 실제 주차표를 재현하지 않는다.
-  sequence_note_en: Unit numbers follow MCU feature dependencies and do not recreate a semester timetable.
-  units:
-    - order: 1
-      slug: mcu-architecture
-      title_ko: MCU Architecture와 Memory Map
-      title_en: MCU Architecture and Memory Maps
-      concepts:
-        - { ko: CPU core, en: CPU core }
-        - { ko: Flash와 SRAM, en: Flash and SRAM }
-        - { ko: Memory-mapped I/O, en: Memory-mapped I/O }
-        - { ko: Register access, en: Register access }
-    - order: 2
-      slug: toolchain-debugger
-      title_ko: Toolchain과 Debugger
-      title_en: Toolchains and Debuggers
-      concepts:
-        - { ko: Build와 Link, en: Build and link }
-        - { ko: Startup code, en: Startup code }
-        - { ko: Breakpoint, en: Breakpoints }
-        - { ko: Watch와 Memory view, en: Watch and memory views }
-    - order: 3
-      slug: clock-reset
-      title_ko: Clock Tree와 Reset
-      title_en: Clock Trees and Reset
-      concepts:
-        - { ko: Oscillator, en: Oscillators }
-        - { ko: PLL, en: Phase-locked loops }
-        - { ko: Bus prescaler, en: Bus prescalers }
-        - { ko: Peripheral clock, en: Peripheral clocks }
-    - order: 4
-      slug: gpio
-      title_ko: GPIO 입출력
-      title_en: GPIO Input and Output
-      concepts:
-        - { ko: Input와 Output mode, en: Input and output modes }
-        - { ko: Pull-up과 Pull-down, en: Pull-up and pull-down }
-        - { ko: Alternate function, en: Alternate functions }
-        - { ko: Electrical level, en: Electrical levels }
-    - order: 5
-      slug: interrupts
-      title_ko: Interrupt와 NVIC
-      title_en: Interrupts and NVIC
-      concepts:
-        - { ko: Interrupt vector, en: Interrupt vectors }
-        - { ko: Priority, en: Priority }
-        - { ko: ISR latency, en: ISR latency }
-        - { ko: Shared state, en: Shared state }
-    - order: 6
-      slug: timers-pwm
-      title_ko: Timer와 PWM
-      title_en: Timers and PWM
-      concepts:
-        - { ko: Prescaler, en: Prescalers }
-        - { ko: Auto-reload, en: Auto-reload }
-        - { ko: Input capture, en: Input capture }
-        - { ko: PWM duty, en: PWM duty }
-    - order: 7
-      slug: adc-sampling
-      title_ko: ADC와 Sampling
-      title_en: ADC and Sampling
-      concepts:
-        - { ko: Resolution, en: Resolution }
-        - { ko: Reference voltage, en: Reference voltage }
-        - { ko: Sample time, en: Sample time }
-        - { ko: Quantization, en: Quantization }
-    - order: 8
-      slug: dma-buffering
-      title_ko: DMA와 Buffering
-      title_en: DMA and Buffering
-      concepts:
-        - { ko: Peripheral-to-memory, en: Peripheral-to-memory transfers }
-        - { ko: Circular mode, en: Circular mode }
-        - { ko: Double buffer, en: Double buffering }
-        - { ko: Overrun, en: Overrun }
-    - order: 9
-      slug: uart
-      title_ko: UART와 Serial Debug
-      title_en: UART and Serial Debugging
-      concepts:
-        - { ko: Baud rate, en: Baud rate }
-        - { ko: Frame format, en: Frame format }
-        - { ko: Ring buffer, en: Ring buffers }
-        - { ko: Log 출력, en: Log output }
-    - order: 10
-      slug: spi-i2c
-      title_ko: SPI와 I2C
-      title_en: SPI and I2C
-      concepts:
-        - { ko: Clock polarity와 Phase, en: Clock polarity and phase }
-        - { ko: Chip select, en: Chip select }
-        - { ko: Address와 ACK, en: Addressing and acknowledgment }
-        - { ko: Bus timing, en: Bus timing }
-    - order: 11
-      slug: cmsis-dsp
-      title_ko: CMSIS-DSP Signal Processing
-      title_en: CMSIS-DSP Signal Processing
-      concepts:
-        - { ko: FIR filter, en: FIR filters }
-        - { ko: IIR filter, en: IIR filters }
-        - { ko: FFT, en: Fast Fourier transforms }
-        - { ko: Fixed와 Floating point, en: Fixed and floating point }
-    - order: 12
-      slug: integrated-debugging
-      title_ko: Sensor Data Path와 통합 Debug
-      title_en: Sensor Data Paths and Integrated Debugging
-      concepts:
-        - { ko: Acquisition timing, en: Acquisition timing }
-        - { ko: Buffer ownership, en: Buffer ownership }
-        - { ko: End-to-end latency, en: End-to-end latency }
-        - { ko: Hardware-software boundary, en: Hardware-software boundary }
+  summary_ko: 대학 임베디드시스템 수업, STM32 개인 학습, 연구용 F411 취득 장치와 Raspberry Pi 프로젝트를 서로 다른 자료로 나눠 본다.
+  summary_en: I keep university coursework, personal STM32 study, research F411 acquisition, and Raspberry Pi projects as separate records.
+  kind: separated-course
+  thumbnail: /assets/images/study/coursework/embedded-systems-source-map.svg
+  sequence_note_ko: 이 URL에는 대학 수업 자료만 두고, 다른 보드 학습과 연구 프로젝트는 아래의 독립 페이지에서 이어서 본다.
+  sequence_note_en: This URL is reserved for university coursework; board study and research projects continue on their own pages below.
+  units: []
+  separate_links:
+    - title_ko: STM32F411 보드와 개발환경 공부
+      title_en: STM32F411 board and development study
+      url_ko: /study/stm32/
+      url_en: /en/study/stm32/
+      note_ko: 보드 20세트의 사진·영상과 CubeF4·CMSIS-DSP 흐름
+      note_en: Twenty board sets, CubeF4, and CMSIS-DSP
+    - title_ko: 연구용 FMCW Radar 취득 장치
+      title_en: Research FMCW radar acquisition
+      url_ko: /projects/fmcw-radar/
+      url_en: /en/projects/fmcw-radar/
+      note_ko: STM32F411·ESP-32S·MPU6050와 ECG·SCG·Radar 동시취득
+      note_en: Concurrent ECG, SCG, and radar acquisition with STM32F411, ESP-32S, and MPU6050
+    - title_ko: Raspberry Pi 졸음 모니터
+      title_en: Raspberry Pi drowsiness monitor
+      url_ko: /projects/drowsiness-monitor/
+      url_en: /en/projects/drowsiness-monitor/
+      note_ko: Camera·EAR node, TCP/IP, GPIO, I2C LCD와 경보 출력
+      note_en: Camera/EAR nodes, TCP/IP, GPIO, I2C LCD, and alarm output

@@ -9,4 +9,4 @@ alternate_url: /en/publications/kiee2026-fmcw-aoac/
 alternate_lang: en
 ---
 
-논문집 첫 페이지는 2413으로 확인되었으나 전체 페이지 범위와 공개 가능한 첫 페이지 원본은 추가 검증 중입니다.
+2쪽 원본 Proceedings PDF에서 pp. 2413–2414를 확인했고, 제공받은 첫 페이지 표지를 이 페이지에 실었습니다.

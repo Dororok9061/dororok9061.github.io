@@ -1,7 +1,7 @@
 - id: major
   title_ko: 전공 기초 로드맵
   title_en: Major Foundations Roadmap
-  goal_ko: 회로·신호·제어·전자기 개념을 설계 과목과 연결합니다.
+  goal_ko: 회로·신호·제어·전자기 개념을 설계 과목의 문제와 함께 다시 따라갑니다.
   goal_en: Connect circuit, signal, control, and electromagnetic foundations to design work.
   prerequisites_ko: 미적분, 선형대수, 기초 물리
   prerequisites_en: Calculus, linear algebra, and introductory physics
@@ -63,7 +63,7 @@
 - id: control
   title_ko: 제어 · 전동기 · 전력전자 로드맵
   title_en: Control, Motor, and Power Electronics Roadmap
-  goal_ko: 모델링에서 전류·속도 이중루프와 전력변환 한계까지 연결합니다.
+  goal_ko: 모델링에서 시작해 전류·속도 이중루프와 전력변환 한계까지 차례로 공부합니다.
   goal_en: Connect modeling to cascaded current/speed loops and power-conversion limits.
   prerequisites_ko: 회로이론, 미분방정식, 제어공학
   prerequisites_en: Circuit theory, differential equations, and control
@@ -91,8 +91,8 @@
   title_en: Research, Paper, and Project Log Roadmap
   goal_ko: 자료 검토, 구현, 실험과 확인한 결과를 순서대로 남깁니다.
   goal_en: Separate source review, implementation, experiments, validation, and publication boundaries.
-  prerequisites_ko: 해당 분야 기초와 source provenance 기록
-  prerequisites_en: Domain foundations and source-provenance records
+  prerequisites_ko: 해당 분야 기초와 실험 기록
+  prerequisites_en: Domain foundations and experiment logs
   source_status: PUBLIC_SUMMARY_ONLY_WHEN_REQUIRED
   steps:
     - { title_ko: 공식문서·논문 읽기, title_en: Official Documents and Papers, status: studying }

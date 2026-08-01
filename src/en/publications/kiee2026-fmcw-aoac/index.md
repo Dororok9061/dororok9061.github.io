@@ -9,4 +9,4 @@ alternate_url: /publications/kiee2026-fmcw-aoac/
 alternate_lang: ko
 ---
 
-The proceedings entry begins on page 2413. The complete page range and a publishable first-page source image remain under verification.
+I confirmed pp. 2413–2414 in the original two-page proceedings PDF and added the supplied first-page cover to this page.

@@ -27,7 +27,7 @@ document.querySelectorAll("[data-lightbox]").forEach((trigger) => {
   trigger.addEventListener("click", () => {
     if (!lightbox || !lightboxImage || !lightboxCaption) return;
     lightboxImage.src = trigger.dataset.lightbox || "";
-    lightboxImage.alt = trigger.dataset.lightboxAlt || "Publication evidence preview";
+    lightboxImage.alt = trigger.dataset.lightboxAlt || "Publication first-page preview";
     lightboxCaption.textContent = trigger.dataset.lightboxCaption || "";
     lightbox.showModal();
   });

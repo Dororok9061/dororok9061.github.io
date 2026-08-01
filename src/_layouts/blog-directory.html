@@ -6,7 +6,7 @@ layout: default
   {% assign prefix = '/blog/' %}{% if page.lang == 'en' %}{% assign prefix = '/en/blog/' %}{% endif %}
   {% case page.mode %}
   {% when 'start-here' %}
-    <div class="prose"><p>{% if page.lang == 'en' %}Study and implementation notes in electrical engineering, FPGA, embedded systems, AI, RF/radar, control, and PCB design. Each roadmap links to notes available now.{% else %}전자전기공학 전공 공부와 설계·실습 과정을 자료, 코드, 회로, 파형, 측정 결과와 함께 기록합니다. 각 로드맵에서는 지금 읽을 수 있는 글만 연결합니다.{% endif %}</p></div>
+    <div class="prose"><p>{% if page.lang == 'en' %}Study and implementation notes in electrical engineering, FPGA, embedded systems, AI, RF/radar, control, and PCB design. Each roadmap points to notes available now.{% else %}전자전기공학 전공 공부와 설계·실습 과정을 자료, 코드, 회로, 파형, 측정 결과와 함께 정리했다. 각 로드맵에는 지금 읽을 수 있는 글만 넣었다.{% endif %}</p></div>
     <ol class="learning-paths"><li>{% if page.lang == 'en' %}Digital logic → VHDL → FPGA → DV{% else %}디지털논리 → VHDL → FPGA → DV{% endif %}</li><li>{% if page.lang == 'en' %}STM32 basics → ADC/UART → CMSIS-DSP → acquisition{% else %}STM32 기초 → ADC/UART → CMSIS-DSP → 센서수집{% endif %}</li><li>CNN → Vision → Transformer → Generative AI</li><li>PADS Logic → Library → Footprint → Layout → Gerber</li><li>{% if page.lang == 'en' %}Control basics → PI → DC motor → cascaded loops{% else %}제어기초 → PI → DC Motor → 이중루프{% endif %}</li><li>{% if page.lang == 'en' %}Transmission line → Smith chart → S-parameter → Radar{% else %}전송선 → Smith Chart → S-parameter → Radar{% endif %}</li></ol>
     <p><a class="button-link" href="{{ prefix | append: 'roadmaps/' | relative_url }}">{% if page.lang == 'en' %}Choose a roadmap{% else %}로드맵 선택{% endif %}</a></p>
   {% when 'roadmaps' %}

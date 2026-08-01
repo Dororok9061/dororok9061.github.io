@@ -10,7 +10,7 @@
   <dialog class="lightbox" id="publication-lightbox" aria-labelledby="lightbox-caption">
     <button class="lightbox__close" type="button" data-lightbox-close aria-label="{% if page.lang == 'en' %}Close image preview{% else %}이미지 미리보기 닫기{% endif %}">×</button>
     <figure>
-      <img class="lightbox__image" src="{{ '/assets/images/og.jpg' | relative_url }}" alt="{% if page.lang == 'en' %}Publication evidence preview{% else %}논문 근거 이미지 미리보기{% endif %}" width="1200" height="630">
+      <img class="lightbox__image" src="{{ '/assets/images/og.jpg' | relative_url }}" alt="{% if page.lang == 'en' %}Publication first-page preview{% else %}논문 첫 페이지 미리보기{% endif %}" width="1200" height="630">
       <figcaption id="lightbox-caption"></figcaption>
     </figure>
   </dialog>

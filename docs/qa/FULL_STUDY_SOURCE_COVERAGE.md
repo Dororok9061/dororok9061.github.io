@@ -9,9 +9,10 @@ This report records only confirmed inventory results supplied for the current
 rebuild. It does not infer unpublished course topics, execution results,
 ownership, or redistribution rights from a filename or extension.
 
-No OneDrive source, Private Master binary, or remote attachment was reopened to
-prepare this report. No source file was moved, deleted, rewritten, or published.
-Inventory views below may overlap and therefore must not be added together.
+The OneDrive university root was compared with its D-drive migration staging
+copy through file metadata only. No placeholder was hydrated and no source file
+was moved, deleted, rewritten, or published. Inventory views below may overlap
+and therefore must not be added together.
 
 Status meanings:
 
@@ -89,7 +90,7 @@ for CSV. Superseded snapshots remain preserved separately.
 | OUTTA PDFs and notebooks | Day/topic pages and project execution records | Page-level notes and cell/output-level derivatives | Keep instructor material and original notebooks private | Format classification only; page/cell mapping not yet verified | BLOCKED |
 | Three Kaggle files | Kaggle P-1/P-2/P-3 | Sanitized code and verified derived results only | Preserve originals outside public repositories | Included in current D-drive ledger with file hashes | PASS |
 | Private Master ledger snapshot | All private source groups represented at snapshot time | Classification metadata only | Retain immutable source and ledger copies | Matching JSON/CSV item paths, byte totals, and SHA-256 | PASS |
-| OneDrive freshness comparison | Source freshness and duplicate detection | None until an authorized comparison exists | OneDrive remains untouched | Prohibited by current AGENTS rule | BLOCKED |
+| OneDrive freshness comparison | Source freshness and duplicate detection | Metadata only; no source content is published | OneDrive placeholders remain untouched | Relative path, size, timestamp, and file attributes compared read-only | PARTIAL |
 | Notion binary attachments | External-course source material | Connector-visible text and metadata; no binary-derived claim | Original attachments remain in their source service | Connector cannot retrieve and hash all binaries | PLATFORM LIMITATION |
 
 ## Publication boundary
@@ -109,12 +110,16 @@ publish it.
 
 ## Required next verification
 
-1. Map every authorized D-drive source file to a course, topic, and disposition.
+1. Keep the sanitized source-ID map aligned with every D-drive Private Master record.
 2. Produce page-level mappings for 4,306 PDF pages and cell-level mappings for
    authorized notebooks without reopening prohibited sources.
 3. Resolve the five empty course folders and absent STM source from an
    authorized non-OneDrive copy.
-4. Keep OneDrive freshness comparison marked **BLOCKED** unless the governing
-   rule changes explicitly.
+4. The read-only metadata comparison observed 143,288 OneDrive entries
+   (140,791,485,603 logical bytes), all represented as offline/reparse entries.
+   The D-drive staging copy contains 5,791 matching relative paths
+   (11,613,055,300 bytes), with no size or newer-source mismatch among those
+   matches; 137,497 entries are not present in staging. Content hashes remain
+   unverified because no placeholder was hydrated.
 5. Keep Notion binary verification marked **PLATFORM LIMITATION** until a
    connector can retrieve the binaries for hashing and content review.

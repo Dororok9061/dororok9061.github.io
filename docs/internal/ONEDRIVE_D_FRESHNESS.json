@@ -1,0 +1,28 @@
+{
+  "schema": "onedrive-d-freshness-v1",
+  "sanitized": true,
+  "captured_at": "2026-08-01T22:41:20.6942315+09:00",
+  "scope": "university-root metadata only",
+  "source": {
+    "file_count": 143288,
+    "logical_bytes": 140791485603,
+    "offline_or_reparse_count": 143288,
+    "latest_write_utc": "2026-08-01T07:30:31.5729445Z"
+  },
+  "d_mirror": {
+    "file_count": 5791,
+    "logical_bytes": 11613055300,
+    "latest_write_utc": "2026-07-29T12:36:23.4235611Z"
+  },
+  "comparison": {
+    "relative_matches": 5791,
+    "missing_in_mirror": 137497,
+    "extra_in_mirror": 0,
+    "size_mismatches": 0,
+    "source_newer": 0,
+    "sha256_compared": 0,
+    "sha256_mismatches": 0
+  },
+  "method": "Read-only directory metadata; placeholders were not hydrated and file contents were not opened.",
+  "result": "INCOMPLETE"
+}

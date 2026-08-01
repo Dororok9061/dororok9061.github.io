@@ -16,6 +16,7 @@ layout: default
   {% assign project_data_flow = project.data_flow_en %}
   {% assign project_methods = project.methods_en %}
   {% assign project_results = project.results_en %}
+  {% assign project_status = project.status_label_en %}
 {% else %}
   {% assign project_title = project.title_ko %}
   {% assign project_domain = project.domain_ko %}
@@ -30,6 +31,7 @@ layout: default
   {% assign project_data_flow = project.data_flow_ko %}
   {% assign project_methods = project.methods_ko %}
   {% assign project_results = project.results_ko %}
+  {% assign project_status = project.status_label_ko %}
 {% endif %}
 <main id="main" class="page page-shell">
   <nav class="breadcrumbs" aria-label="{% if page.lang == 'en' %}Breadcrumb{% else %}현재 위치{% endif %}">
@@ -42,7 +44,7 @@ layout: default
       <p class="eyebrow">{{ project_domain }}</p>
       <h1>{{ project_title }}</h1>
       <p class="page-heading__lead">{{ project_summary }}</p>
-      <span class="evidence-badge evidence-badge--{{ project.status_class }}">{{ project.status }}</span>
+      <span class="evidence-badge evidence-badge--{{ project.status_class }}">{{ project_status }}</span>
     </div>
     {% if project.image_webp %}
     <picture>
@@ -69,27 +71,27 @@ layout: default
 
   {% if project.gallery %}
   <section class="project-gallery" aria-labelledby="project-gallery-title">
-    <h2 id="project-gallery-title">{% if page.lang == 'en' %}Architecture and evidence views{% else %}Architecture · Evidence View{% endif %}</h2>
+    <h2 id="project-gallery-title">{% if page.lang == 'en' %}Architecture and result views{% else %}구조와 결과 화면{% endif %}</h2>
     <div>{% for image in project.gallery %}<figure><picture><source srcset="{{ image.webp | relative_url }}" type="image/webp"><img src="{{ image.jpg | relative_url }}" alt="{% if page.lang == 'en' %}{{ image.alt_en }}{% else %}{{ image.alt_ko }}{% endif %}" width="{{ image.width }}" height="{{ image.height }}" loading="lazy"></picture><figcaption>{% if page.lang == 'en' %}{{ image.caption_en }}{% else %}{{ image.caption_ko }}{% endif %}</figcaption></figure>{% endfor %}</div>
   </section>
   {% endif %}
 
   <div class="case-study-grid">
     <section aria-labelledby="contribution-title">
-      <h2 id="contribution-title">{% if page.lang == 'en' %}Engineering contribution{% else %}Engineering Contribution{% endif %}</h2>
+      <h2 id="contribution-title">{% if page.lang == 'en' %}What I worked on{% else %}내가 맡은 부분{% endif %}</h2>
       <ul>{% for item in project_contribution %}<li>{{ item }}</li>{% endfor %}</ul>
     </section>
     <section aria-labelledby="evidence-title">
-      <h2 id="evidence-title">{% if page.lang == 'en' %}Public evidence{% else %}Public Evidence{% endif %}</h2>
+      <h2 id="evidence-title">{% if page.lang == 'en' %}Code and results{% else %}코드와 결과{% endif %}</h2>
       <ul>{% for item in project_evidence %}<li>{{ item }}</li>{% endfor %}</ul>
     </section>
   </div>
-  <section class="boundary-panel" aria-labelledby="boundary-title">
-    <h2 id="boundary-title">{% if page.lang == 'en' %}Validation boundary{% else %}Validation Boundary{% endif %}</h2>
+  {% if project_boundary and project_boundary != empty %}<section class="boundary-panel" aria-labelledby="boundary-title">
+    <h2 id="boundary-title">{% if page.lang == 'en' %}Next steps{% else %}남은 과제{% endif %}</h2>
     <p>{{ project_boundary }}</p>
-  </section>
+  </section>{% endif %}
   <section aria-labelledby="project-links-title">
-    <h2 id="project-links-title">{% if page.lang == 'en' %}Evidence links{% else %}근거 링크{% endif %}</h2>
+    <h2 id="project-links-title">{% if page.lang == 'en' %}Project links{% else %}프로젝트 링크{% endif %}</h2>
     <div class="button-row">
       <a class="portfolio-button portfolio-button--primary" href="{{ project.repository }}" target="_blank" rel="noopener noreferrer">Repository</a>
       {% if page.lang == 'en' and project.pages_en %}<a class="portfolio-button" href="{{ project.pages_en }}" target="_blank" rel="noopener noreferrer">Project Pages</a>{% endif %}

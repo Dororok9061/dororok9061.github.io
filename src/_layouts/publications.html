@@ -9,8 +9,8 @@ layout: default
   </header>
 
   <section class="research-summary" aria-labelledby="research-summary-title">
-    <h2 id="research-summary-title">Research Summary</h2>
-    <p>{% if page.lang == 'en' %}Two first-author conference proceedings papers connect biomedical signal processing, embedded acquisition, HRV modeling, and non-contact FMCW radar. Both were presented as posters; neither is labeled as a journal article.{% else %}Biomedical Signal Processing, Embedded Acquisition, HRV 모델링과 비접촉 FMCW Radar를 연결한 제1저자 학술대회 논문집 수록 논문 2편입니다. 두 논문 모두 포스터 발표이며 Journal Article로 분류하지 않습니다.{% endif %}</p>
+    <h2 id="research-summary-title">{% if page.lang == 'en' %}Research Topics{% else %}연구 주제{% endif %}</h2>
+    <p>{% if page.lang == 'en' %}I presented two first-author conference papers on biomedical signal processing: PPG-based HRV modeling and non-contact FMCW radar cardiac-signal analysis. Both appear in conference proceedings and were presented as posters.{% else %}생체신호 처리 분야에서 PPG 기반 HRV 모델링과 비접촉 FMCW Radar 심장신호 분석을 연구해 제1저자 학술대회 논문 2편을 발표했습니다. 두 논문 모두 학술대회 논문집에 수록하고 포스터로 발표했습니다.{% endif %}</p>
   </section>
 
   <section aria-labelledby="first-author-title">
@@ -23,9 +23,7 @@ layout: default
   </section>
 
   <div class="publication-index-grid">
-    <section><h2>{% if page.lang == 'en' %}Co-Authored Publications{% else %}공동저자 논문{% endif %}</h2><p>{% if page.lang == 'en' %}No verified public entries are listed yet.{% else %}현재 공개 검증된 항목이 없습니다.{% endif %}</p></section>
     <section><h2>{% if page.lang == 'en' %}Conference & Poster Presentations{% else %}학술대회·포스터 발표{% endif %}</h2><p>{% if page.lang == 'en' %}CICS’25 (2025.10) and the 57th KIEE Summer Conference (2026.07), both as first author with poster preparation and presentation participation.{% else %}CICS’25(2025.10)와 대한전기학회 제57회 하계학술대회(2026.07)에서 제1저자로 포스터 제작 및 발표에 참여했습니다.{% endif %}</p></section>
-    <section><h2>{% if page.lang == 'en' %}Technical Reports{% else %}기술 보고서{% endif %}</h2><p>{% if page.lang == 'en' %}Project documentation and engineering notes are classified separately from publications.{% else %}프로젝트 문서와 Engineering Note는 논문과 별도 분류합니다.{% endif %}</p></section>
     <section><h2>{% if page.lang == 'en' %}Related Code and Projects{% else %}관련 코드·프로젝트{% endif %}</h2><p><a href="{% if page.lang == 'en' %}{{ '/en/projects/ppg-hrv/' | relative_url }}{% else %}{{ '/projects/ppg-hrv/' | relative_url }}{% endif %}">PPG–HRV</a> · <a href="{% if page.lang == 'en' %}{{ '/en/projects/fmcw-radar/' | relative_url }}{% else %}{{ '/projects/fmcw-radar/' | relative_url }}{% endif %}">FMCW Radar</a></p></section>
   </div>
   <div class="prose">{{ content }}</div>

@@ -68,8 +68,10 @@ def main() -> int:
     tracks = track_routes(track_text)
     if len(course_ids) != 11:
         errors.append(f"expected 11 coursework hubs, found {len(course_ids)}")
-    if len(courses) != 132:
-        errors.append(f"expected 132 coursework units, found {len(courses)}")
+    if len(courses) != 120:
+        errors.append(f"expected 120 source-supported coursework units, found {len(courses)}")
+    if any(course_id == "embedded-systems" for course_id, _, _ in courses):
+        errors.append("embedded-systems must not publish generic units without course files")
     if len(track_ids) != 3:
         errors.append(f"expected 3 engineering tracks, found {len(track_ids)}")
     if len(tracks) != 24:
@@ -88,6 +90,16 @@ def main() -> int:
         errors.append("duplicate coursework unit route")
     if len(set(tracks)) != len(tracks):
         errors.append("duplicate engineering track route")
+
+    stm32_facts = (
+        "정지사진 19장과 영상 99개를 보드 20세트로",
+        "후면의 QR과 일련번호가 보이는 장면은 올리지 않았다",
+        "보드 한 장을 네 화면으로 확인하기",
+        "앞면 영상에서 고른 세 장을 사용했다",
+    )
+    for fact in stm32_facts:
+        if fact not in track_text:
+            errors.append(f"missing source-faithful STM32 fact: {fact}")
 
     if len(sys.argv) > 1:
         site = Path(sys.argv[1])

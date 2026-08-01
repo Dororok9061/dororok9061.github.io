@@ -6,9 +6,9 @@ date: 2026-07-31 00:50:00 +0900
 updated: 2026-08-01 18:40:00 +0900
 study_date: 2026-07-31
 lang: ko
-translation_key: biomedical-metric-provenance
-permalink: /blog/2026/07/31/biomedical-metric-provenance/
-alternate_url: /en/blog/2026/07/31/biomedical-metric-provenance/
+translation_key: biomedical-metric-conditions
+permalink: /blog/2026/07/31/biomedical-metric-conditions/
+alternate_url: /en/blog/2026/07/31/biomedical-metric-conditions/
 alternate_lang: en
 primary_category: ai-deep-learning
 subcategory: model-evaluation
@@ -22,7 +22,7 @@ tools: [Python, CNN, HRV]
 hardware: [PPG AFE, STM32]
 software_versions: [not fully preserved]
 source_materials:
-  - { title: PPG-HRV Cognitive Load CNN, type: public-repository, public_url: https://github.com/Tontonjeong/PPG-HRV-Cognitive-Load-CNN, file_reference: source and public paper, pages: "", used_for: pipeline and metric provenance }
+  - { title: PPG-HRV Cognitive Load CNN, type: public-repository, public_url: https://github.com/Tontonjeong/PPG-HRV-Cognitive-Load-CNN, file_reference: source and public paper, pages: "", used_for: pipeline and metric conditions }
   - { title: PPG-HRV project page, type: portfolio-page, public_url: /projects/ppg-hrv/, file_reference: public project data, pages: "", used_for: published result boundary }
 prerequisites: [classification, confusion-matrix, cross-validation]
 learning_objectives: [subject split 확인, fold aggregation 조건 기록, AUC와 F1 출처 분리]
@@ -41,7 +41,7 @@ toc:
   - { id: pipeline, title: PPG에서 분류까지의 Pipeline }
   - { id: split, title: Subject Split과 Fold }
   - { id: metrics, title: AUC·F1·Confusion Matrix }
-  - { id: provenance, title: Paper Result와 Code Archive }
+  - { id: results, title: Paper Result와 Code Archive }
   - { id: limits, title: 확인하지 못한 내용 }
 ---
 
@@ -59,7 +59,7 @@ toc:
 
 ## PPG에서 분류까지의 Pipeline {#pipeline}
 
-<figure><picture><source srcset="/assets/images/projects/ppg-pipeline.webp" type="image/webp"><img src="/assets/images/projects/ppg-pipeline.jpg" alt="Earlobe PPG sensor, STM32 acquisition, IBI HRV preprocessing, CNN Transformer evaluation pipeline" width="1200" height="750" loading="lazy"></picture><figcaption>PPG sample timing에서 peak·IBI·HRV feature·model evaluation까지 provenance를 이어 간다.</figcaption></figure>
+<figure><picture><source srcset="/assets/images/projects/ppg-pipeline.webp" type="image/webp"><img src="/assets/images/projects/ppg-pipeline.jpg" alt="Earlobe PPG sensor, STM32 acquisition, IBI HRV preprocessing, CNN Transformer evaluation pipeline" width="1200" height="750" loading="lazy"></picture><figcaption>PPG sample timing에서 peak·IBI·HRV feature·model evaluation까지의 처리 순서다.</figcaption></figure>
 
 Earlobe PPG sensor와 analog front-end의 sample이 STM32를 거쳐 저장된다. Peak 위치에서 inter-beat interval을 만들고 time-domain·frequency-domain HRV feature를 구성한다. 그 뒤 CNN 계열 분류와 평가로 넘어간다.
 
@@ -79,12 +79,12 @@ Cross validation에서는 각 fold의 train subject, validation subject, test su
 
 <figure><picture><source srcset="/assets/images/projects/ppg-architecture.webp" type="image/webp"><img src="/assets/images/projects/ppg-architecture.jpg" alt="PPG acquisition, HRV preprocessing과 CNN model evaluation architecture" width="878" height="363" loading="lazy"></picture><figcaption>Metric은 pipeline 끝의 숫자가 아니라 split·preprocessing·aggregation 조건에 연결된 결과다.</figcaption></figure>
 
-## Paper Result와 Code Archive {#provenance}
+## Paper Result와 Code Archive {#results}
 
-공개 논문 Abstract가 보고한 평균 AUC는 **0.85**, F1-Score는 **0.82**다. 이 값은 `PAPER_REPORTED`로 표시한다. 별도 code archive의 5-fold CSV가 있더라도 dataset scope, fold 구성, aggregation 방식이 논문과 같다는 증거 없이 두 값을 평균하거나 한 표의 동일 실험으로 합치지 않는다.
+논문 Abstract가 보고한 평균 AUC는 **0.85**, F1-Score는 **0.82**다. 별도 code archive의 5-fold CSV는 dataset scope, fold 구성, aggregation 방식이 논문과 같은지 먼저 확인한 뒤 비교해야 한다. 그래서 현재는 두 값을 평균하거나 한 표의 동일 실험으로 합치지 않았다.
 
 각 결과 묶음에는 최소한 source 파일, dataset 범위, exclusion, split 단위, fold 수, preprocessing version, model checkpoint, metric code를 연결해야 한다. 공개할 수 없는 피험자 raw signal은 넣지 않고 group-level aggregate와 재현 절차만 공개한다.
 
 ## 확인하지 못한 내용 {#limits}
 
-현재 공개 근거는 모든 fold가 동일 subject split과 동일 preprocessing version으로 재학습됐다는 새 실행 결과를 제공하지 않는다. 논문 수치를 현재 environment에서 reproduce했다고 주장하지 않는다. 다음 검증은 subject-group split manifest와 fold별 prediction을 익명화해 metric 계산을 다시 연결하는 것이다.
+당시 저장한 파일만으로는 모든 fold의 subject split과 preprocessing version을 다시 맞춰 돌릴 수 없었다. 그래서 논문 표의 수치와 별도 코드 실행 수치를 각각 적었다. 다음에는 subject-group split 목록과 fold별 prediction을 다시 만든 뒤 metric 계산을 비교할 예정이다.

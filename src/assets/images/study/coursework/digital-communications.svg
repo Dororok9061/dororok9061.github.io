@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Digital Communications concept map</title>
+  <desc id="desc">A conceptual transmitter-to-receiver chain covering sampling, pulse shaping, modulation, a channel, demodulation, and decoding.</desc>
+  <rect width="1200" height="675" fill="#f3f1eb"/>
+  <rect x="44" y="42" width="1112" height="591" rx="28" fill="#081526"/>
+  <g font-family="Arial, sans-serif">
+    <text x="84" y="112" fill="#65d4ff" font-size="22" font-weight="700" letter-spacing="3">COMMUNICATION CHAIN</text>
+    <text x="84" y="170" fill="#ffffff" font-size="44" font-weight="700">Digital Communications</text>
+    <text x="84" y="210" fill="#b9c7d8" font-size="21">Sampling, pulse shaping, modulation, channel effects, and recovery</text>
+
+    <rect x="84" y="292" width="160" height="142" rx="18" fill="#10243b" stroke="#3c5774"/>
+    <text x="111" y="340" fill="#ffffff" font-size="22" font-weight="700">Sampling</text>
+    <path d="M110 389 C122 354 134 424 146 389 S170 354 182 389 S206 424 218 389" fill="none" stroke="#65d4ff" stroke-width="4"/>
+    <line x1="120" y1="369" x2="120" y2="410" stroke="#ffca6b" stroke-width="4"/>
+    <line x1="152" y1="369" x2="152" y2="410" stroke="#ffca6b" stroke-width="4"/>
+    <line x1="184" y1="369" x2="184" y2="410" stroke="#ffca6b" stroke-width="4"/>
+
+    <rect x="284" y="292" width="160" height="142" rx="18" fill="#10243b" stroke="#3c5774"/>
+    <text x="308" y="340" fill="#ffffff" font-size="22" font-weight="700">Pulse shape</text>
+    <path d="M310 397 H334 V356 H362 V397 H390 V371 H418 V397" fill="none" stroke="#7ee0a3" stroke-width="5"/>
+
+    <rect x="484" y="292" width="160" height="142" rx="18" fill="#10243b" stroke="#3c5774"/>
+    <text x="506" y="340" fill="#ffffff" font-size="22" font-weight="700">Modulation</text>
+    <circle cx="528" cy="387" r="9" fill="#65d4ff"/><circle cx="560" cy="365" r="9" fill="#ffca6b"/>
+    <circle cx="592" cy="409" r="9" fill="#ff8fa3"/><circle cx="620" cy="378" r="9" fill="#7ee0a3"/>
+
+    <rect x="684" y="292" width="160" height="142" rx="18" fill="#10243b" stroke="#3c5774"/>
+    <text x="722" y="340" fill="#ffffff" font-size="22" font-weight="700">Channel</text>
+    <path d="M710 390 C728 350 746 430 764 390 S800 350 818 390" fill="none" stroke="#65d4ff" stroke-width="5"/>
+    <path d="M718 374 L804 406 M718 406 L804 374" stroke="#ff8fa3" stroke-width="3" stroke-dasharray="7 6"/>
+
+    <rect x="884" y="292" width="232" height="142" rx="18" fill="#10243b" stroke="#3c5774"/>
+    <text x="915" y="340" fill="#ffffff" font-size="22" font-weight="700">Recover bits</text>
+    <path d="M918 398 H946 V362 H978 V398 H1010 V362 H1042 V398 H1078" fill="none" stroke="#7ee0a3" stroke-width="5"/>
+
+    <g fill="#ffca6b">
+      <path d="M274 363 L255 351 V375 Z"/><path d="M474 363 L455 351 V375 Z"/>
+      <path d="M674 363 L655 351 V375 Z"/><path d="M874 363 L855 351 V375 Z"/>
+    </g>
+    <g stroke="#dce7f2" stroke-width="5">
+      <line x1="244" y1="363" x2="274" y2="363"/><line x1="444" y1="363" x2="474" y2="363"/>
+      <line x1="644" y1="363" x2="674" y2="363"/><line x1="844" y1="363" x2="874" y2="363"/>
+    </g>
+    <text x="84" y="510" fill="#dce7f2" font-size="19">ASK / FSK / PSK / QAM  ·  fading and equalization  ·  OFDM  ·  error-control coding</text>
+    <text x="84" y="575" fill="#8fa4bb" font-size="17">Concept diagram derived from course topics; it does not represent a measured link.</text>
+  </g>
+</svg>

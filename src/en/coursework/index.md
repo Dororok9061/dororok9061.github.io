@@ -10,12 +10,12 @@ alternate_url: /coursework/
 alternate_lang: ko
 ---
 
-I separated every subject into its own hub instead of folding them into one large field. Each hub has twelve study units. Subjects with saved assignments and results begin from those visuals and calculations; concept sequences are not presented as the original classroom calendar.
+I separated every subject into its own hub instead of folding them into one large field. Subjects with saved assignments and results begin from those visuals and calculations; concept sequences are not presented as the original classroom calendar. Embedded Systems links to separate university, personal, and research records so their boards and results are not mixed together.
 
 <div class="course-hub-grid">
 {% assign courses = site.data.coursework_courses | sort: 'order' %}
 {% for course in courses %}
-<article><a class="course-hub-card__media" href="{{ '/en/coursework/' | append: course.id | append: '/' | relative_url }}"><img src="{{ course.thumbnail | relative_url }}" alt="{{ course.title_en }} course visual" width="640" height="360" loading="lazy"></a><div><p class="post-card__meta">12 study units</p><h2><a href="{{ '/en/coursework/' | append: course.id | append: '/' | relative_url }}">{{ course.title_en }}</a></h2><p>{{ course.summary_en }}</p></div></article>
+<article><a class="course-hub-card__media" href="{{ '/en/coursework/' | append: course.id | append: '/' | relative_url }}"><img src="{{ course.thumbnail | relative_url }}" alt="{{ course.title_en }} course visual" width="640" height="360" loading="lazy"></a><div><p class="post-card__meta">{% if course.units.size > 0 %}{{ course.units.size }} study units{% else %}3 separate records{% endif %}</p><h2><a href="{{ '/en/coursework/' | append: course.id | append: '/' | relative_url }}">{{ course.title_en }}</a></h2><p>{{ course.summary_en }}</p></div></article>
 {% endfor %}
 </div>
 

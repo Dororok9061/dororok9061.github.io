@@ -1,7 +1,7 @@
 ---
 layout: category
 title: Electrical Engineering Coursework
-lead: Evidence levels and reproducibility records across VHDL, power, control, RF, and sensor assignments.
+lead: Course-by-course notes from the VHDL, power, control, RF, and sensor assignments I studied and implemented.
 description: Electrical-engineering coursework notes.
 category_slug: coursework
 permalink: /en/blog/category/coursework/

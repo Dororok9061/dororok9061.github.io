@@ -92,7 +92,7 @@ module StructuredBlog
 
             child_data = {
               "layout" => "category", "title" => child["title_#{lang}"],
-              "description" => category["description_#{lang}"], "lang" => lang,
+              "description" => child["description_#{lang}"] || category["description_#{lang}"], "lang" => lang,
               "primary_category" => category["id"], "subcategory" => child["id"],
               "category_data" => category, "child_data" => child,
               "course_data" => course
@@ -178,6 +178,8 @@ module StructuredBlog
 
     def generate_english_series(site)
       Array(site.data["blog_series"]).each do |series|
+        next if series["hidden"]
+
         data = {
           "layout" => "series", "series_id" => series["id"], "lang" => "en",
           "title" => series["title_en"], "description" => series["summary_en"]

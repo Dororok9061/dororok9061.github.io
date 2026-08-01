@@ -60,6 +60,25 @@ jobs:
           python3 scripts/blog/check_human_study_voice.py src _site
           python3 scripts/blog/check_post_depth.py
           python3 scripts/blog/validate_study_hubs.py _site
+          python3 scripts/content/check_asset_provenance.py
+          python3 scripts/content/check_category_asset_match.py
+          python3 scripts/content/check_duplicate_cover_usage.py
+          python3 scripts/content/check_hardware_name_match.py
+          python3 scripts/content/check_source_page_alignment.py src _site
+          python3 scripts/content/check_page_depth.py src _site
+          python3 scripts/content/check_visual_depth.py src _site
+          python3 scripts/content/check_orphan_sources.py src _site
+          python3 scripts/content/check_full_file_coverage.py
+          python3 scripts/content/check_embedded_visual_coverage.py src _site
+          python3 scripts/content/check_notion_asset_stability.py
+
+      - name: Audit source-to-page depth
+        continue-on-error: true
+        run: python3 scripts/content/check_source_page_mapping.py _site --strict
+
+      - name: Audit external source freshness
+        continue-on-error: true
+        run: python3 scripts/content/check_onedrive_d_freshness.py --strict
 
       - name: Validate external learning publication boundaries
         run: |
@@ -92,18 +111,24 @@ jobs:
           ./scripts/security/verify-site-security.ps1 -SiteRoot .
           ./scripts/security/verify-site-security.ps1 -SiteRoot _site -BuiltSite
 
+      - name: Verify pushed source parity
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        run: |
+          python3 scripts/content/check_git_remote_parity.py --ref main --strict
+          python3 scripts/content/check_all_changes_pushed.py --ref main --strict
+
       - name: Configure Pages
-        if: github.event_name != 'pull_request'
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
 
       - name: Upload generated site
-        if: github.event_name != 'pull_request'
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
           path: _site
 
   deploy:
-    if: github.event_name != 'pull_request'
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
     needs: validate
     runs-on: ubuntu-latest
     timeout-minutes: 10

@@ -3,41 +3,39 @@ layout: about
 title: About
 eyebrow: Profile
 lead: An undergraduate electrical engineering researcher focused on radar and embedded signal processing, with FPGA RTL and digital verification as a secondary track.
-description: Education, affiliation, graduation and availability dates, career focus, and evidence boundaries for Hyeongrok Ryu.
+description: Education, research experience, graduation date, availability, and career focus for Hyeongrok Ryu.
 permalink: /en/about/
 lang: en
 alternate_url: /about/
 alternate_lang: ko
 ---
 
-## Research and career direction
+## Research experience
 
-My primary focus is **Radar · Embedded Signal Processing Engineering**, connecting
-FMCW radar, BGT60TR13C, concurrent ECG/SCG/radar acquisition, STM32F411,
-ESP-32S/MPU6050, beat alignment, and sensor fusion.
+At the Human & System Laboratory, I worked on concurrent ECG, SCG, and FMCW radar
+acquisition and aligned cardiac-cycle waveforms. The setup used a BGT60TR13C radar,
+STM32F411, and ESP-32S/MPU6050 reference paths. In Python, I compared radar phase
+with AO and AC candidate timing around ECG R-peaks.
 
-My secondary focus is **FPGA RTL · Digital Verification Engineering**, spanning
-SystemVerilog, VHDL, parameterized RTL, drivers, checkers, reference models,
-file-driven verification, Icarus, GHDL, Quartus, and ModelSim/Questa.
+## Design and verification work
 
-## Supporting Competencies
+I wrote combinational, sequential, and parameterized RTL in VHDL and
+SystemVerilog. My testbenches separate drivers, checkers, and reference models,
+then compare input vectors against DUT outputs. I used Icarus, GHDL, Quartus,
+and ModelSim/Questa.
 
-RF/microwave circuit design, embedded hardware and firmware, biomedical signal
-processing, automotive electronics, motor control and power electronics,
-electrical machines, defense systems engineering, and reliability/systems
-engineering support the two focus tracks.
+I also built PADS schematics and footprints and reviewed microstrip, Wilkinson
+divider, and branch-line hybrid S-parameters in Cadence. My coursework includes
+control, motor drives, power electronics, and electrical machines.
 
-## Engineering approach
+## Career direction
 
-I distinguish surviving design material, rerun simulation, and physical
-measurement. An RTL simulation is not presented as synthesis, PPA, or hardware
-measurement, and individual contributions stay within the files and runs I checked.
+I am preparing primarily for radar signal-processing and embedded-acquisition
+roles, with FPGA RTL and digital verification as a second track. I expect to
+graduate in February 2027 and can start work in January 2027.
 
 ## Links
 
 - [GitHub Profile](https://github.com/Tontonjeong)
 - [Publications](/en/publications/)
 - [Role-oriented Portfolio](/en/roles/)
-
-The profile photograph is a resized and cropped derivative of the user-provided
-original. EXIF, location, and camera metadata have been removed.

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Power Electronics concept map</title>
+  <desc id="desc">A conceptual power-conversion path from a DC source through controlled switches and an energy-storage filter to a load.</desc>
+  <rect width="1200" height="675" fill="#f3f1eb"/>
+  <rect x="44" y="42" width="1112" height="591" rx="28" fill="#081526"/>
+  <g font-family="Arial, sans-serif">
+    <text x="84" y="112" fill="#65d4ff" font-size="22" font-weight="700" letter-spacing="3">POWER FLOW MAP</text>
+    <text x="84" y="170" fill="#ffffff" font-size="44" font-weight="700">Power Electronics</text>
+    <text x="84" y="210" fill="#b9c7d8" font-size="21">Switching devices, energy storage, conversion, and device stress</text>
+
+    <circle cx="152" cy="362" r="70" fill="#10243b" stroke="#65d4ff" stroke-width="6"/>
+    <line x1="119" y1="339" x2="185" y2="339" stroke="#dce7f2" stroke-width="6"/>
+    <line x1="152" y1="315" x2="152" y2="363" stroke="#dce7f2" stroke-width="6"/>
+    <line x1="119" y1="389" x2="185" y2="389" stroke="#dce7f2" stroke-width="6"/>
+    <text x="118" y="467" fill="#ffffff" font-size="21" font-weight="700">DC source</text>
+
+    <line x1="222" y1="362" x2="320" y2="362" stroke="#ffca6b" stroke-width="8"/>
+    <path d="M320 362 L296 347 V377 Z" fill="#ffca6b"/>
+    <rect x="320" y="278" width="230" height="168" rx="18" fill="#10243b" stroke="#3c5774"/>
+    <text x="354" y="326" fill="#ffffff" font-size="23" font-weight="700">Switching stage</text>
+    <line x1="376" y1="377" x2="415" y2="341" stroke="#65d4ff" stroke-width="7"/>
+    <circle cx="369" cy="383" r="9" fill="#dce7f2"/><circle cx="423" cy="333" r="9" fill="#dce7f2"/>
+    <line x1="442" y1="383" x2="481" y2="347" stroke="#ff8fa3" stroke-width="7"/>
+    <circle cx="435" cy="389" r="9" fill="#dce7f2"/><circle cx="489" cy="339" r="9" fill="#dce7f2"/>
+
+    <line x1="550" y1="362" x2="640" y2="362" stroke="#ffca6b" stroke-width="8"/>
+    <path d="M640 362 L616 347 V377 Z" fill="#ffca6b"/>
+    <rect x="640" y="278" width="230" height="168" rx="18" fill="#10243b" stroke="#3c5774"/>
+    <text x="686" y="326" fill="#ffffff" font-size="23" font-weight="700">L / C filter</text>
+    <path d="M677 370 C689 338 701 402 713 370 S737 338 749 370 S773 402 785 370" fill="none" stroke="#7ee0a3" stroke-width="6"/>
+    <line x1="809" y1="341" x2="809" y2="395" stroke="#65d4ff" stroke-width="6"/>
+    <line x1="828" y1="341" x2="828" y2="395" stroke="#65d4ff" stroke-width="6"/>
+
+    <line x1="870" y1="362" x2="960" y2="362" stroke="#ffca6b" stroke-width="8"/>
+    <path d="M960 362 L936 347 V377 Z" fill="#ffca6b"/>
+    <rect x="960" y="306" width="130" height="112" rx="18" fill="#10243b" stroke="#3c5774"/>
+    <path d="M993 362 C1006 328 1019 396 1032 362 S1058 328 1071 362" fill="none" stroke="#65d4ff" stroke-width="6"/>
+    <text x="1002" y="467" fill="#ffffff" font-size="21" font-weight="700">Load</text>
+
+    <path d="M368 518 V490 H498 V518 M394 518 V492 M420 518 V492 M446 518 V492 M472 518 V492" fill="none" stroke="#ff8fa3" stroke-width="5"/>
+    <text x="532" y="516" fill="#dce7f2" font-size="19">gate timing controls conversion</text>
+    <text x="84" y="575" fill="#8fa4bb" font-size="17">Concept diagram; no simulated efficiency, voltage, or hardware result is implied.</text>
+  </g>
+</svg>

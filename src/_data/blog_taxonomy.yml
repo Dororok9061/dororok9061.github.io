@@ -15,7 +15,7 @@
     - { id: power-electronics, title_ko: 전력전자, title_en: Power Electronics }
     - { id: electrical-machines, title_ko: 전기기기, title_en: Electrical Machines }
     - { id: motor-control, title_ko: 전동기제어, title_en: Motor Control }
-    - { id: embedded-systems, title_ko: 임베디드 시스템, title_en: Embedded Systems }
+    - { id: embedded-systems, title_ko: 임베디드 시스템, title_en: Embedded Systems, description_ko: 대학 임베디드시스템 수업 자료와 개인 STM32 학습·연구 장치·Raspberry Pi 프로젝트를 서로 다른 기록으로 나눴습니다., description_en: University coursework is kept separate from personal STM32 study, research hardware, and the Raspberry Pi project. }
 
 - id: fpga-rtl-dv
   order: 20
@@ -76,7 +76,7 @@
   order: 40
   title_ko: AI · Deep Learning · Computer Vision
   title_en: AI · Deep Learning · Computer Vision
-  description_ko: 판별형 모델, Vision, 생성형 모델을 서로 다른 학습경로로 관리합니다.
+  description_ko: 판별형 CNN, Vision, 생성형 모델을 내가 공부한 순서대로 모았습니다.
   description_en: Separate learning paths for discriminative AI, vision, and generative models.
   children:
     - { id: ai-roadmap, title_ko: AI 로드맵, title_en: AI Roadmap }
@@ -160,7 +160,7 @@
   order: 70
   title_ko: mmWave · FMCW Radar
   title_en: mmWave · FMCW Radar
-  description_ko: TI mmWave 도구 흐름과 FMCW Radar 신호처리·생체신호 정렬을 연결합니다.
+  description_ko: TI mmWave 도구를 살펴본 뒤 FMCW 신호처리와 생체신호 정렬을 단계별로 공부했습니다.
   description_en: TI mmWave tooling, FMCW radar processing, and physiological-signal alignment.
   children:
     - { id: rf-roadmap, title_ko: RF 로드맵, title_en: RF Roadmap }
@@ -186,7 +186,7 @@
   order: 80
   title_ko: 연구 · 논문 · 프로젝트 기록
   title_en: Research · Papers · Project Logs
-  description_ko: 논문 읽기, 실험, 구현과 검증 경계를 시간순으로 기록합니다.
+  description_ko: 논문을 읽고 구현과 실험으로 이어 간 과정을 시간순으로 모았습니다.
   description_en: Paper reading, experiments, implementation, and validation boundaries.
   children:
     - { id: paper-review, title_ko: 논문 리뷰, title_en: Paper Review }
@@ -241,7 +241,7 @@
   order: 110
   title_ko: 외부교육 · 경진대회
   title_en: External Learning · Competitions
-  description_ko: 수료, 과제, 프로젝트, 제출, 점수를 서로 다른 증거 단계로 기록합니다.
+  description_ko: 부트캠프와 Kaggle에서 공부하고 실행한 내용을 과정별로 모았습니다.
   description_en: Separates course completion, assignments, projects, submissions, and scores.
   children:
     - { id: bootcamp, title_ko: 부트캠프, title_en: Bootcamp }

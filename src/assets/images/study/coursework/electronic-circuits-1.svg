@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Electronic Circuits I concept map</title>
+  <desc id="desc">A conceptual study path from diode behavior through transistor bias to a common-emitter amplifier.</desc>
+  <rect width="1200" height="675" fill="#f3f1eb"/>
+  <rect x="44" y="42" width="1112" height="591" rx="28" fill="#081526"/>
+  <g font-family="Arial, sans-serif">
+    <text x="84" y="112" fill="#65d4ff" font-size="22" font-weight="700" letter-spacing="3">CONCEPT STUDY MAP</text>
+    <text x="84" y="170" fill="#ffffff" font-size="44" font-weight="700">Electronic Circuits I</text>
+    <text x="84" y="210" fill="#b9c7d8" font-size="21">Diode behavior, transistor bias, and small-signal amplification</text>
+
+    <rect x="84" y="272" width="278" height="222" rx="18" fill="#10243b" stroke="#3c5774"/>
+    <text x="112" y="315" fill="#ffffff" font-size="24" font-weight="700">Diode</text>
+    <line x1="140" y1="382" x2="208" y2="382" stroke="#dce7f2" stroke-width="6"/>
+    <path d="M208 340 L208 424 L282 382 Z" fill="none" stroke="#65d4ff" stroke-width="7"/>
+    <line x1="282" y1="338" x2="282" y2="426" stroke="#ffca6b" stroke-width="7"/>
+    <line x1="282" y1="382" x2="330" y2="382" stroke="#dce7f2" stroke-width="6"/>
+    <text x="112" y="462" fill="#9db0c5" font-size="17">rectification and clipping</text>
+
+    <rect x="461" y="272" width="278" height="222" rx="18" fill="#10243b" stroke="#3c5774"/>
+    <text x="489" y="315" fill="#ffffff" font-size="24" font-weight="700">Transistor bias</text>
+    <circle cx="600" cy="382" r="52" fill="none" stroke="#65d4ff" stroke-width="5"/>
+    <line x1="548" y1="382" x2="500" y2="382" stroke="#dce7f2" stroke-width="6"/>
+    <line x1="585" y1="350" x2="585" y2="414" stroke="#dce7f2" stroke-width="6"/>
+    <line x1="585" y1="360" x2="656" y2="329" stroke="#dce7f2" stroke-width="6"/>
+    <line x1="585" y1="404" x2="656" y2="435" stroke="#dce7f2" stroke-width="6"/>
+    <path d="M626 409 L651 433 L617 432 Z" fill="#ffca6b"/>
+    <text x="489" y="462" fill="#9db0c5" font-size="17">operating point and headroom</text>
+
+    <rect x="838" y="272" width="278" height="222" rx="18" fill="#10243b" stroke="#3c5774"/>
+    <text x="866" y="315" fill="#ffffff" font-size="24" font-weight="700">Amplifier</text>
+    <path d="M866 404 C892 404 896 354 922 354 S952 430 978 430 S1008 342 1034 342 S1064 404 1090 404" fill="none" stroke="#65d4ff" stroke-width="6"/>
+    <line x1="866" y1="435" x2="1090" y2="435" stroke="#3c5774" stroke-width="3"/>
+    <text x="866" y="462" fill="#9db0c5" font-size="17">gain, phase, and frequency range</text>
+
+    <path d="M378 383 H431" stroke="#ff8fa3" stroke-width="6"/>
+    <path d="M431 383 L414 372 V394 Z" fill="#ff8fa3"/>
+    <path d="M755 383 H808" stroke="#ff8fa3" stroke-width="6"/>
+    <path d="M808 383 L791 372 V394 Z" fill="#ff8fa3"/>
+    <text x="84" y="575" fill="#8fa4bb" font-size="17">Concept diagram; no measured waveform or laboratory result is implied.</text>
+  </g>
+</svg>
