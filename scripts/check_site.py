@@ -41,7 +41,9 @@ HTTP_RESOURCE = re.compile(
     r"(?:\b(?:src|href|action|poster)\s*=\s*[\"']\s*http://|url\(\s*[\"']?http://)",
     re.IGNORECASE,
 )
-MAX_SITE_BYTES = 8_000_000
+# Bilingual study chapters add useful HTML and original SVG diagrams while the
+# cap still prevents accidental publication of large private source artifacts.
+MAX_SITE_BYTES = 8_500_000
 
 
 class PageParser(HTMLParser):
