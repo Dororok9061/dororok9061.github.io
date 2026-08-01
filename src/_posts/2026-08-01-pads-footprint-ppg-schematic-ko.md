@@ -28,9 +28,9 @@ learning_objectives: [decal dimensions, pin numbering, schematic and layout conn
 related_projects: [ppg-hrv]
 related_posts: [biomedical-metric-provenance]
 tags: [pads, pcb-footprint, ppg, opa2333]
-cover_image: /assets/images/learning/coursework/pads-footprint-ppg-schematic.svg
-thumbnail: /assets/images/learning/coursework/pads-footprint-ppg-schematic.svg
-image_alt: 서로 연결됐다고 가정하지 않은 6-pin SOIC decal과 PPG schematic-layout 화면
+cover_image: /assets/images/study/pads/pads-ppg-layout.webp
+thumbnail: /assets/images/study/pads/pads-ppg-layout.webp
+image_alt: PADS Logic의 PPG 회로도와 Layout의 초기 부품 배치 화면
 draft: false
 revision_history:
   - { date: 2026-08-01, change: 저장된 Decal Wizard와 PPG 회로 화면을 바탕으로 작성 }
@@ -57,6 +57,8 @@ PADS를 처음 배울 때 저장한 Decal Wizard 화면과 PPG schematic·layout
 
 Decal Wizard 화면에서 pin count를 6으로 두고 SMD pad 폭 0.6 mm, 길이 1.05 mm를 입력했다. 같은 줄의 pin pitch는 1.27 mm, 양쪽 row 중심 간격은 2.65 mm였다. 처음에는 lead span과 row pitch를 같은 값으로 읽었는데, pad 중심을 기준으로 다시 보니 서로 다른 치수였다.
 
+<figure><img src="{{ '/assets/images/study/pads/pads-soic-decal-a.webp' | relative_url }}" alt="6-pin SOIC 치수를 입력한 PADS Decal Wizard 작업 화면" width="1024" height="704"><figcaption>내가 저장한 Decal Wizard 화면을 메타데이터 없이 WebP로 변환했다.</figcaption></figure>
+
 <figure>
   <table>
     <thead><tr><th>항목</th><th>입력값</th><th>내가 확인한 기준</th></tr></thead>
@@ -78,6 +80,8 @@ Decal Wizard 화면에서 pin count를 6으로 두고 SMD pad 폭 0.6 mm, 길이
 ## PPG signal chain {#schematic}
 
 별도의 PPG schematic 화면에는 OPA2333 증폭 단계와 RC filtering, 뒤쪽의 SN74LVC 계열 logic이 함께 보였다. 아날로그 입력을 바로 logic으로 보내는 구조가 아니라, 작은 신호를 증폭하고 대역을 제한한 다음 다음 단계로 넘기는 흐름이었다. 이 화면에 보이는 OPA2333 package를 앞의 6-pin SOIC decal과 같은 부품이라고 보지는 않았다.
+
+<figure><img src="{{ '/assets/images/study/pads/pads-ppg-layout.webp' | relative_url }}" alt="OPA2333 증폭단과 SN74LVC logic, 초기 PADS Layout 배치가 함께 보이는 작업 화면" width="1904" height="1018"><figcaption>회로도와 초기 배치를 함께 저장한 실제 PADS 화면이다.</figcaption></figure>
 
 <figure>
   <pre><code>PPG input

@@ -1,0 +1,16 @@
+---
+layout: default
+---
+{% assign course = page.course_data %}
+<main id="main" class="page page-shell">
+  <nav class="breadcrumbs" aria-label="{% if page.lang == 'en' %}Breadcrumb{% else %}현재 위치{% endif %}"><a href="{% if page.lang == 'en' %}{{ '/en/coursework/' | relative_url }}{% else %}{{ '/coursework/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}Coursework{% else %}전공공부{% endif %}</a><span aria-hidden="true">/</span><span>{{ page.title }}</span></nav>
+  <header class="study-hub-hero">
+    <div><p class="eyebrow">{% if course.kind == 'course-record' %}{% if page.lang == 'en' %}Course record{% else %}전공과목 정리{% endif %}{% else %}{% if page.lang == 'en' %}Study roadmap{% else %}학습 로드맵{% endif %}{% endif %}</p><h1>{{ page.title }}</h1><p class="page-heading__lead">{{ page.description }}</p></div>
+    <img src="{{ course.thumbnail | relative_url }}" alt="{% if page.lang == 'en' %}{{ course.title_en }} study thumbnail{% else %}{{ course.title_ko }} 학습 대표 이미지{% endif %}" width="1200" height="675">
+  </header>
+  <p class="study-sequence-note">{% if page.lang == 'en' %}{{ course.sequence_note_en }}{% else %}{{ course.sequence_note_ko }}{% endif %}</p>
+  <section aria-labelledby="course-units-heading"><div class="section-heading"><p class="eyebrow">12 Units</p><h2 id="course-units-heading">{% if page.lang == 'en' %}Weekly study sequence{% else %}주차별 공부 순서{% endif %}</h2></div>
+    <ol class="course-unit-grid">{% for unit in course.units %}{% assign unit_number = unit.order | prepend: '0' | slice: -2, 2 %}<li><a href="{% if page.lang == 'en' %}{{ '/en/coursework/' | append: course.id | append: '/week-' | append: unit_number | append: '-' | append: unit.slug | append: '/' | relative_url }}{% else %}{{ '/coursework/' | append: course.id | append: '/week-' | append: unit_number | append: '-' | append: unit.slug | append: '/' | relative_url }}{% endif %}"><span>W{{ unit_number }}</span><strong>{% if page.lang == 'en' %}{{ unit.title_en }}{% else %}{{ unit.title_ko }}{% endif %}</strong><small>{% for concept in unit.concepts limit: 3 %}{% if page.lang == 'en' %}{{ concept.en }}{% else %}{{ concept.ko }}{% endif %}{% unless forloop.last %} · {% endunless %}{% endfor %}</small></a></li>{% endfor %}</ol>
+  </section>
+  <section class="study-next"><h2>{% if page.lang == 'en' %}How I use this hub{% else %}이 허브를 사용하는 방법{% endif %}</h2><p>{% if page.lang == 'en' %}I open one unit at a time, restate the core terms, and connect equations, circuits, code, and saved results only where that connection is supported.{% else %}한 주제씩 열어 핵심 용어를 내 말로 다시 쓰고, 식·회로·코드·저장된 결과가 실제로 이어지는 지점만 연결한다.{% endif %}</p></section>
+</main>

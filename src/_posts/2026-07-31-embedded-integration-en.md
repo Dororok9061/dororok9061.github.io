@@ -10,8 +10,8 @@ translation_key: embedded-data-path
 permalink: /en/blog/2026/07/31/embedded-data-path/
 alternate_url: /blog/2026/07/31/embedded-data-path/
 alternate_lang: ko
-primary_category: stm32-embedded
-subcategory: embedded-network
+primary_category: major-foundations
+subcategory: embedded-systems
 series: embedded-integration
 series_order: 1
 post_type: project-log

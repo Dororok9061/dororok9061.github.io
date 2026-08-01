@@ -1,0 +1,147 @@
+- id: pads
+  order: 10
+  category_id: pcb-pads
+  title_ko: PADS · PCB 설계
+  title_en: PADS · PCB Design
+  summary_ko: 내가 남긴 Decal Wizard와 PPG 회로 화면을 출발점으로 부품·회로도·배치·검사 흐름을 다시 정리한다.
+  summary_en: I use my saved Decal Wizard and PPG design screens to rebuild the part, schematic, placement, and checking workflow.
+  thumbnail: /assets/images/study/pads/pads-ppg-layout.webp
+  source_note_ko: PADS 화면은 내가 저장한 작업 화면이다. KiCad와 Siemens 문서는 같은 개념을 비교할 때만 링크로 참고했다.
+  source_note_en: The PADS captures are my saved work screens. KiCad and Siemens documents are linked only when comparing equivalent concepts.
+  units:
+    - order: 1
+      slug: design-flow
+      title_ko: 회로도에서 PCB까지의 흐름
+      title_en: From Schematic to PCB
+      image: /assets/images/study/pads/pads-ppg-layout.webp
+      alt_ko: PPG 회로도와 PADS Layout 배치 화면
+      alt_en: PPG schematic beside a PADS Layout placement view
+      body_ko: 먼저 Logic의 net가 Layout의 footprint와 어떻게 이어지는지 정리했다. 회로도 작성, package 연결, netlist 전달, 배치, 배선, 검사 순서로 화면을 다시 읽었다.
+      body_en: I first traced how Logic nets reach footprints in Layout, then reread the screen as schematic, package mapping, net transfer, placement, routing, and checks.
+      concepts: [schematic, package mapping, netlist, placement]
+    - order: 2
+      slug: parts-and-symbols
+      title_ko: Part와 Symbol 분리하기
+      title_en: Separating Parts and Symbols
+      image: /assets/images/study/pads/pads-ppg-layout.webp
+      alt_ko: OPA2333과 SN74LVC2G07이 포함된 PPG 회로도
+      alt_en: PPG schematic containing OPA2333 and SN74LVC2G07 parts
+      body_ko: 회로도 기호, pin 이름, 전기적 역할과 PCB 형상을 한 객체처럼 생각하면 수정이 꼬인다. 이번에는 logical part와 physical decal을 따로 보고 연결 지점을 적었다.
+      body_en: Treating schematic symbols, pin names, electrical roles, and PCB geometry as one object makes revisions brittle. I separated the logical part from its physical decal.
+      concepts: [part, symbol, pin mapping, library]
+    - order: 3
+      slug: soic-decal
+      title_ko: 6-pin SOIC Decal 치수
+      title_en: Six-pin SOIC Decal Dimensions
+      image: /assets/images/study/pads/pads-soic-decal-a.webp
+      alt_ko: 6-pin SOIC를 설정한 PADS Decal Wizard
+      alt_en: PADS Decal Wizard configured for a six-pin SOIC
+      body_ko: Decal Wizard에서 pin 수, pitch, pad 폭과 길이, row 간격을 하나씩 확인했다. package 이름만 믿지 않고 datasheet land pattern과 단위를 다시 대조하는 순서로 정리했다.
+      body_en: I checked pin count, pitch, pad width and length, and row spacing one by one, then wrote down a datasheet-first comparison instead of trusting the package name.
+      concepts: [pitch, pad size, courtyard, pin numbering]
+    - order: 4
+      slug: ppg-schematic
+      title_ko: PPG Analog Front-End 회로 읽기
+      title_en: Reading the PPG Analog Front End
+      image: /assets/images/study/pads/pads-ppg-layout.webp
+      alt_ko: OPA2333 증폭단과 논리 버퍼가 보이는 PPG 회로
+      alt_en: PPG circuit showing OPA2333 stages and a logic buffer
+      body_ko: OPA2333 주변의 feedback 저항과 capacitor를 따라가며 각 증폭단의 입력·출력을 표시했다. Layout 화면은 배선 완료 결과가 아니라 당시 남은 배치 화면으로 읽었다.
+      body_en: I followed the feedback resistors and capacitors around the OPA2333 stages and marked each input and output. I treat the Layout capture as a saved placement view, not proof of completed routing.
+      concepts: [op-amp stage, feedback, decoupling, signal path]
+    - order: 5
+      slug: placement
+      title_ko: 부품 배치와 신호 경로
+      title_en: Placement and Signal Paths
+      image: /assets/images/study/pads/pads-ppg-layout.webp
+      alt_ko: 두 IC와 주변 부품을 배치한 PADS Layout 화면
+      alt_en: PADS Layout view with two ICs and surrounding parts placed
+      body_ko: 배치는 빈 공간을 채우는 일이 아니라 전류 loop와 민감한 analog 경로를 짧게 만드는 일로 다시 봤다. connector, 증폭단, bypass capacitor 순서로 위치를 점검했다.
+      body_en: I reframed placement as shortening current loops and sensitive analog paths rather than filling space, checking connectors, amplifier stages, and bypass capacitors in that order.
+      concepts: [return path, analog routing, decoupling, connectors]
+    - order: 6
+      slug: rules-and-outputs
+      title_ko: Design Rule과 제조 출력물
+      title_en: Design Rules and Fabrication Outputs
+      image: /assets/images/study/pads/pads-soic-decal-b.webp
+      alt_ko: 치수 확인 영역이 표시된 PADS Decal Wizard 화면
+      alt_en: PADS Decal Wizard with dimension fields highlighted
+      body_ko: pad와 mask 치수부터 clearance, drill, outline을 먼저 정리했다. Gerber와 drill 파일은 DRC를 통과한 설계에서 만들어야 하므로 화면만으로 제조 준비가 끝났다고 적지 않았다.
+      body_en: I started with pad, mask, clearance, drill, and outline rules. Gerber and drill outputs belong after DRC, so a setup screen alone is not presented as fabrication-ready work.
+      concepts: [clearance, solder mask, DRC, Gerber]
+    - order: 7
+      slug: kicad-footprint-comparison
+      title_ko: PADS Decal과 KiCad Footprint 비교
+      title_en: PADS Decals and KiCad Footprints
+      image: /assets/images/study/pads/pads-soic-decal-a.webp
+      alt_ko: SOIC Decal을 계산하는 PADS 화면
+      alt_en: PADS screen calculating an SOIC decal
+      body_ko: PADS의 decal과 KiCad의 footprint가 맡는 역할은 비슷하지만 파일 형식과 library 구조는 다르다. 이름을 섞지 않고 pad, pin, courtyard, 3D model 항목을 대응시켰다.
+      body_en: PADS decals and KiCad footprints play similar roles but use different file and library structures. I compare pads, pins, courtyards, and 3D models without implying file compatibility.
+      concepts: [decal, footprint, courtyard, library portability]
+    - order: 8
+      slug: ppg-board-review
+      title_ko: PPG 보드 화면으로 설계 리뷰하기
+      title_en: Reviewing the PPG Board Screen
+      image: /assets/images/study/pads/pads-ppg-layout.webp
+      alt_ko: PPG 회로도와 초기 PCB 배치의 전체 화면
+      alt_en: Full PPG schematic and early PCB placement capture
+      body_ko: 마지막에는 회로도와 배치를 나란히 두고 pin mapping, 전원, feedback loop, 부품 방향을 확인했다. 저장된 화면에서 확인되는 단계까지만 적고 제조·실측 결과는 따로 두었다.
+      body_en: I finish by comparing schematic and placement for pin mapping, power, feedback loops, and orientation, stopping at what the saved screen actually shows.
+      concepts: [cross-probing, orientation, power integrity, review checklist]
+  sources:
+    - { title: PADS Professional Premium, url: https://eda.sw.siemens.com/en-US/eda-cloud-solutions/pcb/pads/professional-premium/ }
+    - { title: PartQuest Portal, url: https://www.siemens.com/en-us/products/pcb/partquest/portal/ }
+    - { title: KiCad Getting Started 10.0, url: https://docs.kicad.org/10.0/en/getting_started_in_kicad/getting_started_in_kicad.html }
+    - { title: KiCad PCB Editor 10.0, url: https://docs.kicad.org/10.0/en/pcbnew/pcbnew.html }
+
+- id: stm32
+  order: 20
+  category_id: stm32-embedded
+  title_ko: STM32 · Embedded
+  title_en: STM32 · Embedded
+  summary_ko: STM32F411 보드 사진과 영상 118개를 시점별로 묶고, Cube 프로젝트와 CMSIS-DSP 흐름을 함께 공부한다.
+  summary_en: I organize 118 STM32F411 photos and videos by viewpoint and connect them to the Cube project and CMSIS-DSP workflow.
+  thumbnail: /assets/images/study/stm32/stm32f411-board-overview.webp
+  source_note_ko: 보드 contact sheet는 D:에 보존한 사진 19장과 영상 99개에서 직접 만들었다. Firmware 설명은 별도 FMCW 프로젝트와 ST·Arm 공식 문서를 구분해 참고했다.
+  source_note_en: The board contact sheets come from 19 photos and 99 videos preserved on D:. Firmware notes distinguish the separate FMCW project from ST and Arm references.
+  units:
+    - { order: 1, slug: board-overview, title_ko: F411 보드 20개 한눈에 보기, title_en: Twenty F411 Board Views, image: /assets/images/study/stm32/stm32f411-board-overview.webp, alt_ko: 20개 STM32F411 보드의 정면과 측면 contact sheet, alt_en: Contact sheet of front and side views for twenty STM32F411 boards, body_ko: 먼저 20개 보드의 정면·측면·근접 영상을 같은 순서로 배열했다. connector와 MCU, pin header가 시점마다 어떻게 보이는지 비교했다., body_en: I first aligned front, side, and close views for twenty boards and compared connectors, the MCU, and pin headers across viewpoints., concepts: [board inspection, viewpoint, connector, package] }
+    - { order: 2, slug: board-views, title_ko: 보드 한 장을 여섯 시점으로 확인하기, title_en: Inspecting One Board from Six Views, image: /assets/images/study/stm32/f411_1-contact-sheet.webp, alt_ko: F411 1번 보드의 앞뒤와 근접 화면, alt_en: Front, back, and close views of F411 board one, body_ko: 사진 한 장과 영상 다섯 개의 1초 지점을 묶었다. 한 시점에서 가려진 solder joint와 실크 인쇄를 다른 시점으로 보완했다., body_en: I combined one still photo with frames from five videos at one second, using alternate views to recover obscured joints and silkscreen labels., concepts: [front view, back view, close-up, silkscreen] }
+    - { order: 3, slug: cube-project, title_ko: STM32CubeF4 프로젝트 구조, title_en: STM32CubeF4 Project Structure, image: /assets/images/study/stm32/f411_5-contact-sheet.webp, alt_ko: 여러 각도에서 본 STM32F411 보드, alt_en: STM32F411 board seen from multiple angles, body_ko: 별도 FMCW 프로젝트의 Core, Drivers, CMSIS 폴더를 나누어 읽었다. 자동 생성 HAL과 직접 작성한 application 코드를 같은 것으로 취급하지 않았다., body_en: I read Core, Drivers, and CMSIS in the separate FMCW project, keeping generated HAL code distinct from application code., concepts: [Core, Drivers, HAL, CMSIS] }
+    - { order: 4, slug: clock-gpio, title_ko: Clock과 GPIO 시작점, title_en: Clock and GPIO Starting Point, image: /assets/images/study/stm32/f411_8-contact-sheet.webp, alt_ko: MCU와 pin header가 보이는 F411 보드 시점, alt_en: F411 board views showing the MCU and pin headers, body_ko: MCU clock tree와 GPIO mode를 먼저 확인한 뒤 주변장치를 붙이는 순서로 정리했다. 보드 실크의 pin 이름과 firmware 설정이 같은지 다시 대조했다., body_en: I start with the MCU clock tree and GPIO modes, then attach peripherals and compare board silkscreen labels with firmware settings., concepts: [clock tree, GPIO mode, alternate function, pinout] }
+    - { order: 5, slug: adc-timer, title_ko: ADC와 Timer로 일정하게 샘플링하기, title_en: Regular Sampling with ADC and Timers, image: /assets/images/study/stm32/f411_10-contact-sheet.webp, alt_ko: STM32F411 보드 전면과 MCU 근접 화면, alt_en: Front and MCU close-up views of an STM32F411 board, body_ko: ECG·SCG 취득 흐름을 보며 timer trigger, ADC conversion, buffer 저장 순서를 적었다. 샘플링 주파수는 clock 설정과 buffer 처리량을 함께 봐야 한다., body_en: I followed timer triggers, ADC conversion, and buffering in the ECG/SCG acquisition flow, tying sample rate to both clock setup and buffer throughput., concepts: [timer trigger, ADC, sample rate, buffering] }
+    - { order: 6, slug: uart-dma, title_ko: UART와 DMA 데이터 경로, title_en: UART and DMA Data Paths, image: /assets/images/study/stm32/f411_12-contact-sheet.webp, alt_ko: USB와 pin header가 보이는 F411 보드, alt_en: F411 board views showing USB and pin headers, body_ko: 취득 데이터를 host로 보낼 때 polling, interrupt, DMA의 차이를 비교했다. packet 경계와 overflow를 먼저 정한 뒤 전송 코드를 읽었다., body_en: I compared polling, interrupts, and DMA for host transfer, defining packet boundaries and overflow behavior before reading transport code., concepts: [UART, DMA, packet framing, overflow] }
+    - { order: 7, slug: cmsis-dsp, title_ko: CMSIS-DSP Biquad와 FFT, title_en: CMSIS-DSP Biquads and FFTs, image: /assets/images/study/stm32/f411_15-contact-sheet.webp, alt_ko: STM32F411 보드와 MCU 근접 촬영, alt_en: STM32F411 board and MCU close-up, body_ko: CMSIS-DSP의 filter instance, coefficient, state buffer를 구분했다. float와 Q15·Q31은 memory와 saturation 특성이 달라 같은 설정으로 바꾸지 않았다., body_en: I separated CMSIS-DSP filter instances, coefficients, and state buffers, and kept floating-point, Q15, and Q31 behavior distinct., concepts: [biquad, FFT, coefficient, Q15]
+      }
+    - { order: 8, slug: debug-review, title_ko: 보드·Firmware 함께 디버깅하기, title_en: Debugging Board and Firmware Together, image: /assets/images/study/stm32/f411_20-contact-sheet.webp, alt_ko: 사진 없이 영상 다섯 시점으로 구성한 F411 20번 보드, alt_en: F411 board twenty reconstructed from five video viewpoints, body_ko: 마지막 보드는 별도 정지사진이 없어 영상 프레임 다섯 장을 사용했다. 전원, clock, pin 설정, buffer, 통신을 순서대로 좁혀 가는 checklist를 만들었다., body_en: Board twenty had no separate still photo, so I used five video frames and built a power-to-clock-to-pin-to-buffer-to-transport checklist., concepts: [power, clock, pin configuration, debug order] }
+  sources:
+    - { title: STM32CubeF4 Getting Started (UM1730), url: https://www.st.com/resource/en/user_manual/um1730-getting-started-with-stm32cubef4-mcu-package-for-stm32f4-series-stmicroelectronics.pdf }
+    - { title: STM32 DSP with CMSIS (AN4841), url: https://www.st.com/resource/en/application_note/dm00273990-digital-signal-processing-for-stm32-microcontrollers-using-cmsis-stmicroelectronics.pdf }
+    - { title: Arm CMSIS-DSP, url: https://arm-software.github.io/CMSIS_6/latest/DSP/index.html }
+    - { title: STM32CubeF4 repository, url: https://github.com/STMicroelectronics/STM32CubeF4 }
+
+- id: mmwave
+  order: 30
+  category_id: rf-radar-signal
+  title_ko: mmWave · FMCW Radar
+  title_en: mmWave · FMCW Radar
+  summary_ko: FMCW chirp, I/Q, range processing에서 TI people tracking과 연구용 ECG·SCG 정렬까지 하나씩 연결한다.
+  summary_en: I connect FMCW chirps, I/Q, range processing, TI people tracking, and research ECG/SCG alignment one step at a time.
+  thumbnail: /assets/images/projects/radar-hardware.webp
+  source_note_ko: 성적표와 제3자 논문 그림은 쓰지 않았다. TI 문서는 원본 그림을 복사하지 않고 공식 URL과 직접 그린 흐름도로 참고했다.
+  source_note_en: I excluded the transcript and third-party paper figure. TI documents are referenced by official URL and my own workflow diagrams rather than copied figures.
+  units:
+    - { order: 1, slug: radar-basics, title_ko: mmWave Radar가 거리를 읽는 방법, title_en: How mmWave Radar Reads Range, image: /assets/images/projects/radar-hardware.webp, alt_ko: BGT60TR13C와 ECG·SCG 센서를 함께 배치한 실험 구성, alt_en: Experimental setup combining BGT60TR13C with ECG and SCG sensors, body_ko: 먼저 송신 chirp와 반사파의 주파수 차이가 beat frequency가 되는 과정을 정리했다. 거리, 속도, 각도는 서로 다른 축과 antenna 정보를 사용한다., body_en: I begin with the frequency difference between transmitted and reflected chirps, then separate range, velocity, and angle dimensions., concepts: [chirp, beat frequency, range, antenna] }
+    - { order: 2, slug: evm-dca1000, title_ko: EVM과 DCA1000 데이터 경로, title_en: EVM and DCA1000 Data Path, image: /assets/images/study/mmwave/evm-dca1000-flow.svg, alt_ko: Radar EVM에서 DCA1000과 PC로 이어지는 데이터 경로, alt_en: Data path from radar EVM through DCA1000 to a host PC, body_ko: TI guide 캡처를 다시 올리는 대신 EVM, control UART, raw LVDS, DCA1000, host의 역할을 직접 그렸다. functional mode와 raw capture mode를 한 설정으로 보지 않았다., body_en: Instead of republishing guide captures, I redrew the roles of the EVM, control UART, raw LVDS, DCA1000, and host, keeping functional and raw-capture modes separate., concepts: [EVM, UART, LVDS, DCA1000] }
+    - { order: 3, slug: iq-range-fft, title_ko: I/Q Sample과 Range FFT, title_en: I/Q Samples and Range FFT, image: /assets/images/projects/fmcw-waveform.webp, alt_ko: FMCW radar 신호의 시간 파형, alt_en: Time-domain waveform from an FMCW radar signal, body_ko: complex I/Q를 chirp별 matrix로 놓고 window와 FFT가 range bin을 만드는 순서를 정리했다. FFT peak가 곧바로 사람의 위치라는 식으로 단순화하지 않았다., body_en: I arrange complex I/Q samples by chirp and follow windowing and FFT into range bins without equating every peak with a person., concepts: [I/Q, window, FFT, range bin] }
+    - { order: 4, slug: doppler-angle, title_ko: Doppler와 Angle 축 만들기, title_en: Building Doppler and Angle Axes, image: /assets/images/projects/fmcw-waveform.webp, alt_ko: 시간축에서 관찰한 FMCW 신호 변화, alt_en: FMCW signal variation observed over time, body_ko: slow-time FFT와 antenna 간 위상차가 각각 속도와 각도 정보가 되는 과정을 분리했다. frame, chirp, sample index를 섞지 않도록 tensor 축을 먼저 적었다., body_en: I separate slow-time FFT for velocity from inter-antenna phase for angle and write tensor axes before processing frames, chirps, and samples., concepts: [Doppler FFT, virtual antenna, phase, tensor axis] }
+    - { order: 5, slug: people-tracking, title_ko: Detection에서 People Tracking까지, title_en: From Detection to People Tracking, image: /assets/images/study/mmwave/people-tracking-flow.svg, alt_ko: Point cloud를 association과 tracking으로 연결한 people tracking 흐름, alt_en: People-tracking flow from point clouds through association and tracking, body_ko: TI reference design을 보며 detection, point cloud, clustering·association, track state, counting 순서를 다시 그렸다. 이 페이지는 공식 demo를 직접 실행한 결과가 아니라 설정을 준비하기 위한 공부 기록이다., body_en: Using the TI reference design, I redraw detection, point clouds, association, track state, and counting. This is preparation for the official demo, not a claimed local run., concepts: [point cloud, association, tracker, counting] }
+    - { order: 6, slug: visualizer, title_ko: Visualizer 연결과 Plot 읽기, title_en: Connecting the Visualizer and Reading Plots, image: /assets/images/study/mmwave/visualizer-flow.svg, alt_ko: CFG 포트와 Data 포트가 Visualizer plot으로 이어지는 흐름, alt_en: CFG and data ports feeding Visualizer plots, body_ko: CFG COM과 Data COM의 역할, configuration 전송, stream 수신, XY·range plot 확인 순서를 정리했다. 예전 mmWave Demo Visualizer와 최신 Industrial Visualizer를 같은 프로그램으로 쓰지 않았다., body_en: I separate CFG and data ports, configuration transfer, stream reception, and plot reading, without treating the older Demo Visualizer as identical to the current Industrial Visualizer., concepts: [CFG port, data port, configuration, plots] }
+    - { order: 7, slug: phase-vital-signs, title_ko: Phase에서 미세 변위 읽기, title_en: Reading Micro-motion from Phase, image: /assets/images/projects/fmcw-experiment.webp, alt_ko: FMCW Radar와 생체신호 동시 취득 실험 장면, alt_en: FMCW radar and physiological-signal concurrent acquisition experiment, body_ko: 선택한 range bin의 complex phase를 unwrap하고 느린 움직임을 분리하는 순서를 정리했다. 호흡·심박 성분 해석은 acquisition 조건과 reference signal을 함께 둔다., body_en: I unwrap complex phase at a selected range bin and separate slow motion, keeping respiratory and cardiac interpretation tied to acquisition conditions and reference signals., concepts: [phase unwrap, micro-motion, filtering, reference signal] }
+    - { order: 8, slug: ecg-scg-alignment, title_ko: ECG·SCG·Radar Beat Alignment, title_en: ECG, SCG, and Radar Beat Alignment, image: /assets/images/projects/radar-hardware.webp, alt_ko: ECG·SCG·Radar 동시 측정 장비 배치, alt_en: Concurrent ECG, SCG, and radar measurement arrangement, body_ko: ECG R-peak를 기준으로 SCG와 radar 후보 시점을 잘라 비교했다. AO·AC라는 이름은 동시 취득과 annotation 조건이 있을 때만 사용하고 단일 파형 peak에 자동으로 붙이지 않았다., body_en: I segment SCG and radar candidates around ECG R-peaks, using AO and AC labels only when concurrent acquisition and annotation conditions support them., concepts: [R-peak, beat window, AO/AC, alignment] }
+  sources:
+    - { title: TI RADAR-TOOLBOX, url: https://www.ti.com/tool/download/RADAR-TOOLBOX }
+    - { title: TI People Counting and Tracking Reference Design, url: https://www.ti.com/tool/TIDEP-01000 }
+    - { title: TI People Tracking Reference Design Guide Rev. D, url: https://www.ti.com/lit/ug/tidue71d/tidue71d.pdf }
+    - { title: TI mmWave Demo Visualizer User Guide Rev. C, url: https://www.ti.com/lit/ug/swru529c/swru529c.pdf }

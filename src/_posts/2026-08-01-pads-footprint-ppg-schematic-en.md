@@ -28,9 +28,9 @@ learning_objectives: [decal dimensions, pin numbering, schematic and layout conn
 related_projects: [ppg-hrv]
 related_posts: [biomedical-metric-provenance]
 tags: [pads, pcb-footprint, ppg, opa2333]
-cover_image: /assets/images/learning/coursework/pads-footprint-ppg-schematic.svg
-thumbnail: /assets/images/learning/coursework/pads-footprint-ppg-schematic.svg
-image_alt: A six-pin SOIC decal and a PPG schematic-to-layout view shown as unrelated examples
+cover_image: /assets/images/study/pads/pads-ppg-layout.webp
+thumbnail: /assets/images/study/pads/pads-ppg-layout.webp
+image_alt: PPG schematic in PADS Logic beside an early component placement in Layout
 draft: false
 revision_history:
   - { date: 2026-08-01, change: Written from stored Decal Wizard and PPG design screens }
@@ -57,6 +57,8 @@ I reopened a Decal Wizard capture and a separate PPG schematic/layout capture fr
 
 The Decal Wizard screen uses six SMD pins with pad width 0.6 mm and length 1.05 mm. Pin pitch is 1.27 mm along a row, while the distance between row centers is 2.65 mm. I initially mixed up lead span and row pitch, so I mapped each number back to a line on the package drawing.
 
+<figure><img src="{{ '/assets/images/study/pads/pads-soic-decal-a.webp' | relative_url }}" alt="Saved PADS Decal Wizard screen with six-pin SOIC dimensions" width="1024" height="704"><figcaption>I converted my saved Decal Wizard screen to WebP without metadata.</figcaption></figure>
+
 <figure>
   <table>
     <thead><tr><th>Item</th><th>Entered value</th><th>Reference</th></tr></thead>
@@ -78,6 +80,8 @@ The stored screen uses counter-clockwise numbering and a visible pin-1 mark. Aft
 ## PPG signal chain {#schematic}
 
 The separate PPG schematic screen shows OPA2333 amplification stages, RC filtering, and an SN74LVC-family logic stage. The signal is amplified and bandwidth-limited before it reaches the logic interface rather than being connected directly. I do not identify the visible OPA2333 package with the six-pin decal from the other capture.
+
+<figure><img src="{{ '/assets/images/study/pads/pads-ppg-layout.webp' | relative_url }}" alt="Saved PADS screen with OPA2333 stages, SN74LVC logic, and early Layout placement" width="1904" height="1018"><figcaption>This is the actual saved PADS schematic and early placement view.</figcaption></figure>
 
 <figure>
   <pre><code>PPG input

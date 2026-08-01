@@ -1,17 +1,20 @@
 ---
 layout: default
 ---
+{% assign post_category = site.data.blog_taxonomy | where: 'id', page.primary_category | first %}
+{% assign post_child = post_category.children | where: 'id', page.subcategory | first %}
+{% assign post_series = site.data.blog_series | where: 'id', page.series | first %}
 <main id="main" class="page page-shell">
   <article class="post">
-    <nav class="breadcrumbs" aria-label="{% if page.lang == 'en' %}Breadcrumb{% else %}현재 위치{% endif %}"><a href="{% if page.lang == 'en' %}{{ '/en/blog/' | relative_url }}{% else %}{{ '/blog/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}Blog{% else %}블로그{% endif %}</a></nav>
+    <nav class="breadcrumbs" aria-label="{% if page.lang == 'en' %}Breadcrumb{% else %}현재 위치{% endif %}"><a href="{% if page.lang == 'en' %}{{ '/en/blog/' | relative_url }}{% else %}{{ '/blog/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}Blog{% else %}블로그{% endif %}</a>{% if post_category %}<span aria-hidden="true">/</span><a href="{% if page.lang == 'en' %}{{ '/en/blog/category/' | append: post_category.id | append: '/' | relative_url }}{% else %}{{ '/blog/category/' | append: post_category.id | append: '/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}{{ post_category.title_en }}{% else %}{{ post_category.title_ko }}{% endif %}</a>{% endif %}</nav>
     <header class="post-heading">
-      <p class="eyebrow">{{ page.primary_category | default: page.categories.first }}{% if page.subcategory %} · {{ page.subcategory }}{% endif %}</p>
+      <p class="eyebrow">{% if post_category %}{% if page.lang == 'en' %}{{ post_category.title_en }}{% else %}{{ post_category.title_ko }}{% endif %}{% else %}{{ page.primary_category | default: page.categories.first }}{% endif %}{% if post_child %} · {% if page.lang == 'en' %}{{ post_child.title_en }}{% else %}{{ post_child.title_ko }}{% endif %}{% endif %}</p>
       <h1>{{ page.title }}</h1>
       <p>{{ page.date | date: "%Y-%m-%d" }}{% if page.updated %} · {% if page.lang == 'en' %}updated{% else %}수정{% endif %} {{ page.updated | date: "%Y-%m-%d" }}{% endif %} · {{ page.author }}</p>
       {% if page.description %}<p class="page-heading__lead">{{ page.description }}</p>{% endif %}
     </header>
     <dl class="post-facts">
-      <div><dt>Series</dt><dd>{% if page.series %}<a href="{% if page.lang == 'en' %}{{ '/en/blog/series/' | append: page.series | append: '/' | relative_url }}{% else %}{{ '/blog/series/' | append: page.series | append: '/' | relative_url }}{% endif %}">{{ page.series }} · {{ page.series_order }}</a>{% else %}—{% endif %}</dd></div>
+      <div><dt>Series</dt><dd>{% if page.series %}<a href="{% if page.lang == 'en' %}{{ '/en/blog/series/' | append: page.series | append: '/' | relative_url }}{% else %}{{ '/blog/series/' | append: page.series | append: '/' | relative_url }}{% endif %}">{% if post_series %}{% if page.lang == 'en' %}{{ post_series.title_en }}{% else %}{{ post_series.title_ko }}{% endif %}{% else %}{{ page.series }}{% endif %} · {{ page.series_order }}</a>{% else %}—{% endif %}</dd></div>
       <div><dt>{% if page.lang == 'en' %}Type / level{% else %}유형 / 난이도{% endif %}</dt><dd>{{ page.post_type }} · {{ page.difficulty }}</dd></div>
       <div><dt>Tools</dt><dd>{{ page.tools | join: ', ' }}</dd></div>
     </dl>

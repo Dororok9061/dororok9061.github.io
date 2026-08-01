@@ -10,8 +10,8 @@ translation_key: dc-motor-cascaded-pi-field-weakening
 permalink: /en/blog/2026/08/01/dc-motor-cascaded-pi-field-weakening/
 alternate_url: /blog/2026/08/01/dc-motor-cascaded-pi-field-weakening/
 alternate_lang: ko
-primary_category: control-motor-power
-subcategory: dc-motor
+primary_category: major-foundations
+subcategory: motor-control
 series: dc-motor-control
 series_order: 1
 post_type: study-note

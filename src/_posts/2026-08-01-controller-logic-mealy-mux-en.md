@@ -10,8 +10,8 @@ translation_key: controller-logic-mealy-mux
 permalink: /en/blog/2026/08/01/controller-logic-mealy-mux/
 alternate_url: /blog/2026/08/01/controller-logic-mealy-mux/
 alternate_lang: ko
-primary_category: fpga-rtl-dv
-subcategory: fsm
+primary_category: major-foundations
+subcategory: controller-logic
 series: vhdl-foundations
 series_order: 7
 post_type: study-note
@@ -28,9 +28,9 @@ learning_objectives: [Mealy state transition, overlapping sequence detection, mu
 related_projects: [fpga-delay-logic]
 related_posts: [fpga-architecture-equivalence]
 tags: [vhdl, mealy-fsm, sequence-detector, multiplexer]
-cover_image: /assets/images/learning/coursework/controller-logic-mealy-mux.svg
-thumbnail: /assets/images/learning/coursework/controller-logic-mealy-mux.svg
-image_alt: Mealy 101 state diagram and 8-to-1 multiplexer selection map
+cover_image: /assets/images/study/coursework/controller-logic-waveform.webp
+thumbnail: /assets/images/study/coursework/controller-logic-waveform.webp
+image_alt: Vivado waveform showing Mealy 101 states and output for a 01010101 input
 draft: false
 revision_history:
   - { date: 2026-08-01, change: Written from the stored VHDL and testbench stimulus }
@@ -71,6 +71,8 @@ The transition path uses three states. <code>st0</code> has no useful prefix, <c
 ## Tracing 01010101 {#stimulus}
 
 The stored testbench deasserts reset and applies <code>01010101</code> at 20 ns intervals. Following the table by hand completes 101 at the fourth, sixth, and eighth input positions. I did not rerun GHDL or Vivado simulation while writing this note, so these are source-level expectations rather than a new waveform result.
+
+<figure><img src="{{ '/assets/images/study/coursework/controller-logic-waveform.webp' | relative_url }}" alt="Saved waveform showing 01010101 input, st0 st1 st2 states, and dout pulses" width="1200" height="514"><figcaption>I followed the saved input and state transitions together.</figcaption></figure>
 
 ## Writing a standalone MUX {#mux}
 
