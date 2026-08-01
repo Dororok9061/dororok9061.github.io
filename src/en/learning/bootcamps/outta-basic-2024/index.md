@@ -3,7 +3,7 @@ layout: learning
 mode: program
 program_id: outta-basic-2024
 title: 2024 OUTTA AI Bootcamp — Deep Learning Basic
-lead: I revisited the lecture files and my modified notebooks, then connected data handling, CNNs, RNNs, BERT, and the three projects.
+lead: I revisited the lecture files and my saved notebook copies, then connected data handling, CNNs, RNNs, BERT, and the three projects.
 description: Study notes connecting OUTTA Basic materials, saved notebook outputs, and local P1-P3 reruns.
 permalink: /en/learning/bootcamps/outta-basic-2024/
 lang: en
@@ -17,7 +17,7 @@ I reviewed all 16 PDFs in the archive: 530 pages covering preprocessing, Dataset
 
 ## Saved notebook outputs
 
-Fifteen modified notebooks retained 48 figures. I did not claim a fresh end-to-end run of every cell; the plots below are outputs saved in the notebooks.
+Fifteen saved notebook copies retained 48 figures. Some contain my code changes, but not every copy differs from its starter version. I did not claim a fresh end-to-end run of every cell; the plots below are outputs saved in the notebooks.
 
 <figure><img src="{{ '/assets/images/learning/outta/notebook-23.webp' | relative_url }}" alt="Ten sigmoid basis functions from the Universal Approximator notebook" width="1198" height="790" loading="lazy"><figcaption>Changing weights and biases shifts the position and slope of each sigmoid basis.</figcaption></figure>
 

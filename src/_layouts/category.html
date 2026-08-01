@@ -9,6 +9,7 @@ layout: default
   </ul></details>
   {% endif %}
   <div class="post-list">
+    {% assign matched_post_count = 0 %}
     {% assign category_posts = site.posts | where: 'lang', page.lang %}
     {% for post in category_posts %}
       {% assign category_match = false %}
@@ -16,7 +17,8 @@ layout: default
       {% if page.subcategory and post.subcategory != page.subcategory %}{% assign category_match = false %}{% endif %}
       {% if page.post_type and post.post_type == page.post_type %}{% assign category_match = true %}{% endif %}
       {% if page.category_slug and post.categories contains page.category_slug %}{% assign category_match = true %}{% endif %}
-      {% if category_match and post.draft != true %}<article><p class="post-card__meta">{{ post.updated | default: post.date | date: "%Y-%m-%d" }}{% if post.series %} · {{ post.series }} {{ post.series_order }}{% endif %}</p><h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2><p>{{ post.description | default: post.excerpt | strip_html }}</p></article>{% endif %}
+      {% if category_match and post.draft != true %}{% assign matched_post_count = matched_post_count | plus: 1 %}<article><p class="post-card__meta">{{ post.updated | default: post.date | date: "%Y-%m-%d" }}{% if post.series %} · {{ post.series }} {{ post.series_order }}{% endif %}</p><h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2><p>{{ post.description | default: post.excerpt | strip_html }}</p></article>{% endif %}
     {% endfor %}
+    {% if matched_post_count == 0 %}<p>{% if page.lang == 'en' %}This older category URL is kept for existing links. Continue from the <a href="{{ '/en/blog/categories/' | relative_url }}">current category index</a>.{% else %}기존 링크를 위해 이 카테고리 주소를 유지했습니다. <a href="{{ '/blog/categories/' | relative_url }}">현재 카테고리 목록</a>에서 이어서 볼 수 있습니다.{% endif %}</p>{% endif %}
   </div>
 </main>

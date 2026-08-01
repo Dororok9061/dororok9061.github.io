@@ -38,20 +38,30 @@ module StructuredBlog
         "categories" => ["전체 카테고리", "All Categories"]
       }
       pages.each do |mode, titles|
-        add(site, "blog/#{mode}", directory_data(mode, titles[0], "ko", "/en/blog/#{mode}/"))
-        add(site, "en/blog/#{mode}", directory_data(mode, titles[1], "en", "/blog/#{mode}/"))
+        %w[ko en].each do |lang|
+          prefix = lang == "en" ? "en/" : ""
+          alternate_prefix = lang == "en" ? "" : "en/"
+          data = directory_data(mode, titles[lang == "en" ? 1 : 0], lang)
+          data["category_ids"] = category_ids(site, lang) if mode == "categories"
+          data["roadmap_ids"] = roadmap_ids(site, lang) if mode == "roadmaps"
+          next if mode == "categories" && data["category_ids"].empty?
+          next if mode == "roadmaps" && data["roadmap_ids"].empty?
+
+          if directory_available?(site, mode, lang == "en" ? "ko" : "en")
+            add_alternate(data, "/#{alternate_prefix}blog/#{mode}/", lang == "en" ? "ko" : "en")
+          end
+          add(site, "#{prefix}blog/#{mode}", data)
+        end
       end
     end
 
-    def directory_data(mode, title, lang, alternate)
+    def directory_data(mode, title, lang)
       {
         "layout" => "blog-directory",
         "mode" => mode,
         "title" => title,
         "description" => title,
-        "lang" => lang,
-        "alternate_url" => alternate,
-        "alternate_lang" => lang == "en" ? "ko" : "en"
+        "lang" => lang
       }
     end
 
@@ -60,22 +70,22 @@ module StructuredBlog
         %w[ko en].each do |lang|
           prefix = lang == "en" ? "en/" : ""
           other_prefix = lang == "en" ? "" : "en/"
-          add(site, "#{prefix}blog/category/#{category['id']}", {
+          data = {
             "layout" => "category", "title" => category["title_#{lang}"],
             "description" => category["description_#{lang}"], "lang" => lang,
-            "primary_category" => category["id"], "category_data" => category,
-            "alternate_url" => "/#{other_prefix}blog/category/#{category['id']}/",
-            "alternate_lang" => lang == "en" ? "ko" : "en"
-          })
+            "primary_category" => category["id"], "category_data" => category
+          }
+          add_alternate(data, "/#{other_prefix}blog/category/#{category['id']}/", lang == "en" ? "ko" : "en")
+          add(site, "#{prefix}blog/category/#{category['id']}", data)
           Array(category["children"]).each do |child|
-            add(site, "#{prefix}blog/category/#{category['id']}/#{child['id']}", {
+            child_data = {
               "layout" => "category", "title" => child["title_#{lang}"],
               "description" => category["description_#{lang}"], "lang" => lang,
               "primary_category" => category["id"], "subcategory" => child["id"],
-              "category_data" => category, "child_data" => child,
-              "alternate_url" => "/#{other_prefix}blog/category/#{category['id']}/#{child['id']}/",
-              "alternate_lang" => lang == "en" ? "ko" : "en"
-            })
+              "category_data" => category, "child_data" => child
+            }
+            add_alternate(child_data, "/#{other_prefix}blog/category/#{category['id']}/#{child['id']}/", lang == "en" ? "ko" : "en")
+            add(site, "#{prefix}blog/category/#{category['id']}/#{child['id']}", child_data)
           end
         end
       end
@@ -83,26 +93,27 @@ module StructuredBlog
 
     def generate_roadmaps(site)
       Array(site.data["blog_roadmaps"]).each do |roadmap|
-        add(site, "blog/roadmaps/#{roadmap['id']}", {
-          "layout" => "roadmap", "roadmap_id" => roadmap["id"], "lang" => "ko",
-          "title" => roadmap["title_ko"], "description" => roadmap["goal_ko"],
-          "alternate_url" => "/en/blog/roadmaps/#{roadmap['id']}/", "alternate_lang" => "en"
-        })
-        add(site, "en/blog/roadmaps/#{roadmap['id']}", {
-          "layout" => "roadmap", "roadmap_id" => roadmap["id"], "lang" => "en",
-          "title" => roadmap["title_en"], "description" => roadmap["goal_en"],
-          "alternate_url" => "/blog/roadmaps/#{roadmap['id']}/", "alternate_lang" => "ko"
-        })
+        %w[ko en].each do |lang|
+          prefix = lang == "en" ? "en/" : ""
+          other_prefix = lang == "en" ? "" : "en/"
+          data = {
+            "layout" => "roadmap", "roadmap_id" => roadmap["id"], "lang" => lang,
+            "title" => roadmap["title_#{lang}"], "description" => roadmap["goal_#{lang}"]
+          }
+          add_alternate(data, "/#{other_prefix}blog/roadmaps/#{roadmap['id']}/", lang == "en" ? "ko" : "en")
+          add(site, "#{prefix}blog/roadmaps/#{roadmap['id']}", data)
+        end
       end
     end
 
     def generate_english_series(site)
       Array(site.data["blog_series"]).each do |series|
-        add(site, "en/blog/series/#{series['id']}", {
+        data = {
           "layout" => "series", "series_id" => series["id"], "lang" => "en",
-          "title" => series["title_en"], "description" => series["summary_en"],
-          "alternate_url" => "/blog/series/#{series['id']}/", "alternate_lang" => "ko"
-        })
+          "title" => series["title_en"], "description" => series["summary_en"]
+        }
+        add_alternate(data, "/blog/series/#{series['id']}/", "ko")
+        add(site, "en/blog/series/#{series['id']}", data)
       end
     end
 
@@ -114,5 +125,45 @@ module StructuredBlog
         })
       end
     end
+
+    def localized_posts(site, lang)
+      site.posts.docs.select { |post| post.data["lang"] == lang && post.data["draft"] != true }
+    end
+
+    def category_posts(site, lang, category_id, child_id = nil)
+      localized_posts(site, lang).select do |post|
+        post.data["primary_category"] == category_id && (!child_id || post.data["subcategory"] == child_id)
+      end
+    end
+
+    def series_posts(site, lang, series_id)
+      localized_posts(site, lang).select { |post| post.data["series"] == series_id }
+    end
+
+    def roadmap_posts(site, roadmap, lang)
+      series_ids = Array(roadmap["steps"]).map { |step| step["series"] }.compact.uniq
+      localized_posts(site, lang).select { |post| series_ids.include?(post.data["series"]) }
+    end
+
+    def category_ids(site, lang)
+      localized_posts(site, lang).map { |post| post.data["primary_category"] }.compact.uniq
+    end
+
+    def roadmap_ids(site, lang)
+      Array(site.data["blog_roadmaps"]).select { |roadmap| roadmap_posts(site, roadmap, lang).any? }.map { |roadmap| roadmap["id"] }
+    end
+
+    def directory_available?(site, mode, lang)
+      return category_ids(site, lang).any? if mode == "categories"
+      return roadmap_ids(site, lang).any? if mode == "roadmaps"
+
+      localized_posts(site, lang).any?
+    end
+
+    def add_alternate(data, url, lang)
+      data["alternate_url"] = url
+      data["alternate_lang"] = lang
+    end
+
   end
 end

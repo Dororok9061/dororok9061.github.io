@@ -45,7 +45,7 @@ image_alt: Coursework map connecting VHDL, power, control, RF, and sensor work t
 draft: false
 revision_history:
   - { date: 2026-07-31, change: Initial publication }
-  - { date: 2026-08-01, change: Added case table, publication workflow, and source-backed visual }
+  - { date: 2026-08-01, change: "Added case table, publication workflow, and source-backed visual" }
 toc:
   - { id: why, title: Why this distinction exists }
   - { id: definitions, title: Four provenance states }

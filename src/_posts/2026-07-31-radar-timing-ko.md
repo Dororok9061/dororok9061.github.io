@@ -35,7 +35,7 @@ image_alt: ECG, SCG와 BGT60TR13C FMCW Radar를 동시 취득한 실제 하드�
 draft: false
 revision_history:
   - { date: 2026-07-31, change: 최초 공개 }
-  - { date: 2026-08-01, change: acquisition architecture, phase·beat 과정, hardware와 waveform 근거 추가 }
+  - { date: 2026-08-01, change: "acquisition architecture, phase·beat 과정, hardware와 waveform 근거 추가" }
 toc:
   - { id: setup, title: 동시취득 System }
   - { id: phase, title: Radar Phase에서 Beat까지 }

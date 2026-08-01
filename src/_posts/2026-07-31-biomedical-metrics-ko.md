@@ -35,7 +35,7 @@ image_alt: PPG AFE와 STM32 취득에서 IBI HRV 전처리와 CNN 평가까지 �
 draft: false
 revision_history:
   - { date: 2026-07-31, change: 최초 공개 }
-  - { date: 2026-08-01, change: split, fold, preprocessing, confusion matrix와 실제 pipeline 추가 }
+  - { date: 2026-08-01, change: "split, fold, preprocessing, confusion matrix와 실제 pipeline 추가" }
 toc:
   - { id: question, title: 먼저 확인할 질문 }
   - { id: pipeline, title: PPG에서 분류까지의 Pipeline }

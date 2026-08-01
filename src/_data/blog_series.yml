@@ -19,7 +19,7 @@
     - { order: 4, title_ko: 3-to-8 Decoder, title_en: 3-to-8 Decoder, status: planned }
     - { order: 5, title_ko: Decoder 기반 8-to-1 MUX, title_en: Decoder-based 8-to-1 MUX, status: planned }
     - { order: 6, title_ko: 4-bit Bus MUX, title_en: 4-bit Bus MUX, status: planned }
-    - { order: 7, title_ko: Mealy 101 Sequence Detector, title_en: Mealy 101 Sequence Detector, status: planned }
+    - { order: 7, title_ko: Mealy 101 검출기와 8-to-1 MUX 소스 다시 읽기, title_en: Reading the Mealy 101 Detector and 8-to-1 MUX Sources, status: published, translation_key: controller-logic-mealy-mux, url_ko: /blog/2026/08/01/controller-logic-mealy-mux/, url_en: /en/blog/2026/08/01/controller-logic-mealy-mux/ }
     - { order: 8, title_ko: Universal Shift Register, title_en: Universal Shift Register, status: planned }
     - { order: 9, title_ko: GHDL Self-Checking Testbench, title_en: GHDL Self-Checking Testbench, status: planned }
 
@@ -50,7 +50,7 @@
       url_ko: /blog/2026/07/31/fpga-architecture-equivalence/
       url_en: /en/blog/2026/07/31/fpga-architecture-equivalence/
     - { order: 6, title_ko: File-Driven Verification, title_en: File-driven Verification, status: planned }
-    - { order: 7, title_ko: Quartus·ModelSim과 PPA 경계, title_en: Quartus, ModelSim, and PPA Boundary, status: planned }
+    - { order: 7, title_ko: Quartus·ModelSim과 PPA 경계, title_en: "Quartus, ModelSim, and PPA Boundary", status: planned }
 
 - id: stm32-sensor-acquisition
   order: 30
@@ -121,7 +121,7 @@
       translation_key: biomedical-metric-provenance
       url_ko: /blog/2026/07/31/biomedical-metric-provenance/
       url_en: /en/blog/2026/07/31/biomedical-metric-provenance/
-    - { order: 4, title_ko: Confusion Matrix·ROC·PR, title_en: Confusion Matrix, ROC, and PR, status: planned }
+    - { order: 4, title_ko: Confusion Matrix·ROC·PR, title_en: "Confusion Matrix, ROC, and PR", status: planned }
 
 - id: computer-vision
   order: 50
@@ -142,6 +142,27 @@
     - { order: 3, title_ko: Object Detection, title_en: Object Detection, status: planned }
     - { order: 4, title_ko: Segmentation과 Pose Estimation, title_en: Segmentation and Pose Estimation, status: planned }
     - { order: 5, title_ko: Vision Transformer와 ONNX, title_en: Vision Transformer and ONNX, status: planned }
+
+- id: outta-basic-2024
+  order: 55
+  title_ko: 2024 OUTTA AI 부트캠프 Basic
+  title_en: 2024 OUTTA AI Bootcamp Basic
+  summary_ko: 데이터 탐색과 자동미분부터 CNN, 언어모델, RNN, BERT까지 Notebook에 남은 코드와 출력으로 다시 공부합니다.
+  summary_en: My study sequence from data exploration and autodiff through CNNs, language models, RNNs, and BERT using the saved notebooks and outputs.
+  primary_category: ai-deep-learning
+  subcategory: machine-learning-basics
+  difficulty: beginner
+  prerequisites: [python]
+  tools: [Python, PyTorch, Hugging Face]
+  source_materials: [OUTTA Basic lecture PDFs, starter notebooks, my saved notebook copies, saved notebook outputs]
+  status: published
+  posts:
+    - { order: 1, title_ko: 데이터 탐색에서 자동미분과 선형회귀까지, title_en: From Data Exploration to Autodiff and Linear Regression, status: published, translation_key: outta-data-autodiff-regression, url_ko: /blog/2026/08/01/outta-data-autodiff-regression/, url_en: /en/blog/2026/08/01/outta-data-autodiff-regression/ }
+    - { order: 2, title_ko: 함수 근사와 비선형 분류를 신경망으로 이해하기, title_en: Function Approximation and Nonlinear Classification with Neural Networks, status: published, translation_key: outta-neural-network-classification, url_ko: /blog/2026/08/01/outta-neural-network-classification/, url_en: /en/blog/2026/08/01/outta-neural-network-classification/ }
+    - { order: 3, title_ko: PyTorch CNN과 손글씨 분류 오류 읽기, title_en: Reading PyTorch CNN and Handwritten Classification Errors, status: published, translation_key: outta-cnn-pytorch, url_ko: /blog/2026/08/01/outta-cnn-pytorch/, url_en: /en/blog/2026/08/01/outta-cnn-pytorch/ }
+    - { order: 4, title_ko: "기본 언어모델, Embedding과 Autoencoder 연결하기", title_en: "Connecting Basic Language Models, Embeddings, and Autoencoders", status: published, translation_key: outta-language-model-embedding, url_ko: /blog/2026/08/01/outta-language-model-embedding/, url_en: /en/blog/2026/08/01/outta-language-model-embedding/ }
+    - { order: 5, title_ko: RNN과 Seq2Seq에서 시간축 따라가기, title_en: Following the Time Axis in RNNs and Seq2Seq, status: published, translation_key: outta-rnn-seq2seq, url_ko: /blog/2026/08/01/outta-rnn-seq2seq/, url_en: /en/blog/2026/08/01/outta-rnn-seq2seq/ }
+    - { order: 6, title_ko: BERT·Hugging Face·Gemini를 안전하게 정리하기, title_en: "Studying BERT, Hugging Face, and Gemini Safely", status: published, translation_key: outta-bert-huggingface-gemini, url_ko: /blog/2026/08/01/outta-bert-huggingface-gemini/, url_en: /en/blog/2026/08/01/outta-bert-huggingface-gemini/ }
 
 - id: generative-ai
   order: 60
@@ -179,10 +200,10 @@
   posts:
     - { order: 1, title_ko: PADS Logic와 Layout 전체흐름, title_en: PADS Logic-to-Layout Workflow, status: planned }
     - { order: 2, title_ko: Part와 CAE Decal, title_en: Parts and CAE Decals, status: planned }
-    - { order: 3, title_ko: PCB Decal·Footprint, title_en: PCB Decals and Footprints, status: planned }
-    - { order: 4, title_ko: Schematic·Netlist·Packaging, title_en: Schematic, Netlist, and Packaging, status: planned }
-    - { order: 5, title_ko: Placement·Routing·Power Plane, title_en: Placement, Routing, and Power Planes, status: planned }
-    - { order: 6, title_ko: DRC·CAM·Gerber, title_en: DRC, CAM, and Gerber, status: planned }
+    - { order: 3, title_ko: SOIC Footprint와 PPG 회로를 별도 사례로 읽기, title_en: Reading an SOIC Footprint and a PPG Schematic as Separate Examples, status: published, translation_key: pads-footprint-ppg-schematic, url_ko: /blog/2026/08/01/pads-footprint-ppg-schematic/, url_en: /en/blog/2026/08/01/pads-footprint-ppg-schematic/ }
+    - { order: 4, title_ko: Schematic·Netlist·Packaging, title_en: "Schematic, Netlist, and Packaging", status: planned }
+    - { order: 5, title_ko: Placement·Routing·Power Plane, title_en: "Placement, Routing, and Power Planes", status: planned }
+    - { order: 6, title_ko: DRC·CAM·Gerber, title_en: "DRC, CAM, and Gerber", status: planned }
 
 - id: 2025-generative-models
   order: 65
@@ -218,7 +239,7 @@
   source_materials: [Motor-control coursework archive]
   status: planned
   posts:
-    - { order: 1, title_ko: DC Motor 모델과 H-Bridge, title_en: DC Motor Model and H-Bridge, status: planned }
+    - { order: 1, title_ko: PSIM에서 DC Motor 이중 PI 제어와 Field Weakening 정리, title_en: Cascaded PI Control and Field Weakening for a DC Motor in PSIM, status: published, translation_key: dc-motor-cascaded-pi-field-weakening, url_ko: /blog/2026/08/01/dc-motor-cascaded-pi-field-weakening/, url_en: /en/blog/2026/08/01/dc-motor-cascaded-pi-field-weakening/ }
     - { order: 2, title_ko: Current Loop와 Speed Loop, title_en: Current and Speed Loops, status: planned }
     - { order: 3, title_ko: Cascaded PI와 Saturation, title_en: Cascaded PI and Saturation, status: planned }
     - { order: 4, title_ko: Anti-Windup와 Field Weakening, title_en: Anti-Windup and Field Weakening, status: planned }
@@ -239,7 +260,7 @@
   posts:
     - { order: 1, title_ko: Transmission Line과 Characteristic Impedance, title_en: Transmission Lines and Characteristic Impedance, status: planned }
     - { order: 2, title_ko: Smith Chart와 Impedance Matching, title_en: Smith Chart and Impedance Matching, status: planned }
-    - { order: 3, title_ko: Microstrip와 S-parameter, title_en: Microstrip and S-parameters, status: planned }
+    - { order: 3, title_ko: 3.5 GHz Microstrip에서 Wilkinson·Branch-Line까지, title_en: From a 3.5 GHz Microstrip to Wilkinson and Branch-Line Networks, status: published, translation_key: rf-passive-microstrip-divider-hybrid, url_ko: /blog/2026/08/01/rf-passive-microstrip-divider-hybrid/, url_en: /en/blog/2026/08/01/rf-passive-microstrip-divider-hybrid/ }
     - { order: 4, title_ko: Wilkinson Divider, title_en: Wilkinson Divider, status: planned }
     - { order: 5, title_ko: Branch-Line Hybrid, title_en: Branch-Line Hybrid, status: planned }
 
@@ -268,7 +289,7 @@
       translation_key: radar-candidate-timing
       url_ko: /blog/2026/07/31/radar-candidate-timing/
       url_en: /en/blog/2026/07/31/radar-candidate-timing/
-    - { order: 5, title_ko: SQI·CTI와 Validation Boundary, title_en: SQI, CTI, and Validation Boundary, status: planned }
+    - { order: 5, title_ko: SQI·CTI와 Validation Boundary, title_en: "SQI, CTI, and Validation Boundary", status: planned }
 
 - id: engineering-record-provenance
   order: 110

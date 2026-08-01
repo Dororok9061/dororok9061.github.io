@@ -35,11 +35,11 @@ image_alt: Drowsiness-monitoring prototype assembled from Raspberry Pi boards, a
 draft: false
 revision_history:
   - { date: 2026-07-31, change: Initial publication }
-  - { date: 2026-08-01, change: Added node roles, data path, failure boundaries, and prototype images }
+  - { date: 2026-08-01, change: "Added node roles, data path, failure boundaries, and prototype images" }
 toc:
   - { id: goal, title: Why use two nodes }
   - { id: nodes, title: PPG and camera nodes }
-  - { id: path, title: Packet, file, GPIO, and I2C path }
+  - { id: path, title: "Packet, file, GPIO, and I2C path" }
   - { id: prototype, title: What the prototype proves }
   - { id: failures, title: Failures and unmeasured items }
   - { id: next, title: Next verification }

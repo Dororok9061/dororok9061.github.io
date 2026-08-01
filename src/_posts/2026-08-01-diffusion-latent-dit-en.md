@@ -35,7 +35,7 @@ thumbnail: /assets/images/learning/generative/diffusion.svg
 image_alt: Diffusion forward noise, reverse denoising, and latent-space flow
 draft: false
 revision_history:
-  - { date: 2026-08-01, change: Connected the DDPM, LDM, and DiT papers }
+  - { date: 2026-08-01, change: "Connected the DDPM, LDM, and DiT papers" }
 toc:
   - { id: forward, title: Forward process }
   - { id: reverse, title: Reverse process }

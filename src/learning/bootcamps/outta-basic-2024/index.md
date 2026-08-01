@@ -3,7 +3,7 @@ layout: learning
 mode: program
 program_id: outta-basic-2024
 title: 2024 OUTTA AI 부트캠프 딥러닝반 Basic
-lead: 강의자료와 내가 수정한 Notebook을 다시 열어 데이터 처리부터 CNN·RNN·BERT까지 학습 흐름을 정리했다.
+lead: 강의자료와 내가 저장한 Notebook 사본을 다시 열어 데이터 처리부터 CNN·RNN·BERT까지 학습 흐름을 정리했다.
 description: OUTTA Basic 강의자료, Notebook 출력, P1·P2·P3 재실행을 연결한 학습 기록.
 permalink: /learning/bootcamps/outta-basic-2024/
 lang: ko
@@ -23,7 +23,7 @@ alternate_lang: en
 
 ## Notebook에서 확인한 출력
 
-내가 수정한 Notebook 15개에는 48개의 그림 출력이 남아 있었다. 모든 Cell의 실행 순서를 현재 환경에서 다시 재현한 것은 아니므로, 아래 그림은 당시 저장된 출력으로 설명한다.
+내가 저장한 Notebook 사본 15개에는 48개의 그림 출력이 남아 있었다. 일부 사본에는 내가 고친 코드가 있지만 모두 수정본인 것은 아니다. 모든 Cell의 실행 순서를 현재 환경에서 다시 재현한 것은 아니므로, 아래 그림은 당시 저장된 출력으로 설명한다.
 
 <figure>
   <img src="{{ '/assets/images/learning/outta/notebook-23.webp' | relative_url }}" alt="Universal Approximator 실습에서 서로 다른 sigmoid 함수 열 개를 그린 결과" width="1198" height="790" loading="lazy">

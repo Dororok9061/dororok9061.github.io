@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Microstrip line, Wilkinson divider, and branch-line hybrid study map</title>
+  <desc id="desc">Left panel shows an alumina microstrip and an archived phase marker. Right panel compares Wilkinson and branch-line dimensions.</desc>
+  <rect width="1200" height="630" fill="#f7f6f2"/>
+  <rect x="48" y="66" width="528" height="506" rx="18" fill="#ffffff" stroke="#c9c5bd" stroke-width="2"/>
+  <rect x="624" y="66" width="528" height="506" rx="18" fill="#ffffff" stroke="#c9c5bd" stroke-width="2"/>
+  <text x="76" y="114" fill="#111111" font-family="system-ui,Segoe UI,Arial,sans-serif" font-size="27" font-weight="700">A. 50 Ω microstrip</text>
+  <text x="652" y="114" fill="#111111" font-family="system-ui,Segoe UI,Arial,sans-serif" font-size="27" font-weight="700">B. Passive RF networks</text>
+  <rect x="112" y="238" width="400" height="116" fill="#e9edf0" stroke="#68737b" stroke-width="2"/>
+  <rect x="152" y="208" width="320" height="30" rx="3" fill="#d38f32"/>
+  <rect x="112" y="354" width="400" height="24" fill="#b9824a"/>
+  <g fill="#5b554d" font-family="system-ui,Segoe UI,Arial,sans-serif" font-size="20">
+    <text x="112" y="188">Copper trace: W ≈ 0.4815 mm</text>
+    <text x="132" y="302">Alumina εr = 9.9, h = 0.5 mm</text>
+    <text x="112" y="414">L ≈ 24.97 mm for 270° at 3.5 GHz</text>
+  </g>
+  <rect x="112" y="458" width="400" height="72" rx="8" fill="#edf5fb" stroke="#1677a8" stroke-width="2"/>
+  <text x="132" y="488" fill="#111111" font-family="system-ui,Segoe UI,Arial,sans-serif" font-size="19">Stored marker at 3.7 GHz</text>
+  <text x="132" y="516" fill="#1677a8" font-family="system-ui,Segoe UI,Arial,sans-serif" font-size="21" font-weight="700">−0.095 dB · −284.49°</text>
+  <text x="662" y="158" fill="#5b554d" font-family="system-ui,Segoe UI,Arial,sans-serif" font-size="20">Wilkinson divider</text>
+  <path d="M680 226 H798 M798 226 L930 184 M798 226 L930 268" fill="none" stroke="#1677a8" stroke-width="10" stroke-linecap="round"/>
+  <line x1="930" y1="184" x2="930" y2="268" stroke="#d14f45" stroke-width="5"/>
+  <g fill="#111111" font-family="system-ui,Segoe UI,Arial,sans-serif" font-size="18">
+    <text x="700" y="210">50 Ω</text>
+    <text x="814" y="190">70.7 Ω branches</text>
+    <text x="950" y="232">94 Ω tuned R</text>
+    <text x="814" y="292">W 270 µm · L 6.65 mm</text>
+  </g>
+  <text x="662" y="344" fill="#5b554d" font-family="system-ui,Segoe UI,Arial,sans-serif" font-size="20">Branch-line quadrature hybrid</text>
+  <rect x="742" y="388" width="286" height="116" fill="none" stroke="#4c7b54" stroke-width="10"/>
+  <g fill="#111111" font-family="system-ui,Segoe UI,Arial,sans-serif" font-size="18">
+    <text x="748" y="374">Horizontal: 35.35 Ω · W 908 µm · L 7.0 mm</text>
+    <text x="748" y="534">Vertical: 50 Ω · W 483 µm · L 7.2 mm</text>
+  </g>
+  <g fill="#ffffff" stroke="#111111" stroke-width="2">
+    <circle cx="742" cy="388" r="12"/>
+    <circle cx="1028" cy="388" r="12"/>
+    <circle cx="742" cy="504" r="12"/>
+    <circle cx="1028" cy="504" r="12"/>
+  </g>
+</svg>

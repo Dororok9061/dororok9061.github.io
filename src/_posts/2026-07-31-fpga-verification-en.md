@@ -35,7 +35,7 @@ image_alt: FPGA delay logic progressing from a shift register to circular queue 
 draft: false
 revision_history:
   - { date: 2026-07-31, change: Initial publication }
-  - { date: 2026-08-01, change: Added interface contract, checker procedure, waveform, and 26 equivalence results }
+  - { date: 2026-08-01, change: "Added interface contract, checker procedure, waveform, and 26 equivalence results" }
 toc:
   - { id: problem, title: Comparison problem }
   - { id: contract, title: Shared interface contract }
