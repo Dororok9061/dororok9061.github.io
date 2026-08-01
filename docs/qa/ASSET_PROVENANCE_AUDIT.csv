@@ -11,5 +11,5 @@ course,electrical-machines,course-record,/coursework/electrical-machines/,/asset
 course,motor-control,course-record,/coursework/motor-control/,/assets/images/study/coursework/motor-control.webp,7ce3969fac8c,Torque-ripple comparison chart,DIRECT_SOURCE_DERIVATIVE
 course,embedded-systems,separated-course,/coursework/embedded-systems/,/assets/images/study/coursework/embedded-systems-source-map.svg,57c855076776,Self-authored course-study-research-prototype separation map,SELF_AUTHORED_SOURCE_MAP
 track,pads,engineering-track,/study/pads/,/assets/images/study/pads/pads-ppg-layout.webp,69b52cfceb3e,Saved PADS PPG schematic and placement screen,DIRECT_SOURCE_DERIVATIVE
-track,stm32,engineering-track,/study/stm32/,/assets/images/study/stm32/stm32f411-board-overview.webp,9064df624668,Nineteen stills and ninety-nine videos grouped into twenty board sets; rear identifiers excluded,GENERATED_PRIVACY_REVIEWED_OVERVIEW
+track,stm32,engineering-track,/study/stm32/,/assets/images/study/stm32/stm32-prototype-overview.webp,f6e0181a9621,Twenty-two saved NUCLEO-F411RE ECG and PPG prototype photographs,GENERATED_SOURCE_DERIVATIVE
 track,mmwave,engineering-track,/study/mmwave/,/assets/images/projects/radar-hardware.webp,245eb9cda46e,Existing radar acquisition hardware photograph,PROJECT_SOURCE_REUSED_IN_MATCHING_TRACK

@@ -49,8 +49,8 @@
   order: 30
   title_ko: STM32
   title_en: STM32
-  description_ko: STM32F411 보드 사진·영상, Cube 프로젝트와 CMSIS-DSP를 별도 실습 트랙으로 정리합니다.
-  description_en: A separate lab track for STM32F411 board media, Cube projects, and CMSIS-DSP.
+  description_ko: NUCLEO-F411RE 생체신호 prototype에서 ECG·PPG 회로, ADC·TIM1·USART2와 CMSIS-DSP 처리를 따라갑니다.
+  description_en: A NUCLEO-F411RE biosignal track covering ECG/PPG circuits, ADC, TIM1, USART2, and CMSIS-DSP processing.
   children:
     - { id: stm32-roadmap, title_ko: STM32 로드맵, title_en: STM32 Roadmap }
     - { id: cubemx-cubeide, title_ko: CubeMX·CubeIDE, title_en: CubeMX and CubeIDE }

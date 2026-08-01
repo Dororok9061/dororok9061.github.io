@@ -9,10 +9,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
-import io
 import json
-import subprocess
-import shutil
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -25,6 +22,15 @@ PADS_FILENAMES = (
     "스크린샷 2026-02-12 181422.png",
 )
 
+STM_PHOTO_EXPORTS = {
+    "nucleo-f411-board.webp": "KakaoTalk_20260801_161801523_01.jpg",
+    "prototype-electrodes.webp": "KakaoTalk_20260801_161730125_12.jpg",
+    "prototype-analog-front-end.webp": "KakaoTalk_20260801_161730125_14.jpg",
+    "prototype-adc-timer.webp": "KakaoTalk_20260801_161730125_15.jpg",
+    "prototype-status-led.webp": "KakaoTalk_20260801_161730125_21.jpg",
+    "prototype-powered.webp": "KakaoTalk_20260801_161801523.jpg",
+}
+
 
 def sha256(path: Path) -> str:
     digest = hashlib.sha256()
@@ -32,17 +38,6 @@ def sha256(path: Path) -> str:
         for block in iter(lambda: source.read(1024 * 1024), b""):
             digest.update(block)
     return digest.hexdigest()
-
-
-def find_ffmpeg() -> Path:
-    command = shutil.which("ffmpeg")
-    if command:
-        return Path(command)
-    packages = Path.home() / "AppData/Local/Microsoft/WinGet/Packages"
-    matches = sorted(packages.glob("Gyan.FFmpeg_*/ffmpeg-*/bin/ffmpeg.exe"))
-    if matches:
-        return matches[-1]
-    raise FileNotFoundError("ffmpeg executable not found; pass --ffmpeg")
 
 
 def font(size: int) -> ImageFont.FreeTypeFont | ImageFont.ImageFont:
@@ -85,17 +80,6 @@ def prepare_pads(source_root: Path, output_root: Path) -> list[dict[str, object]
     return outputs
 
 
-def video_frame(ffmpeg: Path, source: Path) -> Image.Image:
-    command = (
-        str(ffmpeg), "-v", "error", "-ss", "1", "-i", str(source),
-        "-frames:v", "1", "-vf", "scale=640:-2", "-f", "image2pipe",
-        "-vcodec", "mjpeg", "pipe:1",
-    )
-    result = subprocess.run(command, check=True, stdout=subprocess.PIPE)
-    with Image.open(io.BytesIO(result.stdout)) as frame:
-        return frame.convert("RGB")
-
-
 def labelled_tile(image: Image.Image, label: str, size: tuple[int, int]) -> Image.Image:
     width, height = size
     tile = Image.new("RGB", size, "#f7f7f5")
@@ -107,95 +91,68 @@ def labelled_tile(image: Image.Image, label: str, size: tuple[int, int]) -> Imag
     return tile
 
 
-def board_sheet(board: Path, ffmpeg: Path) -> tuple[Image.Image, list[dict[str, object]]]:
-    files = sorted(path for path in board.rglob("*") if path.is_file())
+def prepare_stm(source_root: Path, output_root: Path) -> tuple[list[dict[str, object]], list[Path]]:
+    photo_root = source_root / "ppg, ecg 회로"
+    photos = sorted(photo_root.glob("*.jpg"))
+    if len(photos) != 22:
+        raise RuntimeError(f"Expected 22 STM32 prototype photos, found {len(photos)}")
+
     records: list[dict[str, object]] = []
-    images: list[tuple[str, Image.Image]] = []
-    for source in files:
-        relative = source.relative_to(board.parent)
-        record: dict[str, object] = {
-            "path": relative.as_posix(),
-            "bytes": source.stat().st_size,
-            "sha256": sha256(source),
-        }
-        if any(part.startswith("뒤") for part in relative.parts):
-            record["used_as"] = "hashed only; rear-side identifiers withheld"
-            records.append(record)
-            continue
-        if source.suffix.lower() == ".jpg":
-            with Image.open(source) as raw:
-                images.append(("still photo", ImageOps.exif_transpose(raw).convert("RGB")))
-            record["used_as"] = "still photo"
-        elif source.suffix.lower() == ".mp4":
-            frame = video_frame(ffmpeg, source)
-            label = source.parent.name.replace("_", " ")
-            images.append((label, frame))
-            record["used_as"] = "frame at 1 second"
-        else:
-            record["used_as"] = "manifest only"
-        records.append(record)
+    outputs: list[Path] = []
+    selected = set(STM_PHOTO_EXPORTS.values())
+    for source in photos:
+        records.append(
+            {
+                "path": source.relative_to(source_root).as_posix(),
+                "bytes": source.stat().st_size,
+                "sha256": sha256(source),
+                "used_as": "overview and detail" if source.name in selected else "overview",
+            }
+        )
 
-    if not images:
-        raise RuntimeError(f"No image sources in {board}")
-    cell = (480, 304)
-    columns = 3
-    rows = (len(images) + columns - 1) // columns
-    canvas = Image.new("RGB", (columns * cell[0], rows * cell[1] + 54), "#ececea")
-    draw = ImageDraw.Draw(canvas)
-    draw.rectangle((0, 0, canvas.width, 54), fill="#ffffff")
-    draw.text((18, 14), f"STM32F411 board set · {board.name}", fill="#081526", font=font(23))
-    for index, (label, image) in enumerate(images):
-        x = (index % columns) * cell[0]
-        y = 54 + (index // columns) * cell[1]
-        canvas.paste(labelled_tile(image, label, cell), (x, y))
-    return canvas, records
-
-
-def prepare_stm(source_root: Path, output_root: Path, ffmpeg: Path) -> tuple[list[dict[str, object]], list[Path]]:
-    records: list[dict[str, object]] = []
-    board_outputs: list[Path] = []
-    overview_images: list[tuple[str, Image.Image]] = []
-    boards = sorted((path for path in source_root.iterdir() if path.is_dir()), key=lambda p: int(p.name.split("_")[-1]))
-    for board in boards:
-        sheet, board_records = board_sheet(board, ffmpeg)
-        destination = output_root / f"{board.name}-contact-sheet.webp"
-        save_webp(sheet, destination, quality=76)
-        board_outputs.append(destination)
-        records.extend(board_records)
-        overview_images.append((board.name.upper(), sheet.crop((0, 54, sheet.width, sheet.height))))
-
-    cell = (360, 230)
-    columns = 4
-    rows = (len(overview_images) + columns - 1) // columns
-    overview = Image.new("RGB", (columns * cell[0], rows * cell[1] + 70), "#ececea")
+    cell = (256, 188)
+    columns = 6
+    overview = Image.new("RGB", (1600, 900), "#ececea")
     draw = ImageDraw.Draw(overview)
-    draw.rectangle((0, 0, overview.width, 70), fill="#ffffff")
-    draw.text((22, 17), "STM32F411 inspection archive · 20 board views", fill="#081526", font=font(27))
-    for index, (label, image) in enumerate(overview_images):
-        x = (index % columns) * cell[0]
-        y = 70 + (index // columns) * cell[1]
-        overview.paste(labelled_tile(image, label, cell), (x, y))
-    overview_path = output_root / "stm32f411-board-overview.webp"
+    draw.rectangle((0, 0, overview.width, 88), fill="#ffffff")
+    draw.text((28, 22), "STM32F411 ECG · PPG prototype · 22 source photos", fill="#081526", font=font(30))
+    for index, source in enumerate(photos):
+        with Image.open(source) as raw:
+            image = ImageOps.exif_transpose(raw).convert("RGB")
+            tile = ImageOps.fit(image, cell, Image.Resampling.LANCZOS)
+        x = 24 + (index % columns) * cell[0]
+        y = 104 + (index // columns) * cell[1]
+        overview.paste(tile, (x, y))
+    overview_path = output_root / "stm32-prototype-overview.webp"
     save_webp(overview, overview_path, quality=78)
-    board_outputs.append(overview_path)
-    return records, board_outputs
+    outputs.append(overview_path)
+
+    for output_name, source_name in STM_PHOTO_EXPORTS.items():
+        source = photo_root / source_name
+        if not source.is_file():
+            raise FileNotFoundError(source)
+        with Image.open(source) as raw:
+            image = ImageOps.exif_transpose(raw).convert("RGB")
+            image.thumbnail((1180, 680), Image.Resampling.LANCZOS)
+            canvas = Image.new("RGB", (1280, 720), "#f7f7f5")
+            canvas.paste(image, ((1280 - image.width) // 2, (720 - image.height) // 2))
+        destination = output_root / output_name
+        save_webp(canvas, destination, quality=80)
+        outputs.append(destination)
+    return records, outputs
 
 
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--repo", type=Path, default=Path(__file__).resolve().parents[2])
     parser.add_argument("--pads-root", type=Path, default=Path("D:/Codex/private-master/pads/2026/사진"))
-    parser.add_argument("--stm-root", type=Path, default=Path("D:/OneDrive-migration-staging/단국대/pcb/stm"))
-    parser.add_argument("--ffmpeg", type=Path)
+    parser.add_argument("--stm-root", type=Path, default=Path("D:/Codex/private-master/stm/2026"))
     parser.add_argument("--manifest-dir", type=Path, default=Path("D:/Codex/private-master/manifests"))
     args = parser.parse_args()
 
-    ffmpeg = args.ffmpeg or find_ffmpeg()
-    if not ffmpeg.is_file():
-        raise FileNotFoundError(ffmpeg)
     image_root = args.repo / "src" / "assets" / "images" / "study"
     pads_outputs = prepare_pads(args.pads_root, image_root / "pads")
-    stm_records, stm_outputs = prepare_stm(args.stm_root, image_root / "stm32", ffmpeg)
+    stm_records, stm_outputs = prepare_stm(args.stm_root, image_root / "stm32")
 
     manifest = {
         "generated_at": datetime.now(timezone.utc).isoformat(),

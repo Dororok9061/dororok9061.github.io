@@ -24,9 +24,9 @@ No contextual project or cross-course visual remains as a primary coursework cov
 
 ## STM32 boundary
 
-The source archive contains nineteen still photos and ninety-nine videos grouped as twenty board sets. Public sheets contain front, side, and close views. Rear views showing QR codes or serial numbers remain outside public sheets. F411_1 has four public panels and F411_20 has three.
+The earlier STM32 route incorrectly reused a PCB-inspection asset family. Those inspection images and descriptions are no longer referenced by STM32 pages.
 
-The overview represents all twenty sets. Eight track pages link eight primary derivatives; the remaining per-board sheets are retained as supporting derivatives rather than unrelated course covers.
+The corrected track uses twenty-two prototype photographs, a forty-slide setup deck, a three-page KiCad schematic, and the saved CubeIDE/firmware archive. Eight track pages connect the NUCLEO-F411RE hardware, ECG/PPG analog front end, ADC/TIM1/USART2 path, CMSIS-DSP filters, and peak/HRV code. Photographs confirm the physical prototype only; they are not presented as measured waveform quality or accuracy evidence.
 
 ## Regression commands
 

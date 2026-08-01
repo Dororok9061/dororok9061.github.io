@@ -29,11 +29,12 @@
   goal_en: From peripheral configuration to timing-aware sensor acquisition.
   prerequisites_ko: C, 디지털논리, 기초 회로
   prerequisites_en: C, digital logic, and basic circuits
-  source_status: SOURCE_AVAILABLE
+  source_status: SOURCE_REVIEWED
   steps:
-    - { title_ko: Clock·GPIO·Interrupt, title_en: Clock, GPIO, and Interrupts, status: planned }
-    - { title_ko: ADC·Timer·UART·DMA, title_en: ADC, Timers, UART, and DMA, status: planned }
-    - { title_ko: Sensor Acquisition·CMSIS-DSP, title_en: Sensor Acquisition and CMSIS-DSP, status: planned }
+    - { title_ko: MCU 전원·Clock·Pinout, title_en: MCU Power, Clock, and Pinout, status: published }
+    - { title_ko: ECG·PPG Analog Front End, title_en: ECG and PPG Analog Front End, status: published }
+    - { title_ko: ADC·TIM1·USART2, title_en: ADC, TIM1, and USART2, status: published }
+    - { title_ko: CMSIS-DSP·Peak·HRV, title_en: CMSIS-DSP, Peak, and HRV, status: published }
 - id: ai
   title_ko: AI · Vision · Generative AI 로드맵
   title_en: AI, Vision, and Generative AI Roadmap

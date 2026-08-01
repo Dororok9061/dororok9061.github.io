@@ -1210,12 +1210,12 @@
   sequence_note_en: This URL is reserved for university coursework; board study and research projects continue on their own pages below.
   units: []
   separate_links:
-    - title_ko: STM32F411 보드와 개발환경 공부
-      title_en: STM32F411 board and development study
+    - title_ko: STM32F411 생체신호 취득과 firmware 공부
+      title_en: STM32F411 biosignal acquisition and firmware study
       url_ko: /study/stm32/
       url_en: /en/study/stm32/
-      note_ko: 보드 20세트의 사진·영상과 CubeF4·CMSIS-DSP 흐름
-      note_en: Twenty board sets, CubeF4, and CMSIS-DSP
+      note_ko: NUCLEO-F411RE, ECG·PPG 회로, ADC·TIM1·USART2와 CMSIS-DSP
+      note_en: NUCLEO-F411RE, ECG/PPG circuits, ADC, TIM1, USART2, and CMSIS-DSP
     - title_ko: 연구용 FMCW Radar 취득 장치
       title_en: Research FMCW radar acquisition
       url_ko: /projects/fmcw-radar/
