@@ -3,7 +3,7 @@ import re
 
 from _common import SRC, fail, post_records
 
-REQUIRED = {"title", "description", "date", "updated", "lang", "translation_key", "alternate_url", "primary_category", "subcategory", "series", "series_order", "post_type", "difficulty", "study_status", "evidence_status", "tools", "source_materials", "related_projects", "tags", "draft", "revision_history", "toc"}
+REQUIRED = {"title", "description", "date", "updated", "lang", "translation_key", "alternate_url", "primary_category", "subcategory", "series", "series_order", "post_type", "difficulty", "study_status", "evidence_status", "tools", "source_materials", "related_projects", "tags", "thumbnail", "cover_image", "image_alt", "draft", "revision_history", "toc"}
 TYPES = {"concept", "study-note", "tutorial", "lab", "project-log", "troubleshooting", "paper-review", "tool-guide", "retrospective", "methodology"}
 
 

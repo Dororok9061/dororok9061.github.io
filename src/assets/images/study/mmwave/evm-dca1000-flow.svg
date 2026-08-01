@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">EVM and DCA1000 data path</title><desc id="desc">Control UART and raw LVDS paths from a radar EVM to host software.</desc>
+  <rect width="1200" height="675" fill="#f7f7f5"/><g font-family="Arial, sans-serif" fill="#081526"><text x="70" y="92" font-size="44" font-weight="700">mmWave capture path</text>
+  <g stroke="#1782b8" stroke-width="5" fill="#fff"><rect x="70" y="220" width="240" height="180" rx="18"/><rect x="470" y="220" width="240" height="180" rx="18"/><rect x="870" y="220" width="240" height="180" rx="18"/></g>
+  <g font-size="28" font-weight="700" text-anchor="middle"><text x="190" y="300">Radar EVM</text><text x="590" y="300">DCA1000</text><text x="990" y="300">Host PC</text></g>
+  <g font-size="21" text-anchor="middle"><text x="190" y="340">chirp + ADC</text><text x="590" y="340">packet capture</text><text x="990" y="340">file + analysis</text></g>
+  <g stroke="#ff5a67" stroke-width="7" fill="none"><path d="M310 275H470"/><path d="M710 275H870"/></g><g fill="#ff5a67"><path d="M470 275l-24-14v28z"/><path d="M870 275l-24-14v28z"/></g>
+  <g font-size="20" text-anchor="middle"><text x="390" y="250">raw LVDS</text><text x="790" y="250">Ethernet</text></g>
+  <path d="M190 430v110h800V430" fill="none" stroke="#1782b8" stroke-width="5" stroke-dasharray="12 10"/><text x="590" y="585" font-size="23" text-anchor="middle">configuration and control use a separate UART path</text></g>
+</svg>

@@ -4,8 +4,8 @@
   title_en: VHDL Digital Logic Foundations
   summary_ko: 조합·순차회로와 self-checking testbench를 작은 설계 단위로 학습합니다.
   summary_en: Small combinational and sequential designs leading to self-checking testbenches.
-  primary_category: fpga-rtl-dv
-  subcategory: vhdl
+  primary_category: major-foundations
+  subcategory: controller-logic
   difficulty: beginner
   prerequisites: [digital-logic]
   tools: [VHDL, Vivado, GHDL]
@@ -80,8 +80,8 @@
   title_en: Embedded Integration and Data Paths
   summary_ko: 분리된 sensing·analysis node의 통신과 출력 경계를 실제 prototype으로 기록합니다.
   summary_en: Documents communication and output boundaries in a physical two-node prototype.
-  primary_category: stm32-embedded
-  subcategory: embedded-network
+  primary_category: major-foundations
+  subcategory: embedded-systems
   difficulty: intermediate
   prerequisites: [gpio, i2c, embedded-network]
   tools: [Raspberry Pi, C++, TCP/IP, GPIO, I2C]
@@ -231,8 +231,8 @@
   title_en: DC Motor Control
   summary_ko: 모델, H-Bridge, 전류·속도 이중루프와 saturation 경계를 연결합니다.
   summary_en: Connects the motor model, H-bridge, cascaded current/speed loops, and saturation boundaries.
-  primary_category: control-motor-power
-  subcategory: dc-motor
+  primary_category: major-foundations
+  subcategory: motor-control
   difficulty: intermediate
   prerequisites: [control-theory, pid-pi]
   tools: [MATLAB, PSIM]
@@ -250,8 +250,8 @@
   title_en: RF and Microwave
   summary_ko: 전송선과 정합에서 Wilkinson·Branch-Line 회로의 기존 Cadence 결과까지 연결합니다.
   summary_en: From transmission lines and matching to archived Cadence results for Wilkinson and branch-line circuits.
-  primary_category: rf-radar-signal
-  subcategory: s-parameter
+  primary_category: major-foundations
+  subcategory: high-frequency-engineering
   difficulty: intermediate
   prerequisites: [rf-foundations, electromagnetics]
   tools: [Cadence Virtuoso, Smith Chart]

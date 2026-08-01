@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">mmWave visualizer connection flow</title><desc id="desc">A configuration port sends parameters and a data port receives processed streams for plots.</desc><rect width="1200" height="675" fill="#f7f7f5"/>
+  <g font-family="Arial, sans-serif" fill="#081526"><text x="70" y="90" font-size="42" font-weight="700">Visualizer connection</text><rect x="80" y="200" width="280" height="255" rx="18" fill="#fff" stroke="#1782b8" stroke-width="4"/><rect x="840" y="200" width="280" height="255" rx="18" fill="#fff" stroke="#1782b8" stroke-width="4"/>
+  <text x="220" y="280" text-anchor="middle" font-size="29" font-weight="700">Radar EVM</text><text x="980" y="280" text-anchor="middle" font-size="29" font-weight="700">Visualizer</text><text x="980" y="330" text-anchor="middle" font-size="20">XY · range · Doppler</text><text x="980" y="365" text-anchor="middle" font-size="20">point cloud · heatmap</text>
+  <path d="M360 270H840" stroke="#ff5a67" stroke-width="7"/><path d="M840 270l-25-14v28z" fill="#ff5a67"/><text x="600" y="245" text-anchor="middle" font-size="21">Data COM · processed stream</text>
+  <path d="M840 400H360" stroke="#1782b8" stroke-width="7"/><path d="M360 400l25-14v28z" fill="#1782b8"/><text x="600" y="445" text-anchor="middle" font-size="21">CFG COM · configuration commands</text></g>
+</svg>

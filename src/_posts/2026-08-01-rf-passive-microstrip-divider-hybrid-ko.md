@@ -10,8 +10,8 @@ translation_key: rf-passive-microstrip-divider-hybrid
 permalink: /blog/2026/08/01/rf-passive-microstrip-divider-hybrid/
 alternate_url: /en/blog/2026/08/01/rf-passive-microstrip-divider-hybrid/
 alternate_lang: en
-primary_category: rf-radar-signal
-subcategory: s-parameter
+primary_category: major-foundations
+subcategory: high-frequency-engineering
 series: rf-microwave
 series_order: 3
 post_type: study-note
@@ -28,9 +28,9 @@ learning_objectives: [microstrip dimensions, insertion loss and phase, divider a
 related_projects: []
 related_posts: [radar-candidate-timing]
 tags: [microstrip, cadence-virtuoso, wilkinson-divider, branch-line-hybrid]
-cover_image: /assets/images/learning/coursework/rf-passive-microstrip-divider-hybrid.svg
-thumbnail: /assets/images/learning/coursework/rf-passive-microstrip-divider-hybrid.svg
-image_alt: 50옴 microstrip 단면과 Wilkinson divider, branch-line hybrid 치수
+cover_image: /assets/images/study/coursework/high-frequency-wilkinson.webp
+thumbnail: /assets/images/study/coursework/high-frequency-wilkinson.webp
+image_alt: 3.5 GHz 부근의 Wilkinson divider S-parameter Cadence 결과 화면
 draft: false
 revision_history:
   - { date: 2026-08-01, change: 과제 계산과 저장된 Cadence 화면의 수치를 함께 정리 }
@@ -78,6 +78,8 @@ toc:
 
 동일 분배 Wilkinson의 두 λ/4 branch는 이론상 약 70.7 Ω이다. 저장된 설계에서는 저항을 100 Ω에서 94 Ω로 조정했고, branch 폭 270 µm와 길이 6.65 mm를 사용했다. 화면에서 S21과 S31은 약 −3 dB, S11은 약 −15 dB 수준이었다. 나는 이 수치를 완벽한 정합이라고 부르기보다 중심주파수와 notch 위치를 다시 확인해야 하는 simulation 결과로 읽었다.
 
+<figure><img src="{{ '/assets/images/study/coursework/high-frequency-wilkinson.webp' | relative_url }}" alt="S11과 S21, S31, S23 곡선이 표시된 Wilkinson divider Cadence 화면" width="980" height="784"><figcaption>저장된 S-parameter 화면에서 분배와 정합 marker를 함께 읽었다.</figcaption></figure>
+
 <figure>
   <table>
     <thead><tr><th>회로</th><th>전송선</th><th>저장된 화면에서 읽은 값</th></tr></thead>
@@ -92,6 +94,8 @@ toc:
 ## Branch-Line hybrid {#hybrid}
 
 Quadrature hybrid는 위아래 수평선에 35.35 Ω, 좌우 수직선에 50 Ω를 배치한 사각형 구조였다. 저장된 치수는 수평선 W 908 µm, L 7.0 mm, 수직선 W 483 µm, L 7.2 mm였다. 두 종류의 선폭을 바꿔 그리면 왜 네 변이 같은 임피던스가 아닌지 바로 보였다.
+
+<figure><img src="{{ '/assets/images/study/coursework/high-frequency-hybrid.webp' | relative_url }}" alt="네 개 port와 서로 다른 폭의 수평·수직 microstrip으로 구성한 branch-line hybrid 회로" width="980" height="657"><figcaption>직접 저장한 Cadence 회로 화면에서 port와 네 선로의 배치를 확인했다.</figcaption></figure>
 
 ## Simulation으로만 해석 {#interpretation}
 

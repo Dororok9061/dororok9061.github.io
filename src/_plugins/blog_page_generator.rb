@@ -16,6 +16,8 @@ module StructuredBlog
     def generate(site)
       generate_directories(site)
       generate_categories(site)
+      generate_coursework(site)
+      generate_engineering_tracks(site)
       generate_roadmaps(site)
       generate_english_series(site)
       generate_types(site)
@@ -68,21 +70,32 @@ module StructuredBlog
     def generate_categories(site)
       Array(site.data["blog_taxonomy"]).each do |category|
         %w[ko en].each do |lang|
+          parent_posts = category_posts(site, lang, category["id"])
+          track = Array(site.data["engineering_tracks"]).find { |item| item["category_id"] == category["id"] }
+          courses = category["id"] == "major-foundations" ? Array(site.data["coursework_courses"]) : []
+          next if parent_posts.empty? && !track && courses.empty?
+
           prefix = lang == "en" ? "en/" : ""
           other_prefix = lang == "en" ? "" : "en/"
           data = {
             "layout" => "category", "title" => category["title_#{lang}"],
             "description" => category["description_#{lang}"], "lang" => lang,
-            "primary_category" => category["id"], "category_data" => category
+            "primary_category" => category["id"], "category_data" => category,
+            "track_data" => track, "coursework_courses" => courses
           }
           add_alternate(data, "/#{other_prefix}blog/category/#{category['id']}/", lang == "en" ? "ko" : "en")
           add(site, "#{prefix}blog/category/#{category['id']}", data)
           Array(category["children"]).each do |child|
+            posts = category_posts(site, lang, category["id"], child["id"])
+            course = courses.find { |item| item["id"] == child["id"] }
+            next if posts.empty? && !course
+
             child_data = {
               "layout" => "category", "title" => child["title_#{lang}"],
               "description" => category["description_#{lang}"], "lang" => lang,
               "primary_category" => category["id"], "subcategory" => child["id"],
-              "category_data" => category, "child_data" => child
+              "category_data" => category, "child_data" => child,
+              "course_data" => course
             }
             add_alternate(child_data, "/#{other_prefix}blog/category/#{category['id']}/#{child['id']}/", lang == "en" ? "ko" : "en")
             add(site, "#{prefix}blog/category/#{category['id']}/#{child['id']}", child_data)
@@ -102,6 +115,63 @@ module StructuredBlog
           }
           add_alternate(data, "/#{other_prefix}blog/roadmaps/#{roadmap['id']}/", lang == "en" ? "ko" : "en")
           add(site, "#{prefix}blog/roadmaps/#{roadmap['id']}", data)
+        end
+      end
+    end
+
+    def generate_coursework(site)
+      Array(site.data["coursework_courses"]).each do |course|
+        %w[ko en].each do |lang|
+          prefix = lang == "en" ? "en/" : ""
+          other_prefix = lang == "en" ? "" : "en/"
+          course_dir = "#{prefix}coursework/#{course['id']}"
+          data = {
+            "layout" => "coursework-course", "lang" => lang,
+            "title" => course["title_#{lang}"], "description" => course["summary_#{lang}"],
+            "course_data" => course, "image" => course["thumbnail"]
+          }
+          add_alternate(data, "/#{other_prefix}coursework/#{course['id']}/", lang == "en" ? "ko" : "en")
+          add(site, course_dir, data)
+
+          Array(course["units"]).each do |unit|
+            unit_slug = format("week-%02d-%s", unit["order"], unit["slug"])
+            unit_data = {
+              "layout" => "coursework-unit", "lang" => lang,
+              "title" => unit["title_#{lang}"],
+              "description" => course["summary_#{lang}"],
+              "course_data" => course, "unit_data" => unit,
+              "image" => course["thumbnail"]
+            }
+            add_alternate(unit_data, "/#{other_prefix}coursework/#{course['id']}/#{unit_slug}/", lang == "en" ? "ko" : "en")
+            add(site, "#{course_dir}/#{unit_slug}", unit_data)
+          end
+        end
+      end
+    end
+
+    def generate_engineering_tracks(site)
+      Array(site.data["engineering_tracks"]).each do |track|
+        %w[ko en].each do |lang|
+          prefix = lang == "en" ? "en/" : ""
+          other_prefix = lang == "en" ? "" : "en/"
+          track_dir = "#{prefix}study/#{track['id']}"
+          data = {
+            "layout" => "engineering-track", "lang" => lang,
+            "title" => track["title_#{lang}"], "description" => track["summary_#{lang}"],
+            "track_data" => track, "image" => track["thumbnail"]
+          }
+          add_alternate(data, "/#{other_prefix}study/#{track['id']}/", lang == "en" ? "ko" : "en")
+          add(site, track_dir, data)
+
+          Array(track["units"]).each do |unit|
+            unit_data = {
+              "layout" => "engineering-unit", "lang" => lang,
+              "title" => unit["title_#{lang}"], "description" => unit["body_#{lang}"],
+              "track_data" => track, "unit_data" => unit, "image" => unit["image"]
+            }
+            add_alternate(unit_data, "/#{other_prefix}study/#{track['id']}/#{unit['slug']}/", lang == "en" ? "ko" : "en")
+            add(site, "#{track_dir}/#{unit['slug']}", unit_data)
+          end
         end
       end
     end
@@ -146,7 +216,10 @@ module StructuredBlog
     end
 
     def category_ids(site, lang)
-      localized_posts(site, lang).map { |post| post.data["primary_category"] }.compact.uniq
+      ids = localized_posts(site, lang).map { |post| post.data["primary_category"] }.compact
+      ids.concat(Array(site.data["engineering_tracks"]).map { |track| track["category_id"] })
+      ids << "major-foundations" if Array(site.data["coursework_courses"]).any?
+      ids.uniq
     end
 
     def roadmap_ids(site, lang)

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">People tracking processing flow</title><desc id="desc">Detection points pass through association and state tracking to counting.</desc><rect width="1200" height="675" fill="#081526"/>
+  <g font-family="Arial, sans-serif"><text x="70" y="92" fill="#fff" font-size="43" font-weight="700">Detection → tracking → counting</text>
+  <g fill="#10243d" stroke="#55d6ff" stroke-width="3"><rect x="55" y="230" width="220" height="175" rx="18"/><rect x="345" y="230" width="220" height="175" rx="18"/><rect x="635" y="230" width="220" height="175" rx="18"/><rect x="925" y="230" width="220" height="175" rx="18"/></g>
+  <g fill="#fff" font-size="25" font-weight="700" text-anchor="middle"><text x="165" y="300">Detection</text><text x="455" y="300">Point cloud</text><text x="745" y="300">Association</text><text x="1035" y="300">Track state</text></g>
+  <g fill="#a9c0d8" font-size="18" text-anchor="middle"><text x="165" y="340">range · Doppler · angle</text><text x="455" y="340">x · y · velocity</text><text x="745" y="340">gate · allocate · update</text><text x="1035" y="340">position · count</text></g>
+  <g stroke="#ff7085" stroke-width="7" fill="#ff7085"><path d="M275 318H345"/><path d="M565 318H635"/><path d="M855 318H925"/><path d="M345 318l-22-13v26z"/><path d="M635 318l-22-13v26z"/><path d="M925 318l-22-13v26z"/></g><text x="600" y="520" fill="#55d6ff" font-size="23" text-anchor="middle">Tune thresholds and tracker parameters against the scene</text></g>
+</svg>

@@ -59,6 +59,7 @@ jobs:
           python3 scripts/blog/check_blog_copy_style.py
           python3 scripts/blog/check_human_study_voice.py src _site
           python3 scripts/blog/check_post_depth.py
+          python3 scripts/blog/validate_study_hubs.py _site
 
       - name: Validate external learning publication boundaries
         run: |

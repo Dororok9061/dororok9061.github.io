@@ -1,20 +1,21 @@
 - id: major-foundations
   order: 10
-  title_ko: 전공 기초
-  title_en: Major Foundations
-  description_ko: 회로·신호·제어·전자기·전기기기·센서의 기초를 연결합니다.
-  description_en: Foundations in circuits, signals, control, electromagnetics, machines, and sensors.
+  title_ko: 전공공부
+  title_en: Electrical Engineering Coursework
+  description_ko: 전공과목을 서로 합치지 않고 과목별 허브와 12개 학습 단위로 정리합니다.
+  description_en: Separate course hubs with twelve study units for each electrical-engineering subject.
   children:
-    - { id: circuit-theory, title_ko: 회로이론, title_en: Circuit Theory }
-    - { id: electronic-circuits, title_ko: 전자회로, title_en: Electronic Circuits }
-    - { id: digital-logic, title_ko: 디지털논리, title_en: Digital Logic }
-    - { id: signals-and-systems, title_ko: 신호 및 시스템, title_en: Signals and Systems }
-    - { id: control-theory, title_ko: 제어공학, title_en: Control Theory }
-    - { id: electromagnetics, title_ko: 전자기학, title_en: Electromagnetics }
+    - { id: controller-logic, title_ko: 컨트롤로직설계, title_en: Controller Logic Design }
+    - { id: electronic-circuits-1, title_ko: 전자회로1, title_en: Electronic Circuits I }
+    - { id: electronic-circuits-2, title_ko: 전자회로2, title_en: Electronic Circuits II }
+    - { id: digital-communications, title_ko: 디지털 통신, title_en: Digital Communications }
+    - { id: automatic-control, title_ko: 자동제어, title_en: Automatic Control }
+    - { id: applied-control, title_ko: 제어공학 응용, title_en: Applied Control Engineering }
+    - { id: high-frequency-engineering, title_ko: 고주파공학, title_en: High-Frequency Engineering }
+    - { id: power-electronics, title_ko: 전력전자, title_en: Power Electronics }
     - { id: electrical-machines, title_ko: 전기기기, title_en: Electrical Machines }
-    - { id: power-systems, title_ko: 전력시스템, title_en: Power Systems }
-    - { id: sensor-engineering, title_ko: 센서공학, title_en: Sensor Engineering }
-    - { id: rf-foundations, title_ko: 고주파 기초, title_en: RF Foundations }
+    - { id: motor-control, title_ko: 전동기제어, title_en: Motor Control }
+    - { id: embedded-systems, title_ko: 임베디드 시스템, title_en: Embedded Systems }
 
 - id: fpga-rtl-dv
   order: 20
@@ -46,10 +47,10 @@
 
 - id: stm32-embedded
   order: 30
-  title_ko: STM32 · Embedded Systems
-  title_en: STM32 · Embedded Systems
-  description_ko: MCU 주변장치, 센서 취득, 통신과 임베디드 통합을 기록합니다.
-  description_en: MCU peripherals, sensor acquisition, communications, and embedded integration.
+  title_ko: STM32
+  title_en: STM32
+  description_ko: STM32F411 보드 사진·영상, Cube 프로젝트와 CMSIS-DSP를 별도 실습 트랙으로 정리합니다.
+  description_en: A separate lab track for STM32F411 board media, Cube projects, and CMSIS-DSP.
   children:
     - { id: stm32-roadmap, title_ko: STM32 로드맵, title_en: STM32 Roadmap }
     - { id: cubemx-cubeide, title_ko: CubeMX·CubeIDE, title_en: CubeMX and CubeIDE }
@@ -106,8 +107,8 @@
 
 - id: pcb-pads
   order: 50
-  title_ko: PCB · PADS · 회로설계 Tool
-  title_en: PCB · PADS · Circuit Design Tools
+  title_ko: PADS · PCB 설계
+  title_en: PADS · PCB Design
   description_ko: 회로도부터 PCB Library, Layout, DRC, Gerber까지의 설계 흐름입니다.
   description_en: Schematic, PCB library, layout, DRC, and Gerber workflow.
   children:
@@ -157,10 +158,10 @@
 
 - id: rf-radar-signal
   order: 70
-  title_ko: RF · Microwave · Radar · 신호처리
-  title_en: RF · Microwave · Radar · Signal Processing
-  description_ko: 전송선·S-parameter부터 FMCW Radar 신호처리까지 연결합니다.
-  description_en: From transmission lines and S-parameters to FMCW radar signal processing.
+  title_ko: mmWave · FMCW Radar
+  title_en: mmWave · FMCW Radar
+  description_ko: TI mmWave 도구 흐름과 FMCW Radar 신호처리·생체신호 정렬을 연결합니다.
+  description_en: TI mmWave tooling, FMCW radar processing, and physiological-signal alignment.
   children:
     - { id: rf-roadmap, title_ko: RF 로드맵, title_en: RF Roadmap }
     - { id: transmission-line, title_ko: 전송선, title_en: Transmission Line }

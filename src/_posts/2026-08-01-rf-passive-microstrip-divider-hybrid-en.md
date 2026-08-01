@@ -10,8 +10,8 @@ translation_key: rf-passive-microstrip-divider-hybrid
 permalink: /en/blog/2026/08/01/rf-passive-microstrip-divider-hybrid/
 alternate_url: /blog/2026/08/01/rf-passive-microstrip-divider-hybrid/
 alternate_lang: ko
-primary_category: rf-radar-signal
-subcategory: s-parameter
+primary_category: major-foundations
+subcategory: high-frequency-engineering
 series: rf-microwave
 series_order: 3
 post_type: study-note
@@ -28,9 +28,9 @@ learning_objectives: [microstrip dimensions, insertion loss and phase, divider a
 related_projects: []
 related_posts: [radar-candidate-timing]
 tags: [microstrip, cadence-virtuoso, wilkinson-divider, branch-line-hybrid]
-cover_image: /assets/images/learning/coursework/rf-passive-microstrip-divider-hybrid.svg
-thumbnail: /assets/images/learning/coursework/rf-passive-microstrip-divider-hybrid.svg
-image_alt: Fifty-ohm microstrip cross-section with Wilkinson and branch-line dimensions
+cover_image: /assets/images/study/coursework/high-frequency-wilkinson.webp
+thumbnail: /assets/images/study/coursework/high-frequency-wilkinson.webp
+image_alt: Cadence S-parameter result for a Wilkinson divider around 3.5 GHz
 draft: false
 revision_history:
   - { date: 2026-08-01, change: Connected coursework calculations to values visible in stored Cadence screens }
@@ -78,6 +78,8 @@ A stored Cadence screen marks approximately −0.095 dB insertion loss and −28
 
 An equal-split Wilkinson uses two theoretical 70.7 Ω quarter-wave branches. The stored design tuned the resistor from 100 Ω to 94 Ω and used branch width 270 µm and length 6.65 mm. The screen places S21 and S31 near −3 dB and S11 near −15 dB. I treat the notch position and center-frequency alignment as items to check again instead of describing the match as perfect.
 
+<figure><img src="{{ '/assets/images/study/coursework/high-frequency-wilkinson.webp' | relative_url }}" alt="Saved Cadence S-parameter view with S11, S21, S31, and S23 traces" width="980" height="784"><figcaption>I read the split and matching markers together on the saved screen.</figcaption></figure>
+
 <figure>
   <table>
     <thead><tr><th>Network</th><th>Transmission line</th><th>Reading from stored screen</th></tr></thead>
@@ -92,6 +94,8 @@ An equal-split Wilkinson uses two theoretical 70.7 Ω quarter-wave branches. The
 ## Branch-line hybrid {#hybrid}
 
 The quadrature hybrid forms a rectangle with 35.35 Ω horizontal lines and 50 Ω vertical lines. The stored dimensions were W 908 µm and L 7.0 mm horizontally, then W 483 µm and L 7.2 mm vertically. Drawing the two widths separately helped me remember why the four sides do not share one impedance.
+
+<figure><img src="{{ '/assets/images/study/coursework/high-frequency-hybrid.webp' | relative_url }}" alt="Saved branch-line hybrid schematic with four ports and different horizontal and vertical microstrip widths" width="980" height="657"><figcaption>The saved Cadence schematic makes the port order and four line sections visible.</figcaption></figure>
 
 ## Simulation-only interpretation {#interpretation}
 

@@ -10,8 +10,8 @@ translation_key: controller-logic-mealy-mux
 permalink: /blog/2026/08/01/controller-logic-mealy-mux/
 alternate_url: /en/blog/2026/08/01/controller-logic-mealy-mux/
 alternate_lang: en
-primary_category: fpga-rtl-dv
-subcategory: fsm
+primary_category: major-foundations
+subcategory: controller-logic
 series: vhdl-foundations
 series_order: 7
 post_type: study-note
@@ -28,9 +28,9 @@ learning_objectives: [Mealy state transition, overlapping sequence detection, mu
 related_projects: [fpga-delay-logic]
 related_posts: [fpga-architecture-equivalence]
 tags: [vhdl, mealy-fsm, sequence-detector, multiplexer]
-cover_image: /assets/images/learning/coursework/controller-logic-mealy-mux.svg
-thumbnail: /assets/images/learning/coursework/controller-logic-mealy-mux.svg
-image_alt: Mealy 101 상태도와 8-to-1 multiplexer 선택표
+cover_image: /assets/images/study/coursework/controller-logic-waveform.webp
+thumbnail: /assets/images/study/coursework/controller-logic-waveform.webp
+image_alt: 01010101 입력에서 Mealy 101 검출기의 상태와 출력이 바뀌는 Vivado 파형
 draft: false
 revision_history:
   - { date: 2026-08-01, change: 저장된 VHDL과 testbench 입력을 바탕으로 작성 }
@@ -71,6 +71,8 @@ toc:
 ## 01010101 따라가기 {#stimulus}
 
 저장된 testbench는 reset을 내린 뒤 <code>01010101</code>을 20 ns 간격으로 넣는다. 상태표대로 종이에 따라가면 네 번째, 여섯 번째, 여덟 번째 입력에서 101이 완성된다. 이 계산은 코드의 전이 규칙을 손으로 확인한 것이며, 이번 정리에서 GHDL이나 Vivado simulation을 다시 돌리지는 않았다.
+
+<figure><img src="{{ '/assets/images/study/coursework/controller-logic-waveform.webp' | relative_url }}" alt="01010101 입력과 st0, st1, st2 상태, dout pulse가 표시된 저장 파형" width="1200" height="514"><figcaption>당시 저장한 파형에서 입력과 상태 전이를 함께 따라갔다.</figcaption></figure>
 
 ## MUX를 독립형으로 쓰기 {#mux}
 

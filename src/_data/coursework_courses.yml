@@ -1,0 +1,1319 @@
+- id: controller-logic
+  order: 10
+  title_ko: 컨트롤로직설계
+  title_en: Controller Logic Design
+  summary_ko: 내가 남긴 VHDL 소스와 회로도, 파형을 따라 조합논리에서 FSM까지 다시 연결한다.
+  summary_en: I revisit my VHDL sources, schematics, and waveforms from combinational logic through finite-state machines.
+  kind: course-record
+  thumbnail: /assets/images/study/coursework/controller-logic.webp
+  sequence_note_ko: 단위 번호는 저장된 설계 흐름을 읽기 좋게 다시 배열한 순서이며 실제 출석 주차표가 아니다.
+  sequence_note_en: Unit numbers are a reading sequence reconstructed from the saved designs, not an attendance-week record.
+  units:
+    - order: 1
+      slug: boolean-logic
+      title_ko: 논리식과 디지털 표현
+      title_en: Boolean Logic and Digital Representation
+      concepts:
+        - { ko: 진리표, en: Truth tables }
+        - { ko: 부울대수, en: Boolean algebra }
+        - { ko: 논리 게이트, en: Logic gates }
+        - { ko: 2진수 표현, en: Binary representation }
+    - order: 2
+      slug: combinational-design
+      title_ko: 조합논리 설계 절차
+      title_en: Combinational Logic Design
+      concepts:
+        - { ko: 최소항과 최대항, en: Minterms and maxterms }
+        - { ko: 카르노맵, en: Karnaugh maps }
+        - { ko: 논리 최소화, en: Logic minimization }
+        - { ko: 전파 지연, en: Propagation delay }
+    - order: 3
+      slug: full-adder
+      title_ko: Full Adder와 Ripple-Carry Adder
+      title_en: Full Adders and Ripple-Carry Adders
+      concepts:
+        - { ko: 합과 자리올림, en: Sum and carry }
+        - { ko: 1-bit Full Adder, en: One-bit full adder }
+        - { ko: 4-bit 연결, en: Four-bit composition }
+        - { ko: 자리올림 지연, en: Carry propagation }
+    - order: 4
+      slug: decoder-multiplexer
+      title_ko: Decoder와 Multiplexer
+      title_en: Decoders and Multiplexers
+      concepts:
+        - { ko: 3-to-8 Decoder, en: Three-to-eight decoder }
+        - { ko: 8-to-1 Multiplexer, en: Eight-to-one multiplexer }
+        - { ko: 선택 신호, en: Select signals }
+        - { ko: 계층적 구성, en: Hierarchical composition }
+    - order: 5
+      slug: vhdl-combinational
+      title_ko: VHDL 조합회로 작성
+      title_en: Writing Combinational VHDL
+      concepts:
+        - { ko: entity와 architecture, en: Entity and architecture }
+        - { ko: concurrent assignment, en: Concurrent assignments }
+        - { ko: process sensitivity, en: Process sensitivity }
+        - { ko: 합성 가능한 표현, en: Synthesizable constructs }
+    - order: 6
+      slug: sequential-logic
+      title_ko: 순차논리와 Clock
+      title_en: Sequential Logic and Clocks
+      concepts:
+        - { ko: D Flip-Flop, en: D flip-flops }
+        - { ko: Clock edge, en: Clock edges }
+        - { ko: 동기식 Reset, en: Synchronous reset }
+        - { ko: Setup과 Hold, en: Setup and hold }
+    - order: 7
+      slug: registers
+      title_ko: Register와 Shift Register
+      title_en: Registers and Shift Registers
+      concepts:
+        - { ko: 병렬 Load, en: Parallel load }
+        - { ko: 좌우 Shift, en: Left and right shift }
+        - { ko: Universal Shift Register, en: Universal shift register }
+        - { ko: 제어 우선순위, en: Control priority }
+    - order: 8
+      slug: fsm-foundations
+      title_ko: FSM 상태와 전이
+      title_en: FSM States and Transitions
+      concepts:
+        - { ko: 상태도, en: State diagrams }
+        - { ko: 상태 부호화, en: State encoding }
+        - { ko: Next-state logic, en: Next-state logic }
+        - { ko: 출력 논리, en: Output logic }
+    - order: 9
+      slug: mealy-sequence-detector
+      title_ko: Mealy 101 Sequence Detector
+      title_en: Mealy 101 Sequence Detector
+      concepts:
+        - { ko: Mealy 출력, en: Mealy outputs }
+        - { ko: Overlap 검출, en: Overlapping detection }
+        - { ko: 세 상태 구성, en: Three-state design }
+        - { ko: 전이 조건 추적, en: Transition tracing }
+    - order: 10
+      slug: vhdl-testbench
+      title_ko: VHDL Testbench와 파형
+      title_en: VHDL Testbenches and Waveforms
+      concepts:
+        - { ko: Stimulus process, en: Stimulus processes }
+        - { ko: 예상값 비교, en: Expected-value comparison }
+        - { ko: Assert, en: Assertions }
+        - { ko: 파형 판독, en: Waveform reading }
+    - order: 11
+      slug: timing-synthesis
+      title_ko: 합성과 Timing 확인
+      title_en: Synthesis and Timing Checks
+      concepts:
+        - { ko: RTL elaboration, en: RTL elaboration }
+        - { ko: 합성 결과, en: Synthesis results }
+        - { ko: Critical path, en: Critical paths }
+        - { ko: Clock constraint, en: Clock constraints }
+    - order: 12
+      slug: design-integration
+      title_ko: 설계 통합과 회귀 확인
+      title_en: Design Integration and Regression Checks
+      concepts:
+        - { ko: Component binding, en: Component binding }
+        - { ko: Port mapping, en: Port mapping }
+        - { ko: Self-checking simulation, en: Self-checking simulation }
+        - { ko: 소스와 파형 연결, en: Source-to-waveform tracing }
+
+- id: electronic-circuits-1
+  order: 20
+  title_ko: 전자회로1
+  title_en: Electronic Circuits I
+  summary_ko: 다이오드에서 단일 트랜지스터 증폭기까지, 내가 회로 동작을 다시 공부하기 좋은 순서로 정리한다.
+  summary_en: I organize a study path from diodes to single-transistor amplifiers in the order that makes the circuit behavior easiest to revisit.
+  kind: study-roadmap
+  thumbnail: /assets/images/study/coursework/electronic-circuits-1.webp
+  sequence_note_ko: 단위 번호는 개념을 이어 보기 위한 공부 순서이며 당시 수업의 실제 주차를 뜻하지 않는다.
+  sequence_note_en: Unit numbers form a concept-study sequence and do not claim the original class schedule.
+  units:
+    - order: 1
+      slug: semiconductor-basics
+      title_ko: 반도체와 PN Junction
+      title_en: Semiconductors and PN Junctions
+      concepts:
+        - { ko: 전자와 정공, en: Electrons and holes }
+        - { ko: 도핑, en: Doping }
+        - { ko: 공핍층, en: Depletion region }
+        - { ko: 내장 전위, en: Built-in potential }
+    - order: 2
+      slug: diode-models
+      title_ko: Diode 모델과 부하선
+      title_en: Diode Models and Load Lines
+      concepts:
+        - { ko: 이상 Diode, en: Ideal diode }
+        - { ko: 정전압 모델, en: Constant-voltage model }
+        - { ko: 지수 특성, en: Exponential characteristic }
+        - { ko: 부하선 해석, en: Load-line analysis }
+    - order: 3
+      slug: rectifiers
+      title_ko: 정류회로와 Ripple
+      title_en: Rectifiers and Ripple
+      concepts:
+        - { ko: 반파 정류, en: Half-wave rectification }
+        - { ko: 전파 정류, en: Full-wave rectification }
+        - { ko: 평활 Capacitor, en: Smoothing capacitors }
+        - { ko: Ripple voltage, en: Ripple voltage }
+    - order: 4
+      slug: diode-applications
+      title_ko: Clipper와 Clamper
+      title_en: Clippers and Clampers
+      concepts:
+        - { ko: Limiting, en: Limiting }
+        - { ko: DC level shift, en: DC level shifting }
+        - { ko: Zener regulator, en: Zener regulation }
+        - { ko: 구간별 해석, en: Piecewise analysis }
+    - order: 5
+      slug: bjt-operation
+      title_ko: BJT 동작영역
+      title_en: BJT Operating Regions
+      concepts:
+        - { ko: Cutoff, en: Cutoff }
+        - { ko: Forward active, en: Forward active }
+        - { ko: Saturation, en: Saturation }
+        - { ko: 전류 이득, en: Current gain }
+    - order: 6
+      slug: bjt-bias
+      title_ko: BJT Bias 설계
+      title_en: BJT Bias Design
+      concepts:
+        - { ko: Q-point, en: Quiescent point }
+        - { ko: 분압 Bias, en: Voltage-divider bias }
+        - { ko: Emitter degeneration, en: Emitter degeneration }
+        - { ko: 온도 안정성, en: Thermal stability }
+    - order: 7
+      slug: bjt-small-signal
+      title_ko: BJT Small-Signal 모델
+      title_en: BJT Small-Signal Models
+      concepts:
+        - { ko: Transconductance, en: Transconductance }
+        - { ko: 입력 저항, en: Input resistance }
+        - { ko: 출력 저항, en: Output resistance }
+        - { ko: Hybrid-pi 모델, en: Hybrid-pi model }
+    - order: 8
+      slug: common-emitter
+      title_ko: Common-Emitter 증폭기
+      title_en: Common-Emitter Amplifiers
+      concepts:
+        - { ko: 전압 이득, en: Voltage gain }
+        - { ko: 위상 반전, en: Phase inversion }
+        - { ko: Coupling capacitor, en: Coupling capacitors }
+        - { ko: Bypass capacitor, en: Bypass capacitors }
+    - order: 9
+      slug: emitter-follower
+      title_ko: Emitter Follower와 Buffer
+      title_en: Emitter Followers and Buffers
+      concepts:
+        - { ko: 전압 추종, en: Voltage following }
+        - { ko: 높은 입력 저항, en: High input resistance }
+        - { ko: 낮은 출력 저항, en: Low output resistance }
+        - { ko: Impedance matching, en: Impedance matching }
+    - order: 10
+      slug: mosfet-operation
+      title_ko: MOSFET 동작과 Bias
+      title_en: MOSFET Operation and Bias
+      concepts:
+        - { ko: Threshold voltage, en: Threshold voltage }
+        - { ko: Triode 영역, en: Triode region }
+        - { ko: Saturation 영역, en: Saturation region }
+        - { ko: Body effect, en: Body effect }
+    - order: 11
+      slug: common-source
+      title_ko: Common-Source 증폭기
+      title_en: Common-Source Amplifiers
+      concepts:
+        - { ko: Small-signal gain, en: Small-signal gain }
+        - { ko: Source degeneration, en: Source degeneration }
+        - { ko: Drain resistance, en: Drain resistance }
+        - { ko: 동작점과 Swing, en: Bias point and swing }
+    - order: 12
+      slug: amplifier-review
+      title_ko: 단일단 증폭기 비교
+      title_en: Comparing Single-Stage Amplifiers
+      concepts:
+        - { ko: Gain 비교, en: Gain comparison }
+        - { ko: 입출력 저항, en: Input and output resistance }
+        - { ko: 주파수 범위, en: Frequency range }
+        - { ko: Bias 여유, en: Bias headroom }
+
+- id: electronic-circuits-2
+  order: 30
+  title_ko: 전자회로2
+  title_en: Electronic Circuits II
+  summary_ko: 차동 증폭기와 Feedback부터 Filter와 출력단까지, 여러 단을 하나의 Signal path로 읽는 연습을 정리한다.
+  summary_en: I study differential stages, feedback, filters, and output stages as one connected signal path.
+  kind: study-roadmap
+  thumbnail: /assets/images/study/coursework/electronic-circuits-2.webp
+  sequence_note_ko: 단위 번호는 개념 의존관계에 맞춘 공부 순서이며 실제 강의 주차표로 쓰지 않는다.
+  sequence_note_en: Unit numbers follow concept dependencies rather than the historical lecture calendar.
+  units:
+    - order: 1
+      slug: differential-pair
+      title_ko: Differential Pair 기초
+      title_en: Differential Pair Foundations
+      concepts:
+        - { ko: Differential mode, en: Differential mode }
+        - { ko: Common mode, en: Common mode }
+        - { ko: Tail current, en: Tail current }
+        - { ko: CMRR, en: Common-mode rejection ratio }
+    - order: 2
+      slug: current-mirrors
+      title_ko: Current Mirror와 Active Load
+      title_en: Current Mirrors and Active Loads
+      concepts:
+        - { ko: 기준 전류, en: Reference current }
+        - { ko: 출력 저항, en: Output resistance }
+        - { ko: Active load, en: Active loads }
+        - { ko: Compliance voltage, en: Compliance voltage }
+    - order: 3
+      slug: multistage-amplifiers
+      title_ko: Multistage 증폭기
+      title_en: Multistage Amplifiers
+      concepts:
+        - { ko: 단간 Loading, en: Interstage loading }
+        - { ko: 전체 Gain, en: Overall gain }
+        - { ko: DC level shift, en: DC level shifting }
+        - { ko: Signal swing, en: Signal swing }
+    - order: 4
+      slug: op-amp-internals
+      title_ko: Op-Amp 내부 구조
+      title_en: Op-Amp Internal Structure
+      concepts:
+        - { ko: 입력 차동단, en: Differential input stage }
+        - { ko: Gain stage, en: Gain stage }
+        - { ko: 출력 Buffer, en: Output buffer }
+        - { ko: Bias network, en: Bias network }
+    - order: 5
+      slug: negative-feedback
+      title_ko: Negative Feedback
+      title_en: Negative Feedback
+      concepts:
+        - { ko: Loop gain, en: Loop gain }
+        - { ko: Closed-loop gain, en: Closed-loop gain }
+        - { ko: Sensitivity, en: Sensitivity }
+        - { ko: 대역폭 확장, en: Bandwidth extension }
+    - order: 6
+      slug: op-amp-nonideal
+      title_ko: Op-Amp 비이상 특성
+      title_en: Op-Amp Nonidealities
+      concepts:
+        - { ko: Input offset, en: Input offset }
+        - { ko: Slew rate, en: Slew rate }
+        - { ko: Gain-bandwidth product, en: Gain-bandwidth product }
+        - { ko: Output saturation, en: Output saturation }
+    - order: 7
+      slug: frequency-response
+      title_ko: 증폭기 Frequency Response
+      title_en: Amplifier Frequency Response
+      concepts:
+        - { ko: 저주파 Pole, en: Low-frequency poles }
+        - { ko: Miller effect, en: Miller effect }
+        - { ko: 고주파 Pole, en: High-frequency poles }
+        - { ko: Bode plot, en: Bode plots }
+    - order: 8
+      slug: feedback-stability
+      title_ko: Feedback Stability
+      title_en: Feedback Stability
+      concepts:
+        - { ko: Phase margin, en: Phase margin }
+        - { ko: Gain margin, en: Gain margin }
+        - { ko: Dominant pole, en: Dominant pole }
+        - { ko: Compensation, en: Compensation }
+    - order: 9
+      slug: active-filters
+      title_ko: Active Filter
+      title_en: Active Filters
+      concepts:
+        - { ko: Low-pass, en: Low-pass response }
+        - { ko: High-pass, en: High-pass response }
+        - { ko: Second-order response, en: Second-order response }
+        - { ko: Quality factor, en: Quality factor }
+    - order: 10
+      slug: oscillators
+      title_ko: Oscillator와 발진 조건
+      title_en: Oscillators and Startup Conditions
+      concepts:
+        - { ko: Barkhausen 조건, en: Barkhausen criterion }
+        - { ko: RC Oscillator, en: RC oscillators }
+        - { ko: LC Oscillator, en: LC oscillators }
+        - { ko: 진폭 제한, en: Amplitude limiting }
+    - order: 11
+      slug: power-amplifiers
+      title_ko: Power Amplifier 출력단
+      title_en: Power Amplifier Output Stages
+      concepts:
+        - { ko: Class A, en: Class A }
+        - { ko: Class B와 AB, en: Class B and AB }
+        - { ko: Crossover distortion, en: Crossover distortion }
+        - { ko: 효율과 발열, en: Efficiency and heat }
+    - order: 12
+      slug: analog-signal-chain
+      title_ko: Analog Signal Chain 통합
+      title_en: Analog Signal-Chain Integration
+      concepts:
+        - { ko: 입력 범위, en: Input range }
+        - { ko: Noise budget, en: Noise budget }
+        - { ko: Gain allocation, en: Gain allocation }
+        - { ko: 출력 Drive, en: Output drive }
+
+- id: digital-communications
+  order: 40
+  title_ko: 디지털통신
+  title_en: Digital Communications
+  summary_ko: 저장된 강의 파일을 바탕으로 표본화, Baseband 전송, 디지털 변조와 오류율을 한 흐름으로 다시 공부한다.
+  summary_en: I use the saved course file to reconnect sampling, baseband transmission, digital modulation, and error-rate analysis.
+  kind: course-record
+  thumbnail: /assets/images/study/coursework/digital-communications.webp
+  sequence_note_ko: 단위 번호는 남은 파일의 주제를 개념 순서로 확장한 학습 경로이며 실제 출석 주차를 나타내지 않는다.
+  sequence_note_en: Unit numbers expand topics from the saved file into a concept sequence, not an attendance-week record.
+  units:
+    - order: 1
+      slug: communication-model
+      title_ko: 디지털통신 System Model
+      title_en: Digital Communication System Model
+      concepts:
+        - { ko: Source와 Channel, en: Source and channel }
+        - { ko: Transmitter와 Receiver, en: Transmitter and receiver }
+        - { ko: Baseband와 Passband, en: Baseband and passband }
+        - { ko: 성능 지표, en: Performance measures }
+    - order: 2
+      slug: sampling-quantization
+      title_ko: Sampling과 Quantization
+      title_en: Sampling and Quantization
+      concepts:
+        - { ko: Nyquist sampling, en: Nyquist sampling }
+        - { ko: Aliasing, en: Aliasing }
+        - { ko: Quantization noise, en: Quantization noise }
+        - { ko: Bit depth, en: Bit depth }
+    - order: 3
+      slug: pcm-line-coding
+      title_ko: PCM과 Line Coding
+      title_en: PCM and Line Coding
+      concepts:
+        - { ko: PCM frame, en: PCM frames }
+        - { ko: NRZ와 Manchester, en: NRZ and Manchester }
+        - { ko: DC 성분, en: DC content }
+        - { ko: Clock recovery, en: Clock recovery }
+    - order: 4
+      slug: probability-noise
+      title_ko: 확률과 Noise 모델
+      title_en: Probability and Noise Models
+      concepts:
+        - { ko: Random variable, en: Random variables }
+        - { ko: Gaussian noise, en: Gaussian noise }
+        - { ko: Power spectral density, en: Power spectral density }
+        - { ko: SNR, en: Signal-to-noise ratio }
+    - order: 5
+      slug: pulse-shaping
+      title_ko: Pulse Shaping과 PAM
+      title_en: Pulse Shaping and PAM
+      concepts:
+        - { ko: Symbol pulse, en: Symbol pulses }
+        - { ko: Raised-cosine filter, en: Raised-cosine filters }
+        - { ko: Roll-off factor, en: Roll-off factor }
+        - { ko: Bandwidth, en: Bandwidth }
+    - order: 6
+      slug: isi-nyquist
+      title_ko: ISI와 Nyquist Criterion
+      title_en: ISI and the Nyquist Criterion
+      concepts:
+        - { ko: Inter-symbol interference, en: Inter-symbol interference }
+        - { ko: Zero-ISI 조건, en: Zero-ISI condition }
+        - { ko: Eye diagram, en: Eye diagrams }
+        - { ko: Timing offset, en: Timing offset }
+    - order: 7
+      slug: matched-filter
+      title_ko: Matched Filter와 Detection
+      title_en: Matched Filters and Detection
+      concepts:
+        - { ko: Correlator, en: Correlators }
+        - { ko: Matched filter, en: Matched filters }
+        - { ko: Decision threshold, en: Decision thresholds }
+        - { ko: Maximum SNR, en: Maximum SNR }
+    - order: 8
+      slug: binary-modulation
+      title_ko: ASK · FSK · PSK
+      title_en: ASK, FSK, and PSK
+      concepts:
+        - { ko: Coherent detection, en: Coherent detection }
+        - { ko: Signal constellation, en: Signal constellations }
+        - { ko: Orthogonality, en: Orthogonality }
+        - { ko: Bit energy, en: Bit energy }
+    - order: 9
+      slug: qpsk-qam
+      title_ko: QPSK와 QAM
+      title_en: QPSK and QAM
+      concepts:
+        - { ko: I/Q 표현, en: I/Q representation }
+        - { ko: Symbol mapping, en: Symbol mapping }
+        - { ko: Gray coding, en: Gray coding }
+        - { ko: Constellation distance, en: Constellation distance }
+    - order: 10
+      slug: error-probability
+      title_ko: BER와 오류확률
+      title_en: BER and Error Probability
+      concepts:
+        - { ko: Q-function, en: Q-function }
+        - { ko: Eb/N0, en: Eb/N0 }
+        - { ko: Theoretical BER, en: Theoretical BER }
+        - { ko: Monte Carlo estimate, en: Monte Carlo estimates }
+    - order: 11
+      slug: synchronization
+      title_ko: Carrier와 Timing Synchronization
+      title_en: Carrier and Timing Synchronization
+      concepts:
+        - { ko: Carrier offset, en: Carrier offset }
+        - { ko: Phase offset, en: Phase offset }
+        - { ko: Symbol timing, en: Symbol timing }
+        - { ko: Preamble, en: Preambles }
+    - order: 12
+      slug: channel-coding-simulation
+      title_ko: Channel Coding과 Link Simulation
+      title_en: Channel Coding and Link Simulation
+      concepts:
+        - { ko: Block code, en: Block codes }
+        - { ko: Coding gain, en: Coding gain }
+        - { ko: AWGN link, en: AWGN links }
+        - { ko: BER curve 비교, en: BER-curve comparison }
+
+- id: automatic-control
+  order: 50
+  title_ko: 자동제어
+  title_en: Automatic Control
+  summary_ko: 저장한 수업자료와 계산 흐름을 따라 모델링, 안정도, Root Locus와 주파수응답을 다시 연결한다.
+  summary_en: I follow the saved course materials and calculations from modeling through stability, root locus, and frequency response.
+  kind: course-record
+  thumbnail: /assets/images/study/coursework/automatic-control.webp
+  sequence_note_ko: 단위 번호는 자료에 나온 개념을 이어 읽도록 정리한 순서이며 실제 출석 주차표가 아니다.
+  sequence_note_en: Unit numbers organize the concepts found in the materials and do not reproduce an attendance schedule.
+  units:
+    - order: 1
+      slug: dynamic-system-models
+      title_ko: Dynamic System 모델링
+      title_en: Dynamic-System Modeling
+      concepts:
+        - { ko: 질량-스프링-댐퍼, en: Mass-spring-damper systems }
+        - { ko: 전기회로 모델, en: Electrical circuit models }
+        - { ko: 미분방정식, en: Differential equations }
+        - { ko: 입력과 출력, en: Inputs and outputs }
+    - order: 2
+      slug: laplace-transfer-function
+      title_ko: Laplace Transform과 전달함수
+      title_en: Laplace Transforms and Transfer Functions
+      concepts:
+        - { ko: 초기조건, en: Initial conditions }
+        - { ko: Pole과 Zero, en: Poles and zeros }
+        - { ko: 전달함수, en: Transfer functions }
+        - { ko: 시스템 차수, en: System order }
+    - order: 3
+      slug: block-diagram
+      title_ko: Block Diagram과 Signal Flow
+      title_en: Block Diagrams and Signal Flow
+      concepts:
+        - { ko: 직렬과 병렬 연결, en: Series and parallel connections }
+        - { ko: Feedback loop, en: Feedback loops }
+        - { ko: Block reduction, en: Block reduction }
+        - { ko: Mason gain formula, en: Mason gain formula }
+    - order: 4
+      slug: time-response
+      title_ko: 시간응답과 표준 2차계
+      title_en: Time Response and Standard Second-Order Systems
+      concepts:
+        - { ko: Step response, en: Step response }
+        - { ko: Rise time, en: Rise time }
+        - { ko: Overshoot, en: Overshoot }
+        - { ko: Settling time, en: Settling time }
+    - order: 5
+      slug: steady-state-error
+      title_ko: 정상상태 오차
+      title_en: Steady-State Error
+      concepts:
+        - { ko: System type, en: System type }
+        - { ko: Error constant, en: Error constants }
+        - { ko: Step와 Ramp 입력, en: Step and ramp inputs }
+        - { ko: Final value theorem, en: Final value theorem }
+    - order: 6
+      slug: routh-stability
+      title_ko: Routh-Hurwitz 안정도
+      title_en: Routh-Hurwitz Stability
+      concepts:
+        - { ko: Characteristic equation, en: Characteristic equation }
+        - { ko: Routh array, en: Routh arrays }
+        - { ko: 우반평면 Pole, en: Right-half-plane poles }
+        - { ko: Gain 범위, en: Gain range }
+    - order: 7
+      slug: root-locus
+      title_ko: Root Locus
+      title_en: Root Locus
+      concepts:
+        - { ko: Branch와 Asymptote, en: Branches and asymptotes }
+        - { ko: Breakaway point, en: Breakaway points }
+        - { ko: Angle condition, en: Angle condition }
+        - { ko: Gain selection, en: Gain selection }
+    - order: 8
+      slug: frequency-response
+      title_ko: Frequency Response 기초
+      title_en: Frequency-Response Foundations
+      concepts:
+        - { ko: Sinusoidal steady state, en: Sinusoidal steady state }
+        - { ko: Magnitude와 Phase, en: Magnitude and phase }
+        - { ko: Resonance, en: Resonance }
+        - { ko: Bandwidth, en: Bandwidth }
+    - order: 9
+      slug: bode-plot
+      title_ko: Bode Plot
+      title_en: Bode Plots
+      concepts:
+        - { ko: Log frequency, en: Logarithmic frequency }
+        - { ko: Asymptotic sketch, en: Asymptotic sketches }
+        - { ko: Gain crossover, en: Gain crossover }
+        - { ko: Phase crossover, en: Phase crossover }
+    - order: 10
+      slug: nyquist-margin
+      title_ko: Nyquist와 Stability Margin
+      title_en: Nyquist and Stability Margins
+      concepts:
+        - { ko: Nyquist contour, en: Nyquist contours }
+        - { ko: Encirclement, en: Encirclement }
+        - { ko: Gain margin, en: Gain margin }
+        - { ko: Phase margin, en: Phase margin }
+    - order: 11
+      slug: pid-control
+      title_ko: P · PI · PID 제어
+      title_en: P, PI, and PID Control
+      concepts:
+        - { ko: 비례 동작, en: Proportional action }
+        - { ko: 적분 동작, en: Integral action }
+        - { ko: 미분 동작, en: Derivative action }
+        - { ko: 응답 Trade-off, en: Response trade-offs }
+    - order: 12
+      slug: controller-design-review
+      title_ko: Controller 설계 비교
+      title_en: Comparing Controller Designs
+      concepts:
+        - { ko: 시간영역 조건, en: Time-domain requirements }
+        - { ko: 주파수영역 조건, en: Frequency-domain requirements }
+        - { ko: Robustness, en: Robustness }
+        - { ko: Simulation comparison, en: Simulation comparison }
+
+- id: applied-control
+  order: 60
+  title_ko: 제어공학응용
+  title_en: Applied Control Engineering
+  summary_ko: 남아 있는 시뮬레이션 영상을 출발점으로 State-space, Observer와 Digital control을 다시 정리한다.
+  summary_en: I use the saved simulation video as a starting point to revisit state-space control, observers, and digital control.
+  kind: course-record
+  thumbnail: /assets/images/study/coursework/applied-control.webp
+  sequence_note_ko: 영상에서 확인한 시스템 흐름과 표준 제어 주제를 묶은 공부 순서이며 실제 강의 주차를 주장하지 않는다.
+  sequence_note_en: This study sequence connects the system flow visible in the video with standard control topics; it is not a claim about lecture weeks.
+  units:
+    - order: 1
+      slug: state-variable-model
+      title_ko: State Variable 모델
+      title_en: State-Variable Models
+      concepts:
+        - { ko: State 정의, en: State definition }
+        - { ko: State equation, en: State equations }
+        - { ko: Output equation, en: Output equations }
+        - { ko: 초기상태, en: Initial state }
+    - order: 2
+      slug: linearization
+      title_ko: 비선형 System의 Linearization
+      title_en: Linearizing Nonlinear Systems
+      concepts:
+        - { ko: Operating point, en: Operating points }
+        - { ko: Jacobian, en: Jacobians }
+        - { ko: Small perturbation, en: Small perturbations }
+        - { ko: 모델 유효범위, en: Model validity range }
+    - order: 3
+      slug: state-transition
+      title_ko: State Transition과 응답
+      title_en: State Transition and Response
+      concepts:
+        - { ko: Matrix exponential, en: Matrix exponential }
+        - { ko: Zero-input response, en: Zero-input response }
+        - { ko: Zero-state response, en: Zero-state response }
+        - { ko: Eigenvalue, en: Eigenvalues }
+    - order: 4
+      slug: controllability
+      title_ko: Controllability
+      title_en: Controllability
+      concepts:
+        - { ko: Controllability matrix, en: Controllability matrix }
+        - { ko: Rank test, en: Rank test }
+        - { ko: Reachable state, en: Reachable states }
+        - { ko: Actuator placement, en: Actuator placement }
+    - order: 5
+      slug: observability
+      title_ko: Observability
+      title_en: Observability
+      concepts:
+        - { ko: Observability matrix, en: Observability matrix }
+        - { ko: Rank test, en: Rank test }
+        - { ko: Hidden mode, en: Hidden modes }
+        - { ko: Sensor selection, en: Sensor selection }
+    - order: 6
+      slug: state-feedback
+      title_ko: State Feedback와 Pole Placement
+      title_en: State Feedback and Pole Placement
+      concepts:
+        - { ko: Feedback gain, en: Feedback gain }
+        - { ko: Closed-loop pole, en: Closed-loop poles }
+        - { ko: Ackermann formula, en: Ackermann formula }
+        - { ko: 입력 크기, en: Input magnitude }
+    - order: 7
+      slug: observer
+      title_ko: State Observer
+      title_en: State Observers
+      concepts:
+        - { ko: Luenberger observer, en: Luenberger observers }
+        - { ko: Estimation error, en: Estimation error }
+        - { ko: Observer pole, en: Observer poles }
+        - { ko: Separation principle, en: Separation principle }
+    - order: 8
+      slug: servo-integral
+      title_ko: Servo와 Integral Action
+      title_en: Servo Control and Integral Action
+      concepts:
+        - { ko: Reference tracking, en: Reference tracking }
+        - { ko: Integral state, en: Integral state }
+        - { ko: Disturbance rejection, en: Disturbance rejection }
+        - { ko: Steady-state error, en: Steady-state error }
+    - order: 9
+      slug: discretization
+      title_ko: 연속 System의 Discretization
+      title_en: Discretizing Continuous Systems
+      concepts:
+        - { ko: Sampling period, en: Sampling period }
+        - { ko: Zero-order hold, en: Zero-order hold }
+        - { ko: Discrete state matrix, en: Discrete state matrix }
+        - { ko: Pole mapping, en: Pole mapping }
+    - order: 10
+      slug: digital-controller
+      title_ko: Digital Controller 구현
+      title_en: Digital Controller Implementation
+      concepts:
+        - { ko: Difference equation, en: Difference equations }
+        - { ko: Sample timing, en: Sample timing }
+        - { ko: Quantization, en: Quantization }
+        - { ko: Computation delay, en: Computation delay }
+    - order: 11
+      slug: optimal-control
+      title_ko: LQR과 Cost Function
+      title_en: LQR and Cost Functions
+      concepts:
+        - { ko: Quadratic cost, en: Quadratic cost }
+        - { ko: Q와 R weight, en: Q and R weights }
+        - { ko: Riccati equation, en: Riccati equation }
+        - { ko: State-input trade-off, en: State-input trade-off }
+    - order: 12
+      slug: simulation-reading
+      title_ko: Simulation 영상 다시 읽기
+      title_en: Reading the Saved Simulation
+      concepts:
+        - { ko: 입력과 응답 정렬, en: Input-response alignment }
+        - { ko: Transient 구간, en: Transient intervals }
+        - { ko: Saturation 징후, en: Saturation signs }
+        - { ko: Parameter 비교, en: Parameter comparison }
+
+- id: high-frequency-engineering
+  order: 70
+  title_ko: 고주파공학
+  title_en: High-Frequency Engineering
+  summary_ko: 과제와 Cadence 회로, S-parameter 그림을 따라 전송선에서 Wilkinson과 Branch-Line 회로까지 다시 해석한다.
+  summary_en: I revisit transmission lines through Wilkinson and branch-line networks using my assignments, Cadence circuits, and S-parameter figures.
+  kind: course-record
+  thumbnail: /assets/images/study/coursework/high-frequency-engineering.webp
+  sequence_note_ko: 단위 번호는 저장된 과제와 회로를 개념 흐름에 맞게 배열한 순서이며 실제 출석 주차표가 아니다.
+  sequence_note_en: Unit numbers arrange the saved assignments and circuits by concept flow rather than attendance weeks.
+  units:
+    - order: 1
+      slug: distributed-circuits
+      title_ko: Distributed Circuit 관점
+      title_en: Distributed-Circuit View
+      concepts:
+        - { ko: 전기적 길이, en: Electrical length }
+        - { ko: 파장, en: Wavelength }
+        - { ko: Lumped와 Distributed, en: Lumped and distributed models }
+        - { ko: 위상속도, en: Phase velocity }
+    - order: 2
+      slug: transmission-lines
+      title_ko: Transmission Line Equation
+      title_en: Transmission-Line Equations
+      concepts:
+        - { ko: Characteristic impedance, en: Characteristic impedance }
+        - { ko: Propagation constant, en: Propagation constant }
+        - { ko: Forward와 Reflected wave, en: Forward and reflected waves }
+        - { ko: Lossless line, en: Lossless lines }
+    - order: 3
+      slug: reflection-vswr
+      title_ko: Reflection Coefficient와 VSWR
+      title_en: Reflection Coefficient and VSWR
+      concepts:
+        - { ko: Load mismatch, en: Load mismatch }
+        - { ko: Reflection coefficient, en: Reflection coefficient }
+        - { ko: Return loss, en: Return loss }
+        - { ko: VSWR, en: Voltage standing-wave ratio }
+    - order: 4
+      slug: smith-chart
+      title_ko: Smith Chart 읽기
+      title_en: Reading the Smith Chart
+      concepts:
+        - { ko: Normalized impedance, en: Normalized impedance }
+        - { ko: Admittance 변환, en: Admittance conversion }
+        - { ko: Constant-resistance circle, en: Constant-resistance circles }
+        - { ko: Line rotation, en: Line rotation }
+    - order: 5
+      slug: impedance-matching
+      title_ko: Impedance Matching
+      title_en: Impedance Matching
+      concepts:
+        - { ko: L-network, en: L-networks }
+        - { ko: Quarter-wave transformer, en: Quarter-wave transformers }
+        - { ko: Single-stub matching, en: Single-stub matching }
+        - { ko: 대역폭, en: Bandwidth }
+    - order: 6
+      slug: microstrip
+      title_ko: Microstrip Line
+      title_en: Microstrip Lines
+      concepts:
+        - { ko: Effective permittivity, en: Effective permittivity }
+        - { ko: Line width, en: Line width }
+        - { ko: Substrate height, en: Substrate height }
+        - { ko: Dispersion, en: Dispersion }
+    - order: 7
+      slug: s-parameters
+      title_ko: S-Parameter 해석
+      title_en: S-Parameter Analysis
+      concepts:
+        - { ko: S11과 Return loss, en: S11 and return loss }
+        - { ko: S21과 Insertion loss, en: S21 and insertion loss }
+        - { ko: Reference impedance, en: Reference impedance }
+        - { ko: dB 표현, en: Decibel representation }
+    - order: 8
+      slug: cadence-workflow
+      title_ko: Cadence 회로와 Simulation 흐름
+      title_en: Cadence Circuit and Simulation Workflow
+      concepts:
+        - { ko: Schematic 구성, en: Schematic construction }
+        - { ko: Port 설정, en: Port setup }
+        - { ko: Frequency sweep, en: Frequency sweeps }
+        - { ko: Marker 판독, en: Marker reading }
+    - order: 9
+      slug: l-network-stub
+      title_ko: L-Matching과 Stub 결과
+      title_en: L-Matching and Stub Results
+      concepts:
+        - { ko: Series reactance, en: Series reactance }
+        - { ko: Shunt susceptance, en: Shunt susceptance }
+        - { ko: Open stub, en: Open stubs }
+        - { ko: 설계 주파수, en: Design frequency }
+    - order: 10
+      slug: wilkinson-divider
+      title_ko: Wilkinson Power Divider
+      title_en: Wilkinson Power Dividers
+      concepts:
+        - { ko: Quarter-wave arm, en: Quarter-wave arms }
+        - { ko: Equal split, en: Equal split }
+        - { ko: Isolation resistor, en: Isolation resistor }
+        - { ko: S21과 S31, en: S21 and S31 }
+    - order: 11
+      slug: branch-line-hybrid
+      title_ko: Branch-Line Hybrid
+      title_en: Branch-Line Hybrids
+      concepts:
+        - { ko: 90도 위상차, en: Ninety-degree phase difference }
+        - { ko: Four-port network, en: Four-port network }
+        - { ko: Coupled와 Isolated port, en: Coupled and isolated ports }
+        - { ko: Amplitude balance, en: Amplitude balance }
+    - order: 12
+      slug: result-interpretation
+      title_ko: S-Parameter 그림 다시 읽기
+      title_en: Re-reading S-Parameter Figures
+      concepts:
+        - { ko: Marker frequency, en: Marker frequency }
+        - { ko: Target와 결과 비교, en: Target-result comparison }
+        - { ko: Resonance shift, en: Resonance shift }
+        - { ko: Archive와 재작성 구분, en: Distinguishing archived and redrawn figures }
+
+- id: power-electronics
+  order: 80
+  title_ko: 전력전자
+  title_en: Power Electronics
+  summary_ko: Switching device에서 Converter와 Inverter까지, 전력의 흐름과 소자 Stress를 함께 보는 공부 순서를 정리한다.
+  summary_en: I organize a study path from switching devices to converters and inverters while tracking power flow and device stress together.
+  kind: study-roadmap
+  thumbnail: /assets/images/study/coursework/power-electronics.webp
+  sequence_note_ko: 단위 번호는 회로 간 의존관계에 맞춘 공부 순서이며 당시 강의의 실제 주차를 뜻하지 않는다.
+  sequence_note_en: Unit numbers follow circuit dependencies and do not claim the original lecture schedule.
+  units:
+    - order: 1
+      slug: switching-devices
+      title_ko: Power Semiconductor Device
+      title_en: Power Semiconductor Devices
+      concepts:
+        - { ko: Power diode, en: Power diodes }
+        - { ko: MOSFET, en: MOSFETs }
+        - { ko: IGBT, en: IGBTs }
+        - { ko: Switching trajectory, en: Switching trajectories }
+    - order: 2
+      slug: device-loss-thermal
+      title_ko: Conduction Loss와 Switching Loss
+      title_en: Conduction and Switching Losses
+      concepts:
+        - { ko: On-state loss, en: On-state loss }
+        - { ko: Turn-on loss, en: Turn-on loss }
+        - { ko: Turn-off loss, en: Turn-off loss }
+        - { ko: Junction temperature, en: Junction temperature }
+    - order: 3
+      slug: diode-rectifiers
+      title_ko: Diode Rectifier
+      title_en: Diode Rectifiers
+      concepts:
+        - { ko: Single-phase bridge, en: Single-phase bridges }
+        - { ko: Three-phase bridge, en: Three-phase bridges }
+        - { ko: Source inductance, en: Source inductance }
+        - { ko: Ripple, en: Ripple }
+    - order: 4
+      slug: controlled-rectifiers
+      title_ko: Controlled Rectifier
+      title_en: Controlled Rectifiers
+      concepts:
+        - { ko: Thyristor, en: Thyristors }
+        - { ko: Firing angle, en: Firing angle }
+        - { ko: 평균 출력전압, en: Average output voltage }
+        - { ko: Commutation, en: Commutation }
+    - order: 5
+      slug: buck-converter
+      title_ko: Buck Converter
+      title_en: Buck Converters
+      concepts:
+        - { ko: Duty ratio, en: Duty ratio }
+        - { ko: Inductor ripple, en: Inductor ripple }
+        - { ko: CCM과 DCM, en: CCM and DCM }
+        - { ko: Output capacitor, en: Output capacitors }
+    - order: 6
+      slug: boost-converter
+      title_ko: Boost Converter
+      title_en: Boost Converters
+      concepts:
+        - { ko: Step-up ratio, en: Step-up ratio }
+        - { ko: Inductor charging, en: Inductor charging }
+        - { ko: Diode conduction, en: Diode conduction }
+        - { ko: Switch stress, en: Switch stress }
+    - order: 7
+      slug: buck-boost-converter
+      title_ko: Buck-Boost 계열 Converter
+      title_en: Buck-Boost Converter Families
+      concepts:
+        - { ko: Inverting output, en: Inverting output }
+        - { ko: Flyback energy transfer, en: Flyback energy transfer }
+        - { ko: Transformer isolation, en: Transformer isolation }
+        - { ko: Device stress, en: Device stress }
+    - order: 8
+      slug: converter-control
+      title_ko: DC-DC Converter 제어
+      title_en: DC-DC Converter Control
+      concepts:
+        - { ko: Small-signal model, en: Small-signal models }
+        - { ko: Voltage-mode control, en: Voltage-mode control }
+        - { ko: Current-mode control, en: Current-mode control }
+        - { ko: Loop compensation, en: Loop compensation }
+    - order: 9
+      slug: single-phase-inverter
+      title_ko: Single-Phase Inverter
+      title_en: Single-Phase Inverters
+      concepts:
+        - { ko: Half bridge, en: Half bridges }
+        - { ko: Full bridge, en: Full bridges }
+        - { ko: Bipolar PWM, en: Bipolar PWM }
+        - { ko: Unipolar PWM, en: Unipolar PWM }
+    - order: 10
+      slug: three-phase-inverter
+      title_ko: Three-Phase Inverter
+      title_en: Three-Phase Inverters
+      concepts:
+        - { ko: Six-step switching, en: Six-step switching }
+        - { ko: Space vector, en: Space vectors }
+        - { ko: Line voltage, en: Line voltage }
+        - { ko: Dead time, en: Dead time }
+    - order: 11
+      slug: filters-harmonics
+      title_ko: Filter와 Harmonic
+      title_en: Filters and Harmonics
+      concepts:
+        - { ko: LC filter, en: LC filters }
+        - { ko: LCL filter, en: LCL filters }
+        - { ko: THD, en: Total harmonic distortion }
+        - { ko: Resonance damping, en: Resonance damping }
+    - order: 12
+      slug: protection-design
+      title_ko: Protection과 설계 점검
+      title_en: Protection and Design Checks
+      concepts:
+        - { ko: Overcurrent, en: Overcurrent }
+        - { ko: Snubber, en: Snubbers }
+        - { ko: Gate isolation, en: Gate isolation }
+        - { ko: Thermal margin, en: Thermal margin }
+
+- id: electrical-machines
+  order: 90
+  title_ko: 전기기기
+  title_en: Electrical Machines
+  summary_ko: 내가 작성한 변압기 보고서와 계산기를 중심으로 자기회로, 변압기와 회전기 원리를 다시 연결한다.
+  summary_en: I revisit magnetic circuits, transformers, and rotating machines around my transformer report and calculation sheets.
+  kind: course-record
+  thumbnail: /assets/images/study/coursework/electrical-machines.webp
+  sequence_note_ko: 단위 번호는 남은 보고서와 계산을 넓혀 읽는 순서이며 실제 출석 주차표가 아니다.
+  sequence_note_en: Unit numbers expand the saved report and calculations into a reading sequence rather than an attendance record.
+  units:
+    - order: 1
+      slug: magnetic-circuits
+      title_ko: Magnetic Circuit
+      title_en: Magnetic Circuits
+      concepts:
+        - { ko: Magnetomotive force, en: Magnetomotive force }
+        - { ko: Reluctance, en: Reluctance }
+        - { ko: Flux density, en: Flux density }
+        - { ko: Air gap, en: Air gaps }
+    - order: 2
+      slug: magnetic-materials
+      title_ko: Magnetic Material과 Loss
+      title_en: Magnetic Materials and Losses
+      concepts:
+        - { ko: B-H curve, en: B-H curves }
+        - { ko: Hysteresis, en: Hysteresis }
+        - { ko: Eddy current, en: Eddy currents }
+        - { ko: Core loss, en: Core loss }
+    - order: 3
+      slug: transformer-principles
+      title_ko: Transformer 동작원리
+      title_en: Transformer Principles
+      concepts:
+        - { ko: Faraday law, en: Faraday law }
+        - { ko: Turns ratio, en: Turns ratio }
+        - { ko: Referred impedance, en: Referred impedance }
+        - { ko: Polarity, en: Polarity }
+    - order: 4
+      slug: transformer-equivalent
+      title_ko: Transformer 등가회로
+      title_en: Transformer Equivalent Circuits
+      concepts:
+        - { ko: Winding resistance, en: Winding resistance }
+        - { ko: Leakage reactance, en: Leakage reactance }
+        - { ko: Magnetizing branch, en: Magnetizing branch }
+        - { ko: Referred circuit, en: Referred circuits }
+    - order: 5
+      slug: transformer-tests
+      title_ko: Open-Circuit와 Short-Circuit Test
+      title_en: Open- and Short-Circuit Tests
+      concepts:
+        - { ko: 무부하 시험, en: Open-circuit test }
+        - { ko: 단락 시험, en: Short-circuit test }
+        - { ko: Parameter extraction, en: Parameter extraction }
+        - { ko: 측정 오차, en: Measurement error }
+    - order: 6
+      slug: regulation-efficiency
+      title_ko: Voltage Regulation과 Efficiency
+      title_en: Voltage Regulation and Efficiency
+      concepts:
+        - { ko: Copper loss, en: Copper loss }
+        - { ko: Core loss, en: Core loss }
+        - { ko: Power factor, en: Power factor }
+        - { ko: Maximum efficiency, en: Maximum efficiency }
+    - order: 7
+      slug: three-phase-transformers
+      title_ko: Three-Phase Transformer
+      title_en: Three-Phase Transformers
+      concepts:
+        - { ko: Y와 Delta 결선, en: Wye and delta connections }
+        - { ko: Phase displacement, en: Phase displacement }
+        - { ko: Bank 구성, en: Transformer banks }
+        - { ko: 정격 계산, en: Rating calculations }
+    - order: 8
+      slug: rotating-fields
+      title_ko: Rotating Magnetic Field
+      title_en: Rotating Magnetic Fields
+      concepts:
+        - { ko: Three-phase current, en: Three-phase currents }
+        - { ko: Synchronous speed, en: Synchronous speed }
+        - { ko: Pole count, en: Pole count }
+        - { ko: Air-gap field, en: Air-gap field }
+    - order: 9
+      slug: induction-machines
+      title_ko: Induction Machine
+      title_en: Induction Machines
+      concepts:
+        - { ko: Slip, en: Slip }
+        - { ko: Rotor frequency, en: Rotor frequency }
+        - { ko: Torque-speed curve, en: Torque-speed curves }
+        - { ko: Starting current, en: Starting current }
+    - order: 10
+      slug: synchronous-machines
+      title_ko: Synchronous Machine
+      title_en: Synchronous Machines
+      concepts:
+        - { ko: Excitation, en: Excitation }
+        - { ko: Power-angle relation, en: Power-angle relation }
+        - { ko: Power factor control, en: Power-factor control }
+        - { ko: Pull-out torque, en: Pull-out torque }
+    - order: 11
+      slug: dc-machines
+      title_ko: DC Machine 기초
+      title_en: DC Machine Foundations
+      concepts:
+        - { ko: Back EMF, en: Back EMF }
+        - { ko: Electromagnetic torque, en: Electromagnetic torque }
+        - { ko: Field winding, en: Field windings }
+        - { ko: Speed characteristic, en: Speed characteristics }
+    - order: 12
+      slug: transformer-calculation-review
+      title_ko: 변압기 보고서와 계산기 다시 읽기
+      title_en: Re-reading the Transformer Report and Calculators
+      concepts:
+        - { ko: 입력값 정의, en: Input definition }
+        - { ko: 등가회로 계산, en: Equivalent-circuit calculation }
+        - { ko: 단위 확인, en: Unit checks }
+        - { ko: 보고서와 계산값 비교, en: Report-calculation comparison }
+
+- id: motor-control
+  order: 100
+  title_ko: 전동기제어
+  title_en: Motor Control
+  summary_ko: PSIM 보고서와 PI 계산 파일을 따라 DC Motor 모델, 전류·속도 이중 Loop와 Field weakening을 다시 정리한다.
+  summary_en: I use my PSIM report and PI calculation file to revisit the DC-motor model, cascaded current-speed loops, and field weakening.
+  kind: course-record
+  thumbnail: /assets/images/study/coursework/motor-control.webp
+  sequence_note_ko: 단위 번호는 남은 설계 파일을 따라 제어 구조를 읽는 순서이며 실제 출석 주차표가 아니다.
+  sequence_note_en: Unit numbers follow the control structure in the saved design files and do not claim attendance weeks.
+  units:
+    - order: 1
+      slug: dc-motor-model
+      title_ko: DC Motor 전기·기계 모델
+      title_en: Electrical and Mechanical DC-Motor Models
+      concepts:
+        - { ko: Armature equation, en: Armature equation }
+        - { ko: Back EMF, en: Back EMF }
+        - { ko: Torque constant, en: Torque constant }
+        - { ko: Inertia와 Friction, en: Inertia and friction }
+    - order: 2
+      slug: converter-h-bridge
+      title_ko: Converter와 H-Bridge
+      title_en: Converters and H-Bridges
+      concepts:
+        - { ko: Four-quadrant drive, en: Four-quadrant drive }
+        - { ko: PWM duty, en: PWM duty }
+        - { ko: Freewheeling path, en: Freewheeling paths }
+        - { ko: DC-link voltage, en: DC-link voltage }
+    - order: 3
+      slug: current-loop
+      title_ko: Current Loop
+      title_en: Current Loops
+      concepts:
+        - { ko: 전류 Plant, en: Current plant }
+        - { ko: Bandwidth, en: Bandwidth }
+        - { ko: Current limit, en: Current limit }
+        - { ko: Sampling, en: Sampling }
+    - order: 4
+      slug: speed-loop
+      title_ko: Speed Loop
+      title_en: Speed Loops
+      concepts:
+        - { ko: 기계 Plant, en: Mechanical plant }
+        - { ko: Speed feedback, en: Speed feedback }
+        - { ko: Load torque, en: Load torque }
+        - { ko: Response time, en: Response time }
+    - order: 5
+      slug: pi-controller
+      title_ko: PI Controller 계산
+      title_en: PI Controller Calculations
+      concepts:
+        - { ko: Proportional gain, en: Proportional gain }
+        - { ko: Integral gain, en: Integral gain }
+        - { ko: Pole-zero placement, en: Pole-zero placement }
+        - { ko: Gain unit, en: Gain units }
+    - order: 6
+      slug: cascaded-control
+      title_ko: Cascaded Current-Speed Control
+      title_en: Cascaded Current-Speed Control
+      concepts:
+        - { ko: Inner와 Outer loop, en: Inner and outer loops }
+        - { ko: Bandwidth separation, en: Bandwidth separation }
+        - { ko: Torque command, en: Torque command }
+        - { ko: Loop interaction, en: Loop interaction }
+    - order: 7
+      slug: saturation-anti-windup
+      title_ko: Saturation과 Anti-Windup
+      title_en: Saturation and Anti-Windup
+      concepts:
+        - { ko: Voltage limit, en: Voltage limit }
+        - { ko: Current limit, en: Current limit }
+        - { ko: Integrator windup, en: Integrator windup }
+        - { ko: Back calculation, en: Back calculation }
+    - order: 8
+      slug: pwm-ripple
+      title_ko: PWM과 Current Ripple
+      title_en: PWM and Current Ripple
+      concepts:
+        - { ko: Switching frequency, en: Switching frequency }
+        - { ko: Duty resolution, en: Duty resolution }
+        - { ko: Current ripple, en: Current ripple }
+        - { ko: Dead time, en: Dead time }
+    - order: 9
+      slug: field-weakening
+      title_ko: Field Weakening
+      title_en: Field Weakening
+      concepts:
+        - { ko: Base speed, en: Base speed }
+        - { ko: Voltage limit, en: Voltage limit }
+        - { ko: Flux reduction, en: Flux reduction }
+        - { ko: Constant-power region, en: Constant-power region }
+    - order: 10
+      slug: sensing-estimation
+      title_ko: Current와 Speed Sensing
+      title_en: Current and Speed Sensing
+      concepts:
+        - { ko: Current sensor, en: Current sensors }
+        - { ko: Encoder, en: Encoders }
+        - { ko: Filtering, en: Filtering }
+        - { ko: Scaling, en: Scaling }
+    - order: 11
+      slug: psim-model
+      title_ko: PSIM Model과 파형
+      title_en: PSIM Models and Waveforms
+      concepts:
+        - { ko: Simulation step, en: Simulation step }
+        - { ko: Reference signal, en: Reference signal }
+        - { ko: Current response, en: Current response }
+        - { ko: Speed response, en: Speed response }
+    - order: 12
+      slug: tuning-review
+      title_ko: PI 계산과 Simulation 비교
+      title_en: Comparing PI Calculations and Simulation
+      concepts:
+        - { ko: 계산값 입력, en: Calculated gains }
+        - { ko: Overshoot, en: Overshoot }
+        - { ko: Settling time, en: Settling time }
+        - { ko: Limit 조건, en: Limit conditions }
+
+- id: embedded-systems
+  order: 110
+  title_ko: 임베디드시스템
+  title_en: Embedded Systems
+  summary_ko: MCU의 Clock과 Peripheral부터 DMA, 통신, DSP까지 내가 다시 구현하기 좋은 순서로 정리한다.
+  summary_en: I organize a reimplementation path from MCU clocks and peripherals through DMA, communications, and DSP.
+  kind: study-roadmap
+  thumbnail: /assets/images/study/coursework/embedded-systems.webp
+  sequence_note_ko: 단위 번호는 MCU 기능의 의존관계를 따른 공부 순서이며 특정 학기의 실제 주차표를 재현하지 않는다.
+  sequence_note_en: Unit numbers follow MCU feature dependencies and do not recreate a semester timetable.
+  units:
+    - order: 1
+      slug: mcu-architecture
+      title_ko: MCU Architecture와 Memory Map
+      title_en: MCU Architecture and Memory Maps
+      concepts:
+        - { ko: CPU core, en: CPU core }
+        - { ko: Flash와 SRAM, en: Flash and SRAM }
+        - { ko: Memory-mapped I/O, en: Memory-mapped I/O }
+        - { ko: Register access, en: Register access }
+    - order: 2
+      slug: toolchain-debugger
+      title_ko: Toolchain과 Debugger
+      title_en: Toolchains and Debuggers
+      concepts:
+        - { ko: Build와 Link, en: Build and link }
+        - { ko: Startup code, en: Startup code }
+        - { ko: Breakpoint, en: Breakpoints }
+        - { ko: Watch와 Memory view, en: Watch and memory views }
+    - order: 3
+      slug: clock-reset
+      title_ko: Clock Tree와 Reset
+      title_en: Clock Trees and Reset
+      concepts:
+        - { ko: Oscillator, en: Oscillators }
+        - { ko: PLL, en: Phase-locked loops }
+        - { ko: Bus prescaler, en: Bus prescalers }
+        - { ko: Peripheral clock, en: Peripheral clocks }
+    - order: 4
+      slug: gpio
+      title_ko: GPIO 입출력
+      title_en: GPIO Input and Output
+      concepts:
+        - { ko: Input와 Output mode, en: Input and output modes }
+        - { ko: Pull-up과 Pull-down, en: Pull-up and pull-down }
+        - { ko: Alternate function, en: Alternate functions }
+        - { ko: Electrical level, en: Electrical levels }
+    - order: 5
+      slug: interrupts
+      title_ko: Interrupt와 NVIC
+      title_en: Interrupts and NVIC
+      concepts:
+        - { ko: Interrupt vector, en: Interrupt vectors }
+        - { ko: Priority, en: Priority }
+        - { ko: ISR latency, en: ISR latency }
+        - { ko: Shared state, en: Shared state }
+    - order: 6
+      slug: timers-pwm
+      title_ko: Timer와 PWM
+      title_en: Timers and PWM
+      concepts:
+        - { ko: Prescaler, en: Prescalers }
+        - { ko: Auto-reload, en: Auto-reload }
+        - { ko: Input capture, en: Input capture }
+        - { ko: PWM duty, en: PWM duty }
+    - order: 7
+      slug: adc-sampling
+      title_ko: ADC와 Sampling
+      title_en: ADC and Sampling
+      concepts:
+        - { ko: Resolution, en: Resolution }
+        - { ko: Reference voltage, en: Reference voltage }
+        - { ko: Sample time, en: Sample time }
+        - { ko: Quantization, en: Quantization }
+    - order: 8
+      slug: dma-buffering
+      title_ko: DMA와 Buffering
+      title_en: DMA and Buffering
+      concepts:
+        - { ko: Peripheral-to-memory, en: Peripheral-to-memory transfers }
+        - { ko: Circular mode, en: Circular mode }
+        - { ko: Double buffer, en: Double buffering }
+        - { ko: Overrun, en: Overrun }
+    - order: 9
+      slug: uart
+      title_ko: UART와 Serial Debug
+      title_en: UART and Serial Debugging
+      concepts:
+        - { ko: Baud rate, en: Baud rate }
+        - { ko: Frame format, en: Frame format }
+        - { ko: Ring buffer, en: Ring buffers }
+        - { ko: Log 출력, en: Log output }
+    - order: 10
+      slug: spi-i2c
+      title_ko: SPI와 I2C
+      title_en: SPI and I2C
+      concepts:
+        - { ko: Clock polarity와 Phase, en: Clock polarity and phase }
+        - { ko: Chip select, en: Chip select }
+        - { ko: Address와 ACK, en: Addressing and acknowledgment }
+        - { ko: Bus timing, en: Bus timing }
+    - order: 11
+      slug: cmsis-dsp
+      title_ko: CMSIS-DSP Signal Processing
+      title_en: CMSIS-DSP Signal Processing
+      concepts:
+        - { ko: FIR filter, en: FIR filters }
+        - { ko: IIR filter, en: IIR filters }
+        - { ko: FFT, en: Fast Fourier transforms }
+        - { ko: Fixed와 Floating point, en: Fixed and floating point }
+    - order: 12
+      slug: integrated-debugging
+      title_ko: Sensor Data Path와 통합 Debug
+      title_en: Sensor Data Paths and Integrated Debugging
+      concepts:
+        - { ko: Acquisition timing, en: Acquisition timing }
+        - { ko: Buffer ownership, en: Buffer ownership }
+        - { ko: End-to-end latency, en: End-to-end latency }
+        - { ko: Hardware-software boundary, en: Hardware-software boundary }

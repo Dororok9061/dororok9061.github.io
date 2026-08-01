@@ -7,7 +7,8 @@
 {% assign page_title = page.seo_title | default: page.title | default: site.title %}
 {% assign page_description = page.description | default: site.description %}
 {% assign canonical_url = page.url | absolute_url %}
-{% assign social_image = page.image | default: '/assets/images/og.jpg' | absolute_url %}
+{% assign social_image_path = page.thumbnail | default: page.image | default: '/assets/images/og.jpg' %}
+{% assign social_image = social_image_path | absolute_url %}
 <title>{{ page_title | escape }}{% unless page_title == site.title %} | {{ site.short_title | escape }}{% endunless %}</title>
 <meta name="description" content="{{ page_description | strip_html | normalize_whitespace | escape }}">
 <meta name="author" content="{{ site.author.name | escape }}">
