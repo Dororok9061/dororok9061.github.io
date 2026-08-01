@@ -33,6 +33,7 @@ cover_image: /assets/images/projects/fpga-architecture.webp
 thumbnail: /assets/images/projects/fpga-architecture.webp
 image_alt: FPGA delay logic의 세 architecture와 독립 확인 흐름
 draft: false
+published: false
 revision_history:
   - { date: 2026-07-31, change: 최초 공개 }
   - { date: 2026-08-01, change: 상태 코드 중심 글을 실제 기록 방법 중심으로 다시 작성 }

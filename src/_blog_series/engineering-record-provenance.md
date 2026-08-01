@@ -7,4 +7,5 @@ lang: ko
 permalink: /blog/series/engineering-record-provenance/
 alternate_url: /en/blog/series/engineering-record-provenance/
 alternate_lang: en
+published: false
 ---

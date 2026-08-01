@@ -10,12 +10,12 @@ alternate_url: /en/coursework/
 alternate_lang: en
 ---
 
-과목을 큰 묶음 하나로 합치지 않고 각각 독립된 허브로 나눴다. 각 허브에는 12개의 공부 단위를 두어 한 주제씩 이어서 볼 수 있다. 저장된 과제와 결과가 있는 과목은 그 화면과 계산에서 시작하고, 개념 순서를 다시 세운 과목은 실제 수업 주차처럼 쓰지 않았다.
+과목을 큰 묶음 하나로 합치지 않고 각각 독립된 허브로 나눴다. 저장된 과제와 결과가 있는 과목은 그 화면과 계산에서 시작하고, 개념 순서를 다시 세운 과목은 실제 수업 주차처럼 쓰지 않았다. 임베디드시스템은 대학 수업 원본과 개인·연구 프로젝트를 섞지 않기 위해 각각의 기록으로 바로 이어진다.
 
 <div class="course-hub-grid">
 {% assign courses = site.data.coursework_courses | sort: 'order' %}
 {% for course in courses %}
-<article><a class="course-hub-card__media" href="{{ '/coursework/' | append: course.id | append: '/' | relative_url }}"><img src="{{ course.thumbnail | relative_url }}" alt="{{ course.title_ko }} 대표 이미지" width="640" height="360" loading="lazy"></a><div><p class="post-card__meta">12개 학습 단위</p><h2><a href="{{ '/coursework/' | append: course.id | append: '/' | relative_url }}">{{ course.title_ko }}</a></h2><p>{{ course.summary_ko }}</p></div></article>
+<article><a class="course-hub-card__media" href="{{ '/coursework/' | append: course.id | append: '/' | relative_url }}"><img src="{{ course.thumbnail | relative_url }}" alt="{{ course.title_ko }} 대표 이미지" width="640" height="360" loading="lazy"></a><div><p class="post-card__meta">{% if course.units.size > 0 %}{{ course.units.size }}개 학습 단위{% else %}분리된 기록 3개{% endif %}</p><h2><a href="{{ '/coursework/' | append: course.id | append: '/' | relative_url }}">{{ course.title_ko }}</a></h2><p>{{ course.summary_ko }}</p></div></article>
 {% endfor %}
 </div>
 

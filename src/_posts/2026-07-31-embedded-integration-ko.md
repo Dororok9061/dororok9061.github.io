@@ -23,7 +23,7 @@ hardware: [Raspberry Pi, PPG sensor, camera, LCD, LED, buzzer]
 software_versions: [not fully preserved]
 source_materials:
   - { title: Sleep Monitoring and Prevention Device, type: public-repository, public_url: https://github.com/Tontonjeong/Sleep-monitoring-and-prevention-device, file_reference: C and C++ source, pages: "", used_for: module and data-path inventory }
-  - { title: Drowsiness Monitor project page, type: portfolio-page, public_url: /projects/drowsiness-monitor/, file_reference: privacy-reviewed project evidence, pages: "", used_for: architecture and validation boundary }
+  - { title: Drowsiness Monitor project page, type: portfolio-page, public_url: /projects/drowsiness-monitor/, file_reference: project photographs and source, pages: "", used_for: architecture and next tests }
 prerequisites: [tcp-ip, gpio, i2c, basic image processing]
 learning_objectives: [두 node의 역할 분리, packet과 file IPC 경계 기록, 사진 근거와 성능 측정 구분]
 related_projects: [drowsiness-monitor]
@@ -76,13 +76,13 @@ TCP/IP 경계에는 sender/receiver address, message length, reconnect 정책이
 
 <figure><picture><source srcset="/assets/images/projects/drowsiness-contact-sheet.webp" type="image/webp"><img src="/assets/images/projects/drowsiness-contact-sheet.jpg" alt="졸음 모니터의 Raspberry Pi, LCD, sensor wiring과 공개 source 화면을 모은 contact sheet" width="780" height="1100" loading="lazy"></picture><figcaption>공개 source와 실제 prototype 사진을 한 화면에서 비교한 contact sheet.</figcaption></figure>
 
-사진에서 Raspberry Pi, LCD, sensor 배선과 조립 상태를 확인했다. Repository는 PPG server와 image/EAR processing module을 제공한다. 따라서 `SOURCE + PROTOTYPE` 상태는 지원된다. 사진에 보이는 화면 값은 calibration record나 정량 성능표로 사용하지 않는다.
+사진에서 Raspberry Pi, LCD, sensor 배선과 조립 상태를 확인했다. Repository의 PPG server와 image/EAR processing module을 함께 읽으니 두 node의 data path가 실제 prototype에서 어떻게 이어지는지 보였다. 화면에 보이는 값은 calibration 조건을 알 수 없어 정량 성능표에는 넣지 않았다.
 
 ## 실패처리와 미측정 항목 {#failures}
 
 분산된 두 node에서 필요한 실패처리는 camera frame 누락, TCP 연결 끊김, 오래된 file state, I2C write 실패, sensor read timeout이다. 현재 공개 자료만으로 각 실패가 어떤 retry와 fallback을 거치는지 모두 검증할 수 없다.
 
-또한 end-to-end latency, sensitivity, specificity, false-alarm rate, 장시간 안정성 결과는 공개되지 않았다. 이 항목은 `MEASURED`가 아니라 `NOT REPORTED`다.
+end-to-end latency, sensitivity, specificity, false-alarm rate와 장시간 안정성의 저장된 측정값은 찾지 못했다. 그래서 이 수치들은 실제 성능 결과처럼 쓰지 않았다.
 
 ## 다음 검증 {#next}
 

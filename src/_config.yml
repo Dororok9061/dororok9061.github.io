@@ -74,6 +74,11 @@ exclude:
   - assets/fonts/RobotoMono-Regular.woff
   - assets/fonts/RobotoMono-Bold.ttf
   - assets/fonts/RobotoMono-Bold.woff
+  - assets/images/study/coursework/digital-communications.webp
+  - assets/images/study/coursework/electronic-circuits-1.webp
+  - assets/images/study/coursework/electronic-circuits-2.webp
+  - assets/images/study/coursework/embedded-systems.webp
+  - assets/images/study/coursework/power-electronics.webp
 
 sass:
   style: compressed

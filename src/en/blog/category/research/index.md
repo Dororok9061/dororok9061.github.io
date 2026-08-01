@@ -1,8 +1,8 @@
 ---
 layout: category
 title: Research
-lead: Notes on research questions, analysis paths, provenance, and validation boundaries.
-description: Research-method and validation-boundary notes.
+lead: Notes on research questions, analysis code, experiments, and results.
+description: Research-method, signal-analysis, and experiment notes.
 category_slug: research
 permalink: /en/blog/category/research/
 lang: en

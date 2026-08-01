@@ -9,5 +9,5 @@ alternate_url: /en/projects/ppg-hrv/
 alternate_lang: en
 ---
 
-논문 요약 metric과 별도 code archive metric은 provenance와 평가 조건이 다르므로
-같은 성능 결과로 합치지 않습니다.
+PPG peak에서 IBI와 HRV feature를 만들고 CNN·Transformer 모델을 비교했다.
+논문 표의 수치와 별도 코드 실행에서 저장한 수치는 평가 조건이 달라 각각 적었다.

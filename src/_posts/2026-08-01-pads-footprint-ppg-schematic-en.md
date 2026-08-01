@@ -15,6 +15,7 @@ subcategory: decal-footprint
 series: pads-pcb-design
 series_order: 3
 post_type: study-note
+practical: true
 difficulty: intermediate
 study_status: published
 evidence_status: ARCHIVED_DESIGN_SCREENSHOTS
@@ -26,7 +27,7 @@ source_materials:
 prerequisites: [electronic-circuits, pcb-basics]
 learning_objectives: [decal dimensions, pin numbering, schematic and layout connectivity, distinguish unrelated captures]
 related_projects: [ppg-hrv]
-related_posts: [biomedical-metric-provenance]
+related_posts: [biomedical-metric-conditions]
 tags: [pads, pcb-footprint, ppg, opa2333]
 cover_image: /assets/images/study/pads/pads-ppg-layout.webp
 thumbnail: /assets/images/study/pads/pads-ppg-layout.webp

@@ -7,6 +7,8 @@
   summary_en: A parameterized SystemVerilog design that evolves one cycle-delay contract across shift-register, circular-queue, and memory-based Driver/Checker architectures.
   status: EXECUTED
   status_class: executed
+  status_label_ko: 기능 시뮬레이션 직접 실행
+  status_label_en: Functional simulation rerun
   image_webp: /assets/images/projects/fpga-architecture.webp
   image_jpg: /assets/images/projects/fpga-architecture.jpg
   image_width: 1200
@@ -14,13 +16,13 @@
   alt_ko: Shift Register, Circular Queue, Memory-Based 구조로 발전하는 FPGA delay logic architecture
   alt_en: FPGA delay-logic architecture progressing from a shift register to circular queue and memory-based design
   evidence_ko:
-    - "Project 1: Icarus Verilog 20 checks PASS"
-    - "Project 2: 26 architecture-equivalence checks PASS"
-    - "Project 3: 3 file-driven scenarios PASS"
+    - "Project 1에서 Icarus Verilog test 20개를 통과했습니다."
+    - "Project 2에서 architecture-equivalence test 26개를 통과했습니다."
+    - "Project 3의 file-driven scenario 3개 모두 예상 출력과 일치했습니다."
   evidence_en:
-    - "Project 1: 20 Icarus Verilog checks passed"
-    - "Project 2: 26 architecture-equivalence checks passed"
-    - "Project 3: three file-driven scenarios passed"
+    - "I passed 20 Icarus Verilog tests in Project 1."
+    - "I passed 26 architecture-equivalence tests in Project 2."
+    - "All three file-driven scenarios in Project 3 matched the expected outputs."
   contribution_ko:
     - Parameterized SystemVerilog RTL
     - Independent reference model
@@ -29,8 +31,8 @@
     - Parameterized SystemVerilog RTL
     - Independent reference model
     - Self-checking testbench and deterministic regression
-  boundary_ko: Functional simulation은 실행했습니다. Quartus synthesis, timing, power, Fmax와 수치 PPA는 도구 보고서를 찾지 못해 값을 적지 않았습니다.
-  boundary_en: I ran the functional simulation. I did not find Quartus synthesis, timing, power, Fmax, or numerical PPA reports, so those values are not reported.
+  boundary_ko: Functional simulation까지 실행했습니다. 다음에는 Quartus synthesis와 timing·power·Fmax 분석을 진행하고, 생성된 보고서에서 PPA 수치를 정리할 예정입니다.
+  boundary_en: I completed functional simulation. Next, I plan to run Quartus synthesis and timing, power, and Fmax analysis, then summarize the PPA values from those reports.
   problem_ko: 동일한 cycle-delay 동작을 여러 RTL architecture로 구현하면서 latency contract와 결과 일치성을 독립적으로 검증하는 문제입니다.
   problem_en: The project implements one cycle-delay contract across multiple RTL architectures while independently checking latency and output equivalence.
   architecture_ko: Shift Register → Circular Queue → Memory-Based Driver/Checker로 architecture를 확장하고 독립 reference model과 비교합니다.
@@ -60,10 +62,10 @@
       jpg: /assets/images/projects/fpga-waveform.jpg
       width: 1200
       height: 578
-      alt_ko: FPGA programmable delay logic의 file-driven verification waveform과 timing marker
-      alt_en: File-driven verification waveform and timing markers for the FPGA programmable delay logic
-      caption_ko: Project 3 file-driven dynamic delay verification waveform
-      caption_en: Project 3 file-driven dynamic delay verification waveform
+      alt_ko: FPGA programmable delay logic의 file-driven simulation waveform과 timing marker
+      alt_en: File-driven simulation waveform and timing markers for the FPGA programmable delay logic
+      caption_ko: Project 3의 file input으로 실행한 dynamic delay waveform
+      caption_en: Dynamic-delay waveform produced from the Project 3 file input
   categories: [fpga, digital-verification]
   ko_url: /projects/fpga-delay-logic/
   en_url: /en/projects/fpga-delay-logic/
@@ -80,6 +82,8 @@
   summary_en: Aligns ECG, SCG, and non-contact FMCW radar on a beat-relative axis and analyzes morphology-based AO/AC candidate timing.
   status: SOURCE + HARDWARE
   status_class: source
+  status_label_ko: 분석 코드와 실제 실험 장비
+  status_label_en: Analysis source and real hardware
   image_webp: /assets/images/projects/radar-hardware.webp
   image_jpg: /assets/images/projects/radar-hardware.jpg
   image_width: 1200
@@ -89,11 +93,11 @@
   evidence_ko:
     - 분석 source와 설정·export 문서
     - STM32·ESP32 acquisition firmware
-    - 개인정보 검토를 거친 실제 하드웨어 사진
+    - ECG·SCG·Radar 동시취득에 사용한 하드웨어 사진
   evidence_en:
     - Analysis source plus configuration and export documentation
     - STM32 and ESP32 acquisition firmware
-    - Privacy-reviewed photographs of the experimental hardware
+    - Photographs of the hardware used for concurrent ECG, SCG, and radar acquisition
   contribution_ko:
     - ECG R-peak anchor와 SCG reference
     - Radar phase displacement와 beat segmentation
@@ -102,8 +106,8 @@
     - ECG R-peak anchoring and SCG reference timing
     - Radar phase displacement and beat segmentation
     - Detector fusion, SQI, and CTI export
-  boundary_ko: AO/AC는 direct valve imaging이 아닌 morphology-based candidate timing입니다. 임상 성능과 독립 echo/ICG/PCG validation은 주장하지 않습니다.
-  boundary_en: AO/AC values are morphology-based candidate timings, not direct valve imaging. Clinical performance and independent echo/ICG/PCG validation are not claimed.
+  boundary_ko: 현재 AO/AC는 radar morphology에서 찾은 후보 시점입니다. Direct valve imaging이나 임상 성능으로 확장하려면 echo·ICG·PCG와 독립적으로 비교하는 후속 실험이 필요합니다.
+  boundary_en: The current AO/AC values are candidate timings derived from radar morphology. Extending this work to direct valve imaging or clinical performance requires follow-up comparison with independent echo, ICG, or PCG measurements.
   problem_ko: 비접촉 FMCW Radar 심장 미세변위 파형에서 ECG·SCG와 시간 정렬 가능한 AO/AC 관련 후보 시점을 분석하는 문제입니다.
   problem_en: The project analyzes AO/AC-related candidate timings in non-contact FMCW radar cardiac displacement waveforms aligned with ECG and SCG.
   architecture_ko: ECG·SCG·BGT60TR13C Radar 동시취득 → ECG R-peak 기준 정렬 → beat segmentation → phase displacement와 morphology 후보 분석 → SQI·CTI export.
@@ -135,8 +139,8 @@
       height: 1000
       alt_ko: STM32 보드와 ECG 전극을 포함한 FMCW Radar 심장신호 동시취득 실험 구성
       alt_en: FMCW radar cardiac-signal acquisition setup with an STM32 board and ECG electrodes
-      caption_ko: 개인정보 검토를 거친 실제 ECG·SCG·Radar 동시취득 하드웨어
-      caption_en: Privacy-reviewed hardware for concurrent ECG, SCG, and radar acquisition
+      caption_ko: ECG·SCG·Radar를 동시에 취득할 때 사용한 하드웨어
+      caption_en: Hardware used for concurrent ECG, SCG, and radar acquisition
     - webp: /assets/images/projects/fmcw-waveform.webp
       jpg: /assets/images/projects/fmcw-waveform.jpg
       width: 1011
@@ -161,6 +165,8 @@
   summary_en: Traces timing integrity from earlobe PPG acquisition through IBI/HRV feature construction and CNN+Transformer classification.
   status: PAPER + CODE
   status_class: measured
+  status_label_ko: 논문과 코드 결과를 구분해 정리
+  status_label_en: Paper and code results kept separate
   image_webp: /assets/images/projects/ppg-pipeline.webp
   image_jpg: /assets/images/projects/ppg-pipeline.jpg
   image_width: 1200
@@ -174,21 +180,21 @@
   evidence_en:
     - PPG AFE, STM32 firmware, and Python source
     - Fold-result CSV files and a public paper PDF
-    - Group-level aggregate visual evidence
+    - Group-level aggregate plots
   contribution_ko:
     - IBI·HRV preprocessing과 feature construction
     - CNN+Transformer evaluation pipeline
-    - Paper 결과와 code archive 결과의 provenance 분리
+    - 논문 수치와 code archive의 5-fold 결과를 조건별로 비교
   contribution_en:
     - IBI/HRV preprocessing and feature construction
     - CNN+Transformer evaluation pipeline
-    - Separation of paper metrics from code-archive metrics
-  boundary_ko: Paper summary의 AUC/F1과 code archive의 5-fold metric은 평가 조건이 달라 같은 결과로 합치지 않습니다.
-  boundary_en: Paper-summary AUC/F1 and code-archive five-fold metrics use different evaluation conditions and are not presented as the same result.
-  problem_ko: PPG timing에서 안정적인 IBI·HRV 특징을 구성하고 인지 과제 수행 상태 분류 모델까지 provenance를 유지하는 문제입니다.
-  problem_en: The project preserves provenance from PPG timing through IBI/HRV feature construction to cognitive-task classification.
+    - Comparison of paper metrics and code-archive metrics under their respective evaluation conditions
+  boundary_ko: 논문 summary의 AUC/F1과 code archive의 5-fold metric은 평가 조건이 다릅니다. 다음에는 같은 dataset split과 metric 정의로 다시 실행해 직접 비교할 계획입니다.
+  boundary_en: The paper-summary AUC/F1 and the code archive's five-fold metrics use different evaluation conditions. Next, I plan to rerun them with the same dataset split and metric definitions for a direct comparison.
+  problem_ko: PPG sample timing을 유지하면서 IBI·HRV 특징을 만들고 인지 과제 수행 상태 분류까지 연결하는 문제를 다뤘습니다.
+  problem_en: The project carries PPG sample timing through IBI/HRV feature construction and cognitive-task classification.
   architecture_ko: Earlobe PPG sensor·AFE → STM32 취득 → IBI·HRV preprocessing → CNN+Transformer 평가 → fold result와 paper metric 분리.
-  architecture_en: Earlobe PPG sensor/AFE → STM32 acquisition → IBI/HRV preprocessing → CNN+Transformer evaluation → separate fold-result and paper-metric provenance.
+  architecture_en: Earlobe PPG sensor/AFE → STM32 acquisition → IBI/HRV preprocessing → CNN+Transformer evaluation → comparison of fold results and paper metrics under separate conditions.
   stack_ko: [PPG AFE, STM32, Python, HRV, CNN, Transformer]
   stack_en: [PPG AFE, STM32, Python, HRV, CNN, Transformer]
   data_flow_ko: PPG sample timing을 보존해 peak·IBI를 계산하고 HRV 특징과 sequence를 분류 모델에 전달합니다.
@@ -196,19 +202,19 @@
   methods_ko:
     - PPG acquisition timing과 peak-derived IBI 전처리
     - Time-domain·frequency-domain HRV feature construction
-    - CNN+Transformer 평가 및 결과 provenance 분리
+    - CNN+Transformer 평가와 조건별 결과 비교
   methods_en:
     - Preprocessed PPG acquisition timing and peak-derived IBIs
     - Constructed time- and frequency-domain HRV features
-    - Evaluated CNN+Transformer models while separating result provenance
+    - Evaluated CNN+Transformer models and compared results by evaluation condition
   results_ko:
     - 논문 보고 평균 AUC 0.85
     - 논문 보고 F1-Score 0.82
-    - PPG·STM32·HRV·CNN end-to-end 연구 pipeline 공개
+    - PPG·STM32·HRV·CNN end-to-end 연구 pipeline 구성
   results_en:
     - Paper-reported average AUC of 0.85
     - Paper-reported F1-score of 0.82
-    - Public PPG/STM32/HRV/CNN end-to-end research pipeline
+    - End-to-end PPG/STM32/HRV/CNN research pipeline
   gallery:
     - webp: /assets/images/projects/ppg-architecture.webp
       jpg: /assets/images/projects/ppg-architecture.jpg
@@ -234,6 +240,8 @@
   summary_en: Integrates PPG and EAR vision across a two-node Raspberry Pi sensing/analysis architecture with TCP/IP and GPIO/I²C alarm paths.
   status: SOURCE + PROTOTYPE
   status_class: source
+  status_label_ko: 소스 코드와 실물 프로토타입
+  status_label_en: Source code and physical prototype
   image_webp: /assets/images/projects/embedded-prototype.webp
   image_jpg: /assets/images/projects/embedded-prototype.jpg
   image_width: 984
@@ -256,8 +264,8 @@
     - PPG server and image/EAR processing
     - Two-node file IPC and network architecture
     - Documentation of the LCD and alarm integration path
-  boundary_ko: Latency, sensitivity, specificity, false-alarm rate는 공개 근거가 없어 수치로 주장하지 않습니다.
-  boundary_en: Latency, sensitivity, specificity, and false-alarm rate are not quantified because public evidence is unavailable.
+  boundary_ko: 다음에는 latency, sensitivity, specificity와 false-alarm rate를 같은 실험 조건에서 측정해 수치로 비교할 계획입니다.
+  boundary_en: Next, I plan to measure latency, sensitivity, specificity, and false-alarm rate under one consistent test setup.
   problem_ko: PPG와 camera 기반 EAR 신호를 분리된 두 Raspberry Pi node에서 취득·분석하고 alarm path로 통합하는 문제입니다.
   problem_en: The project acquires and analyzes PPG and camera-based EAR signals across two Raspberry Pi nodes and integrates the resulting alarm path.
   architecture_ko: PPG sensing node와 image/EAR analysis node를 TCP/IP와 file IPC로 연결하고 GPIO·I²C를 통해 LCD와 alarm 출력을 구성합니다.
@@ -269,19 +277,19 @@
   methods_ko:
     - PPG server와 image/EAR processing module 통합
     - Two-node communication과 상태 전달 경로 문서화
-    - LCD·alarm interface와 실제 prototype 구성 확인
+    - LCD·alarm interface와 prototype wiring 정리
   methods_en:
     - Integrated PPG-server and image/EAR-processing modules
     - Documented two-node communication and state transfer
-    - Confirmed LCD/alarm interfaces and the physical prototype structure
+    - Documented the LCD/alarm interfaces and prototype wiring
   results_ko:
-    - C/C++ source와 two-node architecture 공개
-    - TCP/IP·GPIO·I²C data/alarm path 확인
-    - 실제 prototype·LCD·sensor wiring 사진 확인
+    - C/C++ source에 구현된 two-node architecture
+    - TCP/IP·GPIO·I²C가 잇는 data와 alarm path
+    - 당시 prototype 사진에 남아 있는 LCD와 sensor wiring
   results_en:
-    - Public C/C++ source and two-node architecture
-    - TCP/IP, GPIO, and I²C data/alarm paths documented
-    - Physical prototype, LCD, and sensor wiring photographs confirmed
+    - Two-node architecture implemented in the C/C++ source
+    - Data and alarm paths connected through TCP/IP, GPIO, and I²C
+    - LCD and sensor wiring shown in the original prototype photographs
   gallery:
     - webp: /assets/images/projects/drowsiness-contact-sheet.webp
       jpg: /assets/images/projects/drowsiness-contact-sheet.jpg
@@ -289,8 +297,8 @@
       height: 1100
       alt_ko: Raspberry Pi 졸음 모니터링 prototype, LCD, sensor wiring과 source 화면을 모은 contact sheet
       alt_en: Contact sheet of the Raspberry Pi drowsiness-monitoring prototype, LCD, sensor wiring, and source views
-      caption_ko: 실제 prototype과 공개 source 근거 contact sheet
-      caption_en: Contact sheet of physical-prototype and public-source evidence
+      caption_ko: Prototype, LCD, sensor wiring과 source 화면을 함께 정리한 contact sheet
+      caption_en: Contact sheet of the prototype, LCD, sensor wiring, and source views
   categories: [embedded, sensing]
   ko_url: /projects/drowsiness-monitor/
   en_url: /en/projects/drowsiness-monitor/
@@ -303,10 +311,12 @@
   title_en: Defense Systems Engineering
   domain_ko: Requirements · Trade-off · Reliability
   domain_en: Requirements · Trade-off · Reliability
-  summary_ko: Counter-UAS, EW jammer, KF-21 reliability 사례를 요구도·정량 근거·검증·한계 구조로 재편한 교육용 case study입니다.
-  summary_en: Educational case studies that reorganize Counter-UAS, EW jammer, and KF-21 reliability work around requirements, quantitative basis, verification, and limits.
+  summary_ko: Counter-UAS, EW jammer, KF-21 reliability 사례에서 요구도를 정리하고 정량 trade-off와 FMEA를 계산한 교육용 case study입니다.
+  summary_en: Educational case studies that define requirements and calculate quantitative trade-offs and FMEA for Counter-UAS, EW jammer, and KF-21 reliability scenarios.
   status: SOURCE-DERIVED
   status_class: source
+  status_label_ko: 원 보고서를 바탕으로 다시 계산
+  status_label_en: Recalculated from source reports
   image_webp:
   image_jpg:
   image_width:
@@ -314,23 +324,23 @@
   alt_ko:
   alt_en:
   evidence_ko:
-    - 원 보고서 값과 독립 재계산
-    - 공개용 diagram과 traceability
-    - 요구도·trade-off·FMEA 기반 검증 구조
+    - 원 보고서 값과 직접 다시 계산한 결과
+    - 요구도에서 계산 결과까지 연결한 diagram
+    - Trade-off와 FMEA 분석표
   evidence_en:
-    - Source-report values and independent recalculation
-    - Public redraws and traceability
-    - Requirements, trade-off, and FMEA-oriented verification structure
+    - Source-report values and my independent recalculations
+    - Diagrams connecting requirements to calculated results
+    - Trade-off and FMEA analysis tables
   contribution_ko:
     - Problem → Requirements → Quantitative Basis 구조화
-    - Threshold/objective와 verification boundary 분리
+    - Threshold와 objective 조건 비교
     - Reliability·maintainability 재계산
   contribution_en:
     - Problem → Requirements → Quantitative Basis structuring
-    - Separation of threshold/objective values from verification boundaries
+    - Comparison of threshold and objective conditions
     - Reliability and maintainability recalculation
-  boundary_ko: 교육용 가상 조건이며 실제 체계 제원, 공식 성능 또는 구현 가능한 운용 절차가 아닙니다.
-  boundary_en: These are educational scenarios, not official system specifications, performance claims, or deployable operating procedures.
+  boundary_ko: 교육용 가상 조건으로 계산했습니다. 실제 체계에 적용하려면 공식 제원과 운용 조건을 바탕으로 요구도와 수치를 다시 검토해야 합니다.
+  boundary_en: I calculated these educational scenarios with hypothetical conditions. Applying them to a real system would require a new review using official specifications and operating conditions.
   categories: [systems-engineering, defense]
   ko_url: /projects/defense-systems/
   en_url: /en/projects/defense-systems/
@@ -343,10 +353,12 @@
   title_en: Electrical Engineering Coursework
   domain_ko: VHDL · Power · Control · RF · Sensors
   domain_en: VHDL · Power · Control · RF · Sensors
-  summary_ko: VHDL verification, transformer calculation, power-flow debugging, motor control, RF network, AESA-SAR proposal를 근거 등급별로 정리합니다.
-  summary_en: Organizes VHDL verification, transformer calculations, power-flow debugging, motor control, RF networks, and an AESA-SAR proposal by evidence level.
+  summary_ko: VHDL simulation, transformer 계산, power-flow debugging, motor control, RF network와 AESA-SAR 제안서를 과목별로 정리했습니다.
+  summary_en: Course-by-course work on VHDL simulation, transformer calculations, power-flow debugging, motor control, RF networks, and an AESA-SAR proposal.
   status: EVIDENCE CATALOG
   status_class: source
+  status_label_ko: 과목별 원본과 재실행 결과
+  status_label_en: Course sources and rerun results
   image_webp: /assets/images/projects/coursework-hero.webp
   image_jpg: /assets/images/projects/coursework-hero.jpg
   image_width: 1200
@@ -354,23 +366,23 @@
   alt_ko: VHDL, Power, Control, RF, Sensor Systems로 구성된 전자전기공학 학부 과제 포트폴리오
   alt_en: Electrical engineering coursework portfolio spanning VHDL, power, control, RF, and sensor systems
   evidence_ko:
-    - GHDL test와 독립 계산
-    - 기존 Cadence archive와 공개용 redraw
-    - Source-Derived·Rerun·Proposal 상태 분리
+    - GHDL test와 직접 다시 계산한 값
+    - Cadence simulation 화면과 회로 redraw
+    - 과제별 설계 과정과 실행 결과
   evidence_en:
-    - GHDL tests and independent calculations
-    - Existing Cadence archives and public redraws
-    - Separation of Source-Derived, Rerun, and Proposal states
+    - GHDL tests and my recalculated values
+    - Cadence simulation views and circuit redraws
+    - Design steps and execution results for each assignment
   contribution_ko:
-    - 전공별 자료 inventory와 evidence classification
-    - 재실행 결과와 기존 archive 분리
-    - 과장 없는 validation boundary 문서화
+    - 전공별 계산·회로·code를 과목 흐름에 맞춰 정리
+    - 다시 실행한 결과와 당시 저장한 archive 비교
+    - 추가 실험이 필요한 부분을 다음 과제로 정리
   contribution_en:
-    - Domain-based inventory and evidence classification
-    - Separation of rerun results from existing archives
-    - Documentation of validation boundaries without overclaiming
-  boundary_ko: 새 Cadence·VNA 측정 결과와 production-grid validation은 주장하지 않습니다.
-  boundary_en: No new Cadence or VNA measurements and no production-grid validation are claimed.
+    - Organized calculations, circuits, and code around each course sequence
+    - Compared rerun results with the archives saved during the courses
+    - Recorded the experiments that remain for future work
+  boundary_ko: 새 Cadence simulation과 VNA 측정은 아직 다시 실행하지 않았습니다. 해당 도구와 장비를 사용할 때 회로 조건부터 맞춰 결과를 추가할 예정입니다.
+  boundary_en: I have not rerun the Cadence simulations or VNA measurements yet. When those tools and instruments are available, I plan to restore the circuit conditions and add the results.
   categories: [coursework, electrical-engineering]
   ko_url: /projects/coursework/
   en_url: /en/projects/coursework/

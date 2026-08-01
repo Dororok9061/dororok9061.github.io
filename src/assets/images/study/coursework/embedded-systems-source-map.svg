@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Embedded systems source separation map</title>
+  <desc id="desc">University coursework, personal STM32 study, research acquisition, and Raspberry Pi prototypes shown as four separate records.</desc>
+  <rect width="1200" height="675" fill="#f3f1eb"/>
+  <rect x="44" y="42" width="1112" height="591" rx="28" fill="#081526"/>
+  <text x="84" y="112" fill="#65d4ff" font-family="Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="3">CONCEPT MAP</text>
+  <text x="84" y="170" fill="#ffffff" font-family="Arial, sans-serif" font-size="44" font-weight="700">Embedded Systems</text>
+  <text x="84" y="210" fill="#b9c7d8" font-family="Arial, sans-serif" font-size="21">Course · Study · Research · Prototype</text>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="84" y="268" width="246" height="248" rx="18" fill="#10243b" stroke="#3c5774"/>
+    <circle cx="123" cy="309" r="15" fill="#65d4ff"/>
+    <text x="151" y="317" fill="#ffffff" font-size="24" font-weight="700">Course</text>
+    <text x="112" y="367" fill="#dce7f2" font-size="20">대학 수업</text>
+    <text x="112" y="405" fill="#9db0c5" font-size="17">lecture · assignment</text>
+    <text x="112" y="436" fill="#9db0c5" font-size="17">course project</text>
+
+    <rect x="346" y="268" width="246" height="248" rx="18" fill="#10243b" stroke="#3c5774"/>
+    <circle cx="385" cy="309" r="15" fill="#7ee0a3"/>
+    <text x="413" y="317" fill="#ffffff" font-size="24" font-weight="700">STM32 Study</text>
+    <text x="374" y="367" fill="#dce7f2" font-size="20">F411 board sets</text>
+    <text x="374" y="405" fill="#9db0c5" font-size="17">CubeF4 · HAL</text>
+    <text x="374" y="436" fill="#9db0c5" font-size="17">CMSIS-DSP</text>
+
+    <rect x="608" y="268" width="246" height="248" rx="18" fill="#10243b" stroke="#3c5774"/>
+    <circle cx="647" cy="309" r="15" fill="#ffca6b"/>
+    <text x="675" y="317" fill="#ffffff" font-size="24" font-weight="700">Research F411</text>
+    <text x="636" y="367" fill="#dce7f2" font-size="20">ECG · SCG · Radar</text>
+    <text x="636" y="405" fill="#9db0c5" font-size="17">timer · ADC · UART</text>
+    <text x="636" y="436" fill="#9db0c5" font-size="17">beat alignment</text>
+
+    <rect x="870" y="268" width="246" height="248" rx="18" fill="#10243b" stroke="#3c5774"/>
+    <circle cx="909" cy="309" r="15" fill="#ff8fa3"/>
+    <text x="937" y="317" fill="#ffffff" font-size="24" font-weight="700">Raspberry Pi</text>
+    <text x="898" y="367" fill="#dce7f2" font-size="20">Camera · EAR</text>
+    <text x="898" y="405" fill="#9db0c5" font-size="17">TCP/IP · GPIO</text>
+    <text x="898" y="436" fill="#9db0c5" font-size="17">I2C LCD · alarm</text>
+  </g>
+  <text x="84" y="577" fill="#8fa4bb" font-family="Arial, sans-serif" font-size="17">Four independent records; cross-links only where hardware and files overlap.</text>
+</svg>

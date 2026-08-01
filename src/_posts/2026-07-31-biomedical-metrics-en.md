@@ -6,9 +6,9 @@ date: 2026-07-31 00:51:00 +0900
 updated: 2026-08-01 18:41:00 +0900
 study_date: 2026-07-31
 lang: en
-translation_key: biomedical-metric-provenance
-permalink: /en/blog/2026/07/31/biomedical-metric-provenance/
-alternate_url: /blog/2026/07/31/biomedical-metric-provenance/
+translation_key: biomedical-metric-conditions
+permalink: /en/blog/2026/07/31/biomedical-metric-conditions/
+alternate_url: /blog/2026/07/31/biomedical-metric-conditions/
 alternate_lang: ko
 primary_category: ai-deep-learning
 subcategory: model-evaluation
@@ -22,7 +22,7 @@ tools: [Python, CNN, HRV]
 hardware: [PPG AFE, STM32]
 software_versions: [not fully preserved]
 source_materials:
-  - { title: PPG-HRV Cognitive Load CNN, type: public-repository, public_url: https://github.com/Tontonjeong/PPG-HRV-Cognitive-Load-CNN, file_reference: source and public paper, pages: "", used_for: pipeline and metric provenance }
+  - { title: PPG-HRV Cognitive Load CNN, type: public-repository, public_url: https://github.com/Tontonjeong/PPG-HRV-Cognitive-Load-CNN, file_reference: source and public paper, pages: "", used_for: pipeline and metric conditions }
   - { title: PPG-HRV project page, type: portfolio-page, public_url: /en/projects/ppg-hrv/, file_reference: public project data, pages: "", used_for: published result boundary }
 prerequisites: [classification, confusion-matrix, cross-validation]
 learning_objectives: [inspect subject splits, record fold aggregation, separate AUC and F1 sources]
@@ -41,7 +41,7 @@ toc:
   - { id: pipeline, title: PPG-to-classification pipeline }
   - { id: split, title: Subject splits and folds }
   - { id: metrics, title: "AUC, F1, and confusion matrices" }
-  - { id: provenance, title: Paper result and code archive }
+  - { id: results, title: Paper result and code archive }
   - { id: limits, title: Unverified items }
 ---
 
@@ -59,7 +59,7 @@ Without those conditions, a number such as `0.85` cannot be reproduced or interp
 
 ## PPG-to-classification pipeline {#pipeline}
 
-<figure><picture><source srcset="/assets/images/projects/ppg-pipeline.webp" type="image/webp"><img src="/assets/images/projects/ppg-pipeline.jpg" alt="Pipeline connecting an earlobe PPG sensor, STM32 acquisition, IBI HRV preprocessing, and CNN Transformer evaluation" width="1200" height="750" loading="lazy"></picture><figcaption>Provenance is maintained from sample timing through peaks, IBIs, HRV features, and model evaluation.</figcaption></figure>
+<figure><picture><source srcset="/assets/images/projects/ppg-pipeline.webp" type="image/webp"><img src="/assets/images/projects/ppg-pipeline.jpg" alt="Pipeline connecting an earlobe PPG sensor, STM32 acquisition, IBI HRV preprocessing, and CNN Transformer evaluation" width="1200" height="750" loading="lazy"></picture><figcaption>The processing order runs from sample timing through peaks, IBIs, HRV features, and model evaluation.</figcaption></figure>
 
 An earlobe PPG sensor and analog front-end feed samples to STM32 acquisition. Peak locations produce inter-beat intervals, followed by time- and frequency-domain HRV features and CNN-family classification.
 
@@ -79,12 +79,12 @@ Each cross-validation fold needs preserved train, validation, and test subject l
 
 <figure><picture><source srcset="/assets/images/projects/ppg-architecture.webp" type="image/webp"><img src="/assets/images/projects/ppg-architecture.jpg" alt="Architecture connecting PPG acquisition, HRV preprocessing, and CNN evaluation" width="878" height="363" loading="lazy"></picture><figcaption>A metric is tied to split, preprocessing, and aggregation conditions rather than presented as an isolated endpoint.</figcaption></figure>
 
-## Paper result and code archive {#provenance}
+## Paper result and code archive {#results}
 
-The public paper abstract reports average AUC **0.85** and F1-score **0.82**. These values are labeled `PAPER_REPORTED`. A separate five-fold CSV archive is not averaged with them or placed in the same experiment row unless dataset scope, folds, and aggregation are shown to match.
+The paper abstract reports average AUC **0.85** and F1-score **0.82**. Before comparing a separate five-fold CSV archive, I need to confirm that its dataset scope, folds, and aggregation match the paper. I therefore keep the two sets of values in separate rows instead of averaging them.
 
 Each result bundle should retain its source file, dataset scope, exclusions, split unit, fold count, preprocessing version, model checkpoint, and metric code. Participant raw signals remain private; only group-level aggregates and a reproducible procedure are public.
 
 ## Unverified items {#limits}
 
-The public evidence does not provide a fresh run proving that every fold used the same subject split and preprocessing version. The paper values are not claimed as reproduced in the current environment. The next verification step is an anonymized group-split manifest plus fold-level predictions linked back to metric calculation.
+The saved files were not enough to rerun every fold with the same subject split and preprocessing version. I therefore list the paper-table values and saved code-run values separately. My next step is to rebuild the subject-group split list and fold predictions, then compare the metric calculation.

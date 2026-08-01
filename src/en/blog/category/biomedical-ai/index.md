@@ -1,7 +1,7 @@
 ---
 layout: category
 title: Biomedical AI
-lead: PPG timing integrity, IBI/HRV feature construction, and metric provenance.
+lead: PPG timing, IBI/HRV feature construction, and model evaluation.
 description: Biomedical-AI engineering notes.
 category_slug: biomedical-ai
 permalink: /en/blog/category/biomedical-ai/

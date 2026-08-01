@@ -49,7 +49,7 @@ toc:
 
 ECG, SCG, and FMCW radar are acquired over the same interval, with ECG R-peaks serving as common anchors. The radar is a BGT60TR13C, with STM32F411, ESP-32S, and MPU6050 devices in the acquisition and reference paths.
 
-<figure><picture><source srcset="/assets/images/projects/radar-hardware.webp" type="image/webp"><img src="/assets/images/projects/radar-hardware.jpg" alt="Physical setup containing ECG electrodes, an SCG sensor, BGT60TR13C radar, and acquisition boards" width="1200" height="800" loading="lazy"></picture><figcaption>Privacy-reviewed concurrent ECG, SCG, and radar hardware. It proves the setup existed, not a performance value.</figcaption></figure>
+<figure><picture><source srcset="/assets/images/projects/radar-hardware.webp" type="image/webp"><img src="/assets/images/projects/radar-hardware.jpg" alt="Physical setup containing ECG electrodes, an SCG sensor, BGT60TR13C radar, and acquisition boards" width="1200" height="800" loading="lazy"></picture><figcaption>The concurrent ECG, SCG, and radar hardware used in the experiment.</figcaption></figure>
 
 The streams cannot be compared beat by beat until timestamps, sample rates, start offsets, and missing-sample handling are understood.
 
@@ -77,7 +77,7 @@ The AO and AC labels mean **morphology-based candidate timing**. Radar did not i
 
 <figure><picture><source srcset="/assets/images/projects/fmcw-experiment.webp" type="image/webp"><img src="/assets/images/projects/fmcw-experiment.jpg" alt="Concurrent acquisition setup with an STM32 board, ECG electrodes, and FMCW radar" width="1000" height="1000" loading="lazy"></picture><figcaption>Hardware evidence for the experiment and acquisition path.</figcaption></figure>
 
-Public evidence supports analysis source, firmware, configuration/export documentation, hardware photographs, 600-second acquisition, and 848 corresponding beats. It does not support clinical sensitivity, specificity, direct valve detection, or medical-device performance. Participant raw biosignals and identifying information are not published.
+I checked the experiment path against the saved analysis source, firmware, configuration files, and hardware photographs. The paper reports 600 seconds of acquisition and 848 corresponding beats. Clinical sensitivity, specificity, and direct valve detection were not measured in this experiment.
 
 ## Next validation {#next}
 

@@ -1,5 +1,6 @@
 ---
 layout: series
+published: false
 series_id: computer-vision
 title: Computer Vision
 description: Computer Vision 학습 순서와 공개 상태.

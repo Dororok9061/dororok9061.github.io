@@ -65,7 +65,7 @@ ROI가 움직이거나 respiration 성분이 커지면 cardiac morphology가 바
 
 ECG R-peak index를 기준으로 앞뒤 window를 잘라 beat를 만든다. 동일 beat에서 SCG reference timing과 Radar morphology를 비교한다. Beat length가 다르면 resampling 또는 정규화 방식이 결과를 바꿀 수 있으므로 원 sample index와 변환된 beat axis를 함께 보존해야 한다.
 
-논문 보고 범위는 **600초 동시취득**과 **848개 대응 beat 분석**이다. 이 수치는 현재 공개된 연구 요약의 provenance를 유지하며, 별도 새 재실행 결과로 바꾸지 않는다.
+논문에는 **600초 동시취득**과 **848개 대응 beat 분석**을 적었다. 이번 글에서도 그 수치를 논문 결과로 표시하고, 새로 다시 실행한 값처럼 바꾸지 않았다.
 
 ## AO·AC Candidate Timing {#candidates}
 
@@ -77,7 +77,7 @@ SCG에서 AO와 AC 관련 reference point를 구성하고, Radar waveform의 pea
 
 <figure><picture><source srcset="/assets/images/projects/fmcw-experiment.webp" type="image/webp"><img src="/assets/images/projects/fmcw-experiment.jpg" alt="STM32 board, ECG electrode와 FMCW Radar가 포함된 동시취득 실험 사진" width="1000" height="1000" loading="lazy"></picture><figcaption>실험 구성과 acquisition 경로의 hardware evidence.</figcaption></figure>
 
-공개 근거가 지원하는 항목은 analysis source, firmware, 설정·export 문서, hardware 사진, 600초 acquisition과 848 corresponding beats다. 임상 sensitivity, specificity, direct valve detection, 의료기기 성능은 주장하지 않는다. 개별 피험자 raw biosignal과 식별 가능한 정보도 공개하지 않는다.
+남아 있는 analysis source, firmware, 설정 문서와 사진으로 실험 경로를 다시 확인했다. 600초 acquisition과 848 corresponding beats는 논문에 보고한 값이다. 임상 sensitivity·specificity와 direct valve detection은 이 실험에서 측정한 항목이 아니다.
 
 ## 다음 Validation {#next}
 

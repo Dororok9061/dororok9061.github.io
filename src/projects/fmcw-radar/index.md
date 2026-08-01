@@ -9,5 +9,6 @@ alternate_url: /en/projects/fmcw-radar/
 alternate_lang: en
 ---
 
-연구 주장의 범위는 공개 source, firmware, 설정 문서와 privacy-reviewed 하드웨어
-사진으로 제한합니다. 후보 시점을 direct valve imaging으로 표현하지 않습니다.
+ECG R-peak를 기준으로 SCG와 FMCW Radar 파형을 정렬하고 AO·AC 후보 시점을
+비교했다. 이 후보는 Radar phase의 형태를 분석한 시점이며 판막을 직접 촬영한
+영상은 아니다.

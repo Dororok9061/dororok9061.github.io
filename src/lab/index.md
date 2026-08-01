@@ -2,7 +2,7 @@
 layout: page
 title: 연구실·연구
 eyebrow: Research Laboratory
-lead: Radar, biomedical sensing, embedded acquisition과 검증 가능한 연구 문서를 연결합니다.
+lead: Radar, biomedical sensing과 embedded acquisition을 연구실에서 수행한 흐름으로 소개합니다.
 description: 류형록의 연구실 기반 Radar 및 Biomedical signal processing 연구.
 permalink: /lab/
 lang: ko
@@ -23,5 +23,6 @@ alternate_lang: en
 - [PPG–HRV Cognitive Load](/projects/ppg-hrv/)
 - [Selected first-author publications](/publications/)
 
-연구 결과의 해석은 공개된 source, firmware, aggregate result, 문서가 지원하는
-범위로 제한합니다. Raw participant data와 개인 단위 생체정보는 공개하지 않습니다.
+ECG R-peak를 기준으로 SCG와 Radar 파형을 정렬했고, PPG에서는 peak 간격으로
+IBI와 HRV feature를 만들었다. 각 프로젝트 페이지에서 사용한 firmware와 분석
+코드, 저장해 둔 결과를 함께 볼 수 있다.

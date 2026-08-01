@@ -73,7 +73,6 @@ layout: default
     <div><dt>{% if page.lang == 'en' %}Location{% else %}장소{% endif %}</dt><dd>{{ publication_location }}</dd></div>
     <div><dt>{% if page.lang == 'en' %}Publication type{% else %}논문 유형{% endif %}</dt><dd>{{ publication.type }}</dd></div>
     <div><dt>{% if page.lang == 'en' %}Pages{% else %}페이지{% endif %}</dt><dd>{{ publication.pages }}</dd></div>
-    <div><dt>{% if page.lang == 'en' %}DBpia record check{% else %}DBpia 등록 확인{% endif %}</dt><dd>{% if page.lang == 'en' %}{{ publication.dbpia_record_note_en }}{% else %}{{ publication.dbpia_record_note_ko }}{% endif %}</dd></div>
     <div><dt>{% if page.lang == 'en' %}My role{% else %}본인 역할{% endif %}</dt><dd>{{ publication_role }}</dd></div>
   </dl>
 
@@ -83,9 +82,9 @@ layout: default
     <section><h2>{% if page.lang == 'en' %}System Architecture{% else %}시스템 구조{% endif %}</h2><p>{{ architecture }}</p></section>
     <section><h2>{% if page.lang == 'en' %}Methods{% else %}연구 방법{% endif %}</h2><p>{{ methods }}</p></section>
     <section><h2>{% if page.lang == 'en' %}Results{% else %}결과{% endif %}</h2><p>{{ results }}</p><dl class="metric-list">{% for metric in publication.metrics %}<div><dt>{% if page.lang == 'en' %}{{ metric.label_en }}{% else %}{{ metric.label_ko }}{% endif %}</dt><dd>{{ metric.value }}</dd></div>{% endfor %}</dl></section>
-    <section><h2>{% if page.lang == 'en' %}Validation Boundary{% else %}검증 경계{% endif %}</h2><p>{{ boundary }}</p></section>
+    {% if boundary and boundary != empty %}<section><h2>{% if page.lang == 'en' %}Next step{% else %}다음에 확인할 부분{% endif %}</h2><p>{{ boundary }}</p></section>{% endif %}
   </div>
 
-  <section aria-labelledby="publication-links-title"><h2 id="publication-links-title">{% if page.lang == 'en' %}Evidence and related work{% else %}근거와 관련 작업{% endif %}</h2><div class="button-row"><a class="portfolio-button portfolio-button--primary" href="{{ publication.official_url }}" target="_blank" rel="noopener noreferrer">Official Conference</a>{% if publication.dbpia_url != empty %}<a class="portfolio-button" href="{{ publication.dbpia_url }}" target="_blank" rel="noopener noreferrer">DBpia Record</a>{% endif %}{% if publication.paper_pdf != empty %}<a class="portfolio-button" href="{{ publication.paper_pdf }}" target="_blank" rel="noopener noreferrer">Paper PDF</a>{% endif %}<a class="portfolio-button" href="{{ publication.github_url }}" target="_blank" rel="noopener noreferrer">Repository</a><a class="portfolio-button" href="{% if page.lang == 'en' %}{{ publication.project_url | prepend: '/en' | relative_url }}{% else %}{{ publication.project_url | relative_url }}{% endif %}">Project</a></div></section>
+  <section aria-labelledby="publication-links-title"><h2 id="publication-links-title">{% if page.lang == 'en' %}Paper and related project{% else %}논문과 관련 프로젝트{% endif %}</h2><div class="button-row"><a class="portfolio-button portfolio-button--primary" href="{{ publication.official_url }}" target="_blank" rel="noopener noreferrer">Official Conference</a>{% if publication.dbpia_url != empty %}<a class="portfolio-button" href="{{ publication.dbpia_url }}" target="_blank" rel="noopener noreferrer">DBpia Record</a>{% endif %}{% if publication.paper_pdf != empty %}<a class="portfolio-button" href="{{ publication.paper_pdf }}" target="_blank" rel="noopener noreferrer">Paper PDF</a>{% endif %}<a class="portfolio-button" href="{{ publication.github_url }}" target="_blank" rel="noopener noreferrer">Repository</a><a class="portfolio-button" href="{% if page.lang == 'en' %}{{ publication.project_url | prepend: '/en' | relative_url }}{% else %}{{ publication.project_url | relative_url }}{% endif %}">Project</a></div></section>
   <div class="prose">{{ content }}</div>
 </main>

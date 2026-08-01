@@ -10,4 +10,4 @@ alternate_lang: en
 image: /assets/img/publications/cics25_cnn_first_page.jpg
 ---
 
-논문 표기와 결과는 공개 PDF에서 확인한 범위로 제한합니다. DBpia의 정확한 Record URL은 확인 전까지 추가하지 않습니다.
+공개 PDF와 DBpia 레코드에서 제목·저자·pp. 291–292가 일치하는 것을 확인했고, 해당 레코드 URL을 함께 연결했습니다.

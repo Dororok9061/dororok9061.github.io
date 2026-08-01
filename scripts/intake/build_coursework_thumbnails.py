@@ -18,16 +18,11 @@ OUTPUT = REPO / "src/assets/images/study/coursework"
 
 SOURCES = {
     "controller-logic": (LEGACY / "gallery/controller-logic/mealy-101-waveform.png", "컨트롤로직설계"),
-    "electronic-circuits-1": (REPO / "src/assets/images/study/pads/pads-ppg-layout.webp", "전자회로1"),
-    "electronic-circuits-2": (REPO / "src/assets/images/projects/ppg-architecture.webp", "전자회로2"),
-    "digital-communications": (REPO / "src/assets/images/projects/fmcw-waveform.webp", "디지털 통신"),
     "automatic-control": (LEGACY / "assets/motor/speed_response_psim_archive.png", "자동제어"),
     "applied-control": (LEGACY / "assets/motor/current_response_psim_archive.png", "제어공학 응용"),
     "high-frequency-engineering": (LEGACY / "gallery/rf-microwave/wilkinson-sparameter.png", "고주파공학"),
-    "power-electronics": (LEGACY / "assets/motor/psim_circuit_archive.png", "전력전자"),
     "electrical-machines": (LEGACY / "assets/transformer/core_tradeoff_chart.png", "전기기기"),
     "motor-control": (LEGACY / "assets/motor/torque_ripple_comparison.png", "전동기제어"),
-    "embedded-systems": (REPO / "src/assets/images/projects/embedded-prototype.webp", "임베디드 시스템"),
 }
 
 DETAIL_SOURCES = {

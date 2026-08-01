@@ -35,8 +35,8 @@
   dbpia_record_status: VERIFIED_PRESENT
   dbpia_url_status: VERIFIED_EXACT
   dbpia_verified_on: 2026-08-01
-  dbpia_record_note_ko: DBpia에서 제목·저자·pp. 291–292가 일치하는 Record 1건을 확인했습니다.
-  dbpia_record_note_en: One DBpia record was verified with matching title, authors, and pp. 291–292.
+  dbpia_record_note_ko: DBpia 논문 페이지에서 제목·저자와 pp. 291–292를 확인할 수 있습니다.
+  dbpia_record_note_en: The DBpia paper page shows the matching title, authors, and pp. 291–292.
   paper_pdf: https://github.com/Tontonjeong/PPG-HRV-Cognitive-Load-CNN/blob/main/references/paper.pdf
   poster_pdf: ""
   project_url: /projects/ppg-hrv/
@@ -63,8 +63,8 @@
   methods_en: PPG timing and IBI/HRV preprocessing produce features used as inputs to the CNN.
   results_ko: 논문 Abstract에 보고된 평균 AUC는 0.85, F1-Score는 0.82입니다.
   results_en: The paper abstract reports an average AUC of 0.85 and an F1-score of 0.82.
-  boundary_ko: 평균 AUC 0.85와 F1-Score 0.82는 제공된 논문 PDF의 Abstract·Conclusion 값입니다. DBpia Record abstract의 AUC 0.99·F1 0.992 및 PDF 본문의 Fold 5 수치와 서로 다른 평가 범위이므로 하나의 성능값으로 합치지 않습니다.
-  boundary_en: Average AUC 0.85 and F1-score 0.82 come from the supplied paper PDF's abstract and conclusion. They are not merged with the DBpia-record abstract's AUC 0.99/F1 0.992 or the PDF's Fold 5 values because those represent different evaluation scopes.
+  boundary_ko: 논문 Abstract·Conclusion의 평균 AUC 0.85·F1-Score 0.82, DBpia abstract의 AUC 0.99·F1 0.992와 본문 Fold 5 수치는 평가 범위가 다릅니다. 다음에는 동일한 dataset split과 metric 정의로 다시 계산해 차이를 비교할 계획입니다.
+  boundary_en: The paper abstract and conclusion report average AUC 0.85 and F1-score 0.82, while the DBpia abstract reports AUC 0.99 and F1 0.992 and the paper body lists Fold 5 values. These use different evaluation scopes; next, I plan to recalculate them with the same dataset split and metric definitions.
   metric_reconciliation_status: SOURCE_SCOPE_DIFFERENCE_RECORDED
   metrics:
     - label_ko: 평균 AUC
@@ -115,8 +115,8 @@
   dbpia_record_status: NOT_FOUND_BY_EXACT_TITLE_SEARCH
   dbpia_url_status: NOT_VERIFIED
   dbpia_verified_on: 2026-08-01
-  dbpia_record_note_ko: 2026-08-01 DBpia exact-title 검색 결과는 0건이며, Record 존재와 정확한 URL은 확인되지 않았습니다.
-  dbpia_record_note_en: The 2026-08-01 DBpia exact-title search returned zero records; record existence and an exact URL remain unverified.
+  dbpia_record_note_ko: 2026년 8월 1일에는 DBpia 제목 검색으로 이 논문 페이지를 찾지 못해 논문집과 학회 페이지를 기준으로 정리했습니다.
+  dbpia_record_note_en: I did not find this paper through a DBpia title search on August 1, 2026, so this entry uses the proceedings and conference pages.
   paper_pdf: ""
   poster_pdf: ""
   project_url: /projects/fmcw-radar/
@@ -142,10 +142,10 @@
   architecture_en: The pipeline uses concurrent ECG, SCG, and BGT60TR13C radar acquisition, ECG R-peak alignment, beat segmentation, and radar morphology candidate analysis.
   methods_ko: 600초 동시취득 신호에서 대응되는 848개 beat를 구성하고 AO/AC 관련 후보 시점의 분포를 분석했습니다.
   methods_en: From 600 seconds of concurrent acquisition, 848 corresponding beats were assembled for AO/AC-related candidate timing analysis.
-  results_ko: 공개 근거가 지원하는 결과는 600초 동시취득과 848개 대응 beat 분석입니다.
-  results_en: Public evidence supports 600 seconds of concurrent acquisition and analysis of 848 corresponding beats.
-  boundary_ko: Radar-derived AO/AC candidate timing이며 대동맥판 직접 영상화, 임상적 valve detection 또는 의료기기 성능을 의미하지 않습니다.
-  boundary_en: These are radar-derived AO/AC candidate timings, not direct valve imaging, clinical valve detection, or medical-device performance.
+  results_ko: 600초 동안 ECG·SCG·Radar를 동시에 취득하고 대응되는 848개 beat의 후보 시점을 분석했습니다.
+  results_en: I concurrently acquired ECG, SCG, and radar for 600 seconds and analyzed candidate timings across 848 corresponding beats.
+  boundary_ko: 현재 결과는 radar morphology에서 찾은 AO/AC 후보 시점입니다. Direct valve imaging이나 임상적 valve detection으로 확장하려면 독립 생리신호와 비교하는 후속 실험이 필요합니다.
+  boundary_en: The current results are AO/AC candidate timings derived from radar morphology. Extending them to direct valve imaging or clinical valve detection requires follow-up comparison with independent physiological measurements.
   metrics:
     - label_ko: 동시취득
       label_en: Concurrent acquisition

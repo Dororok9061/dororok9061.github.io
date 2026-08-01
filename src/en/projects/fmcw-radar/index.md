@@ -9,6 +9,6 @@ alternate_url: /projects/fmcw-radar/
 alternate_lang: ko
 ---
 
-Claims are limited to public analysis source, firmware, configuration documents,
-and privacy-reviewed hardware photographs. Candidate timings are not presented
-as direct valve imaging.
+I aligned SCG and FMCW radar waveforms around ECG R-peaks and compared AO and AC
+candidate timing. These candidates come from radar-phase morphology; they are
+not direct images of heart valves.

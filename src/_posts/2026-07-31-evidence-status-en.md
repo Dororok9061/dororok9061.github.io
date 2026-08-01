@@ -33,6 +33,7 @@ cover_image: /assets/images/projects/fpga-architecture.webp
 thumbnail: /assets/images/projects/fpga-architecture.webp
 image_alt: Three FPGA delay-logic architectures connected to an independent checking flow
 draft: false
+published: false
 revision_history:
   - { date: 2026-07-31, change: Initial publication }
   - { date: 2026-08-01, change: Rewrote the note around practical documentation instead of status codes }

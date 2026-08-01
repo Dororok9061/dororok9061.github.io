@@ -1,7 +1,7 @@
 ---
 title: Sensor-to-alarm data path in a two-node Raspberry Pi drowsiness monitor
 title_en: Sensor-to-alarm data path in a two-node Raspberry Pi drowsiness monitor
-description: A source-backed map of the PPG node, camera/EAR node, TCP/IP, file IPC, GPIO, I2C LCD, and alarm boundaries.
+description: My map of the PPG node, camera/EAR node, TCP/IP, file IPC, GPIO, I2C LCD, and alarm paths.
 date: 2026-07-31 00:41:00 +0900
 updated: 2026-08-01 18:31:00 +0900
 study_date: 2026-07-31
@@ -23,7 +23,7 @@ hardware: [Raspberry Pi, PPG sensor, camera, LCD, LED, buzzer]
 software_versions: [not fully preserved]
 source_materials:
   - { title: Sleep Monitoring and Prevention Device, type: public-repository, public_url: https://github.com/Tontonjeong/Sleep-monitoring-and-prevention-device, file_reference: C and C++ source, pages: "", used_for: module and data-path inventory }
-  - { title: Drowsiness Monitor project page, type: portfolio-page, public_url: /en/projects/drowsiness-monitor/, file_reference: privacy-reviewed project evidence, pages: "", used_for: architecture and validation boundary }
+  - { title: Drowsiness Monitor project page, type: portfolio-page, public_url: /en/projects/drowsiness-monitor/, file_reference: project photographs and source, pages: "", used_for: architecture and next tests }
 prerequisites: [tcp-ip, gpio, i2c, basic image processing]
 learning_objectives: [separate node roles, record packet and file-IPC boundaries, distinguish photographs from performance measurements]
 related_projects: [drowsiness-monitor]
@@ -70,19 +70,19 @@ decision → GPIO LED/buzzer + I2C LCD
 
 A reproducible TCP/IP boundary needs message length, reconnect policy, and sender/receiver roles. File IPC needs protection against a consumer reading a partially written file, such as an atomic rename or explicit ready flag. GPIO needs active-level documentation; I2C needs the LCD address and error handling.
 
-Public evidence confirms the named paths but does not preserve every packet schema and timeout. Packet-loss recovery and stale-file cleanup are therefore not claimed as verified behavior.
+The saved code shows the network, file IPC, GPIO, and I2C paths, but it does not preserve every packet schema and timeout. I still need to rerun packet-loss recovery and stale-file cleanup before describing their behavior.
 
 ## What the prototype proves {#prototype}
 
 <figure><picture><source srcset="/assets/images/projects/drowsiness-contact-sheet.webp" type="image/webp"><img src="/assets/images/projects/drowsiness-contact-sheet.jpg" alt="Contact sheet showing Raspberry Pi hardware, LCD, sensor wiring, and public source views" width="780" height="1100" loading="lazy"></picture><figcaption>Public source and physical-prototype evidence shown together.</figcaption></figure>
 
-The photographs confirm Raspberry Pi hardware, LCD, sensor wiring, and assembly. The repository contains PPG-server and image/EAR-processing modules. `SOURCE + PROTOTYPE` is supported. Values visible on a screen are not used as a calibration record or performance table.
+The photographs show the Raspberry Pi hardware, LCD, sensor wiring, and assembly. Reading the PPG-server and image/EAR-processing modules alongside them made the two-node data path clear. I did not put the screen values into a performance table because their calibration conditions are unknown.
 
 ## Failures and unmeasured items {#failures}
 
 A two-node design must handle missing frames, dropped TCP connections, stale file state, failed I2C writes, and sensor timeouts. The public material does not verify every retry and fallback path.
 
-End-to-end latency, sensitivity, specificity, false-alarm rate, and long-duration stability are also not reported. Their state is `NOT REPORTED`, not MEASURED.
+I did not find saved measurements for end-to-end latency, sensitivity, specificity, false-alarm rate, or long-duration stability, so I do not present those values as measured performance.
 
 ## Next verification {#next}
 

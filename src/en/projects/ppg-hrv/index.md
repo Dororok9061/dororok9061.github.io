@@ -9,6 +9,6 @@ alternate_url: /projects/ppg-hrv/
 alternate_lang: ko
 ---
 
-Paper-summary metrics and separate code-archive metrics have different
-provenance and evaluation conditions, so they are not merged into one
-performance claim.
+I derived IBI and HRV features from PPG peaks and compared CNN and Transformer
+models. Metrics from the paper table and saved code runs use different evaluation
+conditions, so I list them separately.

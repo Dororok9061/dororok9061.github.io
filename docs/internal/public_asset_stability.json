@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "notion_pages": [
+    {
+      "name": "engineering-portfolio",
+      "url": "https://fierce-rodent-308.notion.site/Engineering-Portfolio-FPGA-Radar-Embedded-Systems-Biomedical-AI-3ab518ac7a598121b666e4c7cce8324c"
+    },
+    {
+      "name": "coursework-engineering-portfolio",
+      "url": "https://fierce-rodent-308.notion.site/Coursework-Engineering-Portfolio-Electrical-Engineering-3ab518ac7a5981a095f3c2cca6aaa35d"
+    }
+  ],
+  "notion_assets": [
+    {
+      "name": "kiee-2026-fmcw-first-page",
+      "url": "https://tontonjeong.github.io/assets/img/publications/kiee2026_fmcw_first_page.webp"
+    }
+  ]
+}

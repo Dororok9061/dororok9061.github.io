@@ -1,5 +1,6 @@
 ---
 layout: series
+published: false
 series_id: generative-ai
 title: 생성형 AI
 description: 생성형 AI 학습 순서와 공개 상태.

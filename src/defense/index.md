@@ -2,7 +2,7 @@
 layout: page
 title: 방산 시스템 엔지니어링
 eyebrow: Educational Case Studies
-lead: 요구도, 정량 trade-off, reliability와 validation boundary를 중심으로 재구성한 학술 사례입니다.
+lead: 요구도, 정량 trade-off와 reliability를 중심으로 다시 읽은 수업 사례입니다.
 description: Counter-UAS, EW jammer, KF-21 reliability를 다루는 교육용 Systems Engineering 사례.
 permalink: /defense/
 lang: ko

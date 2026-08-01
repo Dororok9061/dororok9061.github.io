@@ -43,6 +43,7 @@ cover_image: /assets/images/projects/coursework-hero.webp
 thumbnail: /assets/images/projects/coursework-hero.webp
 image_alt: VHDL, 전력, 제어, RF, 센서 과제를 evidence 상태별로 묶은 Coursework 구조도
 draft: false
+published: false
 revision_history:
   - date: 2026-07-31
     change: 최초 공개
