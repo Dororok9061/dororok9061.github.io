@@ -41,9 +41,10 @@ HTTP_RESOURCE = re.compile(
     r"(?:\b(?:src|href|action|poster)\s*=\s*[\"']\s*http://|url\(\s*[\"']?http://)",
     re.IGNORECASE,
 )
-# Bilingual study chapters add useful HTML and original SVG diagrams while the
-# cap still prevents accidental publication of large private source artifacts.
-MAX_SITE_BYTES = 8_500_000
+# The 340 bilingual course/track routes duplicate the shared static shell in
+# generated HTML. Keep only a narrow margin above the verified build while the
+# per-file and blocked-extension checks below still reject source archives.
+MAX_SITE_BYTES = 12_000_000
 
 
 class PageParser(HTMLParser):
