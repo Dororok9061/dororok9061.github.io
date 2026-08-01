@@ -53,27 +53,28 @@
     - { order: 7, title_ko: Quartus·ModelSim과 PPA 경계, title_en: "Quartus, ModelSim, and PPA Boundary", status: planned }
 
 - id: stm32-sensor-acquisition
-  hidden: true
   order: 30
   title_ko: STM32 센서 신호취득
   title_en: STM32 Sensor Acquisition
-  summary_ko: STM32F411의 ADC·Timer·UART를 살펴보고 CMSIS-DSP까지 센서 취득 순서대로 공부합니다.
-  summary_en: Connects STM32F411 ADC, timers, UART, and CMSIS-DSP into a sensor-acquisition path.
+  summary_ko: NUCLEO-F411RE ECG·PPG prototype에서 회로, ADC·TIM1·USART2, CMSIS-DSP와 peak·HRV 계산을 순서대로 공부했습니다.
+  summary_en: Follows a NUCLEO-F411RE ECG/PPG prototype from its circuits through ADC, TIM1, USART2, CMSIS-DSP, and peak/HRV calculation.
   primary_category: stm32-embedded
   subcategory: sensor-acquisition
   difficulty: intermediate
   prerequisites: [clock, gpio]
   tools: [STM32F411, STM32CubeIDE, CMSIS-DSP]
-  source_materials: [Embedded coursework archives, public project firmware]
-  status: planned
+  source_materials: [STM setup deck, KiCad schematic, CubeIDE ECG archive, saved firmware]
+  status: published
   related_project: ppg-hrv
   posts:
-    - { order: 1, title_ko: STM32F411과 개발환경, title_en: STM32F411 and Development Environment, status: planned }
-    - { order: 2, title_ko: Clock와 GPIO, title_en: Clock and GPIO, status: planned }
-    - { order: 3, title_ko: UART 데이터 전송, title_en: UART Data Transfer, status: planned }
-    - { order: 4, title_ko: ADC와 Timer 기반 Sampling, title_en: ADC and Timer-based Sampling, status: planned }
-    - { order: 5, title_ko: Digital Filtering과 CMSIS-DSP, title_en: Digital Filtering and CMSIS-DSP, status: planned }
-    - { order: 6, title_ko: PPG·ECG 취득과 검증, title_en: PPG/ECG Acquisition and Validation, status: planned }
+    - { order: 1, title_ko: STM32 원본과 prototype 구성, title_en: STM32 Sources and Prototype, status: published }
+    - { order: 2, title_ko: CubeIDE와 CMSIS-DSP 설정, title_en: CubeIDE and CMSIS-DSP Setup, status: published }
+    - { order: 3, title_ko: MCU 전원·Clock·Pinout, title_en: "MCU Power, Clock, and Pinout", status: published }
+    - { order: 4, title_ko: ECG·PPG Analog Front End, title_en: ECG and PPG Analog Front End, status: published }
+    - { order: 5, title_ko: ADC·TIM1 250 Hz Sampling, title_en: ADC and TIM1 250 Hz Sampling, status: published }
+    - { order: 6, title_ko: USART2와 SerialChart, title_en: USART2 and SerialChart, status: published }
+    - { order: 7, title_ko: CMSIS-DSP Biquad Filter, title_en: CMSIS-DSP Biquad Filters, status: published }
+    - { order: 8, title_ko: PPG Peak·HRV·BPM, title_en: "PPG Peak, HRV, and BPM", status: published }
 
 - id: embedded-integration
   order: 35

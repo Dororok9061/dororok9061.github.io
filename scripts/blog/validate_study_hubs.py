@@ -92,14 +92,20 @@ def main() -> int:
         errors.append("duplicate engineering track route")
 
     stm32_facts = (
-        "정지사진 19장과 영상 99개를 보드 20세트로",
-        "후면의 QR과 일련번호가 보이는 장면은 올리지 않았다",
-        "보드 한 장을 네 화면으로 확인하기",
-        "앞면 영상에서 고른 세 장을 사용했다",
+        "실험 사진 22장",
+        "STM 사용법 40장",
+        "3쪽 KiCad 회로도",
+        "ADC·TIM1·UART 코드",
+        "TIM1 update interrupt",
+        "/assets/images/study/stm32/stm32-prototype-overview.webp",
+        "/assets/images/study/stm32/biosignal-schematic.webp",
     )
     for fact in stm32_facts:
         if fact not in track_text:
             errors.append(f"missing source-faithful STM32 fact: {fact}")
+    for fact in ("정지사진 19장과 영상 99개", "twenty board sets", "stm32f411-board-overview.webp", "f411_1-contact-sheet.webp"):
+        if fact.lower() in track_text.lower():
+            errors.append(f"obsolete PCB-inspection STM32 fact remains: {fact}")
 
     if len(sys.argv) > 1:
         site = Path(sys.argv[1])
