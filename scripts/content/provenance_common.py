@@ -14,7 +14,9 @@ SRC = ROOT / "src"
 COURSES = SRC / "_data" / "coursework_courses.yml"
 TRACKS = SRC / "_data" / "engineering_tracks.yml"
 GEMFILE = ROOT / "Gemfile"
-ASSET_RE = re.compile(r"/assets/[A-Za-z0-9_./%-]+")
+# A local asset path may be quoted or embedded in Liquid, but an external URL's
+# path is preceded by the final hostname character (for example, `.com/assets`).
+ASSET_RE = re.compile(r"(?<![A-Za-z0-9._-])/assets/[A-Za-z0-9_./%-]+")
 PUBLIC_TEXT_SUFFIXES = {".css", ".html", ".js", ".json", ".md", ".rb", ".svg", ".xml", ".yml", ".yaml"}
 THEME_ASSETS = {"/assets/style.css"}
 
