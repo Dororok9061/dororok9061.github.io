@@ -54,6 +54,9 @@ layout: default
 
       <h2 id="sources">{% if page.lang == 'en' %}Pages I read{% else %}읽고 연결한 원문 페이지{% endif %}</h2>
       <ul>{% for source in article.sources %}<li><a href="{{ source.url }}" rel="external">{{ source.title }}</a></li>{% endfor %}</ul>
+
+      <h2 id="official-sources">{% if page.lang == 'en' %}Official references I checked{% else %}함께 확인한 공식자료{% endif %}</h2>
+      <ul>{% for source in article.official_sources %}<li><a href="{{ source.url }}" rel="external">{{ source.title }}</a></li>{% endfor %}</ul>
     </div>
     <nav class="series-navigation" aria-label="{% if page.lang == 'en' %}RF study navigation{% else %}RF 공부글 이동{% endif %}">
       {% if page.rf_previous %}<a rel="prev" href="{% if page.lang == 'en' %}{{ page.rf_previous.url_en | relative_url }}{% else %}{{ page.rf_previous.url_ko | relative_url }}{% endif %}">← {% if page.lang == 'en' %}{{ page.rf_previous.title_en }}{% else %}{{ page.rf_previous.title_ko }}{% endif %}</a>{% endif %}

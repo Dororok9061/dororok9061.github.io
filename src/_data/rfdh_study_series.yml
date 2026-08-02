@@ -143,6 +143,12 @@
           "url": "https://rfdh.com/bas_rf/begin/start.htm"
         }
       ],
+      "official_sources": [
+        {
+          "title": "ITU-R V.431-9: Nomenclature of frequency and wavelength bands",
+          "url": "https://www.itu.int/rec/r-rec-v.431/en"
+        }
+      ],
       "terms": [
         "wavelength",
         "electrical length",
@@ -190,6 +196,16 @@
         {
           "title": "RFDH: 임피던스 매칭을 왜 할까?",
           "url": "https://rfdh.com/bas_rf/begin/whymatch.htm"
+        }
+      ],
+      "official_sources": [
+        {
+          "title": "Keysight: Impedance Matching in the Laboratory",
+          "url": "https://www.keysight.com/th/en/assets/7018-04597/application-notes"
+        },
+        {
+          "title": "Keysight: Understanding the Fundamental Principles of Vector Network Analysis",
+          "url": "https://www.keysight.com/us/en/assets/7018-06841/application-notes/5965-7707.pdf"
         }
       ],
       "terms": [
@@ -241,6 +257,12 @@
           "url": "https://rfdh.com/rfdb/cpw.htm"
         }
       ],
+      "official_sources": [
+        {
+          "title": "Keysight: Understanding the Fundamental Principles of Vector Network Analysis",
+          "url": "https://www.keysight.com/us/en/assets/7018-06841/application-notes/5965-7707.pdf"
+        }
+      ],
       "terms": [
         "microstrip",
         "stripline",
@@ -287,6 +309,12 @@
           "url": "https://rfdh.com/bas_rf/begin/whymatch.htm"
         }
       ],
+      "official_sources": [
+        {
+          "title": "Keysight: Understanding the Fundamental Principles of Vector Network Analysis",
+          "url": "https://www.keysight.com/us/en/assets/7018-06841/application-notes/5965-7707.pdf"
+        }
+      ],
       "terms": [
         "Gamma",
         "return loss",
@@ -330,6 +358,12 @@
         {
           "title": "RFDH: Network Analyzer",
           "url": "https://rfdh.com/bas_rf/network.htm"
+        }
+      ],
+      "official_sources": [
+        {
+          "title": "Keysight: Understanding the Fundamental Principles of Vector Network Analysis",
+          "url": "https://www.keysight.com/us/en/assets/7018-06841/application-notes/5965-7707.pdf"
         }
       ],
       "terms": [
@@ -382,6 +416,12 @@
           "url": "https://rfdh.com/rfdb/dbmw.htm"
         }
       ],
+      "official_sources": [
+        {
+          "title": "Analog Devices: Understand Wireless Data Sheet Specifications, Part 1",
+          "url": "https://www.analog.com/en/resources/technical-articles/understand-wireless-data-sheet-specifications--part-1.html"
+        }
+      ],
       "terms": [
         "dB",
         "dBm",
@@ -432,6 +472,12 @@
           "url": "https://rfdh.com/bas_rf/begin/ip3.htm"
         }
       ],
+      "official_sources": [
+        {
+          "title": "Analog Devices: Understand Wireless Data Sheet Specifications, Part 1",
+          "url": "https://www.analog.com/en/resources/technical-articles/understand-wireless-data-sheet-specifications--part-1.html"
+        }
+      ],
       "terms": [
         "harmonic",
         "IMD",
@@ -478,6 +524,12 @@
           "url": "https://rfdh.com/bas_rf/hpib.htm"
         }
       ],
+      "official_sources": [
+        {
+          "title": "Keysight: Understanding the Fundamental Principles of Vector Network Analysis",
+          "url": "https://www.keysight.com/us/en/assets/7018-06841/application-notes/5965-7707.pdf"
+        }
+      ],
       "terms": [
         "VNA",
         "SOLT",
@@ -522,6 +574,12 @@
         {
           "title": "RFDH: Amplifier",
           "url": "https://rfdh.com/bas_rf/begin/amp.htm"
+        }
+      ],
+      "official_sources": [
+        {
+          "title": "Analog Devices: RF and synthesis design tools",
+          "url": "https://www.analog.com/en/resources/design-tools-and-calculators.html"
         }
       ],
       "terms": [
@@ -574,6 +632,12 @@
           "url": "https://rfdh.com/bas_com/2-7.htm"
         }
       ],
+      "official_sources": [
+        {
+          "title": "ITU-R V.431-9: Nomenclature of frequency and wavelength bands",
+          "url": "https://www.itu.int/rec/r-rec-v.431/en"
+        }
+      ],
       "terms": [
         "I/Q",
         "QPSK",
@@ -618,6 +682,12 @@
         {
           "title": "RFDH: Coupler/Divider/Combiner",
           "url": "https://rfdh.com/bas_rf/begin/coupler.php3"
+        }
+      ],
+      "official_sources": [
+        {
+          "title": "Keysight: Understanding the Fundamental Principles of Vector Network Analysis",
+          "url": "https://www.keysight.com/us/en/assets/7018-06841/application-notes/5965-7707.pdf"
         }
       ],
       "terms": [
@@ -666,6 +736,16 @@
           "url": "https://rfdh.com/bas_rf/begin/mixer.php3"
         }
       ],
+      "official_sources": [
+        {
+          "title": "Texas Instruments: mmWave radar fundamentals and development resources",
+          "url": "https://www.ti.com/design-development/embedded-development/mmwave-radar.html"
+        },
+        {
+          "title": "ITU-R V.431-9: Nomenclature of frequency and wavelength bands",
+          "url": "https://www.itu.int/rec/r-rec-v.431/en"
+        }
+      ],
       "terms": [
         "FMCW",
         "chirp",
@@ -710,6 +790,16 @@
         {
           "title": "RFDH: 스미스차트 잘쓰기",
           "url": "https://rfdh.com/bas_rf/begin/whys.htm"
+        }
+      ],
+      "official_sources": [
+        {
+          "title": "Keysight: Impedance Matching in the Laboratory",
+          "url": "https://www.keysight.com/th/en/assets/7018-04597/application-notes"
+        },
+        {
+          "title": "Keysight: Understanding the Fundamental Principles of Vector Network Analysis",
+          "url": "https://www.keysight.com/us/en/assets/7018-06841/application-notes/5965-7707.pdf"
         }
       ],
       "terms": [
@@ -757,6 +847,16 @@
           "url": "https://rfdh.com/bas_rf/begin/whys.htm"
         }
       ],
+      "official_sources": [
+        {
+          "title": "Keysight: Impedance Matching in the Laboratory",
+          "url": "https://www.keysight.com/th/en/assets/7018-04597/application-notes"
+        },
+        {
+          "title": "Keysight: Understanding the Fundamental Principles of Vector Network Analysis",
+          "url": "https://www.keysight.com/us/en/assets/7018-06841/application-notes/5965-7707.pdf"
+        }
+      ],
       "terms": [
         "Smith chart",
         "normalized impedance",
@@ -800,6 +900,16 @@
         {
           "title": "RFDH: 스미스차트 잘쓰기",
           "url": "https://rfdh.com/bas_rf/begin/whys.htm"
+        }
+      ],
+      "official_sources": [
+        {
+          "title": "Keysight: Impedance Matching in the Laboratory",
+          "url": "https://www.keysight.com/th/en/assets/7018-04597/application-notes"
+        },
+        {
+          "title": "Keysight: Understanding the Fundamental Principles of Vector Network Analysis",
+          "url": "https://www.keysight.com/us/en/assets/7018-06841/application-notes/5965-7707.pdf"
         }
       ],
       "terms": [
@@ -847,6 +957,16 @@
           "url": "https://rfdh.com/bas_rf/begin/whys.htm"
         }
       ],
+      "official_sources": [
+        {
+          "title": "Keysight: Impedance Matching in the Laboratory",
+          "url": "https://www.keysight.com/th/en/assets/7018-04597/application-notes"
+        },
+        {
+          "title": "Keysight: Understanding the Fundamental Principles of Vector Network Analysis",
+          "url": "https://www.keysight.com/us/en/assets/7018-06841/application-notes/5965-7707.pdf"
+        }
+      ],
       "terms": [
         "Smith chart",
         "normalized impedance",
@@ -890,6 +1010,16 @@
         {
           "title": "RFDH: 스미스차트 잘쓰기",
           "url": "https://rfdh.com/bas_rf/begin/whys.htm"
+        }
+      ],
+      "official_sources": [
+        {
+          "title": "Keysight: Impedance Matching in the Laboratory",
+          "url": "https://www.keysight.com/th/en/assets/7018-04597/application-notes"
+        },
+        {
+          "title": "Keysight: Understanding the Fundamental Principles of Vector Network Analysis",
+          "url": "https://www.keysight.com/us/en/assets/7018-06841/application-notes/5965-7707.pdf"
         }
       ],
       "terms": [
@@ -937,6 +1067,16 @@
           "url": "https://rfdh.com/bas_rf/begin/whys.htm"
         }
       ],
+      "official_sources": [
+        {
+          "title": "Keysight: Impedance Matching in the Laboratory",
+          "url": "https://www.keysight.com/th/en/assets/7018-04597/application-notes"
+        },
+        {
+          "title": "Keysight: Understanding the Fundamental Principles of Vector Network Analysis",
+          "url": "https://www.keysight.com/us/en/assets/7018-06841/application-notes/5965-7707.pdf"
+        }
+      ],
       "terms": [
         "Smith chart",
         "normalized impedance",
@@ -980,6 +1120,16 @@
         {
           "title": "RFDH: 스미스차트 잘쓰기",
           "url": "https://rfdh.com/bas_rf/begin/whys.htm"
+        }
+      ],
+      "official_sources": [
+        {
+          "title": "Keysight: Impedance Matching in the Laboratory",
+          "url": "https://www.keysight.com/th/en/assets/7018-04597/application-notes"
+        },
+        {
+          "title": "Keysight: Understanding the Fundamental Principles of Vector Network Analysis",
+          "url": "https://www.keysight.com/us/en/assets/7018-06841/application-notes/5965-7707.pdf"
         }
       ],
       "terms": [
@@ -1027,6 +1177,16 @@
           "url": "https://rfdh.com/bas_rf/begin/whys.htm"
         }
       ],
+      "official_sources": [
+        {
+          "title": "Keysight: Impedance Matching in the Laboratory",
+          "url": "https://www.keysight.com/th/en/assets/7018-04597/application-notes"
+        },
+        {
+          "title": "Keysight: Understanding the Fundamental Principles of Vector Network Analysis",
+          "url": "https://www.keysight.com/us/en/assets/7018-06841/application-notes/5965-7707.pdf"
+        }
+      ],
       "terms": [
         "Smith chart",
         "normalized impedance",
@@ -1070,6 +1230,16 @@
         {
           "title": "RFDH: 스미스차트 잘쓰기",
           "url": "https://rfdh.com/bas_rf/begin/whys.htm"
+        }
+      ],
+      "official_sources": [
+        {
+          "title": "Keysight: Impedance Matching in the Laboratory",
+          "url": "https://www.keysight.com/th/en/assets/7018-04597/application-notes"
+        },
+        {
+          "title": "Keysight: Understanding the Fundamental Principles of Vector Network Analysis",
+          "url": "https://www.keysight.com/us/en/assets/7018-06841/application-notes/5965-7707.pdf"
         }
       ],
       "terms": [
@@ -1117,6 +1287,16 @@
           "url": "https://rfdh.com/bas_rf/begin/whys.htm"
         }
       ],
+      "official_sources": [
+        {
+          "title": "Keysight: Impedance Matching in the Laboratory",
+          "url": "https://www.keysight.com/th/en/assets/7018-04597/application-notes"
+        },
+        {
+          "title": "Keysight: Understanding the Fundamental Principles of Vector Network Analysis",
+          "url": "https://www.keysight.com/us/en/assets/7018-06841/application-notes/5965-7707.pdf"
+        }
+      ],
       "terms": [
         "Smith chart",
         "normalized impedance",
@@ -1156,6 +1336,16 @@
         {
           "title": "RFDH: Amplifier와 Gain·Noise·Linearity",
           "url": "https://rfdh.com/bas_rf/begin/amp.htm"
+        }
+      ],
+      "official_sources": [
+        {
+          "title": "Analog Devices: Understand Wireless Data Sheet Specifications, Part 1",
+          "url": "https://www.analog.com/en/resources/technical-articles/understand-wireless-data-sheet-specifications--part-1.html"
+        },
+        {
+          "title": "Keysight: Understanding the Fundamental Principles of Vector Network Analysis",
+          "url": "https://www.keysight.com/us/en/assets/7018-06841/application-notes/5965-7707.pdf"
         }
       ],
       "terms": [
@@ -1199,6 +1389,16 @@
           "url": "https://rfdh.com/bas_rf/begin/osc.htm"
         }
       ],
+      "official_sources": [
+        {
+          "title": "Analog Devices: Understand Wireless Data Sheet Specifications, Part 1",
+          "url": "https://www.analog.com/en/resources/technical-articles/understand-wireless-data-sheet-specifications--part-1.html"
+        },
+        {
+          "title": "Keysight: Understanding the Fundamental Principles of Vector Network Analysis",
+          "url": "https://www.keysight.com/us/en/assets/7018-06841/application-notes/5965-7707.pdf"
+        }
+      ],
       "terms": [
         "Oscillators",
         "RF block",
@@ -1238,6 +1438,16 @@
         {
           "title": "RFDH: PLL과 Frequency Synthesis",
           "url": "https://rfdh.com/bas_rf/begin/pll.php3"
+        }
+      ],
+      "official_sources": [
+        {
+          "title": "Analog Devices: Understand Wireless Data Sheet Specifications, Part 1",
+          "url": "https://www.analog.com/en/resources/technical-articles/understand-wireless-data-sheet-specifications--part-1.html"
+        },
+        {
+          "title": "Keysight: Understanding the Fundamental Principles of Vector Network Analysis",
+          "url": "https://www.keysight.com/us/en/assets/7018-06841/application-notes/5965-7707.pdf"
         }
       ],
       "terms": [
@@ -1281,6 +1491,16 @@
           "url": "https://rfdh.com/bas_rf/begin/mixer.php3"
         }
       ],
+      "official_sources": [
+        {
+          "title": "Analog Devices: Understand Wireless Data Sheet Specifications, Part 1",
+          "url": "https://www.analog.com/en/resources/technical-articles/understand-wireless-data-sheet-specifications--part-1.html"
+        },
+        {
+          "title": "Keysight: Understanding the Fundamental Principles of Vector Network Analysis",
+          "url": "https://www.keysight.com/us/en/assets/7018-06841/application-notes/5965-7707.pdf"
+        }
+      ],
       "terms": [
         "Mixers",
         "RF block",
@@ -1320,6 +1540,16 @@
         {
           "title": "RFDH: Frequency Multiplier",
           "url": "https://rfdh.com/bas_rf/begin/multiplier.php3"
+        }
+      ],
+      "official_sources": [
+        {
+          "title": "Analog Devices: Understand Wireless Data Sheet Specifications, Part 1",
+          "url": "https://www.analog.com/en/resources/technical-articles/understand-wireless-data-sheet-specifications--part-1.html"
+        },
+        {
+          "title": "Keysight: Understanding the Fundamental Principles of Vector Network Analysis",
+          "url": "https://www.keysight.com/us/en/assets/7018-06841/application-notes/5965-7707.pdf"
         }
       ],
       "terms": [
@@ -1363,6 +1593,16 @@
           "url": "https://rfdh.com/bas_rf/begin/filter.php3"
         }
       ],
+      "official_sources": [
+        {
+          "title": "Analog Devices: Understand Wireless Data Sheet Specifications, Part 1",
+          "url": "https://www.analog.com/en/resources/technical-articles/understand-wireless-data-sheet-specifications--part-1.html"
+        },
+        {
+          "title": "Keysight: Understanding the Fundamental Principles of Vector Network Analysis",
+          "url": "https://www.keysight.com/us/en/assets/7018-06841/application-notes/5965-7707.pdf"
+        }
+      ],
       "terms": [
         "RF",
         "RF block",
@@ -1402,6 +1642,16 @@
         {
           "title": "RFDH: Diplexer·Duplexer",
           "url": "https://rfdh.com/bas_rf/begin/duplexer.php3"
+        }
+      ],
+      "official_sources": [
+        {
+          "title": "Analog Devices: Understand Wireless Data Sheet Specifications, Part 1",
+          "url": "https://www.analog.com/en/resources/technical-articles/understand-wireless-data-sheet-specifications--part-1.html"
+        },
+        {
+          "title": "Keysight: Understanding the Fundamental Principles of Vector Network Analysis",
+          "url": "https://www.keysight.com/us/en/assets/7018-06841/application-notes/5965-7707.pdf"
         }
       ],
       "terms": [
@@ -1445,6 +1695,16 @@
           "url": "https://rfdh.com/bas_rf/begin/coupler.php3"
         }
       ],
+      "official_sources": [
+        {
+          "title": "Analog Devices: Understand Wireless Data Sheet Specifications, Part 1",
+          "url": "https://www.analog.com/en/resources/technical-articles/understand-wireless-data-sheet-specifications--part-1.html"
+        },
+        {
+          "title": "Keysight: Understanding the Fundamental Principles of Vector Network Analysis",
+          "url": "https://www.keysight.com/us/en/assets/7018-06841/application-notes/5965-7707.pdf"
+        }
+      ],
       "terms": [
         "Couplers,",
         "RF block",
@@ -1486,6 +1746,16 @@
           "url": "https://rfdh.com/bas_rf/begin/isolator.php3"
         }
       ],
+      "official_sources": [
+        {
+          "title": "Analog Devices: Understand Wireless Data Sheet Specifications, Part 1",
+          "url": "https://www.analog.com/en/resources/technical-articles/understand-wireless-data-sheet-specifications--part-1.html"
+        },
+        {
+          "title": "Keysight: Understanding the Fundamental Principles of Vector Network Analysis",
+          "url": "https://www.keysight.com/us/en/assets/7018-06841/application-notes/5965-7707.pdf"
+        }
+      ],
       "terms": [
         "Isolators",
         "RF block",
@@ -1525,6 +1795,16 @@
         {
           "title": "RFDH: Antenna를 RF Port로 읽기",
           "url": "https://rfdh.com/bas_rf/begin/antenna.php3"
+        }
+      ],
+      "official_sources": [
+        {
+          "title": "Analog Devices: Understand Wireless Data Sheet Specifications, Part 1",
+          "url": "https://www.analog.com/en/resources/technical-articles/understand-wireless-data-sheet-specifications--part-1.html"
+        },
+        {
+          "title": "Keysight: Understanding the Fundamental Principles of Vector Network Analysis",
+          "url": "https://www.keysight.com/us/en/assets/7018-06841/application-notes/5965-7707.pdf"
         }
       ],
       "terms": [

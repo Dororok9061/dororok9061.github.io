@@ -12,6 +12,51 @@ OUTPUT = ROOT / "src" / "_data" / "rfdh_study_series.yml"
 ASSET = "/assets/images/study/rf-rfdh/"
 RFDH = "https://rfdh.com/"
 
+OFFICIAL_REFERENCES = {
+    "itu": {
+        "title": "ITU-R V.431-9: Nomenclature of frequency and wavelength bands",
+        "url": "https://www.itu.int/rec/r-rec-v.431/en",
+    },
+    "keysight_network": {
+        "title": "Keysight: Understanding the Fundamental Principles of Vector Network Analysis",
+        "url": "https://www.keysight.com/us/en/assets/7018-06841/application-notes/5965-7707.pdf",
+    },
+    "keysight_matching": {
+        "title": "Keysight: Impedance Matching in the Laboratory",
+        "url": "https://www.keysight.com/th/en/assets/7018-04597/application-notes",
+    },
+    "analog_rf_specs": {
+        "title": "Analog Devices: Understand Wireless Data Sheet Specifications, Part 1",
+        "url": "https://www.analog.com/en/resources/technical-articles/understand-wireless-data-sheet-specifications--part-1.html",
+    },
+    "analog_rf_tools": {
+        "title": "Analog Devices: RF and synthesis design tools",
+        "url": "https://www.analog.com/en/resources/design-tools-and-calculators.html",
+    },
+    "ti_radar": {
+        "title": "Texas Instruments: mmWave radar fundamentals and development resources",
+        "url": "https://www.ti.com/design-development/embedded-development/mmwave-radar.html",
+    },
+}
+
+
+def official_references(identifier: str, group: str) -> list[dict[str, str]]:
+    if identifier == "foundations" or identifier == "wireless-communications":
+        keys = ["itu"]
+    elif identifier == "radar-bridge":
+        keys = ["ti_radar", "itu"]
+    elif group == "smith-chart" or identifier == "impedance-port-matching":
+        keys = ["keysight_matching", "keysight_network"]
+    elif identifier in {"db-dbm-power", "linearity-p1db-ip3"}:
+        keys = ["analog_rf_specs"]
+    elif identifier == "noise-figure-cascade":
+        keys = ["analog_rf_tools"]
+    elif group == "circuit-blocks":
+        keys = ["analog_rf_specs", "keysight_network"]
+    else:
+        keys = ["keysight_network"]
+    return [OFFICIAL_REFERENCES[key] for key in keys]
+
 
 def source(title: str, path: str) -> dict[str, str]:
     return {"title": title, "url": RFDH + path.lstrip("/")}
@@ -61,6 +106,7 @@ def article(
         "caution_en": caution_en,
         "figures": [ASSET + value for value in figures],
         "sources": sources,
+        "official_sources": official_references(identifier, group),
         "terms": terms,
     }
 
