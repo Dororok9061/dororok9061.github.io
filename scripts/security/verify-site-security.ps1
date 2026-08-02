@@ -194,7 +194,16 @@ foreach ($file in $allFiles) {
             }
         )
 
+        $isApprovedLocalRfCalculator = (
+            $relative -match '(?i)(?:^|[\\/])src[\\/]_layouts[\\/]rf-calculator\.html$' -or
+            $relative -match '(?i)^tools[\\/]rf[\\/](?:dbm-watt|reflection-vswr|quarter-wave-transformer|cascade-noise-figure|microstrip|equal-split|unequal-wilkinson)[\\/]index\.html$'
+        ) -and $content -match '(?i)<form\b[^>]*\bdata-rf-calculator\s*=' -and
+            $content -notmatch '(?i)<form\b[^>]*\b(?:action|method)\s*='
+
         foreach ($rule in $webRules) {
+            if ($rule.Rule -eq 'stateful-form' -and $isApprovedLocalRfCalculator) {
+                continue
+            }
             if ($content -match $rule.Pattern) {
                 Add-Finding -Severity $rule.Severity -Rule $rule.Rule -File $relative `
                     -Message $rule.Message

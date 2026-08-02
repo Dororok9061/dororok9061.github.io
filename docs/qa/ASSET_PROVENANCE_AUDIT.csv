@@ -1,15 +1,15 @@
 scope,id,kind,public_url,primary_asset,sha256_12,source_basis,provenance_status
 course,controller-logic,course-record,/coursework/controller-logic/,/assets/images/study/coursework/controller-logic.webp,e1a5f53cf777,Archived Mealy waveform,DIRECT_SOURCE_DERIVATIVE
-course,electronic-circuits-1,study-roadmap,/coursework/electronic-circuits-1/,/assets/images/study/coursework/electronic-circuits-1.svg,ea7f70405616,Self-authored diode-bias-amplifier concept map,SELF_AUTHORED_CONCEPT_MAP
-course,electronic-circuits-2,study-roadmap,/coursework/electronic-circuits-2/,/assets/images/study/coursework/electronic-circuits-2.svg,56c6dc30922e,Self-authored differential-input-feedback-output concept map,SELF_AUTHORED_CONCEPT_MAP
-course,digital-communications,course-record,/coursework/digital-communications/,/assets/images/study/coursework/digital-communications.svg,528941b8144a,Self-authored transmitter-to-receiver chain concept map,SELF_AUTHORED_CONCEPT_MAP
+course,electronic-circuits-1,study-roadmap,/coursework/electronic-circuits-1/,/assets/images/study/coursework/electronic-circuits-1.svg,d7728e36e88e,Self-authored diode-bias-amplifier concept map,SELF_AUTHORED_CONCEPT_MAP
+course,electronic-circuits-2,study-roadmap,/coursework/electronic-circuits-2/,/assets/images/study/coursework/electronic-circuits-2.svg,969043a04712,Self-authored differential-input-feedback-output concept map,SELF_AUTHORED_CONCEPT_MAP
+course,digital-communications,course-record,/coursework/digital-communications/,/assets/images/study/coursework/digital-communications.svg,41044a8b43a0,Self-authored transmitter-to-receiver chain concept map,SELF_AUTHORED_CONCEPT_MAP
 course,automatic-control,course-record,/coursework/automatic-control/,/assets/images/study/coursework/automatic-control.webp,ddb3c5525ce3,Archived PSIM speed response,DIRECT_SOURCE_DERIVATIVE
 course,applied-control,course-record,/coursework/applied-control/,/assets/images/study/coursework/applied-control.webp,62f3ac49ef94,Archived PSIM current response,DIRECT_SOURCE_DERIVATIVE
 course,high-frequency-engineering,course-record,/coursework/high-frequency-engineering/,/assets/images/study/coursework/high-frequency-engineering.webp,4eeee086f533,Archived Wilkinson S-parameter screen,DIRECT_SOURCE_DERIVATIVE
-course,power-electronics,study-roadmap,/coursework/power-electronics/,/assets/images/study/coursework/power-electronics.svg,33c708e0306d,Self-authored DC-source-to-load conversion concept map,SELF_AUTHORED_CONCEPT_MAP
+course,power-electronics,study-roadmap,/coursework/power-electronics/,/assets/images/study/coursework/power-electronics.svg,a295fcb019b3,Self-authored DC-source-to-load conversion concept map,SELF_AUTHORED_CONCEPT_MAP
 course,electrical-machines,course-record,/coursework/electrical-machines/,/assets/images/study/coursework/electrical-machines.webp,6ebb41566796,Transformer core trade-off chart,DIRECT_SOURCE_DERIVATIVE
 course,motor-control,course-record,/coursework/motor-control/,/assets/images/study/coursework/motor-control.webp,7ce3969fac8c,Torque-ripple comparison chart,DIRECT_SOURCE_DERIVATIVE
-course,embedded-systems,separated-course,/coursework/embedded-systems/,/assets/images/study/coursework/embedded-systems-source-map.svg,57c855076776,Self-authored course-study-research-prototype separation map,SELF_AUTHORED_SOURCE_MAP
+course,embedded-systems,separated-course,/coursework/embedded-systems/,/assets/images/study/coursework/embedded-systems-source-map.svg,af0fff7e8ca7,Self-authored course-study-research-prototype separation map,SELF_AUTHORED_SOURCE_MAP
 track,pads,engineering-track,/study/pads/,/assets/images/study/pads/pads-ppg-layout.webp,69b52cfceb3e,Saved PADS PPG schematic and placement screen,DIRECT_SOURCE_DERIVATIVE
 track,stm32,engineering-track,/study/stm32/,/assets/images/study/stm32/stm32-prototype-overview.webp,f6e0181a9621,Twenty-two saved NUCLEO-F411RE ECG and PPG prototype photographs,GENERATED_SOURCE_DERIVATIVE
 track,mmwave,engineering-track,/study/mmwave/,/assets/images/projects/radar-hardware.webp,245eb9cda46e,Existing radar acquisition hardware photograph,PROJECT_SOURCE_REUSED_IN_MATCHING_TRACK

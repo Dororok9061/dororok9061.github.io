@@ -1131,6 +1131,87 @@ summary:focus-visible {
   margin: 2rem 0;
 }
 
+.rf-formula-list {
+  display: grid;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+}
+
+.rf-formula-list code {
+  display: block;
+  overflow-x: auto;
+  padding: 1rem 1.25rem;
+  border-left: 3px solid var(--color-accent, #1d6fa5);
+  background: #f3f7fa;
+  color: #13293d;
+  font-size: clamp(0.9rem, 2vw, 1.05rem);
+  white-space: nowrap;
+}
+
+.rf-study-group + .rf-study-group {
+  margin-top: 4rem;
+}
+
+.rf-study-hub .track-card-grid article {
+  min-width: 0;
+}
+
+.rf-study-hub .study-post-card__media img {
+  aspect-ratio: 40 / 21;
+  object-fit: cover;
+}
+
+.rf-calculator {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 2.5rem;
+  padding: clamp(1rem, 3vw, 2rem);
+  border: 1px solid var(--portfolio-border);
+  background: var(--portfolio-surface);
+}
+
+.rf-calculator label,
+.rf-calculator fieldset {
+  display: grid;
+  gap: 0.4rem;
+  min-width: 0;
+}
+
+.rf-calculator input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--portfolio-border);
+  background: #fff;
+  color: #13293d;
+  font: inherit;
+}
+
+.rf-calculator fieldset {
+  padding: 1rem;
+  border: 1px solid var(--portfolio-border);
+}
+
+.rf-calculator__result {
+  grid-column: 1 / -1;
+  min-height: 7rem;
+  padding: 1rem;
+  border-left: 4px solid #1d6fa5;
+  background: #f3f7fa;
+  color: #13293d;
+  white-space: pre-wrap;
+}
+
+.rf-calculator__result[data-state="error"] {
+  border-color: #b42318;
+}
+
+@media (max-width: 46rem) {
+  .rf-calculator {
+    grid-template-columns: 1fr;
+  }
+}
+
 .post__content figcaption {
   margin-top: 0.5rem;
   color: var(--portfolio-muted);

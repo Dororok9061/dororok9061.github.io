@@ -12,7 +12,7 @@
 
 | ID | Attack surface | Entry point / data flow | 주요 Asset | 주요 공격 | 필수 통제 | Owner | 검증 | Status |
 |---|---|---|---|---|---|---|---|---|
-| AS-01 | 방문자 Browser | HTML/CSS/JS, URL fragment/query, 외부 링크 | 방문자 세션·표시 무결성·사이트 신뢰 | XSS, DOM injection, open redirect, mixed content, clickjacking | 사용자 입력 없음, DOM sink 금지, CSP, HTTPS-only, 외부 링크 검토 | 사이트 소유자/Browser vendor | 정적 scan, CSP console, 링크 crawl | PASS — source/build/browser 검사 |
+| AS-01 | 방문자 Browser | HTML/CSS/JS, URL fragment/query, 숫자형 RF 계산기, 외부 링크 | 방문자 세션·표시 무결성·사이트 신뢰 | XSS, DOM injection, open redirect, mixed content, clickjacking | 계산기 `Number` validation·`textContent`, DOM sink 금지, CSP, HTTPS-only, 외부 링크 검토 | 사이트 소유자/Browser vendor | 정적 scan, 계산기 수식 test, CSP console, 링크 crawl | PASS — source/build/browser 검사 |
 | AS-02 | GitHub Pages Hosting | GitHub CDN/Fastly가 정적 파일 제공 | 가용성·전송 무결성 | HTTP downgrade, DDoS, stale deployment, 임의 header 부재 | Enforce HTTPS, 플랫폼 상태 모니터링, 최소 asset, no-cache 의존 금지 | GitHub/사이트 소유자 | curl, TLS, 공개 URL | PASS — HTTP 301, HTTPS 200, TLS 1.3 |
 | AS-03 | GitHub Repository | commit, PR, branch, release, tag | 소스·history·Pages 설정 | 계정 탈취, workflow 변조, secret commit, branch 삭제 | 2FA/passkey, ruleset, 최소 collaborator, secret scanning, signed/tag review | 사이트 소유자/GitHub | repo settings, security log, history scan | PASS — public repo, ruleset, 보안 정책 |
 | AS-04 | GitHub Actions Runner | workflow event, checkout, build command, artifact | `GITHUB_TOKEN`, 배포권한, 산출물 | script injection, malicious Action, poisoned artifact/cache | hosted runner, 최소 permissions, SHA pin, untrusted context를 env로 전달, secret 없음 | 사이트 소유자/GitHub | workflow review, run log | PASS — 최소 권한·5개 Action full SHA; 새 run은 PR/main에서 재검증 |
@@ -24,6 +24,7 @@
 | AS-10 | Private Source Archive | archive 열기·선별·복사 | 미공개 IP·개인정보·원본 | archive slip, malware, bulk accidental publish | 원본 read-only 백업, 격리 해제, AV scan, 파일별 allowlist, public 파생본만 복사 | 사용자/자료 owner | hash inventory, manual approval | BLOCKED — archive 미검토 |
 | AS-11 | Quartus·EDA License Storage | license manager, license file, 환경변수·log | license credential·계약정보 | commit/log/screenshot 유출, malware 탈취 | workspace/repo와 분리, 최소 ACL, 암호화 저장, screenshot redaction, secret scan | 사용자/발급기관 | 경로/ACL 및 history 검사 | BLOCKED — 내용 미열람·보관 통제 미검증 |
 | AS-12 | Third-Party Theme·Template Source | download, copy, package install | site source·visitor browser | backdoor, license violation, dependency confusion | LICENSE/commit/source 검토, 무출처 복사 금지, 필요한 아이디어만 재구현, hash/버전 기록 | 사이트 소유자/upstream | theme audit, diff, license notice | PASS — MIT Simplex 0.9.8.15 실제 Gem·SHA·commit 감사, 불명확 소스 제외 |
+| AS-13 | RF 계산기 | 7개 정적 form → local Vanilla JS → text output | 계산 결과·DOM 무결성 | 비정상 숫자, DOM injection, 원치 않는 form submit, 수식 오류 | action/method/backend/fetch 없음, `preventDefault`, finite/range 검사, `textContent`, 회귀 수식 test, CSP `form-action 'none'` | 사이트 소유자/Browser vendor | source/build form allowlist, JS sink scan, known-value test | PASS — 7개 경로만 allowlist |
 
 ## 노출 파일 금지 목록
 

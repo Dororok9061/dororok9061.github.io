@@ -1,0 +1,64 @@
+---
+layout: default
+---
+{% assign article = page.article_data %}
+{% assign localized_title = article.title_ko %}{% assign localized_focus = article.focus_ko %}{% assign localized_concept = article.concept_ko %}{% assign localized_example = article.example_ko %}{% assign localized_connection = article.connection_ko %}{% assign localized_caution = article.caution_ko %}
+{% if page.lang == 'en' %}{% assign localized_title = article.title_en %}{% assign localized_focus = article.focus_en %}{% assign localized_concept = article.concept_en %}{% assign localized_example = article.example_en %}{% assign localized_connection = article.connection_en %}{% assign localized_caution = article.caution_en %}{% endif %}
+<main id="main" class="page page-shell">
+  <article class="post rf-study-article">
+    <nav class="breadcrumbs" aria-label="{% if page.lang == 'en' %}Breadcrumb{% else %}현재 위치{% endif %}">
+      <a href="{% if page.lang == 'en' %}{{ '/en/blog/' | relative_url }}{% else %}{{ '/blog/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}Blog{% else %}블로그{% endif %}</a>
+      <span aria-hidden="true">/</span><a href="{% if page.lang == 'en' %}{{ '/en/blog/rf/start-here/' | relative_url }}{% else %}{{ '/blog/rf/start-here/' | relative_url }}{% endif %}">RF Study</a>
+    </nav>
+    <header class="post-heading">
+      <p class="eyebrow">{% if page.lang == 'en' %}RF · Microwave Study{% else %}RF · Microwave 공부 기록{% endif %}</p>
+      <h1>{{ localized_title }}</h1>
+      <p class="page-heading__lead">{{ localized_focus }}</p>
+    </header>
+    <dl class="post-facts">
+      <div><dt>{% if page.lang == 'en' %}Sequence{% else %}읽기 순서{% endif %}</dt><dd>{{ article.order }} / {{ site.data.rfdh_study_series.articles.size }}</dd></div>
+      <div><dt>{% if page.lang == 'en' %}Track{% else %}묶음{% endif %}</dt><dd>{{ article.group }}</dd></div>
+      <div><dt>{% if page.lang == 'en' %}Tools{% else %}계산 도구{% endif %}</dt><dd><a href="{{ '/tools/rf/' | relative_url }}">RF calculators</a></dd></div>
+    </dl>
+    <details class="post-toc" open><summary>{% if page.lang == 'en' %}On this page{% else %}목차{% endif %}</summary><ol>
+      <li><a href="#question">{% if page.lang == 'en' %}Question I started with{% else %}먼저 던진 질문{% endif %}</a></li>
+      <li><a href="#concept">{% if page.lang == 'en' %}Concept map{% else %}개념 연결{% endif %}</a></li>
+      <li><a href="#equations">{% if page.lang == 'en' %}Equations{% else %}식 정리{% endif %}</a></li>
+      <li><a href="#example">{% if page.lang == 'en' %}Worked example{% else %}손계산 예시{% endif %}</a></li>
+      <li><a href="#coursework">{% if page.lang == 'en' %}My coursework connection{% else %}내 과제와 연결{% endif %}</a></li>
+      <li><a href="#next-check">{% if page.lang == 'en' %}Next checks{% else %}다음 확인{% endif %}</a></li>
+    </ol></details>
+    <div class="prose post__content">
+      <h2 id="question">{% if page.lang == 'en' %}Question I started with{% else %}먼저 던진 질문{% endif %}</h2>
+      <p>{{ localized_focus }}</p>
+      <figure><img src="{{ article.figures[0] | relative_url }}" alt="{{ localized_title | escape }} — {% if page.lang == 'en' %}concept flow{% else %}개념 흐름{% endif %}" width="1200" height="630"><figcaption>{% if page.lang == 'en' %}I redrew the relationships before returning to the equations.{% else %}식을 다시 보기 전에 관계를 내 방식으로 먼저 그렸다.{% endif %}</figcaption></figure>
+
+      <h2 id="concept">{% if page.lang == 'en' %}Connecting the concepts{% else %}개념을 한 흐름으로 연결하기{% endif %}</h2>
+      <p>{{ localized_concept }}</p>
+      <ul class="chip-list">{% for term in article.terms %}<li><span>{{ term }}</span></li>{% endfor %}</ul>
+
+      <h2 id="equations">{% if page.lang == 'en' %}Equations and assumptions{% else %}식과 가정 적기{% endif %}</h2>
+      <p>{% if page.lang == 'en' %}I write the reference impedance, units, and linear-versus-decibel domain before substituting numbers.{% else %}숫자를 대입하기 전에 기준 임피던스, 단위, linear 값인지 dB 값인지부터 적었다.{% endif %}</p>
+      <div class="rf-formula-list">{% for formula in article.formulas %}<code>{{ formula }}</code>{% endfor %}</div>
+
+      <h2 id="example">{% if page.lang == 'en' %}Worked example{% else %}손으로 다시 계산한 예시{% endif %}</h2>
+      <p>{{ localized_example }}</p>
+      <figure><img src="{{ article.figures[1] | relative_url }}" alt="{{ localized_title | escape }} — {% if page.lang == 'en' %}calculation relationship{% else %}계산 관계{% endif %}" width="1200" height="630" loading="lazy"><figcaption>{% if page.lang == 'en' %}This is my explanatory redraw, not an imported RFDH figure or a measurement result.{% else %}RFDH 그림을 복사한 것이 아니라 내가 관계를 설명하려고 다시 그린 도식이며 측정 결과가 아니다.{% endif %}</figcaption></figure>
+
+      <h2 id="coursework">{% if page.lang == 'en' %}Connecting it to my coursework and projects{% else %}내 과제·프로젝트와 연결하기{% endif %}</h2>
+      <p>{{ localized_connection }}</p>
+      <p><a href="{% if page.lang == 'en' %}{{ '/en/coursework/high-frequency-engineering/' | relative_url }}{% else %}{{ '/coursework/high-frequency-engineering/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}High-frequency engineering course hub{% else %}고주파공학 과목 허브에서 실제 Cadence 자료 보기{% endif %}</a></p>
+
+      <h2 id="next-check">{% if page.lang == 'en' %}What I will check next{% else %}다음에 다시 확인할 점{% endif %}</h2>
+      <p>{{ localized_caution }}</p>
+
+      <h2 id="sources">{% if page.lang == 'en' %}Pages I read{% else %}읽고 연결한 원문 페이지{% endif %}</h2>
+      <ul>{% for source in article.sources %}<li><a href="{{ source.url }}" rel="external">{{ source.title }}</a></li>{% endfor %}</ul>
+    </div>
+    <nav class="series-navigation" aria-label="{% if page.lang == 'en' %}RF study navigation{% else %}RF 공부글 이동{% endif %}">
+      {% if page.rf_previous %}<a rel="prev" href="{% if page.lang == 'en' %}{{ page.rf_previous.url_en | relative_url }}{% else %}{{ page.rf_previous.url_ko | relative_url }}{% endif %}">← {% if page.lang == 'en' %}{{ page.rf_previous.title_en }}{% else %}{{ page.rf_previous.title_ko }}{% endif %}</a>{% endif %}
+      <a href="{% if page.lang == 'en' %}{{ '/en/blog/rf/start-here/' | relative_url }}{% else %}{{ '/blog/rf/start-here/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}Full RF map{% else %}RF 전체 지도{% endif %}</a>
+      {% if page.rf_next %}<a rel="next" href="{% if page.lang == 'en' %}{{ page.rf_next.url_en | relative_url }}{% else %}{{ page.rf_next.url_ko | relative_url }}{% endif %}">{% if page.lang == 'en' %}{{ page.rf_next.title_en }}{% else %}{{ page.rf_next.title_ko }}{% endif %} →</a>{% endif %}
+    </nav>
+  </article>
+</main>

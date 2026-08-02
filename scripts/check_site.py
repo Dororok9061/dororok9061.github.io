@@ -96,7 +96,19 @@ class PageParser(HTMLParser):
         if tag == "style":
             self.errors.append("inline <style> is not allowed")
         if tag == "form":
-            self.errors.append("forms are outside the approved architecture")
+            classes = values.get("class", "").split()
+            is_local_rf_calculator = (
+                self.relative_path.startswith("tools/rf/")
+                and "rf-calculator" in classes
+                and values.get("data-rf-calculator", "") in {
+                    "dbm-watt", "reflection-vswr", "quarter-wave-transformer",
+                    "cascade-noise-figure", "microstrip", "equal-split", "unequal-wilkinson",
+                }
+                and not values.get("action")
+                and not values.get("method")
+            )
+            if not is_local_rf_calculator:
+                self.errors.append("forms are outside the approved architecture")
         if tag == "img":
             if not values.get("alt"):
                 self.errors.append("image is missing non-empty alt text")

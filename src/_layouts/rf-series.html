@@ -1,0 +1,24 @@
+---
+layout: default
+---
+{% assign series = page.rf_series %}
+{% assign catalog = site.data.rfdh_study_series %}
+<main id="main" class="page page-shell rf-study-hub">
+  <nav class="breadcrumbs" aria-label="{% if page.lang == 'en' %}Breadcrumb{% else %}현재 위치{% endif %}">
+    <a href="{% if page.lang == 'en' %}{{ '/en/blog/rf/start-here/' | relative_url }}{% else %}{{ '/blog/rf/start-here/' | relative_url }}{% endif %}">RF Study</a><span aria-hidden="true">/</span><span>{% if page.lang == 'en' %}Series{% else %}시리즈{% endif %}</span>
+  </nav>
+  <header class="page-heading">
+    <p class="eyebrow">RF · Microwave Series</p>
+    <h1>{% if page.lang == 'en' %}{{ series.title_en }}{% else %}{{ series.title_ko }}{% endif %}</h1>
+    <p class="page-heading__lead">{% if page.lang == 'en' %}{{ series.description_en }}{% else %}{{ series.description_ko }}{% endif %}</p>
+  </header>
+  <div class="track-card-grid">
+    {% for item in catalog.articles %}{% if series.article_ids contains item.id %}
+    <article>
+      <a class="study-post-card__media" href="{% if page.lang == 'en' %}{{ item.url_en | relative_url }}{% else %}{{ item.url_ko | relative_url }}{% endif %}"><img src="{{ item.figures[0] | relative_url }}" alt="{% if page.lang == 'en' %}{{ item.title_en | escape }}{% else %}{{ item.title_ko | escape }}{% endif %}" width="640" height="336" loading="lazy"></a>
+      <div><p class="post-card__meta">{{ item.order }} · {{ item.terms | join: ' · ' }}</p><h2><a href="{% if page.lang == 'en' %}{{ item.url_en | relative_url }}{% else %}{{ item.url_ko | relative_url }}{% endif %}">{% if page.lang == 'en' %}{{ item.title_en }}{% else %}{{ item.title_ko }}{% endif %}</a></h2><p>{% if page.lang == 'en' %}{{ item.description_en }}{% else %}{{ item.description_ko }}{% endif %}</p></div>
+    </article>
+    {% endif %}{% endfor %}
+  </div>
+  <p><a class="portfolio-button portfolio-button--primary" href="{% if page.lang == 'en' %}{{ '/en/blog/rf/start-here/' | relative_url }}{% else %}{{ '/blog/rf/start-here/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}Back to the complete RF map{% else %}RF 전체 공부 지도로 돌아가기{% endif %}</a></p>
+</main>

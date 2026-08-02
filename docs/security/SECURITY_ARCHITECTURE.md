@@ -35,6 +35,11 @@ flowchart LR
 - Blockchain, Web3 SDK, Wallet, Smart Contract
 - Service Worker, Dynamic CMS
 
+예외적으로 `/tools/rf/` 아래 7개 계산기는 `action`·`method`·backend·저장·외부
+request 없이 Browser 내부 숫자 연산만 수행한다. 입력은 finite/range 검사를 거치고
+출력은 `textContent`만 사용한다. CSP의 `connect-src 'none'`과 `form-action 'none'`은
+그대로 유지한다.
+
 새 기능이 필요하면 먼저 Threat Model과 Attack Surface Register를 갱신하고
 사용자 승인을 받아야 한다.
 
@@ -44,7 +49,7 @@ flowchart LR
 |---|---|---|
 | 전송 | Pages 생성, Enforce HTTPS, HTTP→HTTPS 리디렉션, 인증서·호스트명·만료 검증 | PASS — HTTP 301, HTTPS 200, TLS 1.3, `*.github.io` 인증서 검증 |
 | 콘텐츠 | 상대 URL 또는 HTTPS만 허용, Mixed Content 검사, 외부 실행 스크립트 기본 금지 | PASS — source/build scan 및 공개 브라우저 검사 0건 |
-| 브라우저 | 사용자 입력 없음, DOM HTML sink 금지, `eval` 금지, 최소 Vanilla JS | PASS — 한 개의 자체 Vanilla JS만 사용 |
+| 브라우저 | RF 계산기 숫자 입력만 허용, DOM HTML sink 금지, `eval`·network request 금지, 최소 Vanilla JS | PASS — 자체 JS·allowlisted local form·수식 회귀검사 |
 | CSP | 빌드 결과에 맞춘 엄격한 CSP를 문서 최상단 meta로 적용 | PASS — 한국어·영어·404·보안 페이지 적용 |
 | Clickjacking | `frame-ancestors 'none'` 또는 `X-Frame-Options: DENY` 응답 헤더 | PLATFORM LIMITATION — GitHub Pages에서 임의 응답 헤더 설정 불가 |
 | 저장소 | 기본 브랜치 보호, 강제 푸시·삭제 제한, 최소 권한, 비밀 탐지, 보안 정책 | PASS — public repo, 보안 정책, ruleset 및 private vulnerability reporting |
