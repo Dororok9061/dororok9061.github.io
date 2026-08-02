@@ -1,0 +1,451 @@
+#!/usr/bin/env python3
+"""Build the bilingual RF study-page catalog consumed by Jekyll."""
+
+from __future__ import annotations
+
+import json
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[2]
+OUTPUT = ROOT / "src" / "_data" / "rfdh_study_series.yml"
+ASSET = "/assets/images/study/rf-rfdh/"
+RFDH = "https://rfdh.com/"
+
+OFFICIAL_REFERENCES = {
+    "itu": {
+        "title": "ITU-R V.431-9: Nomenclature of frequency and wavelength bands",
+        "url": "https://www.itu.int/rec/r-rec-v.431/en",
+    },
+    "keysight_network": {
+        "title": "Keysight: Understanding the Fundamental Principles of Vector Network Analysis",
+        "url": "https://www.keysight.com/us/en/assets/7018-06841/application-notes/5965-7707.pdf",
+    },
+    "keysight_matching": {
+        "title": "Keysight: Impedance Matching in the Laboratory",
+        "url": "https://www.keysight.com/th/en/assets/7018-04597/application-notes",
+    },
+    "analog_rf_specs": {
+        "title": "Analog Devices: Understand Wireless Data Sheet Specifications, Part 1",
+        "url": "https://www.analog.com/en/resources/technical-articles/understand-wireless-data-sheet-specifications--part-1.html",
+    },
+    "analog_rf_tools": {
+        "title": "Analog Devices: RF and synthesis design tools",
+        "url": "https://www.analog.com/en/resources/design-tools-and-calculators.html",
+    },
+    "ti_radar": {
+        "title": "Texas Instruments: mmWave radar fundamentals and development resources",
+        "url": "https://www.ti.com/design-development/embedded-development/mmwave-radar.html",
+    },
+}
+
+
+def official_references(identifier: str, group: str) -> list[dict[str, str]]:
+    if identifier == "foundations" or identifier == "wireless-communications":
+        keys = ["itu"]
+    elif identifier == "radar-bridge":
+        keys = ["ti_radar", "itu"]
+    elif group == "smith-chart" or identifier == "impedance-port-matching":
+        keys = ["keysight_matching", "keysight_network"]
+    elif identifier in {"db-dbm-power", "linearity-p1db-ip3"}:
+        keys = ["analog_rf_specs"]
+    elif identifier == "noise-figure-cascade":
+        keys = ["analog_rf_tools"]
+    elif group == "circuit-blocks":
+        keys = ["analog_rf_specs", "keysight_network"]
+    else:
+        keys = ["keysight_network"]
+    return [OFFICIAL_REFERENCES[key] for key in keys]
+
+
+def source(title: str, path: str) -> dict[str, str]:
+    return {"title": title, "url": RFDH + path.lstrip("/")}
+
+
+def article(
+    identifier: str,
+    order: int,
+    group: str,
+    title_ko: str,
+    title_en: str,
+    focus_ko: str,
+    focus_en: str,
+    concept_ko: str,
+    concept_en: str,
+    formulas: list[str],
+    example_ko: str,
+    example_en: str,
+    connection_ko: str,
+    connection_en: str,
+    caution_ko: str,
+    caution_en: str,
+    figures: list[str],
+    sources: list[dict[str, str]],
+    terms: list[str],
+) -> dict[str, object]:
+    return {
+        "id": identifier,
+        "order": order,
+        "group": group,
+        "url_ko": f"/blog/rf/{identifier}/",
+        "url_en": f"/en/blog/rf/{identifier}/",
+        "title_ko": title_ko,
+        "title_en": title_en,
+        "description_ko": focus_ko,
+        "description_en": focus_en,
+        "focus_ko": focus_ko,
+        "focus_en": focus_en,
+        "concept_ko": concept_ko,
+        "concept_en": concept_en,
+        "formulas": formulas,
+        "example_ko": example_ko,
+        "example_en": example_en,
+        "connection_ko": connection_ko,
+        "connection_en": connection_en,
+        "caution_ko": caution_ko,
+        "caution_en": caution_en,
+        "figures": [ASSET + value for value in figures],
+        "sources": sources,
+        "official_sources": official_references(identifier, group),
+        "terms": terms,
+    }
+
+
+ARTICLES: list[dict[str, object]] = [
+    article(
+        "foundations", 1, "core", "RF 공부를 시작하며: 파장과 전기적 길이", "Starting RF Study: Wavelength and Electrical Length",
+        "먼저 RF가 단순히 높은 주파수라는 말에서 끝나지 않는 이유를 정리했다. 회로의 물리 크기가 파장에 비해 무시되지 않을 때 위치에 따른 위상과 반사를 함께 보게 된다.",
+        "I started by asking why RF is more than a label for high frequency. When physical size is no longer negligible relative to wavelength, phase and reflection must be tracked along position.",
+        "낮은 주파수의 lumped 회로에서는 한 node의 전압을 하나의 값으로 다루지만, distributed 회로에서는 V(z)와 I(z)가 진행파와 반사파의 합이 된다. 주파수, 매질의 위상속도, 선로 길이를 먼저 적어야 같은 구조의 전기적 길이를 비교할 수 있다.",
+        "A lumped node can be represented by one voltage, while a distributed line uses V(z) and I(z) as sums of forward and reflected waves. Frequency, phase velocity, and physical length must be recorded before comparing electrical length.",
+        ["lambda = v_p / f", "theta = beta l = 2 pi l / lambda"],
+        "3.5 GHz에서 자유공간 파장은 약 85.7 mm다. 유효 유전율이 6이라고 가정하면 유도파장은 약 35.0 mm로 줄고, 같은 25 mm 선로는 약 257도의 전기적 길이가 된다.",
+        "At 3.5 GHz the free-space wavelength is about 85.7 mm. With an assumed effective permittivity of 6, the guided wavelength is about 35.0 mm, so a 25 mm line is roughly 257 electrical degrees.",
+        "내 고주파공학 과제의 alumina microstrip은 3.5 GHz와 270도 조건을 사용했다. 여기서는 당시 치수를 측정값으로 바꾸지 않고, 유효 유전율이 길이 계산에 들어가는 순서만 다시 확인했다.",
+        "My high-frequency coursework used a 3.5 GHz, 270-degree alumina microstrip. I keep its stored dimensions separate from measurement and revisit only how effective permittivity enters the length calculation.",
+        "유전율만으로 실제 위상속도를 확정하면 안 된다. microstrip은 장이 공기와 기판에 나뉘므로 유효 유전율 모델과 주파수 범위를 함께 확인한다.",
+        "Relative permittivity alone does not fix the actual phase velocity of microstrip because fields occupy both air and substrate; the effective-permittivity model and frequency range matter.",
+        ["foundations/distributed-wave.svg", "impedance/impedance-chain.svg"],
+        [source("RFDH: RF란 무엇인가?", "bas_rf/begin/whatisrf.php3"), source("RFDH: RF 공부를 시작하려면", "bas_rf/begin/start.htm")],
+        ["wavelength", "electrical length", "distributed circuit", "phase velocity"],
+    ),
+    article(
+        "impedance-port-matching", 2, "core", "50 Ω·Port·Impedance Matching을 한 흐름으로 읽기", "Reading 50 Ohms, Ports, and Matching as One Flow",
+        "50 Ω, port, matching을 따로 외우니 S-parameter 설정과 회로 연결이 자주 섞였다. 이번에는 source–line–load의 기준면을 먼저 그리고 세 용어를 한 경로로 연결했다.",
+        "Memorizing 50 ohms, ports, and matching separately made S-parameter setups confusing. I drew the source-line-load reference planes first and connected all three terms on one path.",
+        "port는 단순한 선 이름이 아니라 입사파와 반사파를 정의하는 기준면이다. ZL=Z0이면 반사계수는 0이고, 일반적인 conjugate match와 transmission-line match는 목표 조건이 다를 수 있다.",
+        "A port is a reference plane for incident and reflected waves, not merely a wire label. ZL=Z0 gives zero reflection, while conjugate matching and transmission-line matching can serve different objectives.",
+        ["Gamma = (Z_L - Z_0) / (Z_L + Z_0)", "Z_t = sqrt(Z_0 Z_L)"],
+        "50 Ω 선로에 100 Ω 실수 부하를 연결하면 Γ=1/3이고 반사 전력 비는 |Γ|²=1/9, 약 11.1%다. λ/4 변환기의 임피던스는 √(50·100)=70.71 Ω가 된다.",
+        "A 100-ohm load on a 50-ohm line gives Γ=1/3 and reflected power |Γ|²=1/9, about 11.1%. A quarter-wave transformer between them uses 70.71 ohms.",
+        "내 Wilkinson 과제에서 70.7 Ω branch가 나온 이유도 같은 제곱근 관계에서 출발한다. 다만 divider의 odd-mode isolation resistor까지 포함해야 전체 네트워크 설명이 완성된다.",
+        "The 70.7-ohm branches in my Wilkinson assignment start from the same square-root relationship, but the odd-mode isolation resistor is also needed to describe the full network.",
+        "모든 회로가 50 Ω여서 maximum power transfer가 자동으로 보장된다고 쓰지 않는다. source impedance, reference impedance, load, available power의 정의를 분리한다.",
+        "A 50-ohm label does not automatically prove maximum available power. Source impedance, reference impedance, load, and available power remain separate definitions.",
+        ["impedance/impedance-chain.svg", "matching/quarter-wave.svg"],
+        [source("RFDH: 50옴을 쓰는 이유는?", "bas_rf/begin/50ohm.htm"), source("RFDH: Port의 정확한 의미는?", "bas_rf/begin/whyport.htm"), source("RFDH: 임피던스 매칭을 왜 할까?", "bas_rf/begin/whymatch.htm")],
+        ["50 ohm", "port", "reflection coefficient", "matching"],
+    ),
+    article(
+        "transmission-lines", 3, "core", "전송선·Microstrip·CPW·Coax·Waveguide 비교", "Comparing Transmission Lines, Microstrip, CPW, Coax, and Waveguide",
+        "전송 구조 이름만 나열하지 않고 각 구조의 return path, field confinement, mode, 제작 변수를 기준으로 다시 비교했다.",
+        "Instead of listing line names, I compared each structure by return path, field confinement, mode, and fabrication variables.",
+        "microstrip은 공기와 기판의 경계에 장이 걸쳐 quasi-TEM으로 다루고, stripline은 유전체 내부에 도체가 묻힌다. CPW는 같은 면의 ground가 probe와 shunt 연결에 유리하며, coax와 waveguide는 각각 TEM과 cutoff를 가진 도파 모드 관점이 중요하다.",
+        "Microstrip spans air and substrate and is commonly treated as quasi-TEM; stripline embeds the conductor in dielectric. CPW keeps grounds on the same plane, while coax and waveguide emphasize TEM behavior and cutoff modes respectively.",
+        ["Z_0 = sqrt(L prime / C prime)", "gamma = alpha + j beta"],
+        "길이 20 mm, λg=40 mm인 lossless line은 180도 전기적 길이다. 같은 물리 길이라도 유효 유전율이 커져 λg가 30 mm로 줄면 240도가 된다.",
+        "A 20 mm lossless line with λg=40 mm is 180 degrees long. If higher effective permittivity reduces λg to 30 mm, the same line becomes 240 degrees.",
+        "alumina 과제의 width와 length는 microstrip stack-up에 종속된다. 기존 Cadence 화면의 W=480 µm와 L≈24.9 mm를 다른 기판의 보편값으로 사용하지 않았다.",
+        "The alumina assignment dimensions depend on its stack-up. I do not reuse the stored Cadence W=480 µm and L≈24.9 mm as universal values for another substrate.",
+        "closed-form microstrip 식은 초기값이다. conductor thickness, loss tangent, dispersion, roughness, launch와 제조 공차를 포함한 EM 또는 측정 검증을 대신하지 않는다.",
+        "Closed-form microstrip equations provide starting values; they do not replace EM or measurement checks including thickness, loss tangent, dispersion, roughness, launches, and tolerance.",
+        ["foundations/distributed-wave.svg", "matching/quarter-wave.svg"],
+        [source("RFDH: Microstrip을 왜 쓸까?", "bas_rf/begin/whymicrostrip.htm"), source("RFDH RFDB: MicroStrip", "rfdb/msline.htm"), source("RFDH RFDB: Coplanar Waveguide", "rfdb/cpw.htm")],
+        ["microstrip", "stripline", "CPW", "coax", "waveguide"],
+    ),
+    article(
+        "reflection-vswr", 4, "core", "Reflection Coefficient·Return Loss·VSWR 변환", "Converting Reflection Coefficient, Return Loss, and VSWR",
+        "같은 mismatch를 세 단위로 표현할 때 부호와 ratio를 섞지 않도록 계산 순서를 다시 적었다.",
+        "I rewrote the conversion order so that sign conventions and ratios are not mixed when one mismatch is expressed three ways.",
+        "복소 Γ는 크기와 위상을 가지며 return loss와 VSWR은 그 크기만 사용한다. S11을 음수 dB로 표시하는 plot과 양수 return loss를 같은 숫자의 반대 부호로 읽을 때 정의를 먼저 확인한다.",
+        "Complex Γ has magnitude and phase; return loss and VSWR use only its magnitude. A negative-dB S11 plot and positive return loss can carry opposite signs, so the displayed definition must be checked.",
+        ["VSWR = (1 + abs(Gamma)) / (1 - abs(Gamma))", "RL = -20 log10(abs(Gamma))"],
+        "|Γ|=0.2이면 VSWR=1.5이고 return loss는 약 13.98 dB다. 반사 전력 비는 4%다. amplitude ratio에 20 log를 쓰고 power ratio에는 10 log를 쓴다.",
+        "For |Γ|=0.2, VSWR=1.5 and return loss is about 13.98 dB; reflected power is 4%. I use 20 log for amplitude ratios and 10 log for power ratios.",
+        "Wilkinson 저장 화면의 S11 marker는 matching의 한 지표다. 중심주파수, 다른 port termination, S23 isolation과 함께 읽어야 divider 전체 동작을 설명할 수 있다.",
+        "The saved Wilkinson S11 marker is one matching indicator. Center frequency, other-port terminations, and S23 isolation are also needed to explain the divider.",
+        "VSWR만 보고 위상이나 mismatch 방향을 복원할 수 없다. 같은 |Γ|를 가진 여러 부하가 존재하므로 Smith chart나 복소 S11이 필요하다.",
+        "VSWR alone cannot recover reflection phase or mismatch direction; many loads share the same |Γ|, so complex S11 or a Smith chart is needed.",
+        ["impedance/reflection-relations.svg", "smith-chart/smith-coordinates.svg"],
+        [source("RFDH RFDB: VSWR", "rfdb/vswr.htm"), source("RFDH: 임피던스 매칭을 왜 할까?", "bas_rf/begin/whymatch.htm")],
+        ["Gamma", "return loss", "VSWR", "S11"],
+    ),
+    article(
+        "s-parameters-vna", 5, "core", "S-Parameter 행렬과 VNA 화면 읽기", "Reading the S-Parameter Matrix and VNA Screens",
+        "S11·S21·S31·S23을 단순한 곡선 이름이 아니라 어떤 port에 입사시키고 어디서 읽는 값인지 다시 표시했다.",
+        "I relabeled S11, S21, S31, and S23 by excitation and observation ports rather than treating them as curve names.",
+        "Sij의 두 번째 index j가 excitation port, 첫 번째 i가 response port다. 측정하지 않는 port는 reference impedance로 terminate해야 하며, 다중 port network의 match, transmission, reverse transmission, isolation을 행렬로 읽는다.",
+        "For Sij, index j is the excited port and i is the observed response. Other ports are terminated in the reference impedance, and the matrix separates match, forward/reverse transmission, and isolation.",
+        ["b = S a", "S21 = b2 / a1 when all other incident waves are zero"],
+        "equal split ideal divider의 각 출력 power는 입력보다 3.0103 dB 낮다. 따라서 |S21|=|S31|≈0.707이고 20log10(0.707)≈−3.01 dB다.",
+        "Each output of an ideal equal power divider is 3.0103 dB below the input, so |S21|=|S31|≈0.707 and 20log10(0.707)≈−3.01 dB.",
+        "내 Cadence Wilkinson 화면에서는 S21/S31 split과 S23 isolation을 함께 읽었다. branch-line 화면은 S21/S31 amplitude만으로 90도 phase balance를 입증하지 않는다.",
+        "In my stored Cadence Wilkinson view I read S21/S31 split with S23 isolation. The branch-line amplitude curves alone do not prove 90-degree phase balance.",
+        "simulation port와 VNA calibration port는 같은 말이 아니다. fixture de-embedding과 reference-plane 이동이 없으면 화면의 S-parameter를 DUT 단자 측정으로 바꾸어 말하지 않는다.",
+        "A simulation port is not automatically a calibrated VNA port. Without fixture de-embedding and reference-plane control, a plot is not described as a DUT-terminal measurement.",
+        ["sparameters/s-matrix.svg", "instrumentation/vna-reference-plane.svg"],
+        [source("RFDH: S파라미터", "bas_rf/s.htm"), source("RFDH: Network Analyzer", "bas_rf/network.htm")],
+        ["S11", "S21", "S31", "isolation", "VNA"],
+    ),
+    article(
+        "db-dbm-power", 6, "core", "dB와 dBm 계산을 손으로 확인하기", "Checking dB and dBm Calculations by Hand",
+        "dB ratio와 dBm absolute power를 같은 열에 적어 생기던 실수를 줄이기 위해 기준값과 단위를 먼저 적었다.",
+        "I write the reference and unit first to avoid mixing a dB ratio with absolute dBm power.",
+        "dB는 두 양의 ratio이고 dBm은 1 mW 기준의 power level이다. gain/loss를 dB로 더한 뒤 input dBm에 합하면 output dBm을 얻지만, 실제 available power와 compression 조건은 별도로 확인한다.",
+        "dB is a ratio; dBm is a power level referenced to 1 mW. Adding gains and losses in dB to an input dBm gives an output level, while available power and compression remain separate checks.",
+        ["P_dBm = 10 log10(P_mW)", "P_mW = 10^(P_dBm / 10)"],
+        "−10 dBm은 0.1 mW, 20 dBm은 100 mW, 30 dBm은 1 W다. 10 dBm 신호가 2 dB cable loss와 12 dB gain을 지나면 선형 가정에서 20 dBm이 된다.",
+        "−10 dBm is 0.1 mW, 20 dBm is 100 mW, and 30 dBm is 1 W. A 10 dBm signal through 2 dB loss and 12 dB gain becomes 20 dBm under a linear assumption.",
+        "Cadence S-parameter의 −3 dB split은 절대 output power가 아니다. input power와 impedance reference가 추가되어야 watt나 dBm으로 바꿀 수 있다.",
+        "A −3 dB S-parameter split is not an absolute output power; input power and the reference conditions are needed before converting to watts or dBm.",
+        "voltage ratio에 10 log를 적용하거나 power ratio에 20 log를 적용하지 않는다. impedance가 같다는 조건 없이 voltage dB를 power dB로 바로 해석하지 않는다.",
+        "I do not use 10 log for voltage ratios or 20 log for power ratios, and I do not equate voltage and power dB without the equal-impedance condition.",
+        ["power-db/db-power-scale.svg", "circuit-blocks/rf-block-chain.svg"],
+        [source("RFDH: dB 단위는 왜 쓸까?", "bas_rf/begin/whydb.htm"), source("RFDH: dB와 dBm은 뭐가 다를까?", "bas_rf/begin/dbdbm.htm"), source("RFDH RFDB: 전력변환", "rfdb/dbmw.htm")],
+        ["dB", "dBm", "mW", "gain", "loss"],
+    ),
+    article(
+        "linearity-p1db-ip3", 7, "core", "Harmonic·IMD·P1dB·IP3를 한 그래프에서 구분하기", "Separating Harmonics, IMD, P1dB, and IP3 on One Graph",
+        "선형 gain만 확인하던 관점에서 벗어나 input level을 올릴 때 fundamental과 distortion이 어떻게 달라지는지 정리했다.",
+        "I moved beyond small-signal gain and tracked how fundamentals and distortion change as input level rises.",
+        "비선형 다항식의 2차·3차 항은 harmonic과 intermodulation을 만든다. P1dB는 실제 gain compression 지점이고 IP3는 fundamental과 third-order product 직선 외삽의 교점이므로 실제 동작점으로 해석하지 않는다.",
+        "Second- and third-order polynomial terms create harmonics and intermodulation. P1dB is a measured compression point, while IP3 is an extrapolated intersection and not an operating point.",
+        ["y = a1 x + a2 x^2 + a3 x^3", "OIP3 = P_out + Delta_IM3 / 2"],
+        "한 tone의 output이 0 dBm이고 인접 IM3가 −30 dBm이면 ΔIM3=30 dB, OIP3≈15 dBm이다. 이 값은 두 직선 slope 가정에서 얻은 외삽치다.",
+        "If one fundamental output is 0 dBm and adjacent IM3 is −30 dBm, ΔIM3=30 dB and OIP3≈15 dBm under the straight-line extrapolation.",
+        "내 과제 화면에는 P1dB/IP3 실측 결과가 남아 있지 않다. 그래서 이 글의 계산은 학습 예시이며 Cadence 저장 화면의 새 검증값으로 제시하지 않는다.",
+        "My coursework archive does not contain P1dB/IP3 measurement results, so this calculation is a study example rather than a new result extracted from the stored Cadence screens.",
+        "IP3가 높다고 모든 대신호 성능이 결정되는 것은 아니다. bias, bandwidth, temperature, tone spacing, memory effect와 measurement setup을 함께 기록한다.",
+        "A high IP3 does not define all large-signal behavior; bias, bandwidth, temperature, tone spacing, memory effects, and setup also matter.",
+        ["linearity/p1db-ip3.svg", "power-db/db-power-scale.svg"],
+        [source("RFDH: Harmonic은 왜 생기나?", "bas_rf/begin/harmonic.htm"), source("RFDH: Intermodulation의 정체", "bas_rf/begin/im.htm"), source("RFDH: IMD, P1dB, IP3", "bas_rf/begin/ip3.htm")],
+        ["harmonic", "IMD", "P1dB", "IP3", "compression"],
+    ),
+    article(
+        "measurement-vna", 8, "core", "VNA Calibration과 Reference Plane 기록하기", "Recording VNA Calibration and Reference Planes",
+        "simulation 결과와 instrument measurement를 같은 표에 넣기 전에 calibration plane과 fixture를 먼저 그렸다.",
+        "Before placing simulation and instrument results in one table, I drew the calibration plane and fixture boundary.",
+        "one-port calibration은 directivity, source match, reflection tracking을 보정하고 two-port calibration은 transmission error terms까지 다룬다. SOLT와 TRL은 같은 절차가 아니며 DUT 구조와 standards에 맞게 선택한다.",
+        "One-port calibration corrects directivity, source match, and reflection tracking; two-port calibration also addresses transmission errors. SOLT and TRL are different methods chosen for the DUT and standards.",
+        ["S11 = b1 / a1 at the calibrated plane", "S21 = b2 / a1 with port 2 matched"],
+        "cable을 재연결해 reference plane 뒤에 20 mm fixture가 남으면 그 fixture의 phase와 loss가 DUT 결과에 포함된다. port extension은 delay를 옮길 수 있지만 모든 mismatch를 제거하지는 않는다.",
+        "If a 20 mm fixture remains beyond the calibration plane, its phase and loss appear in the DUT result. Port extension can shift delay but does not remove every mismatch.",
+        "현재 공개한 Cadence 화면은 simulation archive다. VNA calibration log, cable, connector, fixture가 없으므로 제작회로 측정과 같은 상태로 표시하지 않는다.",
+        "The published Cadence screens are simulation archives. Without VNA calibration logs, cables, connectors, and fixtures, I do not label them as fabricated-circuit measurements.",
+        "sweep point 수와 IF bandwidth를 바꾸면 noise와 측정 시간이 달라진다. smoothing으로 notch를 더 좋아 보이게 만들지 않고 원 설정을 기록한다.",
+        "Changing sweep points and IF bandwidth changes noise and measurement time. I record original settings rather than smoothing a notch into a better-looking result.",
+        ["instrumentation/vna-reference-plane.svg", "sparameters/s-matrix.svg"],
+        [source("RFDH: Network Analyzer", "bas_rf/network.htm"), source("RFDH: 컴퓨터-계측기 연동", "bas_rf/hpib.htm")],
+        ["VNA", "SOLT", "TRL", "reference plane", "de-embedding"],
+    ),
+    article(
+        "noise-figure-cascade", 9, "core", "Cascade Noise Figure와 첫 단 Gain", "Cascade Noise Figure and First-Stage Gain",
+        "receiver block별 noise figure를 dB로 바로 더하면 안 되는 이유를 Friis 식으로 다시 계산했다.",
+        "I revisited Friis' equation to see why receiver noise figures cannot simply be added in dB.",
+        "noise factor F는 linear ratio이며 cascade에서는 뒤 단 contribution이 앞 단 available gain으로 나뉜다. 그래서 LNA의 gain과 noise figure가 receiver 초단에서 특히 중요하다.",
+        "Noise factor F is a linear ratio. In a cascade, later contributions are divided by preceding available gain, which makes first-stage LNA gain and noise figure especially important.",
+        ["F_total = F1 + (F2 - 1)/G1 + (F3 - 1)/(G1 G2)", "NF_dB = 10 log10(F)"],
+        "NF1=2 dB, G1=15 dB, NF2=8 dB인 두 단을 linear로 바꾸면 Ftotal≈1.753, NFtotal≈2.437 dB다. 2+8=10 dB로 더한 값과 다르다.",
+        "For NF1=2 dB, G1=15 dB, and NF2=8 dB, linear conversion gives Ftotal≈1.753 and NFtotal≈2.437 dB, not 10 dB.",
+        "FMCW radar receiver를 볼 때 antenna 이후 LNA, mixer, IF/baseband stage 순서를 이 식과 연결했다. 실제 board의 NF를 측정한 값으로 쓰지는 않았다.",
+        "I connect the FMCW receiver order—antenna, LNA, mixer, IF/baseband—to this equation without claiming a measured board noise figure.",
+        "gain은 available gain 정의와 impedance condition에 따라 달라진다. passive loss 앞뒤 위치, temperature, bandwidth를 무시한 계산은 설계 비교용 초기값으로만 쓴다.",
+        "Available gain depends on impedance conditions. Calculations that omit passive-loss placement, temperature, and bandwidth are only initial comparisons.",
+        ["circuit-blocks/noise-cascade.svg", "circuit-blocks/rf-block-chain.svg"],
+        [source("RFDH RFDB: 시스템 잡음지수 계산", "rfdb/nf.htm"), source("RFDH: Amplifier", "bas_rf/begin/amp.htm")],
+        ["noise factor", "noise figure", "Friis", "LNA", "available gain"],
+    ),
+    article(
+        "wireless-communications", 10, "core", "I/Q·Modulation·Channel·BER 연결하기", "Connecting I/Q, Modulation, Channel, and BER",
+        "디지털통신 과목의 signal flow와 RF front-end를 분리한 뒤 baseband I/Q가 carrier와 channel을 거쳐 decision으로 돌아오는 순서를 연결했다.",
+        "I separated the digital-communications signal flow from the RF front end, then connected baseband I/Q through carrier, channel, and receiver decisions.",
+        "M-ary modulation은 symbol 하나에 log2(M) bit를 실으며 I/Q 좌표의 거리와 channel noise가 error probability를 좌우한다. RF block은 frequency translation과 power level을 맡지만 coding과 detection까지 같은 block으로 부르지 않는다.",
+        "M-ary modulation carries log2(M) bits per symbol, and constellation distance with channel noise influences error probability. RF blocks handle translation and power level without replacing coding and detection.",
+        ["R_s = R_b / log2(M)", "SNR_dB = 10 log10(P_s / P_n)"],
+        "1 Mbps bitstream을 QPSK로 보내면 uncoded symbol rate는 500 ksym/s다. pulse shaping의 roll-off가 0.35이면 idealized occupied bandwidth estimate는 약 675 kHz다.",
+        "A 1 Mbps bitstream sent with QPSK has an uncoded symbol rate of 500 ksym/s. With roll-off 0.35, an idealized occupied-bandwidth estimate is about 675 kHz.",
+        "내 디지털통신 과목 페이지는 변조·channel·BER 공부자료로 연결하고, RFDH를 실제 강의계획서라고 쓰지 않았다. FMCW radar의 I/Q는 통신 symbol decision과 목적이 다르다는 점도 분리했다.",
+        "I link my digital-communications course pages for modulation, channel, and BER without calling RFDH the course syllabus. FMCW radar I/Q serves a different purpose from communication-symbol decisions.",
+        "오래된 이동통신 설명의 보안·용량 문장을 현재 표준의 절대적 사실로 옮기지 않는다. 이 글은 신호처리 기본 흐름에만 사용하고 최신 규격은 해당 표준 문서에서 확인한다.",
+        "I do not carry historical security or capacity statements into current standards as absolutes. This page uses the source for signal-flow foundations and leaves current specifications to their standards.",
+        ["wireless-communications/tx-rx-chain.svg", "circuit-blocks/mixer-spectrum.svg"],
+        [source("RFDH: 통신시스템 시뮬레이션의 기초", "bas_com/1-1.htm"), source("RFDH: I/Q 플롯", "bas_com/1-10.htm"), source("RFDH: QPSK/MPSK", "bas_com/2-7.htm")],
+        ["I/Q", "QPSK", "channel", "SNR", "BER"],
+    ),
+    article(
+        "passive-network-coursework", 11, "core", "Microstrip·L-Matching·Wilkinson·Branch-Line 과제 다시 읽기", "Re-reading My Microstrip, Matching, Wilkinson, and Branch-Line Work",
+        "RFDH 개념을 내 고주파공학 과제의 실제 Cadence 화면 옆에 놓고 설계식, 입력 치수, 저장 marker를 서로 다른 열로 정리했다.",
+        "I placed RFDH concepts beside my actual Cadence coursework screens and separated design equations, entered geometry, and stored markers.",
+        "microstrip effective permittivity와 guided wavelength가 line length를 정하고, matching network는 load를 reference impedance로 이동시킨다. Wilkinson과 branch-line은 quarter-wave sections를 쓰지만 port 역할과 isolation mechanism이 다르다.",
+        "Effective permittivity and guided wavelength set microstrip length, while matching networks move the load toward the reference impedance. Wilkinson and branch-line circuits both use quarter-wave sections but have different port and isolation mechanisms.",
+        ["l = theta lambda_g / (2 pi)", "Z_branch = sqrt(2) Z_0 for an equal Wilkinson"],
+        "Z0=50 Ω이면 equal Wilkinson branch는 70.71 Ω, isolation resistor는 ideal case 100 Ω다. 내 저장 설계는 tuning 값과 실제 line width/length를 별도로 보여준다.",
+        "For Z0=50 ohms, an equal Wilkinson uses 70.71-ohm branches and an ideal 100-ohm isolation resistor. My stored design separately shows tuned values and physical line dimensions.",
+        "3.7 GHz에서 읽힌 microstrip marker를 3.5 GHz 정확 검증으로 바꾸지 않았다. Wilkinson S21/S31, S23과 branch-line schematic·S-parameter 화면도 기존 archive임을 유지했다.",
+        "I do not turn the stored 3.7 GHz microstrip marker into exact 3.5 GHz validation. The Wilkinson and branch-line screens remain an existing simulation archive.",
+        "phase balance, fabrication tolerance, connector launch, VNA measurement은 저장 화면만으로 확인되지 않는다. 계산기 출력도 이 한계를 대신하지 않는다.",
+        "Stored screens do not establish phase balance, fabrication tolerance, connector launches, or VNA measurements, and calculator output does not replace those checks.",
+        ["matching/quarter-wave.svg", "sparameters/s-matrix.svg"],
+        [source("RFDH: Microstrip을 왜 쓸까?", "bas_rf/begin/whymicrostrip.htm"), source("RFDH: Coupler/Divider/Combiner", "bas_rf/begin/coupler.php3")],
+        ["Cadence", "microstrip", "L matching", "Wilkinson", "branch-line"],
+    ),
+    article(
+        "radar-bridge", 12, "core", "RF 회로에서 FMCW Radar Signal Processing으로", "From RF Circuits to FMCW Radar Signal Processing",
+        "RF 회로 공부와 FMCW signal processing 사이를 chirp 생성, 송수신 chain, mixer, IF sampling 순서로 연결했다.",
+        "I connected RF-circuit study to FMCW signal processing through chirp generation, transmit/receive chains, mixing, and IF sampling.",
+        "PLL/VCO가 chirp slope를 만들고 송신 신호와 지연된 echo를 mixer에 넣으면 beat frequency가 생긴다. 그 뒤 ADC sample, range FFT, slow-time Doppler, antenna phase processing은 RF block 설명과 구분한다.",
+        "A PLL/VCO creates chirp slope; mixing the transmitted chirp with a delayed echo produces beat frequency. ADC sampling, range FFT, slow-time Doppler, and antenna-phase processing follow as distinct processing stages.",
+        ["f_b = S tau", "R = c f_b / (2 S)"],
+        "slope S=30 MHz/µs이고 beat frequency가 2 MHz이면 ideal range estimate는 10 m다. 실제 range bin과 bias는 sampling, window, calibration, leakage의 영향을 받는다.",
+        "With slope S=30 MHz/µs and a 2 MHz beat, the ideal range estimate is 10 m. Actual bins and bias depend on sampling, windows, calibration, and leakage.",
+        "내 FMCW 연구 페이지의 ECG·SCG·radar alignment는 동시에 취득된 신호의 timing 문제다. 단일 beat peak만으로 valve event를 자동 확정하지 않는 기존 해석 경계를 유지했다.",
+        "My FMCW research page treats ECG, SCG, and radar alignment as a concurrent-signal timing problem and keeps the existing boundary against labeling a valve event from one radar peak alone.",
+        "range equation은 ideal linear chirp를 가정한다. antenna pattern, multipath, phase noise, nonlinearity, target motion과 processing choices를 생략한 계산을 실제 사람 추적 성능으로 쓰지 않는다.",
+        "The range equation assumes an ideal linear chirp. A calculation omitting antenna pattern, multipath, phase noise, nonlinearity, motion, and processing choices is not a people-tracking performance result.",
+        ["circuit-blocks/rf-block-chain.svg", "circuit-blocks/mixer-spectrum.svg"],
+        [source("RFDH: PLL", "bas_rf/begin/pll.php3"), source("RFDH: Mixer", "bas_rf/begin/mixer.php3")],
+        ["FMCW", "chirp", "mixer", "beat frequency", "range FFT"],
+    ),
+]
+
+
+SMITH = [
+    ("smith-01-why", "Smith Chart를 왜 쓰는가", "Why Use a Smith Chart", "복소 reflection과 impedance를 한 원에서 왕복 변환하는 목적", "mapping complex reflection and impedance on one bounded plane", ["Gamma = (z - 1)/(z + 1)", "z = (1 + Gamma)/(1 - Gamma)"], "z=2이면 Γ=1/3으로 실수축 오른쪽에 놓인다.", "For z=2, Γ=1/3 lies on the positive real axis.", "bas_rf/begin/smith1.htm"),
+    ("smith-02-normalize", "정규화 임피던스", "Normalized Impedance", "기준 임피던스로 나누고 다시 실제 Ω로 복원하는 순서", "normalizing by reference impedance and restoring ohms", ["z = Z_L/Z_0", "Z_L = z Z_0"], "75+j25 Ω를 50 Ω로 정규화하면 z=1.5+j0.5다.", "75+j25 ohms normalized to 50 ohms gives z=1.5+j0.5.", "bas_rf/begin/smith2.htm"),
+    ("smith-03-read", "Resistance·Reactance 원 읽기", "Reading Resistance and Reactance Circles", "constant resistance circle과 reactance arc의 교점을 읽는 법", "reading intersections of constant-resistance circles and reactance arcs", ["z = r + jx", "y = 1/z"], "r=1, x=1의 교점은 z=1+j이며 y=0.5−j0.5다.", "At r=1 and x=1, z=1+j and y=0.5−j0.5.", "bas_rf/begin/smith2.htm"),
+    ("smith-04-gamma", "Load와 Reflection Coefficient", "Load and Reflection Coefficient", "chart 중심에서 거리와 각도로 |Γ|와 phase를 읽는 법", "reading |Γ| and phase from distance and angle", ["Gamma = rho exp(j phi)", "RL = -20 log10(rho)"], "|Γ|=0.1이면 return loss는 20 dB다.", "For |Γ|=0.1, return loss is 20 dB.", "bas_rf/begin/smith3.htm"),
+    ("smith-05-series", "Series L·C 이동", "Series L and C Movement", "series reactance가 resistance를 유지하며 reactance arc를 이동시키는 방향", "how series reactance moves along a constant-resistance circle", ["X_L = omega L", "X_C = -1/(omega C)"], "1 GHz에서 +j50 Ω를 더하는 inductance는 약 7.96 nH다.", "At 1 GHz, +j50 ohms requires about 7.96 nH.", "bas_rf/begin/smith4.htm"),
+    ("smith-06-shunt", "Shunt L·C와 Admittance", "Shunt L and C in Admittance", "parallel element를 admittance chart에서 susceptance로 더하는 순서", "adding parallel elements as susceptance on the admittance chart", ["Y = 1/Z", "B_C = omega C"], "1 GHz에서 +j20 mS shunt susceptance는 약 3.18 pF다.", "At 1 GHz, +j20 mS shunt susceptance is about 3.18 pF.", "bas_rf/begin/smith4.htm"),
+    ("smith-07-admittance", "Impedance와 Admittance 전환", "Switching Between Impedance and Admittance", "원점을 기준으로 180도 회전해 z와 y를 전환하는 의미", "using a 180-degree rotation to switch between z and y", ["y = 1/z", "Gamma_y = -Gamma_z"], "z=0.5+j0.5이면 y=1−j1이다.", "For z=0.5+j0.5, y=1−j1.", "bas_rf/begin/smith5.htm"),
+    ("smith-08-line", "Transmission Line 회전", "Transmission-Line Rotation", "lossless line 길이가 constant-|Γ| circle 위 phase를 바꾸는 과정", "how line length rotates phase on a constant-|Γ| circle", ["Gamma(l) = Gamma_L exp(-j2 beta l)", "theta_Gamma = -2 beta l"], "λg/8 이동은 reflection phase를 90도 회전시킨다.", "Moving λg/8 rotates reflection phase by 90 degrees.", "bas_rf/begin/smith5.htm"),
+    ("smith-09-stub", "Single-Stub Matching 두 해", "Two Single-Stub Matching Solutions", "main line에서 g=1 교점을 찾고 stub susceptance로 허수부를 지우는 절차", "finding a g=1 point and cancelling susceptance with a stub", ["y(d) = 1 + jb", "b_stub = -b"], "g=1에서 y=1+j0.8이면 stub은 −j0.8 susceptance를 제공한다.", "At y=1+j0.8 on g=1, the stub supplies −j0.8 susceptance.", "bas_rf/begin/smith6.htm"),
+    ("smith-10-coursework", "Cadence L-Matching·Stub 화면 다시 읽기", "Re-reading Cadence L-Matching and Stub Screens", "내 저장 Smith trajectory를 설계 주파수와 component 순서에 맞춰 다시 읽는 방법", "re-reading my stored Smith trajectory by design frequency and component order", ["Gamma_in = S11", "RL = -20 log10(abs(S11))"], "S11=−20 dB라면 |Γ|=0.1이지만 marker frequency도 함께 확인해야 한다.", "S11=−20 dB implies |Γ|=0.1, but marker frequency must also be checked.", "bas_rf/begin/whys.htm"),
+]
+
+for index, (identifier, title_ko, title_en, detail_ko, detail_en, formulas, example_ko, example_en, source_path) in enumerate(SMITH, 13):
+    ARTICLES.append(article(
+        identifier, index, "smith-chart", title_ko, title_en,
+        f"이번에는 RFDH의 Smith chart 설명을 읽고 {detail_ko}을 손계산과 자체 도식으로 다시 정리했다.",
+        f"I used the RFDH Smith-chart notes to revisit {detail_en} with a hand calculation and my own diagram.",
+        f"핵심은 {detail_ko}이다. 좌표를 읽기 전에 Z0, frequency, impedance 또는 admittance 표기를 적고, 이동 한 번마다 어떤 element나 line length를 추가했는지 기록했다.",
+        f"The key is {detail_en}. Before reading coordinates I record Z0, frequency, and impedance/admittance mode, then label each element or line-length move.",
+        formulas, example_ko, example_en,
+        "내 고주파공학 L-section과 single-stub 화면을 볼 때 이 순서를 사용했다. 저장된 trajectory는 당시 simulation 화면이며 같은 값의 현재 재실행 결과는 아니다.",
+        "I use this order when reading my stored L-section and single-stub screens. The trajectory is an archived simulation view, not a current rerun.",
+        "chart에서 눈으로 읽은 값은 계산기 숫자와 약간 다를 수 있다. 정규화 기준, wavelength 방향, open/short stub 종류를 표시하지 않은 matching 답을 완성값으로 쓰지 않는다.",
+        "Visual chart readings may differ slightly from calculated values. A matching answer is incomplete without normalization, wavelength direction, and open/short-stub type.",
+        ["smith-chart/smith-coordinates.svg", "smith-chart/smith-movement.svg"],
+        [source(f"RFDH: {title_ko}", source_path), source("RFDH: 스미스차트 잘쓰기", "bas_rf/begin/whys.htm")],
+        ["Smith chart", "normalized impedance", "reflection coefficient", "matching"],
+    ))
+
+
+BLOCKS = [
+    ("block-01-amplifier", "Amplifier와 Gain·Noise·Linearity", "Amplifiers: Gain, Noise, and Linearity", "gain, noise figure, P1dB, IP3가 서로 다른 operating condition을 설명한다", "gain, noise figure, P1dB, and IP3 describe different operating conditions", ["Pout_dBm = Pin_dBm + G_dB", "NF_dB = 10 log10(F)"], "−20 dBm 입력과 15 dB gain이면 선형 출력은 −5 dBm이다.", "A −20 dBm input with 15 dB gain gives −5 dBm in the linear region.", "bas_rf/begin/amp.htm", "circuit-blocks/noise-cascade.svg"),
+    ("block-02-oscillator-vco", "Oscillator와 VCO", "Oscillators and VCOs", "loop gain과 phase 조건, startup, amplitude limiting을 분리해 본다", "separating loop gain, phase, startup, and amplitude limiting", ["abs(A beta) >= 1 at startup", "angle(A beta) = 2 pi k"], "10 MHz reference를 그대로 발진 주파수 정확도로 오해하지 않는다.", "A 10 MHz reference is not automatically the oscillator output accuracy.", "bas_rf/begin/osc.htm", "circuit-blocks/pll-loop.svg"),
+    ("block-03-pll", "PLL과 Frequency Synthesis", "PLLs and Frequency Synthesis", "phase detector, loop filter, VCO, divider가 feedback loop를 이룬다", "the phase detector, loop filter, VCO, and divider form one feedback loop", ["f_out = N f_ref", "omega_n and damping set loop dynamics"], "fref=10 MHz, N=240이면 ideal fout=2.4 GHz다.", "With fref=10 MHz and N=240, ideal fout=2.4 GHz.", "bas_rf/begin/pll.php3", "circuit-blocks/pll-loop.svg"),
+    ("block-04-mixer", "Mixer와 IF 선택", "Mixers and IF Selection", "비선형 곱으로 sum/difference가 생기고 filter가 원하는 IF를 고른다", "nonlinear multiplication creates sum/difference products selected by filtering", ["f_IF = abs(f_RF - f_LO)", "P_IF = P_RF - conversion_loss"], "2.45 GHz RF와 2.40 GHz LO의 difference IF는 50 MHz다.", "A 2.45 GHz RF and 2.40 GHz LO produce a 50 MHz difference IF.", "bas_rf/begin/mixer.php3", "circuit-blocks/mixer-spectrum.svg"),
+    ("block-05-multiplier", "Frequency Multiplier", "Frequency Multipliers", "비선형 harmonic 중 원하는 n번째 성분을 filter로 선택한다", "selecting one nonlinear harmonic with a filter", ["f_out = n f_in", "L(f) rises approximately 20 log10(n) ideally"], "100 MHz의 24배 harmonic은 2.4 GHz지만 unwanted products를 제거해야 한다.", "The 24th harmonic of 100 MHz is 2.4 GHz, but unwanted products must be rejected.", "bas_rf/begin/multiplier.php3", "linearity/p1db-ip3.svg"),
+    ("block-06-filter", "RF Filter와 Prototype Response", "RF Filters and Prototype Responses", "LPF/HPF/BPF/BSF의 passband, stopband, order, Q를 함께 읽는다", "reading passband, stopband, order, and Q across filter types", ["f_0 = 1/(2 pi sqrt(LC))", "Q = f_0/BW"], "f0=1 GHz, BW=100 MHz인 bandpass의 loaded Q는 10이다.", "A bandpass with f0=1 GHz and BW=100 MHz has loaded Q=10.", "bas_rf/begin/filter.php3", "circuit-blocks/rf-block-chain.svg"),
+    ("block-07-duplexer", "Diplexer·Duplexer", "Diplexers and Duplexers", "frequency-selective branches로 port를 공유하되 isolation과 power handling을 본다", "sharing a port through frequency-selective branches while checking isolation and power handling", ["Isolation_dB = -20 log10(abs(S_leak))", "P_loss = P_in(1 - eta)"], "|Sleak|=0.01이면 isolation은 40 dB다.", "If |Sleak|=0.01, isolation is 40 dB.", "bas_rf/begin/duplexer.php3", "circuit-blocks/coupler-divider.svg"),
+    ("block-08-coupler-divider", "Coupler·Divider·Combiner", "Couplers, Dividers, and Combiners", "through/coupled/isolated port와 equal/unequal split을 S-parameter로 구분한다", "separating through, coupled, isolated, and split ports with S-parameters", ["C_dB = -20 log10(abs(S31))", "D_dB = Isolation_dB - Coupling_dB"], "ideal equal split은 각 출력 −3.0103 dB이며 dissipative loss는 별도다.", "An ideal equal split is −3.0103 dB per output; dissipative loss is separate.", "bas_rf/begin/coupler.php3", "circuit-blocks/coupler-divider.svg"),
+    ("block-09-isolator", "Isolator·Circulator", "Isolators and Circulators", "nonreciprocal port 방향과 termination으로 reverse energy를 다룬다", "using nonreciprocal port direction and termination to handle reverse energy", ["S21 high while S12 low", "Isolation_dB = -20 log10(abs(S12))"], "S12=−25 dB인 표기는 reverse amplitude ratio 약 0.056을 뜻한다.", "S12=−25 dB corresponds to a reverse amplitude ratio of about 0.056.", "bas_rf/begin/isolator.php3", "circuit-blocks/isolator-circulator.svg"),
+    ("block-10-antenna", "Antenna를 RF Port로 읽기", "Reading an Antenna as an RF Port", "input match, radiation efficiency, gain, polarization을 서로 다른 지표로 본다", "treating input match, efficiency, gain, and polarization as separate metrics", ["G = eta D", "P_rad = eta P_accepted"], "10 dBi directivity와 70% efficiency면 gain은 약 8.45 dBi다.", "With 10 dBi directivity and 70% efficiency, gain is about 8.45 dBi.", "bas_rf/begin/antenna.php3", "circuit-blocks/rf-block-chain.svg"),
+]
+
+for index, (identifier, title_ko, title_en, detail_ko, detail_en, formulas, example_ko, example_en, source_path, second_figure) in enumerate(BLOCKS, 23):
+    ARTICLES.append(article(
+        identifier, index, "circuit-blocks", title_ko, title_en,
+        f"송수신 chain을 한꺼번에 외우지 않고 {title_ko}의 입출력과 역할부터 떼어 보았다.",
+        f"Rather than memorize the whole transceiver, I isolated the inputs, outputs, and role of {title_en}.",
+        f"핵심은 {detail_ko}. block 앞뒤의 frequency, impedance, gain/loss, noise, linearity 조건을 표로 적어야 다른 block과 연결할 수 있다.",
+        f"The key is {detail_en}. Frequency, impedance, gain/loss, noise, and linearity at both sides are recorded before connecting the block.",
+        formulas, example_ko, example_en,
+        "이 block을 내 고주파공학 passive network와 FMCW radar 송수신 흐름에 연결했다. 계산 예시는 source 설명을 바탕으로 다시 계산한 값이며 실제 장비 측정값이 아니다.",
+        "I connect this block to my passive-network coursework and FMCW transceiver flow. The example is a recomputed study value, not a hardware measurement.",
+        "datasheet의 typical, guaranteed, simulated 조건을 섞지 않는다. frequency, bias, temperature, power level과 port termination이 다른 값을 직접 비교하지 않는다.",
+        "I do not mix typical, guaranteed, and simulated conditions or directly compare values taken at different frequency, bias, temperature, power, or terminations.",
+        ["circuit-blocks/rf-block-chain.svg", second_figure],
+        [source(f"RFDH: {title_ko}", source_path)],
+        [title_en.split()[0], "RF block", "S-parameter", "signal chain"],
+    ))
+
+
+SERIES = [
+    {
+        "id": "rfdh-rf-foundations",
+        "title_ko": "RFDH로 다시 정리한 RF 기초",
+        "title_en": "RF Foundations Revisited with RFDH",
+        "description_ko": "파장과 전기적 길이에서 시작해 50 Ω, 전송선로, 반사, S-parameter와 dB 계산까지 순서대로 다시 공부했다.",
+        "description_en": "A study path from wavelength and electrical length through 50 ohms, transmission lines, reflection, S-parameters, and decibels.",
+        "article_ids": ["foundations", "impedance-port-matching", "transmission-lines", "reflection-vswr", "s-parameters-vna", "db-dbm-power"],
+    },
+    {
+        "id": "rf-impedance-sparameters",
+        "title_ko": "임피던스·반사·S-parameter",
+        "title_en": "Impedance, Reflection, and S-parameters",
+        "description_ko": "부하와 기준면을 먼저 정한 뒤 반사계수, VSWR, S행렬, VNA 기준면과 연쇄 계산을 연결했다.",
+        "description_en": "Reference planes connect load impedance, reflection, VSWR, the S-matrix, VNA practice, and cascade calculations.",
+        "article_ids": ["impedance-port-matching", "reflection-vswr", "s-parameters-vna", "measurement-vna", "noise-figure-cascade"],
+    },
+    {
+        "id": "smith-chart-matching",
+        "title_ko": "Smith Chart와 정합",
+        "title_en": "Smith Chart and Matching",
+        "description_ko": "정규화부터 L·C 이동, admittance 변환, 전송선 회전과 single-stub 정합까지 10단계로 나눴다.",
+        "description_en": "Ten steps from normalization and L/C movement to admittance, line rotation, and single-stub matching.",
+        "article_ids": [item[0] for item in SMITH],
+    },
+    {
+        "id": "rf-linearity",
+        "title_ko": "RF 선형성·잡음·전력",
+        "title_en": "RF Linearity, Noise, and Power",
+        "description_ko": "P1dB, IMD, IP3와 cascaded noise figure를 같은 신호사슬 안에서 계산하되 서로 다른 지표로 구분했다.",
+        "description_en": "P1dB, IMD, IP3, and cascaded noise figure are calculated in one signal chain without conflating the metrics.",
+        "article_ids": ["linearity-p1db-ip3", "noise-figure-cascade", "block-01-amplifier", "block-04-mixer", "block-05-multiplier"],
+    },
+    {
+        "id": "rf-circuit-blocks",
+        "title_ko": "RF 회로 블록과 FMCW 신호사슬",
+        "title_en": "RF Circuit Blocks and the FMCW Signal Chain",
+        "description_ko": "증폭기·발진기·PLL·Mixer·Filter·Coupler·Isolator·Antenna를 FMCW 송수신 흐름에 연결했다.",
+        "description_en": "Amplifiers, oscillators, PLLs, mixers, filters, couplers, isolators, and antennas connected to an FMCW chain.",
+        "article_ids": [item[0] for item in BLOCKS] + ["radar-bridge"],
+    },
+]
+
+
+CATALOG = {
+    "title_ko": "RFDH 기반 RF·Microwave 공부 지도",
+    "title_en": "RFDH-based RF and Microwave Study Map",
+    "summary_ko": "RFDH 공개 학습 페이지를 읽고 내 고주파공학·Cadence·FMCW 자료와 연결해 다시 계산하고 그린 기록이다.",
+    "summary_en": "My recomputed and redrawn RF study map connecting public RFDH learning pages with my microwave coursework, Cadence screens, and FMCW work.",
+    "groups": [
+        {"id": "core", "title_ko": "RF 핵심 흐름", "title_en": "Core RF Path"},
+        {"id": "smith-chart", "title_ko": "Smith Chart 10부", "title_en": "Smith Chart in 10 Parts"},
+        {"id": "circuit-blocks", "title_ko": "RF Circuit Blocks 10부", "title_en": "RF Circuit Blocks in 10 Parts"},
+    ],
+    "series": SERIES,
+    "articles": sorted(ARTICLES, key=lambda item: int(item["order"])),
+}
+
+
+def main() -> None:
+    OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+    # JSON is valid YAML 1.2 and keeps generated bilingual strings unambiguous.
+    OUTPUT.write_text(json.dumps(CATALOG, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(f"wrote {len(ARTICLES)} articles to {OUTPUT}")
+
+
+if __name__ == "__main__":
+    main()

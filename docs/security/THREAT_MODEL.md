@@ -4,7 +4,8 @@
 
 대상은 공개 정적 Engineering Portfolio의 source, build, GitHub Pages 배포,
 외부 링크, DNS, 개발 PC와 비공개 원본이다. 서버 인증·DB·결제·업로드·상태 변경
-기능은 아키텍처에서 제외한다.
+기능은 아키텍처에서 제외한다. RF 계산기는 방문자 Browser 안에서 숫자를 계산하지만
+`action`·backend·저장·network request가 없는 7개 정적 form만 사용한다.
 
 Likelihood와 Impact는 `Low / Medium / High / Critical`로 기록한다. Risk는 둘을
 보수적으로 결합한 `Critical / High / Medium / Low / Accepted`다.
@@ -25,11 +26,11 @@ Status:
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | T-01 | HTTP 평문·Mixed Content | 방문자 통신, 페이지 무결성 | 동일 네트워크 공격자, 악성 ISP/프록시 | HTTP 접속, `http://` asset, downgrade | Medium | High | High | `github.io` wildcard TLS 인증서가 검사 시 유효 | Pages 생성, Enforce HTTPS, HTTP→동일 host HTTPS redirect, source와 `_site`의 HTTP resource 0건 | Low — TLS/브라우저/플랫폼 의존 | 사이트 소유자/GitHub | `curl -I`, 인증서 hostname/기간, browser console, 보안 script | PASS — HTTP 301, HTTPS 200, TLS 1.3, mixed resource 0건 |
 | T-02 | XSS | 방문자 DOM·브랜드 신뢰 | 콘텐츠 공급망 공격자, repo 침입자 | 악성 script, inline handler, 외부 script | Low | High | Medium | 정적·무입력 아키텍처 원칙 | 외부 script 기본 금지, strict CSP, inline handler 금지, code review | Low — repository compromise 시 가능 | 사이트 소유자 | source/build scan, CSP console, 수동 DOM review | PASS — 자체 JS 1개·sink/inline handler 0건 |
-| T-03 | HTML Injection | 표시 콘텐츠·외부 링크 | 악성 데이터 제공자, repo 침입자 | Markdown/템플릿에서 raw HTML 삽입 | Low | High | Medium | 사용자 입력·동적 CMS 없음 | 데이터는 text escape, raw HTML allowlist 금지, 외부 콘텐츠 build-time 검토 | Low | 사이트 소유자 | 생성 HTML diff, raw HTML pattern review | PASS — 사용자 입력·동적 CMS 없음 |
-| T-04 | DOM Injection | 방문자 DOM | 악성 URL 작성자, 외부 링크 공격자 | query/hash를 `innerHTML`, `document.write`, `insertAdjacentHTML`에 연결 | Low | High | Medium | 최소 Vanilla JS, 동적 기능 없음 | `textContent`/안전 DOM API만 사용, DOM sink와 `eval` 검사 | Low | 사이트 소유자 | JS 정적 scan, crafted query/hash test | PASS — 금지 DOM sink 0건 |
+| T-03 | HTML Injection | 표시 콘텐츠·외부 링크 | 악성 데이터 제공자, repo 침입자 | Markdown/템플릿 또는 계산기 입력에서 HTML 삽입 | Low | High | Medium | 동적 CMS 없음; 계산기 입력은 `type=number`이며 결과는 `textContent`만 사용 | 데이터 escape, raw HTML allowlist 금지, 외부 콘텐츠 build-time 검토 | Low | 사이트 소유자 | 생성 HTML diff, raw HTML pattern review, 계산기 특수문자 입력 | PASS — HTML sink 0건·숫자 validation 적용 |
+| T-04 | DOM Injection | 방문자 DOM | 악성 URL 작성자, 외부 링크 공격자 | query/hash·계산기 입력을 `innerHTML`, `document.write`, `insertAdjacentHTML`에 연결 | Low | High | Medium | 최소 Vanilla JS; 계산기는 `Number`·`Number.isFinite` 검증 후 `textContent` 출력 | 안전 DOM API만 사용, DOM sink·`eval`·network request 검사 | Low | 사이트 소유자 | JS 정적 scan, crafted input/query/hash test | PASS — 금지 DOM sink 0건·계산 결과 local-only |
 | T-05 | Clickjacking | 사이트 신뢰, 외부 링크 유도 | 피싱 운영자 | 사이트를 공격자 iframe에 삽입 | Medium | Medium | Medium | 상태 변경·로그인 없음으로 직접 피해 제한 | CSP `frame-ancestors 'none'` 또는 `X-Frame-Options: DENY` 응답 헤더 | Medium — meta CSP는 `frame-ancestors` 미지원 | GitHub/사이트 소유자 | response header, iframe 재현 | PLATFORM LIMITATION — 임의 Pages 응답 헤더 불가 |
 | T-06 | Open Redirect | 도메인 신뢰·방문자 | 피싱 공격자 | query/hash 기반 `location` 이동, 미검증 redirect URL | Low | Medium | Low | redirect 기능 요구 없음 | redirect helper를 만들지 않음, `location.assign/replace/href` 입력 흐름 검사 | Low | 사이트 소유자 | JS scan, malicious URL test | PASS — redirect 기능·location sink 없음 |
-| T-07 | CSRF | 상태 변경·credential | 외부 사이트 | 방문자 권한으로 state-changing request 유도 | Low | Low | Accepted | 서버·로그인·form backend·상태 변경 없음 | 해당 구조 유지; 상태 변경 기능 추가 시 token/SameSite/origin 검증과 모델 갱신 | Accepted while architecture holds | 사이트 소유자 | architecture/repository review | ACCEPTED — N/A by architecture |
+| T-07 | CSRF | 상태 변경·credential | 외부 사이트 | 방문자 권한으로 state-changing request 유도 | Low | Low | Accepted | 서버·로그인·form backend·상태 변경 없음; RF form은 action/method 없이 `preventDefault` | 해당 구조 유지; 상태 변경 기능 추가 시 token/SameSite/origin 검증과 모델 갱신 | Accepted while architecture holds | 사이트 소유자 | architecture/repository review, built form scan | ACCEPTED — network state가 없어 N/A |
 | T-08 | DNS Spoofing·Domain Takeover | 도메인·브랜드·TLS | DNS 공격자, 만료 domain 인수자 | registrar 탈취, dangling CNAME, 미검증 custom domain | Low | High | Medium | 현재 custom domain 없이 `github.io` 사용 | custom domain 추가 전 verification, registrar MFA/lock, 최소 record, 해제 시 DNS 먼저 제거 | Low/Medium — registrar·DNS 의존 | 사용자/registrar/GitHub | DNS 조회, GitHub Pages domain check, expiry alert | ACCEPTED — 현재 custom domain 없음 |
 | T-09 | 피싱·사칭 사이트 | 사용자 신원·채용 신뢰 | 사칭자 | 유사 domain/account, 복제 콘텐츠, 변조 외부 링크 | Medium | High | High | 공식 GitHub 계정 존재 | canonical URL, 공식 profile 역링크, 일관된 identity, 신고/증거 절차 | Medium — 공개 콘텐츠는 복제 가능 | 사용자/GitHub/외부 플랫폼 | canonical/OG 확인, 계정 링크 교차검증, 정기 검색 | PASS — canonical·OG·GitHub/Notion 역링크 |
 | T-10 | DDoS·Bot Abuse | 가용성·대역폭·사용자 경험 | botnet, scraper | 대량 GET, asset hotlink, link crawler | Medium | Medium | Medium | 정적 사이트이며 origin DB/API 없음 | 작은 asset, 불필요 endpoint/검색/API 제거, GitHub 상태 모니터링 | Medium — 완전 차단 불가, edge는 GitHub 책임 | GitHub/사이트 소유자 | asset 크기, request pattern, GitHub Status | PLATFORM LIMITATION |

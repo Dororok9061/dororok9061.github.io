@@ -1,0 +1,52 @@
+---
+layout: default
+---
+<main id="main" class="page page-shell">
+  <article class="post rf-calculator-page">
+    <nav class="breadcrumbs" aria-label="현재 위치"><a href="{{ '/tools/rf/' | relative_url }}">RF calculators</a><span aria-hidden="true">/</span><span>{{ page.title }}</span></nav>
+    <header class="page-heading"><p class="eyebrow">RF Calculator · Vanilla JavaScript</p><h1>{{ page.title }}</h1><p class="page-heading__lead">{{ page.description }}</p></header>
+    <div class="prose">
+      <h2>입력과 계산</h2>
+      <form class="rf-calculator" data-rf-calculator="{{ page.calculator_id }}" novalidate>
+        {% case page.calculator_id %}
+        {% when 'dbm-watt' %}
+          <label>dBm <input name="dbm" type="number" value="20" step="any" required></label>
+          <label>Watt <input name="watt" type="number" value="0.1" min="0" step="any" required></label>
+        {% when 'reflection-vswr' %}
+          <label>Z₀ (Ω) <input name="z0" type="number" value="50" min="0.000001" step="any" required></label>
+          <label>Re(ZL) (Ω) <input name="rl" type="number" value="75" step="any" required></label>
+          <label>Im(ZL) (Ω) <input name="xl" type="number" value="25" step="any" required></label>
+        {% when 'quarter-wave-transformer' %}
+          <label>Z₀ (Ω) <input name="z0" type="number" value="50" min="0.000001" step="any" required></label>
+          <label>ZL (Ω) <input name="zl" type="number" value="100" min="0.000001" step="any" required></label>
+          <label>Frequency (GHz) <input name="freq" type="number" value="3.5" min="0.000001" step="any" required></label>
+          <label>Effective εr <input name="eeff" type="number" value="6" min="1" step="any" required></label>
+        {% when 'cascade-noise-figure' %}
+          {% for stage in (1..3) %}<fieldset><legend>Stage {{ stage }}</legend><label>Gain (dB) <input name="g{{ stage }}" type="number" value="{% if stage == 1 %}15{% else %}10{% endif %}" step="any" required></label><label>Noise figure (dB) <input name="nf{{ stage }}" type="number" value="{% if stage == 1 %}2{% else %}8{% endif %}" min="0" step="any" required></label></fieldset>{% endfor %}
+        {% when 'microstrip' %}
+          <label>Relative εr <input name="er" type="number" value="9.9" min="1.000001" step="any" required></label>
+          <label>Substrate height h (mm) <input name="h" type="number" value="0.5" min="0.000001" step="any" required></label>
+          <label>Trace width W (mm) <input name="w" type="number" value="0.4815" min="0.000001" step="any" required></label>
+          <label>Frequency (GHz) <input name="freq" type="number" value="3.5" min="0.000001" step="any" required></label>
+        {% when 'equal-split' %}
+          <label>Input power (dBm) <input name="pin" type="number" value="20" step="any" required></label>
+          <label>Number of outputs <input name="outputs" type="number" value="2" min="2" max="64" step="1" required></label>
+          <label>Extra insertion loss (dB) <input name="loss" type="number" value="0" min="0" step="any" required></label>
+        {% when 'unequal-wilkinson' %}
+          <label>System Z₀ (Ω) <input name="z0" type="number" value="50" min="0.000001" step="any" required></label>
+          <label>P₂:P₃ power ratio <input name="ratio" type="number" value="2" min="0.000001" step="any" required></label>
+        {% endcase %}
+        <button class="portfolio-button portfolio-button--primary" type="submit">계산하기</button>
+        <output class="rf-calculator__result" aria-live="polite">입력값을 확인하고 계산하기를 누르세요.</output>
+      </form>
+
+      <h2>사용한 식</h2>
+      <div class="rf-formula-list">{% for formula in page.formulas %}<code>{{ formula }}</code>{% endfor %}</div>
+      <h2>예시를 먼저 손으로 확인하기</h2><p>{{ page.example }}</p>
+      <h2>결과를 읽을 때</h2><p>{{ page.interpretation }}</p>
+      <h2>공부글과 연결</h2><p><a href="{{ page.related_post | relative_url }}">{{ page.related_label }}</a>에서 식의 가정과 내 과제 연결을 함께 볼 수 있다.</p>
+      <h2>범위</h2><p>이 도구는 브라우저에서 식을 다시 확인하기 위한 학습용 계산기다. EM simulation, calibration된 VNA 측정, 부품 tolerance, 제작 결과를 대신하지 않는다.</p>
+    </div>
+  </article>
+</main>
+<script src="{{ '/assets/js/rf-calculators.js' | relative_url }}" defer></script>

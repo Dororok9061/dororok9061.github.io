@@ -60,6 +60,12 @@ jobs:
           python3 scripts/blog/check_human_study_voice.py src _site
           python3 scripts/blog/check_post_depth.py
           python3 scripts/blog/validate_study_hubs.py _site
+          python3 scripts/rf/check_rfdh_page_mapping.py
+          python3 scripts/rf/check_rfdh_source_links.py
+          python3 scripts/rf/check_rf_formula_tests.py
+          python3 scripts/rf/check_rf_visual_coverage.py
+          python3 scripts/rf/check_rf_category_depth.py
+          python3 scripts/rf/check_rfdh_attribution.py
           python3 scripts/content/check_asset_provenance.py
           python3 scripts/content/check_category_asset_match.py
           python3 scripts/content/check_duplicate_cover_usage.py
