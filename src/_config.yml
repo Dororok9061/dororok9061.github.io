@@ -1,7 +1,7 @@
 title: Hyeongrok Ryu Engineering Portfolio
 short_title: Hyeongrok Ryu
 description: Hyeongrok Ryu's bilingual engineering portfolio for radar and embedded signal processing, FPGA RTL and digital verification, research, and publications.
-url: https://tontonjeong.github.io
+url: https://dororok9061.github.io
 baseurl: ""
 lang: ko
 timezone: Asia/Seoul
@@ -13,7 +13,7 @@ theme: jekyll-theme-simplex
 author:
   name: Hyeongrok Ryu
   name_ko: 류형록
-  github: https://github.com/Tontonjeong
+  github: https://github.com/Dororok9061
   email: hnryu0515@gmail.com
   linkedin: https://www.linkedin.com/in/hyeongrok-ryu-842231224/
 

@@ -15,7 +15,7 @@ script, legacy WOFF/TTF files, and icons are not published.
 ## Project assets
 
 Project images are sanitized, resized derivatives of files already published
-in repositories owned by `Tontonjeong`. EXIF/XMP metadata is not carried into
+in repositories owned by `Dororok9061`. EXIF/XMP metadata is not carried into
 the generated site derivatives.
 
 | Published asset | Source repository and file | Source commit | Notice |

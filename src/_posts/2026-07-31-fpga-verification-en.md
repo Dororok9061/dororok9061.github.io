@@ -22,7 +22,7 @@ tools: [SystemVerilog, Icarus Verilog, VCD]
 hardware: []
 software_versions: [Icarus Verilog version recorded in public CI logs]
 source_materials:
-  - { title: FPGA Delay Logic Design Verification, type: public-repository, public_url: https://github.com/Tontonjeong/fpga-delay-logic-design-verification, file_reference: RTL testbench and logs, pages: "", used_for: architecture contract and regression evidence }
+  - { title: FPGA Delay Logic Design Verification, type: public-repository, public_url: https://github.com/Dororok9061/fpga-delay-logic-design-verification, file_reference: RTL testbench and logs, pages: "", used_for: architecture contract and regression evidence }
   - { title: FPGA project detail, type: portfolio-page, public_url: /en/projects/fpga-delay-logic/, file_reference: public project data, pages: "", used_for: result and boundary summary }
 prerequisites: [systemverilog, sequential-logic, testbench]
 learning_objectives: [compare architectures through an external contract, build an independent model, read a cycle-aligned checker]

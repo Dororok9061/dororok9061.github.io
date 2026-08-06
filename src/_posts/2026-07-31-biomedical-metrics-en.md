@@ -22,7 +22,7 @@ tools: [Python, CNN, HRV]
 hardware: [PPG AFE, STM32]
 software_versions: [not fully preserved]
 source_materials:
-  - { title: PPG-HRV Cognitive Load CNN, type: public-repository, public_url: https://github.com/Tontonjeong/PPG-HRV-Cognitive-Load-CNN, file_reference: source and public paper, pages: "", used_for: pipeline and metric conditions }
+  - { title: PPG-HRV Cognitive Load CNN, type: public-repository, public_url: https://github.com/Dororok9061/PPG-HRV-Cognitive-Load-CNN, file_reference: source and public paper, pages: "", used_for: pipeline and metric conditions }
   - { title: PPG-HRV project page, type: portfolio-page, public_url: /en/projects/ppg-hrv/, file_reference: public project data, pages: "", used_for: published result boundary }
 prerequisites: [classification, confusion-matrix, cross-validation]
 learning_objectives: [inspect subject splits, record fold aggregation, separate AUC and F1 sources]

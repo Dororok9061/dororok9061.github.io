@@ -91,7 +91,7 @@ layout: default
     <dl class="post-facts"><div><dt>{% if page.lang == 'en' %}Earlier run{% else %}당시 Notebook{% endif %}</dt><dd>{{ competition.recorded_result }}</dd></div><div><dt>{% if page.lang == 'en' %}Simple baseline{% else %}단순 기준선{% endif %}</dt><dd>{{ competition.rerun_baseline }}</dd></div><div><dt>{% if page.lang == 'en' %}Reworked model{% else %}수정한 모델{% endif %}</dt><dd>{{ competition.rerun_improved }}</dd></div></dl>
     <p>{% if page.lang == 'en' %}{{ competition.limitation_en }}{% else %}{{ competition.limitation_ko }}{% endif %}</p>
     {% if competition.secret_status contains 'SECRET_DETECTED' %}<p>{% if page.lang == 'en' %}The old notebook contained a plaintext API key. I excluded that file and changed the public example to read credentials from an environment variable. The old key still needs to be revoked and replaced by its owner.{% else %}예전 Notebook에는 평문 API Key가 들어 있었다. 그 파일은 올리지 않고 공개 예제는 환경변수에서 값을 읽도록 고쳤다. 기존 키는 소유자 계정에서 폐기하고 새로 발급해야 한다.{% endif %}</p>{% endif %}
-    <p><a href="https://github.com/Tontonjeong/Tontonjeong.github.io/tree/main/experiments/outta-basic-2024">{% if page.lang == 'en' %}Open the rerun scripts and sanitized notebooks{% else %}재실행 코드와 정제한 Notebook 보기{% endif %}</a></p>
+    <p><a href="https://github.com/Dororok9061/dororok9061.github.io/tree/main/experiments/outta-basic-2024">{% if page.lang == 'en' %}Open the rerun scripts and sanitized notebooks{% else %}재실행 코드와 정제한 Notebook 보기{% endif %}</a></p>
     <p>{% if page.lang == 'en' %}These numbers come from my documented local split, not from the Kaggle leaderboard. I did not reproduce a signed-in submission history or rank.{% else %}위 수치는 문서화한 로컬 분할에서 얻었다. 로그인된 Kaggle 제출 이력·점수·순위까지 다시 확인한 값은 아니다.{% endif %}</p>
   {% endcase %}
 </main>

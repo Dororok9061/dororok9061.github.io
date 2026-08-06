@@ -2,8 +2,8 @@
 
 ## Scope
 
-- Repository: `Tontonjeong/Tontonjeong.github.io`
-- Public site: `https://tontonjeong.github.io/`
+- Repository: `Dororok9061/dororok9061.github.io`
+- Public site: `https://dororok9061.github.io/`
 - Published artifact: the allowlisted `site/` directory only
 - Architecture: static HTML/CSS, one first-party Vanilla JavaScript file, no
   server, database, authentication, form backend, analytics, or service worker
@@ -12,7 +12,7 @@
 
 | Control | Evidence | Status |
 |---|---|---|
-| HTTP upgrade | `http://tontonjeong.github.io/` returned `301` to the identical HTTPS host | PASS |
+| HTTP upgrade | `http://dororok9061.github.io/` returned `301` to the identical HTTPS host | PASS |
 | HTTPS | Root URL returned `200`; GitHub Pages API reported `https_enforced: true` | PASS |
 | TLS | TLS 1.3; certificate subject `CN=*.github.io`; valid through 2026-09-03 KST | PASS |
 | Mixed Content | Static source/build scan and live DOM resource inventory found zero HTTP resources | PASS |
@@ -47,11 +47,11 @@ powershell -File scripts/security/verify-site-security.ps1 -SiteRoot .
 powershell -File scripts/security/verify-site-security.ps1 -SiteRoot site -BuiltSite
 powershell -File scripts/security/verify-site-security.ps1 `
   -SiteRoot site `
-  -PublicUrl "https://tontonjeong.github.io/" `
+  -PublicUrl "https://dororok9061.github.io/" `
   -BuiltSite `
   -Online
-curl.exe -I "http://tontonjeong.github.io/"
-curl.exe -I "https://tontonjeong.github.io/"
+curl.exe -I "http://dororok9061.github.io/"
+curl.exe -I "https://dororok9061.github.io/"
 ```
 
 This report records a point-in-time verification. It does not claim complete

@@ -2,7 +2,7 @@
 
 Date investigated: 2026-08-01
 
-Affected run: [GitHub Actions 30638965397](https://github.com/Tontonjeong/Tontonjeong.github.io/actions/runs/30638965397)
+Affected run: [GitHub Actions 30638965397](https://github.com/Dororok9061/dororok9061.github.io/actions/runs/30638965397)
 
 Affected commit: `11ff401a26c5f272e93ea4b55d6ff8cb048a3884`
 
@@ -36,7 +36,7 @@ found` error.
 
 Commit `95f78165fe3267204bb4e9b59fccfd8625bcc955` changed exclusion checks to
 operate on `path.relative_to(ROOT).parts`. The rerun
-[30639032061](https://github.com/Tontonjeong/Tontonjeong.github.io/actions/runs/30639032061)
+[30639032061](https://github.com/Dororok9061/dororok9061.github.io/actions/runs/30639032061)
 passed and PR #5 was merged.
 
 ## Regression prevention

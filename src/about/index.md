@@ -35,6 +35,6 @@ Digital Verification은 두 번째 직무 축이다. 2027년 2월 졸업 예정�
 
 ## Links
 
-- [GitHub Profile](https://github.com/Tontonjeong)
+- [GitHub Profile](https://github.com/Dororok9061)
 - [Publications](/publications/)
 - [Role-oriented Portfolio](/roles/)

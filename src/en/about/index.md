@@ -36,6 +36,6 @@ graduate in February 2027 and can start work in January 2027.
 
 ## Links
 
-- [GitHub Profile](https://github.com/Tontonjeong)
+- [GitHub Profile](https://github.com/Dororok9061)
 - [Publications](/en/publications/)
 - [Role-oriented Portfolio](/en/roles/)

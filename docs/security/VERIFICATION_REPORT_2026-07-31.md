@@ -2,13 +2,13 @@
 
 ## Release identity
 
-- Public site: <https://tontonjeong.github.io/>
-- Release pull request: [#3](https://github.com/Tontonjeong/Tontonjeong.github.io/pull/3)
+- Public site: <https://dororok9061.github.io/>
+- Release pull request: [#3](https://github.com/Dororok9061/dororok9061.github.io/pull/3)
 - Verification-report pull request:
-  [#4](https://github.com/Tontonjeong/Tontonjeong.github.io/pull/4)
+  [#4](https://github.com/Dororok9061/dororok9061.github.io/pull/4)
 - Main merge commit: `234ac48a4ce39acb56dbfe411b7cc353c9ec4110`
 - Main validation and deployment run:
-  [30561360113](https://github.com/Tontonjeong/Tontonjeong.github.io/actions/runs/30561360113)
+  [30561360113](https://github.com/Dororok9061/dororok9061.github.io/actions/runs/30561360113)
 - Theme: `jekyll-theme-simplex 0.9.8.15` (MIT), used as the actual Gem Theme
 - Downloaded theme Gem SHA-256:
   `850ab718db1bd59d34612c8ed348577f8684e1aafd1bdccaa7f08ae3a17023a9`

@@ -27,4 +27,4 @@ PADS, STM32, and mmWave remain separate from the course list, with child pages c
 - [STM32 · Embedded](/en/study/stm32/)
 - [mmWave · FMCW Radar](/en/study/mmwave/)
 
-The [coursework project page](/en/projects/coursework/) and [public coursework repository](https://github.com/Tontonjeong/electrical-engineering-coursework-portfolio) remain connected.
+The [coursework project page](/en/projects/coursework/) and [public coursework repository](https://github.com/Dororok9061/electrical-engineering-coursework-portfolio) remain connected.

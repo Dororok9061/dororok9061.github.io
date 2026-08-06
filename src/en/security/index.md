@@ -24,4 +24,4 @@ alternate_lang: ko
 - The site build cannot verify GitHub-account 2FA/passkeys or local-device encryption and auto-lock. The account owner and device administrator must check them separately.
 - DDoS edge mitigation belongs to GitHub's platform responsibility and complete blocking is not guaranteed.
 
-Detailed records are available in the [repository security directory](https://github.com/Tontonjeong/Tontonjeong.github.io/tree/main/docs/security).
+Detailed records are available in the [repository security directory](https://github.com/Dororok9061/dororok9061.github.io/tree/main/docs/security).

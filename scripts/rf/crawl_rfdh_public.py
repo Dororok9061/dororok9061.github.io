@@ -37,7 +37,7 @@ PUBLIC_PREFIXES = ("/bas_rf", "/bas_com", "/begin", "/rfdb", "/rf/", "/tool", "/
 PUBLIC_FILES = ("/bas_rf.htm", "/beginer.htm", "/rfdb.php3", "/rfbound.htm")
 DENIED_PARTS = ("/admin", "/member", "/login", "/market", "/qna", "/board", "/bbs")
 PAGE_SUFFIXES = ("", ".htm", ".html", ".php", ".php3", ".asp", ".aspx")
-USER_AGENT = "Tontonjeong-RF-study/1.0 (educational, low-rate; no forms)"
+USER_AGENT = "Dororok9061-RF-study/1.0 (educational, low-rate; no forms)"
 
 
 @dataclass
