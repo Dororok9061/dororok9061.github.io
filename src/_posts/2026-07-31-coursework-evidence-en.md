@@ -24,7 +24,7 @@ software_versions: [GHDL version recorded in coursework repository]
 source_materials:
   - title: Electrical Engineering Coursework Portfolio
     type: public-project
-    public_url: https://tontonjeong.github.io/electrical-engineering-coursework-portfolio/
+    public_url: https://dororok9061.github.io/electrical-engineering-coursework-portfolio/
     file_reference: public repository only
     pages: ""
     used_for: comparing coursework evidence states

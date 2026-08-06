@@ -1,7 +1,7 @@
 # Hyeongrok Ryu Engineering Portfolio
 
 The multilingual, multi-page Jekyll source for
-[tontonjeong.github.io](https://dororok9061.github.io/). It connects public
+[dororok9061.github.io](https://dororok9061.github.io/). It connects public
 evidence across FPGA RTL/DV, FMCW radar, embedded systems, biomedical AI,
 systems engineering, publications, role-oriented views, and electrical
 engineering coursework.
@@ -46,7 +46,7 @@ After deployment:
 powershell.exe -NoProfile -ExecutionPolicy Bypass `
   -File scripts/security/verify-site-security.ps1 `
   -SiteRoot _site -BuiltSite `
-  -PublicUrl "https://tontonjeong.github.io/" -Online
+  -PublicUrl "https://dororok9061.github.io/" -Online
 ```
 
 ## Documentation

@@ -24,4 +24,4 @@ alternate_lang: en
 - GitHub 계정의 2FA/passkey와 로컬 PC의 디스크 암호화·자동 잠금은 사이트 build에서 확인할 수 없습니다. 계정 소유자와 로컬 장비 관리자가 별도로 점검해야 합니다.
 - DDoS edge 방어는 GitHub의 책임 범위이며 완전 차단을 보장하지 않습니다.
 
-상세 문서는 [repository security directory](https://github.com/Tontonjeong/Tontonjeong.github.io/tree/main/docs/security)에서 확인할 수 있습니다.
+상세 문서는 [repository security directory](https://github.com/Dororok9061/dororok9061.github.io/tree/main/docs/security)에서 확인할 수 있습니다.

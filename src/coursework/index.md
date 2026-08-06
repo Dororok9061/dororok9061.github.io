@@ -27,4 +27,4 @@ PADS, STM32, mmWave는 과목 목록과 섞지 않고 실제 화면·보드·신
 - [STM32 · Embedded](/study/stm32/)
 - [mmWave · FMCW Radar](/study/mmwave/)
 
-[전공 프로젝트 페이지](/projects/coursework/)와 [공개 coursework 저장소](https://github.com/Tontonjeong/electrical-engineering-coursework-portfolio)도 함께 볼 수 있다.
+[전공 프로젝트 페이지](/projects/coursework/)와 [공개 coursework 저장소](https://github.com/Dororok9061/electrical-engineering-coursework-portfolio)도 함께 볼 수 있다.

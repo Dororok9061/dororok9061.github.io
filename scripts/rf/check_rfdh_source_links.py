@@ -18,7 +18,7 @@ if args.live:
         if index:
             time.sleep(1.5)
         try:
-            with urlopen(Request(url, headers={"User-Agent": "Tontonjeong-RF-link-check/1.0"}), timeout=25) as response:
+            with urlopen(Request(url, headers={"User-Agent": "Dororok9061-RF-link-check/1.0"}), timeout=25) as response:
                 if response.status != 200:
                     errors.append(f"{url}: HTTP {response.status}")
         except Exception as exc:

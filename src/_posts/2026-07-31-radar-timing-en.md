@@ -22,7 +22,7 @@ tools: [Python, NumPy, SciPy]
 hardware: [BGT60TR13C, STM32F411, ESP-32S, MPU6050]
 software_versions: [not fully preserved]
 source_materials:
-  - { title: FMCW Radar AOAC Cardiac Analysis, type: public-repository, public_url: https://github.com/Tontonjeong/fmcw-radar-aoac-cardiac-analysis, file_reference: analysis source and firmware, pages: "", used_for: signal flow and candidate timing boundary }
+  - { title: FMCW Radar AOAC Cardiac Analysis, type: public-repository, public_url: https://github.com/Dororok9061/fmcw-radar-aoac-cardiac-analysis, file_reference: analysis source and firmware, pages: "", used_for: signal flow and candidate timing boundary }
   - { title: FMCW Radar Cardiac Timing project, type: portfolio-page, public_url: /en/projects/fmcw-radar/, file_reference: public project data, pages: "", used_for: hardware and reported acquisition summary }
 prerequisites: [fmcw-radar, phase-processing, ecg-r-peak]
 learning_objectives: [align multimodal beats to ECG anchors, separate SCG references from radar morphology, record candidate-timing limits]

@@ -22,7 +22,7 @@ tools: [C, C++, OpenCV, TCP/IP, GPIO, I2C]
 hardware: [Raspberry Pi, PPG sensor, camera, LCD, LED, buzzer]
 software_versions: [not fully preserved]
 source_materials:
-  - { title: Sleep Monitoring and Prevention Device, type: public-repository, public_url: https://github.com/Tontonjeong/Sleep-monitoring-and-prevention-device, file_reference: C and C++ source, pages: "", used_for: module and data-path inventory }
+  - { title: Sleep Monitoring and Prevention Device, type: public-repository, public_url: https://github.com/Dororok9061/Sleep-monitoring-and-prevention-device, file_reference: C and C++ source, pages: "", used_for: module and data-path inventory }
   - { title: Drowsiness Monitor project page, type: portfolio-page, public_url: /projects/drowsiness-monitor/, file_reference: project photographs and source, pages: "", used_for: architecture and next tests }
 prerequisites: [tcp-ip, gpio, i2c, basic image processing]
 learning_objectives: [두 node의 역할 분리, packet과 file IPC 경계 기록, 사진 근거와 성능 측정 구분]

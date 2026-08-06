@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[2]
 SOURCE_SUFFIXES = {".md", ".markdown", ".yml", ".yaml"}
 BUILT_SUFFIXES = {".css", ".html", ".js", ".json", ".xml"}
 IMAGE_SUFFIXES = {".avif", ".gif", ".ico", ".jpeg", ".jpg", ".png", ".svg", ".webp"}
-LOCAL_HOSTS = {"tontonjeong.github.io"}
+LOCAL_HOSTS = {"dororok9061.github.io"}
 OLD_WRONG_COVERS = {
     "/assets/images/study/coursework/digital-communications.webp",
     "/assets/images/study/coursework/electronic-circuits-1.webp",

@@ -218,7 +218,7 @@ def check_site(root: Path) -> list[str]:
                 node.text or ""
                 for node in tree.findall("{http://www.sitemaps.org/schemas/sitemap/0.9}url/{http://www.sitemaps.org/schemas/sitemap/0.9}loc")
             ]
-            if not locations or any(not location.startswith("https://tontonjeong.github.io/") for location in locations):
+            if not locations or any(not location.startswith("https://dororok9061.github.io/") for location in locations):
                 errors.append("sitemap.xml: invalid or non-HTTPS location")
         except ElementTree.ParseError as error:
             errors.append(f"sitemap.xml: {error}")

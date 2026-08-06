@@ -69,9 +69,9 @@
   categories: [fpga, digital-verification]
   ko_url: /projects/fpga-delay-logic/
   en_url: /en/projects/fpga-delay-logic/
-  repository: https://github.com/Tontonjeong/fpga-delay-logic-design-verification
-  pages_ko: https://tontonjeong.github.io/fpga-delay-logic-design-verification/
-  pages_en: https://tontonjeong.github.io/fpga-delay-logic-design-verification/en/
+  repository: https://github.com/Dororok9061/fpga-delay-logic-design-verification
+  pages_ko: https://dororok9061.github.io/fpga-delay-logic-design-verification/
+  pages_en: https://dororok9061.github.io/fpga-delay-logic-design-verification/en/
 
 - id: fmcw-radar
   title_ko: FMCW Radar Cardiac Timing
@@ -152,9 +152,9 @@
   categories: [signal-processing, research]
   ko_url: /projects/fmcw-radar/
   en_url: /en/projects/fmcw-radar/
-  repository: https://github.com/Tontonjeong/fmcw-radar-aoac-cardiac-analysis
-  pages_ko: https://tontonjeong.github.io/fmcw-radar-aoac-cardiac-analysis/
-  pages_en: https://tontonjeong.github.io/fmcw-radar-aoac-cardiac-analysis/en/
+  repository: https://github.com/Dororok9061/fmcw-radar-aoac-cardiac-analysis
+  pages_ko: https://dororok9061.github.io/fmcw-radar-aoac-cardiac-analysis/
+  pages_en: https://dororok9061.github.io/fmcw-radar-aoac-cardiac-analysis/en/
 
 - id: ppg-hrv
   title_ko: PPG–HRV Cognitive Load
@@ -227,9 +227,9 @@
   categories: [biomedical-ai, embedded]
   ko_url: /projects/ppg-hrv/
   en_url: /en/projects/ppg-hrv/
-  repository: https://github.com/Tontonjeong/PPG-HRV-Cognitive-Load-CNN
-  pages_ko: https://tontonjeong.github.io/PPG-HRV-Cognitive-Load-CNN/
-  pages_en: https://tontonjeong.github.io/PPG-HRV-Cognitive-Load-CNN/en/
+  repository: https://github.com/Dororok9061/PPG-HRV-Cognitive-Load-CNN
+  pages_ko: https://dororok9061.github.io/PPG-HRV-Cognitive-Load-CNN/
+  pages_en: https://dororok9061.github.io/PPG-HRV-Cognitive-Load-CNN/en/
 
 - id: drowsiness-monitor
   title_ko: Real-Time Drowsiness Monitor
@@ -302,9 +302,9 @@
   categories: [embedded, sensing]
   ko_url: /projects/drowsiness-monitor/
   en_url: /en/projects/drowsiness-monitor/
-  repository: https://github.com/Tontonjeong/Sleep-monitoring-and-prevention-device
-  pages_ko: https://tontonjeong.github.io/Sleep-monitoring-and-prevention-device/
-  pages_en: https://tontonjeong.github.io/Sleep-monitoring-and-prevention-device/en/
+  repository: https://github.com/Dororok9061/Sleep-monitoring-and-prevention-device
+  pages_ko: https://dororok9061.github.io/Sleep-monitoring-and-prevention-device/
+  pages_en: https://dororok9061.github.io/Sleep-monitoring-and-prevention-device/en/
 
 - id: defense-systems
   title_ko: Defense Systems Engineering
@@ -344,7 +344,7 @@
   categories: [systems-engineering, defense]
   ko_url: /projects/defense-systems/
   en_url: /en/projects/defense-systems/
-  repository: https://github.com/Tontonjeong/Tontonjeong
+  repository: https://github.com/Dororok9061/Dororok9061
   pages_ko:
   pages_en:
 
@@ -386,6 +386,6 @@
   categories: [coursework, electrical-engineering]
   ko_url: /projects/coursework/
   en_url: /en/projects/coursework/
-  repository: https://github.com/Tontonjeong/electrical-engineering-coursework-portfolio
-  pages_ko: https://tontonjeong.github.io/electrical-engineering-coursework-portfolio/
-  pages_en: https://tontonjeong.github.io/electrical-engineering-coursework-portfolio/en/
+  repository: https://github.com/Dororok9061/electrical-engineering-coursework-portfolio
+  pages_ko: https://dororok9061.github.io/electrical-engineering-coursework-portfolio/
+  pages_en: https://dororok9061.github.io/electrical-engineering-coursework-portfolio/en/

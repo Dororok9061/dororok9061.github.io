@@ -37,10 +37,10 @@
   dbpia_verified_on: 2026-08-01
   dbpia_record_note_ko: DBpia 논문 페이지에서 제목·저자와 pp. 291–292를 확인할 수 있습니다.
   dbpia_record_note_en: The DBpia paper page shows the matching title, authors, and pp. 291–292.
-  paper_pdf: https://github.com/Tontonjeong/PPG-HRV-Cognitive-Load-CNN/blob/main/references/paper.pdf
+  paper_pdf: https://github.com/Dororok9061/PPG-HRV-Cognitive-Load-CNN/blob/main/references/paper.pdf
   poster_pdf: ""
   project_url: /projects/ppg-hrv/
-  github_url: https://github.com/Tontonjeong/PPG-HRV-Cognitive-Load-CNN
+  github_url: https://github.com/Dororok9061/PPG-HRV-Cognitive-Load-CNN
   ko_url: /publications/cics25-cnn-hrv/
   en_url: /en/publications/cics25-cnn-hrv/
   cover_image: /assets/img/publications/cics25_cnn_first_page.webp
@@ -120,7 +120,7 @@
   paper_pdf: ""
   poster_pdf: ""
   project_url: /projects/fmcw-radar/
-  github_url: https://github.com/Tontonjeong/fmcw-radar-aoac-cardiac-analysis
+  github_url: https://github.com/Dororok9061/fmcw-radar-aoac-cardiac-analysis
   ko_url: /publications/kiee2026-fmcw-aoac/
   en_url: /en/publications/kiee2026-fmcw-aoac/
   cover_image: /assets/img/publications/kiee2026_fmcw_first_page.webp

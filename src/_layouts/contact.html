@@ -16,7 +16,7 @@ layout: default
     <div><dt>{% if page.lang == 'en' %}Available from{% else %}입사 가능 시점{% endif %}</dt><dd>{% if page.lang == 'en' %}{{ profile.available_from_en }}{% else %}{{ profile.available_from_ko }}{% endif %}</dd></div>
     <div><dt>{% if page.lang == 'en' %}Recruitment email{% else %}채용 이메일{% endif %}</dt><dd><a href="mailto:{{ profile.email }}">{{ profile.email }}</a></dd></div>
     <div><dt>LinkedIn</dt><dd><a href="{{ profile.linkedin }}" target="_blank" rel="noopener noreferrer">{{ profile.linkedin }}</a></dd></div>
-    <div><dt>GitHub</dt><dd><a href="{{ profile.github }}" target="_blank" rel="noopener noreferrer">Tontonjeong</a></dd></div>
+    <div><dt>GitHub</dt><dd><a href="{{ profile.github }}" target="_blank" rel="noopener noreferrer">Dororok9061</a></dd></div>
     {% if profile.public_notion_url != empty %}<div><dt>Public Notion</dt><dd><a href="{{ profile.public_notion_url }}" target="_blank" rel="noopener noreferrer">Portfolio</a></dd></div>{% endif %}
     <div><dt>{% if page.lang == 'en' %}Career interests{% else %}관심 직무{% endif %}</dt><dd>{{ profile.primary_focus_en }} · {{ profile.secondary_focus_en }}</dd></div>
     <div><dt>{% if page.lang == 'en' %}Industry interests{% else %}관심 산업{% endif %}</dt><dd>{% if page.lang == 'en' %}{{ profile.industries_en }}{% else %}{{ profile.industries_ko }}{% endif %}</dd></div>

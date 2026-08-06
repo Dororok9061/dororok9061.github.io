@@ -1,16 +1,16 @@
 # Public Project Inventory
 
 Snapshot: 2026-07-30. Source: public repositories owned by
-[Tontonjeong](https://github.com/Tontonjeong).
+[Dororok9061](https://github.com/Dororok9061).
 
 | Domain | Repository | Public evidence | License status | Pages |
 |---|---|---|---|---|
-| Portfolio registry | [Tontonjeong](https://github.com/Tontonjeong/Tontonjeong) | cross-project registry, evidence policy, maintenance log | No repository license detected | Notion is current homepage |
-| FPGA · RTL · DV | [fpga-delay-logic-design-verification](https://github.com/Tontonjeong/fpga-delay-logic-design-verification) | SystemVerilog, reference model, regression logs, waveforms | No repository license detected | [KO](https://tontonjeong.github.io/fpga-delay-logic-design-verification/) · [EN](https://tontonjeong.github.io/fpga-delay-logic-design-verification/en/) |
-| Radar · signal processing | [fmcw-radar-aoac-cardiac-analysis](https://github.com/Tontonjeong/fmcw-radar-aoac-cardiac-analysis) | Python/C/C++, firmware, photos, configuration and paper records | MIT for original analysis/docs; vendor components retain own terms | [KO](https://tontonjeong.github.io/fmcw-radar-aoac-cardiac-analysis/) · [EN](https://tontonjeong.github.io/fmcw-radar-aoac-cardiac-analysis/en/) |
-| Biomedical AI | [PPG-HRV-Cognitive-Load-CNN](https://github.com/Tontonjeong/PPG-HRV-Cognitive-Load-CNN) | AFE/firmware/Python, fold results, paper PDF | MIT | [KO](https://tontonjeong.github.io/PPG-HRV-Cognitive-Load-CNN/) · [EN](https://tontonjeong.github.io/PPG-HRV-Cognitive-Load-CNN/en/) |
-| Embedded systems | [Sleep-monitoring-and-prevention-device](https://github.com/Tontonjeong/Sleep-monitoring-and-prevention-device) | C/C++, architecture docs, prototype photographs | No repository license detected | [KO](https://tontonjeong.github.io/Sleep-monitoring-and-prevention-device/) · [EN](https://tontonjeong.github.io/Sleep-monitoring-and-prevention-device/en/) |
-| Electrical engineering coursework | [electrical-engineering-coursework-portfolio](https://github.com/Tontonjeong/electrical-engineering-coursework-portfolio) | VHDL, calculations, RF archives, public redraws, provenance audit | Custom reuse notice; no rights granted for third-party material | [KO](https://tontonjeong.github.io/electrical-engineering-coursework-portfolio/) · [EN](https://tontonjeong.github.io/electrical-engineering-coursework-portfolio/en/) |
+| Portfolio registry | [Dororok9061](https://github.com/Dororok9061/Dororok9061) | cross-project registry, evidence policy, maintenance log | No repository license detected | Notion is current homepage |
+| FPGA · RTL · DV | [fpga-delay-logic-design-verification](https://github.com/Dororok9061/fpga-delay-logic-design-verification) | SystemVerilog, reference model, regression logs, waveforms | No repository license detected | [KO](https://dororok9061.github.io/fpga-delay-logic-design-verification/) · [EN](https://dororok9061.github.io/fpga-delay-logic-design-verification/en/) |
+| Radar · signal processing | [fmcw-radar-aoac-cardiac-analysis](https://github.com/Dororok9061/fmcw-radar-aoac-cardiac-analysis) | Python/C/C++, firmware, photos, configuration and paper records | MIT for original analysis/docs; vendor components retain own terms | [KO](https://dororok9061.github.io/fmcw-radar-aoac-cardiac-analysis/) · [EN](https://dororok9061.github.io/fmcw-radar-aoac-cardiac-analysis/en/) |
+| Biomedical AI | [PPG-HRV-Cognitive-Load-CNN](https://github.com/Dororok9061/PPG-HRV-Cognitive-Load-CNN) | AFE/firmware/Python, fold results, paper PDF | MIT | [KO](https://dororok9061.github.io/PPG-HRV-Cognitive-Load-CNN/) · [EN](https://dororok9061.github.io/PPG-HRV-Cognitive-Load-CNN/en/) |
+| Embedded systems | [Sleep-monitoring-and-prevention-device](https://github.com/Dororok9061/Sleep-monitoring-and-prevention-device) | C/C++, architecture docs, prototype photographs | No repository license detected | [KO](https://dororok9061.github.io/Sleep-monitoring-and-prevention-device/) · [EN](https://dororok9061.github.io/Sleep-monitoring-and-prevention-device/en/) |
+| Electrical engineering coursework | [electrical-engineering-coursework-portfolio](https://github.com/Dororok9061/electrical-engineering-coursework-portfolio) | VHDL, calculations, RF archives, public redraws, provenance audit | Custom reuse notice; no rights granted for third-party material | [KO](https://dororok9061.github.io/electrical-engineering-coursework-portfolio/) · [EN](https://dororok9061.github.io/electrical-engineering-coursework-portfolio/en/) |
 
 ## Portfolio domain map
 

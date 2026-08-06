@@ -75,7 +75,7 @@ def asset_errors(record: dict[str, str]) -> list[str]:
         errors.append(f"{label} uses a temporary signed object URL")
     if hostname in DRIVE_HOSTS or hostname.endswith(".drive.google.com"):
         errors.append(f"{label} uses a Google Drive URL whose public access cannot be guaranteed offline")
-    if hostname == "tontonjeong.github.io":
+    if hostname == "dororok9061.github.io":
         path = unquote(parsed.path)
         local = ROOT / "src" / path.removeprefix("/")
         if not path.startswith("/assets/") or not local.is_file():
