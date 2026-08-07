@@ -1,0 +1,11 @@
+{% assign research_items = site.data.research_nav[include.kind] %}
+{% if research_items and research_items != empty %}
+<nav class="research-jump-nav" aria-label="{% if page.lang == 'en' %}On this page{% else %}이 페이지의 주요 섹션{% endif %}" data-research-nav>
+  <span class="research-jump-nav__label">{% if page.lang == 'en' %}On this page{% else %}이 페이지{% endif %}</span>
+  <div class="research-jump-nav__links">
+    {% for item in research_items %}
+      <a href="#{{ item.id }}" data-research-nav-link="{{ item.id }}">{% if page.lang == 'en' %}{{ item.en }}{% else %}{{ item.ko }}{% endif %}</a>
+    {% endfor %}
+  </div>
+</nav>
+{% endif %}
