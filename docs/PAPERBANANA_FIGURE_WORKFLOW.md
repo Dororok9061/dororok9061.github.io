@@ -3,7 +3,7 @@
 This portfolio uses a two-stage visual strategy:
 
 1. **Immediate web visual** — source-faithful HTML/CSS flow and concept diagrams generated from the structured Jekyll data. These render without an external model and never invent measurements.
-2. **Publication-style replacement** — high-resolution figures generated with PaperBanana from the prompts in `src/_data/paperbanana_figures.yml`, then reviewed against the source before publication.
+2. **Publication-style replacement** — high-resolution figures generated with PaperBanana from the prompts in `docs/paperbanana_figures.yml`, then reviewed against the source before publication.
 
 Reference implementation: <https://github.com/dwzhu-pku/PaperBanana>
 
@@ -40,7 +40,7 @@ Copy the upstream configuration template to the ignored runtime configuration fi
 
 ## Generation input
 
-For each item in `src/_data/paperbanana_figures.yml`:
+For each item in `docs/paperbanana_figures.yml`:
 
 1. Read `source` and the linked public/source page.
 2. Copy the manifest `prompt` into PaperBanana's method-content input.
@@ -75,6 +75,6 @@ Before publishing a PaperBanana output:
 
 The source-controlled backlog lives in:
 
-`src/_data/paperbanana_figures.yml`
+`docs/paperbanana_figures.yml`
 
 It currently covers representative figures for FMCW radar cardiac timing, PPG-HRV, FPGA delay verification, drowsiness monitoring, RF/Smith-chart study, STM32, PADS, and motor control. More items should be added only after the related source has been mapped.
