@@ -3,16 +3,27 @@ layout: default
 ---
 {% assign course = site.data.courses[page.course_id] %}
 {% assign day_record = course.days | where: 'day', page.day | first %}
-<main id="main" class="page page-shell">
-  <header class="page-heading">
+{% assign topics = day_record.topic_pages | sort: 'order' %}
+<main id="main" class="page page-shell research-case-page">
+  <header id="overview" class="page-heading research-section">
     <p class="eyebrow">{% if page.lang == 'en' %}Course Study Note{% else %}과정 학습 기록{% endif %}</p>
     <h1>{% if page.lang == 'en' %}{{ day_record.title_en }}{% else %}{{ day_record.title_ko }}{% endif %}</h1>
     <p class="page-heading__lead">{% if page.lang == 'en' %}{{ day_record.overview_en }}{% else %}{{ day_record.overview_ko }}{% endif %}</p>
   </header>
   <dl class="post-facts"><div><dt>Date</dt><dd>{{ day_record.date }}</dd></div><div><dt>Course</dt><dd>{% if page.lang == 'en' %}{{ course.title_en }}{% else %}{{ course.title_ko }}{% endif %}</dd></div></dl>
-  <h2>{% if page.lang == 'en' %}Topics from the day{% else %}이날 정리한 주제{% endif %}</h2>
-  <ol>{% assign topics = day_record.topic_pages | sort: 'order' %}{% for topic in topics %}<li><strong>{% if page.lang == 'en' %}{{ topic.title_en }}{% else %}{{ topic.title_ko }}{% endif %}</strong>{% if topic.note_ko %}<p>{% if page.lang == 'en' %}{{ topic.note_en }}{% else %}{{ topic.note_ko }}{% endif %}</p>{% endif %}</li>{% endfor %}</ol>
+
+  {% if topics and topics != empty %}
+  <nav class="research-jump-nav" aria-label="{% if page.lang == 'en' %}Topics from this day{% else %}이날 학습한 주제{% endif %}" data-research-nav>
+    <span class="research-jump-nav__label">{% if page.lang == 'en' %}Topics{% else %}주제{% endif %}</span>
+    <div class="research-jump-nav__links">{% for topic in topics %}<a href="#topic-{{ topic.order }}" data-research-nav-link="topic-{{ topic.order }}">{% if page.lang == 'en' %}{{ topic.title_en }}{% else %}{{ topic.title_ko }}{% endif %}</a>{% endfor %}</div>
+  </nav>
+
+  {% if topics.size > 1 %}
+  <figure class="research-concept-map" aria-labelledby="course-day-map-caption"><div class="research-concept-map__grid">{% for topic in topics limit: 4 %}<div class="research-concept-node"><span class="research-concept-node__index">0{{ forloop.index }}</span><strong>{% if page.lang == 'en' %}{{ topic.title_en }}{% else %}{{ topic.title_ko }}{% endif %}</strong><p>{% if page.lang == 'en' %}Study checkpoint for this day{% else %}이날의 학습 포인트{% endif %}</p></div>{% endfor %}</div><figcaption id="course-day-map-caption">{% if page.lang == 'en' %}A day-level study path generated from the saved course topic order.{% else %}저장된 강의 주제 순서로 만든 하루 학습 흐름도입니다.{% endif %}</figcaption></figure>
+  {% endif %}
+  {% endif %}
+
+  <section class="research-section" aria-labelledby="day-topics-title"><h2 id="day-topics-title">{% if page.lang == 'en' %}Topics from the day{% else %}이날 정리한 주제{% endif %}</h2><ol>{% for topic in topics %}<li id="topic-{{ topic.order }}" class="research-section"><strong>{% if page.lang == 'en' %}{{ topic.title_en }}{% else %}{{ topic.title_ko }}{% endif %}</strong>{% if topic.note_ko %}<p>{% if page.lang == 'en' %}{{ topic.note_en }}{% else %}{{ topic.note_ko }}{% endif %}</p>{% endif %}</li>{% endfor %}</ol></section>
   <div class="prose">{{ content }}</div>
-  <p>{% if page.lang == 'en' %}I kept private meeting links, instructor contacts, and expiring attachment addresses out of this page.{% else %}화상회의 링크, 강사 연락처, 만료되는 첨부 주소 같은 비공개 정보는 이 페이지에 옮기지 않았다.{% endif %}</p>
-  <p><a href="{% if page.lang == 'en' %}{{ '/en/learning/bootcamps/kaist-generative-models-2025/' | relative_url }}{% else %}{{ '/learning/bootcamps/kaist-generative-models-2025/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}Back to the course{% else %}과정 페이지로 돌아가기{% endif %}</a></p>
+  <div class="research-resource-strip"><a href="{% if page.lang == 'en' %}{{ '/en/learning/bootcamps/kaist-generative-models-2025/' | relative_url }}{% else %}{{ '/learning/bootcamps/kaist-generative-models-2025/' | relative_url }}{% endif %}">← {% if page.lang == 'en' %}Course home{% else %}과정 전체 보기{% endif %}</a></div>
 </main>
