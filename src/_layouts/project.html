@@ -94,7 +94,7 @@ layout: default
   </section>
   {% else %}
   <section id="gallery" class="research-section research-visual-placeholder" aria-label="{% if page.lang == 'en' %}Visual summary{% else %}시각 요약{% endif %}">
-    <div><strong>{% if page.lang == 'en' %}Visual summary generated from the structured project data{% else %}구조화된 프로젝트 데이터로 만든 시각 요약{% endif %}</strong><p>{% if page.lang == 'en' %}The methodology flow above is used as the fallback visual until a source-backed figure is added.{% else %}원본 기반 그림이 추가되기 전까지 위 Methodology 흐름도를 기본 시각자료로 사용합니다.{% endif %}</p></div>
+    <div><strong>{% if page.lang == 'en' %}Visual summary generated from the structured project data{% else %}구조화된 프로젝트 데이터로 만든 시각 요약{% endif %}</strong><p>{% if page.lang == 'en' %}The methodology flow above remains the visual summary until a project-specific figure is added.{% else %}프로젝트 전용 그림이 추가되기 전까지 위 Methodology 흐름도를 기본 시각자료로 사용합니다.{% endif %}</p></div>
   </section>
   {% endif %}
 
