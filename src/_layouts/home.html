@@ -9,17 +9,19 @@ layout: default
       <p class="eyebrow">Electrical &amp; Electronic Engineering</p>
       <h1 id="hero-title">{% if page.lang == 'en' %}{{ profile.name_en }}{% else %}{{ profile.name_ko }}{% endif %}</h1>
       <div class="hero-focus">
-        <strong>{% if page.lang == 'en' %}Radar &amp; Embedded Signal Processing{% else %}Radar·Embedded Signal Processing{% endif %}</strong>
-        <span>{% if page.lang == 'en' %}FPGA RTL &amp; Digital Verification{% else %}FPGA RTL·Digital Verification{% endif %}</span>
+        <strong>{% if page.lang == 'en' %}{{ profile.primary_focus_en }}{% else %}{{ profile.primary_focus_ko }}{% endif %}</strong>
+        <span>{% if page.lang == 'en' %}{{ profile.secondary_focus_en }}{% else %}{{ profile.secondary_focus_ko }}{% endif %}</span>
       </div>
       <p class="portfolio-hero__lead">
-        {% if page.lang == 'en' %}An undergraduate electrical engineering researcher working on sensing, embedded acquisition, signal processing, RTL, and verification.{% else %}Sensing, Embedded Acquisition, Signal Processing, RTL과 Verification을 공부하는 전자전기공학 학부생 연구자입니다.{% endif %}
+        {% if page.lang == 'en' %}An undergraduate electrical engineering researcher working on radar, vision AI, sensor fusion, embedded signal processing, and FPGA RTL verification.{% else %}Radar·Vision AI·Sensor Fusion·Embedded Signal Processing을 중심으로 FPGA RTL·Digital Verification까지 수행하는 전자전기공학 학부생 연구자입니다.{% endif %}
       </p>
       <ul class="hero-facts">
         <li>{% if page.lang == 'en' %}{{ profile.degree_en }}{% else %}{{ profile.degree_ko }}{% endif %}</li>
         <li>{% if page.lang == 'en' %}{{ profile.laboratory_en }}{% else %}{{ profile.laboratory_ko }}{% endif %}</li>
         <li><strong>{% if page.lang == 'en' %}Expected graduation:{% else %}졸업 예정:{% endif %}</strong> {% if page.lang == 'en' %}{{ profile.expected_graduation_en }}{% else %}{{ profile.expected_graduation_ko }}{% endif %}</li>
         <li><strong>{% if page.lang == 'en' %}Available from{% else %}입사 가능{% endif %}:</strong> {% if page.lang == 'en' %}{{ profile.available_from_en }}{% else %}{{ profile.available_from_ko }}{% endif %}</li>
+        <li><strong>CES 2027:</strong> {% if page.lang == 'en' %}{{ profile.ces_2027_en }}{% else %}{{ profile.ces_2027_ko }}{% endif %}</li>
+        <li><strong>CES Innovation Awards:</strong> {% if page.lang == 'en' %}{{ profile.ces_innovation_en }}{% else %}{{ profile.ces_innovation_ko }}{% endif %}</li>
       </ul>
       <div class="button-row hero-actions">
         <a class="portfolio-button portfolio-button--primary" href="{% if page.lang == 'en' %}{{ '/en/projects/' | relative_url }}{% else %}{{ '/projects/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}View Projects{% else %}프로젝트 보기{% endif %}</a>
@@ -39,8 +41,8 @@ layout: default
   <section class="content-section" aria-labelledby="career-focus-title">
     <div class="section-heading"><p class="eyebrow">Career Focus</p><h2 id="career-focus-title">{% if page.lang == 'en' %}Focused engineering roles{% else %}집중 준비 직무{% endif %}</h2></div>
     <div class="career-focus-grid">
-      <article><p class="career-focus-grid__label">PRIMARY</p><h3>{{ profile.primary_focus_en }}</h3><p>FMCW Radar · BGT60TR13C · ECG/SCG/Radar acquisition · STM32F411 · ESP-32S/MPU6050 · Beat alignment · Sensor fusion</p></article>
-      <article><p class="career-focus-grid__label">SECONDARY</p><h3>{{ profile.secondary_focus_en }}</h3><p>SystemVerilog · VHDL · Parameterized RTL · Driver/Checker · Reference Model · File-Driven Verification · Icarus · GHDL · Quartus · ModelSim/Questa</p></article>
+      <article><p class="career-focus-grid__label">PRIMARY</p><h3>{% if page.lang == 'en' %}{{ profile.primary_focus_en }}{% else %}{{ profile.primary_focus_ko }}{% endif %}</h3><p>FMCW Radar · BGT60TR13C · YuNet/SFace · MediaPipe Pose · Vision AI · Camera–Radar Sensor Fusion · STM32F411 · ESP-32S/MPU6050 · Embedded acquisition</p></article>
+      <article><p class="career-focus-grid__label">SECONDARY</p><h3>{% if page.lang == 'en' %}{{ profile.secondary_focus_en }}{% else %}{{ profile.secondary_focus_ko }}{% endif %}</h3><p>SystemVerilog · VHDL · Parameterized RTL · Driver/Checker · Reference Model · File-Driven Verification · Icarus · GHDL · Quartus · ModelSim/Questa</p></article>
     </div>
   </section>
 
