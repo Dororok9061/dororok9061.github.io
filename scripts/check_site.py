@@ -41,10 +41,12 @@ HTTP_RESOURCE = re.compile(
     r"(?:\b(?:src|href|action|poster)\s*=\s*[\"']\s*http://|url\(\s*[\"']?http://)",
     re.IGNORECASE,
 )
-# The 340 bilingual course/track routes duplicate the shared static shell in
-# generated HTML. Keep only a narrow margin above the verified build while the
-# per-file and blocked-extension checks below still reject source archives.
-MAX_SITE_BYTES = 12_000_000
+# The bilingual course/track routes duplicate the shared static shell in
+# generated HTML. The research landing pages add two reader-facing routes,
+# Material-style SVG controls, and one source-based methodology figure. Keep a
+# narrow 12.5 MB aggregate budget while the per-file and blocked-extension
+# checks below continue to reject unoptimized assets and source archives.
+MAX_SITE_BYTES = 12_500_000
 
 
 class PageParser(HTMLParser):
@@ -247,4 +249,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
