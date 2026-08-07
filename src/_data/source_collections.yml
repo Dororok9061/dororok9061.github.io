@@ -1,0 +1,94 @@
+- id: semiconductor-circuit-design
+  title_ko: 반도체 회로설계 직무 자료
+  title_en: Low-Power Semiconductor Circuit Design
+  source_file: 반도체 회로설계 직무.zip
+  item_count: 137
+  uncompressed_bytes: 34286111
+  summary_ko: Shift Register, Circular Queue, Memory-Based Delay Logic을 SystemVerilog·ModelSim·Quartus·Reference Model·Driver/Checker로 확장한 프로젝트 1~3 자료입니다.
+  summary_en: Projects 1–3 covering shift-register, circular-queue, and memory-based delay logic with SystemVerilog, ModelSim, Quartus, reference models, and driver/checker verification.
+  destinations:
+    - /projects/fpga-delay-logic/
+    - /coursework/controller-logic-design/
+  stats:
+    - label: SystemVerilog
+      value: 11
+    - label: ModelSim scripts
+      value: 18
+    - label: Quartus projects
+      value: 6
+    - label: PDFs
+      value: 10
+  topics:
+    - Shift Register Delay Logic
+    - Circular Queue architecture and PPA setup
+    - Memory-Based file-driven verification
+    - Reference vectors and regression
+    - Quartus constraints and compile scripts
+
+- id: defense-engineering
+  title_ko: 방위산업 실무 자료
+  title_en: Defense Systems Engineering
+  source_file: 방산.zip
+  item_count: 28
+  uncompressed_bytes: 70022065
+  summary_ko: 한국형 분산다층 대드론 통합방어체계, 전자전 재머 사양설계, KF-21 신뢰성 분석과 방위산업 교안·수료자료를 포함합니다.
+  summary_en: Counter-UAS layered defense, electronic-warfare jammer specification, KF-21 reliability analysis, course materials, screenshots, and completion records.
+  destinations:
+    - /defense/
+  stats:
+    - label: Project reports
+      value: 3
+    - label: PDFs
+      value: 9
+    - label: DOCX
+      value: 5
+    - label: Screenshots
+      value: 8
+  topics:
+    - Counter-UAS threat and layered architecture
+    - EW jammer trade-off and J/S calculation
+    - KF-21 MTBF, MTTR, and availability analysis
+    - Defense-industry company and interview study
+
+- id: undergraduate-coursework
+  title_ko: 학부 과제 및 프로젝트 자료
+  title_en: Undergraduate Coursework and Projects
+  source_file: 학부 과제 및 프로젝트 (2)(1).zip
+  item_count: 576
+  uncompressed_bytes: 289597170
+  summary_ko: 고주파공학, 컨트롤로직설계, 전력시스템공학, 전동기제어, 전기기기, 센서응용공학과 VRET 사업과제의 보고서·코드·계산기·시뮬레이션 화면을 포함합니다.
+  summary_en: Reports, code, calculators, and simulation screens across high-frequency engineering, controller logic, power systems, motor control, electrical machines, sensor applications, and a VRET R&D project.
+  destinations:
+    - /coursework/
+    - /blog/category/major-foundations/
+  stats:
+    - label: Images
+      value: 473
+    - label: PDFs
+      value: 28
+    - label: Archives
+      value: 8
+    - label: Spreadsheets
+      value: 5
+  topic_groups:
+    - title_ko: 고주파공학
+      title_en: High-Frequency Engineering
+      item_count: 388
+    - title_ko: 컨트롤로직설계
+      title_en: Controller Logic Design
+      item_count: 51
+    - title_ko: 전력시스템공학
+      title_en: Power Systems Engineering
+      item_count: 42
+    - title_ko: 전동기제어
+      title_en: Motor Control
+      item_count: 40
+    - title_ko: 전기기기
+      title_en: Electrical Machines
+      item_count: 14
+    - title_ko: VRET 사업과제
+      title_en: VRET R&D Project
+      item_count: 9
+    - title_ko: 센서응용공학
+      title_en: Sensor Applications
+      item_count: 2
