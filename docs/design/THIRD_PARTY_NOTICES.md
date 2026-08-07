@@ -12,6 +12,32 @@ and is used under the MIT License. Roboto, Roboto Slab, and Roboto Mono remain
 subject to their upstream font licenses. The stock theme jQuery, Lity, helper
 script, legacy WOFF/TTF files, and icons are not published.
 
+## Research-page interaction reference
+
+The public iNdra GitHub Page Template for Research was reviewed as an interaction
+reference for a paper-style landing page: section navigation, research-resource
+buttons, methodology/results sections, gallery controls, theme toggle, scroll-to-
+top control, and BibTeX copy. No license file was present in the reviewed iNdra
+repository root, so its source code and assets were not copied into this project.
+The implementation in this repository was written for the existing Jekyll 4 +
+Simplex data model, layouts, accessibility rules, and security policy.
+
+Reference:
+<https://github.com/indramal/iNdra-GitHub-Page-Template-For-Resarch>
+
+## Google Material Design Icons
+
+The outlined `radar`, `science`, `visibility`, `memory`, `code`, `article`,
+`school`, and `biotech` SVG paths under `src/assets/icons/material/` originate
+from Google's Material Design Icons repository and are used under the Apache
+License 2.0. The local derivatives add accessible SVG titles/roles and remove
+empty wrapper groups where appropriate; the underlying icon geometry remains
+attributable to Google.
+
+- Upstream: <https://github.com/google/material-design-icons>
+- License copy: `src/assets/icons/material/LICENSE-APACHE-2.0.txt`
+- License: Apache License 2.0
+
 ## Project assets
 
 Project images are sanitized, resized derivatives of files already published
@@ -27,6 +53,8 @@ the generated site derivatives.
 | `coursework-hero.*` | `electrical-engineering-coursework-portfolio/docs/assets/hero/coursework_portfolio_hero.webp` | `ca512e69093758769f146934b118ef14a9f21229` | Custom reuse notice; no rights granted for third-party material |
 | `profile/hyeongrok-ryu.*` | user-supplied formal photograph | local source hash recorded in `docs/PROFILE_ASSET_STATUS.md` | Identity photograph; no reuse rights granted |
 | `og.jpg` | screenshot of this site's Simplex-based Hero | generated from the local build | Includes the approved profile derivative; no reuse rights granted to the portrait |
+| `research/start-here-methodology.svg` | original repository illustration | `feat/indra-start-here-material-v2` | Source-faithful explanatory redraw; not experimental evidence or PaperBanana output |
+| `research/start-here-domain-map.svg` | original repository illustration | `feat/indra-start-here-material-v2` | Portfolio navigation illustration; not experimental evidence or PaperBanana output |
 
 The portfolio use of these assets does not grant broader reuse rights where the
 source repository has no license or restricts third-party material.
@@ -42,3 +70,4 @@ owners. Their mention does not imply endorsement.
 - `jekyll-theme-simplex 0.9.8.15`: MIT; actual Gem Theme and required SCSS/WOFF2 assets used
 - `pRoJEct-NeGYa`: MIT; no final code or assets copied
 - `keemtj/portfolio`: no license detected; no final code or assets copied
+- `iNdra-GitHub-Page-Template-For-Resarch`: no license file detected in the reviewed repository root; behavior studied, no source code/assets copied
