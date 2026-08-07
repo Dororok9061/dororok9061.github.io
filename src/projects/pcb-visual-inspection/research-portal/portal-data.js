@@ -53,7 +53,7 @@ window.PORTAL_DATA = {
     {
       "label": "Notion Hub",
       "icon": "dashboard",
-      "url": "https://app.notion.com/p/Engineering-Research-Portfolio-Paper-View-Radar-Vision-AI-Sensor-Fusion-FPGA-3ab518ac7a598121b666e4c7cce8324c"
+      "url": "https://fierce-rodent-308.notion.site/Engineering-Portfolio-FPGA-Radar-Embedded-Systems-Biomedical-AI-3ab518ac7a598121b666e4c7cce8324c"
     }
   ],
   "settings": {
