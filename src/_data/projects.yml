@@ -403,8 +403,8 @@
   status_label_en: Paper-style figures and homepage integrated
   image_webp: /assets/images/projects/pcb-visual-inspection/pcb_fig31a_capture_quality_gate.webp
   image_jpg: /assets/images/projects/pcb-visual-inspection/pcb_fig31a_capture_quality_gate.jpg
-  image_width: 900
-  image_height: 900
+  image_width: 640
+  image_height: 640
   alt_ko: PCB capture and quality gate figure with separated camera, video, and ROI panels
   alt_en: PCB capture and quality-gate figure with separated camera, video, and ROI panels
   evidence_ko:
@@ -452,80 +452,80 @@
   gallery:
     - webp: /assets/images/projects/pcb-visual-inspection/pcb_fig31a_capture_quality_gate.webp
       jpg: /assets/images/projects/pcb-visual-inspection/pcb_fig31a_capture_quality_gate.jpg
-      width: 900
-      height: 900
+      width: 640
+      height: 640
       alt_ko: PCB camera, video, ROI, quality gate flow drawn as a square paper figure
       alt_en: PCB camera, video, ROI, and quality-gate flow drawn as a square paper figure
       caption_ko: fig31a. capture and quality gate
       caption_en: fig31a. capture and quality gate
     - webp: /assets/images/projects/pcb-visual-inspection/pcb_fig31b_vit_dino_patch_path.webp
       jpg: /assets/images/projects/pcb-visual-inspection/pcb_fig31b_vit_dino_patch_path.jpg
-      width: 900
-      height: 900
+      width: 640
+      height: 640
       alt_ko: PCB ViT, DINOv3, patch feature path drawn as a square paper figure
       alt_en: PCB ViT, DINOv3, and patch-feature path drawn as a square paper figure
       caption_ko: fig31b. ViT/DINO patch path
       caption_en: fig31b. ViT/DINO patch path
     - webp: /assets/images/projects/pcb-visual-inspection/pcb_fig31c_registration_memory_bank.webp
       jpg: /assets/images/projects/pcb-visual-inspection/pcb_fig31c_registration_memory_bank.jpg
-      width: 900
-      height: 900
+      width: 640
+      height: 640
       alt_ko: PCB registration and memory-bank flow drawn as a square paper figure
       alt_en: PCB registration and memory-bank flow drawn as a square paper figure
       caption_ko: fig31c. registration and memory bank
       caption_en: fig31c. registration and memory bank
     - webp: /assets/images/projects/pcb-visual-inspection/pcb_fig31d_heatmap_mask_fusion.webp
       jpg: /assets/images/projects/pcb-visual-inspection/pcb_fig31d_heatmap_mask_fusion.jpg
-      width: 900
-      height: 900
+      width: 640
+      height: 640
       alt_ko: PCB heatmap and mask fusion result panels drawn as a square paper figure
       alt_en: PCB heatmap and mask fusion result panels drawn as a square paper figure
       caption_ko: fig31d. heatmap and mask fusion
       caption_en: fig31d. heatmap and mask fusion
     - webp: /assets/images/projects/pcb-visual-inspection/pcb_fig31e_domain_boundary.webp
       jpg: /assets/images/projects/pcb-visual-inspection/pcb_fig31e_domain_boundary.jpg
-      width: 900
-      height: 900
+      width: 640
+      height: 640
       alt_ko: PCB source and synthetic domain boundary evidence drawn as a square paper figure
       alt_en: PCB source and synthetic domain boundary evidence drawn as a square paper figure
       caption_ko: fig31e. domain boundary
       caption_en: fig31e. domain boundary
     - webp: /assets/images/projects/pcb-visual-inspection/pcb_fig31f_publication_hub_loop.webp
       jpg: /assets/images/projects/pcb-visual-inspection/pcb_fig31f_publication_hub_loop.jpg
-      width: 900
-      height: 900
+      width: 640
+      height: 640
       alt_ko: PCB GitHub, Notion, homepage publication loop drawn as a square paper figure
       alt_en: PCB GitHub, Notion, and homepage publication loop drawn as a square paper figure
       caption_ko: fig31f. publication hub loop
       caption_en: fig31f. publication hub loop
     - webp: /assets/images/projects/pcb-visual-inspection/pcb_fig31g_score_distribution.webp
       jpg: /assets/images/projects/pcb-visual-inspection/pcb_fig31g_score_distribution.jpg
-      width: 900
-      height: 900
+      width: 640
+      height: 640
       alt_ko: PCB anomaly score distribution plot drawn as a square paper figure
       alt_en: PCB anomaly-score distribution plot drawn as a square paper figure
       caption_ko: fig31g. score distribution
       caption_en: fig31g. score distribution
     - webp: /assets/images/projects/pcb-visual-inspection/pcb_fig31h_embedding_clusters.webp
       jpg: /assets/images/projects/pcb-visual-inspection/pcb_fig31h_embedding_clusters.jpg
-      width: 900
-      height: 900
+      width: 640
+      height: 640
       alt_ko: PCB feature embedding cluster plot drawn as a square paper figure
       alt_en: PCB feature-embedding cluster plot drawn as a square paper figure
       caption_ko: fig31h. embedding clusters
       caption_en: fig31h. embedding clusters
     - webp: /assets/images/projects/pcb-visual-inspection/pcb_fig31i_loss_convergence.webp
       jpg: /assets/images/projects/pcb-visual-inspection/pcb_fig31i_loss_convergence.jpg
-      width: 900
-      height: 900
+      width: 640
+      height: 640
       alt_ko: PCB loss convergence plot drawn as a square paper figure
       alt_en: PCB loss-convergence plot drawn as a square paper figure
       caption_ko: fig31i. loss convergence
       caption_en: fig31i. loss convergence
     - webp: /assets/images/projects/pcb-visual-inspection/pcb_fig31j_dataset_balance.webp
       jpg: /assets/images/projects/pcb-visual-inspection/pcb_fig31j_dataset_balance.jpg
-      width: 900
-      height: 900
+      width: 640
+      height: 640
       alt_ko: PCB dataset balance chart drawn as a square paper figure
       alt_en: PCB dataset-balance chart drawn as a square paper figure
       caption_ko: fig31j. dataset balance
