@@ -12,7 +12,7 @@ alternate_url: /blog/2026/08/08/pcb-research-portal-public-mirror/
 alternate_lang: ko
 primary_category: research-project-log
 subcategory: project-log
-series: engineering-record-provenance
+series: engineering-record-lineage
 series_order: 3
 post_type: project-log
 difficulty: intermediate
@@ -24,7 +24,7 @@ software_versions: []
 source_materials:
   - { title: PCB Research Publication Workbench, type: public-page, public_url: /projects/pcb-visual-inspection/research-portal/?fresh=20260808-public-mirror-v1#methodology, file_reference: src/projects/pcb-visual-inspection/research-portal, pages: "", used_for: public mirror }
   - { title: PCB Visual Inspection Studio project page, type: project-page, public_url: /en/projects/pcb-visual-inspection/, file_reference: src/en/projects/pcb-visual-inspection/index.md, pages: "", used_for: project hub link }
-prerequisites: [PCB inspection, figure provenance, GitHub Pages]
+prerequisites: [PCB inspection, figure source mapping, GitHub Pages]
 learning_objectives: [sync local portal and public site, link individual figure atlas, verify click-to-enlarge publication flow]
 related_projects: [pcb-visual-inspection]
 related_posts: [evidence-status]
@@ -38,8 +38,10 @@ revision_history:
   - { date: 2026-08-07, change: Mirrored the local 8765 portal into a public GitHub Pages route }
 toc:
   - { id: mirror, title: Public mirror route }
+  - { id: hub, title: Hub links }
+  - { id: assets, title: Asset handling }
   - { id: figures, title: Figure structure }
-  - { id: boundary, title: Validation boundary }
+  - { id: boundary, title: Scope notes }
 ---
 
 ## Public mirror route {#mirror}
@@ -49,6 +51,14 @@ The `127.0.0.1:8765` portal that was checked locally is now mirrored into the st
 [Open the full Research Publication Workbench](/projects/pcb-visual-inspection/research-portal/?fresh=20260808-public-mirror-v1#methodology)
 
 The route includes `index.html`, `portal-data.js`, `style.css`, `script.js`, and the optimized `AssetsWeb` directory. It is no longer only a compact project-gallery summary; the full figure/table atlas is available as a standalone workbench.
+
+## Hub links {#hub}
+
+The PCB project page, the repository README, and the bilingual project metadata now point to the same public Workbench route. This keeps the project hub, blog entry, and publication-style page on one path instead of leaving the local 8765 page as a separate preview.
+
+## Asset handling {#assets}
+
+The original full-size captures stay in the local project record, while the public page uses optimized `AssetsWeb` files. The large contact sheets are not used as the main reader path; individual figure cards are loaded one by one so the lightbox can open each PCB inspection diagram clearly.
 
 ## Figure structure {#figures}
 
@@ -61,6 +71,6 @@ The route includes `index.html`, `portal-data.js`, `style.css`, `script.js`, and
 
 The portal contains PCB inspection assets from `fig01` through `fig44`, tables from `table01` through `table09`, and the separated `fig31a` through `fig31j` methodology cards. The project page keeps the compact gallery while the full Workbench carries the detailed publication view.
 
-## Validation boundary {#boundary}
+## Scope notes {#boundary}
 
-The public page documents the paper-style figure structure, label alignment, separated cards, and lightbox behavior. It does not make production-yield, manufacturing-defect, or gold-label quantitative claims beyond the evidence stated in the project boundary.
+The public page documents the paper-style figure structure, label alignment, separated cards, and lightbox behavior. Production-yield, manufacturing-defect, and gold-label quantitative results stay outside the public result summary until the supporting dataset is approved for release.

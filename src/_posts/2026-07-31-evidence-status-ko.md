@@ -12,7 +12,7 @@ alternate_url: /en/blog/2026/07/31/evidence-status/
 alternate_lang: en
 primary_category: portfolio-methodology
 subcategory: evidence-status
-series: engineering-record-provenance
+series: engineering-record-lineage
 series_order: 2
 post_type: methodology
 difficulty: beginner

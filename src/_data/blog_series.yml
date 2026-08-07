@@ -295,15 +295,15 @@
       url_en: /en/blog/2026/07/31/radar-candidate-timing/
     - { order: 5, title_ko: SQI·CTI와 Validation Boundary, title_en: "SQI, CTI, and Validation Boundary", status: planned }
 
-- id: engineering-record-provenance
+- id: engineering-record-lineage
   hidden: true
   order: 110
-  title_ko: Engineering Record Provenance
-  title_en: Engineering Record Provenance
-  summary_ko: Archive·재실행·재작성과 source·실행·측정 상태를 중복 없이 구분합니다.
-  summary_en: Separates archive/rerun/redraw provenance from source/executed/measured status.
+  title_ko: Engineering Record Lineage
+  title_en: Engineering Record Lineage
+  summary_ko: Archive, rerun, redraw, release record를 공개 페이지에 정리합니다.
+  summary_en: Connects archive, rerun, redraw, and release records to public pages.
   primary_category: portfolio-methodology
-  subcategory: source-provenance
+  subcategory: release-record
   difficulty: beginner
   prerequisites: []
   tools: [Git, Jekyll]
@@ -324,3 +324,10 @@
       translation_key: evidence-status
       url_ko: /blog/2026/07/31/evidence-status/
       url_en: /en/blog/2026/07/31/evidence-status/
+    - order: 3
+      title_ko: PCB Research Publication Workbench 공개 미러
+      title_en: PCB Research Publication Workbench public mirror
+      status: published
+      translation_key: pcb-research-portal-public-mirror
+      url_ko: /blog/2026/08/08/pcb-research-portal-public-mirror/
+      url_en: /en/blog/2026/08/08/pcb-research-portal-public-mirror/

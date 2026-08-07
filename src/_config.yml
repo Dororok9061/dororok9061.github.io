@@ -82,6 +82,7 @@ exclude:
   - assets/images/study/coursework/electronic-circuits-2.webp
   - assets/images/study/coursework/embedded-systems.webp
   - assets/images/study/coursework/power-electronics.webp
+  - projects/pcb-visual-inspection/research-portal/data.yaml
   - projects/pcb-visual-inspection/research-portal/Assets/**
   - projects/pcb-visual-inspection/research-portal/AssetsWeb/paper_style/pcb_paper_style_contact_sheet.webp
   - projects/pcb-visual-inspection/research-portal/AssetsWeb/paper_style/pcb_style_fig31_methodology_statistics_board.webp

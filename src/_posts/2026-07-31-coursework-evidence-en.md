@@ -12,7 +12,7 @@ alternate_url: /blog/2026/07/31/coursework-evidence-levels/
 alternate_lang: ko
 primary_category: portfolio-methodology
 subcategory: source-provenance
-series: engineering-record-provenance
+series: engineering-record-lineage
 series_order: 1
 post_type: methodology
 difficulty: beginner

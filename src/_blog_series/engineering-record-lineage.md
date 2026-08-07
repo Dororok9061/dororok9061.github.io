@@ -2,9 +2,11 @@
 layout: series
 series_id: engineering-record-lineage
 title: Engineering Record Lineage
-description: Archive, rerun, redraw, asset, and publication records.
-permalink: /blog/series/engineering-record-lineage/
+description: Release records for project pages, reruns, redraws, and publication assets.
 lang: ko
+permalink: /blog/series/engineering-record-lineage/
 alternate_url: /en/blog/series/engineering-record-lineage/
 alternate_lang: en
+published: false
 ---
+
