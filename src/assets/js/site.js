@@ -23,14 +23,13 @@ const lightbox = document.querySelector("#publication-lightbox");
 const lightboxImage = lightbox ? lightbox.querySelector(".lightbox__image") : null;
 const lightboxCaption = lightbox ? lightbox.querySelector("figcaption") : null;
 
-document.querySelectorAll("[data-lightbox]").forEach((trigger) => {
-  trigger.addEventListener("click", () => {
-    if (!lightbox || !lightboxImage || !lightboxCaption) return;
-    lightboxImage.src = trigger.dataset.lightbox || "";
-    lightboxImage.alt = trigger.dataset.lightboxAlt || "Publication first-page preview";
-    lightboxCaption.textContent = trigger.dataset.lightboxCaption || "";
-    lightbox.showModal();
-  });
+document.addEventListener("click", (event) => {
+  const trigger = event.target.closest?.("[data-lightbox]");
+  if (!trigger || !lightbox || !lightboxImage || !lightboxCaption) return;
+  lightboxImage.src = trigger.dataset.lightbox || "";
+  lightboxImage.alt = trigger.dataset.lightboxAlt || "Publication first-page preview";
+  lightboxCaption.textContent = trigger.dataset.lightboxCaption || "";
+  lightbox.showModal();
 });
 
 if (lightbox) {
