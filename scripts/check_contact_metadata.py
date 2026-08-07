@@ -9,7 +9,7 @@ required = {
     "email": "email: hnryu0515@gmail.com",
     "linkedin": "linkedin: https://www.linkedin.com/in/hyeongrok-ryu-842231224/",
     "graduation": "expected_graduation_iso: 2027-02-25",
-    "availability": "available_from_iso: 2027-02",
+    "availability": "available_from_iso: 2027-01",
     "degree": "B.S. Candidate in Electrical and Electronic Engineering, Dankook University",
     "public Notion URL": "public_notion_url: https://fierce-rodent-308.notion.site/Engineering-Portfolio-FPGA-Radar-Embedded-Systems-Biomedical-AI-3ab518ac7a598121b666e4c7cce8324c",
     "public Notion status": "public_notion_status: VERIFIED_PUBLIC_2026-08-01",
