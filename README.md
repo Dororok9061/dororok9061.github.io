@@ -1,8 +1,17 @@
-# Hyeongrok Ryu Engineering Portfolio
+<p align="center">
+  <a href="https://dororok9061.github.io/blog/start-here/">
+    <img src="docs/assets/research-portfolio-material-banner.svg" width="100%" alt="Hyeongrok Ryu Engineering Research Portfolio banner">
+  </a>
+</p>
 
-[![GitHub Pages](https://img.shields.io/badge/Portfolio-dororok9061.github.io-2E86AB)](https://dororok9061.github.io/)
-[![Research Cases](https://img.shields.io/badge/View-Research%20Case%20Studies-111111)](https://dororok9061.github.io/projects/)
-[![Public Notion](https://img.shields.io/badge/Notion-Engineering%20Portfolio-000000)](https://fierce-rodent-308.notion.site/Engineering-Portfolio-FPGA-Radar-Embedded-Systems-Biomedical-AI-3ab518ac7a598121b666e4c7cce8324c)
+<p align="center">
+  <a href="https://dororok9061.github.io/blog/start-here/"><img src="https://img.shields.io/badge/🚀_START_HERE-Research_Hub-102B4C?style=for-the-badge" alt="Research Hub"></a>
+  <a href="https://dororok9061.github.io/projects/"><img src="https://img.shields.io/badge/📡_PROJECTS-Case_Studies-174E6D?style=for-the-badge" alt="Projects"></a>
+  <a href="https://dororok9061.github.io/publications/"><img src="https://img.shields.io/badge/📄_PAPERS-Publications-2E86AB?style=for-the-badge" alt="Publications"></a>
+  <a href="https://fierce-rodent-308.notion.site/Engineering-Portfolio-FPGA-Radar-Embedded-Systems-Biomedical-AI-3ab518ac7a598121b666e4c7cce8324c"><img src="https://img.shields.io/badge/📚_NOTION-Portfolio-111111?style=for-the-badge" alt="Public Notion"></a>
+</p>
+
+# Hyeongrok Ryu Engineering Portfolio
 
 The multilingual, multi-page Jekyll source for
 [dororok9061.github.io](https://dororok9061.github.io/). It connects public
@@ -12,20 +21,25 @@ coursework, and engineering study notes.
 
 ## Research Case Study framework
 
-The existing Jekyll 4 + Simplex visual theme is preserved. A shared research-page
-structure is layered across projects, publications, coursework, technical blog
-posts, STM32/PADS/mmWave study units, and external-learning notes.
-
-Each detailed page is organized around the material that actually exists:
+The existing Jekyll 4 + Simplex visual theme is preserved. The visible
+[Start Here research hub](https://dororok9061.github.io/blog/start-here/) adopts
+the paper-page reading model used by the iNdra research template:
 
 ```text
-Problem or research question
-→ Architecture and data flow
-→ Hardware / software / equations
-→ Methodology and implementation
-→ Results and figures
-→ Contribution, resources, and next work
+Abstract and resource buttons
+→ Research map
+→ Methodology
+→ Results
+→ Image gallery
+→ Publications
+→ Coursework and study paths
+→ Code, Notion, and citation resources
 ```
+
+The same structure is layered across projects, publications, coursework,
+technical blog posts, STM32/PADS/mmWave study units, and external-learning
+notes. Material-style SVG icons are used in the website navigation, resource
+buttons, methodology flow, and GitHub banners.
 
 ### Representative case studies
 
@@ -37,23 +51,29 @@ Problem or research question
 | Vision · Embedded Systems | [Drowsiness Monitor](https://dororok9061.github.io/projects/drowsiness-monitor/) | [RESEARCH_CASE_STUDY.md](https://github.com/Dororok9061/Sleep-monitoring-and-prevention-device/blob/main/RESEARCH_CASE_STUDY.md) |
 | Electrical Engineering Coursework | [Coursework hub](https://dororok9061.github.io/coursework/) | [RESEARCH_CASE_STUDY.md](https://github.com/Dororok9061/electrical-engineering-coursework-portfolio/blob/main/RESEARCH_CASE_STUDY.md) |
 
-The homepage now exposes the case-study hub before the original hero section so
-visitors can immediately enter the technical evidence rather than searching for
-the new structure at the bottom of the page.
+The homepage exposes a dark research gateway before the original personal hero.
+The navigation also contains a direct **Research Hub** entry, so the new
+structure is visible without scrolling to the bottom of the site.
 
 ## Figure strategy and PaperBanana
 
 Existing experiment photographs, source-derived plots, waveforms, circuit
 screens, and report figures remain the preferred assets. When a publishable
 architecture or methodology figure is missing, the page first renders a
-source-faithful HTML/CSS concept flow. PaperBanana is prepared as a second-stage
-academic-figure workflow for high-resolution replacements.
+source-based SVG/HTML concept flow. The current visible example is:
+
+- [Portfolio methodology figure](src/assets/images/research/start-here-methodology.svg)
+
+PaperBanana is prepared as a second-stage academic-figure workflow for
+high-resolution replacements:
 
 - [PaperBanana workflow](docs/PAPERBANANA_FIGURE_WORKFLOW.md)
 - [Figure backlog and prompts](docs/paperbanana_figures.yml)
 
-Generated figures must not invent measurements, hardware, model scores, PPA,
-clinical claims, certifications, or CES award results.
+A PaperBanana output is not published as an experiment figure until every
+label, arrow, component, and numeric value has been checked against the linked
+source. Generated figures must not invent measurements, hardware, model scores,
+PPA, clinical claims, certifications, or CES award results.
 
 ## Theme and architecture
 
