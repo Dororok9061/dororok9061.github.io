@@ -1,14 +1,140 @@
 ---
 layout: default
 ---
+{% assign prefix = '/blog/' %}{% if page.lang == 'en' %}{% assign prefix = '/en/blog/' %}{% endif %}
+{% if page.mode == 'start-here' %}
+<main id="main" class="page paper-landing-shell indra-start-here" data-indra-shell>
+  <header id="abstract" class="paper-landing-hero research-section">
+    <div class="paper-landing-hero__copy">
+      <p class="eyebrow">Engineering Research · Study · Portfolio</p>
+      <h1>{% if page.lang == 'en' %}Start with the question, then follow the engineering evidence{% else %}문제에서 시작해 설계·구현·결과까지 한 흐름으로 보기{% endif %}</h1>
+      <p class="paper-landing-hero__lead">{% if page.lang == 'en' %}This page is the entry point for Hyeongrok Ryu's papers, projects, coursework, technical blog, and study tracks. It borrows the research-paper reading flow of the iNdra template while preserving the existing Jekyll 4 + Simplex portfolio theme.{% else %}류형록의 논문·프로젝트·전공과제·기술 블로그·공부 트랙을 한 번에 찾는 시작점입니다. 기존 Jekyll 4 + Simplex 테마는 유지하고, iNdra 연구 페이지의 읽기 흐름을 실제 포트폴리오 구조에 적용했습니다.{% endif %}</p>
+      <div class="paper-author-block">
+        <strong>{% if page.lang == 'en' %}Hyeongrok Ryu{% else %}류형록{% endif %}</strong>
+        <span>{% if page.lang == 'en' %}Dankook University · Human & Systems Laboratory{% else %}단국대학교 전자전기공학전공 · 휴먼앤시스템 연구소{% endif %}</span>
+        <span>Radar · Vision AI · Sensor Fusion · Embedded · FPGA · RF</span>
+      </div>
+      <div class="paper-resource-buttons" aria-label="{% if page.lang == 'en' %}Portfolio resources{% else %}포트폴리오 주요 자료{% endif %}">
+        <a href="{% if page.lang == 'en' %}{{ '/en/projects/' | relative_url }}{% else %}{{ '/projects/' | relative_url }}{% endif %}"><img src="{{ '/assets/icons/material/science.svg' | relative_url }}" alt="" aria-hidden="true">{% if page.lang == 'en' %}Projects{% else %}프로젝트{% endif %}</a>
+        <a href="{% if page.lang == 'en' %}{{ '/en/publications/' | relative_url }}{% else %}{{ '/publications/' | relative_url }}{% endif %}"><img src="{{ '/assets/icons/material/article.svg' | relative_url }}" alt="" aria-hidden="true">{% if page.lang == 'en' %}Papers{% else %}논문{% endif %}</a>
+        <a href="https://github.com/Dororok9061" target="_blank" rel="noopener noreferrer"><img src="{{ '/assets/icons/material/code.svg' | relative_url }}" alt="" aria-hidden="true">Code</a>
+        <a href="https://fierce-rodent-308.notion.site/Engineering-Portfolio-FPGA-Radar-Embedded-Systems-Biomedical-AI-3ab518ac7a598121b666e4c7cce8324c" target="_blank" rel="noopener noreferrer"><img src="{{ '/assets/icons/material/school.svg' | relative_url }}" alt="" aria-hidden="true">Notion</a>
+        <a href="{% if page.lang == 'en' %}{{ '/en/contact/' | relative_url }}{% else %}{{ '/contact/' | relative_url }}{% endif %}"><img src="{{ '/assets/icons/material/visibility.svg' | relative_url }}" alt="" aria-hidden="true">{% if page.lang == 'en' %}Contact{% else %}연락처{% endif %}</a>
+      </div>
+    </div>
+    <figure class="paper-landing-hero__figure">
+      <img src="{{ '/assets/images/research/start-here-domain-map.svg' | relative_url }}" alt="{% if page.lang == 'en' %}Engineering research portfolio domain map{% else %}Radar, Vision AI, FPGA, Biomedical AI, 전공과제와 기술공부를 연결한 연구 포트폴리오 지도{% endif %}" width="1600" height="900">
+      <figcaption>{% if page.lang == 'en' %}A source-based portfolio map. PaperBanana replacements are published only after labels and claims are checked against the underlying files.{% else %}현재 공개본은 실제 자료를 기준으로 만든 벡터 지도입니다. PaperBanana 대체 그림은 원본과 대조한 뒤에만 공개합니다.{% endif %}</figcaption>
+    </figure>
+  </header>
+
+  <nav class="research-jump-nav paper-index-nav" aria-label="{% if page.lang == 'en' %}Research page sections{% else %}연구 페이지 주요 섹션{% endif %}" data-research-nav>
+    <span class="research-jump-nav__label">{% if page.lang == 'en' %}On this page{% else %}이 페이지{% endif %}</span>
+    <div class="research-jump-nav__links">
+      <a href="#abstract" data-research-nav-link="abstract">Abstract</a>
+      <a href="#introduction" data-research-nav-link="introduction">Introduction</a>
+      <a href="#methodology" data-research-nav-link="methodology">Methodology</a>
+      <a href="#results" data-research-nav-link="results">Results</a>
+      <a href="#gallery" data-research-nav-link="gallery">Gallery</a>
+      <a href="#resources" data-research-nav-link="resources">Resources</a>
+      <a href="#citation" data-research-nav-link="citation">Citation</a>
+    </div>
+    <button class="paper-theme-toggle" type="button" data-paper-theme-toggle aria-pressed="false">{% if page.lang == 'en' %}Dark mode{% else %}어두운 화면{% endif %}</button>
+  </nav>
+
+  <section id="introduction" class="paper-section research-section">
+    <div class="paper-section__heading">
+      <p class="eyebrow">Introduction</p>
+      <h2>{% if page.lang == 'en' %}Choose the engineering question, not a vague category{% else %}막연한 카테고리보다 실제 공학 질문부터 선택하기{% endif %}</h2>
+      <p>{% if page.lang == 'en' %}Each card opens a category, project, paper, or course page that carries the same problem–architecture–method–result structure.{% else %}각 카드는 문제 정의–시스템 구조–구현 방법–결과·그림 순서로 정리된 카테고리·프로젝트·논문·과목 페이지로 연결됩니다.{% endif %}</p>
+    </div>
+    <div class="material-domain-grid">
+      <a class="material-domain-card" href="{{ prefix | append: 'category/rf-radar-signal/' | relative_url }}"><span class="material-domain-card__icon"><img src="{{ '/assets/icons/material/radar.svg' | relative_url }}" alt="" aria-hidden="true"></span><strong>Radar · RF · mmWave</strong><span>{% if page.lang == 'en' %}50 Ω, S-parameters, Smith chart, FMCW phase, beat alignment{% else %}50 Ω, S-parameter, Smith Chart, FMCW 위상, Beat Alignment{% endif %}</span></a>
+      <a class="material-domain-card" href="{{ prefix | append: 'category/ai-deep-learning/' | relative_url }}"><span class="material-domain-card__icon"><img src="{{ '/assets/icons/material/visibility.svg' | relative_url }}" alt="" aria-hidden="true"></span><strong>Vision AI · Sensor Fusion</strong><span>YuNet · SFace · Pose · CNN · Transformer · Diffusion</span></a>
+      <a class="material-domain-card" href="{{ prefix | append: 'category/fpga-rtl-dv/' | relative_url }}"><span class="material-domain-card__icon"><img src="{{ '/assets/icons/material/memory.svg' | relative_url }}" alt="" aria-hidden="true"></span><strong>FPGA · RTL · DV</strong><span>VHDL · SystemVerilog · Driver/Checker · PPA</span></a>
+      <a class="material-domain-card" href="{{ prefix | append: 'category/stm32-embedded/' | relative_url }}"><span class="material-domain-card__icon"><img src="{{ '/assets/icons/material/code.svg' | relative_url }}" alt="" aria-hidden="true"></span><strong>STM32 · Embedded</strong><span>ADC · Timer · UART · CMSIS-DSP · Sensor acquisition</span></a>
+      <a class="material-domain-card" href="{% if page.lang == 'en' %}{{ '/en/publications/' | relative_url }}{% else %}{{ '/publications/' | relative_url }}{% endif %}"><span class="material-domain-card__icon"><img src="{{ '/assets/icons/material/biotech.svg' | relative_url }}" alt="" aria-hidden="true"></span><strong>Biomedical AI · Papers</strong><span>PPG·HRV · ECG·SCG·Radar · CNN+Transformer · AO/AC</span></a>
+      <a class="material-domain-card" href="{% if page.lang == 'en' %}{{ '/en/coursework/' | relative_url }}{% else %}{{ '/coursework/' | relative_url }}{% endif %}"><span class="material-domain-card__icon"><img src="{{ '/assets/icons/material/school.svg' | relative_url }}" alt="" aria-hidden="true"></span><strong>{% if page.lang == 'en' %}Coursework · PCB · Control{% else %}전공과제 · PCB · 제어{% endif %}</strong><span>{% if page.lang == 'en' %}Equations, calculations, circuit screens, simulations, reports{% else %}수식, 계산, 회로 화면, 시뮬레이션, 보고서{% endif %}</span></a>
+    </div>
+  </section>
+
+  <section id="methodology" class="paper-section paper-section--tinted research-section">
+    <div class="paper-section__heading">
+      <p class="eyebrow">Methodology</p>
+      <h2>{% if page.lang == 'en' %}How every case study is rebuilt{% else %}모든 논문·프로젝트·공부 페이지를 다시 만드는 공통 절차{% endif %}</h2>
+    </div>
+    <figure class="paper-methodology-figure">
+      <img src="{{ '/assets/images/research/start-here-methodology.svg' | relative_url }}" alt="{% if page.lang == 'en' %}Five-step source, problem, architecture, implementation, and results workflow{% else %}원본 자료, 문제 정의, 시스템 구조, 구현·분석, 결과·검증의 5단계 흐름{% endif %}" width="1600" height="560">
+      <figcaption>{% if page.lang == 'en' %}The public SVG is an immediate, source-faithful figure. PaperBanana is reserved for reviewed high-resolution replacements, not fabricated evidence.{% else %}현재 SVG는 즉시 확인 가능한 원본 기반 그림입니다. PaperBanana는 고해상도 대체본을 만들 때 사용하되, 없는 실험·수치·장비를 추가하지 않습니다.{% endif %}</figcaption>
+    </figure>
+    <ol class="paper-method-steps">
+      <li><strong>{% if page.lang == 'en' %}Read the source{% else %}원본을 연다{% endif %}</strong><span>{% if page.lang == 'en' %}PDF, PPT, notebook, code, waveform, circuit, photograph, and report are identified before writing.{% else %}PDF·PPT·Notebook·코드·파형·회로·사진·보고서를 먼저 확인합니다.{% endif %}</span></li>
+      <li><strong>{% if page.lang == 'en' %}Define the question{% else %}공학 질문을 정한다{% endif %}</strong><span>{% if page.lang == 'en' %}Inputs, requirements, constraints, failure conditions, and the expected output are written explicitly.{% else %}입력, 요구사항, 제약조건, 실패조건과 기대 출력을 분명히 적습니다.{% endif %}</span></li>
+      <li><strong>{% if page.lang == 'en' %}Map the system{% else %}시스템을 그린다{% endif %}</strong><span>{% if page.lang == 'en' %}Sensors, boards, software modules, interfaces, timing, and data flow are placed in one architecture.{% else %}센서, 보드, 소프트웨어 모듈, 인터페이스, 시간축과 데이터 흐름을 한 구조에 놓습니다.{% endif %}</span></li>
+      <li><strong>{% if page.lang == 'en' %}Show implementation{% else %}구현을 보여준다{% endif %}</strong><span>{% if page.lang == 'en' %}Code, equations, settings, screenshots, and processing stages are connected to the source files.{% else %}코드, 수식, 설정, 화면과 처리 단계를 실제 파일에 연결합니다.{% endif %}</span></li>
+      <li><strong>{% if page.lang == 'en' %}Report results and limits{% else %}결과와 한계를 함께 적는다{% endif %}</strong><span>{% if page.lang == 'en' %}Metrics, plots, logs, figures, remaining tests, and next work are kept on the same page.{% else %}수치, 그래프, 로그, 그림, 남은 시험과 다음 작업을 같은 페이지에 둡니다.{% endif %}</span></li>
+    </ol>
+  </section>
+
+  <section id="results" class="paper-section research-section">
+    <div class="paper-section__heading">
+      <p class="eyebrow">Results</p>
+      <h2>{% if page.lang == 'en' %}Representative research and engineering cases{% else %}대표 연구·설계 Case Study{% endif %}</h2>
+      <p>{% if page.lang == 'en' %}These pages now expose architecture, methodology, figures, results, contribution, and resources directly instead of hiding them behind one-line summaries.{% else %}한 줄 요약 뒤에 숨기지 않고 구조, 방법, 그림, 결과, 기여와 자료를 상세 페이지에서 바로 확인할 수 있습니다.{% endif %}</p>
+    </div>
+    {% assign featured_ids = 'fmcw-radar,ppg-hrv,fpga-delay-logic,drowsiness-monitor' | split: ',' %}
+    <div class="paper-case-grid">
+      {% for featured_id in featured_ids %}{% assign project = site.data.projects | where: 'id', featured_id | first %}{% if project %}
+      <article class="paper-case-card">
+        {% if project.image_webp %}<picture><source srcset="{{ project.image_webp | relative_url }}" type="image/webp"><img src="{{ project.image_jpg | relative_url }}" alt="{% if page.lang == 'en' %}{{ project.alt_en }}{% else %}{{ project.alt_ko }}{% endif %}" width="{{ project.image_width }}" height="{{ project.image_height }}" loading="lazy"></picture>{% endif %}
+        <div><p class="eyebrow">{% if page.lang == 'en' %}{{ project.domain_en }}{% else %}{{ project.domain_ko }}{% endif %}</p><h3><a href="{% if page.lang == 'en' %}{{ project.en_url | relative_url }}{% else %}{{ project.ko_url | relative_url }}{% endif %}">{% if page.lang == 'en' %}{{ project.title_en }}{% else %}{{ project.title_ko }}{% endif %}</a></h3><p>{% if page.lang == 'en' %}{{ project.summary_en }}{% else %}{{ project.summary_ko }}{% endif %}</p><div class="paper-case-card__links"><a href="{% if page.lang == 'en' %}{{ project.en_url | relative_url }}{% else %}{{ project.ko_url | relative_url }}{% endif %}">{% if page.lang == 'en' %}Open case{% else %}Case Study 열기{% endif %}</a><a href="{{ project.repository }}" target="_blank" rel="noopener noreferrer">GitHub</a></div></div>
+      </article>
+      {% endif %}{% endfor %}
+    </div>
+  </section>
+
+  <section id="gallery" class="paper-section paper-section--tinted research-section" data-paper-carousel>
+    <div class="paper-section__heading paper-section__heading--controls">
+      <div><p class="eyebrow">Image Gallery</p><h2>{% if page.lang == 'en' %}Actual hardware, architecture, waveforms, and results{% else %}실제 장비·구조도·파형·결과 화면{% endif %}</h2></div>
+      <div class="paper-carousel-controls"><button type="button" data-carousel-prev aria-label="{% if page.lang == 'en' %}Previous figures{% else %}이전 그림{% endif %}">←</button><button type="button" data-carousel-next aria-label="{% if page.lang == 'en' %}Next figures{% else %}다음 그림{% endif %}">→</button></div>
+    </div>
+    <div class="paper-gallery-track" data-carousel-track>
+      {% for featured_id in featured_ids %}{% assign project = site.data.projects | where: 'id', featured_id | first %}{% if project and project.image_jpg %}
+      <figure><picture>{% if project.image_webp %}<source srcset="{{ project.image_webp | relative_url }}" type="image/webp">{% endif %}<img src="{{ project.image_jpg | relative_url }}" alt="{% if page.lang == 'en' %}{{ project.alt_en }}{% else %}{{ project.alt_ko }}{% endif %}" width="{{ project.image_width }}" height="{{ project.image_height }}" loading="lazy"></picture><figcaption>{% if page.lang == 'en' %}{{ project.title_en }}{% else %}{{ project.title_ko }}{% endif %}</figcaption></figure>
+      {% endif %}{% endfor %}
+      <figure><img src="{{ '/assets/images/research/start-here-methodology.svg' | relative_url }}" alt="{% if page.lang == 'en' %}Shared case-study methodology diagram{% else %}공통 Case Study Methodology 구조도{% endif %}" width="1600" height="560" loading="lazy"><figcaption>{% if page.lang == 'en' %}Shared methodology{% else %}공통 Methodology{% endif %}</figcaption></figure>
+      <figure><img src="{{ '/assets/images/research/start-here-domain-map.svg' | relative_url }}" alt="{% if page.lang == 'en' %}Engineering portfolio domain map{% else %}공학 포트폴리오 분야 지도{% endif %}" width="1600" height="900" loading="lazy"><figcaption>{% if page.lang == 'en' %}Portfolio domain map{% else %}Portfolio Domain Map{% endif %}</figcaption></figure>
+    </div>
+  </section>
+
+  <section id="resources" class="paper-section research-section">
+    <div class="paper-section__heading"><p class="eyebrow">Resources</p><h2>{% if page.lang == 'en' %}Continue by purpose{% else %}목적에 맞는 다음 페이지로 이동{% endif %}</h2></div>
+    <div class="paper-resource-directory">
+      <a href="{{ prefix | append: 'roadmaps/' | relative_url }}"><img src="{{ '/assets/icons/material/school.svg' | relative_url }}" alt="" aria-hidden="true"><span><strong>{% if page.lang == 'en' %}Learning Roadmaps{% else %}분야별 학습 로드맵{% endif %}</strong><small>{% if page.lang == 'en' %}Read topics in a practical order.{% else %}실제로 공부한 순서대로 글을 봅니다.{% endif %}</small></span></a>
+      <a href="{{ prefix | append: 'categories/' | relative_url }}"><img src="{{ '/assets/icons/material/article.svg' | relative_url }}" alt="" aria-hidden="true"><span><strong>{% if page.lang == 'en' %}All Categories{% else %}전체 카테고리{% endif %}</strong><small>{% if page.lang == 'en' %}Browse RF, AI, FPGA, STM32, PCB, control, and coursework.{% else %}RF·AI·FPGA·STM32·PCB·제어·전공과목을 분야별로 봅니다.{% endif %}</small></span></a>
+      <a href="{{ prefix | append: 'archive/' | relative_url }}"><img src="{{ '/assets/icons/material/visibility.svg' | relative_url }}" alt="" aria-hidden="true"><span><strong>Archive</strong><small>{% if page.lang == 'en' %}Find posts by date.{% else %}날짜별로 기술 글을 찾습니다.{% endif %}</small></span></a>
+      <a href="https://github.com/Dororok9061/dororok9061.github.io/blob/main/docs/PAPERBANANA_FIGURE_WORKFLOW.md" target="_blank" rel="noopener noreferrer"><img src="{{ '/assets/icons/material/science.svg' | relative_url }}" alt="" aria-hidden="true"><span><strong>PaperBanana</strong><small>{% if page.lang == 'en' %}Academic-figure prompts and source-review workflow.{% else %}학술 그림 Prompt와 원본 대조 절차를 확인합니다.{% endif %}</small></span></a>
+    </div>
+  </section>
+
+  <section id="citation" class="paper-section paper-citation-section research-section">
+    <div class="paper-section__heading"><p class="eyebrow">BibTeX</p><h2>{% if page.lang == 'en' %}Portfolio citation{% else %}포트폴리오 인용 정보{% endif %}</h2></div>
+    <div class="research-citation"><div class="research-citation__header"><strong>BibTeX</strong><button class="research-citation__copy" type="button" data-copy-target="portfolio-bibtex" data-copied-label="{% if page.lang == 'en' %}Copied{% else %}복사됨{% endif %}">{% if page.lang == 'en' %}Copy to clipboard{% else %}클립보드에 복사{% endif %}</button></div><pre id="portfolio-bibtex" tabindex="0"><code>@misc{ryu2026engineeringportfolio,
+  author       = {Hyeongrok Ryu},
+  title        = {Engineering Research Portfolio: Radar, Vision AI, Sensor Fusion, FPGA and Embedded Systems},
+  year         = {2026},
+  howpublished = {GitHub Pages},
+  url          = {https://dororok9061.github.io/}
+}</code></pre></div>
+    <p class="paper-template-credit">{% if page.lang == 'en' %}Interaction pattern inspired by the iNdra research-page template. Existing Jekyll 4 + Simplex theme and content architecture are preserved. Material icons are from Google's Apache-2.0 icon set.{% else %}페이지 상호작용은 iNdra 연구 페이지 템플릿을 참고했습니다. 기존 Jekyll 4 + Simplex 테마와 콘텐츠 구조는 유지했으며, Material Icons는 Google의 Apache-2.0 아이콘을 사용했습니다.{% endif %}</p>
+  </section>
+
+  <button class="paper-scroll-top" type="button" data-scroll-top aria-label="{% if page.lang == 'en' %}Scroll to top{% else %}맨 위로 이동{% endif %}">↑</button>
+</main>
+{% else %}
 <main id="main" class="page page-shell">
   <header class="page-heading"><p class="eyebrow">Engineering Study Log</p><h1>{{ page.title }}</h1></header>
-  {% assign prefix = '/blog/' %}{% if page.lang == 'en' %}{% assign prefix = '/en/blog/' %}{% endif %}
   {% case page.mode %}
-  {% when 'start-here' %}
-    <div class="prose"><p>{% if page.lang == 'en' %}Study and implementation notes in electrical engineering, FPGA, embedded systems, AI, RF/radar, control, and PCB design. Each roadmap points to notes available now.{% else %}전자전기공학 전공 공부와 설계·실습 과정을 자료, 코드, 회로, 파형, 측정 결과와 함께 정리했다. 각 로드맵에는 지금 읽을 수 있는 글만 넣었다.{% endif %}</p></div>
-    <ol class="learning-paths"><li>{% if page.lang == 'en' %}Digital logic → VHDL → FPGA → DV{% else %}디지털논리 → VHDL → FPGA → DV{% endif %}</li><li>{% if page.lang == 'en' %}STM32 basics → ADC/UART → CMSIS-DSP → acquisition{% else %}STM32 기초 → ADC/UART → CMSIS-DSP → 센서수집{% endif %}</li><li>CNN → Vision → Transformer → Generative AI</li><li>PADS Logic → Library → Footprint → Layout → Gerber</li><li>{% if page.lang == 'en' %}Control basics → PI → DC motor → cascaded loops{% else %}제어기초 → PI → DC Motor → 이중루프{% endif %}</li><li>{% if page.lang == 'en' %}Transmission line → Smith chart → S-parameter → Radar{% else %}전송선 → Smith Chart → S-parameter → Radar{% endif %}</li></ol>
-    <p><a class="button-link" href="{{ prefix | append: 'roadmaps/' | relative_url }}">{% if page.lang == 'en' %}Choose a roadmap{% else %}로드맵 선택{% endif %}</a></p>
   {% when 'roadmaps' %}
     <div class="taxonomy-grid">{% for roadmap in site.data.blog_roadmaps %}{% if page.roadmap_ids contains roadmap.id %}<article><h2><a href="{{ prefix | append: 'roadmaps/' | append: roadmap.id | append: '/' | relative_url }}">{% if page.lang == 'en' %}{{ roadmap.title_en }}{% else %}{{ roadmap.title_ko }}{% endif %}</a></h2><p>{% if page.lang == 'en' %}{{ roadmap.goal_en }}{% else %}{{ roadmap.goal_ko }}{% endif %}</p></article>{% endif %}{% endfor %}</div>
   {% when 'categories' %}
@@ -19,3 +145,4 @@ layout: default
     <div class="tag-index">{% assign tags = site.tags | sort %}{% for tag in tags %}{% assign localized = tag[1] | where: 'lang', page.lang %}{% if localized.size > 0 %}<section><h2 id="{{ tag[0] | slugify }}">{{ tag[0] }} <span>{{ localized.size }}</span></h2><ul>{% for post in localized %}<li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>{% endfor %}</ul></section>{% endif %}{% endfor %}</div>
   {% endcase %}
 </main>
+{% endif %}
