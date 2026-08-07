@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 560" role="img" aria-labelledby="title desc">
+  <title id="title">Engineering research case-study methodology</title>
+  <desc id="desc">Five stages connect source material, problem definition, architecture, implementation, and results with verification.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#e8eef8"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#0f172a" flood-opacity=".12"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10Z" fill="#526078"/>
+    </marker>
+    <style>
+      .title{font:700 42px system-ui,-apple-system,"Noto Sans KR",sans-serif;fill:#0f172a}
+      .subtitle{font:500 22px system-ui,-apple-system,"Noto Sans KR",sans-serif;fill:#526078}
+      .step{font:800 22px system-ui,-apple-system,"Noto Sans KR",sans-serif;fill:#fff;letter-spacing:.08em}
+      .label{font:700 28px system-ui,-apple-system,"Noto Sans KR",sans-serif;fill:#0f172a}
+      .body{font:500 19px system-ui,-apple-system,"Noto Sans KR",sans-serif;fill:#526078}
+      .footer{font:600 18px system-ui,-apple-system,"Noto Sans KR",sans-serif;fill:#334155}
+    </style>
+  </defs>
+  <rect width="1600" height="560" rx="36" fill="url(#bg)"/>
+  <text x="80" y="82" class="title">Problem → Methodology → Results</text>
+  <text x="80" y="122" class="subtitle">논문·프로젝트·전공과제·공부글을 같은 연구 페이지 흐름으로 읽습니다.</text>
+
+  <g filter="url(#shadow)">
+    <g transform="translate(70 185)">
+      <rect width="250" height="245" rx="24" fill="#fff"/>
+      <rect width="250" height="58" rx="24" fill="#0f766e"/>
+      <rect y="34" width="250" height="24" fill="#0f766e"/>
+      <text x="24" y="39" class="step">01 SOURCE</text>
+      <text x="24" y="102" class="label">원본 자료</text>
+      <text x="24" y="142" class="body">PDF · 코드 · 사진</text>
+      <text x="24" y="174" class="body">회로 · 파형 · 보고서</text>
+      <text x="24" y="214" class="footer">무엇이 실제로 있는가?</text>
+    </g>
+    <g transform="translate(375 185)">
+      <rect width="250" height="245" rx="24" fill="#fff"/>
+      <rect width="250" height="58" rx="24" fill="#2563eb"/>
+      <rect y="34" width="250" height="24" fill="#2563eb"/>
+      <text x="24" y="39" class="step">02 PROBLEM</text>
+      <text x="24" y="102" class="label">문제 정의</text>
+      <text x="24" y="142" class="body">요구사항 · 입력</text>
+      <text x="24" y="174" class="body">제약조건 · 실패조건</text>
+      <text x="24" y="214" class="footer">왜 이 설계가 필요한가?</text>
+    </g>
+    <g transform="translate(680 185)">
+      <rect width="250" height="245" rx="24" fill="#fff"/>
+      <rect width="250" height="58" rx="24" fill="#7c3aed"/>
+      <rect y="34" width="250" height="24" fill="#7c3aed"/>
+      <text x="24" y="39" class="step">03 ARCHITECTURE</text>
+      <text x="24" y="102" class="label">시스템 구조</text>
+      <text x="24" y="142" class="body">Sensor · MCU · FPGA</text>
+      <text x="24" y="174" class="body">Data flow · Interface</text>
+      <text x="24" y="214" class="footer">어떻게 연결되는가?</text>
+    </g>
+    <g transform="translate(985 185)">
+      <rect width="250" height="245" rx="24" fill="#fff"/>
+      <rect width="250" height="58" rx="24" fill="#c2410c"/>
+      <rect y="34" width="250" height="24" fill="#c2410c"/>
+      <text x="24" y="39" class="step">04 IMPLEMENT</text>
+      <text x="24" y="102" class="label">구현·분석</text>
+      <text x="24" y="142" class="body">회로 · Firmware · AI</text>
+      <text x="24" y="174" class="body">수식 · Simulation</text>
+      <text x="24" y="214" class="footer">무엇을 직접 만들었는가?</text>
+    </g>
+    <g transform="translate(1290 185)">
+      <rect width="240" height="245" rx="24" fill="#fff"/>
+      <rect width="240" height="58" rx="24" fill="#be123c"/>
+      <rect y="34" width="240" height="24" fill="#be123c"/>
+      <text x="24" y="39" class="step">05 RESULTS</text>
+      <text x="24" y="102" class="label">결과·검증</text>
+      <text x="24" y="142" class="body">Metric · Plot · Wave</text>
+      <text x="24" y="174" class="body">한계 · 다음 실험</text>
+      <text x="24" y="214" class="footer">어디까지 확인했는가?</text>
+    </g>
+  </g>
+
+  <g fill="none" stroke="#526078" stroke-width="5" marker-end="url(#arrow)">
+    <path d="M326 307H365"/>
+    <path d="M631 307H670"/>
+    <path d="M936 307H975"/>
+    <path d="M1241 307H1280"/>
+  </g>
+
+  <text x="800" y="510" text-anchor="middle" class="footer">각 단계에는 실제 파일·코드·그림·결과 링크가 함께 연결됩니다.</text>
+</svg>
