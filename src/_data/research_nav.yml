@@ -1,0 +1,82 @@
+project:
+  - id: overview
+    ko: 개요
+    en: Overview
+  - id: problem
+    ko: 문제 정의
+    en: Problem
+  - id: architecture
+    ko: 구조
+    en: Architecture
+  - id: methodology
+    ko: 방법
+    en: Methodology
+  - id: results
+    ko: 결과
+    en: Results
+  - id: gallery
+    ko: 그림
+    en: Gallery
+  - id: contribution
+    ko: 기여
+    en: Contribution
+  - id: resources
+    ko: 자료
+    en: Resources
+publication:
+  - id: abstract
+    ko: 초록
+    en: Abstract
+  - id: research-problem
+    ko: 연구 문제
+    en: Research Problem
+  - id: system-architecture
+    ko: 시스템 구조
+    en: Architecture
+  - id: methodology
+    ko: 연구 방법
+    en: Methodology
+  - id: results
+    ko: 결과
+    en: Results
+  - id: resources
+    ko: 논문·코드
+    en: Resources
+  - id: citation
+    ko: 인용
+    en: Citation
+coursework:
+  - id: overview
+    ko: 개요
+    en: Overview
+  - id: concept-map
+    ko: 개념 관계
+    en: Concept Map
+  - id: technical-anchor
+    ko: 기술 앵커
+    en: Technical Anchor
+  - id: review-method
+    ko: 다시 확인
+    en: Review Method
+  - id: course-connection
+    ko: 과목 연결
+    en: Course Context
+engineering:
+  - id: overview
+    ko: 개요
+    en: Overview
+  - id: source-view
+    ko: 원본 구성
+    en: Source View
+  - id: code-path
+    ko: 코드 흐름
+    en: Code Path
+  - id: concept-map
+    ko: 핵심 용어
+    en: Concepts
+  - id: review-sequence
+    ko: 확인 순서
+    en: Review Sequence
+  - id: references
+    ko: 공식 문서
+    en: References
