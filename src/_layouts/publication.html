@@ -47,17 +47,24 @@ layout: default
   "url": {{ page.url | absolute_url | jsonify }}
 }
 </script>
-<main id="main" class="page page-shell publication-detail">
+<main id="main" class="page page-shell publication-detail research-case-page">
   <nav class="breadcrumbs" aria-label="{% if page.lang == 'en' %}Breadcrumb{% else %}현재 위치{% endif %}">
     <a href="{% if page.lang == 'en' %}{{ '/en/' | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}Home{% else %}홈{% endif %}</a><span aria-hidden="true">/</span>
     <a href="{% if page.lang == 'en' %}{{ '/en/publications/' | relative_url }}{% else %}{{ '/publications/' | relative_url }}{% endif %}">Publications</a>
   </nav>
+
   <header class="publication-detail__heading">
     <div>
       <p class="eyebrow">{{ publication_venue }}</p>
       <h1>{{ publication_title }}</h1>
       <p class="publication-card__authors">{{ publication_authors | join: ', ' }}</p>
       <div class="badge-row"><span class="evidence-badge evidence-badge--measured">{% if page.lang == 'en' %}First Author{% else %}제1저자{% endif %}</span><span class="evidence-badge evidence-badge--source">Conference Proceedings</span><span class="evidence-badge evidence-badge--source">Poster Presentation</span></div>
+      <div class="research-resource-strip" aria-label="{% if page.lang == 'en' %}Paper resources{% else %}논문 바로가기{% endif %}">
+        {% if publication.paper_pdf != empty %}<a href="{{ publication.paper_pdf }}" target="_blank" rel="noopener noreferrer">▤ Paper</a>{% endif %}
+        <a href="{{ publication.github_url }}" target="_blank" rel="noopener noreferrer">⌘ Code</a>
+        <a href="{% if page.lang == 'en' %}{{ publication.project_url | prepend: '/en' | relative_url }}{% else %}{{ publication.project_url | relative_url }}{% endif %}">↗ Project</a>
+        <a href="{{ publication.official_url }}" target="_blank" rel="noopener noreferrer">◎ Conference</a>
+      </div>
     </div>
     {% if publication.cover_image != empty %}
     <figure class="publication-preview">
@@ -76,15 +83,42 @@ layout: default
     <div><dt>{% if page.lang == 'en' %}My role{% else %}본인 역할{% endif %}</dt><dd>{{ publication_role }}</dd></div>
   </dl>
 
+  {% include research-jump-nav.html kind='publication' %}
+
   <div class="case-study-grid publication-sections">
-    <section><h2>{% if page.lang == 'en' %}Abstract Summary{% else %}초록 요약{% endif %}</h2><p>{{ publication_abstract }}</p></section>
-    <section><h2>{% if page.lang == 'en' %}Research Problem{% else %}연구 문제{% endif %}</h2><p>{{ research_problem }}</p></section>
-    <section><h2>{% if page.lang == 'en' %}System Architecture{% else %}시스템 구조{% endif %}</h2><p>{{ architecture }}</p></section>
-    <section><h2>{% if page.lang == 'en' %}Methods{% else %}연구 방법{% endif %}</h2><p>{{ methods }}</p></section>
-    <section><h2>{% if page.lang == 'en' %}Results{% else %}결과{% endif %}</h2><p>{{ results }}</p><dl class="metric-list">{% for metric in publication.metrics %}<div><dt>{% if page.lang == 'en' %}{{ metric.label_en }}{% else %}{{ metric.label_ko }}{% endif %}</dt><dd>{{ metric.value }}</dd></div>{% endfor %}</dl></section>
+    <section id="abstract" class="research-section"><h2>{% if page.lang == 'en' %}Abstract{% else %}초록 요약{% endif %}</h2><p>{{ publication_abstract }}</p></section>
+    <section id="research-problem" class="research-section"><h2>{% if page.lang == 'en' %}Research Problem{% else %}연구 문제{% endif %}</h2><p>{{ research_problem }}</p></section>
+    <section id="system-architecture" class="research-section"><h2>{% if page.lang == 'en' %}System Architecture{% else %}시스템 구조{% endif %}</h2><p>{{ architecture }}</p></section>
+    <section id="methodology" class="research-section"><h2>{% if page.lang == 'en' %}Methodology{% else %}연구 방법{% endif %}</h2><p>{{ methods }}</p></section>
+    <section id="results" class="research-section"><h2>{% if page.lang == 'en' %}Results{% else %}결과{% endif %}</h2><p>{{ results }}</p><dl class="metric-list">{% for metric in publication.metrics %}<div><dt>{% if page.lang == 'en' %}{{ metric.label_en }}{% else %}{{ metric.label_ko }}{% endif %}</dt><dd>{{ metric.value }}</dd></div>{% endfor %}</dl></section>
     {% if boundary and boundary != empty %}<section><h2>{% if page.lang == 'en' %}Next step{% else %}다음에 확인할 부분{% endif %}</h2><p>{{ boundary }}</p></section>{% endif %}
   </div>
 
-  <section aria-labelledby="publication-links-title"><h2 id="publication-links-title">{% if page.lang == 'en' %}Paper and related project{% else %}논문과 관련 프로젝트{% endif %}</h2><div class="button-row"><a class="portfolio-button portfolio-button--primary" href="{{ publication.official_url }}" target="_blank" rel="noopener noreferrer">Official Conference</a>{% if publication.dbpia_url != empty %}<a class="portfolio-button" href="{{ publication.dbpia_url }}" target="_blank" rel="noopener noreferrer">DBpia Record</a>{% endif %}{% if publication.paper_pdf != empty %}<a class="portfolio-button" href="{{ publication.paper_pdf }}" target="_blank" rel="noopener noreferrer">Paper PDF</a>{% endif %}<a class="portfolio-button" href="{{ publication.github_url }}" target="_blank" rel="noopener noreferrer">Repository</a><a class="portfolio-button" href="{% if page.lang == 'en' %}{{ publication.project_url | prepend: '/en' | relative_url }}{% else %}{{ publication.project_url | relative_url }}{% endif %}">Project</a></div></section>
+  <figure class="research-flow-figure" aria-labelledby="publication-flow-caption">
+    <div class="research-flow-figure__grid">
+      <div class="research-flow-step"><span class="research-flow-step__index">01</span><strong>{% if page.lang == 'en' %}Question{% else %}연구 질문{% endif %}</strong><p>{{ research_problem | truncate: 125 }}</p></div>
+      <div class="research-flow-step"><span class="research-flow-step__index">02</span><strong>{% if page.lang == 'en' %}System{% else %}시스템{% endif %}</strong><p>{{ architecture | truncate: 125 }}</p></div>
+      <div class="research-flow-step"><span class="research-flow-step__index">03</span><strong>{% if page.lang == 'en' %}Method{% else %}방법{% endif %}</strong><p>{{ methods | truncate: 125 }}</p></div>
+      <div class="research-flow-step"><span class="research-flow-step__index">04</span><strong>{% if page.lang == 'en' %}Result{% else %}결과{% endif %}</strong><p>{{ results | truncate: 125 }}</p></div>
+    </div>
+    <figcaption id="publication-flow-caption">{% if page.lang == 'en' %}Research flow generated from the structured paper metadata used on this page.{% else %}논문 메타데이터에서 바로 구성한 연구 질문–시스템–방법–결과 흐름도입니다.{% endif %}</figcaption>
+  </figure>
+
+  <section id="resources" class="research-section" aria-labelledby="publication-links-title"><h2 id="publication-links-title">{% if page.lang == 'en' %}Paper and related project{% else %}논문과 관련 프로젝트{% endif %}</h2><div class="button-row"><a class="portfolio-button portfolio-button--primary" href="{{ publication.official_url }}" target="_blank" rel="noopener noreferrer">Official Conference</a>{% if publication.dbpia_url != empty %}<a class="portfolio-button" href="{{ publication.dbpia_url }}" target="_blank" rel="noopener noreferrer">DBpia Record</a>{% endif %}{% if publication.paper_pdf != empty %}<a class="portfolio-button" href="{{ publication.paper_pdf }}" target="_blank" rel="noopener noreferrer">Paper PDF</a>{% endif %}<a class="portfolio-button" href="{{ publication.github_url }}" target="_blank" rel="noopener noreferrer">Repository</a><a class="portfolio-button" href="{% if page.lang == 'en' %}{{ publication.project_url | prepend: '/en' | relative_url }}{% else %}{{ publication.project_url | relative_url }}{% endif %}">Project</a></div></section>
+
+  <section id="citation" class="research-section research-citation" aria-labelledby="citation-title">
+    <div class="research-citation__header">
+      <h2 id="citation-title">BibTeX</h2>
+      <button class="research-citation__copy" type="button" data-copy-target="bibtex-{{ publication.id }}" data-copied-label="{% if page.lang == 'en' %}Copied{% else %}복사됨{% endif %}">{% if page.lang == 'en' %}Copy BibTeX{% else %}BibTeX 복사{% endif %}</button>
+    </div>
+    <pre id="bibtex-{{ publication.id }}" tabindex="0"><code>@inproceedings{ryu{{ publication.year }}{{ publication.id | replace: '-', '' }},
+  title={ {{ publication.title_en }} },
+  author={ {% for author in publication.authors_en %}{{ author }}{% unless forloop.last %} and {% endunless %}{% endfor %} },
+  booktitle={ {{ publication.venue_en }} },
+  year={ {{ publication.year }} },
+  pages={ {{ publication.pages }} }
+}</code></pre>
+  </section>
+
   <div class="prose">{{ content }}</div>
 </main>
