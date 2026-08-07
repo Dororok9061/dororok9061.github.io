@@ -40,7 +40,71 @@ document.querySelectorAll("[data-copy-target]").forEach((button) => {
       button.textContent = button.dataset.copiedLabel || "Copied";
       window.setTimeout(() => { button.textContent = original; }, 1600);
     } catch (_) {
-      target.focus?.();
+      if (typeof target.focus === "function") target.focus();
     }
   });
 });
+
+const paperShell = document.querySelector("[data-indra-shell]");
+
+if (paperShell) {
+  const themeButton = paperShell.querySelector("[data-paper-theme-toggle]");
+  const language = document.documentElement.lang === "en" ? "en" : "ko";
+  const storageKey = "engineering-research-paper-theme";
+
+  const applyTheme = (dark) => {
+    paperShell.classList.toggle("is-dark", dark);
+    if (!themeButton) return;
+    themeButton.setAttribute("aria-pressed", String(dark));
+    themeButton.textContent = dark
+      ? (language === "en" ? "Light mode" : "밝은 화면")
+      : (language === "en" ? "Dark mode" : "어두운 화면");
+  };
+
+  let savedTheme = "";
+  try {
+    savedTheme = window.localStorage.getItem(storageKey) || "";
+  } catch (_) {
+    savedTheme = "";
+  }
+  applyTheme(savedTheme === "dark");
+
+  if (themeButton) {
+    themeButton.addEventListener("click", () => {
+      const dark = !paperShell.classList.contains("is-dark");
+      applyTheme(dark);
+      try {
+        window.localStorage.setItem(storageKey, dark ? "dark" : "light");
+      } catch (_) {
+        // The page still works when storage is unavailable.
+      }
+    });
+  }
+
+  paperShell.querySelectorAll("[data-paper-carousel]").forEach((carousel) => {
+    const track = carousel.querySelector("[data-carousel-track]");
+    const previous = carousel.querySelector("[data-carousel-prev]");
+    const next = carousel.querySelector("[data-carousel-next]");
+    if (!track) return;
+
+    const step = () => Math.max(track.clientWidth * 0.76, 280);
+    if (previous) previous.addEventListener("click", () => {
+      track.scrollBy({ left: -step(), behavior: "smooth" });
+    });
+    if (next) next.addEventListener("click", () => {
+      track.scrollBy({ left: step(), behavior: "smooth" });
+    });
+  });
+
+  const scrollTopButton = paperShell.querySelector("[data-scroll-top]");
+  if (scrollTopButton) {
+    const updateScrollButton = () => {
+      scrollTopButton.classList.toggle("is-visible", window.scrollY > 420);
+    };
+    window.addEventListener("scroll", updateScrollButton, { passive: true });
+    updateScrollButton();
+    scrollTopButton.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+}
