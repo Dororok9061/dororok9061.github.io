@@ -8,19 +8,21 @@ laboratory_en: Human & Systems Laboratory, Undergraduate Research Intern
 expected_graduation_ko: 2027년 2월 25일
 expected_graduation_en: February 25, 2027
 expected_graduation_iso: 2027-02-25
-available_from_ko: 2027년 2월
-available_from_en: February 2027
-available_from_iso: 2027-02
+available_from_ko: 2027년 1월
+available_from_en: January 2027
+available_from_iso: 2027-01
+ces_2027_ko: ViScan 부스 운영 및 시연 예정
+ces_2027_en: Planned ViScan booth operation and live demonstration
 email: hnryu0515@gmail.com
 linkedin: https://www.linkedin.com/in/hyeongrok-ryu-842231224/
 github: https://github.com/Dororok9061
 public_notion_url: https://fierce-rodent-308.notion.site/Engineering-Portfolio-FPGA-Radar-Embedded-Systems-Biomedical-AI-3ab518ac7a598121b666e4c7cce8324c
 public_notion_status: VERIFIED_PUBLIC_2026-08-01
-primary_focus_ko: Radar · Embedded Signal Processing Engineer
-primary_focus_en: Radar · Embedded Signal Processing Engineer
-secondary_focus_ko: FPGA RTL · Digital Verification Engineer
-secondary_focus_en: FPGA RTL · Digital Verification Engineer
+primary_focus_ko: Radar · Vision AI · Sensor Fusion · Embedded Signal Processing
+primary_focus_en: Radar · Vision AI · Sensor Fusion · Embedded Signal Processing
+secondary_focus_ko: FPGA RTL · Digital Verification
+secondary_focus_en: FPGA RTL · Digital Verification
 availability_ko: 2027 신입 R&D 기회 검토 중
 availability_en: Open to Entry-Level R&D Opportunities for 2027
-industries_ko: 레이더·센서, 임베디드 시스템, 반도체·FPGA, 전장·방산 R&D
-industries_en: Radar and sensing, embedded systems, semiconductor/FPGA, automotive and defense R&D
+industries_ko: 레이더·센서, 비전 AI·센서퓨전, 임베디드 시스템, 반도체·FPGA, 전장·방산 R&D
+industries_en: Radar and sensing, vision AI and sensor fusion, embedded systems, semiconductor/FPGA, automotive and defense R&D
