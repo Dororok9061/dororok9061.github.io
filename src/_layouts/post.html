@@ -4,29 +4,54 @@ layout: default
 {% assign post_category = site.data.blog_taxonomy | where: 'id', page.primary_category | first %}
 {% assign post_child = post_category.children | where: 'id', page.subcategory | first %}
 {% assign post_series = site.data.blog_series | where: 'id', page.series | first %}
-<main id="main" class="page page-shell">
+<main id="main" class="page page-shell research-case-page">
   <article class="post">
     <nav class="breadcrumbs" aria-label="{% if page.lang == 'en' %}Breadcrumb{% else %}현재 위치{% endif %}"><a href="{% if page.lang == 'en' %}{{ '/en/blog/' | relative_url }}{% else %}{{ '/blog/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}Blog{% else %}블로그{% endif %}</a>{% if post_category %}<span aria-hidden="true">/</span><a href="{% if page.lang == 'en' %}{{ '/en/blog/category/' | append: post_category.id | append: '/' | relative_url }}{% else %}{{ '/blog/category/' | append: post_category.id | append: '/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}{{ post_category.title_en }}{% else %}{{ post_category.title_ko }}{% endif %}</a>{% endif %}</nav>
-    <header class="post-heading">
+
+    <header id="overview" class="post-heading research-section">
       <p class="eyebrow">{% if post_category %}{% if page.lang == 'en' %}{{ post_category.title_en }}{% else %}{{ post_category.title_ko }}{% endif %}{% else %}{{ page.primary_category | default: page.categories.first }}{% endif %}{% if post_child %} · {% if page.lang == 'en' %}{{ post_child.title_en }}{% else %}{{ post_child.title_ko }}{% endif %}{% endif %}</p>
       <h1>{{ page.title }}</h1>
       <p>{{ page.date | date: "%Y-%m-%d" }}{% if page.updated %} · {% if page.lang == 'en' %}updated{% else %}수정{% endif %} {{ page.updated | date: "%Y-%m-%d" }}{% endif %} · {{ page.author }}</p>
       {% if page.description %}<p class="page-heading__lead">{{ page.description }}</p>{% endif %}
     </header>
+
     <dl class="post-facts">
       <div><dt>Series</dt><dd>{% if page.series %}<a href="{% if page.lang == 'en' %}{{ '/en/blog/series/' | append: page.series | append: '/' | relative_url }}{% else %}{{ '/blog/series/' | append: page.series | append: '/' | relative_url }}{% endif %}">{% if post_series %}{% if page.lang == 'en' %}{{ post_series.title_en }}{% else %}{{ post_series.title_ko }}{% endif %}{% else %}{{ page.series }}{% endif %} · {{ page.series_order }}</a>{% else %}—{% endif %}</dd></div>
       <div><dt>{% if page.lang == 'en' %}Type / level{% else %}유형 / 난이도{% endif %}</dt><dd>{{ page.post_type }} · {{ page.difficulty }}</dd></div>
       <div><dt>Tools</dt><dd>{{ page.tools | join: ', ' }}</dd></div>
     </dl>
-    {% if page.toc %}<details class="post-toc" open><summary>{% if page.lang == 'en' %}On this page{% else %}목차{% endif %}</summary><ol>{% for item in page.toc %}<li><a href="#{{ item.id }}">{% if page.lang == 'en' and item.title_en %}{{ item.title_en }}{% else %}{{ item.title }}{% endif %}</a></li>{% endfor %}</ol></details>{% endif %}
-    <div class="prose post__content">{{ content }}</div>
-    {% if page.source_materials %}<section class="post-sources" aria-labelledby="post-sources-heading"><h2 id="post-sources-heading">{% if page.lang == 'en' %}Sources used{% else %}사용한 자료{% endif %}</h2><ul>{% for source in page.source_materials %}<li>{% if source.public_url %}<a href="{{ source.public_url }}">{{ source.title }}</a>{% else %}{{ source.title }}{% endif %} — {{ source.type }}{% if source.used_for %}; {{ source.used_for }}{% endif %}</li>{% endfor %}</ul></section>{% endif %}
+
+    {% if page.toc and page.toc != empty %}
+    <nav class="research-jump-nav" aria-label="{% if page.lang == 'en' %}On this page{% else %}이 글의 주요 섹션{% endif %}" data-research-nav>
+      <span class="research-jump-nav__label">{% if page.lang == 'en' %}On this page{% else %}이 글{% endif %}</span>
+      <div class="research-jump-nav__links">
+        {% for item in page.toc %}<a href="#{{ item.id }}" data-research-nav-link="{{ item.id }}">{% if page.lang == 'en' and item.title_en %}{{ item.title_en }}{% else %}{{ item.title }}{% endif %}</a>{% endfor %}
+      </div>
+    </nav>
+
+    {% if page.toc.size > 1 %}
+    <figure class="research-concept-map" aria-labelledby="post-concept-caption">
+      <div class="research-concept-map__grid">
+        {% for item in page.toc limit: 4 %}
+        <div class="research-concept-node"><span class="research-concept-node__index">0{{ forloop.index }}</span><strong>{% if page.lang == 'en' and item.title_en %}{{ item.title_en }}{% else %}{{ item.title }}{% endif %}</strong><p>{% if page.lang == 'en' %}A checkpoint in the study sequence for this note.{% else %}이 글에서 순서대로 다시 확인하는 학습 포인트입니다.{% endif %}</p></div>
+        {% endfor %}
+      </div>
+      <figcaption id="post-concept-caption">{% if page.lang == 'en' %}A compact concept path generated from this post's table of contents.{% else %}이 글의 목차에서 자동으로 만든 개념 흐름도입니다.{% endif %}</figcaption>
+    </figure>
+    {% endif %}
+    {% endif %}
+
+    <div id="article" class="prose post__content research-section">{{ content }}</div>
+
+    {% if page.source_materials %}<section id="sources" class="post-sources research-section" aria-labelledby="post-sources-heading"><h2 id="post-sources-heading">{% if page.lang == 'en' %}Sources used{% else %}사용한 자료{% endif %}</h2><ul>{% for source in page.source_materials %}<li>{% if source.public_url %}<a href="{{ source.public_url }}">{{ source.title }}</a>{% else %}{{ source.title }}{% endif %} — {{ source.type }}{% if source.used_for %}; {{ source.used_for }}{% endif %}</li>{% endfor %}</ul></section>{% endif %}
+
     {% if page.series %}{% assign language_posts = site.posts | where: 'lang', page.lang %}{% assign series_posts = language_posts | where: 'series', page.series %}{% assign previous_order = page.series_order | minus: 1 %}{% assign next_order = page.series_order | plus: 1 %}
     <nav class="series-navigation" aria-label="{% if page.lang == 'en' %}Series navigation{% else %}시리즈 이동{% endif %}">
       {% for item in series_posts %}{% if item.series_order == previous_order %}<a rel="prev" href="{{ item.url | relative_url }}">← {{ item.title }}</a>{% endif %}{% endfor %}
       <a href="{% if page.lang == 'en' %}{{ '/en/blog/series/' | append: page.series | append: '/' | relative_url }}{% else %}{{ '/blog/series/' | append: page.series | append: '/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}Full series{% else %}시리즈 전체{% endif %}</a>
       {% for item in series_posts %}{% if item.series_order == next_order %}<a rel="next" href="{{ item.url | relative_url }}">{{ item.title }} →</a>{% endif %}{% endfor %}
     </nav>{% endif %}
-    {% if page.related_projects %}<section class="related-projects"><h2>{% if page.lang == 'en' %}Related projects{% else %}관련 프로젝트{% endif %}</h2><ul>{% for project_id in page.related_projects %}{% assign project = site.data.projects | where: 'id', project_id | first %}{% if project %}<li><a href="{% if page.lang == 'en' %}{{ project.en_url }}{% else %}{{ project.ko_url }}{% endif %}">{% if page.lang == 'en' %}{{ project.title_en }}{% else %}{{ project.title_ko }}{% endif %}</a></li>{% endif %}{% endfor %}</ul></section>{% endif %}
+
+    {% if page.related_projects %}<section id="related" class="related-projects research-section"><h2>{% if page.lang == 'en' %}Related projects{% else %}관련 프로젝트{% endif %}</h2><ul>{% for project_id in page.related_projects %}{% assign project = site.data.projects | where: 'id', project_id | first %}{% if project %}<li><a href="{% if page.lang == 'en' %}{{ project.en_url }}{% else %}{{ project.ko_url }}{% endif %}">{% if page.lang == 'en' %}{{ project.title_en }}{% else %}{{ project.title_ko }}{% endif %}</a></li>{% endif %}{% endfor %}</ul></section>{% endif %}
   </article>
 </main>

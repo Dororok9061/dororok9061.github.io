@@ -33,18 +33,24 @@ layout: default
   {% assign project_results = project.results_ko %}
   {% assign project_status = project.status_label_ko %}
 {% endif %}
-<main id="main" class="page page-shell">
+<main id="main" class="page page-shell research-case-page">
   <nav class="breadcrumbs" aria-label="{% if page.lang == 'en' %}Breadcrumb{% else %}현재 위치{% endif %}">
     <a href="{% if page.lang == 'en' %}{{ '/en/' | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}Home{% else %}홈{% endif %}</a>
     <span aria-hidden="true">/</span>
     <a href="{% if page.lang == 'en' %}{{ '/en/projects/' | relative_url }}{% else %}{{ '/projects/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}Projects{% else %}프로젝트{% endif %}</a>
   </nav>
-  <header class="project-heading">
+
+  <header class="project-heading research-section" id="overview">
     <div>
       <p class="eyebrow">{{ project_domain }}</p>
       <h1>{{ project_title }}</h1>
       <p class="page-heading__lead">{{ project_summary }}</p>
       <span class="evidence-badge evidence-badge--{{ project.status_class }}">{{ project_status }}</span>
+      <div class="research-resource-strip" aria-label="{% if page.lang == 'en' %}Project resources{% else %}프로젝트 바로가기{% endif %}">
+        <a href="{{ project.repository }}" target="_blank" rel="noopener noreferrer">⌘ Repository</a>
+        {% if page.lang == 'en' and project.pages_en %}<a href="{{ project.pages_en }}" target="_blank" rel="noopener noreferrer">↗ Project Page</a>{% endif %}
+        {% if page.lang != 'en' and project.pages_ko %}<a href="{{ project.pages_ko }}" target="_blank" rel="noopener noreferrer">↗ Project Page</a>{% endif %}
+      </div>
     </div>
     {% if project.image_webp %}
     <picture>
@@ -58,25 +64,41 @@ layout: default
     {% endif %}
   </header>
 
+  {% include research-jump-nav.html kind='project' %}
+
   {% if project_problem %}
   <div class="project-narrative">
-    <section><p class="eyebrow">01</p><h2>{% if page.lang == 'en' %}Problem{% else %}문제 정의{% endif %}</h2><p>{{ project_problem }}</p></section>
-    <section><p class="eyebrow">02</p><h2>{% if page.lang == 'en' %}Architecture{% else %}Architecture{% endif %}</h2><p>{{ project_architecture }}</p></section>
+    <section id="problem" class="research-section"><p class="eyebrow">01</p><h2>{% if page.lang == 'en' %}Problem{% else %}문제 정의{% endif %}</h2><p>{{ project_problem }}</p></section>
+    <section id="architecture" class="research-section"><p class="eyebrow">02</p><h2>{% if page.lang == 'en' %}Architecture{% else %}Architecture{% endif %}</h2><p>{{ project_architecture }}</p></section>
     <section><p class="eyebrow">03</p><h2>{% if page.lang == 'en' %}Hardware and Software{% else %}Hardware · Software{% endif %}</h2><ul class="inline-list">{% for item in project_stack %}<li>{{ item }}</li>{% endfor %}</ul></section>
     <section><p class="eyebrow">04</p><h2>{% if page.lang == 'en' %}Data Flow{% else %}Data Flow{% endif %}</h2><p>{{ project_data_flow }}</p></section>
-    <section><p class="eyebrow">05</p><h2>{% if page.lang == 'en' %}Methods{% else %}Methods{% endif %}</h2><ul>{% for item in project_methods %}<li>{{ item }}</li>{% endfor %}</ul></section>
-    <section><p class="eyebrow">06</p><h2>{% if page.lang == 'en' %}Results{% else %}Results{% endif %}</h2><ul>{% for item in project_results %}<li>{{ item }}</li>{% endfor %}</ul></section>
+    <section id="methodology" class="research-section"><p class="eyebrow">05</p><h2>{% if page.lang == 'en' %}Methodology{% else %}Methodology{% endif %}</h2><ul>{% for item in project_methods %}<li>{{ item }}</li>{% endfor %}</ul></section>
+    <section id="results" class="research-section"><p class="eyebrow">06</p><h2>{% if page.lang == 'en' %}Results{% else %}Results{% endif %}</h2><ul>{% for item in project_results %}<li>{{ item }}</li>{% endfor %}</ul></section>
   </div>
+
+  <figure class="research-flow-figure" aria-labelledby="project-flow-caption">
+    <div class="research-flow-figure__grid">
+      <div class="research-flow-step"><span class="research-flow-step__index">01</span><strong>{% if page.lang == 'en' %}Problem{% else %}문제{% endif %}</strong><p>{{ project_problem | truncate: 125 }}</p></div>
+      <div class="research-flow-step"><span class="research-flow-step__index">02</span><strong>{% if page.lang == 'en' %}Architecture{% else %}구조{% endif %}</strong><p>{{ project_architecture | truncate: 125 }}</p></div>
+      <div class="research-flow-step"><span class="research-flow-step__index">03</span><strong>{% if page.lang == 'en' %}Method{% else %}방법{% endif %}</strong><p>{% if project_methods and project_methods != empty %}{{ project_methods[0] | truncate: 125 }}{% endif %}</p></div>
+      <div class="research-flow-step"><span class="research-flow-step__index">04</span><strong>{% if page.lang == 'en' %}Result{% else %}결과{% endif %}</strong><p>{% if project_results and project_results != empty %}{{ project_results[0] | truncate: 125 }}{% endif %}</p></div>
+    </div>
+    <figcaption id="project-flow-caption">{% if page.lang == 'en' %}A compact problem-to-result map generated from the project data used on this page.{% else %}이 페이지의 프로젝트 데이터에서 바로 만든 문제–구조–방법–결과 흐름도입니다.{% endif %}</figcaption>
+  </figure>
   {% endif %}
 
   {% if project.gallery %}
-  <section class="project-gallery" aria-labelledby="project-gallery-title">
+  <section id="gallery" class="project-gallery research-section" aria-labelledby="project-gallery-title">
     <h2 id="project-gallery-title">{% if page.lang == 'en' %}Architecture and result views{% else %}구조와 결과 화면{% endif %}</h2>
-    <div>{% for image in project.gallery %}<figure><picture><source srcset="{{ image.webp | relative_url }}" type="image/webp"><img src="{{ image.jpg | relative_url }}" alt="{% if page.lang == 'en' %}{{ image.alt_en }}{% else %}{{ image.alt_ko }}{% endif %}" width="{{ image.width }}" height="{{ image.height }}" loading="lazy"></picture><figcaption>{% if page.lang == 'en' %}{{ image.caption_en }}{% else %}{{ image.caption_ko }}{% endif %}</figcaption></figure>{% endfor %}</div>
+    <div class="research-gallery-strip">{% for image in project.gallery %}<figure><picture><source srcset="{{ image.webp | relative_url }}" type="image/webp"><img src="{{ image.jpg | relative_url }}" alt="{% if page.lang == 'en' %}{{ image.alt_en }}{% else %}{{ image.alt_ko }}{% endif %}" width="{{ image.width }}" height="{{ image.height }}" loading="lazy"></picture><figcaption>{% if page.lang == 'en' %}{{ image.caption_en }}{% else %}{{ image.caption_ko }}{% endif %}</figcaption></figure>{% endfor %}</div>
+  </section>
+  {% else %}
+  <section id="gallery" class="research-section research-visual-placeholder" aria-label="{% if page.lang == 'en' %}Visual summary{% else %}시각 요약{% endif %}">
+    <div><strong>{% if page.lang == 'en' %}Visual summary generated from the structured project data{% else %}구조화된 프로젝트 데이터로 만든 시각 요약{% endif %}</strong><p>{% if page.lang == 'en' %}The methodology flow above remains the visual summary until a project-specific figure is added.{% else %}프로젝트 전용 그림이 추가되기 전까지 위 Methodology 흐름도를 기본 시각자료로 사용합니다.{% endif %}</p></div>
   </section>
   {% endif %}
 
-  <div class="case-study-grid">
+  <div id="contribution" class="case-study-grid research-section">
     <section aria-labelledby="contribution-title">
       <h2 id="contribution-title">{% if page.lang == 'en' %}What I worked on{% else %}내가 맡은 부분{% endif %}</h2>
       <ul>{% for item in project_contribution %}<li>{{ item }}</li>{% endfor %}</ul>
@@ -86,18 +108,21 @@ layout: default
       <ul>{% for item in project_evidence %}<li>{{ item }}</li>{% endfor %}</ul>
     </section>
   </div>
+
   {% if project_boundary and project_boundary != empty %}<section class="boundary-panel" aria-labelledby="boundary-title">
     <h2 id="boundary-title">{% if page.lang == 'en' %}Next steps{% else %}남은 과제{% endif %}</h2>
     <p>{{ project_boundary }}</p>
   </section>{% endif %}
-  <section aria-labelledby="project-links-title">
-    <h2 id="project-links-title">{% if page.lang == 'en' %}Project links{% else %}프로젝트 링크{% endif %}</h2>
+
+  <section id="resources" class="research-section" aria-labelledby="project-links-title">
+    <h2 id="project-links-title">{% if page.lang == 'en' %}Project resources{% else %}프로젝트 자료{% endif %}</h2>
     <div class="button-row">
       <a class="portfolio-button portfolio-button--primary" href="{{ project.repository }}" target="_blank" rel="noopener noreferrer">Repository</a>
       {% if page.lang == 'en' and project.pages_en %}<a class="portfolio-button" href="{{ project.pages_en }}" target="_blank" rel="noopener noreferrer">Project Pages</a>{% endif %}
       {% if page.lang != 'en' and project.pages_ko %}<a class="portfolio-button" href="{{ project.pages_ko }}" target="_blank" rel="noopener noreferrer">Project Pages</a>{% endif %}
     </div>
   </section>
+
   <div class="prose">
     {{ content }}
   </div>
