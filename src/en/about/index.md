@@ -24,7 +24,9 @@ covering presence detection, face sessions, pose-based AR guidance, and rPPG. I 
 YuNet/SFace face recognition and MediaPipe Pose, combined low-light, occlusion, and
 multi-person checks with BGT60TR13C presence and distance information, and defined
 state-transition conditions for each sensing stage. I plan to participate in ViScan booth
-operation and live demonstrations at CES 2027.
+operation and live demonstrations at CES 2027. The team is also preparing a ViScan
+submission for the CES Innovation Awards, and additional product and submission details
+will be added to the portfolio when they are ready for public release.
 
 ## Design and verification work
 
