@@ -23,7 +23,9 @@ ViScan 스마트미러에서 카메라와 FMCW Radar를 함께 사용해 사용�
 얼굴 세션, Pose 기반 AR Guide와 rPPG가 이어지는 파이프라인을 구현했다.
 YuNet·SFace 얼굴인식, MediaPipe Pose, 저조도·가림·다중인원 판정과
 BGT60TR13C의 존재·거리 정보를 결합하면서 센서별 역할과 상태 전이 조건을
-설계했다. 2027 CES에서는 ViScan 부스 운영과 제품 시연에 참여할 예정이다.
+설계했다. 2027 CES에서 ViScan 부스 운영과 제품 시연에 참여할 예정이며,
+ViScan의 CES Innovation Awards 출품도 준비 중이다. 공개 가능한 시점에
+제품과 출품 관련 상세 내용을 포트폴리오에 추가할 예정이다.
 
 ## 설계와 검증 공부
 
