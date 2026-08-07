@@ -2,7 +2,7 @@
 layout: about
 title: About
 eyebrow: Profile
-lead: An undergraduate electrical engineering researcher focused on radar and embedded signal processing, with FPGA RTL and digital verification as a secondary track.
+lead: An undergraduate electrical engineering researcher focused on radar, vision AI, sensor fusion, and embedded signal processing, with FPGA RTL and digital verification as a secondary track.
 description: Education, research experience, graduation date, availability, and career focus for Hyeongrok Ryu.
 permalink: /en/about/
 lang: en
@@ -12,10 +12,19 @@ alternate_lang: ko
 
 ## Research experience
 
-At the Human & System Laboratory, I worked on concurrent ECG, SCG, and FMCW radar
+At the Human & Systems Laboratory, I worked on concurrent ECG, SCG, and FMCW radar
 acquisition and aligned cardiac-cycle waveforms. The setup used a BGT60TR13C radar,
 STM32F411, and ESP-32S/MPU6050 reference paths. In Python, I compared radar phase
 with AO and AC candidate timing around ECG R-peaks.
+
+## Vision AI and sensor fusion
+
+For the ViScan smart mirror, I integrated camera and FMCW radar inputs into a pipeline
+covering presence detection, face sessions, pose-based AR guidance, and rPPG. I used
+YuNet/SFace face recognition and MediaPipe Pose, combined low-light, occlusion, and
+multi-person checks with BGT60TR13C presence and distance information, and defined
+state-transition conditions for each sensing stage. I plan to participate in ViScan booth
+operation and live demonstrations at CES 2027.
 
 ## Design and verification work
 
@@ -30,9 +39,9 @@ control, motor drives, power electronics, and electrical machines.
 
 ## Career direction
 
-I am preparing primarily for radar signal-processing and embedded-acquisition
-roles, with FPGA RTL and digital verification as a second track. I expect to
-graduate in February 2027 and can start work in January 2027.
+I am preparing primarily for radar signal processing, vision AI, sensor fusion, and
+embedded acquisition roles, with FPGA RTL and digital verification as a second track.
+I expect to graduate in February 2027 and can start work in January 2027.
 
 ## Links
 
