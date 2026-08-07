@@ -1,33 +1,31 @@
 # Hyeongrok Ryu Engineering Portfolio
 
 [![GitHub Pages](https://img.shields.io/badge/Portfolio-dororok9061.github.io-2E86AB)](https://dororok9061.github.io/)
+[![Start Here](https://img.shields.io/badge/Research%20Portal-Start%20Here-1565C0)](https://dororok9061.github.io/blog/start-here/)
 [![Research Cases](https://img.shields.io/badge/View-Research%20Case%20Studies-111111)](https://dororok9061.github.io/projects/)
+[![Source Map](https://img.shields.io/badge/Source-Collections-0F766E)](https://dororok9061.github.io/source-collections/)
 [![Public Notion](https://img.shields.io/badge/Notion-Engineering%20Portfolio-000000)](https://fierce-rodent-308.notion.site/Engineering-Portfolio-FPGA-Radar-Embedded-Systems-Biomedical-AI-3ab518ac7a598121b666e4c7cce8324c)
 
-The multilingual, multi-page Jekyll source for
-[dororok9061.github.io](https://dororok9061.github.io/). It connects public
-evidence across radar signal processing, Vision AI, sensor fusion, embedded
-systems, FPGA RTL/DV, biomedical AI, systems engineering, publications,
-coursework, and engineering study notes.
+The multilingual Jekyll portfolio for [dororok9061.github.io](https://dororok9061.github.io/) connects radar signal processing, Vision AI, sensor fusion, embedded systems, FPGA RTL/DV, biomedical AI, RF/microwave, PCB design, control, publications, coursework, and study notes.
 
-## Research Case Study framework
+## Dedicated research portal
 
-The existing Jekyll 4 + Simplex visual theme is preserved. A shared research-page
-structure is layered across projects, publications, coursework, technical blog
-posts, STM32/PADS/mmWave study units, and external-learning notes.
-
-Each detailed page is organized around the material that actually exists:
+The existing Jekyll 4 + Simplex visual theme remains in place. The generated `/blog/start-here/` route now uses a dedicated paper-style layout inspired by the iNdra research-page template:
 
 ```text
-Problem or research question
-→ Architecture and data flow
-→ Hardware / software / equations
-→ Methodology and implementation
-→ Results and figures
-→ Contribution, resources, and next work
+Abstract and author block
+→ Material-icon resource buttons
+→ Introduction and research domains
+→ Methodology figure
+→ Project results
+→ Horizontal image gallery
+→ Uploaded source collections
+→ Resources and BibTeX
 ```
 
-### Representative case studies
+The previous full-width research takeover was removed from the homepage. The normal profile homepage remains the first screen, while the navigation exposes a direct **Research Hub** link.
+
+## Representative case studies
 
 | Domain | Website case study | Repository case study |
 |---|---|---|
@@ -37,40 +35,41 @@ Problem or research question
 | Vision · Embedded Systems | [Drowsiness Monitor](https://dororok9061.github.io/projects/drowsiness-monitor/) | [RESEARCH_CASE_STUDY.md](https://github.com/Dororok9061/Sleep-monitoring-and-prevention-device/blob/main/RESEARCH_CASE_STUDY.md) |
 | Electrical Engineering Coursework | [Coursework hub](https://dororok9061.github.io/coursework/) | [RESEARCH_CASE_STUDY.md](https://github.com/Dororok9061/electrical-engineering-coursework-portfolio/blob/main/RESEARCH_CASE_STUDY.md) |
 
-The homepage now exposes the case-study hub before the original hero section so
-visitors can immediately enter the technical evidence rather than searching for
-the new structure at the bottom of the page.
+## Uploaded source collections
+
+The public source map inventories three uploaded archives without publishing the raw ZIP files:
+
+- **Low-Power Semiconductor Circuit Design** — 137 entries across shift-register, circular-queue, and memory-based delay-logic projects; SystemVerilog, ModelSim, Quartus, reference vectors, and regression files.
+- **Defense Systems Engineering** — 28 entries covering Counter-UAS, EW jammer specification, KF-21 reliability, course materials, and screenshots.
+- **Undergraduate Coursework and Projects** — 576 entries including 473 images and 28 PDFs across high-frequency engineering, controller logic, power systems, motor control, electrical machines, sensor applications, and VRET.
+
+See [Portfolio Source Collection Map](https://dororok9061.github.io/source-collections/).
 
 ## Figure strategy and PaperBanana
 
-Existing experiment photographs, source-derived plots, waveforms, circuit
-screens, and report figures remain the preferred assets. When a publishable
-architecture or methodology figure is missing, the page first renders a
-source-faithful HTML/CSS concept flow. PaperBanana is prepared as a second-stage
-academic-figure workflow for high-resolution replacements.
+Existing experiment photographs, source-derived plots, waveforms, circuit screens, and report figures remain the preferred assets. When an architecture or methodology figure is missing, the page first renders a source-based SVG/HTML figure.
 
 - [PaperBanana workflow](docs/PAPERBANANA_FIGURE_WORKFLOW.md)
 - [Figure backlog and prompts](docs/paperbanana_figures.yml)
+- [Start Here methodology figure](src/assets/images/research/start-here-methodology.svg)
+- [Start Here domain map](src/assets/images/research/start-here-domain-map.svg)
 
-Generated figures must not invent measurements, hardware, model scores, PPA,
-clinical claims, certifications, or CES award results.
+A PaperBanana output is not published as experimental evidence until every label, arrow, component, and numeric value has been checked against the linked source. Generated figures must not invent measurements, hardware, model scores, PPA, clinical claims, certifications, or CES award results.
+
+## Material icons
+
+The research portal uses local SVG assets based on Google's Material Icons under the Apache License 2.0. They are stored under `src/assets/icons/material/` and are loaded locally to preserve the site's strict Content Security Policy.
 
 ## Theme and architecture
 
 - Jekyll `4.4.1`
-- actual Gem Theme: `jekyll-theme-simplex 0.9.8.15` (MIT)
-- Korean and English routes with independent project, publication, coursework,
-  defense, role, lab, blog, category, about, and security pages
-- static HTML/CSS output with small first-party Vanilla JavaScript files for
-  accessible navigation, image lightbox, search, section tracking, and BibTeX copy
-- no database, authentication, API, form backend, analytics, ads, chat,
-  Service Worker, or runtime framework
-- GitHub Actions build and Pages deployment with every Action pinned to a full
-  commit SHA
+- Gem theme: `jekyll-theme-simplex 0.9.8.15` (MIT)
+- Korean and English routes for projects, publications, coursework, defense, roles, lab, blog, category, about, and source-collection pages
+- static HTML/CSS output with small first-party Vanilla JavaScript files for navigation, lightbox, section tracking, gallery controls, theme switching, and BibTeX copy
+- no database, authentication, form backend, analytics, ads, chat, or runtime framework
+- GitHub Actions build and Pages deployment with pinned Actions
 
-`src/` is the Jekyll source and `_site/` is the generated, ignored output. The
-previous hand-authored site remains in `site/` only as a recovery snapshot; the
-deployment workflow does not publish it.
+`src/` is the Jekyll source and `_site/` is the ignored generated output.
 
 ## Build and validate
 
@@ -82,37 +81,15 @@ pwsh scripts/security/verify-site-security.ps1 -SiteRoot .
 pwsh scripts/security/verify-site-security.ps1 -SiteRoot _site -BuiltSite
 ```
 
-Windows PowerShell can invoke the scanner with:
-
-```powershell
-powershell.exe -NoProfile -ExecutionPolicy Bypass `
-  -File scripts/security/verify-site-security.ps1 -SiteRoot _site -BuiltSite
-```
-
-After deployment:
-
-```powershell
-powershell.exe -NoProfile -ExecutionPolicy Bypass `
-  -File scripts/security/verify-site-security.ps1 `
-  -SiteRoot _site -BuiltSite `
-  -PublicUrl "https://dororok9061.github.io/" -Online
-```
-
 ## Documentation
 
 - [Project inventory](docs/inventory/PROJECT_INVENTORY.md)
 - [Notion inventory](docs/inventory/NOTION_INVENTORY.md)
-- [Theme audit](docs/design/THEME_AUDIT.md)
-- [Theme decision](docs/design/THEME_DECISION.md)
-- [Third-party notices](docs/design/THIRD_PARTY_NOTICES.md)
-- [Profile asset status](docs/PROFILE_ASSET_STATUS.md)
+- [PaperBanana workflow](docs/PAPERBANANA_FIGURE_WORKFLOW.md)
 - [Threat model](docs/security/THREAT_MODEL.md)
 - [Security architecture](docs/security/SECURITY_ARCHITECTURE.md)
 - [Data classification](docs/security/DATA_CLASSIFICATION.md)
-- [Deployment verification report](docs/security/VERIFICATION_REPORT_2026-07-31.md)
 
-## Public evidence rule
+## Publication rule
 
-Source files, rerun simulations, measured hardware results, generated
-illustrations, and proposed future work are kept distinct. Missing evidence is
-not converted into a pass or a measured result.
+User-authored code, reports, calculations, and figures are used on the relevant pages. Course handouts, company-analysis books, certificates, licenses, and material with unclear redistribution rights are retained for review and attribution rather than uploaded unchanged. Source files, rerun simulations, measured hardware results, generated illustrations, and proposed future work remain distinct.
