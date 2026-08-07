@@ -1,14 +1,136 @@
 ---
 layout: default
 ---
+{% assign prefix = '/blog/' %}{% if page.lang == 'en' %}{% assign prefix = '/en/blog/' %}{% endif %}
+{% if page.mode == 'start-here' %}
+<main id="main" class="research-start page-shell">
+  <section id="overview" class="indra-portfolio-hero research-section" aria-labelledby="start-here-title">
+    <div class="indra-portfolio-hero__content">
+      <p class="eyebrow">Engineering Research Portfolio</p>
+      <h1 id="start-here-title">{% if page.lang == 'en' %}Research, engineering, and study work in one paper-style view{% else %}연구·설계·전공공부를 논문 페이지처럼 한 번에 보기{% endif %}</h1>
+      <p class="indra-portfolio-hero__lead">{% if page.lang == 'en' %}Radar · Vision AI · Sensor Fusion · Embedded Signal Processing · FPGA RTL/DV{% else %}Radar · Vision AI · Sensor Fusion · Embedded Signal Processing · FPGA RTL/DV{% endif %}</p>
+      <p class="indra-portfolio-hero__author">{% if page.lang == 'en' %}Hyeongrok Ryu · B.S. Candidate, Dankook University · Undergraduate Research Intern{% else %}류형록 · 단국대학교 전자전기공학전공 · 휴먼앤시스템 연구소 학부생 연구 인턴{% endif %}</p>
+      <div class="indra-resource-buttons" aria-label="{% if page.lang == 'en' %}Portfolio resources{% else %}포트폴리오 바로가기{% endif %}">
+        <a href="{% if page.lang == 'en' %}{{ '/en/projects/' | relative_url }}{% else %}{{ '/projects/' | relative_url }}{% endif %}">{% include material-icon.html name='hub' %}<span>{% if page.lang == 'en' %}Projects{% else %}프로젝트{% endif %}</span></a>
+        <a href="{% if page.lang == 'en' %}{{ '/en/publications/' | relative_url }}{% else %}{{ '/publications/' | relative_url }}{% endif %}">{% include material-icon.html name='article' %}<span>{% if page.lang == 'en' %}Papers{% else %}논문{% endif %}</span></a>
+        <a href="https://github.com/Dororok9061" target="_blank" rel="noopener noreferrer">{% include material-icon.html name='code' %}<span>GitHub</span></a>
+        <a href="https://fierce-rodent-308.notion.site/Engineering-Portfolio-FPGA-Radar-Embedded-Systems-Biomedical-AI-3ab518ac7a598121b666e4c7cce8324c" target="_blank" rel="noopener noreferrer">{% include material-icon.html name='book' %}<span>Notion</span></a>
+        <a href="{% if page.lang == 'en' %}{{ '/en/coursework/' | relative_url }}{% else %}{{ '/coursework/' | relative_url }}{% endif %}">{% include material-icon.html name='school' %}<span>{% if page.lang == 'en' %}Coursework{% else %}전공과제{% endif %}</span></a>
+        <a href="{% if page.lang == 'en' %}{{ '/en/contact/' | relative_url }}{% else %}{{ '/contact/' | relative_url }}{% endif %}">{% include material-icon.html name='rocket' %}<span>{% if page.lang == 'en' %}Contact{% else %}연락처{% endif %}</span></a>
+      </div>
+      <p class="indra-portfolio-hero__note">{% if page.lang == 'en' %}Available January 2027 · Planned ViScan booth operation and live demonstration at CES 2027{% else %}2027년 1월 입사 가능 · CES 2027 ViScan 부스 운영 및 제품 시연 예정{% endif %}</p>
+    </div>
+  </section>
+
+  <nav class="research-jump-nav indra-paper-nav" aria-label="{% if page.lang == 'en' %}Research portfolio sections{% else %}연구 포트폴리오 섹션{% endif %}" data-research-nav>
+    <span class="research-jump-nav__label">{% if page.lang == 'en' %}On this page{% else %}이 페이지{% endif %}</span>
+    <div class="research-jump-nav__links">
+      <a href="#abstract" data-research-nav-link="abstract">{% if page.lang == 'en' %}Abstract{% else %}개요{% endif %}</a>
+      <a href="#research-map" data-research-nav-link="research-map">{% if page.lang == 'en' %}Research Map{% else %}연구 지도{% endif %}</a>
+      <a href="#methodology" data-research-nav-link="methodology">Methodology</a>
+      <a href="#results" data-research-nav-link="results">{% if page.lang == 'en' %}Results{% else %}결과{% endif %}</a>
+      <a href="#gallery" data-research-nav-link="gallery">Gallery</a>
+      <a href="#publications" data-research-nav-link="publications">{% if page.lang == 'en' %}Papers{% else %}논문{% endif %}</a>
+      <a href="#learning" data-research-nav-link="learning">{% if page.lang == 'en' %}Study{% else %}공부{% endif %}</a>
+      <a href="#resources" data-research-nav-link="resources">Resources</a>
+    </div>
+  </nav>
+
+  <section id="abstract" class="indra-paper-section research-section">
+    <div class="indra-section-heading">{% include material-icon.html name='article' %}<div><p class="eyebrow">Abstract</p><h2>{% if page.lang == 'en' %}What this portfolio shows{% else %}이 포트폴리오에서 바로 확인할 수 있는 것{% endif %}</h2></div></div>
+    <p>{% if page.lang == 'en' %}This page connects the engineering question, system architecture, implementation, measurements, figures, code, and follow-up work behind each project. The same reading order is used for research projects, conference papers, coursework, technical notes, and external training so that a visitor can move from the question to the actual output without searching through separate archives.{% else %}각 프로젝트에서 어떤 문제를 풀었는지, 시스템을 어떻게 구성했는지, 어떤 코드·회로·실험을 수행했고 어떤 결과를 확인했는지를 한 흐름으로 연결했습니다. 논문, 프로젝트, 전공과제, 기술 블로그, 외부교육도 같은 순서로 읽을 수 있어 여러 저장소와 문서를 따로 뒤지지 않아도 됩니다.{% endif %}</p>
+    <div class="indra-abstract-facts">
+      <span>Radar · Vision AI · Sensor Fusion</span><span>Embedded Systems</span><span>FPGA RTL · DV</span><span>RF · PADS · Control</span>
+    </div>
+  </section>
+
+  <section id="research-map" class="indra-paper-section research-section">
+    <div class="indra-section-heading">{% include material-icon.html name='hub' %}<div><p class="eyebrow">Research Map</p><h2>{% if page.lang == 'en' %}Representative case studies{% else %}대표 연구·설계 Case Study{% endif %}</h2></div></div>
+    <div class="indra-case-grid">
+      {% assign case_ids = 'fmcw-radar,ppg-hrv,fpga-delay-logic,drowsiness-monitor' | split: ',' %}
+      {% for case_id in case_ids %}{% assign project = site.data.projects | where: 'id', case_id | first %}
+      <article class="indra-case-card">
+        <picture><source srcset="{{ project.image_webp | relative_url }}" type="image/webp"><img src="{{ project.image_jpg | relative_url }}" alt="{% if page.lang == 'en' %}{{ project.alt_en }}{% else %}{{ project.alt_ko }}{% endif %}" width="{{ project.image_width }}" height="{{ project.image_height }}" loading="lazy"></picture>
+        <div class="indra-case-card__body"><p class="eyebrow">{% if page.lang == 'en' %}{{ project.domain_en }}{% else %}{{ project.domain_ko }}{% endif %}</p><h3><a href="{% if page.lang == 'en' %}{{ project.en_url | relative_url }}{% else %}{{ project.ko_url | relative_url }}{% endif %}">{% if page.lang == 'en' %}{{ project.title_en }}{% else %}{{ project.title_ko }}{% endif %}</a></h3><p>{% if page.lang == 'en' %}{{ project.summary_en }}{% else %}{{ project.summary_ko }}{% endif %}</p><a class="indra-text-link" href="{% if page.lang == 'en' %}{{ project.en_url | relative_url }}{% else %}{{ project.ko_url | relative_url }}{% endif %}">{% if page.lang == 'en' %}Open full case study{% else %}전체 Case Study 열기{% endif %} →</a></div>
+      </article>{% endfor %}
+      <article class="indra-case-card indra-case-card--viscan">
+        <div class="indra-viscan-flow" aria-label="ViScan state pipeline"><span>Radar Presence</span><span>Face Session</span><span>AR Guide</span><span>Ultrasound</span><span>rPPG</span><span>Report</span></div>
+        <div class="indra-case-card__body"><p class="eyebrow">Vision AI · Sensor Fusion · Product Integration</p><h3>ViScan Smart Mirror · CES 2027</h3><p>{% if page.lang == 'en' %}YuNet/SFace, MediaPipe Pose, low-light/occlusion/multiple-person checks, BGT60TR13C presence and distance, camera–radar fusion, and fail-safe state gating.{% else %}YuNet·SFace, MediaPipe Pose, 저조도·가림·다중인원 판정, BGT60TR13C 존재·거리 정보, 카메라–Radar 센서융합과 Fail-safe 상태 전이를 결합한 시스템입니다.{% endif %}</p><span class="indra-text-link">{% if page.lang == 'en' %}Public details will be expanded after disclosure{% else %}공개 가능한 시점에 기술 상세를 확장합니다{% endif %}</span></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="methodology" class="indra-paper-section research-section">
+    <div class="indra-section-heading">{% include material-icon.html name='analytics' %}<div><p class="eyebrow">Methodology</p><h2>{% if page.lang == 'en' %}A shared engineering workflow{% else %}모든 프로젝트에 공통으로 적용한 설계·검증 흐름{% endif %}</h2></div></div>
+    <figure class="indra-method-flow">
+      <div><span>01</span>{% include material-icon.html name='article' %}<strong>{% if page.lang == 'en' %}Question{% else %}문제 정의{% endif %}</strong><p>{% if page.lang == 'en' %}Define the signal, interface, constraint, and failure condition.{% else %}신호·인터페이스·제약조건과 실패 조건을 먼저 정합니다.{% endif %}</p></div>
+      <div><span>02</span>{% include material-icon.html name='hub' %}<strong>{% if page.lang == 'en' %}Architecture{% else %}시스템 구조{% endif %}</strong><p>{% if page.lang == 'en' %}Separate sensing, processing, communication, control, and outputs.{% else %}센서, 처리, 통신, 제어와 출력을 분리해 연결합니다.{% endif %}</p></div>
+      <div><span>03</span>{% include material-icon.html name='code' %}<strong>{% if page.lang == 'en' %}Implementation{% else %}구현{% endif %}</strong><p>{% if page.lang == 'en' %}Build firmware, RTL, signal processing, models, and UI paths.{% else %}Firmware, RTL, 신호처리, 모델과 UI 경로를 구현합니다.{% endif %}</p></div>
+      <div><span>04</span>{% include material-icon.html name='analytics' %}<strong>{% if page.lang == 'en' %}Verification{% else %}검증{% endif %}</strong><p>{% if page.lang == 'en' %}Use synchronized data, reference models, regression, and failure tests.{% else %}동기 데이터, Reference Model, 회귀시험과 열화 조건을 확인합니다.{% endif %}</p></div>
+      <div><span>05</span>{% include material-icon.html name='gallery' %}<strong>{% if page.lang == 'en' %}Communication{% else %}결과 공개{% endif %}</strong><p>{% if page.lang == 'en' %}Publish figures, code, papers, reports, and reproducible links.{% else %}그림, 코드, 논문, 보고서와 재현 경로를 함께 제공합니다.{% endif %}</p></div>
+      <figcaption>{% if page.lang == 'en' %}The common problem-to-evidence workflow used across the portfolio.{% else %}문제 정의부터 실제 결과와 공개 자료까지 이어지는 공통 흐름입니다.{% endif %}</figcaption>
+    </figure>
+  </section>
+
+  <section id="results" class="indra-paper-section research-section">
+    <div class="indra-section-heading">{% include material-icon.html name='analytics' %}<div><p class="eyebrow">Results</p><h2>{% if page.lang == 'en' %}Results visible without leaving the page{% else %}페이지에서 바로 확인하는 핵심 결과{% endif %}</h2></div></div>
+    <div class="indra-result-grid">
+      <article><strong>600 s</strong><span>{% if page.lang == 'en' %}ECG·SCG·Radar concurrent acquisition{% else %}ECG·SCG·Radar 동시취득{% endif %}</span></article>
+      <article><strong>848</strong><span>{% if page.lang == 'en' %}Aligned cardiac beats{% else %}정렬된 대응 박동{% endif %}</span></article>
+      <article><strong>20 / 26 / 3</strong><span>{% if page.lang == 'en' %}FPGA regression checks and scenarios{% else %}FPGA 회귀검사와 시나리오 PASS{% endif %}</span></article>
+      <article><strong>0.85 / 0.82</strong><span>{% if page.lang == 'en' %}Paper-reported PPG-HRV AUC / F1{% else %}PPG-HRV 논문 보고 AUC / F1{% endif %}</span></article>
+      <article><strong>3</strong><span>{% if page.lang == 'en' %}Conference papers, including two first-author papers{% else %}학술대회 논문 3편 · 제1저자 2편{% endif %}</span></article>
+      <article><strong>CES 2027</strong><span>{% if page.lang == 'en' %}Planned ViScan booth operation and live demonstration{% else %}ViScan 부스 운영·제품 시연 예정{% endif %}</span></article>
+    </div>
+  </section>
+
+  <section id="gallery" class="indra-paper-section research-section">
+    <div class="indra-section-heading">{% include material-icon.html name='gallery' %}<div><p class="eyebrow">Image Gallery</p><h2>{% if page.lang == 'en' %}Hardware, architecture, and result views{% else %}실제 하드웨어·구조도·결과 화면{% endif %}</h2></div></div>
+    <div class="indra-gallery">
+      {% for case_id in case_ids %}{% assign project = site.data.projects | where: 'id', case_id | first %}{% if project.gallery and project.gallery != empty %}{% assign image = project.gallery[0] %}<figure><picture><source srcset="{{ image.webp | relative_url }}" type="image/webp"><img src="{{ image.jpg | relative_url }}" alt="{% if page.lang == 'en' %}{{ image.alt_en }}{% else %}{{ image.alt_ko }}{% endif %}" width="{{ image.width }}" height="{{ image.height }}" loading="lazy"></picture><figcaption>{% if page.lang == 'en' %}{{ image.caption_en }}{% else %}{{ image.caption_ko }}{% endif %}</figcaption></figure>{% endif %}{% endfor %}
+    </div>
+    <p class="indra-figure-note">{% if page.lang == 'en' %}Where a publication-style architecture figure is missing, the site uses a source-based SVG/HTML diagram first. PaperBanana candidates are published only after their labels, arrows, components, and values match the underlying material.{% else %}논문형 구조도가 없는 항목은 먼저 실제 자료에서 다시 그린 SVG·HTML 도식을 사용합니다. PaperBanana 후보는 라벨, 화살표, 구성요소와 수치를 원본과 대조한 뒤에만 교체합니다.{% endif %}</p>
+  </section>
+
+  <section id="publications" class="indra-paper-section research-section">
+    <div class="indra-section-heading">{% include material-icon.html name='article' %}<div><p class="eyebrow">Publications</p><h2>{% if page.lang == 'en' %}First-author conference research{% else %}제1저자 학술대회 연구{% endif %}</h2></div></div>
+    <div class="indra-publication-grid">
+      <article><p class="eyebrow">CICS’25 · pp. 291–292</p><h3><a href="{% if page.lang == 'en' %}{{ '/en/publications/cics25-cnn-hrv/' | relative_url }}{% else %}{{ '/publications/cics25-cnn-hrv/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}CNN-based HRV analysis for cognitive-task performance{% else %}CNN 기반 HRV 분석을 통한 인지 과제 수행 능력 예측{% endif %}</a></h3><p>PPG · STM32F411 · HRV · CNN+Transformer · Poster</p></article>
+      <article><p class="eyebrow">KIEE Summer Conference 2026 · pp. 2413–2414</p><h3><a href="{% if page.lang == 'en' %}{{ '/en/publications/kiee2026-fmcw-aoac/' | relative_url }}{% else %}{{ '/publications/kiee2026-fmcw-aoac/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}FMCW radar analysis of AO/AC candidate timing{% else %}FMCW 레이더 기반 대동맥판 개방·폐쇄 후보 시점 분석{% endif %}</a></h3><p>ECG · SCG · BGT60TR13C · Beat Alignment · Poster</p></article>
+    </div>
+  </section>
+
+  <section id="learning" class="indra-paper-section research-section">
+    <div class="indra-section-heading">{% include material-icon.html name='school' %}<div><p class="eyebrow">Coursework & Study</p><h2>{% if page.lang == 'en' %}Engineering study paths{% else %}전공과제와 기술 공부 경로{% endif %}</h2></div></div>
+    <div class="indra-study-grid">
+      <a href="{% if page.lang == 'en' %}{{ '/en/coursework/' | relative_url }}{% else %}{{ '/coursework/' | relative_url }}{% endif %}">{% include material-icon.html name='school' %}<strong>{% if page.lang == 'en' %}Electrical Engineering Coursework{% else %}전자전기공학 전공과제{% endif %}</strong><span>{% if page.lang == 'en' %}Circuits, control, machines, communication, RF, and digital design{% else %}회로·제어·전동기·통신·RF·디지털설계{% endif %}</span></a>
+      <a href="{% if page.lang == 'en' %}{{ '/en/study/stm32/' | relative_url }}{% else %}{{ '/study/stm32/' | relative_url }}{% endif %}">{% include material-icon.html name='terminal' %}<strong>STM32 · Embedded</strong><span>Clock · ADC · Timer · UART · CMSIS-DSP</span></a>
+      <a href="{% if page.lang == 'en' %}{{ '/en/study/pads/' | relative_url }}{% else %}{{ '/study/pads/' | relative_url }}{% endif %}">{% include material-icon.html name='code' %}<strong>PADS · PCB</strong><span>Symbol · Part · Decal · Layout · DRC · Gerber</span></a>
+      <a href="{% if page.lang == 'en' %}{{ '/en/blog/rf/start-here/' | relative_url }}{% else %}{{ '/blog/rf/start-here/' | relative_url }}{% endif %}">{% include material-icon.html name='hub' %}<strong>RF · Microwave · Radar</strong><span>50 Ω · Smith Chart · S-parameter · FMCW</span></a>
+      <a href="{% if page.lang == 'en' %}{{ '/en/learning/' | relative_url }}{% else %}{{ '/learning/' | relative_url }}{% endif %}">{% include material-icon.html name='book' %}<strong>AI · External Learning</strong><span>CNN · Transformer · VAE · GAN · Diffusion · DiT</span></a>
+      <a href="{{ prefix | append: 'roadmaps/' | relative_url }}">{% include material-icon.html name='rocket' %}<strong>{% if page.lang == 'en' %}All learning roadmaps{% else %}전체 학습 로드맵{% endif %}</strong><span>{% if page.lang == 'en' %}Choose a domain and follow the available notes{% else %}분야를 골라 현재 공개된 글부터 순서대로 보기{% endif %}</span></a>
+    </div>
+  </section>
+
+  <section id="resources" class="indra-paper-section research-section">
+    <div class="indra-section-heading">{% include material-icon.html name='code' %}<div><p class="eyebrow">Code · Data · Resources</p><h2>{% if page.lang == 'en' %}Continue from the source{% else %}코드와 원문에서 계속 보기{% endif %}</h2></div></div>
+    <div class="indra-resource-panel">
+      <a href="https://github.com/Dororok9061" target="_blank" rel="noopener noreferrer">{% include material-icon.html name='code' %}<span><strong>GitHub Repositories</strong><small>{% if page.lang == 'en' %}Source, firmware, RTL, notebooks, figures, and case-study files{% else %}Source, Firmware, RTL, Notebook, 그림과 Case Study 문서{% endif %}</small></span></a>
+      <a href="https://fierce-rodent-308.notion.site/Engineering-Portfolio-FPGA-Radar-Embedded-Systems-Biomedical-AI-3ab518ac7a598121b666e4c7cce8324c" target="_blank" rel="noopener noreferrer">{% include material-icon.html name='book' %}<span><strong>Public Notion</strong><small>{% if page.lang == 'en' %}Integrated project, paper, coursework, and learning archive{% else %}프로젝트·논문·전공과제·공부를 연결한 통합 페이지{% endif %}</small></span></a>
+      <a href="{% if page.lang == 'en' %}{{ '/en/contact/' | relative_url }}{% else %}{{ '/contact/' | relative_url }}{% endif %}">{% include material-icon.html name='rocket' %}<span><strong>{% if page.lang == 'en' %}Recruitment & collaboration{% else %}채용·연구 협업 문의{% endif %}</strong><small>hnryu0515@gmail.com · LinkedIn</small></span></a>
+    </div>
+    <div class="research-citation indra-citation"><div class="research-citation__header"><strong>{% if page.lang == 'en' %}Portfolio citation{% else %}포트폴리오 인용 정보{% endif %}</strong><button type="button" class="research-citation__copy" data-copy-target="portfolio-bibtex" data-copied-label="{% if page.lang == 'en' %}Copied{% else %}복사됨{% endif %}">{% if page.lang == 'en' %}Copy BibTeX{% else %}BibTeX 복사{% endif %}</button></div><pre id="portfolio-bibtex" tabindex="0">@misc{ryu2026engineeringportfolio,
+  author = {Hyeongrok Ryu},
+  title = {Engineering Research Portfolio: Radar, Vision AI, Sensor Fusion, Embedded Systems, and FPGA},
+  year = {2026},
+  url = {https://dororok9061.github.io/}
+}</pre></div>
+  </section>
+</main>
+{% else %}
 <main id="main" class="page page-shell">
   <header class="page-heading"><p class="eyebrow">Engineering Study Log</p><h1>{{ page.title }}</h1></header>
-  {% assign prefix = '/blog/' %}{% if page.lang == 'en' %}{% assign prefix = '/en/blog/' %}{% endif %}
   {% case page.mode %}
-  {% when 'start-here' %}
-    <div class="prose"><p>{% if page.lang == 'en' %}Study and implementation notes in electrical engineering, FPGA, embedded systems, AI, RF/radar, control, and PCB design. Each roadmap points to notes available now.{% else %}전자전기공학 전공 공부와 설계·실습 과정을 자료, 코드, 회로, 파형, 측정 결과와 함께 정리했다. 각 로드맵에는 지금 읽을 수 있는 글만 넣었다.{% endif %}</p></div>
-    <ol class="learning-paths"><li>{% if page.lang == 'en' %}Digital logic → VHDL → FPGA → DV{% else %}디지털논리 → VHDL → FPGA → DV{% endif %}</li><li>{% if page.lang == 'en' %}STM32 basics → ADC/UART → CMSIS-DSP → acquisition{% else %}STM32 기초 → ADC/UART → CMSIS-DSP → 센서수집{% endif %}</li><li>CNN → Vision → Transformer → Generative AI</li><li>PADS Logic → Library → Footprint → Layout → Gerber</li><li>{% if page.lang == 'en' %}Control basics → PI → DC motor → cascaded loops{% else %}제어기초 → PI → DC Motor → 이중루프{% endif %}</li><li>{% if page.lang == 'en' %}Transmission line → Smith chart → S-parameter → Radar{% else %}전송선 → Smith Chart → S-parameter → Radar{% endif %}</li></ol>
-    <p><a class="button-link" href="{{ prefix | append: 'roadmaps/' | relative_url }}">{% if page.lang == 'en' %}Choose a roadmap{% else %}로드맵 선택{% endif %}</a></p>
   {% when 'roadmaps' %}
     <div class="taxonomy-grid">{% for roadmap in site.data.blog_roadmaps %}{% if page.roadmap_ids contains roadmap.id %}<article><h2><a href="{{ prefix | append: 'roadmaps/' | append: roadmap.id | append: '/' | relative_url }}">{% if page.lang == 'en' %}{{ roadmap.title_en }}{% else %}{{ roadmap.title_ko }}{% endif %}</a></h2><p>{% if page.lang == 'en' %}{{ roadmap.goal_en }}{% else %}{{ roadmap.goal_ko }}{% endif %}</p></article>{% endif %}{% endfor %}</div>
   {% when 'categories' %}
@@ -19,3 +141,4 @@ layout: default
     <div class="tag-index">{% assign tags = site.tags | sort %}{% for tag in tags %}{% assign localized = tag[1] | where: 'lang', page.lang %}{% if localized.size > 0 %}<section><h2 id="{{ tag[0] | slugify }}">{{ tag[0] }} <span>{{ localized.size }}</span></h2><ul>{% for post in localized %}<li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>{% endfor %}</ul></section>{% endif %}{% endfor %}</div>
   {% endcase %}
 </main>
+{% endif %}
