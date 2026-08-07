@@ -1,16 +1,42 @@
 <section class="portfolio-main content-section content-section--wide" aria-labelledby="research-case-hub-title">
   <div class="section-heading section-heading--with-link">
     <div>
-      <p class="eyebrow">Research Case Studies</p>
-      <h2 id="research-case-hub-title">{% if page.lang == 'en' %}Read the work like a research page{% else %}연구 페이지처럼 한 번에 보기{% endif %}</h2>
-      <p>{% if page.lang == 'en' %}Projects, papers, coursework, and study notes now share the same problem–methodology–results–figures reading flow.{% else %}프로젝트·논문·전공과제·공부글을 문제–방법–결과–그림 흐름으로 통일했습니다.{% endif %}</p>
+      <p class="eyebrow">Engineering Research Case Studies</p>
+      <h2 id="research-case-hub-title">{% if page.lang == 'en' %}Start with the engineering case studies{% else %}연구·설계 Case Study부터 보기{% endif %}</h2>
+      <p>{% if page.lang == 'en' %}Open a case to see the problem, architecture, implementation, results, figures, code, and follow-up work on one page.{% else %}각 항목을 열면 문제 정의, 시스템 구조, 구현 방법, 결과, 그림, 코드와 후속 과제를 한 페이지에서 바로 볼 수 있습니다.{% endif %}</p>
     </div>
-    <a class="text-link" href="{% if page.lang == 'en' %}{{ '/en/projects/' | relative_url }}{% else %}{{ '/projects/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}Open all projects{% else %}프로젝트 전체 보기{% endif %} →</a>
+    <a class="text-link" href="{% if page.lang == 'en' %}{{ '/en/projects/' | relative_url }}{% else %}{{ '/projects/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}Open all cases{% else %}전체 Case Study 보기{% endif %} →</a>
   </div>
   <div class="home-metric-grid">
-    <article class="home-metric-card"><p class="eyebrow">Radar · Multimodal Sensing</p><h3><a href="{% if page.lang == 'en' %}{{ '/en/projects/fmcw-radar/' | relative_url }}{% else %}{{ '/projects/fmcw-radar/' | relative_url }}{% endif %}">FMCW Radar Cardiac Timing</a></h3><p>{% if page.lang == 'en' %}Question → synchronized acquisition → beat alignment → morphology candidates → results.{% else %}연구 질문 → 동시취득 → Beat 정렬 → Morphology 후보 → 결과 순서로 봅니다.{% endif %}</p></article>
-    <article class="home-metric-card"><p class="eyebrow">Biomedical AI · Embedded</p><h3><a href="{% if page.lang == 'en' %}{{ '/en/projects/ppg-hrv/' | relative_url }}{% else %}{{ '/projects/ppg-hrv/' | relative_url }}{% endif %}">PPG–HRV Cognitive Load</a></h3><p>{% if page.lang == 'en' %}PPG hardware → STM32 acquisition → HRV features → CNN/Transformer → metrics.{% else %}PPG 하드웨어 → STM32 취득 → HRV 특징 → CNN/Transformer → 평가 수치로 이어집니다.{% endif %}</p></article>
-    <article class="home-metric-card"><p class="eyebrow">FPGA · Digital Verification</p><h3><a href="{% if page.lang == 'en' %}{{ '/en/projects/fpga-delay-logic/' | relative_url }}{% else %}{{ '/projects/fpga-delay-logic/' | relative_url }}{% endif %}">FPGA Programmable Delay Logic</a></h3><p>{% if page.lang == 'en' %}Architecture evolution → reference model → regression → waveforms/results.{% else %}Architecture 발전 → Reference Model → Regression → 파형/결과 흐름으로 정리했습니다.{% endif %}</p></article>
-    <article class="home-metric-card"><p class="eyebrow">Coursework · Engineering Notes</p><h3><a href="{% if page.lang == 'en' %}{{ '/en/coursework/' | relative_url }}{% else %}{{ '/coursework/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}Coursework & Study Cases{% else %}전공과제·공부 Case Study{% endif %}</a></h3><p>{% if page.lang == 'en' %}Concept map → technical anchor → calculation/simulation → review context.{% else %}개념 관계 → 기술 앵커 → 계산·시뮬레이션 → 과목 전체 연결 순서로 봅니다.{% endif %}</p></article>
+    <article class="home-metric-card">
+      <p class="eyebrow">Radar · Multimodal Sensing</p>
+      <h3><a href="{% if page.lang == 'en' %}{{ '/en/projects/fmcw-radar/' | relative_url }}{% else %}{{ '/projects/fmcw-radar/' | relative_url }}{% endif %}">FMCW Radar Cardiac Timing</a></h3>
+      <p>{% if page.lang == 'en' %}ECG/SCG/radar acquisition, synchronization, beat alignment, morphology candidates, and CTI outputs.{% else %}ECG·SCG·Radar 동시취득, 시간 정렬, Beat Alignment, Morphology 후보와 CTI 결과를 연결했습니다.{% endif %}</p>
+    </article>
+    <article class="home-metric-card">
+      <p class="eyebrow">Biomedical AI · Embedded</p>
+      <h3><a href="{% if page.lang == 'en' %}{{ '/en/projects/ppg-hrv/' | relative_url }}{% else %}{{ '/projects/ppg-hrv/' | relative_url }}{% endif %}">PPG–HRV Cognitive Load</a></h3>
+      <p>{% if page.lang == 'en' %}PPG hardware, STM32 acquisition, IBI/HRV features, CNN/Transformer, and evaluation results.{% else %}PPG 회로와 STM32 취득부터 IBI·HRV, CNN+Transformer와 평가 결과까지 보여줍니다.{% endif %}</p>
+    </article>
+    <article class="home-metric-card">
+      <p class="eyebrow">FPGA · Digital Verification</p>
+      <h3><a href="{% if page.lang == 'en' %}{{ '/en/projects/fpga-delay-logic/' | relative_url }}{% else %}{{ '/projects/fpga-delay-logic/' | relative_url }}{% endif %}">FPGA Programmable Delay Logic</a></h3>
+      <p>{% if page.lang == 'en' %}Shift register, circular queue, file-driven verification, reference model, regression, and waveforms.{% else %}Shift Register, Circular Queue, File-Driven DV, Reference Model, Regression과 파형을 한데 묶었습니다.{% endif %}</p>
+    </article>
+    <article class="home-metric-card">
+      <p class="eyebrow">Vision · Embedded Systems</p>
+      <h3><a href="{% if page.lang == 'en' %}{{ '/en/projects/drowsiness-monitor/' | relative_url }}{% else %}{{ '/projects/drowsiness-monitor/' | relative_url }}{% endif %}">Real-Time Drowsiness Monitor</a></h3>
+      <p>{% if page.lang == 'en' %}Two Raspberry Pi nodes, PPG, camera/EAR analysis, TCP/IP, GPIO/I²C, and alarm control.{% else %}Raspberry Pi 2대, PPG, Camera/EAR, TCP/IP, GPIO·I²C와 알람 제어 흐름을 볼 수 있습니다.{% endif %}</p>
+    </article>
+    <article class="home-metric-card">
+      <p class="eyebrow">First-Author Research</p>
+      <h3><a href="{% if page.lang == 'en' %}{{ '/en/publications/' | relative_url }}{% else %}{{ '/publications/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}Papers & Poster Presentations{% else %}논문·포스터 발표{% endif %}</a></h3>
+      <p>{% if page.lang == 'en' %}Conference metadata, first-page previews, research questions, methods, figures, results, and citations.{% else %}학회 정보, 논문 첫 페이지, 연구 문제, 방법, 그림, 결과와 인용 정보를 정리했습니다.{% endif %}</p>
+    </article>
+    <article class="home-metric-card">
+      <p class="eyebrow">Coursework · Engineering Notes</p>
+      <h3><a href="{% if page.lang == 'en' %}{{ '/en/coursework/' | relative_url }}{% else %}{{ '/coursework/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}Coursework & Study Cases{% else %}전공과제·공부 Case Study{% endif %}</a></h3>
+      <p>{% if page.lang == 'en' %}Course files, equations, calculations, simulation screens, concept maps, and related technical notes.{% else %}과제 파일, 수식, 계산, 시뮬레이션 화면, 개념 관계와 관련 기술 노트를 이어서 볼 수 있습니다.{% endif %}</p>
+    </article>
   </div>
 </section>
