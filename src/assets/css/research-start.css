@@ -1,0 +1,606 @@
+.material-icon {
+  display: inline-block;
+  width: 1.35rem;
+  height: 1.35rem;
+  flex: 0 0 auto;
+  fill: currentColor;
+  vertical-align: middle;
+}
+
+.research-start {
+  width: min(100% - 2rem, 76rem);
+  padding-top: 2rem;
+  padding-bottom: 5rem;
+}
+
+.indra-portfolio-hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(2rem, 6vw, 4.75rem);
+  border: 1px solid rgb(255 255 255 / 16%);
+  border-radius: 1rem;
+  color: #fff;
+  background:
+    radial-gradient(circle at 82% 16%, rgb(66 165 245 / 30%), transparent 33%),
+    radial-gradient(circle at 8% 90%, rgb(92 107 192 / 34%), transparent 32%),
+    linear-gradient(135deg, #081224 0%, #11264a 52%, #173f5f 100%);
+  box-shadow: 0 1.8rem 4rem rgb(7 18 36 / 22%);
+}
+
+.indra-portfolio-hero::after {
+  position: absolute;
+  inset: auto -4rem -6rem auto;
+  width: 19rem;
+  height: 19rem;
+  border: 1px solid rgb(255 255 255 / 13%);
+  border-radius: 50%;
+  box-shadow: 0 0 0 2.2rem rgb(255 255 255 / 3%), 0 0 0 4.5rem rgb(255 255 255 / 2%);
+  content: "";
+}
+
+.indra-portfolio-hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 65rem;
+}
+
+.indra-portfolio-hero .eyebrow {
+  color: #8bd3ff;
+}
+
+.indra-portfolio-hero h1 {
+  max-width: 18ch;
+  margin: 0.35rem 0 1rem;
+  color: #fff;
+  font-size: clamp(2.35rem, 6vw, 5.2rem);
+  line-height: 1.03;
+  letter-spacing: -0.055em;
+}
+
+.indra-portfolio-hero__lead {
+  max-width: 52rem;
+  margin: 0;
+  color: #d9eeff;
+  font-family: var(--f-header);
+  font-size: clamp(1.05rem, 2vw, 1.4rem);
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.indra-portfolio-hero__author {
+  margin: 0.85rem 0 0;
+  color: rgb(255 255 255 / 78%);
+  font-size: 0.95rem;
+}
+
+.indra-resource-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1.7rem;
+}
+
+.indra-resource-buttons a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.48rem;
+  min-height: 2.75rem;
+  padding: 0.55rem 0.95rem;
+  border: 1px solid rgb(255 255 255 / 24%);
+  border-radius: 999px;
+  color: #fff;
+  background: rgb(255 255 255 / 8%);
+  font-family: var(--f-header);
+  font-size: 0.82rem;
+  font-weight: 750;
+  text-decoration: none;
+  backdrop-filter: blur(8px);
+}
+
+.indra-resource-buttons a:hover {
+  border-color: #8bd3ff;
+  color: #081224;
+  background: #8bd3ff;
+  transform: translateY(-1px);
+}
+
+.indra-portfolio-hero__note {
+  margin: 1.5rem 0 0;
+  color: rgb(255 255 255 / 74%);
+  font-size: 0.84rem;
+}
+
+.indra-paper-nav {
+  top: 0.35rem;
+  margin-top: 1rem;
+}
+
+.indra-paper-section {
+  margin: clamp(2.8rem, 7vw, 5.75rem) 0 0;
+}
+
+.indra-section-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  margin-bottom: 1.3rem;
+}
+
+.indra-section-heading > .material-icon {
+  width: 2rem;
+  height: 2rem;
+  margin-top: 0.1rem;
+  padding: 0.38rem;
+  border-radius: 0.45rem;
+  color: #fff;
+  background: var(--portfolio-accent);
+}
+
+.indra-section-heading h2 {
+  margin: 0.12rem 0 0;
+  font-size: clamp(1.75rem, 3.6vw, 2.8rem);
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+}
+
+.indra-section-heading .eyebrow {
+  margin: 0;
+}
+
+.indra-paper-section > p {
+  max-width: 68rem;
+  font-size: 1.03rem;
+  line-height: 1.85;
+}
+
+.indra-abstract-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 1.2rem;
+}
+
+.indra-abstract-facts span {
+  padding: 0.45rem 0.7rem;
+  border: 1px solid var(--portfolio-border);
+  border-radius: 999px;
+  color: var(--portfolio-text);
+  background: var(--portfolio-surface);
+  font-family: var(--f-header);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.indra-case-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.15rem;
+}
+
+.indra-case-card {
+  overflow: hidden;
+  border: 1px solid var(--portfolio-border);
+  border-radius: 0.75rem;
+  background: var(--portfolio-surface);
+  box-shadow: 0 0.8rem 2.2rem rgb(0 0 0 / 7%);
+}
+
+.indra-case-card picture,
+.indra-case-card > picture {
+  display: block;
+  aspect-ratio: 16 / 8.7;
+  overflow: hidden;
+  background: #fff;
+}
+
+.indra-case-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.indra-case-card__body {
+  padding: 1.15rem 1.2rem 1.3rem;
+}
+
+.indra-case-card h3 {
+  margin: 0.25rem 0 0.55rem;
+  font-size: 1.28rem;
+  line-height: 1.25;
+}
+
+.indra-case-card h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.indra-case-card h3 a:hover {
+  color: var(--portfolio-accent);
+}
+
+.indra-case-card__body > p:not(.eyebrow) {
+  color: var(--portfolio-muted);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+.indra-text-link {
+  color: var(--portfolio-accent);
+  font-family: var(--f-header);
+  font-size: 0.8rem;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.indra-case-card--viscan {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: minmax(18rem, 0.95fr) minmax(0, 1.3fr);
+}
+
+.indra-viscan-flow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.65rem;
+  align-content: center;
+  min-height: 16rem;
+  padding: 1.3rem;
+  color: #fff;
+  background: linear-gradient(135deg, #12263a, #24527a);
+}
+
+.indra-viscan-flow span {
+  display: grid;
+  min-height: 4.7rem;
+  place-items: center;
+  padding: 0.6rem;
+  border: 1px solid rgb(255 255 255 / 22%);
+  border-radius: 0.45rem;
+  background: rgb(255 255 255 / 8%);
+  font-family: var(--f-header);
+  font-size: 0.78rem;
+  font-weight: 750;
+  text-align: center;
+}
+
+.indra-method-flow {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--portfolio-border);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background: var(--portfolio-surface);
+}
+
+.indra-method-flow > div {
+  position: relative;
+  min-height: 15rem;
+  padding: 1.2rem;
+  border-right: 1px solid var(--portfolio-border);
+}
+
+.indra-method-flow > div:last-of-type {
+  border-right: 0;
+}
+
+.indra-method-flow > div:not(:last-of-type)::after {
+  position: absolute;
+  top: 50%;
+  right: -0.72rem;
+  z-index: 3;
+  display: grid;
+  width: 1.4rem;
+  height: 1.4rem;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--portfolio-accent);
+  content: "→";
+  font-size: 0.75rem;
+  transform: translateY(-50%);
+}
+
+.indra-method-flow > div > span {
+  display: block;
+  color: var(--portfolio-accent);
+  font-family: var(--f-header);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.indra-method-flow .material-icon {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  margin: 1rem 0 0.75rem;
+  color: var(--portfolio-accent);
+}
+
+.indra-method-flow strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-family: var(--f-header);
+}
+
+.indra-method-flow p {
+  margin: 0;
+  color: var(--portfolio-muted);
+  font-size: 0.82rem;
+  line-height: 1.58;
+}
+
+.indra-method-flow figcaption {
+  grid-column: 1 / -1;
+  padding: 0.7rem 1rem;
+  border-top: 1px solid var(--portfolio-border);
+  color: var(--portfolio-muted);
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+.indra-result-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.indra-result-grid article {
+  min-height: 9rem;
+  padding: 1.1rem;
+  border: 1px solid var(--portfolio-border);
+  border-radius: 0.6rem;
+  background: linear-gradient(145deg, color-mix(in srgb, var(--portfolio-accent) 7%, var(--portfolio-surface)), var(--portfolio-surface));
+}
+
+.indra-result-grid strong {
+  display: block;
+  color: var(--portfolio-accent);
+  font-family: var(--f-header);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  line-height: 1;
+}
+
+.indra-result-grid span {
+  display: block;
+  margin-top: 0.75rem;
+  color: var(--portfolio-muted);
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+.indra-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.indra-gallery figure {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--portfolio-border);
+  border-radius: 0.65rem;
+  background: #fff;
+}
+
+.indra-gallery img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: contain;
+}
+
+.indra-gallery figcaption {
+  padding: 0.7rem 0.85rem;
+  color: var(--portfolio-muted);
+  background: var(--portfolio-surface);
+  font-size: 0.78rem;
+}
+
+.indra-figure-note {
+  margin-top: 1rem;
+  padding: 0.9rem 1rem;
+  border-left: 3px solid var(--portfolio-accent);
+  color: var(--portfolio-muted);
+  background: color-mix(in srgb, var(--portfolio-accent) 5%, var(--portfolio-surface));
+  font-size: 0.86rem !important;
+}
+
+.indra-publication-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.indra-publication-grid article {
+  padding: 1.2rem;
+  border: 1px solid var(--portfolio-border);
+  border-radius: 0.65rem;
+  background: var(--portfolio-surface);
+}
+
+.indra-publication-grid h3 {
+  font-size: 1.15rem;
+  line-height: 1.4;
+}
+
+.indra-publication-grid h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.indra-publication-grid h3 a:hover {
+  color: var(--portfolio-accent);
+}
+
+.indra-publication-grid article > p:last-child {
+  color: var(--portfolio-muted);
+  font-size: 0.82rem;
+}
+
+.indra-study-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.indra-study-grid > a {
+  display: flex;
+  flex-direction: column;
+  min-height: 10rem;
+  padding: 1rem;
+  border: 1px solid var(--portfolio-border);
+  border-radius: 0.6rem;
+  color: var(--portfolio-text);
+  background: var(--portfolio-surface);
+  text-decoration: none;
+}
+
+.indra-study-grid > a:hover {
+  border-color: var(--portfolio-accent);
+  transform: translateY(-2px);
+}
+
+.indra-study-grid .material-icon {
+  width: 1.75rem;
+  height: 1.75rem;
+  margin-bottom: 1rem;
+  color: var(--portfolio-accent);
+}
+
+.indra-study-grid strong {
+  font-family: var(--f-header);
+}
+
+.indra-study-grid span {
+  margin-top: 0.5rem;
+  color: var(--portfolio-muted);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.indra-resource-panel {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.indra-resource-panel > a {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  min-height: 7.5rem;
+  padding: 1rem;
+  border: 1px solid var(--portfolio-border);
+  border-radius: 0.6rem;
+  color: var(--portfolio-text);
+  background: var(--portfolio-surface);
+  text-decoration: none;
+}
+
+.indra-resource-panel > a:hover {
+  border-color: var(--portfolio-accent);
+}
+
+.indra-resource-panel .material-icon {
+  width: 1.75rem;
+  height: 1.75rem;
+  color: var(--portfolio-accent);
+}
+
+.indra-resource-panel span {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.indra-resource-panel strong {
+  font-family: var(--f-header);
+}
+
+.indra-resource-panel small {
+  color: var(--portfolio-muted);
+  line-height: 1.45;
+}
+
+.indra-citation {
+  margin-top: 1rem;
+}
+
+@media (max-width: 900px) {
+  .indra-method-flow {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .indra-method-flow > div {
+    min-height: 11rem;
+    border-bottom: 1px solid var(--portfolio-border);
+  }
+
+  .indra-method-flow > div:not(:last-of-type)::after {
+    display: none;
+  }
+
+  .indra-result-grid,
+  .indra-study-grid,
+  .indra-resource-panel {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .research-start {
+    width: min(100% - 1.2rem, 76rem);
+    padding-top: 0.75rem;
+  }
+
+  .indra-portfolio-hero {
+    padding: 1.45rem 1.1rem 1.6rem;
+    border-radius: 0.65rem;
+  }
+
+  .indra-portfolio-hero h1 {
+    max-width: none;
+    font-size: clamp(2.05rem, 10vw, 3.15rem);
+    line-height: 1.07;
+  }
+
+  .indra-resource-buttons a {
+    flex: 1 1 calc(50% - 0.4rem);
+    justify-content: center;
+  }
+
+  .indra-case-grid,
+  .indra-gallery,
+  .indra-publication-grid,
+  .indra-result-grid,
+  .indra-study-grid,
+  .indra-resource-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .indra-case-card--viscan {
+    grid-column: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .indra-viscan-flow {
+    grid-template-columns: repeat(2, 1fr);
+    min-height: 0;
+  }
+
+  .indra-method-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .indra-method-flow > div {
+    min-height: 0;
+    border-right: 0;
+  }
+
+  .indra-gallery img {
+    aspect-ratio: 4 / 3;
+  }
+}
