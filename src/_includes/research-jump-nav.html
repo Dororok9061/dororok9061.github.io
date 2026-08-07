@@ -4,7 +4,13 @@
   <span class="research-jump-nav__label">{% if page.lang == 'en' %}On this page{% else %}이 페이지{% endif %}</span>
   <div class="research-jump-nav__links">
     {% for item in research_items %}
-      <a href="#{{ item.id }}" data-research-nav-link="{{ item.id }}">{% if page.lang == 'en' %}{{ item.en }}{% else %}{{ item.ko }}{% endif %}</a>
+      {% assign skip_item = false %}
+      {% if include.kind == 'project' %}
+        {% unless project_problem %}
+          {% if item.id == 'problem' or item.id == 'architecture' or item.id == 'methodology' or item.id == 'results' %}{% assign skip_item = true %}{% endif %}
+        {% endunless %}
+      {% endif %}
+      {% unless skip_item %}<a href="#{{ item.id }}" data-research-nav-link="{{ item.id }}">{% if page.lang == 'en' %}{{ item.en }}{% else %}{{ item.ko }}{% endif %}</a>{% endunless %}
     {% endfor %}
   </div>
 </nav>
