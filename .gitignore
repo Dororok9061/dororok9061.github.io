@@ -29,5 +29,8 @@ __pycache__/
 *.zip
 *.7z
 *.rar
+src/projects/pcb-visual-inspection/research-portal/Assets/
+src/projects/pcb-visual-inspection/research-portal/AssetsWeb/paper_style/pcb_paper_style_contact_sheet.webp
+src/projects/pcb-visual-inspection/research-portal/AssetsWeb/paper_style/pcb_style_fig31_methodology_statistics_board.webp
 .env
 .env.*

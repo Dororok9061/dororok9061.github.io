@@ -75,6 +75,13 @@ label, arrow, component, and numeric value has been checked against the linked
 source. Generated figures must not invent measurements, hardware, model scores,
 PPA, clinical claims, certifications, or CES award results.
 
+The PCB inspection publication portal is mirrored as a full static GitHub Pages
+workbench, not only as a compact gallery summary:
+
+- [PCB Research Publication Workbench](https://dororok9061.github.io/projects/pcb-visual-inspection/research-portal/?fresh=20260808-public-mirror-v1#methodology)
+- [PCB project page](https://dororok9061.github.io/projects/pcb-visual-inspection/)
+- [PCB mirror blog note](https://dororok9061.github.io/blog/2026/08/08/pcb-research-portal-public-mirror/)
+
 ## Theme and architecture
 
 - Jekyll `4.4.1`

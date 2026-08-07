@@ -408,12 +408,14 @@
   alt_ko: PCB capture and quality gate figure with separated camera, video, and ROI panels
   alt_en: PCB capture and quality-gate figure with separated camera, video, and ROI panels
   evidence_ko:
-    - "PCB 전용 공개 홈페이지의 v8 분리형 갤러리와 클릭 확대 동작"
+    - "PCB 전용 공개 홈페이지의 v9 분리형 갤러리와 클릭 확대 동작"
     - "fig31a부터 fig31j까지 900×900 논문형 정사각형 그림"
+    - "GitHub Pages에 미러된 전체 Research Publication Workbench"
     - "PatchCore, FR-PatchCore, DINOv3, PaperBanana 기반 그림 재작성 기록"
   evidence_en:
-    - "v8 separated gallery and click-to-enlarge behavior in the PCB public homepage"
+    - "v9 separated gallery and click-to-enlarge behavior in the PCB public homepage"
     - "Ten 900×900 paper-style square figures, fig31a through fig31j"
+    - "Full Research Publication Workbench mirrored into GitHub Pages"
     - "PatchCore, FR-PatchCore, DINOv3, and PaperBanana-based figure-redraw record"
   contribution_ko:
     - "VIScan 등 PCB inspection과 무관한 항목 제외"
@@ -443,12 +445,14 @@
     - "Configured the homepage gallery around individually clickable enlarged images"
   results_ko:
     - "PCB 방법론 figure 10장을 독립 카드로 분리"
+    - "로컬 8765 포털을 GitHub Pages 공개 경로에 미러"
     - "브라우저에서 첫 방법론 figure 클릭 확대 동작 확인"
-    - "PCB 저장소 PR #13에 v8 gallery cache-bust와 분리형 figure references 푸시"
+    - "PCB 저장소와 공개 허브에 v9 gallery cache-bust와 분리형 figure references 반영"
   results_en:
     - "Separated ten PCB methodology figures into independent cards"
+    - "Mirrored the local 8765 portal into a public GitHub Pages route"
     - "Verified click-to-enlarge behavior for the first methodology figure in the browser"
-    - "Pushed the v8 gallery cache-bust and separated figure references to PCB repository PR #13"
+    - "Published the v9 gallery cache-bust and separated figure references in the PCB repo and public hub"
   gallery:
     - webp: /assets/images/projects/pcb-visual-inspection/pcb_fig31a_capture_quality_gate.webp
       jpg: /assets/images/projects/pcb-visual-inspection/pcb_fig31a_capture_quality_gate.jpg
@@ -534,5 +538,5 @@
   ko_url: /projects/pcb-visual-inspection/
   en_url: /en/projects/pcb-visual-inspection/
   repository: https://github.com/Dororok9061/PCB-Visual-Inspection-Studio
-  pages_ko: https://dororok9061.github.io/projects/pcb-visual-inspection/
-  pages_en: https://dororok9061.github.io/en/projects/pcb-visual-inspection/
+  pages_ko: https://dororok9061.github.io/projects/pcb-visual-inspection/research-portal/?fresh=20260808-public-mirror-v1#methodology
+  pages_en: https://dororok9061.github.io/projects/pcb-visual-inspection/research-portal/?fresh=20260808-public-mirror-v1#methodology
