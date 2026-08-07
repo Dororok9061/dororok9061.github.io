@@ -1873,10 +1873,48 @@ summary:focus-visible {
   background: var(--portfolio-surface);
 }
 
+.project-gallery__zoom {
+  position: relative;
+  display: grid;
+  width: 100%;
+  min-height: clamp(15rem, 34vw, 28rem);
+  padding: 0;
+  place-items: center;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  cursor: zoom-in;
+}
+
+.project-gallery__zoom:focus-visible {
+  outline: 3px solid var(--portfolio-accent);
+  outline-offset: 0.35rem;
+}
+
 .project-gallery img {
   width: 100%;
+  aspect-ratio: 1 / 1;
   max-height: 34rem;
   object-fit: contain;
+}
+
+.project-gallery__zoom-badge {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  display: inline-grid;
+  min-width: 2.1rem;
+  height: 2.1rem;
+  padding: 0 0.45rem;
+  place-items: center;
+  border: 1px solid rgb(255 255 255 / 0.72);
+  border-radius: 999px;
+  color: white;
+  background: rgb(15 23 42 / 0.72);
+  box-shadow: 0 0.45rem 1.2rem rgb(15 23 42 / 0.18);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0;
 }
 
 .lightbox {

@@ -49,11 +49,12 @@ layout: default
   <section class="content-section content-section--wide" aria-labelledby="selected-projects-title">
     <div class="section-heading section-heading--with-link"><div><p class="eyebrow">Selected Projects</p><h2 id="selected-projects-title">{% if page.lang == 'en' %}Key results at a glance{% else %}대표 프로젝트 정량 결과{% endif %}</h2></div><a class="text-link" href="{% if page.lang == 'en' %}{{ '/en/projects/' | relative_url }}{% else %}{{ '/projects/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}View all projects{% else %}전체 프로젝트 보기{% endif %} <span aria-hidden="true">→</span></a></div>
     <div class="home-metric-grid">
-      {% assign featured_ids = 'fmcw-radar,fpga-delay-logic,ppg-hrv' | split: ',' %}
+      {% assign featured_ids = 'pcb-visual-inspection,fmcw-radar,fpga-delay-logic,ppg-hrv' | split: ',' %}
       {% for featured_id in featured_ids %}{% assign project = site.data.projects | where: 'id', featured_id | first %}
       <article class="home-metric-card">
         <p class="eyebrow">{% if page.lang == 'en' %}{{ project.domain_en }}{% else %}{{ project.domain_ko }}{% endif %}</p>
         <h3><a href="{% if page.lang == 'en' %}{{ project.en_url | relative_url }}{% else %}{{ project.ko_url | relative_url }}{% endif %}">{% if page.lang == 'en' %}{{ project.title_en }}{% else %}{{ project.title_ko }}{% endif %}</a></h3>
+        {% if project.id == 'pcb-visual-inspection' %}<dl class="metric-list"><div><dt>Figures</dt><dd>10</dd></div><div><dt>Gallery</dt><dd>Zoom</dd></div></dl><p>PatchCore · FR-PatchCore · DINOv3 · Paper-style figure atlas</p>{% endif %}
         {% if project.id == 'fmcw-radar' %}<dl class="metric-list"><div><dt>Acquisition</dt><dd>600 s</dd></div><div><dt>Aligned beats</dt><dd>848</dd></div></dl><p>ECG · SCG · BGT60TR13C Radar</p>{% endif %}
         {% if project.id == 'fpga-delay-logic' %}<dl class="metric-list"><div><dt>Project 1</dt><dd>20 PASS</dd></div><div><dt>Project 2</dt><dd>26 PASS</dd></div><div><dt>Project 3</dt><dd>3 PASS</dd></div></dl><p>Parameterized RTL · Reference Model · File-Driven Verification</p>{% endif %}
         {% if project.id == 'ppg-hrv' %}<dl class="metric-list"><div><dt>Paper AUC</dt><dd>0.85</dd></div><div><dt>Paper F1</dt><dd>0.82</dd></div></dl><p>PPG · STM32 · HRV · CNN · Paper-reported performance</p>{% endif %}

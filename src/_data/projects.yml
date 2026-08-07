@@ -389,3 +389,150 @@
   repository: https://github.com/Dororok9061/electrical-engineering-coursework-portfolio
   pages_ko: https://dororok9061.github.io/electrical-engineering-coursework-portfolio/
   pages_en: https://dororok9061.github.io/electrical-engineering-coursework-portfolio/en/
+
+- id: pcb-visual-inspection
+  title_ko: PCB Visual Inspection Studio
+  title_en: PCB Visual Inspection Studio
+  domain_ko: PCB Inspection · Vision AI · Publication System
+  domain_en: PCB Inspection · Vision AI · Publication System
+  summary_ko: F411 보드 검사 영상을 기준으로 품질 게이트, ROI 정렬, PatchCore/FR-PatchCore, DINOv3 계열 특징, 논문형 그림과 공개 홈페이지를 한 흐름으로 정리한 PCB inspection 프로젝트입니다.
+  summary_en: A PCB inspection project that connects F411-board visual intake, quality gating, ROI alignment, PatchCore/FR-PatchCore, DINOv3-style features, paper figures, and public project publishing.
+  status: PUBLICATION BUILD
+  status_class: measured
+  status_label_ko: 논문형 그림·홈페이지 반영
+  status_label_en: Paper-style figures and homepage integrated
+  image_webp: /assets/images/projects/pcb-visual-inspection/pcb_fig31a_capture_quality_gate.webp
+  image_jpg: /assets/images/projects/pcb-visual-inspection/pcb_fig31a_capture_quality_gate.jpg
+  image_width: 900
+  image_height: 900
+  alt_ko: PCB capture and quality gate figure with separated camera, video, and ROI panels
+  alt_en: PCB capture and quality-gate figure with separated camera, video, and ROI panels
+  evidence_ko:
+    - "PCB 전용 공개 홈페이지의 v8 분리형 갤러리와 클릭 확대 동작"
+    - "fig31a부터 fig31j까지 900×900 논문형 정사각형 그림"
+    - "PatchCore, FR-PatchCore, DINOv3, PaperBanana 기반 그림 재작성 기록"
+  evidence_en:
+    - "v8 separated gallery and click-to-enlarge behavior in the PCB public homepage"
+    - "Ten 900×900 paper-style square figures, fig31a through fig31j"
+    - "PatchCore, FR-PatchCore, DINOv3, and PaperBanana-based figure-redraw record"
+  contribution_ko:
+    - "VIScan 등 PCB inspection과 무관한 항목 제외"
+    - "카메라/영상 입력, 품질 게이트, ROI, 특징 추출, 검토/배포 흐름 재정리"
+    - "논문, GitHub, Notion, 홈페이지에 재사용 가능한 낱장 figure atlas 구성"
+  contribution_en:
+    - "Removed non-PCB-inspection VIScan material"
+    - "Reorganized camera/video intake, quality gate, ROI, feature extraction, review, and publication flow"
+    - "Built a reusable single-figure atlas for paper, GitHub, Notion, and homepage reuse"
+  boundary_ko: 현재 공개 허브에는 논문형 그림과 프로젝트 연결을 게시합니다. 수치 성능 주장은 로컬 실험 로그와 gold-label 검증이 있는 범위로 제한하고, 생산 수율이나 제조 결함 판정 claim은 별도 검증 전까지 보류합니다.
+  boundary_en: The public hub publishes the paper-style figures and project links. Quantitative claims remain limited to locally verified evidence; production-yield and manufacturing-defect claims are held until gold-label validation is approved.
+  problem_ko: PCB 검사 프로젝트에서 카메라 입력, ROI 정렬, anomaly heatmap, mask, 표, 논문 그림, 홈페이지 게시물이 서로 흩어지지 않도록 하나의 출판 가능한 구조로 묶는 문제입니다.
+  problem_en: The project turns camera intake, ROI alignment, anomaly heatmaps, masks, tables, paper figures, and homepage publishing into one coherent PCB inspection publication structure.
+  architecture_ko: USB/industrial camera 또는 파일 입력 → 품질 게이트 → ROI 정렬 → ViT/DINO/PatchCore 계열 특징 → anomaly score/heatmap/mask → reviewer gate → 논문·GitHub·Notion·홈페이지 출판.
+  architecture_en: USB/industrial camera or file intake → quality gate → ROI alignment → ViT/DINO/PatchCore-style features → anomaly score/heatmap/mask → reviewer gate → paper, GitHub, Notion, and homepage publishing.
+  stack_ko: [Python, OpenCV, PyTorch, CUDA, PatchCore, FR-PatchCore, DINOv3, Jekyll, GitHub Pages, Notion]
+  stack_en: [Python, OpenCV, PyTorch, CUDA, PatchCore, FR-PatchCore, DINOv3, Jekyll, GitHub Pages, Notion]
+  data_flow_ko: 원본 frame과 ROI evidence를 분리 저장하고, 각 figure는 contact sheet가 아니라 독립된 정사각형 panel로 공개 페이지와 논문에 재사용합니다.
+  data_flow_en: Raw frames and ROI evidence are kept separate, and each figure is reused as an independent square panel rather than a bundled contact sheet.
+  methods_ko:
+    - "PaperBanana reference-intake 방식으로 참고 묶음의 레이아웃 문법을 추출"
+    - "박스 안 글자, 축 라벨, 화살표, color bar, 중앙 정렬을 정사각형 figure 기준으로 재작성"
+    - "홈페이지 갤러리는 낱장 이미지 클릭 확대를 기본 동작으로 구성"
+  methods_en:
+    - "Extracted layout grammar from the supplied figure bundles using a PaperBanana-style reference-intake route"
+    - "Redrew text boxes, axis labels, arrows, color bars, and centered panels as square publication figures"
+    - "Configured the homepage gallery around individually clickable enlarged images"
+  results_ko:
+    - "PCB 방법론 figure 10장을 독립 카드로 분리"
+    - "브라우저에서 첫 방법론 figure 클릭 확대 동작 확인"
+    - "PCB 저장소 PR #13에 v8 gallery cache-bust와 분리형 figure references 푸시"
+  results_en:
+    - "Separated ten PCB methodology figures into independent cards"
+    - "Verified click-to-enlarge behavior for the first methodology figure in the browser"
+    - "Pushed the v8 gallery cache-bust and separated figure references to PCB repository PR #13"
+  gallery:
+    - webp: /assets/images/projects/pcb-visual-inspection/pcb_fig31a_capture_quality_gate.webp
+      jpg: /assets/images/projects/pcb-visual-inspection/pcb_fig31a_capture_quality_gate.jpg
+      width: 900
+      height: 900
+      alt_ko: PCB camera, video, ROI, quality gate flow drawn as a square paper figure
+      alt_en: PCB camera, video, ROI, and quality-gate flow drawn as a square paper figure
+      caption_ko: fig31a. capture and quality gate
+      caption_en: fig31a. capture and quality gate
+    - webp: /assets/images/projects/pcb-visual-inspection/pcb_fig31b_vit_dino_patch_path.webp
+      jpg: /assets/images/projects/pcb-visual-inspection/pcb_fig31b_vit_dino_patch_path.jpg
+      width: 900
+      height: 900
+      alt_ko: PCB ViT, DINOv3, patch feature path drawn as a square paper figure
+      alt_en: PCB ViT, DINOv3, and patch-feature path drawn as a square paper figure
+      caption_ko: fig31b. ViT/DINO patch path
+      caption_en: fig31b. ViT/DINO patch path
+    - webp: /assets/images/projects/pcb-visual-inspection/pcb_fig31c_registration_memory_bank.webp
+      jpg: /assets/images/projects/pcb-visual-inspection/pcb_fig31c_registration_memory_bank.jpg
+      width: 900
+      height: 900
+      alt_ko: PCB registration and memory-bank flow drawn as a square paper figure
+      alt_en: PCB registration and memory-bank flow drawn as a square paper figure
+      caption_ko: fig31c. registration and memory bank
+      caption_en: fig31c. registration and memory bank
+    - webp: /assets/images/projects/pcb-visual-inspection/pcb_fig31d_heatmap_mask_fusion.webp
+      jpg: /assets/images/projects/pcb-visual-inspection/pcb_fig31d_heatmap_mask_fusion.jpg
+      width: 900
+      height: 900
+      alt_ko: PCB heatmap and mask fusion result panels drawn as a square paper figure
+      alt_en: PCB heatmap and mask fusion result panels drawn as a square paper figure
+      caption_ko: fig31d. heatmap and mask fusion
+      caption_en: fig31d. heatmap and mask fusion
+    - webp: /assets/images/projects/pcb-visual-inspection/pcb_fig31e_domain_boundary.webp
+      jpg: /assets/images/projects/pcb-visual-inspection/pcb_fig31e_domain_boundary.jpg
+      width: 900
+      height: 900
+      alt_ko: PCB source and synthetic domain boundary evidence drawn as a square paper figure
+      alt_en: PCB source and synthetic domain boundary evidence drawn as a square paper figure
+      caption_ko: fig31e. domain boundary
+      caption_en: fig31e. domain boundary
+    - webp: /assets/images/projects/pcb-visual-inspection/pcb_fig31f_publication_hub_loop.webp
+      jpg: /assets/images/projects/pcb-visual-inspection/pcb_fig31f_publication_hub_loop.jpg
+      width: 900
+      height: 900
+      alt_ko: PCB GitHub, Notion, homepage publication loop drawn as a square paper figure
+      alt_en: PCB GitHub, Notion, and homepage publication loop drawn as a square paper figure
+      caption_ko: fig31f. publication hub loop
+      caption_en: fig31f. publication hub loop
+    - webp: /assets/images/projects/pcb-visual-inspection/pcb_fig31g_score_distribution.webp
+      jpg: /assets/images/projects/pcb-visual-inspection/pcb_fig31g_score_distribution.jpg
+      width: 900
+      height: 900
+      alt_ko: PCB anomaly score distribution plot drawn as a square paper figure
+      alt_en: PCB anomaly-score distribution plot drawn as a square paper figure
+      caption_ko: fig31g. score distribution
+      caption_en: fig31g. score distribution
+    - webp: /assets/images/projects/pcb-visual-inspection/pcb_fig31h_embedding_clusters.webp
+      jpg: /assets/images/projects/pcb-visual-inspection/pcb_fig31h_embedding_clusters.jpg
+      width: 900
+      height: 900
+      alt_ko: PCB feature embedding cluster plot drawn as a square paper figure
+      alt_en: PCB feature-embedding cluster plot drawn as a square paper figure
+      caption_ko: fig31h. embedding clusters
+      caption_en: fig31h. embedding clusters
+    - webp: /assets/images/projects/pcb-visual-inspection/pcb_fig31i_loss_convergence.webp
+      jpg: /assets/images/projects/pcb-visual-inspection/pcb_fig31i_loss_convergence.jpg
+      width: 900
+      height: 900
+      alt_ko: PCB loss convergence plot drawn as a square paper figure
+      alt_en: PCB loss-convergence plot drawn as a square paper figure
+      caption_ko: fig31i. loss convergence
+      caption_en: fig31i. loss convergence
+    - webp: /assets/images/projects/pcb-visual-inspection/pcb_fig31j_dataset_balance.webp
+      jpg: /assets/images/projects/pcb-visual-inspection/pcb_fig31j_dataset_balance.jpg
+      width: 900
+      height: 900
+      alt_ko: PCB dataset balance chart drawn as a square paper figure
+      alt_en: PCB dataset-balance chart drawn as a square paper figure
+      caption_ko: fig31j. dataset balance
+      caption_en: fig31j. dataset balance
+  categories: [computer-vision, research]
+  ko_url: /projects/pcb-visual-inspection/
+  en_url: /en/projects/pcb-visual-inspection/
+  repository: https://github.com/Dororok9061/PCB-Visual-Inspection-Studio
+  pages_ko: https://dororok9061.github.io/projects/pcb-visual-inspection/
+  pages_en: https://dororok9061.github.io/en/projects/pcb-visual-inspection/
