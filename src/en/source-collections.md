@@ -42,7 +42,7 @@ alternate_lang: ko
     <div class="source-topic-grid">{% for group in collection.topic_groups %}<article><strong>{{ group.title_en }}</strong><span>{{ group.item_count }} items</span></article>{% endfor %}</div>
     {% endif %}
     <div class="paper-case-card__links">
-      {% for destination in collection.destinations %}<a href="{% if destination == '/defense/' %}{{ '/en/defense/' | relative_url }}{% elsif destination == '/coursework/' %}{{ '/en/coursework/' | relative_url }}{% elsif destination contains '/projects/' %}{{ '/en' | append: destination | relative_url }}{% else %}{{ destination | relative_url }}{% endif %}">Open related page</a>{% endfor %}
+      {% for destination in collection.destinations %}<a href="{{ '/en' | append: destination | relative_url }}">Open related page</a>{% endfor %}
     </div>
   </section>
   {% endfor %}
