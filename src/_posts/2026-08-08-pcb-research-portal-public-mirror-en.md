@@ -30,13 +30,15 @@ related_projects: [pcb-visual-inspection]
 related_posts: [evidence-status]
 tags: [pcb-inspection, github-pages, paperbanana, figure-atlas, lightbox]
 cover_image: /projects/pcb-visual-inspection/research-portal/AssetsWeb/paper_style/pcb_style_fig09_frpatchcore_pipeline.webp
-thumbnail: /projects/pcb-visual-inspection/research-portal/AssetsWeb/paper_style/pcb_style_fig31a_capture_quality_gate.webp
+thumbnail: /projects/pcb-visual-inspection/research-portal/AssetsWeb/paper_style/pcb_style_fig09_frpatchcore_pipeline.webp
 image_alt: PCB inspection pipeline and paper-style figure atlas
 draft: false
 published: true
 revision_history:
-  - { date: 2026-08-07, change: Mirrored the local 8765 portal into a public GitHub Pages route }
-  - { date: 2026-08-10, change: Added primary pipeline, architecture, and result figures directly to the blog article }
+  - date: 2026-08-07
+    change: Mirrored the local portal into a public GitHub Pages route
+  - date: 2026-08-10
+    change: Added primary pipeline and architecture figures to the blog article
 toc:
   - { id: mirror, title: Public mirror route }
   - { id: key-figures, title: Key figures }
