@@ -42,11 +42,24 @@ HTTP_RESOURCE = re.compile(
     re.IGNORECASE,
 )
 # The bilingual course/track routes duplicate the shared static shell in
-# generated HTML. The research landing pages add two reader-facing routes,
-# Material-style SVG controls, and one source-based methodology figure. Keep a
-# narrow 12.5 MB aggregate budget while the per-file and blocked-extension
-# checks below continue to reject unoptimized assets and source archives.
-MAX_SITE_BYTES = 12_500_000
+# generated HTML. The Minecraft research-world landing scene intentionally
+# ships Blender-exported GLB models and the source template audio locally, so
+# keep a separate allowance while retaining the older 1 MB rule everywhere else.
+MAX_SITE_BYTES = 115_000_000
+LARGE_PUBLIC_ASSET_PREFIXES = (
+    "assets/minecraft-world/models/",
+    "assets/minecraft-world/audio/music/",
+    "assets/minecraft-world/images/",
+)
+LARGE_PUBLIC_ASSET_EXTENSIONS = {".glb", ".mp3", ".ogg", ".jpg", ".png", ".webp"}
+MAX_LARGE_PUBLIC_ASSET_BYTES = 15_000_000
+
+
+def is_large_public_asset(relative: str, suffix: str) -> bool:
+    return (
+        relative.startswith(LARGE_PUBLIC_ASSET_PREFIXES)
+        and suffix.lower() in LARGE_PUBLIC_ASSET_EXTENSIONS
+    )
 
 
 class PageParser(HTMLParser):
@@ -168,7 +181,11 @@ def check_site(root: Path) -> list[str]:
         relative = path.relative_to(root).as_posix()
         if path.suffix.lower() in BLOCKED_EXTENSIONS:
             errors.append(f"{relative}: blocked file extension {path.suffix}")
-        if path.stat().st_size > 1_000_000:
+        size = path.stat().st_size
+        if is_large_public_asset(relative, path.suffix):
+            if size > MAX_LARGE_PUBLIC_ASSET_BYTES:
+                errors.append(f"{relative}: Minecraft world asset exceeds 15 MB")
+        elif size > 1_000_000:
             errors.append(f"{relative}: public file exceeds 1 MB")
 
     text_files = [

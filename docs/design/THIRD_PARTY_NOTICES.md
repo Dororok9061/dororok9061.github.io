@@ -40,5 +40,6 @@ owners. Their mention does not imply endorsement.
 ## External theme references
 
 - `jekyll-theme-simplex 0.9.8.15`: MIT; actual Gem Theme and required SCSS/WOFF2 assets used
+- `andrewwoan/woan-minecraft-folio`: MIT, Copyright © 2025 Andrew Woan; Blender-exported GLB models, Minecraft-style font files, cube map assets, and local audio files are adapted for the `assets/minecraft-world/` homepage scene. The original project credits its audio sources as myinstants.com, voicemod.net, and downloads.khinsider.com.
 - `pRoJEct-NeGYa`: MIT; no final code or assets copied
 - `keemtj/portfolio`: no license detected; no final code or assets copied

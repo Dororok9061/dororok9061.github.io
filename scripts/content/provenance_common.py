@@ -76,7 +76,7 @@ def public_asset(asset: str) -> Path:
 
 
 def asset_exists(asset: str) -> bool:
-    if public_asset(asset).is_file():
+    if public_asset(asset).is_file() or public_asset(asset).is_dir():
         return True
     gemfile = GEMFILE.read_text(encoding="utf-8")
     return asset in THEME_ASSETS and 'gem "jekyll-theme-simplex", "= 0.9.8.15"' in gemfile

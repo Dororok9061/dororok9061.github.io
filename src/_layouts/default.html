@@ -5,6 +5,7 @@
 </head>
 <body>
   <a class="skip-link" href="#main">{% if page.lang == 'en' %}Skip to content{% else %}본문으로 건너뛰기{% endif %}</a>
+  {% if page.layout == 'home' %}{% include minecraft-world.html %}{% endif %}
   {% include header.html %}
   {% if page.layout == 'home' %}{% include research-case-hub.html %}{% endif %}
   {{ content }}
@@ -16,6 +17,7 @@
     </figure>
   </dialog>
   {% include footer.html %}
+  {% if page.layout == 'home' %}<script type="module" src="{{ '/assets/js/minecraft-world.bundle.js' | relative_url }}"></script>{% endif %}
   <script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
   <script src="{{ '/assets/js/research-case.js' | relative_url }}" defer></script>
 </body>

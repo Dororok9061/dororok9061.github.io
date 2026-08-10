@@ -1,0 +1,38 @@
+<section class="minecraft-world" id="minecraft-world" data-minecraft-world aria-labelledby="minecraft-world-title">
+  <canvas class="minecraft-world__canvas" data-minecraft-world-canvas aria-label="{% if page.lang == 'en' %}Interactive Minecraft-style research portfolio world{% else %}마인크래프트 스타일의 인터랙티브 연구 포트폴리오 월드{% endif %}"></canvas>
+
+  <div class="minecraft-world__fallback" data-minecraft-fallback hidden>
+    <p class="minecraft-world__fallback-title">Research Blocks</p>
+    <p>{% if page.lang == 'en' %}The 3D scene could not start on this device. The full portfolio remains available below.{% else %}이 기기에서 3D 장면을 시작하지 못했습니다. 전체 포트폴리오는 아래 기존 섹션에서 계속 볼 수 있습니다.{% endif %}</p>
+  </div>
+
+  <div class="minecraft-world__loading" data-minecraft-loading>
+    <div class="minecraft-world__loading-half minecraft-world__loading-half--top"></div>
+    <div class="minecraft-world__loading-half minecraft-world__loading-half--bottom"></div>
+    <div class="minecraft-world__loading-content">
+      <p class="minecraft-world__hello" id="minecraft-world-title">{% if page.lang == 'en' %}Hi 👋! Thanks for stopping by!! ❤️{% else %}Hi 👋! 연구 월드에 들러주셔서 감사합니다!! ❤️{% endif %}</p>
+      <p class="minecraft-world__guide">🖱️ Drag/Scroll Up/Down to Navigate~ 👈</p>
+      <div class="minecraft-world__progress" data-minecraft-progress>
+        <span data-minecraft-progress-bar></span>
+      </div>
+      <p class="minecraft-world__percent" data-minecraft-percent>0%</p>
+      <button class="minecraft-world__enter" type="button" data-minecraft-enter hidden>Enter World</button>
+    </div>
+  </div>
+
+  <button class="minecraft-world__audio" type="button" data-minecraft-audio-toggle aria-pressed="true">
+    <span data-minecraft-audio-label>Sound On</span>
+  </button>
+
+  <div class="minecraft-world__hud" data-minecraft-hud>
+    <p class="minecraft-world__hud-kicker" data-minecraft-section-kicker>Research Blocks</p>
+    <h2 data-minecraft-section-title>{% if page.lang == 'en' %}Radar, Vision AI, Embedded, PCB, AI study{% else %}Radar, Vision AI, Embedded, PCB, AI Study{% endif %}</h2>
+    <p data-minecraft-section-body>{% if page.lang == 'en' %}Scroll through the room to open project, paper, blog, GitHub, and Notion routes without losing the existing portfolio content.{% else %}방을 따라 이동하면서 프로젝트, 논문, 블로그, GitHub, Notion 경로를 기존 포트폴리오 내용과 함께 확인합니다.{% endif %}</p>
+    <div class="minecraft-world__chips" data-minecraft-section-chips></div>
+    <a class="minecraft-world__link" href="/projects/" data-minecraft-section-link>Open Route</a>
+  </div>
+
+  <div class="minecraft-world__meter" aria-hidden="true">
+    <span data-minecraft-meter></span>
+  </div>
+</section>

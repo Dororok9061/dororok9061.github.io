@@ -2,7 +2,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta
   http-equiv="Content-Security-Policy"
-  content="default-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; media-src 'self'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests"
+  content="default-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; script-src 'self'{% if page.layout == 'home' %} 'wasm-unsafe-eval' 'unsafe-eval'{% endif %}; worker-src 'self' blob:; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'{% if page.layout == 'home' %} blob:{% endif %}; media-src 'self'; frame-src 'none'; manifest-src 'self'; upgrade-insecure-requests"
 >
 {% assign page_title = page.seo_title | default: page.title | default: site.title %}
 {% assign page_description = page.description | default: site.description %}
@@ -55,6 +55,9 @@
 <link rel="stylesheet" href="{{ '/assets/css/research-case.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/assets/css/research-start.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/assets/css/home-research.css' | relative_url }}">
+{% if page.layout == 'home' %}
+<link rel="stylesheet" href="{{ '/assets/css/minecraft-world.css' | relative_url }}">
+{% endif %}
 {% assign profile = site.data.profile %}
 {% if page.url == '/' or page.url == '/en/' or page.url contains '/about/' or page.url contains '/contact/' %}
 <script type="application/ld+json">
