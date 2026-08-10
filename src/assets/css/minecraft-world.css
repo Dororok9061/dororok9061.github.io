@@ -14,142 +14,71 @@
   font-display: swap;
 }
 
-.minecraft-world {
-  position: relative;
-  width: 100%;
+body.is-home-gated {
+  overflow: hidden;
+}
+
+.minecraft-entry {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
   min-height: 100svh;
   overflow: hidden;
   color: #fff;
   background: #131311;
   font-family: "Minecraft World", "Roboto Mono", monospace;
-  isolation: isolate;
-  touch-action: none;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.55s ease, visibility 0.55s ease;
 }
 
-.minecraft-world__canvas {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
-  background: #131311;
-}
-
-.minecraft-world__fallback {
-  position: absolute;
-  inset: 0;
-  z-index: 20;
-  display: grid;
-  place-content: center;
-  gap: 0.75rem;
-  padding: 2rem;
-  text-align: center;
-  background: #131311;
-}
-
-.minecraft-world__fallback[hidden],
-.minecraft-world__enter[hidden],
-.minecraft-world__progress[hidden],
-.minecraft-world__percent[hidden],
-.minecraft-world__overlay[hidden] {
+.minecraft-entry[hidden] {
   display: none;
 }
 
-.minecraft-world__fallback-title {
-  margin: 0;
-  color: #ffff54;
-  font-size: 2rem;
-}
-
-.minecraft-world__loading {
-  position: absolute;
-  inset: 0;
-  z-index: 999;
-  overflow: hidden;
-  pointer-events: auto;
-}
-
-.minecraft-world__loading-half {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 50%;
-  background: #131311;
-  transition: transform 1s ease-in-out 0.5s;
-}
-
-.minecraft-world__loading-half--top {
-  top: 0;
-}
-
-.minecraft-world__loading-half--bottom {
-  top: 50%;
-}
-
-.minecraft-world.is-entered .minecraft-world__loading {
+.minecraft-entry.is-entered {
+  opacity: 0;
+  visibility: hidden;
   pointer-events: none;
 }
 
-.minecraft-world.is-entered .minecraft-world__loading-half--top {
-  transform: translateY(-100%);
-}
-
-.minecraft-world.is-entered .minecraft-world__loading-half--bottom {
-  transform: translateY(100%);
-}
-
-.minecraft-world.is-entered .minecraft-world__loading-content {
-  opacity: 0;
-}
-
-.minecraft-world__loading-content {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
+.minecraft-entry__panel {
+  width: min(100% - 32px, 760px);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 24px;
+  gap: 22px;
   text-align: center;
-  transition: opacity 0.25s ease;
 }
 
-.minecraft-world__hello,
-.minecraft-world__guide,
-.minecraft-world__percent {
+.minecraft-entry__hello,
+.minecraft-entry__guide,
+.minecraft-entry__percent {
   margin: 0;
   color: #fff;
+  line-height: 1.45;
   text-shadow: 3px 3px 0 #202020;
 }
 
-.minecraft-world__hello {
-  position: absolute;
-  top: 35%;
-  left: 50%;
-  width: 100%;
-  transform: translate(-50%, -50%);
-  font-size: 24px;
+.minecraft-entry__hello {
+  font-size: clamp(20px, 3.2vw, 28px);
 }
 
-.minecraft-world__guide {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  width: 100%;
-  transform: translate(-50%, -50%);
-  font-size: 24px;
+.minecraft-entry__guide {
+  font-size: clamp(16px, 2.4vw, 22px);
 }
 
-.minecraft-world__progress {
+.minecraft-entry__progress {
   width: min(350px, 78vw);
   height: 24px;
-  margin-top: 92px;
+  margin-top: 28px;
   border: 2px solid #fff;
   background: #131311;
 }
 
-.minecraft-world__progress span {
+.minecraft-entry__progress span {
   display: block;
   width: 0;
   height: 100%;
@@ -158,203 +87,163 @@
   transition: width 0.18s linear;
 }
 
-.minecraft-world__percent {
-  margin-top: 0;
+.minecraft-entry__percent {
   font-size: 18px;
 }
 
-.minecraft-world__enter,
-.minecraft-world__icon-button,
-.minecraft-world__modal-link,
-.minecraft-world__modal-close {
+.minecraft-entry__enter {
+  min-width: 214px;
+  min-height: 43px;
+  margin-top: 34px;
+  padding: 10px 20px;
   border: 2px solid #131311;
   color: #4c4c4c;
   background: #c6c6c6;
   box-shadow: inset 2px 2px #ffffffc0, inset -2px -2px #323232c0;
   cursor: pointer;
   font: inherit;
-  text-decoration: none;
-}
-
-.minecraft-world__enter {
-  min-width: 214px;
-  min-height: 43px;
-  margin-top: 92px;
-  padding: 10px 20px;
   font-size: 18px;
 }
 
-.minecraft-world__enter:hover,
-.minecraft-world__icon-button:hover,
-.minecraft-world__modal-link:hover,
-.minecraft-world__modal-close:hover {
+.minecraft-entry__enter[hidden] {
+  display: none;
+}
+
+.minecraft-entry__enter:hover,
+.minecraft-entry__enter:focus-visible {
   color: #fff;
   border-color: #fff;
   background: #218306;
   box-shadow: inset 2px 2px #53d95ac0, inset -2px -2px #118316c0;
 }
 
-.minecraft-world__icon-button {
-  position: absolute;
-  z-index: 95;
-  top: 24px;
-  width: 43px;
-  height: 43px;
-  display: grid;
-  place-items: center;
-  padding: 6px;
-  font-size: 14px;
-}
-
-.minecraft-world__audio {
-  right: 84px;
-  width: auto;
-  min-width: 86px;
-}
-
-.minecraft-world__info {
-  right: 24px;
-  font-size: 24px;
-  font-weight: 700;
-}
-
-.minecraft-world__overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 120;
-}
-
-.minecraft-world__modal-backdrop {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-  background: #2929298a;
-  cursor: default;
-}
-
-.minecraft-world__modal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: min(700px, calc(100% - 24px));
-  max-height: min(665px, calc(100% - 32px));
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  border: 4px solid #131311;
-  background: #313233;
-  color: #fff;
-}
-
-.minecraft-world__modal-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 16px 30px;
+.minecraft-sound-toggle {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 90;
+  min-width: 94px;
+  min-height: 38px;
+  padding: 8px 10px;
+  border: 2px solid #131311;
+  color: #4c4c4c;
   background: #c6c6c6;
-  color: #131311;
+  box-shadow: inset 2px 2px #ffffffc0, inset -2px -2px #323232c0;
+  cursor: pointer;
+  font-family: "Minecraft World", "Roboto Mono", monospace;
+  font-size: 13px;
 }
 
-.minecraft-world__modal-header h2 {
-  margin: 0;
-  color: #131311;
-  font-size: 24px;
-  line-height: 1.2;
+.minecraft-sound-toggle[hidden] {
+  display: none;
 }
 
-.minecraft-world__modal-close {
-  width: 40px;
-  height: 40px;
-  display: grid;
-  place-items: center;
-  font-size: 24px;
-  line-height: 1;
+.minecraft-sound-toggle:hover,
+.minecraft-sound-toggle:focus-visible {
+  color: #fff;
+  border-color: #fff;
+  background: #218306;
+  box-shadow: inset 2px 2px #53d95ac0, inset -2px -2px #118316c0;
 }
 
-.minecraft-world__modal-body {
-  overflow: auto;
-  padding: 24px;
-  border: 6px solid #585659;
-  background: #313233;
+body.minecraft-home-active {
+  background: #131311;
 }
 
-.minecraft-world__modal-body img {
-  display: block;
-  width: 100%;
-  max-height: 320px;
-  object-fit: cover;
-  margin-bottom: 18px;
-  border: 3px solid #131311;
+body.minecraft-home-active .site-header,
+body.minecraft-home-active .site-footer {
+  border-color: #2a1608;
+  background: #17120d;
+  box-shadow: inset 0 -3px #2a1608;
 }
 
-.minecraft-world__modal-body h3 {
-  margin: 1.1rem 0 0.45rem;
+body.minecraft-home-active .portfolio-main {
+  background:
+    linear-gradient(90deg, rgb(255 255 255 / 4%) 1px, transparent 1px),
+    linear-gradient(rgb(255 255 255 / 4%) 1px, transparent 1px),
+    linear-gradient(180deg, #1c2117 0%, #111511 44%, #17120d 100%);
+  background-size: 32px 32px, 32px 32px, auto;
+}
+
+body.minecraft-home-active .portfolio-hero,
+body.minecraft-home-active .content-section,
+body.minecraft-home-active .home-metric-card,
+body.minecraft-home-active .publication-card,
+body.minecraft-home-active .post-card,
+body.minecraft-home-active .career-focus-grid article,
+body.minecraft-home-active .learning-grid article {
+  border: 4px solid #2a1608;
+  border-radius: 0;
+  background:
+    linear-gradient(180deg, rgb(255 255 255 / 7%), rgb(0 0 0 / 8%)),
+    #8a5523;
+  box-shadow: inset 3px 3px rgb(255 255 255 / 16%), inset -3px -3px rgb(0 0 0 / 35%), 8px 8px 0 rgb(0 0 0 / 20%);
+}
+
+body.minecraft-home-active .portfolio-hero {
+  color: #fff;
+  background:
+    linear-gradient(90deg, rgb(255 255 255 / 7%) 1px, transparent 1px),
+    linear-gradient(rgb(0 0 0 / 13%) 1px, transparent 1px),
+    linear-gradient(135deg, #6d3e16 0%, #8a5523 48%, #3f5f2d 100%);
+  background-size: 48px 48px, 48px 48px, auto;
+}
+
+body.minecraft-home-active .portfolio-hero__portrait picture,
+body.minecraft-home-active .portfolio-hero__portrait img {
+  border-radius: 0;
+}
+
+body.minecraft-home-active .portfolio-button,
+body.minecraft-home-active .text-link,
+body.minecraft-home-active .indra-resource-buttons a {
+  border: 2px solid #131311;
+  border-radius: 0;
+  color: #4c4c4c;
+  background: #c6c6c6;
+  box-shadow: inset 2px 2px #ffffffc0, inset -2px -2px #323232c0;
+  font-family: "Minecraft World", "Roboto Mono", monospace;
+}
+
+body.minecraft-home-active .portfolio-button:hover,
+body.minecraft-home-active .text-link:hover,
+body.minecraft-home-active .indra-resource-buttons a:hover {
+  color: #fff;
+  border-color: #fff;
+  background: #218306;
+  transform: translateY(-1px);
+}
+
+body.minecraft-home-active .eyebrow,
+body.minecraft-home-active .availability-badge,
+body.minecraft-home-active .career-focus-grid__label {
   color: #ffff54;
-  font-size: 22px;
+  font-family: "Minecraft World", "Roboto Mono", monospace;
 }
 
-.minecraft-world__modal-body p,
-.minecraft-world__modal-body li {
-  color: #f3f3f3;
-  font-family: "Segoe UI", sans-serif;
-  font-size: 15px;
-  line-height: 1.65;
-}
-
-.minecraft-world__modal-body ul {
-  margin: 0.6rem 0 0;
-  padding-left: 1.2rem;
-}
-
-.minecraft-world__modal-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 18px;
-}
-
-.minecraft-world__modal-link {
-  display: inline-flex;
-  align-items: center;
-  min-height: 40px;
-  padding: 8px 12px;
+body.minecraft-home-active h1,
+body.minecraft-home-active h2,
+body.minecraft-home-active h3 {
+  letter-spacing: 0;
+  text-shadow: 2px 2px 0 rgb(0 0 0 / 42%);
 }
 
 @media (max-width: 480px) {
-  .minecraft-world__hello {
-    font-size: 20px;
+  .minecraft-entry__panel {
+    width: min(100% - 24px, 360px);
+    gap: 18px;
   }
 
-  .minecraft-world__guide {
-    font-size: 16px;
+  .minecraft-entry__progress {
+    margin-top: 30px;
   }
 
-  .minecraft-world__progress {
-    margin-top: 148px;
+  .minecraft-entry__enter {
+    margin-top: 46px;
   }
 
-  .minecraft-world__audio {
-    right: 72px;
-    min-width: 72px;
-    font-size: 12px;
-  }
-
-  .minecraft-world__modal-header {
-    padding: 14px 16px;
-  }
-
-  .minecraft-world__modal-header h2 {
-    font-size: 20px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .minecraft-world__loading-half,
-  .minecraft-world__loading-content,
-  .minecraft-world__progress span {
-    transition-duration: 0.01ms !important;
+  .minecraft-sound-toggle {
+    right: 12px;
+    bottom: 12px;
   }
 }
