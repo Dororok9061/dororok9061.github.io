@@ -89,7 +89,7 @@ layout: default
     <div class="indra-gallery">
       {% for case_id in case_ids %}{% assign project = site.data.projects | where: 'id', case_id | first %}{% if project.gallery and project.gallery != empty %}{% assign image = project.gallery[0] %}<figure><picture><source srcset="{{ image.webp | relative_url }}" type="image/webp"><img src="{{ image.jpg | relative_url }}" alt="{% if page.lang == 'en' %}{{ image.alt_en }}{% else %}{{ image.alt_ko }}{% endif %}" width="{{ image.width }}" height="{{ image.height }}" loading="lazy"></picture><figcaption>{% if page.lang == 'en' %}{{ image.caption_en }}{% else %}{{ image.caption_ko }}{% endif %}</figcaption></figure>{% endif %}{% endfor %}
     </div>
-    <p class="indra-figure-note">{% if page.lang == 'en' %}Where a publication-style architecture figure is missing, the site uses a source-based SVG/HTML diagram first. PaperBanana candidates are published only after their labels, arrows, components, and values match the underlying material.{% else %}논문형 구조도가 없는 항목은 먼저 실제 자료에서 다시 그린 SVG·HTML 도식을 사용합니다. PaperBanana 후보는 라벨, 화살표, 구성요소와 수치를 원본과 대조한 뒤에만 교체합니다.{% endif %}</p>
+    <p class="indra-figure-note">{% if page.lang == 'en' %}Where a publication-style architecture figure is missing, the site uses a source-based SVG/HTML diagram first. Final figures are published only after their labels, arrows, components, and values match the underlying material.{% else %}논문형 구조도가 없는 항목은 먼저 실제 자료에서 다시 그린 SVG·HTML 도식을 사용합니다. 최종 그림은 라벨, 화살표, 구성요소와 수치를 원본과 대조한 뒤에만 공개합니다.{% endif %}</p>
   </section>
 
   <section id="publications" class="indra-paper-section research-section">

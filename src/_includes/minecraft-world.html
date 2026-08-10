@@ -3,7 +3,7 @@
 
   <div class="minecraft-world__fallback" data-minecraft-fallback hidden>
     <p class="minecraft-world__fallback-title">Research Blocks</p>
-    <p>{% if page.lang == 'en' %}The 3D scene could not start on this device. The full portfolio remains available below.{% else %}이 기기에서 3D 장면을 시작하지 못했습니다. 전체 포트폴리오는 아래 기존 섹션에서 계속 볼 수 있습니다.{% endif %}</p>
+    <p>{% if page.lang == 'en' %}The 3D scene could not start on this device. The full portfolio remains available below.{% else %}이 기기에서 3D 화면을 시작하지 못했습니다. 전체 포트폴리오는 아래 기존 섹션에서 계속 볼 수 있습니다.{% endif %}</p>
   </div>
 
   <div class="minecraft-world__loading" data-minecraft-loading>
@@ -20,19 +20,19 @@
     </div>
   </div>
 
-  <button class="minecraft-world__audio" type="button" data-minecraft-audio-toggle aria-pressed="true">
+  <button class="minecraft-world__icon-button minecraft-world__audio" type="button" data-minecraft-audio-toggle aria-pressed="true" aria-label="Toggle sound">
     <span data-minecraft-audio-label>Sound On</span>
   </button>
+  <button class="minecraft-world__icon-button minecraft-world__info" type="button" data-minecraft-info aria-label="Open portfolio information">i</button>
 
-  <div class="minecraft-world__hud" data-minecraft-hud>
-    <p class="minecraft-world__hud-kicker" data-minecraft-section-kicker>Research Blocks</p>
-    <h2 data-minecraft-section-title>{% if page.lang == 'en' %}Radar, Vision AI, Embedded, PCB, AI study{% else %}Radar, Vision AI, Embedded, PCB, AI Study{% endif %}</h2>
-    <p data-minecraft-section-body>{% if page.lang == 'en' %}Scroll through the room to open project, paper, blog, GitHub, and Notion routes without losing the existing portfolio content.{% else %}방을 따라 이동하면서 프로젝트, 논문, 블로그, GitHub, Notion 경로를 기존 포트폴리오 내용과 함께 확인합니다.{% endif %}</p>
-    <div class="minecraft-world__chips" data-minecraft-section-chips></div>
-    <a class="minecraft-world__link" href="/projects/" data-minecraft-section-link>Open Route</a>
-  </div>
-
-  <div class="minecraft-world__meter" aria-hidden="true">
-    <span data-minecraft-meter></span>
+  <div class="minecraft-world__overlay" data-minecraft-modal hidden>
+    <button class="minecraft-world__modal-backdrop" type="button" data-minecraft-modal-close aria-label="Close modal"></button>
+    <article class="minecraft-world__modal" role="dialog" aria-modal="true" aria-labelledby="minecraft-world-modal-title">
+      <header class="minecraft-world__modal-header">
+        <h2 id="minecraft-world-modal-title" data-minecraft-modal-title></h2>
+        <button class="minecraft-world__modal-close" type="button" data-minecraft-modal-close aria-label="Close modal">×</button>
+      </header>
+      <div class="minecraft-world__modal-body" data-minecraft-modal-body></div>
+    </article>
   </div>
 </section>

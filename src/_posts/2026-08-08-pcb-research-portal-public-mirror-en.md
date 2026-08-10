@@ -18,7 +18,7 @@ post_type: project-log
 difficulty: intermediate
 study_status: published
 evidence_status: SOURCE_AVAILABLE
-tools: [Jekyll, GitHub Pages, Material Icons, PaperBanana]
+tools: [Jekyll, GitHub Pages, Material Icons]
 hardware: [STM32F411, camera]
 software_versions: []
 source_materials:
@@ -28,7 +28,7 @@ prerequisites: [PCB inspection, figure source mapping, GitHub Pages]
 learning_objectives: [sync local portal and public site, publish individual figure atlas, verify click-to-enlarge review flow]
 related_projects: [pcb-visual-inspection]
 related_posts: [evidence-status]
-tags: [pcb-inspection, github-pages, paperbanana, figure-atlas, lightbox]
+tags: [pcb-inspection, github-pages, figure-atlas, lightbox]
 cover_image: /projects/pcb-visual-inspection/research-portal/AssetsWeb/paper_style/pcb_style_fig09_frpatchcore_pipeline.webp
 thumbnail: /projects/pcb-visual-inspection/research-portal/AssetsWeb/paper_style/pcb_style_fig09_frpatchcore_pipeline.webp
 image_alt: PCB inspection pipeline and paper-style figure atlas

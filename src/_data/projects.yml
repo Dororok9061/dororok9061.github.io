@@ -411,12 +411,12 @@
     - "PCB 전용 공개 홈페이지의 v9 분리형 갤러리와 클릭 확대 동작"
     - "fig31a부터 fig31j까지 900×900 논문형 정사각형 그림"
     - "GitHub Pages에 미러된 전체 Research Publication Workbench"
-    - "PatchCore, FR-PatchCore, DINOv3, PaperBanana 기반 그림 재작성 기록"
+    - "PatchCore, FR-PatchCore, DINOv3 기반 그림 재작성 기록"
   evidence_en:
     - "v9 separated gallery and click-to-enlarge behavior in the PCB public homepage"
     - "Ten 900×900 paper-style square figures, fig31a through fig31j"
     - "Full Research Publication Workbench mirrored into GitHub Pages"
-    - "PatchCore, FR-PatchCore, DINOv3, and PaperBanana-based figure-redraw record"
+    - "PatchCore, FR-PatchCore, DINOv3, and source-checked figure-redraw record"
   contribution_ko:
     - "VIScan 등 PCB inspection과 무관한 항목 제외"
     - "카메라/영상 입력, 품질 게이트, ROI, 특징 추출, 검토/배포 흐름 재정리"
@@ -436,11 +436,11 @@
   data_flow_ko: 원본 frame과 ROI evidence를 분리 저장하고, 각 figure는 contact sheet가 아니라 독립된 정사각형 panel로 공개 페이지와 논문에 재사용합니다.
   data_flow_en: Raw frames and ROI evidence are kept separate, and each figure is reused as an independent square panel rather than a bundled contact sheet.
   methods_ko:
-    - "PaperBanana reference-intake 방식으로 참고 묶음의 레이아웃 문법을 추출"
+    - "참고 묶음의 레이아웃 문법을 실제 자료 기준으로 추출"
     - "박스 안 글자, 축 라벨, 화살표, color bar, 중앙 정렬을 정사각형 figure 기준으로 재작성"
     - "홈페이지 갤러리는 낱장 이미지 클릭 확대를 기본 동작으로 구성"
   methods_en:
-    - "Extracted layout grammar from the supplied figure bundles using a PaperBanana-style reference-intake route"
+    - "Extracted layout grammar from the supplied figure bundles using a source-checked reference-intake route"
     - "Redrew text boxes, axis labels, arrows, color bars, and centered panels as square publication figures"
     - "Configured the homepage gallery around individually clickable enlarged images"
   results_ko:

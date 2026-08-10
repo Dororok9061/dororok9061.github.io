@@ -7,7 +7,6 @@
   <a class="skip-link" href="#main">{% if page.lang == 'en' %}Skip to content{% else %}본문으로 건너뛰기{% endif %}</a>
   {% if page.layout == 'home' %}{% include minecraft-world.html %}{% endif %}
   {% include header.html %}
-  {% if page.layout == 'home' %}{% include research-case-hub.html %}{% endif %}
   {{ content }}
   <dialog class="lightbox" id="publication-lightbox" aria-labelledby="lightbox-caption">
     <button class="lightbox__close" type="button" data-lightbox-close aria-label="{% if page.lang == 'en' %}Close image preview{% else %}이미지 미리보기 닫기{% endif %}">×</button>

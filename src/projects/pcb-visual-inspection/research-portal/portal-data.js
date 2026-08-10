@@ -18,7 +18,7 @@ window.PORTAL_DATA = {
     "Template structure adapted from the iNdra YAML-driven research page layout.",
     "PCB Visual Inspection Studio is included as the first evidence-gated case study."
   ],
-  "header_note": "The visual language uses Material Symbols, strict square figures, and PaperBanana-recorded figure planning.",
+  "header_note": "The visual language uses Material Symbols, strict square figures, and source-checked figure planning.",
   "buttons": [
     {
       "label": "Paper",
@@ -111,7 +111,7 @@ window.PORTAL_DATA = {
       "title": "Methodology",
       "nav_label": "Methodology",
       "icon": "account_tree",
-      "content": "The page is controlled by data.yaml, rendered by script.js, styled by style.css, and decorated with Material Symbols. PaperBanana is treated as the planning and critique route for missing or rebuilt visual material, while each final PCB figure is published as its own strict-square image card with click-to-enlarge viewing.",
+      "content": "The page is controlled by data.yaml, rendered by script.js, styled by style.css, and decorated with Material Symbols. Missing or rebuilt visual material is planned from source evidence and reviewed before publication, while each final PCB figure is published as its own strict-square image card with click-to-enlarge viewing.",
       "components": [
         {
           "type": "image_gallery",
