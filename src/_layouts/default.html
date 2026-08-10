@@ -3,7 +3,7 @@
 <head>
   {% include head.html %}
 </head>
-<body>
+<body class="minecraft-theme minecraft-layout-{{ page.layout | default: 'page' }}">
   <a class="skip-link" href="#main">{% if page.lang == 'en' %}Skip to content{% else %}본문으로 건너뛰기{% endif %}</a>
   {% if page.layout == 'home' %}{% include minecraft-world.html %}{% endif %}
   {% include header.html %}

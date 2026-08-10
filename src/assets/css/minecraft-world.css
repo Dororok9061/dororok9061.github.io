@@ -801,3 +801,799 @@ body.minecraft-home-active .site-footer {
     border-bottom: 6px solid #5a585c;
   }
 }
+
+/* Global Minecraft GUI theme for every internal page. */
+body.minecraft-theme {
+  --portfolio-accent: #2f9dd9;
+  --portfolio-border: #1f1f1f;
+  --portfolio-muted: #d8d8d8;
+  --portfolio-surface: #c6c6c6;
+  --portfolio-text: #1d1d1d;
+  --mc-gui: #c6c6c6;
+  --mc-gui-dark: #343236;
+  --mc-gui-mid: #5c5b5f;
+  --mc-gui-slot: #8b8b8b;
+  --mc-gui-edge: #1f1f1f;
+  --mc-sky: #7fb7dd;
+  --mc-grass: #6ea956;
+  --mc-dirt: #6b4427;
+  color: #1d1d1d;
+  background-color: var(--mc-sky);
+  background-image:
+    linear-gradient(180deg, var(--mc-sky) 0 30vh, var(--mc-grass) 30vh 39vh, var(--mc-dirt) 39vh 100%),
+    repeating-linear-gradient(90deg, rgb(255 255 255 / 12%) 0 1px, transparent 1px 64px),
+    repeating-linear-gradient(0deg, rgb(0 0 0 / 10%) 0 1px, transparent 1px 64px);
+  background-attachment: fixed;
+  background-size: auto, 64px 64px, 64px 64px;
+  font-family: "Minecraft World", "Roboto Mono", monospace;
+}
+
+body.minecraft-theme *,
+body.minecraft-theme *::before,
+body.minecraft-theme *::after {
+  box-sizing: border-box;
+}
+
+body.minecraft-theme a {
+  color: #1668a5;
+}
+
+body.minecraft-theme img {
+  image-rendering: auto;
+}
+
+body.minecraft-theme h1,
+body.minecraft-theme h2,
+body.minecraft-theme h3,
+body.minecraft-theme h4 {
+  letter-spacing: 0;
+}
+
+body.minecraft-theme .site-header,
+body.minecraft-theme .site-footer {
+  color: #1d1d1d;
+  border-color: var(--mc-gui-edge);
+  background: var(--mc-gui);
+  box-shadow: inset 3px 3px #ffffffc0, inset -3px -3px #555555c0;
+}
+
+body.minecraft-theme .site-header__inner,
+body.minecraft-theme .site-footer__inner {
+  width: min(100%, 1180px);
+}
+
+body.minecraft-theme .site-brand,
+body.minecraft-theme .site-brand:link,
+body.minecraft-theme .site-brand:visited,
+body.minecraft-theme .site-navigation a,
+body.minecraft-theme .site-navigation summary,
+body.minecraft-theme .site-footer a {
+  color: #1d1d1d;
+}
+
+body.minecraft-theme .site-brand__mark,
+body.minecraft-theme .site-menu-toggle {
+  border: 3px solid var(--mc-gui-edge);
+  border-radius: 0;
+  color: #1d1d1d;
+  background: var(--mc-gui-slot);
+  box-shadow: inset 2px 2px #d6d6d6, inset -2px -2px #555;
+}
+
+body.minecraft-theme .site-navigation a:hover,
+body.minecraft-theme .site-navigation summary:hover,
+body.minecraft-theme .site-navigation a[aria-current="page"],
+body.minecraft-theme .site-footer a:hover {
+  color: #1668a5;
+}
+
+body.minecraft-theme .site-navigation__sublist,
+body.minecraft-theme .site-navigation {
+  border: 4px solid var(--mc-gui-edge);
+  border-radius: 0;
+  background: var(--mc-gui);
+  box-shadow: inset 3px 3px #ffffffc0, inset -3px -3px #555555c0, 6px 6px 0 rgb(0 0 0 / 28%);
+}
+
+body.minecraft-theme .page-shell,
+body.minecraft-theme .research-start {
+  position: relative;
+  width: min(100% - clamp(16px, 4vw, 48px), 1180px);
+  max-width: none;
+  min-height: 0;
+  padding: clamp(72px, 7vw, 92px) clamp(14px, 3vw, 34px) clamp(24px, 4vw, 44px);
+  margin: clamp(18px, 3vw, 38px) auto clamp(34px, 5vw, 72px);
+  color: #1d1d1d;
+  border: 4px solid var(--mc-gui-edge);
+  border-radius: 0;
+  background: var(--mc-gui);
+  box-shadow: inset 4px 4px #ffffffc0, inset -4px -4px #555555c0, 8px 8px 0 rgb(0 0 0 / 35%);
+  overflow-x: hidden;
+}
+
+body.minecraft-theme .page-shell::before,
+body.minecraft-theme .research-start::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 48px;
+  border-bottom: 4px solid #5a5a5a;
+  background: var(--mc-gui);
+  box-shadow: inset 4px 4px #ffffffc0, inset -4px -4px #555555c0;
+  content: "";
+}
+
+body.minecraft-theme .page-shell::after,
+body.minecraft-theme .research-start::after {
+  position: absolute;
+  top: 5px;
+  right: 18px;
+  z-index: 1;
+  color: #555;
+  content: "\00d7";
+  font-size: 32px;
+  line-height: 1;
+}
+
+body.minecraft-theme .page-shell > *,
+body.minecraft-theme .research-start > * {
+  position: relative;
+  z-index: 1;
+}
+
+body.minecraft-theme .page-heading,
+body.minecraft-theme .post-heading,
+body.minecraft-theme .project-heading,
+body.minecraft-theme .publication-detail__heading,
+body.minecraft-theme .study-hub-hero,
+body.minecraft-theme .category-feature,
+body.minecraft-theme .indra-portfolio-hero,
+body.minecraft-theme .home-research-gateway,
+body.minecraft-theme .research-summary,
+body.minecraft-theme .contact-callout,
+body.minecraft-theme .prose,
+body.minecraft-theme .blog-search,
+body.minecraft-theme .study-sidebar,
+body.minecraft-theme .research-citation,
+body.minecraft-theme .research-visual-placeholder,
+body.minecraft-theme .status-banner,
+body.minecraft-theme .boundary-note,
+body.minecraft-theme .study-sequence-note,
+body.minecraft-theme .study-next,
+body.minecraft-theme .official-source-list,
+body.minecraft-theme .rf-calculator {
+  border: 6px solid #5a585c;
+  border-radius: 0;
+  color: #fff;
+  background: var(--mc-gui-dark);
+  box-shadow: inset 0 0 0 2px #222;
+}
+
+body.minecraft-theme .page-heading,
+body.minecraft-theme .post-heading,
+body.minecraft-theme .project-heading,
+body.minecraft-theme .publication-detail__heading,
+body.minecraft-theme .study-hub-hero,
+body.minecraft-theme .category-feature,
+body.minecraft-theme .indra-portfolio-hero {
+  padding: clamp(14px, 3vw, 24px);
+  margin-bottom: clamp(18px, 4vw, 34px);
+}
+
+body.minecraft-theme .page-heading h1,
+body.minecraft-theme .post-heading h1,
+body.minecraft-theme .project-heading h1,
+body.minecraft-theme .publication-detail__heading h1,
+body.minecraft-theme .study-hub-hero h1,
+body.minecraft-theme .indra-portfolio-hero h1 {
+  max-width: 18ch;
+  color: #fff;
+  font-size: clamp(36px, 7vw, 72px);
+  line-height: 1.02;
+  text-shadow: 3px 3px 0 rgb(0 0 0 / 46%);
+}
+
+body.minecraft-theme .page-heading__lead,
+body.minecraft-theme .page-heading p,
+body.minecraft-theme .post-heading p,
+body.minecraft-theme .project-heading p,
+body.minecraft-theme .publication-detail__heading p,
+body.minecraft-theme .study-hub-hero p,
+body.minecraft-theme .category-feature p,
+body.minecraft-theme .indra-portfolio-hero__lead,
+body.minecraft-theme .indra-portfolio-hero__author,
+body.minecraft-theme .indra-portfolio-hero__note,
+body.minecraft-theme .prose p,
+body.minecraft-theme .prose li,
+body.minecraft-theme .small-note,
+body.minecraft-theme .search-results p,
+body.minecraft-theme .research-flow-step p,
+body.minecraft-theme .research-concept-node p,
+body.minecraft-theme .study-post-card__body > p:last-of-type,
+body.minecraft-theme .course-hub-grid article p,
+body.minecraft-theme .track-card-grid article p,
+body.minecraft-theme .taxonomy-grid article p,
+body.minecraft-theme .series-grid article p,
+body.minecraft-theme .learning-grid article p,
+body.minecraft-theme .project-card__body > p,
+body.minecraft-theme .publication-card p,
+body.minecraft-theme .post-card p,
+body.minecraft-theme .contact-callout p,
+body.minecraft-theme .research-timeline p {
+  color: #f3f3f3;
+  overflow-wrap: anywhere;
+}
+
+body.minecraft-theme .eyebrow,
+body.minecraft-theme .availability-badge,
+body.minecraft-theme .career-tier,
+body.minecraft-theme .career-focus-grid__label,
+body.minecraft-theme .evidence-badge,
+body.minecraft-theme .status-line,
+body.minecraft-theme .status-banner,
+body.minecraft-theme .course-unit-grid span,
+body.minecraft-theme .course-unit-grid small,
+body.minecraft-theme .research-flow-step__index,
+body.minecraft-theme .research-concept-node__index,
+body.minecraft-theme .indra-section-heading .eyebrow,
+body.minecraft-theme .indra-method-flow > div > span,
+body.minecraft-theme .indra-result-grid strong,
+body.minecraft-theme .indra-study-grid .material-icon,
+body.minecraft-theme .indra-resource-panel .material-icon {
+  display: inline-flex;
+  width: fit-content;
+  padding: 4px 8px;
+  border: 2px solid var(--mc-gui-edge);
+  border-radius: 0;
+  color: #ffff55;
+  background: #4b4a4d;
+  box-shadow: inset 2px 2px #777, inset -2px -2px #222;
+  font-family: "Minecraft World", "Roboto Mono", monospace;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+body.minecraft-theme .project-grid,
+body.minecraft-theme .post-grid,
+body.minecraft-theme .post-list,
+body.minecraft-theme .taxonomy-grid,
+body.minecraft-theme .series-grid,
+body.minecraft-theme .learning-grid,
+body.minecraft-theme .publication-stack,
+body.minecraft-theme .publication-index-grid,
+body.minecraft-theme .contact-links-grid,
+body.minecraft-theme .project-narrative,
+body.minecraft-theme .case-study-grid,
+body.minecraft-theme .course-hub-grid,
+body.minecraft-theme .track-card-grid,
+body.minecraft-theme .course-unit-grid,
+body.minecraft-theme .indra-case-grid,
+body.minecraft-theme .indra-publication-grid,
+body.minecraft-theme .indra-study-grid,
+body.minecraft-theme .indra-resource-panel,
+body.minecraft-theme .indra-result-grid,
+body.minecraft-theme .research-flow-figure__grid,
+body.minecraft-theme .research-concept-map__grid {
+  gap: 8px;
+  padding: 10px;
+  border: 4px solid #3f3f3f;
+  background-color: var(--mc-gui);
+  background-image:
+    linear-gradient(90deg, rgb(0 0 0 / 22%) 2px, transparent 2px),
+    linear-gradient(rgb(0 0 0 / 22%) 2px, transparent 2px);
+  background-size: 58px 58px;
+  box-shadow: inset 3px 3px #ffffffc0, inset -3px -3px #555555c0;
+}
+
+body.minecraft-theme .project-card,
+body.minecraft-theme .post-card,
+body.minecraft-theme .post-list article,
+body.minecraft-theme .taxonomy-grid article,
+body.minecraft-theme .series-grid article,
+body.minecraft-theme .learning-grid article,
+body.minecraft-theme .publication-card,
+body.minecraft-theme .publication-index-grid section,
+body.minecraft-theme .contact-links-grid section,
+body.minecraft-theme .project-narrative section,
+body.minecraft-theme .case-study-grid section,
+body.minecraft-theme .boundary-panel,
+body.minecraft-theme .course-hub-grid article,
+body.minecraft-theme .track-card-grid article,
+body.minecraft-theme .course-unit-grid a,
+body.minecraft-theme .study-post-card,
+body.minecraft-theme .research-flow-figure,
+body.minecraft-theme .research-concept-map,
+body.minecraft-theme .research-flow-step,
+body.minecraft-theme .research-concept-node,
+body.minecraft-theme .research-gallery-strip > figure,
+body.minecraft-theme .indra-case-card,
+body.minecraft-theme .indra-method-flow,
+body.minecraft-theme .indra-method-flow > div,
+body.minecraft-theme .indra-result-grid article,
+body.minecraft-theme .indra-gallery figure,
+body.minecraft-theme .indra-publication-grid article,
+body.minecraft-theme .indra-study-grid > a,
+body.minecraft-theme .indra-resource-panel > a,
+body.minecraft-theme .research-timeline li,
+body.minecraft-theme .series-list li,
+body.minecraft-theme .roadmap-steps li,
+body.minecraft-theme .learning-paths li,
+body.minecraft-theme .archive-list li {
+  min-width: 0;
+  border: 6px solid #5a585c;
+  border-radius: 0;
+  color: #fff;
+  background: var(--mc-gui-dark);
+  box-shadow: inset 0 0 0 2px #222;
+  overflow-wrap: anywhere;
+}
+
+body.minecraft-theme .blog-with-sidebar,
+body.minecraft-theme .blog-main-column,
+body.minecraft-theme .taxonomy-grid,
+body.minecraft-theme .series-grid,
+body.minecraft-theme .learning-grid,
+body.minecraft-theme .project-grid,
+body.minecraft-theme .publication-stack,
+body.minecraft-theme .post-list,
+body.minecraft-theme .post-grid,
+body.minecraft-theme .study-sidebar {
+  min-width: 0;
+  max-width: 100%;
+}
+
+body.minecraft-theme .project-card,
+body.minecraft-theme .study-post-card,
+body.minecraft-theme .course-hub-grid article,
+body.minecraft-theme .track-card-grid article,
+body.minecraft-theme .publication-card,
+body.minecraft-theme .indra-case-card {
+  overflow: hidden;
+}
+
+body.minecraft-theme .project-card__body,
+body.minecraft-theme .study-post-card__body,
+body.minecraft-theme .course-hub-grid article > div,
+body.minecraft-theme .track-card-grid article > div,
+body.minecraft-theme .publication-card__content,
+body.minecraft-theme .indra-case-card__body {
+  padding: clamp(12px, 2.5vw, 20px);
+}
+
+body.minecraft-theme .project-card__media,
+body.minecraft-theme .study-post-card__media,
+body.minecraft-theme .course-hub-card__media,
+body.minecraft-theme .track-card__media,
+body.minecraft-theme .publication-card__preview,
+body.minecraft-theme .publication-preview,
+body.minecraft-theme .project-heading picture,
+body.minecraft-theme .portfolio-hero__portrait picture,
+body.minecraft-theme .about-layout__portrait picture,
+body.minecraft-theme .study-hub-hero picture,
+body.minecraft-theme .category-feature picture,
+body.minecraft-theme .study-unit__cover,
+body.minecraft-theme .indra-case-card picture,
+body.minecraft-theme .indra-gallery figure picture {
+  padding: 8px;
+  border: 3px solid #3f3f3f;
+  border-radius: 0;
+  background: #969696;
+  box-shadow: inset 3px 3px #d6d6d6, inset -3px -3px #555;
+}
+
+body.minecraft-theme .project-card__media,
+body.minecraft-theme .study-post-card__media,
+body.minecraft-theme .course-hub-card__media,
+body.minecraft-theme .track-card__media,
+body.minecraft-theme .publication-card__preview {
+  border-right: 0;
+  border-bottom: 6px solid #5a585c;
+}
+
+body.minecraft-theme .project-card__media img,
+body.minecraft-theme .study-post-card__media img,
+body.minecraft-theme .course-hub-card__media img,
+body.minecraft-theme .track-card__media img,
+body.minecraft-theme .publication-card__preview img,
+body.minecraft-theme .publication-preview img,
+body.minecraft-theme .project-heading img,
+body.minecraft-theme .study-hub-hero img,
+body.minecraft-theme .category-feature img,
+body.minecraft-theme .study-unit__cover img,
+body.minecraft-theme .indra-case-card img,
+body.minecraft-theme .indra-gallery img,
+body.minecraft-theme .post__content img {
+  border: 3px solid #252525;
+  border-radius: 0;
+  background: #f3f3f3;
+}
+
+body.minecraft-theme .project-card__body h2 a,
+body.minecraft-theme .post-card h3 a,
+body.minecraft-theme .post-list h2 a,
+body.minecraft-theme .taxonomy-grid h3 a,
+body.minecraft-theme .series-grid h3 a,
+body.minecraft-theme .learning-grid h2,
+body.minecraft-theme .learning-grid h3,
+body.minecraft-theme .course-hub-grid h2 a,
+body.minecraft-theme .course-hub-grid h3 a,
+body.minecraft-theme .track-card-grid h3 a,
+body.minecraft-theme .publication-card__content h2,
+body.minecraft-theme .publication-card__content h2 a,
+body.minecraft-theme .case-study-grid h2,
+body.minecraft-theme .boundary-panel h2,
+body.minecraft-theme .contact-links-grid h2,
+body.minecraft-theme .project-narrative h2,
+body.minecraft-theme .indra-case-card h3 a,
+body.minecraft-theme .indra-publication-grid h3 a,
+body.minecraft-theme .indra-study-grid strong,
+body.minecraft-theme .indra-resource-panel strong,
+body.minecraft-theme .prose h2,
+body.minecraft-theme .prose h3 {
+  color: #fff;
+  text-shadow: 2px 2px 0 rgb(0 0 0 / 45%);
+}
+
+body.minecraft-theme .project-card a,
+body.minecraft-theme .post-card a,
+body.minecraft-theme .post-list a,
+body.minecraft-theme .taxonomy-grid a,
+body.minecraft-theme .series-grid a,
+body.minecraft-theme .learning-grid a,
+body.minecraft-theme .publication-card a,
+body.minecraft-theme .study-sidebar a,
+body.minecraft-theme .prose a,
+body.minecraft-theme .breadcrumbs a,
+body.minecraft-theme .contact-facts a,
+body.minecraft-theme .profile-facts a,
+body.minecraft-theme .publication-facts a,
+body.minecraft-theme .research-section a,
+body.minecraft-theme .indra-case-card a,
+body.minecraft-theme .indra-resource-panel a,
+body.minecraft-theme .indra-study-grid a,
+body.minecraft-theme .course-unit-grid a {
+  color: #9adfff;
+}
+
+body.minecraft-theme .portfolio-button,
+body.minecraft-theme .text-link,
+body.minecraft-theme .blog-tools a,
+body.minecraft-theme .chip-list a,
+body.minecraft-theme .chip-list li,
+body.minecraft-theme .filter-links a,
+body.minecraft-theme .research-resource-strip a,
+body.minecraft-theme .research-resource-strip button,
+body.minecraft-theme .research-jump-nav a,
+body.minecraft-theme .indra-resource-buttons a,
+body.minecraft-theme .indra-text-link,
+body.minecraft-theme .publication-card__zoom,
+body.minecraft-theme .publication-preview button,
+body.minecraft-theme .project-gallery__zoom,
+body.minecraft-theme .research-citation__copy,
+body.minecraft-theme .rf-calculator button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 8px 12px;
+  border: 3px solid var(--mc-gui-edge);
+  border-radius: 0;
+  color: #353535;
+  background: var(--mc-gui);
+  box-shadow: inset 3px 3px #ffffffc0, inset -3px -3px #555555c0;
+  font-family: "Minecraft World", "Roboto Mono", monospace;
+  letter-spacing: 0;
+  text-decoration: none;
+}
+
+body.minecraft-theme .portfolio-button--primary,
+body.minecraft-theme .portfolio-button--primary:link,
+body.minecraft-theme .portfolio-button--primary:visited {
+  color: #2c260e;
+  background: #f5d15c;
+}
+
+body.minecraft-theme .portfolio-button:hover,
+body.minecraft-theme .portfolio-button:focus-visible,
+body.minecraft-theme .text-link:hover,
+body.minecraft-theme .text-link:focus-visible,
+body.minecraft-theme .blog-tools a:hover,
+body.minecraft-theme .blog-tools a:focus-visible,
+body.minecraft-theme .chip-list a:hover,
+body.minecraft-theme .filter-links a:hover,
+body.minecraft-theme .research-resource-strip a:hover,
+body.minecraft-theme .research-resource-strip button:hover,
+body.minecraft-theme .research-jump-nav a:hover,
+body.minecraft-theme .research-jump-nav a.is-active,
+body.minecraft-theme .indra-resource-buttons a:hover,
+body.minecraft-theme .indra-text-link:hover,
+body.minecraft-theme .publication-card__zoom:hover,
+body.minecraft-theme .publication-preview button:hover,
+body.minecraft-theme .project-gallery__zoom:hover,
+body.minecraft-theme .research-citation__copy:hover,
+body.minecraft-theme .rf-calculator button:hover {
+  color: #fff;
+  border-color: #fff;
+  background: #218306;
+  box-shadow: inset 3px 3px #53d95ac0, inset -3px -3px #118316c0;
+  transform: none;
+}
+
+body.minecraft-theme .breadcrumbs,
+body.minecraft-theme .blog-tools,
+body.minecraft-theme .research-jump-nav,
+body.minecraft-theme .filter-links,
+body.minecraft-theme .series-navigation,
+body.minecraft-theme .research-resource-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 18px;
+  padding: 10px;
+  border: 4px solid #3f3f3f;
+  border-radius: 0;
+  color: #fff;
+  background: var(--mc-gui);
+  box-shadow: inset 3px 3px #ffffffc0, inset -3px -3px #555555c0;
+}
+
+body.minecraft-theme .research-jump-nav {
+  top: 0.5rem;
+  z-index: 70;
+  max-width: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+body.minecraft-theme .research-jump-nav__links {
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+body.minecraft-theme .research-jump-nav__label,
+body.minecraft-theme .breadcrumbs span,
+body.minecraft-theme .publication-card__venue,
+body.minecraft-theme .publication-card__authors,
+body.minecraft-theme .publication-card__role,
+body.minecraft-theme .post-card__meta,
+body.minecraft-theme .project-card__meta,
+body.minecraft-theme .study-sidebar small,
+body.minecraft-theme .series-list small,
+body.minecraft-theme .publication-preview figcaption,
+body.minecraft-theme .project-gallery figcaption,
+body.minecraft-theme .post__content figcaption,
+body.minecraft-theme .study-unit__cover figcaption,
+body.minecraft-theme .profile-facts dt,
+body.minecraft-theme .contact-facts dt,
+body.minecraft-theme .publication-facts dt,
+body.minecraft-theme .post-facts dt,
+body.minecraft-theme .compact-facts dt {
+  color: #d8d8d8;
+}
+
+body.minecraft-theme .profile-facts,
+body.minecraft-theme .contact-facts,
+body.minecraft-theme .publication-facts,
+body.minecraft-theme .post-facts,
+body.minecraft-theme .compact-facts {
+  gap: 8px;
+  padding: 10px;
+  border: 4px solid #3f3f3f;
+  background-color: var(--mc-gui);
+  background-image:
+    linear-gradient(90deg, rgb(0 0 0 / 22%) 2px, transparent 2px),
+    linear-gradient(rgb(0 0 0 / 22%) 2px, transparent 2px);
+  background-size: 58px 58px;
+  box-shadow: inset 3px 3px #ffffffc0, inset -3px -3px #555555c0;
+}
+
+body.minecraft-theme .profile-facts div,
+body.minecraft-theme .contact-facts div,
+body.minecraft-theme .publication-facts div,
+body.minecraft-theme .post-facts div,
+body.minecraft-theme .compact-facts div,
+body.minecraft-theme .metric-list div {
+  padding: 10px;
+  border: 3px solid #252525;
+  color: #fff;
+  background: var(--mc-gui-mid);
+  box-shadow: inset 3px 3px #777, inset -3px -3px #333;
+}
+
+body.minecraft-theme .metric-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(92px, 1fr));
+  gap: 6px;
+}
+
+body.minecraft-theme .metric-list dd,
+body.minecraft-theme .profile-facts dd,
+body.minecraft-theme .contact-facts dd,
+body.minecraft-theme .publication-facts dd,
+body.minecraft-theme .post-facts dd,
+body.minecraft-theme .compact-facts dd {
+  color: #fff;
+}
+
+body.minecraft-theme .blog-search input,
+body.minecraft-theme .rf-calculator input,
+body.minecraft-theme .rf-calculator fieldset,
+body.minecraft-theme .rf-calculator__result,
+body.minecraft-theme .rf-formula-list code,
+body.minecraft-theme .post__content th,
+body.minecraft-theme .post__content td,
+body.minecraft-theme .research-citation pre {
+  max-width: 100%;
+  border: 3px solid #252525;
+  color: #fff;
+  background: var(--mc-gui-mid);
+  box-shadow: inset 3px 3px #777, inset -3px -3px #333;
+  overflow-x: auto;
+  overflow-wrap: anywhere;
+}
+
+body.minecraft-theme .post__content table {
+  border-collapse: separate;
+  border-spacing: 4px;
+}
+
+body.minecraft-theme .role-list {
+  border: 4px solid #3f3f3f;
+  background: var(--mc-gui);
+  box-shadow: inset 3px 3px #ffffffc0, inset -3px -3px #555555c0;
+}
+
+body.minecraft-theme .role-list > section {
+  margin: 8px;
+  padding: clamp(12px, 2.5vw, 20px);
+  border: 6px solid #5a585c;
+  color: #fff;
+  background: var(--mc-gui-dark);
+  box-shadow: inset 0 0 0 2px #222;
+}
+
+body.minecraft-theme .role-list > section > span {
+  color: #ffff55;
+}
+
+body.minecraft-theme .about-layout__portrait {
+  position: static;
+  padding: 10px;
+  border: 4px solid var(--mc-gui-edge);
+  background: var(--mc-gui);
+  box-shadow: inset 3px 3px #ffffffc0, inset -3px -3px #555555c0;
+}
+
+body.minecraft-theme .about-layout__portrait figcaption,
+body.minecraft-theme .portfolio-hero__portrait figcaption {
+  color: #343236;
+}
+
+body.minecraft-theme .lightbox {
+  border: 4px solid var(--mc-gui-edge);
+  border-radius: 0;
+  background: var(--mc-gui);
+  box-shadow: inset 4px 4px #ffffffc0, inset -4px -4px #555555c0, 8px 8px 0 rgb(0 0 0 / 35%);
+}
+
+body.minecraft-theme .lightbox__close {
+  border-radius: 0;
+}
+
+body.minecraft-theme .indra-portfolio-hero::after {
+  display: none;
+}
+
+body.minecraft-theme .indra-paper-section {
+  margin-top: clamp(24px, 5vw, 48px);
+  padding: clamp(14px, 3vw, 24px);
+  border: 6px solid #5a585c;
+  color: #fff;
+  background: var(--mc-gui-dark);
+  box-shadow: inset 0 0 0 2px #222;
+}
+
+body.minecraft-theme .indra-section-heading > .material-icon {
+  border-radius: 0;
+  color: #ffff55;
+  background: #4b4a4d;
+  box-shadow: inset 2px 2px #777, inset -2px -2px #222;
+}
+
+body.minecraft-theme .indra-method-flow > div:not(:last-of-type)::after,
+body.minecraft-theme .research-flow-step:not(:last-child)::after,
+body.minecraft-theme .research-concept-node:not(:last-child)::after {
+  color: #ffff55;
+}
+
+body.minecraft-theme .indra-gallery,
+body.minecraft-theme .research-gallery-strip {
+  border: 4px solid #3f3f3f;
+  background: var(--mc-gui);
+  box-shadow: inset 3px 3px #ffffffc0, inset -3px -3px #555555c0;
+}
+
+body.minecraft-theme .home-research-gateway {
+  margin-inline: auto;
+}
+
+body.minecraft-theme .home-research-gateway__cases,
+body.minecraft-theme .home-research-gateway__flow {
+  gap: 8px;
+  padding: 10px;
+  border-top: 0;
+  background: var(--mc-gui);
+}
+
+body.minecraft-theme .home-research-gateway__cases a,
+body.minecraft-theme .home-research-gateway__flow span {
+  border: 3px solid #252525;
+  border-radius: 0;
+  color: #fff;
+  background: var(--mc-gui-mid);
+  box-shadow: inset 3px 3px #777, inset -3px -3px #333;
+}
+
+@media (max-width: 900px) {
+  body.minecraft-theme .project-heading,
+  body.minecraft-theme .publication-detail__heading,
+  body.minecraft-theme .about-layout,
+  body.minecraft-theme .study-hub-hero,
+  body.minecraft-theme .category-feature,
+  body.minecraft-theme .indra-case-card--viscan,
+  body.minecraft-theme .blog-with-sidebar {
+    grid-template-columns: 1fr;
+  }
+
+  body.minecraft-theme .project-grid,
+  body.minecraft-theme .post-grid,
+  body.minecraft-theme .taxonomy-grid,
+  body.minecraft-theme .series-grid,
+  body.minecraft-theme .learning-grid,
+  body.minecraft-theme .publication-index-grid,
+  body.minecraft-theme .contact-links-grid,
+  body.minecraft-theme .project-narrative,
+  body.minecraft-theme .case-study-grid,
+  body.minecraft-theme .course-hub-grid,
+  body.minecraft-theme .track-card-grid,
+  body.minecraft-theme .home-metric-grid,
+  body.minecraft-theme .career-focus-grid,
+  body.minecraft-theme .indra-case-grid,
+  body.minecraft-theme .indra-publication-grid,
+  body.minecraft-theme .indra-study-grid,
+  body.minecraft-theme .indra-result-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  body.minecraft-theme .page-shell,
+  body.minecraft-theme .research-start {
+    width: min(100% - 12px, 100%);
+    padding: 64px 10px 16px;
+    margin-top: 12px;
+    box-shadow: 4px 4px 0 rgb(0 0 0 / 35%);
+  }
+
+  body.minecraft-theme .page-heading h1,
+  body.minecraft-theme .post-heading h1,
+  body.minecraft-theme .project-heading h1,
+  body.minecraft-theme .publication-detail__heading h1,
+  body.minecraft-theme .study-hub-hero h1,
+  body.minecraft-theme .indra-portfolio-hero h1 {
+    font-size: clamp(34px, 12vw, 56px);
+  }
+
+  body.minecraft-theme .study-post-card,
+  body.minecraft-theme .publication-card {
+    grid-template-columns: 1fr;
+  }
+
+  body.minecraft-theme .button-row {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
