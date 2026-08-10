@@ -247,3 +247,557 @@ body.minecraft-home-active h3 {
     bottom: 12px;
   }
 }
+
+/* Minecraft GUI pass: loading dirt texture + inventory-style homepage. */
+.minecraft-entry {
+  color: #fff;
+  background-color: #24150e;
+  background-image:
+    linear-gradient(90deg, rgb(255 255 255 / 5%) 1px, transparent 1px),
+    linear-gradient(rgb(255 255 255 / 4%) 1px, transparent 1px),
+    repeating-linear-gradient(45deg, rgb(255 255 255 / 4%) 0 7px, rgb(0 0 0 / 7%) 7px 14px),
+    repeating-linear-gradient(90deg, #3b2418 0 16px, #2e1b12 16px 32px, #4a2b18 32px 48px, #21140e 48px 64px);
+  background-size: 64px 64px, 64px 64px, 32px 32px, 64px 64px;
+  image-rendering: pixelated;
+}
+
+.minecraft-entry::before {
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(0deg, transparent 0 15px, rgb(0 0 0 / 14%) 15px 16px),
+    repeating-linear-gradient(90deg, transparent 0 15px, rgb(255 255 255 / 5%) 15px 16px);
+  background-size: 16px 16px;
+  content: "";
+  opacity: 0.58;
+}
+
+.minecraft-entry__panel {
+  position: relative;
+  z-index: 1;
+  width: min(100% - 32px, 760px);
+  min-height: min(520px, 78svh);
+  justify-content: center;
+  gap: 14px;
+}
+
+.minecraft-entry__hello {
+  margin-bottom: clamp(40px, 7vh, 86px);
+  font-size: clamp(18px, 2.5vw, 24px);
+}
+
+.minecraft-entry__loading-title,
+.minecraft-entry__guide,
+.minecraft-entry__percent {
+  margin: 0;
+  color: #fff;
+  line-height: 1.35;
+  text-shadow: 3px 3px 0 #202020;
+}
+
+.minecraft-entry__loading-title {
+  font-size: clamp(28px, 4.2vw, 42px);
+}
+
+.minecraft-entry__guide {
+  font-size: clamp(22px, 3.2vw, 32px);
+}
+
+.minecraft-entry__progress {
+  width: min(420px, 78vw);
+  height: 16px;
+  margin-top: 10px;
+  border: 0;
+  background: #57504a;
+  box-shadow: inset 0 2px #1f1f1f, inset 0 -2px #9b9184;
+}
+
+.minecraft-entry__progress span {
+  height: 100%;
+  border: 0;
+  background: #80f25d;
+  box-shadow: inset 0 2px #d8ffd0, inset 0 -2px #2c7a20;
+}
+
+.minecraft-entry__percent {
+  min-height: 1.6em;
+  font-size: clamp(17px, 2.4vw, 22px);
+}
+
+.minecraft-entry__enter,
+.minecraft-sound-toggle,
+body.minecraft-home-active .portfolio-button,
+body.minecraft-home-active .text-link,
+body.minecraft-home-active .indra-resource-buttons a,
+body.minecraft-home-active .publication-card__zoom,
+body.minecraft-home-active .publication-preview button,
+body.minecraft-home-active .blog-tools a {
+  border: 3px solid #1f1f1f;
+  border-radius: 0;
+  color: #353535;
+  background: #c6c6c6;
+  box-shadow: inset 3px 3px #ffffffc0, inset -3px -3px #555555c0;
+  font-family: "Minecraft World", "Roboto Mono", monospace;
+  letter-spacing: 0;
+  text-decoration: none;
+}
+
+.minecraft-entry__enter {
+  min-width: 260px;
+  min-height: 54px;
+  margin-top: clamp(28px, 7vh, 64px);
+  font-size: clamp(18px, 2.3vw, 23px);
+}
+
+.minecraft-entry__enter:hover,
+.minecraft-entry__enter:focus-visible,
+.minecraft-sound-toggle:hover,
+.minecraft-sound-toggle:focus-visible,
+body.minecraft-home-active .portfolio-button:hover,
+body.minecraft-home-active .portfolio-button:focus-visible,
+body.minecraft-home-active .text-link:hover,
+body.minecraft-home-active .text-link:focus-visible,
+body.minecraft-home-active .indra-resource-buttons a:hover,
+body.minecraft-home-active .indra-resource-buttons a:focus-visible,
+body.minecraft-home-active .publication-card__zoom:hover,
+body.minecraft-home-active .publication-card__zoom:focus-visible,
+body.minecraft-home-active .publication-preview button:hover,
+body.minecraft-home-active .publication-preview button:focus-visible,
+body.minecraft-home-active .blog-tools a:hover,
+body.minecraft-home-active .blog-tools a:focus-visible {
+  color: #fff;
+  border-color: #fff;
+  background: #218306;
+  box-shadow: inset 3px 3px #53d95ac0, inset -3px -3px #118316c0;
+  transform: none;
+}
+
+body.minecraft-home-active {
+  --portfolio-accent: #2f9dd9;
+  --portfolio-border: #1e1e1e;
+  --portfolio-muted: #454545;
+  --portfolio-surface: #c6c6c6;
+  --portfolio-text: #1d1d1d;
+  color: #1d1d1d;
+  background-color: #7fb7dd;
+  background-image:
+    linear-gradient(180deg, #7fb7dd 0 30vh, #6ea956 30vh 39vh, #6b4427 39vh 100%),
+    repeating-linear-gradient(90deg, rgb(255 255 255 / 12%) 0 1px, transparent 1px 64px),
+    repeating-linear-gradient(0deg, rgb(0 0 0 / 10%) 0 1px, transparent 1px 64px);
+  background-attachment: fixed;
+  background-size: auto, 64px 64px, 64px 64px;
+  font-family: "Minecraft World", "Roboto Mono", monospace;
+}
+
+body.minecraft-home-active .site-header,
+body.minecraft-home-active .site-footer {
+  color: #1d1d1d;
+  border-color: #1f1f1f;
+  background: #c6c6c6;
+  box-shadow: inset 3px 3px #ffffffc0, inset -3px -3px #555555c0;
+}
+
+body.minecraft-home-active .site-header__inner {
+  width: min(100%, 1180px);
+}
+
+body.minecraft-home-active .site-brand,
+body.minecraft-home-active .site-brand:link,
+body.minecraft-home-active .site-brand:visited,
+body.minecraft-home-active .site-navigation a,
+body.minecraft-home-active .site-navigation summary {
+  color: #1d1d1d;
+}
+
+body.minecraft-home-active .site-brand__mark {
+  border-radius: 0;
+  color: #1d1d1d;
+  border-color: #1f1f1f;
+  background: #8b8b8b;
+  box-shadow: inset 2px 2px #d6d6d6, inset -2px -2px #555;
+}
+
+body.minecraft-home-active .site-navigation a:hover,
+body.minecraft-home-active .site-navigation summary:hover,
+body.minecraft-home-active .site-navigation a[aria-current="page"] {
+  color: #1668a5;
+}
+
+body.minecraft-home-active .portfolio-main {
+  width: min(100% - clamp(16px, 4vw, 48px), 1180px);
+  max-width: none;
+  padding: clamp(18px, 3vw, 36px) 0 72px;
+  margin: 0 auto;
+  background: transparent;
+}
+
+body.minecraft-home-active .portfolio-hero,
+body.minecraft-home-active .content-section {
+  position: relative;
+  width: 100%;
+  min-height: 0;
+  padding: clamp(72px, 7vw, 92px) clamp(16px, 3vw, 32px) clamp(20px, 4vw, 38px);
+  margin: 0 0 clamp(22px, 4vw, 38px);
+  overflow: hidden;
+  color: #1d1d1d;
+  border: 4px solid #1f1f1f;
+  border-radius: 0;
+  background: #c6c6c6;
+  box-shadow: inset 4px 4px #ffffffc0, inset -4px -4px #555555c0, 8px 8px 0 rgb(0 0 0 / 35%);
+}
+
+body.minecraft-home-active .portfolio-hero::before,
+body.minecraft-home-active .content-section::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 48px;
+  border-bottom: 4px solid #5a5a5a;
+  background: #c6c6c6;
+  box-shadow: inset 4px 4px #ffffffc0, inset -4px -4px #555555c0;
+  content: "";
+}
+
+body.minecraft-home-active .portfolio-hero::after,
+body.minecraft-home-active .content-section::after {
+  position: absolute;
+  top: 5px;
+  right: 18px;
+  z-index: 1;
+  color: #555;
+  content: "\00d7";
+  font-size: 32px;
+  line-height: 1;
+}
+
+body.minecraft-home-active .portfolio-hero > *,
+body.minecraft-home-active .content-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+body.minecraft-home-active .portfolio-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(240px, 0.75fr);
+  align-items: start;
+  gap: clamp(16px, 3vw, 32px);
+}
+
+body.minecraft-home-active .portfolio-hero__content,
+body.minecraft-home-active .section-heading,
+body.minecraft-home-active .publication-card__content,
+body.minecraft-home-active .post-card,
+body.minecraft-home-active .career-focus-grid article,
+body.minecraft-home-active .home-metric-card,
+body.minecraft-home-active .learning-grid article,
+body.minecraft-home-active .timeline-list,
+body.minecraft-home-active .external-learning-list {
+  border: 6px solid #5a585c;
+  border-radius: 0;
+  color: #fff;
+  background: #343236;
+  box-shadow: inset 0 0 0 2px #222;
+}
+
+body.minecraft-home-active .portfolio-hero__content {
+  padding: clamp(14px, 3vw, 24px);
+}
+
+body.minecraft-home-active .section-heading {
+  max-width: none;
+  padding: 12px 14px;
+  margin: 0 0 16px;
+}
+
+body.minecraft-home-active .section-heading--with-link {
+  display: flex;
+  align-items: center;
+}
+
+body.minecraft-home-active .portfolio-hero h1,
+body.minecraft-home-active .section-heading h2,
+body.minecraft-home-active h2,
+body.minecraft-home-active h3 {
+  letter-spacing: 0;
+  text-shadow: 3px 3px 0 rgb(0 0 0 / 40%);
+}
+
+body.minecraft-home-active .portfolio-hero h1 {
+  max-width: 12ch;
+  font-size: clamp(44px, 8vw, 92px);
+  line-height: 0.98;
+}
+
+body.minecraft-home-active .portfolio-hero h1 span {
+  color: #fff;
+  font-size: clamp(18px, 2.4vw, 28px);
+  letter-spacing: 0;
+  text-shadow: 2px 2px 0 rgb(0 0 0 / 45%);
+}
+
+body.minecraft-home-active .portfolio-hero__lead,
+body.minecraft-home-active .section-heading > p,
+body.minecraft-home-active .publication-card__venue,
+body.minecraft-home-active .publication-card__authors,
+body.minecraft-home-active .publication-card__role,
+body.minecraft-home-active .post-card__meta,
+body.minecraft-home-active .verification-note {
+  color: #f3f3f3;
+}
+
+body.minecraft-home-active .eyebrow,
+body.minecraft-home-active .availability-badge,
+body.minecraft-home-active .career-focus-grid__label {
+  display: inline-flex;
+  width: fit-content;
+  padding: 4px 8px;
+  border: 2px solid #1f1f1f;
+  border-radius: 0;
+  color: #ffff55;
+  background: #4b4a4d;
+  box-shadow: inset 2px 2px #777, inset -2px -2px #222;
+  font-family: "Minecraft World", "Roboto Mono", monospace;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+body.minecraft-home-active .hero-focus {
+  color: #fff;
+}
+
+body.minecraft-home-active .hero-focus span {
+  color: #d8d8d8;
+}
+
+body.minecraft-home-active .hero-facts {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+}
+
+body.minecraft-home-active .hero-facts li {
+  min-height: 42px;
+  padding: 8px 10px 8px 30px;
+  color: #fff;
+  border: 3px solid #252525;
+  background: #5c5b5f;
+  box-shadow: inset 3px 3px #777, inset -3px -3px #333;
+}
+
+body.minecraft-home-active .hero-facts li::before {
+  top: 14px;
+  left: 10px;
+  width: 10px;
+  height: 10px;
+  border-radius: 0;
+  background: #5bd4ff;
+  box-shadow: 2px 2px 0 #155b73;
+}
+
+body.minecraft-home-active .portfolio-hero__portrait {
+  padding: 10px;
+  border: 4px solid #1f1f1f;
+  background: #c6c6c6;
+  box-shadow: inset 3px 3px #ffffffc0, inset -3px -3px #555555c0;
+}
+
+body.minecraft-home-active .portfolio-hero__portrait picture,
+body.minecraft-home-active .about-layout__portrait picture {
+  padding: 8px;
+  border: 3px solid #3f3f3f;
+  border-radius: 0;
+  background: #969696;
+  box-shadow: inset 3px 3px #d6d6d6, inset -3px -3px #555;
+}
+
+body.minecraft-home-active .portfolio-hero__portrait img,
+body.minecraft-home-active .publication-card__preview img,
+body.minecraft-home-active .publication-preview img,
+body.minecraft-home-active .post-card img {
+  image-rendering: auto;
+}
+
+body.minecraft-home-active .portfolio-hero__portrait figcaption {
+  color: #343236;
+}
+
+body.minecraft-home-active .button-row,
+body.minecraft-home-active .hero-actions,
+body.minecraft-home-active .badge-row {
+  gap: 8px;
+}
+
+body.minecraft-home-active .portfolio-button,
+body.minecraft-home-active .text-link,
+body.minecraft-home-active .publication-card__zoom,
+body.minecraft-home-active .publication-preview button {
+  min-height: 38px;
+  padding: 8px 12px;
+}
+
+body.minecraft-home-active .portfolio-button--primary,
+body.minecraft-home-active .portfolio-button--primary:link,
+body.minecraft-home-active .portfolio-button--primary:visited {
+  color: #2c260e;
+  background: #f5d15c;
+}
+
+body.minecraft-home-active .career-focus-grid,
+body.minecraft-home-active .home-metric-grid,
+body.minecraft-home-active .publication-stack,
+body.minecraft-home-active .post-grid,
+body.minecraft-home-active .learning-grid {
+  display: grid;
+  gap: 8px;
+  padding: 10px;
+  border: 4px solid #3f3f3f;
+  background-color: #c6c6c6;
+  background-image:
+    linear-gradient(90deg, rgb(0 0 0 / 22%) 2px, transparent 2px),
+    linear-gradient(rgb(0 0 0 / 22%) 2px, transparent 2px);
+  background-size: 58px 58px;
+  box-shadow: inset 3px 3px #ffffffc0, inset -3px -3px #555555c0;
+}
+
+body.minecraft-home-active .career-focus-grid article,
+body.minecraft-home-active .home-metric-card,
+body.minecraft-home-active .post-card,
+body.minecraft-home-active .learning-grid article {
+  min-width: 0;
+  padding: clamp(12px, 2.5vw, 20px);
+}
+
+body.minecraft-home-active .home-metric-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+body.minecraft-home-active .career-focus-grid article h3,
+body.minecraft-home-active .home-metric-card h3,
+body.minecraft-home-active .post-card h3,
+body.minecraft-home-active .learning-grid h2,
+body.minecraft-home-active .learning-grid h3,
+body.minecraft-home-active .publication-card__content h2 {
+  color: #fff;
+  letter-spacing: 0;
+}
+
+body.minecraft-home-active .career-focus-grid article p,
+body.minecraft-home-active .home-metric-card p,
+body.minecraft-home-active .post-card p,
+body.minecraft-home-active .learning-grid p,
+body.minecraft-home-active .publication-card p,
+body.minecraft-home-active .timeline-list,
+body.minecraft-home-active .external-learning-list {
+  color: #f3f3f3;
+}
+
+body.minecraft-home-active .metric-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(92px, 1fr));
+  gap: 6px;
+}
+
+body.minecraft-home-active .metric-list div {
+  min-width: 0;
+  padding: 8px;
+  border: 3px solid #252525;
+  color: #fff;
+  background: #5c5b5f;
+  box-shadow: inset 3px 3px #777, inset -3px -3px #333;
+}
+
+body.minecraft-home-active .metric-list dt {
+  color: #d8d8d8;
+}
+
+body.minecraft-home-active .metric-list dd {
+  color: #fff;
+  letter-spacing: 0;
+}
+
+body.minecraft-home-active .publication-card {
+  grid-template-columns: minmax(12rem, 0.75fr) minmax(0, 1.5fr);
+  border: 6px solid #5a585c;
+  border-radius: 0;
+  background: #343236;
+  box-shadow: inset 0 0 0 2px #222;
+}
+
+body.minecraft-home-active .publication-card__preview {
+  min-height: 18rem;
+  border-right: 6px solid #5a585c;
+  background: #969696;
+  box-shadow: inset 3px 3px #d6d6d6, inset -3px -3px #555;
+}
+
+body.minecraft-home-active .publication-card__preview img,
+body.minecraft-home-active .publication-preview img {
+  border: 3px solid #252525;
+  background: #f3f3f3;
+}
+
+body.minecraft-home-active .publication-card a,
+body.minecraft-home-active .post-card a,
+body.minecraft-home-active .learning-grid a,
+body.minecraft-home-active .timeline-list a,
+body.minecraft-home-active .external-learning-list a {
+  color: #9adfff;
+}
+
+body.minecraft-home-active .timeline-list,
+body.minecraft-home-active .external-learning-list {
+  padding: clamp(14px, 3vw, 24px);
+}
+
+body.minecraft-home-active .site-footer {
+  margin-top: 0;
+}
+
+@media (max-width: 900px) {
+  body.minecraft-home-active .portfolio-hero {
+    grid-template-columns: 1fr;
+  }
+
+  body.minecraft-home-active .portfolio-hero__portrait {
+    max-width: 360px;
+  }
+
+  body.minecraft-home-active .home-metric-grid,
+  body.minecraft-home-active .career-focus-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  body.minecraft-home-active .portfolio-main {
+    width: min(100% - 12px, 100%);
+    padding-top: 12px;
+  }
+
+  body.minecraft-home-active .portfolio-hero,
+  body.minecraft-home-active .content-section {
+    padding: 64px 10px 16px;
+    margin-bottom: 18px;
+    box-shadow: 4px 4px 0 rgb(0 0 0 / 35%);
+  }
+
+  body.minecraft-home-active .portfolio-hero h1 {
+    font-size: clamp(38px, 13vw, 58px);
+  }
+
+  body.minecraft-home-active .hero-facts,
+  body.minecraft-home-active .post-grid,
+  body.minecraft-home-active .learning-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.minecraft-home-active .publication-card {
+    grid-template-columns: 1fr;
+  }
+
+  body.minecraft-home-active .publication-card__preview {
+    min-height: 12rem;
+    border-right: 0;
+    border-bottom: 6px solid #5a585c;
+  }
+}

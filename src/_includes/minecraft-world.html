@@ -3,8 +3,11 @@
     <p class="minecraft-entry__hello" id="minecraft-entry-title">
       {% if page.lang == 'en' %}Hi 👋! Thanks for stopping by!! ❤️{% else %}Hi 👋! 홈페이지에 들러주셔서 감사합니다!! ❤️{% endif %}
     </p>
+    <p class="minecraft-entry__loading-title">
+      {% if page.lang == 'en' %}Generating level{% else %}Generating level{% endif %}
+    </p>
     <p class="minecraft-entry__guide">
-      {% if page.lang == 'en' %}Loading the homepage{% else %}홈페이지를 불러오는 중입니다{% endif %}
+      {% if page.lang == 'en' %}Loading chunks...{% else %}Loading chunks...{% endif %}
     </p>
     <div class="minecraft-entry__progress" data-minecraft-progress aria-hidden="true">
       <span data-minecraft-progress-bar></span>
