@@ -1953,6 +1953,39 @@ summary:focus-visible {
   cursor: pointer;
 }
 
+.publication-figure-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1.125rem;
+  margin: 1.2rem 0;
+}
+
+.publication-figure-card {
+  margin: 0;
+  padding: 0.625rem;
+  border: 1px solid var(--portfolio-border);
+  border-radius: 0.625rem;
+  background: var(--c-pageBackground);
+}
+
+.publication-figure-trigger {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+
+.publication-figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.publication-figure-caption {
+  margin-top: 0.45rem;
+  font-size: 0.9rem;
+}
+
 @media (max-width: 64rem) {
   .home-metric-grid {
     grid-template-columns: 1fr;

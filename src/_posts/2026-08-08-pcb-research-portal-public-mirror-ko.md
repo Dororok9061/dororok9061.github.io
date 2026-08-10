@@ -1,9 +1,9 @@
 ---
-title: PCB Research Publication Workbench 공개 미러 반영
+title: PCB Research Publication Workbench 공개 미러
 title_en: PCB Research Publication Workbench public mirror
-description: 로컬 8765 포털에서 검증한 PCB inspection figure atlas와 lightbox 구성을 GitHub Pages 블로그와 프로젝트 허브에 연결했습니다.
+description: 로컬 8765 포털에서 검증한 PCB inspection figure atlas와 lightbox 구성을 GitHub Pages 블로그와 프로젝트 허브에 다시 반영했습니다.
 date: 2026-08-07 23:55:00 +0900
-updated: 2026-08-07 23:55:00 +0900
+updated: 2026-08-10 00:00:00 +0900
 study_date: 2026-08-07
 lang: ko
 translation_key: pcb-research-portal-public-mirror
@@ -22,55 +22,82 @@ tools: [Jekyll, GitHub Pages, Material Icons, PaperBanana]
 hardware: [STM32F411, camera]
 software_versions: []
 source_materials:
-  - { title: PCB Research Publication Workbench, type: public-page, public_url: /projects/pcb-visual-inspection/research-portal/?fresh=20260808-public-mirror-v1#methodology, file_reference: src/projects/pcb-visual-inspection/research-portal, pages: "", used_for: public mirror }
-  - { title: PCB Visual Inspection Studio project page, type: project-page, public_url: /projects/pcb-visual-inspection/, file_reference: src/projects/pcb-visual-inspection/index.md, pages: "", used_for: project hub link }
+  - { title: PCB Research Publication Workbench, type: public-page, public_url: /projects/pcb-visual-inspection/research-portal/?fresh=20260810-main-republish#methodology, file_reference: src/projects/pcb-visual-inspection/research-portal, pages: "", used_for: public mirror }
+  - { title: PCB Visual Inspection Studio repository paper package, type: github-repository, public_url: https://github.com/Dororok9061/PCB-Visual-Inspection-Studio/tree/main/docs/paper, file_reference: docs/paper, pages: "", used_for: paper package }
 prerequisites: [PCB inspection, figure source mapping, GitHub Pages]
-learning_objectives: [로컬 포털과 공개 사이트 동기화, 낱장 figure atlas 연결, click-to-enlarge 공개 검증]
+learning_objectives: [local portal and public site sync, individual figure atlas publication, click-to-enlarge review flow]
 related_projects: [pcb-visual-inspection]
 related_posts: [evidence-status]
 tags: [pcb-inspection, github-pages, paperbanana, figure-atlas, lightbox]
-cover_image: /projects/pcb-visual-inspection/research-portal/AssetsWeb/paper_style/pcb_style_fig31a_capture_quality_gate.webp
+cover_image: /projects/pcb-visual-inspection/research-portal/AssetsWeb/paper_style/pcb_style_fig09_frpatchcore_pipeline.webp
 thumbnail: /projects/pcb-visual-inspection/research-portal/AssetsWeb/paper_style/pcb_style_fig31a_capture_quality_gate.webp
-image_alt: PCB capture, ROI, quality gate를 분리형 논문 figure 카드로 정리한 그림
+image_alt: PCB inspection pipeline and paper-style figure atlas
 draft: false
 published: true
 revision_history:
   - { date: 2026-08-07, change: 로컬 8765 포털을 GitHub Pages 공개 경로로 미러 }
+  - { date: 2026-08-10, change: 주요 파이프라인, 아키텍처, 결과표 그림을 블로그 본문에 직접 추가 }
 toc:
   - { id: mirror, title: 공개 미러 경로 }
-  - { id: hub, title: 허브 연결 }
-  - { id: assets, title: 에셋 처리 }
-  - { id: figures, title: 그림 구조 }
-  - { id: boundary, title: 검증 범위 }
+  - { id: key-figures, title: 주요 그림 }
+  - { id: pipeline, title: 파이프라인과 아키텍처 }
+  - { id: results, title: 결과표와 주장 경계 }
+  - { id: links, title: 연결 경로 }
 ---
 
 ## 공개 미러 경로 {#mirror}
 
-로컬에서 확인하던 `127.0.0.1:8765` 포털을 GitHub Pages 안의 정적 경로로 미러했습니다.
+로컬 `127.0.0.1:8765` 포털에서 확인하던 PCB inspection publication workbench를 GitHub Pages 경로로 다시 연결했습니다.
 
-[전체 Research Publication Workbench 열기](/projects/pcb-visual-inspection/research-portal/?fresh=20260808-public-mirror-v1#methodology)
+[전체 Research Publication Workbench 열기](/projects/pcb-visual-inspection/research-portal/?fresh=20260810-main-republish#methodology)
 
-이 경로에는 `index.html`, `portal-data.js`, `style.css`, `script.js`, 그리고 최적화된 `AssetsWeb` 폴더가 함께 들어갑니다. 따라서 프로젝트 요약 페이지의 10장 갤러리만 보는 것이 아니라, PaperBanana reference-intake 방식으로 정리한 전체 figure/table atlas를 한 페이지에서 볼 수 있습니다.
+이번 반영의 핵심은 contact sheet 하나로 뭉쳐 보이는 방식이 아니라, 논문 본문에서 바로 읽을 수 있는 대표 그림과 개별 확대 가능한 figure card를 함께 노출하는 것입니다. 각 그림은 `data-lightbox`를 통해 클릭하면 크게 볼 수 있습니다.
 
-## 허브 연결 {#hub}
+## 주요 그림 {#key-figures}
 
-PCB 프로젝트 페이지, repository README, KO/EN 프로젝트 메타데이터가 모두 같은 공개 Workbench 경로를 가리키도록 맞췄습니다. 그래서 로컬 8765 미리보기와 공개 GitHub Pages 사이에 내용 차이가 남지 않도록 연결했습니다.
+<div class="publication-figure-grid">
+{% assign figure_cards = "/projects/pcb-visual-inspection/research-portal/AssetsWeb/paper_style/pcb_style_fig31a_capture_quality_gate.webp|Capture and quality gate;/projects/pcb-visual-inspection/research-portal/AssetsWeb/paper_style/pcb_style_fig31b_vit_dino_patch_path.webp|ViT DINO patch path;/projects/pcb-visual-inspection/research-portal/AssetsWeb/paper_style/pcb_style_fig31c_registration_memory_bank.webp|Registration and memory bank;/projects/pcb-visual-inspection/research-portal/AssetsWeb/paper_style/pcb_style_fig13_heatmap_gt_mask.webp|Heatmap GT and mask;/projects/pcb-visual-inspection/research-portal/AssetsWeb/paper_style/pcb_style_fig14_threshold_masks.webp|Threshold masks;/projects/pcb-visual-inspection/research-portal/AssetsWeb/paper_style/pcb_style_fig15_dataset_examples.webp|Dataset examples;/projects/pcb-visual-inspection/research-portal/AssetsWeb/paper_style/pcb_style_fig16_pro_line_chart.webp|Mean PRO line chart;/projects/pcb-visual-inspection/research-portal/AssetsWeb/paper_style/pcb_style_fig18_loss_convergence.webp|Loss convergence;/projects/pcb-visual-inspection/research-portal/AssetsWeb/paper_style/pcb_style_fig19_qualitative_grid.webp|Qualitative inspection grid;/projects/pcb-visual-inspection/research-portal/AssetsWeb/paper_style/pcb_style_fig25_embedding_filters.webp|Embedding filters;/projects/pcb-visual-inspection/research-portal/AssetsWeb/paper_style/pcb_style_fig29_layer_attention_maps.webp|Layer attention maps;/projects/pcb-visual-inspection/research-portal/AssetsWeb/paper_style/pcb_style_table07_industrial_scores.webp|Industrial score tables;/projects/pcb-visual-inspection/research-portal/AssetsWeb/paper_style/pcb_style_table09_full_result.webp|Full result table" | split: ";" %}
+{% for item in figure_cards %}
+{% assign parts = item | split: "|" %}
+<figure class="publication-figure-card">
+  <button class="publication-figure-trigger" type="button" data-lightbox="{{ parts[0] }}" data-lightbox-alt="{{ parts[1] }}" data-lightbox-caption="{{ parts[1] }}">
+    <img class="publication-figure-image" src="{{ parts[0] }}" alt="{{ parts[1] }}" width="900" height="900" loading="lazy">
+  </button>
+  <figcaption class="publication-figure-caption">{{ parts[1] }}</figcaption>
+</figure>
+{% endfor %}
+</div>
 
-## 에셋 처리 {#assets}
-
-원본 고해상도 캡처는 로컬 프로젝트 기록 안에 그대로 두고, 공개 페이지에서는 최적화된 `AssetsWeb` 파일만 사용합니다. 큰 contact sheet를 독자용 기본 경로로 쓰지 않고, 개별 figure card를 하나씩 분리해 lightbox에서 각 PCB inspection diagram을 확대할 수 있게 했습니다.
-
-## 그림 구조 {#figures}
+## 파이프라인과 아키텍처 {#pipeline}
 
 <figure>
-  <button type="button" data-lightbox="/projects/pcb-visual-inspection/research-portal/AssetsWeb/paper_style/pcb_style_fig31a_capture_quality_gate.webp" data-lightbox-alt="PCB capture and quality gate figure" data-lightbox-caption="fig31a. capture and quality gate">
-    <img src="/projects/pcb-visual-inspection/research-portal/AssetsWeb/paper_style/pcb_style_fig31a_capture_quality_gate.webp" alt="PCB capture and quality gate figure" width="900" height="900" loading="lazy">
+  <button type="button" data-lightbox="/projects/pcb-visual-inspection/research-portal/AssetsWeb/paper_style/pcb_style_fig09_frpatchcore_pipeline.webp" data-lightbox-alt="FR-PatchCore style PCB registration and memory-bank pipeline" data-lightbox-caption="FR-PatchCore style PCB registration and memory-bank pipeline">
+    <img src="/projects/pcb-visual-inspection/research-portal/AssetsWeb/paper_style/pcb_style_fig09_frpatchcore_pipeline.webp" alt="FR-PatchCore style PCB registration and memory-bank pipeline" width="900" height="900" loading="lazy">
   </button>
-  <figcaption>분리형 figure card는 contact sheet로 뭉치지 않고, 클릭하면 lightbox에서 확대됩니다.</figcaption>
+  <figcaption>등록, feature encoding, coreset memory bank, kNN score 흐름을 PCB inspection 데이터에 맞춰 재구성한 파이프라인입니다.</figcaption>
 </figure>
 
-포털에는 `fig01`부터 `fig44`, `table01`부터 `table09`, 그리고 `fig31a`부터 `fig31j`까지의 PCB inspection용 그림과 표 자산이 들어갑니다. 프로젝트 페이지에는 요약 gallery를 남기고, 상세 검토는 전체 Workbench 링크로 연결했습니다.
+<figure>
+  <button type="button" data-lightbox="/projects/pcb-visual-inspection/research-portal/AssetsWeb/paper_style/pcb_style_fig20_vit_model_overview.webp" data-lightbox-alt="ViT style PCB patch-token architecture" data-lightbox-caption="ViT style PCB patch-token architecture">
+    <img src="/projects/pcb-visual-inspection/research-portal/AssetsWeb/paper_style/pcb_style_fig20_vit_model_overview.webp" alt="ViT style PCB patch-token architecture" width="900" height="900" loading="lazy">
+  </button>
+  <figcaption>PCB ROI를 patch token으로 바꾸고, transformer encoder와 MLP head로 연결하는 논문형 아키텍처 그림입니다.</figcaption>
+</figure>
 
-## 검증 범위 {#boundary}
+## 결과표와 주장 경계 {#results}
 
-공개 페이지는 논문형 그림 구조, label 정렬, figure card 분리, lightbox 동작을 보여주는 출판 허브입니다. 생산 수율, 제조 결함 판정, gold-label 기반 정량 성능은 데이터셋 공개 승인 이후 결과 요약에 반영합니다.
+공개 페이지의 표와 수치는 production acceptance가 아니라, 출판 패키지와 연구용 pilot evidence를 설명하기 위한 registry-backed 결과입니다. 실물 카메라 프레임 수신과 gold-label production 성능은 아직 별도 승인 전입니다.
+
+<figure>
+  <button type="button" data-lightbox="/projects/pcb-visual-inspection/research-portal/AssetsWeb/paper_style/pcb_style_table02_result_tables.webp" data-lightbox-alt="PCB result tables" data-lightbox-caption="PCB result tables">
+    <img src="/projects/pcb-visual-inspection/research-portal/AssetsWeb/paper_style/pcb_style_table02_result_tables.webp" alt="PCB result tables" width="900" height="900" loading="lazy">
+  </button>
+  <figcaption>FR-PatchCore/PatchCore-style table format을 유지하면서 PCB inspection 수치와 claim boundary를 분리한 결과표입니다.</figcaption>
+</figure>
+
+## 연결 경로 {#links}
+
+- GitHub repository: <https://github.com/Dororok9061/PCB-Visual-Inspection-Studio>
+- Camera validation report: <https://github.com/Dororok9061/PCB-Visual-Inspection-Studio/blob/main/docs/camera_validation_report.md>
+- Public research portal: <https://dororok9061.github.io/projects/pcb-visual-inspection/research-portal/?fresh=20260810-main-republish#methodology>
+- English version: [PCB Research Publication Workbench public mirror](/en/blog/2026/08/08/pcb-research-portal-public-mirror/?fresh=20260810-main-republish)
