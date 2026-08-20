@@ -11,10 +11,22 @@ expected_graduation_iso: 2027-02-25
 available_from_ko: 2027년 1월
 available_from_en: January 2027
 available_from_iso: 2027-01
-ces_2027_ko: ViScan 부스 운영 및 시연 예정
-ces_2027_en: Planned ViScan booth operation and live demonstration
-ces_innovation_ko: ViScan CES Innovation Awards 준비 중 · 공개 예정
-ces_innovation_en: ViScan CES Innovation Awards submission in preparation · public details planned
+ces_2027_ko: ViScan 부스 운영 및 제품 시연 예정
+ces_2027_en: Planned ViScan booth operation and live product demonstration
+ces_innovation_ko: ViScan CES 2027 Innovation Awards 신청·제출 완료
+ces_innovation_en: ViScan CES 2027 Innovation Awards application submitted
+patent_status_ko: 국내 특허 출원 완료
+patent_status_en: Korean patent application filed
+patent_application_no: 10-2026-0154726
+patent_filing_date_ko: 2026년 8월 18일
+patent_filing_date_en: August 18, 2026
+patent_filing_date_iso: 2026-08-18
+patent_title_ko: 초음파 기반 스마트미러 체성분 분석 시스템
+patent_title_en: Ultrasound-Based Smart Mirror Body Composition Analysis System
+patent_role_ko: 공동발명자
+patent_role_en: Co-inventor
+patent_applicants_ko: 단국대학교 천안캠퍼스 산학협력단·주식회사 한소노 공동출원
+patent_applicants_en: Jointly filed by the Dankook University Cheonan Campus Industry-Academic Cooperation Foundation and Hansono Co., Ltd.
 email: hnryu0515@gmail.com
 linkedin: https://www.linkedin.com/in/hyeongrok-ryu-842231224/
 github: https://github.com/Dororok9061
