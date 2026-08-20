@@ -19,6 +19,18 @@ evidence across radar signal processing, Vision AI, sensor fusion, embedded
 systems, FPGA RTL/DV, biomedical AI, systems engineering, publications,
 coursework, and engineering study notes.
 
+## ViScan · CES 2027 · Korean patent application
+
+- **CES 2027 Innovation Awards:** application submitted
+- **CES 2027:** planned ViScan booth operation and live product demonstration
+- **Korean patent application:** **10-2026-0154726**, filed **August 18, 2026**
+- **Filing title:** *Ultrasound-Based Smart Mirror Body Composition Analysis System* / **초음파 기반 스마트미러 체성분 분석 시스템**
+- **Role:** co-inventor
+- **Applicants:** Dankook University Cheonan Campus Industry-Academic Cooperation Foundation and Hansono Co., Ltd.
+- [Open the disclosure-safe ViScan case study](https://dororok9061.github.io/projects/viscan/)
+
+> This is a patent application, not a granted or registered patent. No CES award result is claimed before the official announcement.
+
 ## Research Case Study framework
 
 The existing Jekyll 4 + Simplex visual theme is preserved. The visible
@@ -45,6 +57,7 @@ buttons, methodology flow, and GitHub banners.
 
 | Domain | Website case study | Repository case study |
 |---|---|---|
+| Radar · Vision AI · Sensor Fusion · Digital Health | [ViScan Smart Mirror](https://dororok9061.github.io/projects/viscan/) | Disclosure-safe public page; private engineering repository |
 | FMCW Radar · ECG/SCG sensing | [FMCW Radar Cardiac Timing](https://dororok9061.github.io/projects/fmcw-radar/) | [RESEARCH_CASE_STUDY.md](https://github.com/Dororok9061/fmcw-radar-aoac-cardiac-analysis/blob/main/RESEARCH_CASE_STUDY.md) |
 | PPG · HRV · Biomedical AI | [PPG–HRV Cognitive Load](https://dororok9061.github.io/projects/ppg-hrv/) | [RESEARCH_CASE_STUDY.md](https://github.com/Dororok9061/PPG-HRV-Cognitive-Load-CNN/blob/main/RESEARCH_CASE_STUDY.md) |
 | FPGA RTL · Digital Verification | [FPGA Delay Logic](https://dororok9061.github.io/projects/fpga-delay-logic/) | [RESEARCH_CASE_STUDY.md](https://github.com/Dororok9061/fpga-delay-logic-design-verification/blob/main/RESEARCH_CASE_STUDY.md) |
