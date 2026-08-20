@@ -23,7 +23,8 @@ layout: default
         <div><dt>{% if page.lang == 'en' %}Expected graduation{% else %}졸업 예정{% endif %}</dt><dd>{% if page.lang == 'en' %}{{ profile.expected_graduation_en }}{% else %}{{ profile.expected_graduation_ko }}{% endif %}</dd></div>
         <div><dt>{% if page.lang == 'en' %}Available from{% else %}입사 가능{% endif %}</dt><dd>{% if page.lang == 'en' %}{{ profile.available_from_en }}{% else %}{{ profile.available_from_ko }}{% endif %}</dd></div>
         <div><dt>CES 2027</dt><dd>{% if page.lang == 'en' %}{{ profile.ces_2027_en }}{% else %}{{ profile.ces_2027_ko }}{% endif %}</dd></div>
-        <div><dt>{% if page.lang == 'en' %}CES Innovation Awards{% else %}CES Innovation Awards{% endif %}</dt><dd>{% if page.lang == 'en' %}{{ profile.ces_innovation_en }}{% else %}{{ profile.ces_innovation_ko }}{% endif %}</dd></div>
+        <div><dt>CES Innovation Awards</dt><dd>{% if page.lang == 'en' %}{{ profile.ces_innovation_en }}{% else %}{{ profile.ces_innovation_ko }}{% endif %}</dd></div>
+        <div><dt>{% if page.lang == 'en' %}Patent application{% else %}특허 출원{% endif %}</dt><dd><strong>{{ profile.patent_application_no }}</strong> · {% if page.lang == 'en' %}{{ profile.patent_title_en }} · {{ profile.patent_role_en }} · filed {{ profile.patent_filing_date_en }}{% else %}{{ profile.patent_title_ko }} · {{ profile.patent_role_ko }} · {{ profile.patent_filing_date_ko }} 출원{% endif %}</dd></div>
         <div><dt>Email</dt><dd><a href="mailto:{{ profile.email }}">{{ profile.email }}</a></dd></div>
         <div><dt>LinkedIn</dt><dd><a href="{{ profile.linkedin }}" target="_blank" rel="noopener noreferrer">{% if page.lang == 'en' %}Public profile{% else %}공개 프로필{% endif %}</a></dd></div>
         <div><dt>{% if page.lang == 'en' %}Primary focus{% else %}주력 직무{% endif %}</dt><dd>{% if page.lang == 'en' %}{{ profile.primary_focus_en }}{% else %}{{ profile.primary_focus_ko }}{% endif %}</dd></div>
