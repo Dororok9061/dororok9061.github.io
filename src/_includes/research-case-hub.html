@@ -20,6 +20,7 @@
     </div>
   </div>
   <div class="home-research-gateway__cases">
+    <a href="{% if page.lang == 'en' %}{{ '/en/projects/viscan/' | relative_url }}{% else %}{{ '/projects/viscan/' | relative_url }}{% endif %}"><span>Radar · Vision AI · Sensor Fusion</span><strong>ViScan Smart Mirror</strong><small>{% if page.lang == 'en' %}CES 2027 submitted · Patent 10-2026-0154726{% else %}CES 2027 제출 완료 · 특허 10-2026-0154726{% endif %}</small></a>
     <a href="{% if page.lang == 'en' %}{{ '/en/projects/fmcw-radar/' | relative_url }}{% else %}{{ '/projects/fmcw-radar/' | relative_url }}{% endif %}"><span>Radar · Multimodal Sensing</span><strong>FMCW Radar Cardiac Timing</strong><small>600 s · 848 beats · ECG/SCG/Radar</small></a>
     <a href="{% if page.lang == 'en' %}{{ '/en/projects/ppg-hrv/' | relative_url }}{% else %}{{ '/projects/ppg-hrv/' | relative_url }}{% endif %}"><span>Biomedical AI · Embedded</span><strong>PPG–HRV Cognitive Load</strong><small>STM32 · HRV · CNN+Transformer</small></a>
     <a href="{% if page.lang == 'en' %}{{ '/en/projects/fpga-delay-logic/' | relative_url }}{% else %}{{ '/projects/fpga-delay-logic/' | relative_url }}{% endif %}"><span>FPGA · Digital Verification</span><strong>Programmable Delay Logic</strong><small>20 / 26 / 3 regression results</small></a>
