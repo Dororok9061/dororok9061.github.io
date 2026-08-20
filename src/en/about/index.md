@@ -24,9 +24,17 @@ covering presence detection, face sessions, pose-based AR guidance, and rPPG. I 
 YuNet/SFace face recognition and MediaPipe Pose, combined low-light, occlusion, and
 multi-person checks with BGT60TR13C presence and distance information, and defined
 state-transition conditions for each sensing stage. I plan to participate in ViScan booth
-operation and live demonstrations at CES 2027. The team is also preparing a ViScan
-submission for the CES Innovation Awards, and additional product and submission details
-will be added to the portfolio when they are ready for public release.
+operation and live demonstrations at CES 2027. The ViScan CES 2027 Innovation Awards
+application has also been submitted.
+
+## Patent application
+
+The core ViScan technology was filed in Korea under the title
+**“Ultrasound-Based Smart Mirror Body Composition Analysis System”**
+(portfolio translation of the Korean filing title). The Korean patent application number is
+**10-2026-0154726**, filed on **August 18, 2026**. It was jointly filed by the Dankook
+University Cheonan Campus Industry-Academic Cooperation Foundation and Hansono Co., Ltd.,
+and I participated as a co-inventor. This is a patent application, not a granted patent.
 
 ## Design and verification work
 
