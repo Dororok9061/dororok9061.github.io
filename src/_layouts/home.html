@@ -22,6 +22,7 @@ layout: default
         <li><strong>{% if page.lang == 'en' %}Available from{% else %}입사 가능{% endif %}:</strong> {% if page.lang == 'en' %}{{ profile.available_from_en }}{% else %}{{ profile.available_from_ko }}{% endif %}</li>
         <li><strong>CES 2027:</strong> {% if page.lang == 'en' %}{{ profile.ces_2027_en }}{% else %}{{ profile.ces_2027_ko }}{% endif %}</li>
         <li><strong>CES Innovation Awards:</strong> {% if page.lang == 'en' %}{{ profile.ces_innovation_en }}{% else %}{{ profile.ces_innovation_ko }}{% endif %}</li>
+        <li><strong>{% if page.lang == 'en' %}Patent application{% else %}특허 출원{% endif %}:</strong> {{ profile.patent_application_no }} · {% if page.lang == 'en' %}{{ profile.patent_title_en }} · {{ profile.patent_role_en }}{% else %}{{ profile.patent_title_ko }} · {{ profile.patent_role_ko }}{% endif %}</li>
       </ul>
       <div class="button-row hero-actions">
         <a class="portfolio-button portfolio-button--primary" href="{% if page.lang == 'en' %}{{ '/en/projects/' | relative_url }}{% else %}{{ '/projects/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}View Projects{% else %}프로젝트 보기{% endif %}</a>
