@@ -1,0 +1,25 @@
+{% assign profile = site.data.profile %}
+<section class="portfolio-main content-section content-section--wide" id="patent-innovation" aria-labelledby="patent-innovation-title">
+  <div class="section-heading section-heading--with-link">
+    <div>
+      <p class="eyebrow">Patent · CES 2027</p>
+      <h2 id="patent-innovation-title">{% if page.lang == 'en' %}ViScan patent filing and CES submission{% else %}ViScan 특허출원·CES 제출 현황{% endif %}</h2>
+      <p>{% if page.lang == 'en' %}The public portfolio now reflects the completed Korean patent filing and the submitted CES 2027 Innovation Awards application.{% else %}국내 특허 출원번호 발급과 CES 2027 Innovation Awards 신청·제출 완료 내용을 공개 포트폴리오에 반영했습니다.{% endif %}</p>
+    </div>
+    <a class="text-link" href="{% if page.lang == 'en' %}{{ '/en/projects/viscan/' | relative_url }}{% else %}{{ '/projects/viscan/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}Open ViScan case study{% else %}ViScan Case Study 보기{% endif %} →</a>
+  </div>
+  <div class="career-focus-grid">
+    <article>
+      <p class="career-focus-grid__label">{% if page.lang == 'en' %}KOREAN PATENT APPLICATION{% else %}국내 특허 출원{% endif %}</p>
+      <h3>{% if page.lang == 'en' %}{{ profile.patent_title_en }}{% else %}{{ profile.patent_title_ko }}{% endif %}</h3>
+      <p><strong>{% if page.lang == 'en' %}Application No.{% else %}출원번호{% endif %}</strong> {{ profile.patent_application_no }} · <strong>{% if page.lang == 'en' %}Filed{% else %}출원일{% endif %}</strong> {% if page.lang == 'en' %}{{ profile.patent_filing_date_en }}{% else %}{{ profile.patent_filing_date_ko }}{% endif %}</p>
+      <p>{% if page.lang == 'en' %}{{ profile.patent_role_en }} · {{ profile.patent_applicants_en }}{% else %}{{ profile.patent_role_ko }} · {{ profile.patent_applicants_ko }}{% endif %}</p>
+    </article>
+    <article>
+      <p class="career-focus-grid__label">CES 2027</p>
+      <h3>{% if page.lang == 'en' %}Innovation Awards application submitted{% else %}Innovation Awards 신청·제출 완료{% endif %}</h3>
+      <p>{% if page.lang == 'en' %}{{ profile.ces_innovation_en }}{% else %}{{ profile.ces_innovation_ko }}{% endif %}</p>
+      <p>{% if page.lang == 'en' %}{{ profile.ces_2027_en }}{% else %}{{ profile.ces_2027_ko }}{% endif %}</p>
+    </article>
+  </div>
+</section>
