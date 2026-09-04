@@ -25,6 +25,7 @@ two-layer design with bottom-side ground copper.
 ## Included files
 
 - `source/Analog.sch` and `source/STM.sch`: hierarchical circuit sheets
+- `source/F411_PPG-cache.lib` and `source/F411_PPG-rescue.lib`: legacy symbol libraries required by the schematic
 - `source/F411_PPG.kicad_pcb`: PCB layout
 - `source/F411_PPG.kicad_pro` and legacy project files
 - `source/gerber 411_PPG/`: copper, mask, paste, silkscreen, outline, job, and drill outputs

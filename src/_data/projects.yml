@@ -690,6 +690,14 @@
     - Identified eight-channel current/voltage measurement blocks and ADC/DAC paths
     - Curated design-source and BOM files for the public archive
   gallery:
+    - webp: /assets/images/projects/solarcell-mppt-pcb/module-power-interface.webp
+      jpg: /assets/images/projects/solarcell-mppt-pcb/module-power-interface.jpg
+      width: 1600
+      height: 1132
+      alt_ko: 12 V 입력과 5 V·3.3 V rail, AD7997 ADC와 측정 모듈 connector를 보여주는 Solar Cell 회로도
+      alt_en: Solar-cell schematic showing the 12-V input, 5-V and 3.3-V rails, AD7997 ADC, and measurement-module connector
+      caption_ko: 측정 모듈의 전원 변환·기준전압·ADC·connector logic
+      caption_en: Measurement-module power conversion, reference, ADC, and connector logic
     - webp: /assets/images/projects/solarcell-mppt-pcb/current-sensing.webp
       jpg: /assets/images/projects/solarcell-mppt-pcb/current-sensing.jpg
       width: 1600
@@ -698,6 +706,54 @@
       alt_en: Measurement-module schematic with an AD7997 ADC and eight current-signal conditioning channels
       caption_ko: 여덟 채널을 ADC로 모으는 current-sensing signal chain
       caption_en: Current-sensing signal chain that collects eight channels through one ADC
+    - webp: /assets/images/projects/solarcell-mppt-pcb/voltage-dac-control.webp
+      jpg: /assets/images/projects/solarcell-mppt-pcb/voltage-dac-control.jpg
+      width: 1600
+      height: 1132
+      alt_ko: AD5629R DAC와 채널별 OPA703 회로를 표시한 Solar Cell 전압 제어 회로도
+      alt_en: Solar-cell voltage-control schematic showing the AD5629R DAC and per-channel OPA703 circuits
+      caption_ko: DAC setpoint을 채널별 OPA703 control path로 전달하는 voltage-control logic
+      caption_en: Voltage-control logic that distributes DAC setpoints to per-channel OPA703 paths
+    - webp: /assets/images/projects/solarcell-mppt-pcb/footprint-lm1084.webp
+      jpg: /assets/images/projects/solarcell-mppt-pcb/footprint-lm1084.jpg
+      width: 1600
+      height: 1000
+      alt_ko: PADS ASCII 원본 치수와 pad 좌표로 재구성한 LM1084ISX-5.0 KTT0003B decal 도면
+      alt_en: LM1084ISX-5.0 KTT0003B decal reconstructed from the dimensions and pad coordinates in the PADS ASCII source
+      caption_ko: LM1084 5 V regulator의 KTT0003B PADS decal과 pad 1–6 배치
+      caption_en: KTT0003B PADS decal and pads 1–6 for the LM1084 5-V regulator
+    - webp: /assets/images/projects/solarcell-mppt-pcb/footprint-pi5a124.webp
+      jpg: /assets/images/projects/solarcell-mppt-pcb/footprint-pi5a124.jpg
+      width: 1600
+      height: 1000
+      alt_ko: PADS ASCII 원본 치수와 pad 좌표로 재구성한 PI5A124TEX 6-pin decal 도면
+      alt_en: PI5A124TEX six-pin decal reconstructed from the dimensions and pad coordinates in the PADS ASCII source
+      caption_ko: PI5A124 analog switch의 SOT95P280X145-6N decal과 pin-1 marker
+      caption_en: SOT95P280X145-6N decal and pin-1 marker for the PI5A124 analog switch
+    - webp: /assets/images/projects/solarcell-mppt-pcb/bill-of-materials.webp
+      jpg: /assets/images/projects/solarcell-mppt-pcb/bill-of-materials.jpg
+      width: 628
+      height: 507
+      alt_ko: regulator, op amp, DAC, analog switch, MCU와 수동소자 수량을 정리한 Solar Cell BOM 화면
+      alt_en: Solar-cell BOM view listing regulators, op amps, DACs, analog switches, the MCU, and passive-component quantities
+      caption_ko: 저장된 설계 패키지의 주요 IC·수동소자 BOM snapshot
+      caption_en: Main IC and passive-component BOM snapshot preserved in the design package
+    - webp: /assets/images/projects/solarcell-mppt-pcb/reference-pcb-front.webp
+      jpg: /assets/images/projects/solarcell-mppt-pcb/reference-pcb-front.jpg
+      width: 1415
+      height: 1600
+      alt_ko: 공개 MPPT-12 V14 reference 설계의 front-side component와 routing layout
+      alt_en: Front-side component and routing layout from the published MPPT-12 V14 reference design
+      caption_ko: Kelzenberg·Loke·Atwater 공개 설계를 회로 분석·비교 기준으로 사용한 reference front layout
+      caption_en: Reference front layout from the published Kelzenberg, Loke, and Atwater design used for circuit analysis and comparison
+    - webp: /assets/images/projects/solarcell-mppt-pcb/reference-pcb-back.webp
+      jpg: /assets/images/projects/solarcell-mppt-pcb/reference-pcb-back.jpg
+      width: 1415
+      height: 1600
+      alt_ko: 공개 MPPT-12 V14 reference 설계의 back-side copper와 through-hole routing layout
+      alt_en: Back-side copper and through-hole routing layout from the published MPPT-12 V14 reference design
+      caption_ko: 공개 reference board의 back-side copper·return-path layout
+      caption_en: Back-side copper and return-path layout of the published reference board
   categories: [pcb-pads, power-electronics]
   ko_url: /projects/solarcell-mppt-pcb/
   en_url: /en/projects/solarcell-mppt-pcb/
@@ -763,6 +819,54 @@
     - Confirmed 69 modules, 83 nets, 602 tracks, and 56 plated holes
     - Completed a fabrication handoff from KiCad source through Gerber and drill files
   gallery:
+    - webp: /assets/images/projects/stm32f411-ppg-pcb/logic-control.webp
+      jpg: /assets/images/projects/stm32f411-ppg-pcb/logic-control.jpg
+      width: 1600
+      height: 1000
+      alt_ko: STM32F411 MCU, 3.3 V regulator, 두 clock, SWD, UART와 A0·A1 입력을 연결한 control logic map
+      alt_en: Control-logic map connecting the STM32F411 MCU, 3.3-V regulator, two clocks, SWD, UART, and A0/A1 inputs
+      caption_ko: STM.sch에서 추출한 전원·clock·debug·통신 control logic
+      caption_en: Power, clock, debug, and communication control logic extracted from STM.sch
+    - webp: /assets/images/projects/stm32f411-ppg-pcb/logic-analog-afe.webp
+      jpg: /assets/images/projects/stm32f411-ppg-pcb/logic-analog-afe.jpg
+      width: 1600
+      height: 1000
+      alt_ko: 두 SFH7070 sensor와 입력 RC network, OPA2333 stage, STM32 A0·A1 ADC를 연결한 PPG analog front-end logic
+      alt_en: PPG analog-front-end logic connecting two SFH7070 sensors, input RC networks, OPA2333 stages, and STM32 A0/A1 ADC inputs
+      caption_ko: Analog.sch에서 확인한 두 PPG channel의 sensor-to-ADC signal chain
+      caption_en: Sensor-to-ADC signal chain for both PPG channels identified in Analog.sch
+    - webp: /assets/images/projects/stm32f411-ppg-pcb/footprint-inventory.webp
+      jpg: /assets/images/projects/stm32f411-ppg-pcb/footprint-inventory.jpg
+      width: 1600
+      height: 1000
+      alt_ko: KiCad PCB 원본에서 재현한 LQFP-64, SFH7070, SOIC-8와 SOT-23-5 footprint pad 배열
+      alt_en: LQFP-64, SFH7070, SOIC-8, and SOT-23-5 footprint pad arrangements reproduced from the KiCad PCB source
+      caption_ko: MCU·sensor·op amp·LDO의 KiCad footprint/decal 구성
+      caption_en: KiCad footprint and decal set for the MCU, sensors, op amps, and LDO
+    - webp: /assets/images/projects/stm32f411-ppg-pcb/layout-mcu-detail.webp
+      jpg: /assets/images/projects/stm32f411-ppg-pcb/layout-mcu-detail.jpg
+      width: 1600
+      height: 1000
+      alt_ko: STM32F411, 8 MHz와 32.768 kHz clock, SWD·UART header와 LDO 배치를 확대한 PCB layout
+      alt_en: Enlarged PCB layout of the STM32F411, 8-MHz and 32.768-kHz clocks, SWD/UART headers, and LDO placement
+      caption_ko: MCU·clock·전원·debug interface 배치와 fan-out routing 확대
+      caption_en: Enlarged MCU, clock, power, debug-interface placement, and fan-out routing
+    - webp: /assets/images/projects/stm32f411-ppg-pcb/layout-afe-detail.webp
+      jpg: /assets/images/projects/stm32f411-ppg-pcb/layout-afe-detail.jpg
+      width: 1600
+      height: 1000
+      alt_ko: 두 SFH7070 sensor와 세 OPA2333 package 주변 부품·routing을 확대한 analog front-end PCB layout
+      alt_en: Enlarged analog-front-end PCB layout showing two SFH7070 sensors and the component routing around three OPA2333 packages
+      caption_ko: sensor·입력 network·active-filter stage를 모은 analog front-end 배치 확대
+      caption_en: Enlarged analog-front-end placement grouping the sensors, input networks, and active-filter stages
+    - webp: /assets/images/projects/stm32f411-ppg-pcb/gerber-front-layers.webp
+      jpg: /assets/images/projects/stm32f411-ppg-pcb/gerber-front-layers.jpg
+      width: 1600
+      height: 1000
+      alt_ko: F.Cu copper, F.Mask opening과 F.SilkS reference를 실제 Gerber 파일에서 렌더링한 제조 layer 화면
+      alt_en: Fabrication-layer view rendered directly from the F.Cu copper, F.Mask opening, and F.SilkS Gerber files
+      caption_ko: 제조 전달용 Gerber에서 직접 렌더링한 front copper·mask·silkscreen layer
+      caption_en: Front copper, mask, and silkscreen layers rendered directly from the fabrication Gerbers
     - webp: /assets/images/projects/stm32f411-ppg-pcb/pcb-back.webp
       jpg: /assets/images/projects/stm32f411-ppg-pcb/pcb-back.jpg
       width: 1600

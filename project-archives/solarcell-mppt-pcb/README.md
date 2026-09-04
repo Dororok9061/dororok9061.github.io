@@ -26,6 +26,8 @@ the power, reference, sensing, control, and communication nets to be reviewed.
 
 - `source/MPPT_module_ver01_260610.sch`
 - `source/partslist.xlsx`
+- `source/footprint/LM1084ISX-5.0_NOPB/LM1084ISX-5.0_NOPB.asc`
+- `source/footprint/PI5A124/PI5A124TEX.asc`
 - `source/기존ver/VI_measure_MB_ver05_041524.{sch,pcb}`
 - `source/기존ver/VI_measure_MDBoard_ver05_041524.{sch,pcb}`
 
