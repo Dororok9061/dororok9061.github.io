@@ -30,7 +30,7 @@ related_projects: [solarcell-mppt-pcb]
 related_posts: [pads-footprint-ppg-schematic]
 tags: [solar-cell, mppt, stm32f401, current-sensing, adc, dac, pads]
 cover_image: /assets/images/projects/solarcell-mppt-pcb/mainboard-schematic.webp
-thumbnail: /assets/images/projects/solarcell-mppt-pcb/current-sensing.webp
+thumbnail: /assets/images/projects/solarcell-mppt-pcb/mainboard-schematic.webp
 image_alt: STM32F401 메인보드와 전원·통신·측정 모듈 연결 회로도
 draft: false
 revision_history:
@@ -75,6 +75,11 @@ input, conditioning, conversion, communication 순서로 나눴다.
 제어 방향은 MCU setpoint가 DAC를 거쳐 channel control path로 이동한다. 양방향을
 한 선으로 섞지 않고 command와 measurement로 나누면 connector pin과 net name을
 대조할 때 빠진 경로를 찾기 쉽다.
+
+```text
+Measurement : Cell -> Analog path -> ADC -> MCU -> USB/UART
+Control     : MCU setpoint -> DAC -> Channel control path
+```
 
 ## PCB와 BOM 산출물 {#pcb}
 

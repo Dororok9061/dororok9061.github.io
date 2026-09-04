@@ -30,7 +30,7 @@ related_projects: [solarcell-mppt-pcb]
 related_posts: [pads-footprint-ppg-schematic]
 tags: [solar-cell, mppt, stm32f401, current-sensing, adc, dac, pads]
 cover_image: /assets/images/projects/solarcell-mppt-pcb/mainboard-schematic.webp
-thumbnail: /assets/images/projects/solarcell-mppt-pcb/current-sensing.webp
+thumbnail: /assets/images/projects/solarcell-mppt-pcb/mainboard-schematic.webp
 image_alt: STM32F401 mainboard schematic with power communication and measurement-module connections
 draft: false
 revision_history:
@@ -78,6 +78,11 @@ The measurement direction runs from a cell channel through analog conditioning,
 ADC, MCU, and USB/UART. The control direction sends an MCU setpoint through the
 DAC to a channel-control path. Treating command and measurement separately makes
 missing nets easier to spot when comparing connector pins and names.
+
+```text
+Measurement : Cell -> Analog path -> ADC -> MCU -> USB/UART
+Control     : MCU setpoint -> DAC -> Channel control path
+```
 
 ## PCB and BOM artifacts {#pcb}
 

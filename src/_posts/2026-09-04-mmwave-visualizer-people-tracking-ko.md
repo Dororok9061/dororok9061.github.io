@@ -29,7 +29,7 @@ related_projects: [mmwave-visualizer]
 related_posts: [radar-candidate-timing]
 tags: [mmwave, iwr6843, people-tracking, visualizer, uart, system-integration]
 cover_image: /assets/images/projects/mmwave-visualizer/lab-setup.webp
-thumbnail: /assets/images/projects/mmwave-visualizer/people-tracking.webp
+thumbnail: /assets/images/projects/mmwave-visualizer/lab-setup.webp
 image_alt: 스탠드에 설치한 IWR6843 레이더와 3D People Tracking 실험 환경
 draft: false
 revision_history:
@@ -74,6 +74,11 @@ binary만 있고 대응 source가 없었기 때문에 MSS 내부 수정을 작�
 바꾸어 연결하거나 baud rate가 맞지 않으면 설정은 들어가도 화면이 멈추거나 반대로
 데이터가 해석되지 않는다. 이 구분은 센서, firmware와 PC application 사이 문제를
 나눠 보는 기준이 됐다.
+
+```text
+CLI UART  : 115200 bps  -> sensor configuration
+Data UART : 921600 bps  -> point cloud and target packets
+```
 
 ## Visualizer에서 본 출력 {#output}
 

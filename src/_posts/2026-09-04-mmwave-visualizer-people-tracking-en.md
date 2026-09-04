@@ -29,7 +29,7 @@ related_projects: [mmwave-visualizer]
 related_posts: [radar-candidate-timing]
 tags: [mmwave, iwr6843, people-tracking, visualizer, uart, system-integration]
 cover_image: /assets/images/projects/mmwave-visualizer/lab-setup.webp
-thumbnail: /assets/images/projects/mmwave-visualizer/people-tracking.webp
+thumbnail: /assets/images/projects/mmwave-visualizer/lab-setup.webp
 image_alt: IWR6843 radar on a stand in the 3D People Tracking test environment
 draft: false
 revision_history:
@@ -74,6 +74,11 @@ sensor configuration, while the data port uses 921600 bps for point-cloud and
 target packets. A swapped port or mismatched baud rate can let configuration pass
 while the screen stalls—or leave incoming data undecodable. This distinction
 helped isolate hardware, firmware, and PC-application issues.
+
+```text
+CLI UART  : 115200 bps  -> sensor configuration
+Data UART : 921600 bps  -> point cloud and target packets
+```
 
 ## Visualizer output {#output}
 
