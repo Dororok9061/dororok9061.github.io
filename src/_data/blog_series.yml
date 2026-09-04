@@ -75,6 +75,7 @@
     - { order: 6, title_ko: USART2와 SerialChart, title_en: USART2 and SerialChart, status: published }
     - { order: 7, title_ko: CMSIS-DSP Biquad Filter, title_en: CMSIS-DSP Biquad Filters, status: published }
     - { order: 8, title_ko: PPG Peak·HRV·BPM, title_en: "PPG Peak, HRV, and BPM", status: published }
+    - { order: 9, title_ko: STM32F411 PPG PCB의 Analog Front-End와 제조 파일, title_en: STM32F411 PPG PCB Analog Front End and Fabrication Files, status: published, translation_key: stm32f411-ppg-pcb, url_ko: /blog/2026/09/04/stm32f411-ppg-pcb/, url_en: /en/blog/2026/09/04/stm32f411-ppg-pcb/ }
 
 - id: embedded-integration
   order: 35
@@ -208,6 +209,7 @@
     - { order: 4, title_ko: Schematic·Netlist·Packaging, title_en: "Schematic, Netlist, and Packaging", status: planned }
     - { order: 5, title_ko: Placement·Routing·Power Plane, title_en: "Placement, Routing, and Power Planes", status: planned }
     - { order: 6, title_ko: DRC·CAM·Gerber, title_en: "DRC, CAM, and Gerber", status: planned }
+    - { order: 7, title_ko: Solar Cell 다채널 측정 PCB의 전원·계측·통신 경로, title_en: Power Measurement and Communication Paths in a Multichannel Solar-Cell PCB, status: published, translation_key: solarcell-mppt-pcb, url_ko: /blog/2026/09/04/solarcell-mppt-pcb/, url_en: /en/blog/2026/09/04/solarcell-mppt-pcb/ }
 
 - id: 2025-generative-models
   order: 65
@@ -294,6 +296,7 @@
       url_ko: /blog/2026/07/31/radar-candidate-timing/
       url_en: /en/blog/2026/07/31/radar-candidate-timing/
     - { order: 5, title_ko: SQI·CTI와 Validation Boundary, title_en: "SQI, CTI, and Validation Boundary", status: planned }
+    - { order: 6, title_ko: IWR6843 설정부터 3D People Tracking 출력까지, title_en: From IWR6843 Configuration to 3D People-Tracking Output, status: published, translation_key: mmwave-visualizer-people-tracking, url_ko: /blog/2026/09/04/mmwave-visualizer-people-tracking/, url_en: /en/blog/2026/09/04/mmwave-visualizer-people-tracking/ }
 
 - id: engineering-record-lineage
   hidden: true

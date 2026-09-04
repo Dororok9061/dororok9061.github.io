@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name MH)(type KiCad)(uri ${KISYSMOD}/MH.pretty)(options "")(descr ""))
+)
