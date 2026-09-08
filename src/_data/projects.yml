@@ -879,3 +879,86 @@
   ko_url: /projects/stm32f411-ppg-pcb/
   en_url: /en/projects/stm32f411-ppg-pcb/
   repository: https://github.com/Dororok9061/dororok9061.github.io/tree/main/project-archives/stm32f411-ppg-pcb
+
+- id: legacy-embedded-system
+  title_ko: Legacy Embedded System Architecture & Mixed-Signal Interfaces
+  title_en: Legacy Embedded System Architecture & Mixed-Signal Interfaces
+  domain_ko: Hardware Reverse Engineering · Mixed-Signal · System Integration
+  domain_en: Hardware Reverse Engineering · Mixed-Signal · System Integration
+  summary_ko: Macintosh Color Classic과 Olympic-S를 CPU·메모리·버스·영상·저장·통신 계층으로 분석하고, BlueSCSI·Raspberry Pi로 이어지는 레거시-현대 bridge와 검증 계획을 정리했습니다.
+  summary_en: Analyzes the Macintosh Color Classic and Olympic-S across compute, memory, bus, video, storage, and communication layers, then defines a legacy-modern bridge and validation plan using BlueSCSI and Raspberry Pi.
+  status: ANALYSIS + TEST PLAN
+  status_class: source
+  status_label_ko: 실물·원문 분석과 후속 계측 계획
+  status_label_en: Hardware/manual analysis and measurement plan
+  image_webp: /assets/images/projects/legacy-embedded-system/system-map.webp
+  image_jpg: /assets/images/projects/legacy-embedded-system/system-map.jpg
+  image_width: 1180
+  image_height: 790
+  alt_ko: Olympic-S Z80, Macintosh 68030, Raspberry Pi, BlueSCSI를 연산·저장·영상·통신 계층으로 비교한 통합 시스템 표
+  alt_en: Integrated system map comparing Olympic-S Z80, Macintosh 68030, Raspberry Pi, and BlueSCSI across compute, storage, display, and communication layers
+  evidence_ko:
+    - 23쪽 기술 포트폴리오와 장비·PCB·화면 사진
+    - Color Classic 10,240K 부팅 화면과 logic-board chip marking
+    - Olympic-S 원문 매뉴얼의 48 KB RAM·16 KB ROM·1200 bit/s·DIN-5 RGBS 사양
+  evidence_en:
+    - A 23-page technical portfolio with hardware, PCB, and runtime photographs
+    - Color Classic 10,240K boot screen and logic-board chip markings
+    - Olympic-S manual specifications for 48-KB RAM, 16-KB ROM, 1200-bit/s cassette data, and DIN-5 RGBS
+  contribution_ko:
+    - 68030·Z80 보드의 CPU·RAM·ROM·ASIC·TTL·connector 기능 블록을 계층별로 정리
+    - RGBS·DIN-5·SCSI·ADB·RS-422·카세트 인터페이스를 신호와 전기 검증 항목으로 분해
+    - BlueSCSI·Pico-W·Raspberry Pi를 잇는 데이터 경로와 continuity·level·termination·ripple 시험 계획 정의
+  contribution_en:
+    - Mapped CPU, RAM, ROM, ASIC, TTL, and connector blocks on 68030- and Z80-era boards
+    - Decomposed RGBS, DIN-5, SCSI, ADB, RS-422, and cassette interfaces into signal and electrical checks
+    - Defined BlueSCSI, Pico-W, and Raspberry Pi data paths plus continuity, level, termination, and ripple tests
+  boundary_ko: 실물·사진·원문으로 확인한 항목과 추정 항목을 분리했습니다. RGB amplitude·sync polarity·75 Ω termination·케이블 continuity·SAVE/LOAD round-trip·DaynaPORT TCP 연결은 다음 계측 및 구현 항목이며, 현재 완료 결과로 주장하지 않습니다.
+  boundary_en: Direct observations are separated from photo- or document-based inference. RGB amplitude, sync polarity, 75-ohm termination, cable continuity, cassette SAVE/LOAD round-trip, and DaynaPORT TCP integration remain future measurements or implementations.
+  problem_ko: 세대와 전기적 가정이 다른 두 컴퓨터, CRT, 카세트, SCSI 장치를 안전하게 연결하려면 커넥터 모양이 아니라 신호 topology·level·termination·protocol을 먼저 확정해야 합니다.
+  problem_en: Safely connecting computers, CRTs, cassette storage, and SCSI devices from different generations requires validating signal topology, levels, termination, and protocol rather than matching connector shapes.
+  architecture_ko: Olympic-S Z80·64 KB memory·TTL/glue logic·RGBS·카세트·64-contact bus와 Color Classic 68030·10 MB DRAM·ADB·RS-422·SCSI를 분석하고, BlueSCSI/Pico-W와 Raspberry Pi backend를 현대 데이터·검증 계층으로 배치했습니다.
+  architecture_en: The architecture maps Olympic-S Z80, 64-KB memory, TTL/glue logic, RGBS, cassette, and 64-contact bus alongside the Color Classic 68030, 10-MB DRAM, ADB, RS-422, and SCSI, with BlueSCSI/Pico-W and a Raspberry Pi backend as the modern data and validation layer.
+  stack_ko: [MC68030, Z80-compatible CPU, RGBS, SCSI, ADB, RS-422, BlueSCSI, Raspberry Pi]
+  stack_en: [MC68030, Z80-compatible CPU, RGBS, SCSI, ADB, RS-422, BlueSCSI, Raspberry Pi]
+  data_flow_ko: 현대 PC·Raspberry Pi → SD·BlueSCSI → SCSI bus → Color Classic HMI, Olympic-S RGBS·카세트·system bus → level·termination·continuity 검증 → CRT·recorder·MCU bridge.
+  data_flow_en: Modern PC/Raspberry Pi → SD/BlueSCSI → SCSI bus → Color Classic HMI; Olympic-S RGBS/cassette/system bus → level, termination, and continuity checks → CRT, recorder, or MCU bridge.
+  methods_ko:
+    - 직접 확인·기능 교차확인·문서 확정·합리적 추정·후속 측정의 5단계 증거 등급 적용
+    - PCB marking·OS 화면·원문 매뉴얼·커넥터 사진을 기능 블록과 interface matrix로 교차검증
+    - 전원·영상·저장·통신별 bring-up 순서와 위험 항목 정의
+  methods_en:
+    - Applied five evidence levels: direct observation, cross-check, document-confirmed, reasoned inference, and pending measurement
+    - Cross-checked PCB markings, OS screens, source manuals, and connector photographs in functional-block and interface matrices
+    - Defined bring-up order and hazards for power, video, storage, and communication paths
+  results_ko:
+    - Color Classic의 68030·10 MB DRAM·SCSI·ADB·serial 구조와 주요 logic-board 부품 mapping
+    - Olympic-S의 Z80 계열·48 KB RAM·16 KB ROM·RGBS DIN-5·1200 bit/s 카세트 경로 정리
+    - 레거시 HMI와 현대 backend를 분리한 bridge architecture 및 계측 우선순위 도출
+  results_en:
+    - Mapped the Color Classic 68030, 10-MB DRAM, SCSI, ADB, serial architecture, and major logic-board components
+    - Documented the Olympic-S Z80-family CPU, 48-KB RAM, 16-KB ROM, DIN-5 RGBS, and 1200-bit/s cassette path
+    - Produced a bridge architecture that separates the legacy HMI from the modern backend and prioritizes follow-up measurements
+  gallery:
+    - webp: /assets/images/projects/legacy-embedded-system/rgbs-interface.webp
+      jpg: /assets/images/projects/legacy-embedded-system/rgbs-interface.jpg
+      width: 1180
+      height: 640
+      alt_ko: Olympic-S 영상 로직에서 DIN-5 Sync·Ground·RGB와 RGB monitor 또는 변환 경로로 이어지는 검증 도식
+      alt_en: Validation diagram from Olympic-S video logic through DIN-5 sync, ground, and RGB pins to an RGB monitor or conversion path
+      caption_ko: 커넥터 형상보다 RGBS topology·신호 level·75 Ω termination을 먼저 확인하는 interface 검증 흐름
+      caption_en: Interface flow that validates RGBS topology, signal levels, and 75-ohm termination before connection
+    - webp: /assets/images/projects/legacy-embedded-system/evidence-levels.webp
+      jpg: /assets/images/projects/legacy-embedded-system/evidence-levels.jpg
+      width: 1180
+      height: 610
+      alt_ko: 직접 확인부터 후속 측정까지 다섯 단계로 나눈 레거시 하드웨어 증거 등급표
+      alt_en: Five-level evidence table for legacy hardware, from direct observation through pending measurement
+      caption_ko: 사진·판매자 기능 이력·원문 사양·추정·실측 대기를 구분한 evidence matrix
+      caption_en: Evidence matrix separating photographs, functional history, source specifications, inference, and pending measurements
+  categories: [embedded, systems-engineering]
+  ko_url: /projects/legacy-embedded-system/
+  en_url: /en/projects/legacy-embedded-system/
+  pages_ko: https://fierce-rodent-308.notion.site/Legacy-Embedded-System-Architecture-3d5518ac7a59818d901bfbf9cb4a4602
+  pages_en: https://fierce-rodent-308.notion.site/Legacy-Embedded-System-Architecture-3d5518ac7a59818d901bfbf9cb4a4602
+  repository: https://github.com/Dororok9061/dororok9061.github.io/tree/main/project-archives/legacy-embedded-system

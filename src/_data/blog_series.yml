@@ -126,6 +126,23 @@
       url_en: /en/blog/2026/07/31/biomedical-metric-conditions/
     - { order: 4, title_ko: Confusion Matrix·ROC·PR, title_en: "Confusion Matrix, ROC, and PR", status: planned }
 
+- id: legacy-embedded-systems
+  order: 37
+  title_ko: Legacy Embedded System과 Mixed-Signal Interface
+  title_en: Legacy Embedded Systems and Mixed-Signal Interfaces
+  summary_ko: 68030·Z80 계열 하드웨어를 CPU·메모리·버스·영상·저장·통신 계층으로 나누고, 레거시-현대 bridge의 검증 경계를 정리합니다.
+  summary_en: Breaks 68030- and Z80-era hardware into compute, memory, bus, video, storage, and communication layers, then defines validation boundaries for a legacy-to-modern bridge.
+  primary_category: major-foundations
+  subcategory: embedded-systems
+  difficulty: advanced
+  prerequisites: [computer-architecture, digital-interfaces, analog-signals]
+  tools: [MC68030, Z80, RGBS, SCSI, BlueSCSI, Raspberry Pi]
+  source_materials: [23-page legacy embedded-system portfolio, hardware photographs, Apple and BlueSCSI documentation, Olympic-S manual]
+  status: published
+  related_project: legacy-embedded-system
+  posts:
+    - { order: 1, title_ko: 68030·Z80 하드웨어에서 레거시-현대 Bridge까지, title_en: From 68030 and Z80 Hardware to a Legacy-Modern Bridge, status: published, translation_key: legacy-embedded-system-interfaces, url_ko: /blog/2026/09/08/legacy-embedded-system-interfaces/, url_en: /en/blog/2026/09/08/legacy-embedded-system-interfaces/ }
+
 - id: computer-vision
   hidden: true
   order: 50
