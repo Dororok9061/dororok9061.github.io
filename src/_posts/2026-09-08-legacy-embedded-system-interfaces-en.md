@@ -76,7 +76,7 @@ multiplexing, and glue logic that would sit inside a modern MCU or SoC remain
 physically distributed, making the address, data, and control buses accessible
 to a logic analyzer.
 
-<figure><picture><source srcset="/assets/images/projects/legacy-embedded-system/system-map.webp" type="image/webp"><img src="/assets/images/projects/legacy-embedded-system/system-map.jpg" alt="System map comparing Olympic-S Z80 and Color Classic 68030 with Raspberry Pi and BlueSCSI extensions" width="1180" height="790" loading="lazy"></picture><figcaption>Compute, memory, storage, display, and communication aligned into one system map. The modern extensions are design proposals, not completed implementations.</figcaption></figure>
+<figure><picture><source srcset="/assets/images/projects/legacy-embedded-system/system-map.webp" type="image/webp"><img src="/assets/images/projects/legacy-embedded-system/system-map.webp" alt="System map comparing Olympic-S Z80 and Color Classic 68030 with Raspberry Pi and BlueSCSI extensions" width="700" height="469" loading="lazy"></picture><figcaption>Compute, memory, storage, display, and communication aligned into one system map. The modern extensions are design proposals, not completed implementations.</figcaption></figure>
 
 ## RGBS cassette and SCSI {#interfaces}
 
@@ -86,7 +86,7 @@ direct match. Even when a monitor accepts RGB plus external sync, amplitude,
 polarity, common reference, and 75-ohm termination must be measured before the
 connection is made.
 
-<figure><picture><source srcset="/assets/images/projects/legacy-embedded-system/rgbs-interface.webp" type="image/webp"><img src="/assets/images/projects/legacy-embedded-system/rgbs-interface.jpg" alt="Olympic-S RGBS path through the DIN-5 pinout to an RGB monitor or conversion stage" width="1180" height="640" loading="lazy"></picture><figcaption>RGBS validation begins with input topology and electrical conditions, not screen size.</figcaption></figure>
+<figure><picture><source srcset="/assets/images/projects/legacy-embedded-system/rgbs-interface.webp" type="image/webp"><img src="/assets/images/projects/legacy-embedded-system/rgbs-interface.webp" alt="Olympic-S RGBS path through the DIN-5 pinout to an RGB monitor or conversion stage" width="700" height="380" loading="lazy"></picture><figcaption>RGBS validation begins with input topology and electrical conditions, not screen size.</figcaption></figure>
 
 The 1200-bit/s cassette path converts digital data into an audio-frequency
 waveform for magnetic recording, then restores pulses through an analog front
@@ -123,7 +123,7 @@ B for repeated use or cross-device functional checks; C for source manuals or
 manufacturer specifications; D for reasoned inference from photographs and
 architecture; and E for pending oscilloscope, multimeter, or continuity work.
 
-<figure><picture><source srcset="/assets/images/projects/legacy-embedded-system/evidence-levels.webp" type="image/webp"><img src="/assets/images/projects/legacy-embedded-system/evidence-levels.jpg" alt="Five evidence levels from direct observation through pending measurement" width="1180" height="610" loading="lazy"></picture><figcaption>An evidence matrix that keeps visual presence separate from electrical confirmation.</figcaption></figure>
+<figure><picture><source srcset="/assets/images/projects/legacy-embedded-system/evidence-levels.webp" type="image/webp"><img src="/assets/images/projects/legacy-embedded-system/evidence-levels.webp" alt="Five evidence levels from direct observation through pending measurement" width="700" height="362" loading="lazy"></picture><figcaption>An evidence matrix that keeps visual presence separate from electrical confirmation.</figcaption></figure>
 
 A seller photograph of a working CRT display supports the statement that a
 particular connection operated, but it does not reveal the exact cable pinout or

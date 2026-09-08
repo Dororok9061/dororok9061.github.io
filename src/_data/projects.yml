@@ -892,9 +892,9 @@
   status_label_ko: 실물·원문 분석과 후속 계측 계획
   status_label_en: Hardware/manual analysis and measurement plan
   image_webp: /assets/images/projects/legacy-embedded-system/system-map.webp
-  image_jpg: /assets/images/projects/legacy-embedded-system/system-map.jpg
-  image_width: 1180
-  image_height: 790
+  image_jpg: /assets/images/projects/legacy-embedded-system/system-map.webp
+  image_width: 700
+  image_height: 469
   alt_ko: Olympic-S Z80, Macintosh 68030, Raspberry Pi, BlueSCSI를 연산·저장·영상·통신 계층으로 비교한 통합 시스템 표
   alt_en: Integrated system map comparing Olympic-S Z80, Macintosh 68030, Raspberry Pi, and BlueSCSI across compute, storage, display, and communication layers
   evidence_ko:
@@ -941,17 +941,17 @@
     - Produced a bridge architecture that separates the legacy HMI from the modern backend and prioritizes follow-up measurements
   gallery:
     - webp: /assets/images/projects/legacy-embedded-system/rgbs-interface.webp
-      jpg: /assets/images/projects/legacy-embedded-system/rgbs-interface.jpg
-      width: 1180
-      height: 640
+      jpg: /assets/images/projects/legacy-embedded-system/rgbs-interface.webp
+      width: 700
+      height: 380
       alt_ko: Olympic-S 영상 로직에서 DIN-5 Sync·Ground·RGB와 RGB monitor 또는 변환 경로로 이어지는 검증 도식
       alt_en: Validation diagram from Olympic-S video logic through DIN-5 sync, ground, and RGB pins to an RGB monitor or conversion path
       caption_ko: 커넥터 형상보다 RGBS topology·신호 level·75 Ω termination을 먼저 확인하는 interface 검증 흐름
       caption_en: Interface flow that validates RGBS topology, signal levels, and 75-ohm termination before connection
     - webp: /assets/images/projects/legacy-embedded-system/evidence-levels.webp
-      jpg: /assets/images/projects/legacy-embedded-system/evidence-levels.jpg
-      width: 1180
-      height: 610
+      jpg: /assets/images/projects/legacy-embedded-system/evidence-levels.webp
+      width: 700
+      height: 362
       alt_ko: 직접 확인부터 후속 측정까지 다섯 단계로 나눈 레거시 하드웨어 증거 등급표
       alt_en: Five-level evidence table for legacy hardware, from direct observation through pending measurement
       caption_ko: 사진·판매자 기능 이력·원문 사양·추정·실측 대기를 구분한 evidence matrix

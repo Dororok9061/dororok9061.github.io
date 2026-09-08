@@ -72,7 +72,7 @@ speaker와 64-contact connector를 대응시켰다. 현대 MCU/SoC 내부에 들
 decode, display timing, mux와 glue logic이 PCB 위에 분리돼 있어 address·data·control
 bus를 logic analyzer로 따라갈 수 있는 구조다.
 
-<figure><picture><source srcset="/assets/images/projects/legacy-embedded-system/system-map.webp" type="image/webp"><img src="/assets/images/projects/legacy-embedded-system/system-map.jpg" alt="Olympic-S Z80과 Color Classic 68030을 현대 Raspberry Pi·BlueSCSI 계층과 비교한 표" width="1180" height="790" loading="lazy"></picture><figcaption>연산·메모리·저장·영상·통신을 같은 layer로 맞춰 본 통합 시스템 지도. 표의 현대 확장은 설계안이며 구현 완료 결과가 아니다.</figcaption></figure>
+<figure><picture><source srcset="/assets/images/projects/legacy-embedded-system/system-map.webp" type="image/webp"><img src="/assets/images/projects/legacy-embedded-system/system-map.webp" alt="Olympic-S Z80과 Color Classic 68030을 현대 Raspberry Pi·BlueSCSI 계층과 비교한 표" width="700" height="469" loading="lazy"></picture><figcaption>연산·메모리·저장·영상·통신을 같은 layer로 맞춰 본 통합 시스템 지도. 표의 현대 확장은 설계안이며 구현 완료 결과가 아니다.</figcaption></figure>
 
 ## RGBS·카세트·SCSI {#interfaces}
 
@@ -81,7 +81,7 @@ Olympic-S의 CTV DIN-5는 원문 매뉴얼에서 Sync, Ground, Green, Blue, Red�
 받는 monitor가 가장 단순하지만, pin 기능이 맞아도 amplitude, polarity, common,
 75 Ω termination을 오실로스코프와 멀티미터로 확인한 뒤 연결해야 한다.
 
-<figure><picture><source srcset="/assets/images/projects/legacy-embedded-system/rgbs-interface.webp" type="image/webp"><img src="/assets/images/projects/legacy-embedded-system/rgbs-interface.jpg" alt="Olympic-S RGBS 신호와 DIN-5 pinout, RGB monitor 또는 변환 경로를 나타낸 도식" width="1180" height="640" loading="lazy"></picture><figcaption>화면 크기보다 먼저 input topology와 전기 조건을 확인하도록 바꾼 RGBS 검증 흐름.</figcaption></figure>
+<figure><picture><source srcset="/assets/images/projects/legacy-embedded-system/rgbs-interface.webp" type="image/webp"><img src="/assets/images/projects/legacy-embedded-system/rgbs-interface.webp" alt="Olympic-S RGBS 신호와 DIN-5 pinout, RGB monitor 또는 변환 경로를 나타낸 도식" width="700" height="380" loading="lazy"></picture><figcaption>화면 크기보다 먼저 input topology와 전기 조건을 확인하도록 바꾼 RGBS 검증 흐름.</figcaption></figure>
 
 카세트 경로는 1200 bit/s digital data를 audio-frequency waveform으로 바꿔 기록하고,
 재생 시 analog front end와 comparator를 거쳐 pulse로 복원하는 mixed-signal interface다.
@@ -116,7 +116,7 @@ EDA가 담당하고, Mac은 입력·검사 실행·report 확인을 맡는다. �
 반복 사용이나 교차 장비 기능 확인은 B, 원문 매뉴얼·제조사 사양은 C, 사진과
 세대 정보에 근거한 추정은 D, 오실로스코프·멀티미터 측정이 필요한 것은 E다.
 
-<figure><picture><source srcset="/assets/images/projects/legacy-embedded-system/evidence-levels.webp" type="image/webp"><img src="/assets/images/projects/legacy-embedded-system/evidence-levels.jpg" alt="직접 확인부터 후속 측정까지 다섯 단계로 구분한 증거 표" width="1180" height="610" loading="lazy"></picture><figcaption>사진상 보임과 전기적 확인을 분리해 과도한 단정을 막는 evidence matrix.</figcaption></figure>
+<figure><picture><source srcset="/assets/images/projects/legacy-embedded-system/evidence-levels.webp" type="image/webp"><img src="/assets/images/projects/legacy-embedded-system/evidence-levels.webp" alt="직접 확인부터 후속 측정까지 다섯 단계로 구분한 증거 표" width="700" height="362" loading="lazy"></picture><figcaption>사진상 보임과 전기적 확인을 분리해 과도한 단정을 막는 evidence matrix.</figcaption></figure>
 
 이 분류를 적용하면 판매자가 CRT에 정상 화면을 출력한 사진은 “특정 연결이
 동작했다”는 근거이지만, pinout과 signal level을 동일하게 재현했다는 증거는 아니다.
