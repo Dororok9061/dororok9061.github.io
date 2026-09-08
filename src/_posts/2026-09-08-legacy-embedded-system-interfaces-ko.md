@@ -125,7 +125,7 @@ EDA가 담당하고, Mac은 입력·검사 실행·report 확인을 맡는다. �
 
 ## 현대 직무로 번역되는 역량 {#value}
 
-이 작업에서 드러나는 핵심은 오래된 부품 지식 자체보다 검증 가능한 경계를 만드는
+이 작업에서 드러나는 핵심은 오래된 부품 지식 자체보다 확인 순서를 구체화하는
 능력이다. PCB에서 compute·memory·glue logic·connector를 기능 블록으로 분리하고,
 매뉴얼 사양을 physical interface requirement로 바꾸고, 연결 전에 continuity,
 level, polarity, termination, ripple을 시험 항목으로 만들었다.

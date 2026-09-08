@@ -913,7 +913,7 @@
     - Mapped CPU, RAM, ROM, ASIC, TTL, and connector blocks on 68030- and Z80-era boards
     - Decomposed RGBS, DIN-5, SCSI, ADB, RS-422, and cassette interfaces into signal and electrical checks
     - Defined BlueSCSI, Pico-W, and Raspberry Pi data paths plus continuity, level, termination, and ripple tests
-  boundary_ko: 실물·사진·원문으로 확인한 항목과 추정 항목을 분리했습니다. RGB amplitude·sync polarity·75 Ω termination·케이블 continuity·SAVE/LOAD round-trip·DaynaPORT TCP 연결은 다음 계측 및 구현 항목이며, 현재 완료 결과로 주장하지 않습니다.
+  boundary_ko: 실물·사진·원문으로 확인한 항목과 추정 항목을 분리했습니다. RGB amplitude·sync polarity·75 Ω termination·케이블 continuity·SAVE/LOAD round-trip·DaynaPORT TCP 연결은 다음 계측 및 구현 항목이며, 현재 완료 결과에는 포함하지 않았습니다.
   boundary_en: Direct observations are separated from photo- or document-based inference. RGB amplitude, sync polarity, 75-ohm termination, cable continuity, cassette SAVE/LOAD round-trip, and DaynaPORT TCP integration remain future measurements or implementations.
   problem_ko: 세대와 전기적 가정이 다른 두 컴퓨터, CRT, 카세트, SCSI 장치를 안전하게 연결하려면 커넥터 모양이 아니라 신호 topology·level·termination·protocol을 먼저 확정해야 합니다.
   problem_en: Safely connecting computers, CRTs, cassette storage, and SCSI devices from different generations requires validating signal topology, levels, termination, and protocol rather than matching connector shapes.
