@@ -8,7 +8,7 @@ reference:
       alt_ko: DCA1000EVM mode의 보드 결합 상태와 S1 switch 설정을 설명하는 TI guide 발췌 화면
       alt_en: TI guide excerpt showing the stacked DCA1000EVM setup and S1 switch settings
       caption_ko: 동작 mode와 S1 switch 위치를 대조한 공식 guide 발췌 화면. 설계 결과물이 아니라 설정 확인 근거로만 사용했다.
-      caption_en: An official-guide excerpt used only to cross-check operating mode and S1 switch positions, not claimed as authored work.
+      caption_en: An official-guide excerpt used only to cross-check operating mode and S1 switch positions, shown as source material rather than authored work.
 
 studio:
   title_ko: mmWave Studio 연결과 software environment 점검 화면
@@ -257,4 +257,4 @@ capture:
       alt_ko: DCA1000 raw capture log에서 수신 packet 수가 0으로 기록된 화면
       alt_en: DCA1000 raw-capture log showing zero received packets
       caption_ko: configuration과 log file은 생겼지만 received packets가 0이어서 raw capture 성공으로 판정하지 않았다.
-      caption_en: Configuration and log files existed, but zero received packets prevented a successful raw-capture claim.
+      caption_en: Configuration and log files existed, but zero received packets left the raw capture unsuccessful.
