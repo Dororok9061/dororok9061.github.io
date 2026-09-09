@@ -89,15 +89,20 @@ The complete screen sequence is published in the existing DCA1000 article:
   `wireshark-dca-bidirectional-udp.webp`, `wireshark-dca-return-udp-detail.webp`,
   `wireshark-dca-response-filter.webp`, `wireshark-udp-ssdp-only.webp`,
   `wireshark-dca-arp-udp-session.webp`, `windows-static-ip-setup.webp`,
+  `wireshark-dca-udp-arp-session-repeat.webp`, `windows-ipconfig-static-ip.webp`,
   `wireshark-background-udp-traffic.webp`, and
   `wireshark-control-vs-background.webp`.
-- UniFlash: `uniflash-program-page.webp` and `uniflash-program-success.webp`.
+- UniFlash and setup wizard: `matlab-hardware-setup-flash-failed.webp`,
+  `uniflash-program-page.webp`, and `uniflash-program-success.webp`.
 - Tera Term: `teraterm-cli-command-error.webp`,
   `teraterm-cli-prompt-error.webp`, and `teraterm-serial-character-stream.png`.
 - MATLAB and capture result: `matlab-no-binary-files-error.webp`,
   `matlab-record-location-error.webp`, `matlab-configure-radar-error.webp`, and
   `dca1000-zero-packet-log.webp`.
-- mmWave Studio: `mmwave-studio-serial-disconnected.webp`,
+- mmWave Studio: `radar-studio-rstdxml-exception.webp`,
+  `mmwave-studio-matlab-runtime-not-installed.webp`,
+  `mmwave-studio-serial-disconnected.webp`,
+  `mmwave-studio-device-zero-overview.webp`, `rfdata-capture-card-settings.webp`,
   `mmwave-studio-readregister-error.webp`, and
   `mmwave-studio-matlab-engine-error.webp`.
 - Configuration reference: `dca1000-mode-switch-guide.webp`.

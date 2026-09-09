@@ -14,6 +14,20 @@ studio:
   title_ko: mmWave Studio 연결과 software environment 점검 화면
   title_en: mmWave Studio connectivity and software-environment checks
   items:
+    - image: /assets/images/projects/mmwave-visualizer/radar-studio-rstdxml-exception.webp
+      width: 391
+      height: 228
+      alt_ko: Radar Studio 시작 시 RstdXml assembly load exception 0x800711C7이 표시된 화면
+      alt_en: Radar Studio startup dialog showing an RstdXml assembly-load exception 0x800711C7
+      caption_ko: mmWave Studio 실행 전 단계에서 RstdXml dependency load 실패를 별도 software environment 문제로 기록했다.
+      caption_en: The RstdXml dependency-load failure was recorded as a separate software-environment issue before mmWave Studio operation.
+    - image: /assets/images/projects/mmwave-visualizer/mmwave-studio-matlab-runtime-not-installed.webp
+      width: 800
+      height: 553
+      alt_ko: mmWave Studio output에서 MATLAB Runtime Engine 미설치와 mclmcrrt8_5_1 DLL load 실패가 출력된 화면
+      alt_en: mmWave Studio output reporting a missing MATLAB Runtime Engine and mclmcrrt8_5_1 DLL load failure
+      caption_ko: MATLAB runtime 미설치와 DLL load 실패가 post-processing initialization을 막은 전체 log.
+      caption_en: The full log shows a missing MATLAB runtime and DLL load failure blocking post-processing initialization.
     - image: /assets/images/projects/mmwave-visualizer/mmwave-studio-serial-disconnected.webp
       width: 1000
       height: 420
@@ -21,6 +35,20 @@ studio:
       alt_en: mmWave Studio showing FTDI connected while RS232 and SPI are disconnected and zero devices are detected
       caption_ko: FTDI enumeration과 radar control 연결을 같은 성공 상태로 보지 않은 첫 관측.
       caption_en: The first observation separating FTDI enumeration from an operational radar-control link.
+    - image: /assets/images/projects/mmwave-visualizer/mmwave-studio-device-zero-overview.webp
+      width: 800
+      height: 339
+      alt_ko: mmWave Studio connection tab에서 COM7과 115200 baud를 선택했지만 device 0개와 RS232 SPI disconnected가 나타난 화면
+      alt_en: mmWave Studio connection tab with COM7 at 115200 baud while zero devices and disconnected RS232 and SPI are shown
+      caption_ko: COM port와 baud 설정을 화면에 남긴 상태에서도 device detection은 0이었다.
+      caption_en: Device detection remained at zero even with the COM port and baud setting visible.
+    - image: /assets/images/projects/mmwave-visualizer/rfdata-capture-card-settings.webp
+      width: 506
+      height: 461
+      alt_ko: RFDataCaptureCard에서 system IP 192.168.33.30 FPGA IP 192.168.33.180 config port 4096 record port 4098을 설정한 화면
+      alt_en: RFDataCaptureCard configured with system IP 192.168.33.30, FPGA IP 192.168.33.180, config port 4096, and record port 4098
+      caption_ko: Raw·LVDS·Ethernet Stream mode와 IP·port·packet delay를 한 화면에서 확인한 설정 근거.
+      caption_en: Configuration evidence showing Raw, LVDS, Ethernet Stream, IP, port, and packet-delay settings together.
     - image: /assets/images/projects/mmwave-visualizer/mmwave-studio-readregister-error.webp
       width: 1000
       height: 485
@@ -110,6 +138,13 @@ network:
       alt_en: Wireshark showing ARP resolution followed by short UDP exchanges between the PC and DCA1000EVM
       caption_ko: ARP 응답과 양방향 UDP가 이어져 IP·MAC reachability가 성립한 구간을 남겼다.
       caption_en: ARP resolution followed by bidirectional UDP preserved evidence of IP and MAC reachability.
+    - image: /assets/images/projects/mmwave-visualizer/wireshark-dca-udp-arp-session-repeat.webp
+      width: 800
+      height: 388
+      alt_ko: DCA1000EVM과 PC 사이 양방향 UDP와 ARP 이후 SSDP가 함께 이어진 Wireshark 재현 화면
+      alt_en: Repeated Wireshark run showing bidirectional DCA UDP and ARP followed by SSDP traffic
+      caption_ko: 다른 시점의 재현에서도 짧은 UDP와 ARP는 보였지만 이후 raw data packet은 확인되지 않았다.
+      caption_en: Another run reproduced short UDP and ARP traffic, but no later raw-data packets were identified.
     - image: /assets/images/projects/mmwave-visualizer/windows-static-ip-setup.webp
       width: 449
       height: 503
@@ -117,6 +152,13 @@ network:
       alt_en: Windows Ethernet adapter configured manually as 192.168.33.30 with subnet mask 255.255.255.0
       caption_ko: PC NIC를 192.168.33.30/24로 고정해 DCA1000 subnet 조건을 재현했다.
       caption_en: The PC NIC was fixed at 192.168.33.30/24 to reproduce the DCA1000 subnet condition.
+    - image: /assets/images/projects/mmwave-visualizer/windows-ipconfig-static-ip.webp
+      width: 718
+      height: 272
+      alt_ko: Windows ipconfig 결과에서 Ethernet IPv4 192.168.33.30과 subnet mask 255.255.255.0을 확인한 화면
+      alt_en: Windows ipconfig output confirming Ethernet IPv4 192.168.33.30 and subnet mask 255.255.255.0
+      caption_ko: GUI 입력값뿐 아니라 ipconfig 출력으로 실제 adapter 주소 적용을 다시 확인했다.
+      caption_en: The applied adapter address was cross-checked in ipconfig rather than relying only on the GUI entry.
     - image: /assets/images/projects/mmwave-visualizer/wireshark-background-udp-traffic.webp
       width: 1000
       height: 425
@@ -136,6 +178,13 @@ firmware:
   title_ko: UniFlash firmware 점검 전체 흐름
   title_en: Complete UniFlash firmware inspection sequence
   items:
+    - image: /assets/images/projects/mmwave-visualizer/matlab-hardware-setup-flash-failed.webp
+      width: 800
+      height: 511
+      alt_ko: MATLAB hardware setup의 Flash Binary 단계에서 mmWave radar board program 실패가 표시된 화면
+      alt_en: MATLAB hardware setup showing a failure to program the mmWave radar board during Flash Binary
+      caption_ko: COM7·COM8을 고른 setup wizard에서는 flash가 실패해 mode·port 점유·reset·USB를 다시 확인했다.
+      caption_en: Flashing failed in the setup wizard with COM7 and COM8 selected, prompting checks of mode, port ownership, reset, and USB.
     - image: /assets/images/projects/mmwave-visualizer/uniflash-program-page.webp
       width: 1000
       height: 580

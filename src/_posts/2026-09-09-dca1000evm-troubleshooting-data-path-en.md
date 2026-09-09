@@ -37,6 +37,7 @@ draft: false
 revision_history:
   - { date: 2026-09-09, change: "Written from hardware photos, mmWave Studio status screens, and portfolio pages 15-16" }
   - { date: 2026-09-09, change: "Added Wireshark, UniFlash, Tera Term, and zero-packet capture screens as staged debugging evidence" }
+  - { date: 2026-09-09, change: "Placed all 33 unique debugging screens, including runtime, ipconfig, RFDataCaptureCard, and Flash Binary states" }
 toc:
   - { id: symptom, title: Missing data and board heating }
   - { id: paths, title: Data and control paths }
@@ -58,6 +59,10 @@ capture log counted zero received packets and the board also heated up. Changing
 code first would have mixed configuration faults with physical faults. I preserved
 the observed state, then traced the sample path separately from the path that
 brings the devices into capture mode.
+
+Two byte-identical duplicate files are shown once each; all 33 distinct debugging
+screens are placed directly in the staged narrative below. Each screen opens at
+full size when selected.
 
 <figure><img src="{{ '/assets/images/projects/mmwave-visualizer/dca1000-setup.webp' | relative_url }}" alt="IWR6843ISK mounted on a DCA1000EVM with power, USB, and board-to-board connections" width="1200" height="1200"><figcaption>The IWR6843ISK, DCA1000EVM, power, USB, and inter-board connections in one view.</figcaption></figure>
 
