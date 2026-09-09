@@ -95,15 +95,18 @@ The complete screen sequence is published in the existing DCA1000 article:
 - UniFlash and setup wizard: `matlab-hardware-setup-flash-failed.webp`,
   `uniflash-program-page.webp`, and `uniflash-program-success.webp`.
 - Tera Term: `teraterm-cli-command-error.webp`,
-  `teraterm-cli-prompt-error.webp`, and `teraterm-serial-character-stream.png`.
+  `teraterm-cli-prompt-error.webp`, `teraterm-serial-port-settings.webp`, and
+  `teraterm-serial-character-stream.png`.
 - MATLAB and capture result: `matlab-no-binary-files-error.webp`,
   `matlab-record-location-error.webp`, `matlab-configure-radar-error.webp`, and
   `dca1000-zero-packet-log.webp`.
 - mmWave Studio: `radar-studio-rstdxml-exception.webp`,
   `mmwave-studio-matlab-runtime-not-installed.webp`,
   `mmwave-studio-serial-disconnected.webp`,
-  `mmwave-studio-device-zero-overview.webp`, `rfdata-capture-card-settings.webp`,
-  `mmwave-studio-readregister-error.webp`, and
+  `device-manager-cp2105-ports.webp`, `mmwave-studio-device-zero-overview.webp`,
+  `rfdata-capture-card-settings.webp`,
+  `mmwave-studio-readregister-error.webp`,
+  `mmwave-studio-full-error-sequence.webp`, and
   `mmwave-studio-matlab-engine-error.webp`.
 - Configuration reference: `dca1000-mode-switch-guide.webp`.
 

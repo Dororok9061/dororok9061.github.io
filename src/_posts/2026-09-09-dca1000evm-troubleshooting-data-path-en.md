@@ -37,7 +37,7 @@ draft: false
 revision_history:
   - { date: 2026-09-09, change: "Written from hardware photos, mmWave Studio status screens, and portfolio pages 15-16" }
   - { date: 2026-09-09, change: "Added Wireshark, UniFlash, Tera Term, and zero-packet capture screens as staged debugging evidence" }
-  - { date: 2026-09-09, change: "Placed all 33 unique debugging screens, including runtime, ipconfig, RFDataCaptureCard, and Flash Binary states" }
+  - { date: 2026-09-09, change: "Placed all 36 unique debugging screens, including COM-port settings, Device Manager, and the full Studio error log" }
 toc:
   - { id: symptom, title: Missing data and board heating }
   - { id: paths, title: Data and control paths }
@@ -60,7 +60,7 @@ code first would have mixed configuration faults with physical faults. I preserv
 the observed state, then traced the sample path separately from the path that
 brings the devices into capture mode.
 
-Two byte-identical duplicate files are shown once each; all 33 distinct debugging
+Two byte-identical duplicate files are shown once each; all 36 distinct debugging
 screens are placed directly in the staged narrative below. Each screen opens at
 full size when selected.
 

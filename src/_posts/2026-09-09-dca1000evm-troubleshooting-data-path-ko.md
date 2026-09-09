@@ -37,7 +37,7 @@ draft: false
 revision_history:
   - { date: 2026-09-09, change: "장비 사진, mmWave Studio 상태 화면과 포트폴리오 15-16쪽을 대조해 작성" }
   - { date: 2026-09-09, change: "Wireshark, UniFlash, Tera Term과 0-packet capture log를 단계별 디버깅 증거로 추가" }
-  - { date: 2026-09-09, change: "추가 runtime·ipconfig·RFDataCaptureCard·Flash Binary 화면을 포함해 고유 디버깅 화면 33장을 모두 배치" }
+  - { date: 2026-09-09, change: "COM port 설정·장치 관리자·전체 Studio 오류 log를 포함해 고유 디버깅 화면 36장을 모두 배치" }
 toc:
   - { id: symptom, title: 미수신과 발열 }
   - { id: paths, title: 데이터·제어 경로 분리 }
@@ -60,7 +60,7 @@ PC와 보드 사이의 짧은 제어 UDP가 보였지만 raw capture log의 수�
 경로를 따로 따라갔다.
 
 이 글에는 제공된 화면 가운데 내용이 완전히 같은 복사본 2장을 한 번씩만 표시하고,
-서로 다른 디버깅 화면 33장을 단계별 본문에 모두 배치했다. 각 화면은 누르면 원본 크기로
+서로 다른 디버깅 화면 36장을 단계별 본문에 모두 배치했다. 각 화면은 누르면 원본 크기로
 확대된다.
 
 <figure><img src="{{ '/assets/images/projects/mmwave-visualizer/dca1000-setup.webp' | relative_url }}" alt="DCA1000EVM 위에 IWR6843ISK를 연결하고 전원, USB와 보드 간 케이블을 연결한 실험 구성" width="1200" height="1200"><figcaption>IWR6843ISK, DCA1000EVM, 전원·USB·보드 간 연결을 한 화면에서 확인한 구성.</figcaption></figure>

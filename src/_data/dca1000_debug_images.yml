@@ -35,6 +35,13 @@ studio:
       alt_en: mmWave Studio showing FTDI connected while RS232 and SPI are disconnected and zero devices are detected
       caption_ko: FTDI enumeration과 radar control 연결을 같은 성공 상태로 보지 않은 첫 관측.
       caption_en: The first observation separating FTDI enumeration from an operational radar-control link.
+    - image: /assets/images/projects/mmwave-visualizer/device-manager-cp2105-ports.webp
+      width: 431
+      height: 640
+      alt_ko: Windows 장치 관리자에서 Silicon Labs CP2105 Enhanced COM7과 Standard COM8을 확인한 화면
+      alt_en: Windows Device Manager showing Silicon Labs CP2105 Enhanced COM7 and Standard COM8
+      caption_ko: CP2105의 Enhanced COM7과 Standard COM8을 장치 관리자에서 구분해 실제 포트 열거 상태를 확인했다.
+      caption_en: Device Manager distinguished CP2105 Enhanced COM7 from Standard COM8 and preserved the actual port enumeration state.
     - image: /assets/images/projects/mmwave-visualizer/mmwave-studio-device-zero-overview.webp
       width: 800
       height: 339
@@ -56,6 +63,13 @@ studio:
       alt_en: mmWave Studio RF Power-up screen showing ReadRegister failed with error -11
       caption_ko: firmware path를 지정한 뒤에도 RF Power-up이 ReadRegister -11에서 중단된 상태.
       caption_en: RF Power-up still stopped at ReadRegister -11 after firmware paths were selected.
+    - image: /assets/images/projects/mmwave-visualizer/mmwave-studio-full-error-sequence.webp
+      width: 700
+      height: 635
+      alt_ko: mmWave Studio 전체 log에 DCA1000 timeout, invalid lvdsMode, config port bind, board control, firmware download, ReadRegister 오류가 연속 출력된 화면
+      alt_en: Full mmWave Studio log showing DCA1000 timeout, invalid lvdsMode, config-port bind, board-control, firmware-download, and ReadRegister errors
+      caption_ko: 하나의 실행에서 invalid lvdsMode -4016, config port 10048 bind -4051, BoardControl protocol, firmware download -1, ReadRegister -11이 이어진 전체 실패 순서다.
+      caption_en: One run preserved the full failure order: invalid lvdsMode -4016, config-port 10048 bind -4051, BoardControl protocol, firmware download -1, and ReadRegister -11.
     - image: /assets/images/projects/mmwave-visualizer/mmwave-studio-matlab-engine-error.webp
       width: 1000
       height: 425
@@ -204,6 +218,13 @@ cli:
   title_ko: Tera Term UART CLI 점검 전체 흐름
   title_en: Complete Tera Term UART CLI inspection sequence
   items:
+    - image: /assets/images/projects/mmwave-visualizer/teraterm-serial-port-settings.webp
+      width: 486
+      height: 468
+      alt_ko: Tera Term serial port 설정에서 COM7, 115200 baud, 8N1, no flow control와 CP2105 Enhanced port를 확인한 화면
+      alt_en: Tera Term serial-port settings showing COM7, 115200 baud, 8N1, no flow control, and the CP2105 Enhanced port
+      caption_ko: CLI 관측 전에 COM7·115200·8N1·flow control 없음과 CP2105 Enhanced port 선택을 화면으로 남겼다.
+      caption_en: Before inspecting the CLI, the selected CP2105 Enhanced port and COM7, 115200, 8N1, no-flow-control settings were retained on screen.
     - image: /assets/images/projects/mmwave-visualizer/teraterm-cli-command-error.webp
       width: 550
       height: 314
