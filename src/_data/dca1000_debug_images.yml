@@ -69,7 +69,7 @@ studio:
       alt_ko: mmWave Studio 전체 log에 DCA1000 timeout, invalid lvdsMode, config port bind, board control, firmware download, ReadRegister 오류가 연속 출력된 화면
       alt_en: Full mmWave Studio log showing DCA1000 timeout, invalid lvdsMode, config-port bind, board-control, firmware-download, and ReadRegister errors
       caption_ko: 하나의 실행에서 invalid lvdsMode -4016, config port 10048 bind -4051, BoardControl protocol, firmware download -1, ReadRegister -11이 이어진 전체 실패 순서다.
-      caption_en: One run preserved the full failure order: invalid lvdsMode -4016, config-port 10048 bind -4051, BoardControl protocol, firmware download -1, and ReadRegister -11.
+      caption_en: "One run preserved the full failure order: invalid lvdsMode -4016, config-port 10048 bind -4051, BoardControl protocol, firmware download -1, and ReadRegister -11."
     - image: /assets/images/projects/mmwave-visualizer/mmwave-studio-matlab-engine-error.webp
       width: 1000
       height: 425
