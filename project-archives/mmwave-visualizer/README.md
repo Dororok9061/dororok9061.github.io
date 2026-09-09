@@ -38,7 +38,12 @@ case because it did not reach the same result as the 3D tracking path.
 
 Observed states:
 
-- Ethernet raw-data capture did not start and board heating was observed.
+- Wireshark showed short UDP configuration packets from `192.168.33.30` to
+  `192.168.33.180:4096`, while the raw capture log reported zero received packets.
+- UniFlash retained successful SFLASH erase, meta-image download, and program-load
+  messages; this was treated as firmware-programming evidence only.
+- Tera Term displayed the `mmwDemo:/>` prompt, but several inputs were rejected as
+  unrecognized CLI commands.
 - mmWave Studio 2.1.0.0 showed FTDI connected while the detected-device count
   remained zero and RS232/SPI remained disconnected.
 - RF Power-up produced `ReadRegister failed with error -11` in a retained screen.
@@ -52,6 +57,19 @@ Data path   : IWR6843 raw ADC -> LVDS -> FPGA/buffer -> Ethernet -> PC
 Control path: power/mode -> FTDI/RS232/SPI -> reset/config -> capture start
 ```
 
+The software-side trace was recorded in this order:
+
+```text
+UniFlash program result
+  -> Tera Term UART prompt and command response
+  -> Wireshark UDP 4096/4098 observation
+  -> capture log packet count and raw-file check
+  -> mmWave Studio state and hardware inspection
+```
+
+The short configuration datagrams were not presented as raw ADC payload. The
+zero-packet log and absence of the raw binary remained the capture result.
+
 Suspicious solder joints were reworked and accessible power/signal points were
 checked with an oscilloscope. Raw Ethernet streaming was not restored. Normal
 FPGA-buffer reception and a specific failed component were not established, so
@@ -62,7 +80,27 @@ Public hardware/runtime images are stored under
 
 - `dca1000-setup.webp`
 - `dca1000-error-leds.webp`
-- `mmwave-studio-readregister-error.webp`
+
+The complete screen sequence is published in the existing DCA1000 article:
+
+- Wireshark and network: `wireshark-ssdp-first-observation.webp`,
+  `wireshark-dca-port-filter-empty.webp`, `wireshark-ssdp-repeat.webp`,
+  `wireshark-dca-control-udp.webp`, `wireshark-frame-length-filter-empty.webp`,
+  `wireshark-dca-bidirectional-udp.webp`, `wireshark-dca-return-udp-detail.webp`,
+  `wireshark-dca-response-filter.webp`, `wireshark-udp-ssdp-only.webp`,
+  `wireshark-dca-arp-udp-session.webp`, `windows-static-ip-setup.webp`,
+  `wireshark-background-udp-traffic.webp`, and
+  `wireshark-control-vs-background.webp`.
+- UniFlash: `uniflash-program-page.webp` and `uniflash-program-success.webp`.
+- Tera Term: `teraterm-cli-command-error.webp`,
+  `teraterm-cli-prompt-error.webp`, and `teraterm-serial-character-stream.png`.
+- MATLAB and capture result: `matlab-no-binary-files-error.webp`,
+  `matlab-record-location-error.webp`, `matlab-configure-radar-error.webp`, and
+  `dca1000-zero-packet-log.webp`.
+- mmWave Studio: `mmwave-studio-serial-disconnected.webp`,
+  `mmwave-studio-readregister-error.webp`, and
+  `mmwave-studio-matlab-engine-error.webp`.
+- Configuration reference: `dca1000-mode-switch-guide.webp`.
 
 ## Limits
 

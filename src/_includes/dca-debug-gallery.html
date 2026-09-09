@@ -1,0 +1,13 @@
+{% assign gallery = site.data.dca1000_debug_images[include.group] %}
+<section class="project-gallery dca-debug-gallery" aria-label="{% if page.lang == 'en' %}{{ gallery.title_en }}{% else %}{{ gallery.title_ko }}{% endif %}"><div>
+{% for item in gallery.items %}
+  {% if page.lang == 'en' %}{% assign item_alt = item.alt_en %}{% assign item_caption = item.caption_en %}{% else %}{% assign item_alt = item.alt_ko %}{% assign item_caption = item.caption_ko %}{% endif %}
+  <figure>
+    <button class="project-gallery__zoom" type="button" data-lightbox="{{ item.image | relative_url }}" data-lightbox-alt="{{ item_alt | escape }}" data-lightbox-caption="{{ item_caption | escape }}" aria-label="{% if page.lang == 'en' %}Open full-size debugging screen{% else %}디버깅 화면 크게 보기{% endif %}">
+      <img src="{{ item.image | relative_url }}" alt="{{ item_alt }}" width="{{ item.width }}" height="{{ item.height }}" loading="lazy">
+      <span class="project-gallery__zoom-badge" aria-hidden="true">zoom_in</span>
+    </button>
+    <figcaption>{{ item_caption }}</figcaption>
+  </figure>
+{% endfor %}
+</div></section>

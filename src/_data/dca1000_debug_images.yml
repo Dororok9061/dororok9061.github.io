@@ -1,0 +1,211 @@
+reference:
+  title_ko: DCA1000 mode와 switch 참고 화면
+  title_en: DCA1000 mode and switch reference
+  items:
+    - image: /assets/images/projects/mmwave-visualizer/dca1000-mode-switch-guide.webp
+      width: 915
+      height: 702
+      alt_ko: DCA1000EVM mode의 보드 결합 상태와 S1 switch 설정을 설명하는 TI guide 발췌 화면
+      alt_en: TI guide excerpt showing the stacked DCA1000EVM setup and S1 switch settings
+      caption_ko: 동작 mode와 S1 switch 위치를 대조한 공식 guide 발췌 화면. 설계 결과물이 아니라 설정 확인 근거로만 사용했다.
+      caption_en: An official-guide excerpt used only to cross-check operating mode and S1 switch positions, not claimed as authored work.
+
+studio:
+  title_ko: mmWave Studio 연결과 software environment 점검 화면
+  title_en: mmWave Studio connectivity and software-environment checks
+  items:
+    - image: /assets/images/projects/mmwave-visualizer/mmwave-studio-serial-disconnected.webp
+      width: 1000
+      height: 420
+      alt_ko: mmWave Studio에서 FTDI는 연결됐지만 RS232와 SPI는 끊기고 device가 0개로 표시된 화면
+      alt_en: mmWave Studio showing FTDI connected while RS232 and SPI are disconnected and zero devices are detected
+      caption_ko: FTDI enumeration과 radar control 연결을 같은 성공 상태로 보지 않은 첫 관측.
+      caption_en: The first observation separating FTDI enumeration from an operational radar-control link.
+    - image: /assets/images/projects/mmwave-visualizer/mmwave-studio-readregister-error.webp
+      width: 1000
+      height: 485
+      alt_ko: mmWave Studio RF Power-up에서 ReadRegister failed error -11이 발생한 화면
+      alt_en: mmWave Studio RF Power-up screen showing ReadRegister failed with error -11
+      caption_ko: firmware path를 지정한 뒤에도 RF Power-up이 ReadRegister -11에서 중단된 상태.
+      caption_en: RF Power-up still stopped at ReadRegister -11 after firmware paths were selected.
+    - image: /assets/images/projects/mmwave-visualizer/mmwave-studio-matlab-engine-error.webp
+      width: 1000
+      height: 425
+      alt_ko: mmWave Studio output에 MATLAB Engine 초기화 실패와 runtime DLL load error가 출력된 화면
+      alt_en: mmWave Studio output showing MATLAB Engine initialization failure and a runtime DLL load error
+      caption_ko: 하드웨어 통신과 별개로 host software runtime도 독립적인 실패 지점임을 확인했다.
+      caption_en: The host software runtime was recorded as a failure boundary independent of hardware communication.
+
+network:
+  title_ko: Wireshark와 Windows Ethernet 설정 점검 전체 흐름
+  title_en: Complete Wireshark and Windows Ethernet inspection sequence
+  items:
+    - image: /assets/images/projects/mmwave-visualizer/wireshark-ssdp-first-observation.webp
+      width: 1000
+      height: 424
+      alt_ko: Wireshark 첫 capture에서 PC의 SSDP multicast packet만 보인 화면
+      alt_en: Initial Wireshark capture showing only SSDP multicast packets from the PC
+      caption_ko: 첫 관측에서는 DCA raw traffic이 아니라 PC background SSDP만 잡혔다.
+      caption_en: The first capture contained PC background SSDP rather than DCA raw traffic.
+    - image: /assets/images/projects/mmwave-visualizer/wireshark-dca-port-filter-empty.webp
+      width: 1000
+      height: 387
+      alt_ko: UDP 4096 또는 4098 filter를 적용했지만 packet list가 비어 있는 Wireshark 화면
+      alt_en: Wireshark with a UDP 4096 or 4098 filter and an empty packet list
+      caption_ko: DCA configuration·data port만 남긴 초기 filter에서 packet이 보이지 않은 상태.
+      caption_en: No packet was visible in an early filter restricted to the DCA configuration and data ports.
+    - image: /assets/images/projects/mmwave-visualizer/wireshark-ssdp-repeat.webp
+      width: 1000
+      height: 427
+      alt_ko: 반복 capture에서도 192.168.33.30의 SSDP multicast만 나타난 Wireshark 화면
+      alt_en: Repeated Wireshark capture still showing SSDP multicast from 192.168.33.30
+      caption_ko: filter를 풀면 반복적으로 보이던 것은 host의 multicast traffic이었다.
+      caption_en: With the filter removed, repeated host multicast traffic remained the visible activity.
+    - image: /assets/images/projects/mmwave-visualizer/wireshark-dca-control-udp.webp
+      width: 1000
+      height: 406
+      alt_ko: 192.168.33.30에서 192.168.33.180 UDP 4096으로 향하는 짧은 제어 packet을 필터링한 Wireshark 화면
+      alt_en: Wireshark filtered to short UDP control datagrams from 192.168.33.30 to port 4096 on 192.168.33.180
+      caption_ko: 이후 8·14 byte의 configuration UDP는 관측됐다. 이는 raw ADC payload 수신과 구분했다.
+      caption_en: Short 8- and 14-byte configuration datagrams later appeared; they were kept separate from raw-ADC reception.
+    - image: /assets/images/projects/mmwave-visualizer/wireshark-frame-length-filter-empty.webp
+      width: 1000
+      height: 195
+      alt_ko: UDP 4096과 frame length 200 초과 조건에서 결과가 비어 있는 Wireshark 화면
+      alt_en: Wireshark showing no result for UDP 4096 frames longer than 200 bytes
+      caption_ko: 길이가 큰 frame 조건에서는 결과가 없어, 짧은 제어 packet과 data payload를 나눠 봤다.
+      caption_en: A longer-frame condition returned no result, separating short control datagrams from data payloads.
+    - image: /assets/images/projects/mmwave-visualizer/wireshark-dca-bidirectional-udp.webp
+      width: 1000
+      height: 305
+      alt_ko: PC와 DCA1000EVM 사이 UDP 4096과 1024 packet이 양방향으로 나타난 Wireshark 화면
+      alt_en: Wireshark showing bidirectional UDP traffic on ports 4096 and 1024 between the PC and DCA1000EVM
+      caption_ko: 요청과 짧은 응답 packet이 함께 보여 Ethernet 제어 경로의 일부 도달성을 확인했다.
+      caption_en: Requests and short responses established partial reachability of the Ethernet control path.
+    - image: /assets/images/projects/mmwave-visualizer/wireshark-dca-return-udp-detail.webp
+      width: 1000
+      height: 237
+      alt_ko: 192.168.33.180의 UDP 1024에서 PC UDP 4096으로 돌아온 8 byte data를 확대한 Wireshark 화면
+      alt_en: Wireshark detail of an 8-byte datagram returned from DCA port 1024 to PC port 4096
+      caption_ko: DCA 측에서 돌아온 짧은 8 byte response의 source·destination과 payload를 확인했다.
+      caption_en: Source, destination, and payload were inspected for a short 8-byte response from the DCA side.
+    - image: /assets/images/projects/mmwave-visualizer/wireshark-dca-response-filter.webp
+      width: 1000
+      height: 284
+      alt_ko: DCA IP source와 UDP 4098 또는 4096 조건으로 짧은 응답 packet을 모은 Wireshark 화면
+      alt_en: Wireshark filtering short response packets by DCA source IP and UDP ports 4098 or 4096
+      caption_ko: source IP와 port를 함께 제한해 host background traffic과 DCA response를 분리했다.
+      caption_en: Source IP and ports were combined to separate DCA responses from host background traffic.
+    - image: /assets/images/projects/mmwave-visualizer/wireshark-udp-ssdp-only.webp
+      width: 974
+      height: 227
+      alt_ko: UDP 전체 filter에서 SSDP packet만 보이는 Wireshark 화면
+      alt_en: Wireshark showing only SSDP packets under a broad UDP filter
+      caption_ko: 다른 capture 시점에서는 broad UDP filter에도 SSDP만 보여 조건별 재현성을 비교했다.
+      caption_en: At another capture point, even the broad UDP filter showed only SSDP, so conditions were compared across runs.
+    - image: /assets/images/projects/mmwave-visualizer/wireshark-dca-arp-udp-session.webp
+      width: 1000
+      height: 406
+      alt_ko: ARP resolution 뒤 PC와 DCA1000EVM 사이 짧은 UDP packet이 오간 Wireshark 화면
+      alt_en: Wireshark showing ARP resolution followed by short UDP exchanges between the PC and DCA1000EVM
+      caption_ko: ARP 응답과 양방향 UDP가 이어져 IP·MAC reachability가 성립한 구간을 남겼다.
+      caption_en: ARP resolution followed by bidirectional UDP preserved evidence of IP and MAC reachability.
+    - image: /assets/images/projects/mmwave-visualizer/windows-static-ip-setup.webp
+      width: 449
+      height: 503
+      alt_ko: Windows Ethernet adapter에 192.168.33.30과 subnet mask 255.255.255.0을 수동 입력한 화면
+      alt_en: Windows Ethernet adapter configured manually as 192.168.33.30 with subnet mask 255.255.255.0
+      caption_ko: PC NIC를 192.168.33.30/24로 고정해 DCA1000 subnet 조건을 재현했다.
+      caption_en: The PC NIC was fixed at 192.168.33.30/24 to reproduce the DCA1000 subnet condition.
+    - image: /assets/images/projects/mmwave-visualizer/wireshark-background-udp-traffic.webp
+      width: 1000
+      height: 425
+      alt_ko: 장시간 capture에서 SSDP와 Windows browser announcement가 함께 보인 Wireshark 화면
+      alt_en: Long Wireshark capture showing SSDP and a Windows browser announcement
+      caption_ko: 장시간 capture에 섞인 OS background packet을 DCA traffic으로 오판하지 않도록 분류했다.
+      caption_en: OS background packets in a long capture were classified so they would not be mistaken for DCA traffic.
+    - image: /assets/images/projects/mmwave-visualizer/wireshark-control-vs-background.webp
+      width: 1000
+      height: 451
+      alt_ko: 짧은 DCA UDP와 SSDP 및 Windows browser announcement가 한 capture에 함께 있는 Wireshark 화면
+      alt_en: Wireshark capture containing short DCA UDP together with SSDP and a Windows browser announcement
+      caption_ko: 동일 capture 안에서도 DCA 제어 response와 무관한 background traffic을 protocol·주소로 나눴다.
+      caption_en: Protocol and address fields separated the DCA control response from unrelated background traffic in the same capture.
+
+firmware:
+  title_ko: UniFlash firmware 점검 전체 흐름
+  title_en: Complete UniFlash firmware inspection sequence
+  items:
+    - image: /assets/images/projects/mmwave-visualizer/uniflash-program-page.webp
+      width: 1000
+      height: 580
+      alt_ko: UniFlash IWR6843 program page에서 meta image slot을 선택하기 전 화면
+      alt_en: UniFlash IWR6843 program page before selecting a meta-image slot
+      caption_ko: IWR6843 serial connection과 flash image 입력 위치를 확인한 시작 상태.
+      caption_en: The starting state used to confirm the IWR6843 serial connection and flash-image fields.
+    - image: /assets/images/projects/mmwave-visualizer/uniflash-program-success.webp
+      width: 1000
+      height: 583
+      alt_ko: UniFlash에서 IWR6843 SFLASH erase와 META IMAGE download 및 Program Load 완료 메시지를 확인한 화면
+      alt_en: UniFlash console confirming IWR6843 SFLASH erase, meta-image download, and program-load completion
+      caption_ko: erase·download·Program Load success를 확인해 firmware 기록 단계와 이후 streaming 단계를 분리했다.
+      caption_en: Successful erase, download, and program load separated firmware programming from the later streaming stages.
+
+cli:
+  title_ko: Tera Term UART CLI 점검 전체 흐름
+  title_en: Complete Tera Term UART CLI inspection sequence
+  items:
+    - image: /assets/images/projects/mmwave-visualizer/teraterm-cli-command-error.webp
+      width: 550
+      height: 314
+      alt_ko: Tera Term COM7에서 mmwDemo prompt와 여러 CLI command 인식 실패가 반복된 화면
+      alt_en: Tera Term on COM7 showing the mmwDemo prompt and repeated CLI command rejection messages
+      caption_ko: UART prompt 도달과 command 거부를 서로 다른 관측 상태로 기록했다.
+      caption_en: UART prompt reachability and command rejection were recorded as different observations.
+    - image: /assets/images/projects/mmwave-visualizer/teraterm-cli-prompt-error.webp
+      width: 648
+      height: 429
+      alt_ko: Tera Term에서 깨진 입력 뒤 CLI command 인식 실패와 mmwDemo prompt가 나타난 화면
+      alt_en: Tera Term showing a rejected garbled input followed by the mmwDemo prompt
+      caption_ko: prompt가 유지되는 가운데 입력 문자열이 정상 command로 해석되지 않은 추가 재현.
+      caption_en: An additional reproduction where the prompt remained available but the input was not parsed as a valid command.
+    - image: /assets/images/projects/mmwave-visualizer/teraterm-serial-character-stream.png
+      width: 644
+      height: 429
+      alt_ko: Tera Term terminal에 B와 R 문자가 연속 출력된 serial stream 화면
+      alt_en: Tera Term terminal filled with a continuous stream of B and R characters
+      caption_ko: 반복 문자 stream을 baud·port·실행 image 불일치 가능성의 관측으로 남겼으며 원인을 단정하지 않았다.
+      caption_en: The repeated character stream was retained as an observation consistent with baud, port, or image mismatch without assigning one cause.
+
+capture:
+  title_ko: MATLAB과 DCA capture 결과 점검 전체 흐름
+  title_en: Complete MATLAB and DCA capture-result inspection sequence
+  items:
+    - image: /assets/images/projects/mmwave-visualizer/matlab-no-binary-files-error.webp
+      width: 640
+      height: 145
+      alt_ko: MATLAB dca1000FileReader가 지정 위치에서 bin file을 찾지 못한 error 화면
+      alt_en: MATLAB dca1000FileReader error reporting that no binary files were found at the specified location
+      caption_ko: reader 문제가 아니라 먼저 capture output 자체가 생성됐는지 확인해야 했던 지점.
+      caption_en: The error redirected the check from the reader to whether capture output had been created at all.
+    - image: /assets/images/projects/mmwave-visualizer/matlab-record-location-error.webp
+      width: 1000
+      height: 208
+      alt_ko: MATLAB에서 recordLocation 변수를 인식하지 못한 error 화면
+      alt_en: MATLAB error showing that recordLocation was not recognized
+      caption_ko: example variable과 실제 object property를 섞은 host-side script 문제를 별도로 기록했다.
+      caption_en: A host-side script issue from mixing an example variable with an actual object property was recorded separately.
+    - image: /assets/images/projects/mmwave-visualizer/matlab-configure-radar-error.webp
+      width: 647
+      height: 330
+      alt_ko: MATLAB에서 configureRadar 함수를 인식하지 못한 error 화면
+      alt_en: MATLAB error showing that configureRadar was not recognized
+      caption_ko: 지원 package example과 현재 MATLAB path·API가 맞지 않은 software boundary를 확인했다.
+      caption_en: The screen captured a software boundary between the support-package example and the available MATLAB path or API.
+    - image: /assets/images/projects/mmwave-visualizer/dca1000-zero-packet-log.webp
+      width: 742
+      height: 452
+      alt_ko: DCA1000 raw capture log에서 수신 packet 수가 0으로 기록된 화면
+      alt_en: DCA1000 raw-capture log showing zero received packets
+      caption_ko: configuration과 log file은 생겼지만 received packets가 0이어서 raw capture 성공으로 판정하지 않았다.
+      caption_en: Configuration and log files existed, but zero received packets prevented a successful raw-capture claim.

@@ -1917,6 +1917,20 @@ summary:focus-visible {
   letter-spacing: 0;
 }
 
+.dca-debug-gallery > div {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.dca-debug-gallery .project-gallery__zoom {
+  min-height: 0;
+}
+
+.dca-debug-gallery img {
+  aspect-ratio: auto;
+  max-height: none;
+  object-fit: contain;
+}
+
 .lightbox {
   width: min(94vw, 72rem);
   max-height: 94vh;
