@@ -31,10 +31,45 @@ IWR6843 chirps
 
 - `config/IWR6843AOP.ccxml`: Code Composer Studio target configuration.
 
+## DCA1000EVM troubleshooting
+
+The raw-ADC capture investigation is published as a separate troubleshooting
+case because it did not reach the same result as the 3D tracking path.
+
+Observed states:
+
+- Ethernet raw-data capture did not start and board heating was observed.
+- mmWave Studio 2.1.0.0 showed FTDI connected while the detected-device count
+  remained zero and RS232/SPI remained disconnected.
+- RF Power-up produced `ReadRegister failed with error -11` in a retained screen.
+- Multiple board status LEDs were photographed before connector, switch, solder,
+  power, and accessible signal points were inspected.
+
+Inspection order:
+
+```text
+Data path   : IWR6843 raw ADC -> LVDS -> FPGA/buffer -> Ethernet -> PC
+Control path: power/mode -> FTDI/RS232/SPI -> reset/config -> capture start
+```
+
+Suspicious solder joints were reworked and accessible power/signal points were
+checked with an oscilloscope. Raw Ethernet streaming was not restored. Normal
+FPGA-buffer reception and a specific failed component were not established, so
+the DCA1000 capture path was retired from this test setup.
+
+Public hardware/runtime images are stored under
+`src/assets/images/projects/mmwave-visualizer/`:
+
+- `dca1000-setup.webp`
+- `dca1000-error-leds.webp`
+- `mmwave-studio-readregister-error.webp`
+
 ## Limits
 
 - Radar processing and GUI functions are based on TI SDK/Toolbox examples.
 - The retained MSS artifact is binary-only, so no MSS source modification is claimed.
+- The DCA1000EVM investigation did not restore raw Ethernet streaming or identify
+  a failed component.
 - Visualizer vital-sign values show functional output, not medical accuracy.
 - CAN/LIN, AUTOSAR, and vehicle-network integration were not implemented in this archive.
 

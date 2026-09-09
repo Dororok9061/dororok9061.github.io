@@ -314,6 +314,7 @@
       url_en: /en/blog/2026/07/31/radar-candidate-timing/
     - { order: 5, title_ko: SQI·CTI와 Validation Boundary, title_en: "SQI, CTI, and Validation Boundary", status: planned }
     - { order: 6, title_ko: IWR6843 설정부터 3D People Tracking 출력까지, title_en: From IWR6843 Configuration to 3D People-Tracking Output, status: published, translation_key: mmwave-visualizer-people-tracking, url_ko: /blog/2026/09/04/mmwave-visualizer-people-tracking/, url_en: /en/blog/2026/09/04/mmwave-visualizer-people-tracking/ }
+    - { order: 7, title_ko: DCA1000EVM 원시 ADC 수집 장애를 경로별로 좁힌 디버깅, title_en: Isolating a DCA1000EVM Raw-ADC Capture Failure by Data Path, status: published, translation_key: dca1000evm-troubleshooting-data-path, url_ko: /blog/2026/09/09/dca1000evm-troubleshooting-data-path/, url_en: /en/blog/2026/09/09/dca1000evm-troubleshooting-data-path/ }
 
 - id: engineering-record-lineage
   hidden: true

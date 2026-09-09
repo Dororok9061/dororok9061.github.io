@@ -553,7 +553,7 @@
   status_label_ko: 실제 장비·실행 화면·설정 자료
   status_label_en: Hardware, runtime screens, and configuration records
   image_webp: /assets/images/projects/mmwave-visualizer/lab-setup.webp
-  image_jpg: /assets/images/projects/mmwave-visualizer/lab-setup.jpg
+  image_jpg: /assets/images/projects/mmwave-visualizer/lab-setup.webp
   image_width: 1200
   image_height: 1600
   alt_ko: 실험실 스탠드에 장착한 IWR6843 mmWave 레이더와 Visualizer 실행 환경
@@ -602,7 +602,7 @@
     - Organized system-level checks spanning hardware, configuration, DSP, and GUI
   gallery:
     - webp: /assets/images/projects/mmwave-visualizer/people-tracking.webp
-      jpg: /assets/images/projects/mmwave-visualizer/people-tracking.jpg
+      jpg: /assets/images/projects/mmwave-visualizer/people-tracking.webp
       width: 1080
       height: 1080
       alt_ko: 시간 프레임 안에서 target ID와 3D bounding box를 표시한 사람 추적 화면
@@ -610,7 +610,7 @@
       caption_ko: 시간에 따라 target ID와 위치가 갱신되는 3D People Tracking 출력
       caption_en: 3D People Tracking output with target ID and position updates over time
     - webp: /assets/images/projects/mmwave-visualizer/demo-config.webp
-      jpg: /assets/images/projects/mmwave-visualizer/demo-config.jpg
+      jpg: /assets/images/projects/mmwave-visualizer/demo-config.webp
       width: 1600
       height: 900
       alt_ko: TI mmWave Demo Visualizer의 센서와 검출 설정 화면
@@ -618,7 +618,7 @@
       caption_ko: 레이더 profile과 detection parameter를 확인한 설정 화면
       caption_en: Configuration view used to inspect the radar profile and detection parameters
     - webp: /assets/images/projects/mmwave-visualizer/industrial-visualizer.webp
-      jpg: /assets/images/projects/mmwave-visualizer/industrial-visualizer.jpg
+      jpg: /assets/images/projects/mmwave-visualizer/industrial-visualizer.webp
       width: 1600
       height: 900
       alt_ko: 추적 영역과 호흡·심박 표시를 함께 띄운 Industrial Visualizer 화면
