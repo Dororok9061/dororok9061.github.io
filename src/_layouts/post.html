@@ -29,16 +29,6 @@ layout: default
       </div>
     </nav>
 
-    {% if page.toc.size > 1 %}
-    <figure class="research-concept-map" aria-labelledby="post-concept-caption">
-      <div class="research-concept-map__grid">
-        {% for item in page.toc limit: 4 %}
-        <div class="research-concept-node"><span class="research-concept-node__index">0{{ forloop.index }}</span><strong>{% if page.lang == 'en' and item.title_en %}{{ item.title_en }}{% else %}{{ item.title }}{% endif %}</strong><p>{% if page.lang == 'en' %}A checkpoint in the study sequence for this note.{% else %}이 글에서 순서대로 다시 확인하는 학습 포인트입니다.{% endif %}</p></div>
-        {% endfor %}
-      </div>
-      <figcaption id="post-concept-caption">{% if page.lang == 'en' %}A compact concept path generated from this post's table of contents.{% else %}이 글의 목차에서 자동으로 만든 개념 흐름도입니다.{% endif %}</figcaption>
-    </figure>
-    {% endif %}
     {% endif %}
 
     <div id="article" class="prose post__content research-section">{{ content }}</div>

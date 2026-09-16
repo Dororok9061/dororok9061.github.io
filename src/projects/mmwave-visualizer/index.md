@@ -9,9 +9,10 @@ alternate_url: /en/projects/mmwave-visualizer/
 alternate_lang: en
 ---
 
-IWR6843 EVM을 실험 공간에 설치하고 센서 높이·방향·FOV·range·threshold를
-조정했다. C674x DSS 처리 구조와 DSS–MSS 데이터 이동, 두 UART의 역할을 따라간
-뒤 3D point cloud와 target tracking 화면이 갱신되는 과정을 비교했다.
+IWR6843의 설치 높이·방향·FOV·range·threshold를 실험 공간에 맞춰 조정했다. C674x DSS 처리와 DSS–MSS 데이터 이동, CLI 115200 bps·data 921600 bps UART를 거쳐 3D point cloud와 target tracking 화면으로 이어진다.
 
-TI Radar Toolbox와 SDK 예제를 사용한 통합·분석 경험이며 MSS 소스 신규 작성이나
-생체신호의 의료 정확도 평가는 포함하지 않는다.
+- [센서 설정·3D 추적 실행 기록](/blog/2026/09/04/mmwave-visualizer-people-tracking/)
+- [DCA1000EVM 원시 ADC 수집 디버깅](/projects/dca1000evm/)
+- [TI target configuration과 자료](https://github.com/Dororok9061/dororok9061.github.io/tree/main/project-archives/mmwave-visualizer)
+
+기반: TI Radar Toolbox·SDK 예제. 보관 자료: DSS build artifact·MSS 바이너리·Visualizer 화면.

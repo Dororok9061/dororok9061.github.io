@@ -202,52 +202,7 @@ function renderGallery(root, component) {
 }
 
 function renderCarousel(root, component) {
-  const carousel = document.createElement("div");
-  carousel.className = "carousel";
-  carousel.appendChild(textElement("h3", "component-title", component.title || "Carousel"));
-
-  const windowElement = document.createElement("div");
-  windowElement.className = "carousel-window";
-  const track = document.createElement("div");
-  track.className = "carousel-track";
-
-  (component.images || []).forEach((src) => {
-    const slide = document.createElement("div");
-    slide.className = "carousel-slide";
-    const button = document.createElement("button");
-    button.className = "figure-thumb";
-    button.type = "button";
-    button.dataset.full = assetUrl(src);
-    button.setAttribute("aria-label", "Open enlarged figure");
-    const image = document.createElement("img");
-    image.src = assetUrl(src);
-    image.alt = component.title || "carousel image";
-    image.width = 900;
-    image.height = 900;
-    image.loading = "lazy";
-    image.decoding = "async";
-    button.appendChild(image);
-    slide.appendChild(button);
-    track.appendChild(slide);
-  });
-
-  windowElement.appendChild(track);
-  const controls = document.createElement("div");
-  controls.className = "carousel-controls";
-  const previous = document.createElement("button");
-  previous.className = "icon-button prev";
-  previous.type = "button";
-  previous.setAttribute("aria-label", "Previous");
-  previous.appendChild(icon("chevron_left"));
-  const next = document.createElement("button");
-  next.className = "icon-button next";
-  next.type = "button";
-  next.setAttribute("aria-label", "Next");
-  next.appendChild(icon("chevron_right"));
-  controls.append(previous, next);
-  carousel.append(windowElement, controls);
-  root.appendChild(carousel);
-  setupCarousel(carousel);
+  renderGallery(root, component);
 }
 
 function renderCards(root, cards) {
@@ -306,50 +261,9 @@ function renderBibtex(root, text) {
   root.appendChild(wrapper);
 }
 
-function setupCarousel(root) {
-  const track = root.querySelector(".carousel-track");
-  const slides = root.querySelectorAll(".carousel-slide");
-  let index = 0;
-  const update = () => {
-    if (track) track.style.transform = `translateX(${-index * 100}%)`;
-  };
-  root.querySelector(".prev")?.addEventListener("click", () => {
-    index = (index + slides.length - 1) % slides.length;
-    update();
-  });
-  root.querySelector(".next")?.addEventListener("click", () => {
-    index = (index + 1) % slides.length;
-    update();
-  });
-}
-
 function setupInteractions() {
   document.getElementById("themeToggle")?.addEventListener("click", () => document.body.classList.toggle("dark"));
   document.getElementById("scrollTop")?.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
-
-  const lightbox = document.getElementById("imageLightbox");
-  const lightboxImage = lightbox?.querySelector("img");
-  const closeLightbox = () => {
-    if (!lightbox || !lightboxImage) return;
-    lightbox.classList.remove("open");
-    lightbox.setAttribute("aria-hidden", "true");
-    lightboxImage.removeAttribute("src");
-  };
-
-  document.addEventListener("click", (event) => {
-    const button = event.target.closest?.(".figure-thumb");
-    if (!button || !lightbox || !lightboxImage) return;
-    lightboxImage.src = button.dataset.full || "";
-    lightbox.classList.add("open");
-    lightbox.setAttribute("aria-hidden", "false");
-  });
-  lightbox?.querySelector(".lightbox-close")?.addEventListener("click", closeLightbox);
-  lightbox?.addEventListener("click", (event) => {
-    if (event.target === lightbox) closeLightbox();
-  });
-  window.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") closeLightbox();
-  });
 
   const copy = document.getElementById("copyBibtex");
   copy?.addEventListener("click", () => {

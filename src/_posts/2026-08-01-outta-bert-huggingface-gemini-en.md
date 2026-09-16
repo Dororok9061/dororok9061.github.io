@@ -86,7 +86,7 @@ assert result.logits.shape[0] == len(texts)
 
 The Hugging Face copy retained 39 cells, 25 code cells, and 125 text or table output objects. Its code source matched the base notebook; the outputs were the difference. The BERT copy had 72 cells and 31 output objects, with 17 of 32 code cells differing from the base. The Gemini copy retained 33 cells, 24 code cells, and 10 output objects.
 
-These notebooks contained text and table outputs rather than saved image outputs, so I centered this note on tokenization, masks, shapes, and code flow. I did not describe the stored material as a fresh execution.
+Sources: archived notebook code, text, and table outputs. Analysis topics: tokenization, masks, tensor shapes, and code flow.
 
 ## Separating Gemini credentials {#gemini}
 

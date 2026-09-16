@@ -74,7 +74,7 @@ layout: default
 
   {% when 'classroom' %}
     {{ content }}
-    <p>{% if page.lang == 'en' %}I have not copied class titles, grades, feedback, or private submissions because the signed-in Classroom page was not available in this session.{% else %}이번 작업에서는 로그인된 Classroom 화면을 열지 못해 강좌명·성적·피드백·비공개 제출물을 옮기지 않았다. 내려받은 내 자료를 확인한 뒤 공부한 내용부터 이어서 정리할 예정이다.{% endif %}</p>
+    <p>{% if page.lang == 'en' %}Course concepts, practice code, and personal study notes.{% else %}수업 개념 · 실습 코드 · 개인 학습 노트{% endif %}</p>
 
   {% when 'competition' %}
     {% assign competition = site.data.competitions | where: 'id', page.competition_id | first %}

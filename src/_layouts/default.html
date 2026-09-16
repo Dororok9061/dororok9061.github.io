@@ -5,9 +5,9 @@
 </head>
 <body class="minecraft-theme minecraft-layout-{{ page.layout | default: 'page' }}">
   <a class="skip-link" href="#main">{% if page.lang == 'en' %}Skip to content{% else %}본문으로 건너뛰기{% endif %}</a>
-  {% if page.layout == 'home' %}{% include minecraft-world.html %}{% endif %}
+  {% if page.layout == 'home' and page.interactive_world %}{% include minecraft-world.html %}{% endif %}
   {% include header.html %}
-  {% if page.layout == 'home' or page.mode == 'start-here' or page.layout == 'about' %}{% include patent-innovation-banner.html %}{% endif %}
+  {% if page.mode == 'start-here' or page.layout == 'about' %}{% include patent-innovation-banner.html %}{% endif %}
   {{ content }}
   <dialog class="lightbox" id="publication-lightbox" aria-labelledby="lightbox-caption">
     <button class="lightbox__close" type="button" data-lightbox-close aria-label="{% if page.lang == 'en' %}Close image preview{% else %}이미지 미리보기 닫기{% endif %}">×</button>
@@ -17,8 +17,9 @@
     </figure>
   </dialog>
   {% include footer.html %}
-  {% if page.layout == 'home' %}<script type="module" src="{{ '/assets/js/minecraft-world.bundle.js' | relative_url }}"></script>{% endif %}
+  {% if page.layout == 'home' and page.interactive_world %}<script type="module" src="{{ '/assets/js/minecraft-world.bundle.js' | relative_url }}"></script>{% endif %}
   <script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/js/evidence-gallery.js' | relative_url }}" defer></script>
   <script src="{{ '/assets/js/research-case.js' | relative_url }}" defer></script>
 </body>
 </html>

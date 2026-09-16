@@ -86,7 +86,7 @@ assert result.logits.shape[0] == len(texts)
 
 Hugging Face 사본에는 39개 cell, 25개 code cell과 125개의 text·table output object가 남아 있었다. code source는 기본본과 같았고 출력만 보존돼 있었다. BERT 사본은 72개 cell과 31개 output object가 있었으며, 32개 code cell 중 17개가 기본본과 달랐다. Gemini 사본에는 33개 cell, 24개 code cell, 10개 output object가 남아 있었다.
 
-이 세 Notebook은 저장된 image output 대신 text와 table 위주라서, 이번 글에서는 tokenization·mask·shape와 코드 흐름을 중심으로 다시 적었다. 당시 결과를 새 실행 결과처럼 바꾸어 쓰지 않았다.
+자료 유형: 저장된 Notebook 코드·text·table 출력. 분석 항목: tokenization·mask·tensor shape·코드 흐름.
 
 ## Gemini credential 분리 {#gemini}
 

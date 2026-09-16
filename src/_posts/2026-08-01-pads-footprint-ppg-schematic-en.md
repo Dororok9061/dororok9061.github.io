@@ -51,7 +51,7 @@ I reopened a Decal Wizard capture and a separate PPG schematic/layout capture fr
 
 <figure>
   <img src="{{ '/assets/images/learning/coursework/pads-footprint-ppg-schematic.svg' | relative_url }}" alt="An independent six-pad SOIC decal example beside a separate OPA2333, filter, SN74LVC logic, and layout example" width="1200" height="630">
-  <figcaption>The panels come from separate saved captures. Their placement does not imply that they share one package.</figcaption>
+  <figcaption>Separate exercises: a six-pin SOIC decal and a PPG schematic/layout.</figcaption>
 </figure>
 
 ## Six-pin SOIC dimensions {#footprint}
@@ -91,7 +91,7 @@ The separate PPG schematic screen shows OPA2333 amplification stages, RC filteri
   → OPA2333 output stage
   → SN74LVC logic interface
   → placement view in the PPG capture</code></pre>
-  <figcaption>I kept only the functional blocks visible in the saved screen and did not invent component values or cutoff frequencies.</figcaption>
+  <figcaption>Functional blocks from the saved PPG schematic: amplification, RC filtering, and logic interface.</figcaption>
 </figure>
 
 ## What the layout screen shows {#layout}

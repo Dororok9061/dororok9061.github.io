@@ -32,11 +32,10 @@
   </div>{% endif %}
   <div class="publication-card__content">
     <div class="badge-row">
-      <span class="evidence-badge evidence-badge--measured">{% if include.lang == 'en' %}First Author{% else %}제1저자{% endif %}</span>
-      <span class="evidence-badge evidence-badge--source">Conference Proceedings</span>
-      <span class="evidence-badge evidence-badge--source">Poster Presentation</span>
+      {% include publication-badges.html publication=publication lang=include.lang %}
     </div>
     <p class="publication-card__venue">{{ publication_venue }} · {{ publication.year }}</p>
+    <p class="publication-card__dates">{% if include.lang == 'en' %}Published{% else %}게재{% endif %} {{ publication.published_date | date: '%Y.%m.%d' }} · pp. {{ publication.pages }}{% if publication.presentation_date and publication.presentation_date != empty %} · {% if include.lang == 'en' %}Presented{% else %}발표{% endif %} {{ publication.presentation_date | date: '%Y.%m.%d' }}{% endif %}</p>
     <h2><a href="{{ publication_url | relative_url }}">{{ publication_title }}</a></h2>
     <p class="publication-card__authors">{{ publication_authors | join: ', ' }}</p>
     <p>{{ publication_summary }}</p>
@@ -48,10 +47,10 @@
     <p class="publication-card__role">{{ publication_role }}</p>
     <div class="button-row">
       <a class="portfolio-button portfolio-button--primary" href="{{ publication_url | relative_url }}">{{ details_label }}</a>
-      <a class="portfolio-button" href="{{ publication.official_url }}" target="_blank" rel="noopener noreferrer">Official Conference</a>
+      {% if publication.official_url and publication.official_url != empty %}<a class="portfolio-button" href="{{ publication.official_url }}" target="_blank" rel="noopener noreferrer">Official Conference</a>{% endif %}
       {% if publication.dbpia_url != empty %}<a class="portfolio-button" href="{{ publication.dbpia_url }}" target="_blank" rel="noopener noreferrer">DBpia</a>{% endif %}
       {% if publication.paper_pdf != empty %}<a class="portfolio-button" href="{{ publication.paper_pdf }}" target="_blank" rel="noopener noreferrer">Paper</a>{% endif %}
-      <a class="portfolio-button" href="{{ publication.github_url }}" target="_blank" rel="noopener noreferrer">Code</a>
+      {% if publication.github_url and publication.github_url != empty %}<a class="portfolio-button" href="{{ publication.github_url }}" target="_blank" rel="noopener noreferrer">Code</a>{% endif %}
     </div>
     <p class="verification-note">{% if include.lang == 'en' %}{{ publication.dbpia_record_note_en }}{% else %}{{ publication.dbpia_record_note_ko }}{% endif %}</p>
   </div>

@@ -121,6 +121,6 @@ Related project:
 
 ## 확인하지 못한 내용 {#limits}
 
-현재 공개 근거는 모든 Cadence·PSIM·PowerWorld 과제를 최신 버전에서 재실행했다는 것을 지원하지 않는다. 새 VNA 측정, production-grid validation, AESA-SAR 구현도 주장하지 않는다. 자료가 추가되면 원본을 바꾸지 않고 새 실행 묶음을 만들어 상태를 갱신한다.
+자료 유형: 기존 Cadence·PSIM·PowerWorld 화면, 코드 재실행 로그, 수계산 재검산, AESA-SAR 설계 제안서. 도구·장비별 새 실행은 날짜·환경·입력·출력 묶음으로 보관한다.
 
 [전공과목 프로젝트 전체 보기](/projects/coursework/)

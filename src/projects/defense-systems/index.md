@@ -9,5 +9,6 @@ alternate_url: /en/projects/defense-systems/
 alternate_lang: en
 ---
 
-공개 자료는 교육 목적의 traceability와 계산 재현에 초점을 둡니다. 실제 체계의
-민감 제원이나 운용 가능한 절차는 제공하지 않습니다.
+Counter-UAS·전자전 재머·KF-21 신뢰성에 관한 교육용 사례. 공개 자료와 가상 조건에서 요구도 추적·trade-off·FMEA 계산을 구성했다.
+
+[교육 사례·계산 자료](/defense/)

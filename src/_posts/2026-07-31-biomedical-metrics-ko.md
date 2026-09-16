@@ -3,7 +3,7 @@ title: PPG-HRV 분류에서 AUC·F1의 평가 조건을 보존한 이유
 title_en: Preserving evaluation conditions for AUC and F1 in PPG-HRV classification
 description: Subject split, fold, preprocessing, confusion matrix와 paper-reported metric을 하나의 성능값으로 합치지 않는 기록.
 date: 2026-07-31 00:50:00 +0900
-updated: 2026-08-01 18:40:00 +0900
+updated: 2026-09-17 12:00:00 +0900
 study_date: 2026-07-31
 lang: ko
 translation_key: biomedical-metric-conditions
@@ -81,10 +81,10 @@ Cross validation에서는 각 fold의 train subject, validation subject, test su
 
 ## Paper Result와 Code Archive {#results}
 
-논문 Abstract가 보고한 평균 AUC는 **0.85**, F1-Score는 **0.82**다. 별도 code archive의 5-fold CSV는 dataset scope, fold 구성, aggregation 방식이 논문과 같은지 먼저 확인한 뒤 비교해야 한다. 그래서 현재는 두 값을 평균하거나 한 표의 동일 실험으로 합치지 않았다.
+논문 Abstract·Conclusion의 AUC는 **0.99**, F1-Score는 **0.992**다. 별도 code archive의 5-fold CSV는 dataset scope·fold 구성·aggregation 조건과 함께 표기한다.
 
 각 결과 묶음에는 최소한 source 파일, dataset 범위, exclusion, split 단위, fold 수, preprocessing version, model checkpoint, metric code를 연결해야 한다. 공개할 수 없는 피험자 raw signal은 넣지 않고 group-level aggregate와 재현 절차만 공개한다.
 
 ## 확인하지 못한 내용 {#limits}
 
-당시 저장한 파일만으로는 모든 fold의 subject split과 preprocessing version을 다시 맞춰 돌릴 수 없었다. 그래서 논문 표의 수치와 별도 코드 실행 수치를 각각 적었다. 다음에는 subject-group split 목록과 fold별 prediction을 다시 만든 뒤 metric 계산을 비교할 예정이다.
+논문 표와 코드 fold 결과는 각각의 평가 자료다. 직접 비교에 필요한 항목은 subject-group split, preprocessing version과 fold별 prediction이다.

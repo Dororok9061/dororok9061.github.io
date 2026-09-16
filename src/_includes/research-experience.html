@@ -1,0 +1,15 @@
+<section class="content-section research-experience" id="research-experience" aria-labelledby="research-experience-title">
+  <div class="section-heading"><h2 id="research-experience-title">{% if page.lang == 'en' %}Research participation{% else %}연구 참여 이력{% endif %}</h2></div>
+  <div class="research-experience__grid">
+    {% for experience in site.data.research_experience %}
+    <article>
+      <h3>{% if page.lang == 'en' %}{{ experience.title_en }}{% else %}{{ experience.title_ko }}{% endif %}</h3>
+      <dl>
+        <div><dt>{% if page.lang == 'en' %}Organization{% else %}기관{% endif %}</dt><dd>{{ experience.organization }}</dd></div>
+        <div><dt>{% if page.lang == 'en' %}Period{% else %}연구 기간{% endif %}</dt><dd><time datetime="{{ experience.start_date }}">{{ experience.start_date | date: '%Y.%m.%d' }}</time> – <time datetime="{{ experience.end_date }}">{{ experience.end_date | date: '%Y.%m.%d' }}</time></dd></div>
+        <div><dt>{% if page.lang == 'en' %}Role{% else %}역할{% endif %}</dt><dd>{% if page.lang == 'en' %}{{ experience.role_en }}{% else %}{{ experience.role_ko }}{% endif %}</dd></div>
+      </dl>
+    </article>
+    {% endfor %}
+  </div>
+</section>

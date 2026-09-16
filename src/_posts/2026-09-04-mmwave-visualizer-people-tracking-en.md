@@ -90,8 +90,4 @@ also inspected the range profile, point cloud, and vital-sign display.
 
 ## Current scope {#scope}
 
-The central outcome is a system-level understanding of hardware, DSP build,
-communication settings, and GUI output—not a from-scratch radar algorithm. An
-18.17-second run shows a tracked 3D target in motion. Vital-sign numbers are UI
-function outputs only; medical performance, vehicle CAN/LIN integration, and
-environmental/EMC testing remain outside this stage.
+Recorded work: EVM setup, DSS build analysis, dual-UART integration, and Visualizer output using TI examples. The 18.17-second run contains a moving 3D target. The vital-sign view records UI output; clinical, CAN/LIN, and environmental/EMC evaluation are separate stages.

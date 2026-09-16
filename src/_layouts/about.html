@@ -34,4 +34,5 @@ layout: default
       <div class="button-row"><a class="portfolio-button portfolio-button--primary" href="{% if page.lang == 'en' %}{{ '/en/contact/' | relative_url }}{% else %}{{ '/contact/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}Contact and recruitment{% else %}연락처 및 채용 정보{% endif %}</a><a class="portfolio-button" href="{{ profile.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a></div>
     </div>
   </div>
+  {% include research-experience.html %}
 </main>

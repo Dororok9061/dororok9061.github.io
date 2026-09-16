@@ -2,7 +2,7 @@
 layout: publications
 title: Publications
 eyebrow: Research
-lead: Two first-author papers presented at conferences of the Korean Institute of Electrical Engineers.
+lead: Two first-author papers and one co-authored paper, with original PDFs on PPG/HRV, FMCW cardiac timing, and ultrasound smart mirrors.
 description: First-author CICS’25 and KIEE Summer Conference proceedings papers and poster presentation records.
 permalink: /en/publications/
 lang: en

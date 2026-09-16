@@ -78,7 +78,7 @@ layout: default
       <article><strong>600 s</strong><span>{% if page.lang == 'en' %}ECG·SCG·Radar concurrent acquisition{% else %}ECG·SCG·Radar 동시취득{% endif %}</span></article>
       <article><strong>848</strong><span>{% if page.lang == 'en' %}Aligned cardiac beats{% else %}정렬된 대응 박동{% endif %}</span></article>
       <article><strong>20 / 26 / 3</strong><span>{% if page.lang == 'en' %}FPGA regression checks and scenarios{% else %}FPGA 회귀검사와 시나리오 PASS{% endif %}</span></article>
-      <article><strong>0.85 / 0.82</strong><span>{% if page.lang == 'en' %}Paper-reported PPG-HRV AUC / F1{% else %}PPG-HRV 논문 보고 AUC / F1{% endif %}</span></article>
+      {% assign hrv_paper = site.data.publications | where: 'id', 'cics25-cnn-hrv' | first %}<article><strong>{{ hrv_paper.metrics[0].value }} / {{ hrv_paper.metrics[1].value }}</strong><span>{% if page.lang == 'en' %}PPG-HRV paper abstract AUC / F1{% else %}PPG-HRV 논문 초록 AUC / F1{% endif %}</span></article>
       <article><strong>3</strong><span>{% if page.lang == 'en' %}Conference papers, including two first-author papers{% else %}학술대회 논문 3편 · 제1저자 2편{% endif %}</span></article>
       <article><strong>CES 2027</strong><span>{% if page.lang == 'en' %}Planned ViScan booth operation and live demonstration{% else %}ViScan 부스 운영·제품 시연 예정{% endif %}</span></article>
     </div>

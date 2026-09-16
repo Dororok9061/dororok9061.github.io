@@ -8,7 +8,7 @@
     - 김경호
   authors_en:
     - Hyeong-Rok Ryu
-    - Woo-Seok Kang
+    - Woo-seok Kang
     - Kyung-Ho Kim
   profile_author_name: Hyeongrok Ryu
   publication_author_name: Hyeong-Rok Ryu
@@ -26,7 +26,7 @@
   location_ko: 델피노리조트, 강원도 고성
   location_en: Delpino Resort, Goseong, Gangwon-do, Republic of Korea
   pages: 291–292
-  page_verification_status: VERIFIED_FROM_PAPER_METADATA
+  page_verification_status: "VERIFIED_FROM_PROCEEDINGS_PDF"
   status: published_and_presented
   role_ko: 제1저자 · 포스터 제작 · 발표 참여
   role_en: First author · Poster preparation · Presentation participation
@@ -37,45 +37,54 @@
   dbpia_verified_on: 2026-08-01
   dbpia_record_note_ko: DBpia 논문 페이지에서 제목·저자와 pp. 291–292를 확인할 수 있습니다.
   dbpia_record_note_en: The DBpia paper page shows the matching title, authors, and pp. 291–292.
-  paper_pdf: https://github.com/Dororok9061/PPG-HRV-Cognitive-Load-CNN/blob/main/references/paper.pdf
+  paper_pdf: "/assets/papers/cics25-cnn-hrv.pdf"
   poster_pdf: ""
   project_url: /projects/ppg-hrv/
   github_url: https://github.com/Dororok9061/PPG-HRV-Cognitive-Load-CNN
   ko_url: /publications/cics25-cnn-hrv/
   en_url: /en/publications/cics25-cnn-hrv/
-  cover_image: /assets/img/publications/cics25_cnn_first_page.webp
-  cover_image_fallback: /assets/img/publications/cics25_cnn_first_page.jpg
-  cover_width: 700
-  cover_height: 990
+  cover_image: "/assets/img/publications/cics25_cnn_first_page.webp"
+  cover_image_fallback: "/assets/img/publications/cics25_cnn_first_page.jpg"
+  cover_width: 1075
+  cover_height: 1521
   cover_alt_ko: CICS’25 학술대회 논문 첫 페이지로, 제목과 제1저자 류형록을 포함한 저자 정보가 보인다
   cover_alt_en: First page of the CICS’25 conference proceedings paper showing the title and Hyeong-Rok Ryu as first author
-  cover_caption_ko: CICS’25 논문 첫 페이지 — 제1저자 류형록
-  cover_caption_en: First page of the CICS’25 paper — Hyeong-Rok Ryu as first author
+  cover_caption_ko: "제공된 논문 PDF 첫 페이지 · pp. 291–292 · 제1저자 류형록"
+  cover_caption_en: "First page rendered from the supplied PDF · pp. 291–292 · first author Hyeong-Rok Ryu"
   evidence_images:
     - /assets/img/publications/cics25_cnn_first_page.webp
-  abstract_ko: PPG에서 추출한 HRV 특징을 사용해 인지 과제 수행 능력을 분류하고 CNN 접근법을 평가한 연구입니다.
+  abstract_ko: "PPG 유래 HRV 특징을 이용한 인지 과제 수행 분류와 CNN 평가."
   abstract_en: This study classifies cognitive task performance from PPG-derived HRV features and evaluates a convolutional neural network approach.
-  research_problem_ko: 생리신호 기반 HRV 특징이 인지 과제 수행 상태를 구분하는 데 유효한지 분석했습니다.
+  research_problem_ko: "생리신호 기반 HRV 특징과 인지 과제 수행 상태의 관계."
   research_problem_en: The work examines whether physiological HRV features can distinguish cognitive task performance states.
-  architecture_ko: PPG 취득 → IBI 산출 → HRV 특징 구성 → CNN 분류 → 평가 지표 산출의 흐름입니다.
+  architecture_ko: "PPG 취득 → IBI 산출 → HRV 특징 → CNN 분류 → 평가 지표."
   architecture_en: The pipeline proceeds from PPG acquisition to IBI extraction, HRV feature construction, CNN classification, and metric reporting.
-  methods_ko: PPG 기반 timing과 IBI·HRV 전처리를 거친 특징을 CNN 입력으로 구성했습니다.
-  methods_en: PPG timing and IBI/HRV preprocessing produce features used as inputs to the CNN.
-  results_ko: 논문 Abstract에 보고된 평균 AUC는 0.85, F1-Score는 0.82입니다.
-  results_en: The paper abstract reports an average AUC of 0.85 and an F1-score of 0.82.
-  boundary_ko: 논문 Abstract·Conclusion의 평균 AUC 0.85·F1-Score 0.82, DBpia abstract의 AUC 0.99·F1 0.992와 본문 Fold 5 수치는 평가 범위가 다릅니다. 다음에는 동일한 dataset split과 metric 정의로 다시 계산해 차이를 비교할 계획입니다.
-  boundary_en: The paper abstract and conclusion report average AUC 0.85 and F1-score 0.82, while the DBpia abstract reports AUC 0.99 and F1 0.992 and the paper body lists Fold 5 values. These use different evaluation scopes; next, I plan to recalculate them with the same dataset split and metric definitions.
-  metric_reconciliation_status: SOURCE_SCOPE_DIFFERENCE_RECORDED
+  methods_ko: "PPG 취득·IBI·HRV 전처리, CNN·Transformer Encoder 분류. 5-fold 교차검증과 80/20 holdout 평가."
+  methods_en: "PPG acquisition, IBI/HRV preprocessing, and CNN/Transformer Encoder classification with five-fold cross-validation and an 80/20 holdout evaluation."
+  results_ko: "논문 Abstract·Conclusion: AUC 0.99 · F1-Score 0.992. 본문 Figure 6: Fold 5 검증 140개, 정확도 약 99.3%."
+  results_en: "Paper abstract/conclusion: AUC 0.99 and F1-score 0.992. Figure 6: 140 validation samples in Fold 5, approximately 99.3% accuracy."
+  boundary_ko: "논문 Abstract·Conclusion 지표와 본문 Fold 5 결과를 각각 표기. 별도 코드 실행의 평가에는 해당 split·전처리·집계 조건 적용."
+  boundary_en: "The abstract/conclusion metrics and body Fold 5 results are labeled separately. Independent code runs retain their own split, preprocessing, and aggregation conditions."
+  metric_reconciliation_status: "SOURCE_PDF_ABSTRACT_CONCLUSION_AND_FOLD5_LABELED"
   metrics:
-    - label_ko: 평균 AUC
-      label_en: Average AUC
-      value: "0.85"
+    - label_ko: 논문 AUC
+      label_en: Paper AUC
+      value: "0.99"
       provenance: PAPER_REPORTED
-    - label_ko: F1-Score
-      label_en: F1-Score
-      value: "0.82"
+    - label_ko: 논문 F1-Score
+      label_en: Paper F1-Score
+      value: "0.992"
       provenance: PAPER_REPORTED
   featured: true
+  author_count: 3
+  published_date: "2025-10-22"
+  presentation_date: "2025-10-23"
+  date_source: "USER_CONFIRMED"
+  page_verified_on: "2026-09-17"
+  source_pdf_sha256: "5aafd45b5cda413a8aa4b56e398d90b790b2f9f03bad9be6ee1c3ff88f717038"
+  source_pdf_pages: 2
+  source_pdf_status: "USER_SUPPLIED_ORIGINAL"
+  cover_source_status: "RENDERED_FROM_SOURCE_PDF"
 
 - id: kiee2026-fmcw-aoac
   index: "02"
@@ -106,7 +115,7 @@
   location_en: Yongpyong Resort, Pyeongchang, Gangwon-do, Republic of Korea
   pages: 2413–2414
   page_verification_status: VERIFIED_FROM_PROCEEDINGS_PDF
-  page_verified_on: 2026-08-01
+  page_verified_on: "2026-09-17"
   status: published_and_presented
   role_ko: 제1저자 · 포스터 제작 · 발표 참여
   role_en: First author · Poster preparation · Presentation participation
@@ -115,37 +124,37 @@
   dbpia_record_status: NOT_FOUND_BY_EXACT_TITLE_SEARCH
   dbpia_url_status: NOT_VERIFIED
   dbpia_verified_on: 2026-08-01
-  dbpia_record_note_ko: 2026년 8월 1일에는 DBpia 제목 검색으로 이 논문 페이지를 찾지 못해 논문집과 학회 페이지를 기준으로 정리했습니다.
-  dbpia_record_note_en: I did not find this paper through a DBpia title search on August 1, 2026, so this entry uses the proceedings and conference pages.
-  paper_pdf: ""
+  dbpia_record_note_ko: "서지 기준: 원본 논문집·학회 페이지. DBpia 개별 레코드 상태: 2026-08-01 제목 검색 기준 미확인."
+  dbpia_record_note_en: "Bibliographic sources: original proceedings and conference page. Individual DBpia record: unconfirmed in the 2026-08-01 title search."
+  paper_pdf: "/assets/papers/kiee2026-fmcw-aoac.pdf"
   poster_pdf: ""
   project_url: /projects/fmcw-radar/
   github_url: https://github.com/Dororok9061/fmcw-radar-aoac-cardiac-analysis
   ko_url: /publications/kiee2026-fmcw-aoac/
   en_url: /en/publications/kiee2026-fmcw-aoac/
-  cover_image: /assets/img/publications/kiee2026_fmcw_first_page.webp
-  cover_image_fallback: /assets/img/publications/kiee2026_fmcw_first_page.jpg
-  cover_width: 570
-  cover_height: 782
+  cover_image: "/assets/img/publications/kiee2026_fmcw_first_page.webp"
+  cover_image_fallback: "/assets/img/publications/kiee2026_fmcw_first_page.jpg"
+  cover_width: 1075
+  cover_height: 1519
   cover_alt_ko: 대한전기학회 2026 하계학술대회 FMCW 논문 첫 페이지로, 제목과 제1저자 류형록을 포함한 저자 정보가 보인다
   cover_alt_en: First page of the KIEE 2026 Summer Conference FMCW paper showing the title and Hyeong-Rok Ryu as first author
-  cover_caption_ko: 대한전기학회 2026 하계학술대회 논문 첫 페이지 — 제1저자 류형록
-  cover_caption_en: First page of the KIEE 2026 Summer Conference paper — Hyeong-Rok Ryu as first author
-  cover_source_status: VERIFIED_FROM_USER_PROVIDED_IMAGE
+  cover_caption_ko: "제공된 논문 PDF 첫 페이지 · pp. 2413–2414 · 제1저자 류형록"
+  cover_caption_en: "First page rendered from the supplied PDF · pp. 2413–2414 · first author Hyeong-Rok Ryu"
+  cover_source_status: "RENDERED_FROM_SOURCE_PDF"
   evidence_images:
     - /assets/img/publications/kiee2026_fmcw_first_page.webp
-  abstract_ko: ECG R-peak 기준으로 ECG·SCG·FMCW Radar 신호를 정렬하고 848개 대응 beat에서 morphology 기반 AO/AC 후보 시점 분포를 분석한 연구입니다.
+  abstract_ko: "ECG R-peak 기준 ECG·SCG·FMCW Radar 정렬과 848개 대응 beat의 morphology 기반 AO·AC 후보 시점 분석."
   abstract_en: This study aligns ECG, SCG, and FMCW radar signals to ECG R-peaks and analyzes morphology-based AO/AC candidate timing across 848 corresponding beats.
-  research_problem_ko: 비접촉 FMCW Radar의 심장 미세변위 파형에서 판막 사건과 관련된 후보 시점을 일관되게 분석하는 절차를 다뤘습니다.
+  research_problem_ko: "비접촉 FMCW Radar 심장 미세변위에서 AO·AC 후보 시점을 추출하는 절차."
   research_problem_en: The work studies a repeatable procedure for analyzing valve-event-related candidate timings in non-contact FMCW radar cardiac displacement waveforms.
-  architecture_ko: ECG·SCG·BGT60TR13C Radar 동시취득 → ECG R-peak 정렬 → beat segmentation → Radar morphology 후보 분석입니다.
+  architecture_ko: "ECG·SCG·BGT60TR13C 동시취득 → ECG R-peak 정렬 → beat segmentation → Radar morphology 분석."
   architecture_en: The pipeline uses concurrent ECG, SCG, and BGT60TR13C radar acquisition, ECG R-peak alignment, beat segmentation, and radar morphology candidate analysis.
-  methods_ko: 600초 동시취득 신호에서 대응되는 848개 beat를 구성하고 AO/AC 관련 후보 시점의 분포를 분석했습니다.
-  methods_en: From 600 seconds of concurrent acquisition, 848 corresponding beats were assembled for AO/AC-related candidate timing analysis.
-  results_ko: 600초 동안 ECG·SCG·Radar를 동시에 취득하고 대응되는 848개 beat의 후보 시점을 분석했습니다.
-  results_en: I concurrently acquired ECG, SCG, and radar for 600 seconds and analyzed candidate timings across 848 corresponding beats.
-  boundary_ko: 현재 결과는 radar morphology에서 찾은 AO/AC 후보 시점입니다. Direct valve imaging이나 임상적 valve detection으로 확장하려면 독립 생리신호와 비교하는 후속 실험이 필요합니다.
-  boundary_en: The current results are AO/AC candidate timings derived from radar morphology. Extending them to direct valve imaging or clinical valve detection requires follow-up comparison with independent physiological measurements.
+  methods_ko: "단일 피험자·100 Hz·600초 동시취득. ECG R-peak 853개 중 대응 beat 848개를 구성해 SCG reference와 Radar AO·AC 후보 시점 비교."
+  methods_en: "One participant, 100 Hz, and 600 seconds of concurrent acquisition. Of 853 ECG R-peaks, 848 matched beats support comparisons between SCG references and radar AO/AC candidate timings."
+  results_ko: "ECG·SCG·Radar 600초 동시취득 · 848개 대응 beat의 후보 시점 분석."
+  results_en: "600 seconds of concurrent ECG, SCG, and radar acquisition; candidate timings across 848 corresponding beats."
+  boundary_ko: "연구 조건: 단일 피험자·600초·SCG reference. 분석 대상: Radar morphology 기반 AO·AC 후보 시점."
+  boundary_en: "Study conditions: one participant, 600 seconds, and SCG references. Analysis target: radar-morphology AO/AC candidate timing."
   metrics:
     - label_ko: 동시취득
       label_en: Concurrent acquisition
@@ -156,3 +165,96 @@
       value: "848"
       provenance: PAPER_REPORTED
   featured: true
+  author_count: 3
+  published_date: "2026-07-08"
+  presentation_date: "2026-07-10"
+  date_source: "USER_CONFIRMED"
+  source_pdf_sha256: "3a0b9893af92a8d1330bcce34e8f459a36f2c3cb5548521da7cc037177b543ae"
+  source_pdf_pages: 2
+  source_pdf_status: "USER_SUPPLIED_ORIGINAL"
+
+
+- id: kiee2026-ultrasound-smartmirror
+  index: '03'
+  title_ko: 개인용 체지방 관리를 위한 초음파 – 스마트미러 융합 기술에 대한 연구
+  title_en: A study on ultrasound-smart mirror fusion technology for personalized body fat management
+  authors_ko:
+  - 손동민
+  - 이정현
+  - 류형록
+  - 윤희철
+  authors_en:
+  - Dongmin Son
+  - Jeonghyun Lee
+  - Hyeongrok Ryu
+  - Heechul Yoon
+  profile_author_name: Hyeongrok Ryu
+  publication_author_name: Hyeongrok Ryu
+  user_author_position: 3
+  author_count: 4
+  type: Conference Proceedings Paper
+  presentation_type: ''
+  venue_ko: 2026년도 대한전기학회 제57회 하계학술대회
+  venue_en: The 57th KIEE Summer Conference 2026
+  organizers: 대한전기학회
+  proceedings: 2026년도 대한전기학회 하계학술대회 논문집
+  year: '2026'
+  month: '07'
+  published_date: '2026-07-08'
+  presentation_date: ''
+  date_source: USER_CONFIRMED
+  conference_dates_ko: 2026년 7월 8일–11일
+  conference_dates_en: July 8–11, 2026
+  location_ko: 용평리조트, 강원도 평창
+  location_en: Yongpyong Resort, Pyeongchang, Gangwon-do, Republic of Korea
+  pages: 33–34
+  page_verification_status: VERIFIED_FROM_PROCEEDINGS_PDF
+  page_verified_on: '2026-09-17'
+  status: published
+  role_ko: 공동저자 · 4명 중 제3저자
+  role_en: Co-author · third of four authors
+  official_url: https://conf.kiee.or.kr/
+  dbpia_url: ''
+  dbpia_record_status: NOT_CHECKED
+  dbpia_url_status: NOT_VERIFIED
+  dbpia_record_note_ko: '서지 기준: 제공된 논문집 PDF pp. 33–34.'
+  dbpia_record_note_en: 'Bibliographic source: supplied proceedings PDF, pp. 33–34.'
+  poster_pdf: ''
+  project_url: /projects/viscan/
+  github_url: ''
+  ko_url: /publications/kiee2026-ultrasound-smartmirror/
+  en_url: /en/publications/kiee2026-ultrasound-smartmirror/
+  cover_alt_ko: 초음파–스마트미러 논문 첫 페이지, 저자 손동민·이정현·류형록·윤희철과 논문집 33쪽
+  cover_alt_en: First page of the ultrasound–smart-mirror paper, with four authors and proceedings page 33
+  cover_caption_ko: 제공된 논문 PDF 첫 페이지 · pp. 33–34 · 공동저자 류형록(3/4)
+  cover_caption_en: First page rendered from the supplied PDF · pp. 33–34 · co-author Hyeongrok Ryu (3/4)
+  evidence_images:
+  - /assets/img/publications/kiee2026_ultrasound_first_page.webp
+  abstract_ko: 복부 B-mode 초음파의 조직 경계에서 피하지방·근육 두께를 계산하고 스마트미러에 측정 위치와 결과를 표시하는 시스템.
+  abstract_en: A system that derives subcutaneous-fat and muscle thickness from abdominal B-mode ultrasound boundaries and displays
+    measurement guidance and results on a smart mirror.
+  research_problem_ko: 개인용 반복 측정을 위한 복부 초음파 조직 경계 분석과 측정 위치·결과 안내.
+  research_problem_en: Abdominal-ultrasound tissue-boundary analysis with location guidance and result visualization for repeated personal
+    measurements.
+  architecture_ko: 복부 초음파 영상 → ROI·경계 특징 강화 → 조직 경계·두께 산출 → 스마트미러 안내·시각화.
+  architecture_en: Abdominal ultrasound → ROI and boundary enhancement → tissue boundaries and thickness calculation → smart-mirror
+    guidance and visualization.
+  methods_ko: 배꼽 상부 1 cm를 측정 위치로 설정. 영상 깊이·픽셀 간격으로 경계 사이 거리를 mm 단위로 변환.
+  methods_en: 'Measurement location: 1 cm above the umbilicus. Image depth and pixel spacing convert boundary distances into millimeters.'
+  results_ko: '초기 구현: 조직 경계 오버레이, 지방·근육 두께와 지방/근육 비율 출력. Figure 3은 UI 예시, Figure 4는 초기 구현 결과.'
+  results_en: 'Initial implementation: tissue-boundary overlays, fat/muscle thickness, and fat-to-muscle ratio. Figure 3 is a UI example;
+    Figure 4 is an initial implementation result.'
+  boundary_ko: '자료 범위: 시스템 제안·초기 구현. 후속 평가 항목: 다양한 피험자·측정 조건의 재현성.'
+  boundary_en: 'Scope: proposed system and initial implementation. Follow-up evaluation: repeatability across participants and measurement
+    conditions.'
+  metrics: []
+  featured: true
+  paper_pdf: /assets/papers/kiee2026-ultrasound-smartmirror.pdf
+  source_pdf_sha256: 2866e3b2692fed811404ad948f88f8692f812887dcc7d960265065f5f08b94d2
+  source_pdf_pages: 2
+  source_pdf_status: USER_SUPPLIED_ORIGINAL
+  cover_image: /assets/img/publications/kiee2026_ultrasound_first_page.webp
+  cover_image_fallback: /assets/img/publications/kiee2026_ultrasound_first_page.jpg
+  cover_width: 1075
+  cover_height: 1519
+  cover_source_status: RENDERED_FROM_SOURCE_PDF

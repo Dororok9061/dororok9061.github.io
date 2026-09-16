@@ -56,7 +56,7 @@ Current creates torque, and speed feeds back through back EMF. This coupling exp
 
 The outer speed PI turns speed error into a current reference. The inner current PI tracks that reference and produces a voltage or duty command. With a faster current loop, the speed loop can treat the inner path approximately as a responsive torque source.
 
-<figure><img src="{{ '/assets/images/coursework/dc-motor-cascaded-control.svg' | relative_url }}" alt="Cascaded speed PI, current limiter, current PI, H-bridge, and DC motor" width="1200" height="630"><figcaption>I redrew the block flow from the coursework report. The numbers are saved report settings, not fresh measurements.</figcaption></figure>
+<figure><img src="{{ '/assets/images/coursework/dc-motor-cascaded-control.svg' | relative_url }}" alt="Cascaded speed PI, current limiter, current PI, H-bridge, and DC motor" width="1200" height="630"><figcaption>Control diagram based on the coursework report, with its archived PSIM settings.</figcaption></figure>
 
 I initially mixed up the two error signals. Writing units beside each block made the roles clear: the speed controller outputs current, while the current controller outputs voltage or duty.
 
@@ -90,4 +90,4 @@ A higher switching frequency can reduce the current change per switching period,
 
 ## Scope of this note {#limits}
 
-I have reread the archived model, gains, and plots and redrawn the control structure. I have not rerun the original PSIM circuit in a current environment or connected a physical motor. My next step is to rerun the inner-loop step response first and compare saturation with and without anti-windup under identical conditions.
+Sources: the archived PSIM model, gains, plots, and a redrawn control diagram. Follow-up experiments: current-loop step response and matched-condition saturation/anti-windup comparisons.

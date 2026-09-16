@@ -1,27 +1,18 @@
-- title: 연구 허브
-  url: /blog/start-here/
-- title: 소개
-  url: /about/
-- title: 프로젝트
+- title: 프로젝트·자료
   url: /projects/
-  children:
-    - title: 전체 프로젝트
-      url: /projects/
-    - title: 연구실·연구
-      url: /lab/
-    - title: 전공과목
-      url: /coursework/
-    - title: 방산 시스템
-      url: /defense/
 - title: 논문
   url: /publications/
+- title: 소개
+  url: /about/
 - title: 직무별 보기
   url: /roles/
-- title: 연락처
-  url: /contact/
-- title: 블로그
+- title: 연구·블로그
   url: /blog/
+- title: 전공과목
+  url: /coursework/
 - title: 외부교육·경진대회
   url: /learning/
+- title: 연락처
+  url: /contact/
 - title: English
   url: /en/

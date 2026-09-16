@@ -116,6 +116,6 @@ The `Not verified` field prevents a functional simulation from silently becoming
 
 ## Unverified items {#limits}
 
-The public evidence does not show that every Cadence, PSIM, or PowerWorld exercise was rerun on a current version. It also does not support new VNA measurements, production-grid validation, or an implemented AESA-SAR system. New evidence will be added as a separate execution bundle instead of rewriting the original archive.
+Record types: archived Cadence, PSIM, and PowerWorld screens; source rerun logs; independent equation checks; and an AESA-SAR proposal. New tool or hardware runs use a dated environment/input/output bundle.
 
 [Open the coursework project](/en/projects/coursework/)

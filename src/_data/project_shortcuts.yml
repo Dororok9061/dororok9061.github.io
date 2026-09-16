@@ -1,0 +1,264 @@
+- id: fpga-delay-logic
+  title_ko: FPGA RTL
+  title_en: FPGA RTL
+  summary_ko: 3개 지연 회로 · 파형·코드·구조도
+  summary_en: Three delay circuits · waveforms and RTL
+  url_ko: /projects/fpga-delay-logic/
+  url_en: /en/projects/fpga-delay-logic/
+  links:
+  - label_ko: 파형·구조도
+    label_en: Waveforms and schematics
+    url_ko: /projects/fpga-delay-logic/#gallery
+    url_en: /en/projects/fpga-delay-logic/#gallery
+  - label_ko: RTL·TB·실행 로그
+    label_en: RTL, TB, and logs
+    url_ko: https://github.com/Dororok9061/fpga-delay-logic-design-verification/tree/main/runs/2026-09-16
+    url_en: https://github.com/Dororok9061/fpga-delay-logic-design-verification/tree/main/runs/2026-09-16
+- id: mmwave-visualizer
+  title_ko: TI mmWave 3D 추적
+  title_en: TI mmWave 3D Tracking
+  summary_ko: IWR6843 · DSS·UART·Visualizer
+  summary_en: IWR6843 · DSS, UART, Visualizer
+  url_ko: /projects/mmwave-visualizer/
+  url_en: /en/projects/mmwave-visualizer/
+  links:
+  - label_ko: 추적 실행 화면
+    label_en: Tracking screens
+    url_ko: /blog/2026/09/04/mmwave-visualizer-people-tracking/#output
+    url_en: /en/blog/2026/09/04/mmwave-visualizer-people-tracking/#output
+  - label_ko: 설정·자료
+    label_en: Configuration and files
+    url_ko: https://github.com/Dororok9061/dororok9061.github.io/tree/main/project-archives/mmwave-visualizer
+    url_en: https://github.com/Dororok9061/dororok9061.github.io/tree/main/project-archives/mmwave-visualizer
+- id: dca1000evm
+  title_ko: DCA1000EVM 디버깅
+  title_en: DCA1000EVM Debugging
+  summary_ko: 제어 UDP · Raw ADC 0 packets
+  summary_en: Control UDP · raw ADC 0 packets
+  url_ko: /projects/dca1000evm/
+  url_en: /en/projects/dca1000evm/
+  links:
+  - label_ko: Wireshark 기록
+    label_en: Wireshark records
+    url_ko: /blog/2026/09/09/dca1000evm-troubleshooting-data-path/#wireshark
+    url_en: /en/blog/2026/09/09/dca1000evm-troubleshooting-data-path/#wireshark
+  - label_ko: 수집 로그
+    label_en: Capture log
+    url_ko: /blog/2026/09/09/dca1000evm-troubleshooting-data-path/#capture-log
+    url_en: /en/blog/2026/09/09/dca1000evm-troubleshooting-data-path/#capture-log
+- id: stm32f411-ppg-pcb
+  title_ko: STM32F411 PPG PCB
+  title_en: STM32F411 PPG PCB
+  summary_ko: SFH7070 · OPA2333 · 2-layer
+  summary_en: SFH7070 · OPA2333 · two layers
+  url_ko: /projects/stm32f411-ppg-pcb/
+  url_en: /en/projects/stm32f411-ppg-pcb/
+  links:
+  - label_ko: 회로·PCB·Gerber
+    label_en: Schematic, PCB, Gerber
+    url_ko: https://github.com/Dororok9061/dororok9061.github.io/tree/main/project-archives/stm32f411-ppg-pcb/source
+    url_en: https://github.com/Dororok9061/dororok9061.github.io/tree/main/project-archives/stm32f411-ppg-pcb/source
+  - label_ko: 설계 상세
+    label_en: Design details
+    url_ko: /blog/2026/09/04/stm32f411-ppg-pcb/
+    url_en: /en/blog/2026/09/04/stm32f411-ppg-pcb/
+- id: solarcell-mppt-pcb
+  title_ko: 태양전지 MPPT PCB
+  title_en: Solar-cell MPPT PCB
+  summary_ko: STM32F401 · 다채널 전류·전압 측정
+  summary_en: STM32F401 · current/voltage measurement
+  url_ko: /projects/solarcell-mppt-pcb/
+  url_en: /en/projects/solarcell-mppt-pcb/
+  links:
+  - label_ko: 회로·BOM
+    label_en: Schematics and BOM
+    url_ko: https://github.com/Dororok9061/dororok9061.github.io/tree/main/project-archives/solarcell-mppt-pcb/source
+    url_en: https://github.com/Dororok9061/dororok9061.github.io/tree/main/project-archives/solarcell-mppt-pcb/source
+  - label_ko: 설계 상세
+    label_en: Design details
+    url_ko: /blog/2026/09/04/solarcell-mppt-pcb/
+    url_en: /en/blog/2026/09/04/solarcell-mppt-pcb/
+- id: pcb-visual-inspection
+  title_ko: PCB 비전 검사
+  title_en: PCB Visual Inspection
+  summary_ko: ROI 정렬 · PatchCore·DINOv3
+  summary_en: ROI registration · PatchCore, DINOv3
+  url_ko: /projects/pcb-visual-inspection/
+  url_en: /en/projects/pcb-visual-inspection/
+  links:
+  - label_ko: 방법·결과 그림
+    label_en: Methods and figures
+    url_ko: /projects/pcb-visual-inspection/research-portal/#methodology
+    url_en: /projects/pcb-visual-inspection/research-portal/#methodology
+  - label_ko: 코드
+    label_en: Code
+    url_ko: https://github.com/Dororok9061/PCB-Visual-Inspection-Studio
+    url_en: https://github.com/Dororok9061/PCB-Visual-Inspection-Studio
+- id: fmcw-radar
+  title_ko: FMCW 심장신호
+  title_en: FMCW Cardiac Timing
+  summary_ko: ECG·SCG·Radar · 600 s·848 beats
+  summary_en: ECG, SCG, radar · 600 s, 848 beats
+  url_ko: /projects/fmcw-radar/
+  url_en: /en/projects/fmcw-radar/
+  links:
+  - label_ko: 논문
+    label_en: Paper
+    url_ko: /publications/kiee2026-fmcw-aoac/
+    url_en: /en/publications/kiee2026-fmcw-aoac/
+  - label_ko: 분석 코드
+    label_en: Analysis code
+    url_ko: https://github.com/Dororok9061/fmcw-radar-aoac-cardiac-analysis
+    url_en: https://github.com/Dororok9061/fmcw-radar-aoac-cardiac-analysis
+- id: ppg-hrv
+  title_ko: PPG·HRV 인지 과제
+  title_en: PPG/HRV Cognitive Tasks
+  summary_ko: PPG 취득 · HRV·CNN·Transformer
+  summary_en: PPG acquisition · HRV, CNN, Transformer
+  url_ko: /projects/ppg-hrv/
+  url_en: /en/projects/ppg-hrv/
+  links:
+  - label_ko: 논문
+    label_en: Paper
+    url_ko: /publications/cics25-cnn-hrv/
+    url_en: /en/publications/cics25-cnn-hrv/
+  - label_ko: 취득·분류 코드
+    label_en: Acquisition and classifier
+    url_ko: https://github.com/Dororok9061/PPG-HRV-Cognitive-Load-CNN
+    url_en: https://github.com/Dororok9061/PPG-HRV-Cognitive-Load-CNN
+- id: viscan
+  title_ko: ViScan 스마트미러
+  title_en: ViScan Smart Mirror
+  summary_ko: Radar·Vision·초음파 · 특허 출원
+  summary_en: Radar, vision, ultrasound · patent application
+  url_ko: /projects/viscan/
+  url_en: /en/projects/viscan/
+  links:
+  - label_ko: 초음파 논문 PDF
+    label_en: Ultrasound paper PDF
+    url_ko: /assets/papers/kiee2026-ultrasound-smartmirror.pdf
+    url_en: /assets/papers/kiee2026-ultrasound-smartmirror.pdf
+  - label_ko: 구현·성과
+    label_en: Implementation and results
+    url_ko: /projects/viscan/#results
+    url_en: /en/projects/viscan/#results
+  - label_ko: 특허 출원
+    label_en: Patent application
+    url_ko: /projects/viscan/#patent
+    url_en: /en/projects/viscan/#patent
+- id: drowsiness-monitor
+  title_ko: 졸음 감지 장치
+  title_en: Drowsiness Monitor
+  summary_ko: Raspberry Pi · PPG·EAR·경고
+  summary_en: Raspberry Pi · PPG, EAR, alarms
+  url_ko: /projects/drowsiness-monitor/
+  url_en: /en/projects/drowsiness-monitor/
+  links:
+  - label_ko: 장치 사진
+    label_en: Prototype photos
+    url_ko: /projects/drowsiness-monitor/#gallery
+    url_en: /en/projects/drowsiness-monitor/#gallery
+  - label_ko: 코드
+    label_en: Code
+    url_ko: https://github.com/Dororok9061/Sleep-monitoring-and-prevention-device
+    url_en: https://github.com/Dororok9061/Sleep-monitoring-and-prevention-device
+- id: legacy-embedded-system
+  title_ko: 레거시 임베디드 시스템
+  title_en: Legacy Embedded Systems
+  summary_ko: Color Classic·Olympic-S · 인터페이스
+  summary_en: Color Classic, Olympic-S · interfaces
+  url_ko: /projects/legacy-embedded-system/
+  url_en: /en/projects/legacy-embedded-system/
+  links:
+  - label_ko: 구조·인터페이스
+    label_en: Architecture and interfaces
+    url_ko: /projects/legacy-embedded-system/#gallery
+    url_en: /en/projects/legacy-embedded-system/#gallery
+  - label_ko: 기술 자료
+    label_en: Technical records
+    url_ko: https://github.com/Dororok9061/dororok9061.github.io/tree/main/project-archives/legacy-embedded-system
+    url_en: https://github.com/Dororok9061/dororok9061.github.io/tree/main/project-archives/legacy-embedded-system
+- id: defense-systems
+  title_ko: 방산 시스템 교육 사례
+  title_en: Defense Systems Cases
+  summary_ko: 요구도 · Trade-off·FMEA
+  summary_en: Requirements · trade-offs and FMEA
+  url_ko: /projects/defense-systems/
+  url_en: /en/projects/defense-systems/
+  links:
+  - label_ko: 사례 모음
+    label_en: Case collection
+    url_ko: /defense/
+    url_en: /en/defense/
+  - label_ko: 저장소
+    label_en: Repository
+    url_ko: https://github.com/Dororok9061/Dororok9061
+    url_en: https://github.com/Dororok9061/Dororok9061
+- id: coursework
+  title_ko: 전공 회로·코드
+  title_en: Coursework Circuits and Code
+  summary_ko: VHDL·제어·전력·RF
+  summary_en: VHDL, control, power, RF
+  url_ko: /projects/coursework/
+  url_en: /en/projects/coursework/
+  links:
+  - label_ko: 과목별 자료
+    label_en: Course files
+    url_ko: /coursework/
+    url_en: /en/coursework/
+  - label_ko: 코드·계산
+    label_en: Code and calculations
+    url_ko: https://github.com/Dororok9061/electrical-engineering-coursework-portfolio
+    url_en: https://github.com/Dororok9061/electrical-engineering-coursework-portfolio
+- id: cics25-cnn-hrv
+  title_ko: CICS’25 논문
+  title_en: CICS’25 Paper
+  summary_ko: 제1저자 · HRV·인지 과제 분류
+  summary_en: First author · HRV cognitive-task classification
+  url_ko: /publications/cics25-cnn-hrv/
+  url_en: /en/publications/cics25-cnn-hrv/
+  links:
+  - label_ko: 논문 PDF
+    label_en: Paper PDF
+    url_ko: /assets/papers/cics25-cnn-hrv.pdf
+    url_en: /assets/papers/cics25-cnn-hrv.pdf
+  - label_ko: DBpia
+    label_en: DBpia
+    url_ko: https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12564300
+    url_en: https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12564300
+- id: kiee2026-fmcw-aoac
+  title_ko: KIEE 2026 논문
+  title_en: KIEE 2026 Paper
+  summary_ko: 제1저자 · FMCW AO·AC 후보 시점
+  summary_en: First author · FMCW AO/AC candidate timing
+  url_ko: /publications/kiee2026-fmcw-aoac/
+  url_en: /en/publications/kiee2026-fmcw-aoac/
+  links:
+  - label_ko: 논문 PDF
+    label_en: Paper PDF
+    url_ko: /assets/papers/kiee2026-fmcw-aoac.pdf
+    url_en: /assets/papers/kiee2026-fmcw-aoac.pdf
+  - label_ko: 연구 프로젝트
+    label_en: Research project
+    url_ko: /projects/fmcw-radar/
+    url_en: /en/projects/fmcw-radar/
+  - label_ko: 분석 코드
+    label_en: Analysis code
+    url_ko: https://github.com/Dororok9061/fmcw-radar-aoac-cardiac-analysis
+    url_en: https://github.com/Dororok9061/fmcw-radar-aoac-cardiac-analysis
+- id: kiee2026-ultrasound-smartmirror
+  title_ko: 초음파 스마트미러 논문
+  title_en: Ultrasound Smart-Mirror Paper
+  summary_ko: KIEE 2026 · 공동저자 3/4
+  summary_en: KIEE 2026 · co-author 3/4
+  url_ko: /publications/kiee2026-ultrasound-smartmirror/
+  url_en: /en/publications/kiee2026-ultrasound-smartmirror/
+  links:
+  - label_ko: 논문 PDF
+    label_en: Paper PDF
+    url_ko: /assets/papers/kiee2026-ultrasound-smartmirror.pdf
+    url_en: /assets/papers/kiee2026-ultrasound-smartmirror.pdf
+  - label_ko: ViScan 프로젝트
+    label_en: ViScan project
+    url_ko: /projects/viscan/
+    url_en: /en/projects/viscan/

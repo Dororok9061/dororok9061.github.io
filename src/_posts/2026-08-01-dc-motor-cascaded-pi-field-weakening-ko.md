@@ -58,7 +58,7 @@ toc:
 
 바깥쪽 speed PI는 속도 오차를 전류 명령으로 바꾸고, 안쪽 current PI는 그 전류를 빠르게 추종하도록 전압 명령을 만든다. 전류루프의 대역폭을 속도루프보다 높게 잡으면 바깥쪽에서는 안쪽 루프를 거의 즉시 반응하는 토크원처럼 볼 수 있다.
 
-<figure><img src="{{ '/assets/images/coursework/dc-motor-cascaded-control.svg' | relative_url }}" alt="속도 PI, 전류 제한기, 전류 PI, H-bridge와 DC motor의 이중루프" width="1200" height="630"><figcaption>과제 보고서의 블록도를 공개용으로 다시 그렸다. 수치는 당시 보고서에 적힌 설정이며 이번에 다시 실행한 값은 아니다.</figcaption></figure>
+<figure><img src="{{ '/assets/images/coursework/dc-motor-cascaded-control.svg' | relative_url }}" alt="속도 PI, 전류 제한기, 전류 PI, H-bridge와 DC motor의 이중루프" width="1200" height="630"><figcaption>과제 보고서 기반 제어 블록도. 수치는 원본 보고서의 PSIM 설정값.</figcaption></figure>
 
 처음에는 두 PI가 같은 오차를 줄이는 것으로 혼동했다. 다시 보니 speed PI의 출력은 전류 기준값이고, current PI의 출력은 전압 또는 duty 기준값이었다. 각 loop의 입력·출력 단위를 적어 두자 역할이 분명해졌다.
 
@@ -94,4 +94,4 @@ toc:
 
 ## 이번 기록의 범위 {#limits}
 
-이 단계까지는 저장된 과제 보고서의 모델, gain과 그래프를 다시 읽고 블록도를 재작성했다. PSIM 원본 회로를 새 버전에서 재실행하거나 실제 모터를 연결해 확인하지는 않았다. 다음에는 current-loop step부터 분리해 실행하고 saturation과 anti-windup 동작을 같은 조건에서 비교할 예정이다.
+자료 범위: 과제 보고서의 PSIM 모델·gain·저장 그래프와 재작성한 제어 블록도. 후속 실험: current-loop step response, 동일 조건의 saturation·anti-windup 비교.

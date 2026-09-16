@@ -3,13 +3,12 @@
   title_en: FPGA Programmable Delay Logic
   domain_ko: FPGA · RTL · Digital Verification
   domain_en: FPGA · RTL · Digital Verification
-  summary_ko: Shift Register·Circular Queue·Memory 구조의 SystemVerilog RTL을 무료 Icarus Verilog로 실행하고 실제 GTKWave 파형과 VS Code 코드 화면을 기록했습니다.
-  summary_en: Three SystemVerilog delay architectures executed with Icarus Verilog, documented with actual GTKWave waveforms and VS Code editor
-    screenshots.
+  summary_ko: Shift Register·Circular Queue·Memory 기반 SystemVerilog 지연 회로. Icarus 시뮬레이션, GTKWave 파형, RTL·테스트벤치 코드.
+  summary_en: 'Three SystemVerilog delay architectures: shift register, circular queue, and memory. Icarus simulation, GTKWave waveforms, RTL, and testbenches.'
   status: EXECUTED
   status_class: executed
-  status_label_ko: 기능 시뮬레이션 직접 실행
-  status_label_en: Functional simulation rerun
+  status_label_ko: 시뮬레이션 · 31 / 32 사이클 · 3 시나리오
+  status_label_en: Simulation · 31 / 32 cycles · 3 scenarios
   image_webp: /assets/images/projects/fpga-native-20260916/project1-gtkwave_detail.webp
   image_jpg: /assets/images/projects/fpga-native-20260916/project1-gtkwave_detail.png
   image_width: 1467
@@ -32,10 +31,9 @@
   - Parameterized SystemVerilog RTL
   - Independent reference model
   - Self-checking testbench and deterministic regression
-  boundary_ko: 2026-09-16 기능 시뮬레이션 결과입니다. Quartus·ModelSim 실행 및 합성·PPA는 수행하지 않았습니다. 구조도는 코드에서 도출한 논리 구조이며 합성된 FPGA netlist가 아닙니다.
-  boundary_en: Functional simulation dated 2026-09-16. Quartus, ModelSim and synthesis/PPA were not executed. Schematics describe RTL logic, not
-    a synthesized FPGA netlist.
-  problem_ko: 서로 다른 출력 시점과 invalid-data 규칙을 갖는 세 지연 구조를 해당 테스트벤치 및 기준 벡터로 검증합니다.
+  boundary_ko: '실행 환경: Icarus Verilog 14.0 · 2026-09-16. 구조도: RTL 기반 논리 회로. 합성·배치배선·PPA: 별도 단계.'
+  boundary_en: 'Run: Icarus Verilog 14.0, 2026-09-16. Diagrams: RTL logic. Synthesis, place-and-route, and PPA: separate stages.'
+  problem_ko: 출력 시점과 invalid-data 규칙이 다른 세 지연 회로의 입력·출력 비교.
   problem_en: Verify three delay structures against their testbenches and reference vectors, including distinct output timing and invalid-data
     behavior.
   architecture_ko: 1·2번은 현재 edge를 포함한 N번째 샘플을 선택하고 invalid 출력은 0입니다. 3번은 N주기 뒤 레지스터 출력으로 내보내며 invalid 구간에는 이전 데이터를 유지합니다.
@@ -188,8 +186,8 @@
   title_en: FMCW Radar Cardiac Timing
   domain_ko: Radar · Biomedical Signal Processing
   domain_en: Radar · Biomedical Signal Processing
-  summary_ko: ECG·SCG·비접촉 FMCW Radar를 beat-relative axis에 정렬하고 radar morphology에서 AO/AC 후보 시점을 분석합니다.
-  summary_en: Aligns ECG, SCG, and non-contact FMCW radar on a beat-relative axis and analyzes morphology-based AO/AC candidate timing.
+  summary_ko: ECG·SCG·FMCW Radar 600초 동시취득. 848개 대응 beat의 AO·AC 후보 시점 분석.
+  summary_en: 600 seconds of concurrent ECG, SCG, and FMCW radar acquisition. AO/AC candidate timing across 848 corresponding beats.
   status: SOURCE + HARDWARE
   status_class: source
   status_label_ko: 분석 코드와 실제 실험 장비
@@ -216,8 +214,8 @@
     - ECG R-peak anchoring and SCG reference timing
     - Radar phase displacement and beat segmentation
     - Detector fusion, SQI, and CTI export
-  boundary_ko: 현재 AO/AC는 radar morphology에서 찾은 후보 시점입니다. Direct valve imaging이나 임상 성능으로 확장하려면 echo·ICG·PCG와 독립적으로 비교하는 후속 실험이 필요합니다.
-  boundary_en: The current AO/AC values are candidate timings derived from radar morphology. Extending this work to direct valve imaging or clinical performance requires follow-up comparison with independent echo, ICG, or PCG measurements.
+  boundary_ko: '분석 대상: Radar morphology 기반 AO·AC 후보 시점. 후속 비교: echo·ICG·PCG 기준 신호.'
+  boundary_en: 'Analysis target: morphology-based AO/AC candidate timing. Follow-up reference signals: echo, ICG, and PCG.'
   problem_ko: 비접촉 FMCW Radar 심장 미세변위 파형에서 ECG·SCG와 시간 정렬 가능한 AO/AC 관련 후보 시점을 분석하는 문제입니다.
   problem_en: The project analyzes AO/AC-related candidate timings in non-contact FMCW radar cardiac displacement waveforms aligned with ECG and SCG.
   architecture_ko: ECG·SCG·BGT60TR13C Radar 동시취득 → ECG R-peak 기준 정렬 → beat segmentation → phase displacement와 morphology 후보 분석 → SQI·CTI export.
@@ -271,12 +269,12 @@
   title_en: PPG–HRV Cognitive Load
   domain_ko: Biomedical Embedded AI
   domain_en: Biomedical Embedded AI
-  summary_ko: Earlobe PPG acquisition부터 IBI·HRV feature construction, CNN+Transformer classification까지 timing integrity를 추적합니다.
-  summary_en: Traces timing integrity from earlobe PPG acquisition through IBI/HRV feature construction and CNN+Transformer classification.
+  summary_ko: 귓불 PPG 취득, IBI·HRV 특징 추출과 CNN·Transformer 기반 인지 과제 분류. 제1저자 CICS’25 논문.
+  summary_en: Earlobe PPG acquisition, IBI/HRV features, and CNN/Transformer cognitive-task classification. First-author CICS’25 paper.
   status: PAPER + CODE
   status_class: measured
-  status_label_ko: 논문과 코드 결과를 구분해 정리
-  status_label_en: Paper and code results kept separate
+  status_label_ko: 제1저자 논문 · PPG 취득·분류 코드
+  status_label_en: First-author paper · acquisition and classification code
   image_webp: /assets/images/projects/ppg-pipeline.webp
   image_jpg: /assets/images/projects/ppg-pipeline.jpg
   image_width: 1200
@@ -299,8 +297,8 @@
     - IBI/HRV preprocessing and feature construction
     - CNN+Transformer evaluation pipeline
     - Comparison of paper metrics and code-archive metrics under their respective evaluation conditions
-  boundary_ko: 논문 summary의 AUC/F1과 code archive의 5-fold metric은 평가 조건이 다릅니다. 다음에는 같은 dataset split과 metric 정의로 다시 실행해 직접 비교할 계획입니다.
-  boundary_en: The paper-summary AUC/F1 and the code archive's five-fold metrics use different evaluation conditions. Next, I plan to rerun them with the same dataset split and metric definitions for a direct comparison.
+  boundary_ko: '평가 기준: 논문 Abstract·Conclusion 지표, 본문 Fold 5, 별도 코드 실행 결과를 각각 표기.'
+  boundary_en: 'Evaluation: paper abstract/conclusion metrics, body Fold 5, and separate code-run results are labeled individually.'
   problem_ko: PPG sample timing을 유지하면서 IBI·HRV 특징을 만들고 인지 과제 수행 상태 분류까지 연결하는 문제를 다뤘습니다.
   problem_en: The project carries PPG sample timing through IBI/HRV feature construction and cognitive-task classification.
   architecture_ko: Earlobe PPG sensor·AFE → STM32 취득 → IBI·HRV preprocessing → CNN+Transformer 평가 → fold result와 paper metric 분리.
@@ -318,12 +316,12 @@
     - Constructed time- and frequency-domain HRV features
     - Evaluated CNN+Transformer models and compared results by evaluation condition
   results_ko:
-    - 논문 보고 평균 AUC 0.85
-    - 논문 보고 F1-Score 0.82
+    - 논문 Abstract·Conclusion AUC 0.99
+    - 논문 Abstract·Conclusion F1-Score 0.992
     - PPG·STM32·HRV·CNN end-to-end 연구 pipeline 구성
   results_en:
-    - Paper-reported average AUC of 0.85
-    - Paper-reported F1-score of 0.82
+    - Paper abstract/conclusion AUC of 0.99
+    - Paper abstract/conclusion F1-score of 0.992
     - End-to-end PPG/STM32/HRV/CNN research pipeline
   gallery:
     - webp: /assets/images/projects/ppg-architecture.webp
@@ -346,8 +344,8 @@
   title_en: Real-Time Drowsiness Monitor
   domain_ko: Embedded Systems · Edge Sensing
   domain_en: Embedded Systems · Edge Sensing
-  summary_ko: PPG와 EAR vision을 두 대의 Raspberry Pi sensing/analysis 구조, TCP/IP, GPIO·I²C alarm path로 통합했습니다.
-  summary_en: Integrates PPG and EAR vision across a two-node Raspberry Pi sensing/analysis architecture with TCP/IP and GPIO/I²C alarm paths.
+  summary_ko: Raspberry Pi 2대의 PPG·눈 감김(EAR) 분석과 TCP/IP 통신, GPIO·I²C 경고 장치 통합.
+  summary_en: Two Raspberry Pi nodes combining PPG and eye-aspect-ratio analysis, TCP/IP communication, and GPIO/I²C alarms.
   status: SOURCE + PROTOTYPE
   status_class: source
   status_label_ko: 소스 코드와 실물 프로토타입
@@ -374,8 +372,8 @@
     - PPG server and image/EAR processing
     - Two-node file IPC and network architecture
     - Documentation of the LCD and alarm integration path
-  boundary_ko: 다음에는 latency, sensitivity, specificity와 false-alarm rate를 같은 실험 조건에서 측정해 수치로 비교할 계획입니다.
-  boundary_en: Next, I plan to measure latency, sensitivity, specificity, and false-alarm rate under one consistent test setup.
+  boundary_ko: '자료 범위: 프로토타입·통신·경고 경로. 후속 계측: 지연시간·민감도·특이도·오경보율.'
+  boundary_en: 'Available records: prototype, communication, and alarm paths. Follow-up measurements: latency, sensitivity, specificity, and false-alarm rate.'
   problem_ko: PPG와 camera 기반 EAR 신호를 분리된 두 Raspberry Pi node에서 취득·분석하고 alarm path로 통합하는 문제입니다.
   problem_en: The project acquires and analyzes PPG and camera-based EAR signals across two Raspberry Pi nodes and integrates the resulting alarm path.
   architecture_ko: PPG sensing node와 image/EAR analysis node를 TCP/IP와 file IPC로 연결하고 GPIO·I²C를 통해 LCD와 alarm 출력을 구성합니다.
@@ -421,8 +419,8 @@
   title_en: Defense Systems Engineering
   domain_ko: Requirements · Trade-off · Reliability
   domain_en: Requirements · Trade-off · Reliability
-  summary_ko: Counter-UAS, EW jammer, KF-21 reliability 사례에서 요구도를 정리하고 정량 trade-off와 FMEA를 계산한 교육용 case study입니다.
-  summary_en: Educational case studies that define requirements and calculate quantitative trade-offs and FMEA for Counter-UAS, EW jammer, and KF-21 reliability scenarios.
+  summary_ko: Counter-UAS·전자전 재머·KF-21 신뢰성 교육 사례. 요구도, 정량 trade-off와 FMEA 계산.
+  summary_en: 'Educational Counter-UAS, EW jammer, and KF-21 reliability cases: requirements, quantitative trade-offs, and FMEA calculations.'
   status: SOURCE-DERIVED
   status_class: source
   status_label_ko: 원 보고서를 바탕으로 다시 계산
@@ -449,8 +447,8 @@
     - Problem → Requirements → Quantitative Basis structuring
     - Comparison of threshold and objective conditions
     - Reliability and maintainability recalculation
-  boundary_ko: 교육용 가상 조건으로 계산했습니다. 실제 체계에 적용하려면 공식 제원과 운용 조건을 바탕으로 요구도와 수치를 다시 검토해야 합니다.
-  boundary_en: I calculated these educational scenarios with hypothetical conditions. Applying them to a real system would require a new review using official specifications and operating conditions.
+  boundary_ko: '계산 조건: 교육용 가상 시나리오와 공개 자료.'
+  boundary_en: 'Calculation basis: hypothetical educational scenarios and public references.'
   categories: [systems-engineering, defense]
   ko_url: /projects/defense-systems/
   en_url: /en/projects/defense-systems/
@@ -463,8 +461,8 @@
   title_en: Electrical Engineering Coursework
   domain_ko: VHDL · Power · Control · RF · Sensors
   domain_en: VHDL · Power · Control · RF · Sensors
-  summary_ko: VHDL simulation, transformer 계산, power-flow debugging, motor control, RF network와 AESA-SAR 제안서를 과목별로 정리했습니다.
-  summary_en: Course-by-course work on VHDL simulation, transformer calculations, power-flow debugging, motor control, RF networks, and an AESA-SAR proposal.
+  summary_ko: VHDL 파형, 변압기 계산, 전력조류 디버깅, 전동기 제어, RF 회로와 AESA-SAR 제안서.
+  summary_en: VHDL waveforms, transformer calculations, power-flow debugging, motor control, RF circuits, and an AESA-SAR proposal.
   status: EVIDENCE CATALOG
   status_class: source
   status_label_ko: 과목별 원본과 재실행 결과
@@ -491,8 +489,8 @@
     - Organized calculations, circuits, and code around each course sequence
     - Compared rerun results with the archives saved during the courses
     - Recorded the experiments that remain for future work
-  boundary_ko: 새 Cadence simulation과 VNA 측정은 아직 다시 실행하지 않았습니다. 해당 도구와 장비를 사용할 때 회로 조건부터 맞춰 결과를 추가할 예정입니다.
-  boundary_en: I have not rerun the Cadence simulations or VNA measurements yet. When those tools and instruments are available, I plan to restore the circuit conditions and add the results.
+  boundary_ko: '자료 범위: 과목별 코드·계산·회로·저장 파형. Cadence·VNA 후속 작업: 동일 회로 조건의 재실행·계측.'
+  boundary_en: 'Available records: course code, calculations, circuits, and saved waveforms. Follow-up work: Cadence reruns and VNA measurements under matching circuit conditions.'
   categories: [coursework, electrical-engineering]
   ko_url: /projects/coursework/
   en_url: /en/projects/coursework/
@@ -505,8 +503,8 @@
   title_en: PCB Visual Inspection Studio
   domain_ko: PCB Inspection · Vision AI · Publication System
   domain_en: PCB Inspection · Vision AI · Publication System
-  summary_ko: F411 보드 검사 영상을 기준으로 품질 게이트, ROI 정렬, PatchCore/FR-PatchCore, DINOv3 계열 특징, 논문형 그림과 공개 홈페이지를 한 흐름으로 정리한 PCB inspection 프로젝트입니다.
-  summary_en: A PCB inspection project that connects F411-board visual intake, quality gating, ROI alignment, PatchCore/FR-PatchCore, DINOv3-style features, paper figures, and public project publishing.
+  summary_ko: F411 PCB 검사 영상의 품질 판정·ROI 정렬·이상 탐지. PatchCore·FR-PatchCore·DINOv3 특징과 결과 그림.
+  summary_en: Quality checks, ROI registration, and anomaly detection for F411 PCB video, with PatchCore, FR-PatchCore, and DINOv3 feature studies.
   status: PUBLICATION BUILD
   status_class: measured
   status_label_ko: 논문형 그림·홈페이지 반영
@@ -535,8 +533,8 @@
     - "Removed non-PCB-inspection VIScan material"
     - "Reorganized camera/video intake, quality gate, ROI, feature extraction, review, and publication flow"
     - "Built a reusable single-figure atlas for paper, GitHub, Notion, and homepage reuse"
-  boundary_ko: 현재 공개 허브에는 논문형 그림과 프로젝트 연결을 게시합니다. 수치 성능 주장은 로컬 실험 로그와 gold-label 검증이 있는 범위로 제한하고, 생산 수율이나 제조 결함 판정 claim은 별도 검증 전까지 보류합니다.
-  boundary_en: The public hub publishes the paper-style figures and project links. Quantitative claims remain limited to locally verified evidence; production-yield and manufacturing-defect claims are held until gold-label validation is approved.
+  boundary_ko: '공개 자료: 연구 구조·그림·로컬 실험 기록. 생산 적용 평가 항목: gold-label 대조·결함 판정·수율.'
+  boundary_en: 'Available records: research architecture, figures, and local experiments. Production-evaluation criteria: gold-label comparison, defect decisions, and yield.'
   problem_ko: PCB 검사 프로젝트에서 카메라 입력, ROI 정렬, anomaly heatmap, mask, 표, 논문 그림, 홈페이지 게시물이 서로 흩어지지 않도록 하나의 출판 가능한 구조로 묶는 문제입니다.
   problem_en: The project turns camera intake, ROI alignment, anomaly heatmaps, masks, tables, paper figures, and homepage publishing into one coherent PCB inspection publication structure.
   architecture_ko: USB/industrial camera 또는 파일 입력 → 품질 게이트 → ROI 정렬 → ViT/DINO/PatchCore 계열 특징 → anomaly score/heatmap/mask → reviewer gate → 논문·GitHub·Notion·홈페이지 출판.
@@ -656,8 +654,8 @@
   title_en: TI mmWave 3D People Tracking Visualizer
   domain_ko: mmWave Radar · Embedded Integration · System Validation
   domain_en: mmWave Radar · Embedded Integration · System Validation
-  summary_ko: IWR6843 EVM의 센서 설정, C674x DSS 빌드 구조, dual-UART 데이터 경로와 3D 사람 추적 출력을 한 흐름으로 점검한 레이더 시스템 통합 경험입니다.
-  summary_en: A radar-system integration project covering IWR6843 sensor configuration, the C674x DSS build structure, dual-UART data flow, and 3D people-tracking output.
+  summary_ko: IWR6843 센서 설정·C674x DSS·dual-UART를 연결한 3D 사람 추적. 장비 사진과 Visualizer 실행 화면.
+  summary_en: IWR6843 configuration, C674x DSS, and dual-UART integration for 3D people tracking, with hardware and Visualizer screens.
   status: HARDWARE + ARCHIVE
   status_class: source
   status_label_ko: 실제 장비·실행 화면·설정 자료
@@ -684,8 +682,8 @@
     - Adjusted sensor height, direction, FOV, range, and thresholds
     - Checked the 115200-bps CLI and 921600-bps data UART paths
     - Compared point-cloud, tracking-box, range-profile, and vital-sign views
-  boundary_ko: TI Radar Toolbox와 SDK 예제를 기반으로 설정·빌드·연결·출력을 분석했습니다. MSS는 바이너리만 남아 있어 수정 범위에 포함하지 않았고, 생체신호 화면의 수치는 의료 정확도로 평가하지 않았습니다.
-  boundary_en: I analyzed configuration, build, connectivity, and output using TI Radar Toolbox and SDK examples. The MSS side is available only as a binary, and the vital-sign display was not evaluated for medical accuracy.
+  boundary_ko: '기반 소프트웨어: TI Radar Toolbox·SDK 예제. 작업 범위: 설정·DSS 빌드 구조·통신·GUI. MSS 자료: 바이너리. 생체신호 표시: 기능 화면.'
+  boundary_en: 'Software base: TI Radar Toolbox and SDK examples. Scope: configuration, DSS build structure, communication, and GUI. MSS artifact: binary. Vital-sign view: functional display.'
   problem_ko: 레이더 알고리즘, DSP 빌드, 직렬 통신과 GUI가 나뉜 개발 환경에서 설정값이 실제 3D 추적 출력까지 이어지는 경로를 확인하는 문제입니다.
   problem_en: The task was to trace how configuration values propagate to 3D tracking output across radar algorithms, a DSP build, serial links, and a GUI.
   architecture_ko: IWR6843 sensor → range·Doppler 처리와 2D Capon/MVDR·CFAR → DSS/MSS shared memory·mailbox → dual UART → Visualizer.
@@ -733,8 +731,8 @@
       height: 900
       alt_ko: 추적 영역과 호흡·심박 표시를 함께 띄운 Industrial Visualizer 화면
       alt_en: Industrial Visualizer showing a tracking region with respiration and heart-rate displays
-      caption_ko: 기능 출력을 확인한 화면이며 표시값의 의료 정확도는 별도 평가 대상입니다.
-      caption_en: This screen confirms functional output; medical accuracy requires separate evaluation.
+      caption_ko: Industrial Visualizer의 추적 영역·호흡·심박 표시 화면
+      caption_en: Industrial Visualizer tracking region with respiration and heart-rate displays
   categories: [rf-radar-signal, system-validation]
   ko_url: /projects/mmwave-visualizer/
   en_url: /en/projects/mmwave-visualizer/
@@ -745,8 +743,8 @@
   title_en: Solar-Cell Multichannel Measurement and MPPT PCB
   domain_ko: Power Electronics · Analog Measurement · PCB Design
   domain_en: Power Electronics · Analog Measurement · PCB Design
-  summary_ko: 12채널 MPPT 공개 설계를 참고하고 STM32F401 메인보드와 전류·전압 측정 모듈을 분석해 전원·계측·통신·제조 산출물의 연결을 정리한 PCB 경험입니다.
-  summary_en: A PCB project that studies a published 12-channel MPPT design and analyzes an STM32F401 mainboard plus current/voltage measurement modules across power, sensing, communication, and manufacturing outputs.
+  summary_ko: STM32F401 태양전지 측정 메인보드와 전류·전압 모듈. 전원, ADC·DAC, USB·UART 회로와 PCB·BOM.
+  summary_en: 'STM32F401 solar-cell measurement mainboard and current/voltage module: power, ADC/DAC, USB/UART circuits, PCB files, and BOM.'
   status: DESIGN ARCHIVE
   status_class: source
   status_label_ko: 회로·PCB·BOM 산출물
@@ -773,8 +771,8 @@
     - Analyzed 12-V input, 5-V/3.3-V rails, USB/UART, and SWD paths
     - Decomposed the INA250 current path, AD7997 ADC, OPA703 voltage path, and AD5629R DAC functions
     - Organized multichannel connector/net flow, BOM, and PCB artifacts
-  boundary_ko: 12채널 MPPT 구조는 Kelzenberg·Loke·Atwater의 공개 연구를 참고했습니다. 현재 자료에는 계측 정확도, 효율, 온도 특성이나 양산 수율 측정 결과가 없습니다.
-  boundary_en: The 12-channel MPPT architecture references the published work of Kelzenberg, Loke, and Atwater. The current archive does not contain measured accuracy, efficiency, temperature behavior, or production-yield results.
+  boundary_ko: '12채널 MPPT 참고 설계: Kelzenberg·Loke·Atwater. 자료 범위: 회로·PCB·BOM. 후속 계측: 정확도·효율·온도 특성.'
+  boundary_en: '12-channel MPPT reference: Kelzenberg, Loke, and Atwater. Available artifacts: schematics, PCB files, and BOM. Follow-up measurements: accuracy, efficiency, and thermal characteristics.'
   problem_ko: 여러 Solar Cell 채널을 한 시스템에서 인가·측정하려면 공통 전원과 기준전압, 채널별 전류·전압 signal chain, MCU 통신을 구조적으로 분리해야 합니다.
   problem_en: Driving and measuring multiple solar-cell channels requires a clear separation of shared power/reference rails, per-channel current/voltage signal chains, and MCU communication.
   architecture_ko: 12 V 입력 → 5 V·3.3 V rail → STM32F401 mainboard → 세 measurement module connector → ADC·DAC·op-amp·current sensor → USB/UART.
@@ -874,8 +872,8 @@
   title_en: STM32F411 PPG Analog Front-End PCB
   domain_ko: Biomedical Sensor · Analog Circuit · KiCad PCB
   domain_en: Biomedical Sensor · Analog Circuit · KiCad PCB
-  summary_ko: 두 개의 SFH7070 광학 센서, OPA2333 아날로그 front-end와 STM32F411을 한 보드로 통합하고 2-layer Gerber까지 구성한 KiCad PCB 설계입니다.
-  summary_en: A KiCad PCB integrating two SFH7070 optical sensors, OPA2333 analog front ends, and an STM32F411, with a complete two-layer Gerber package.
+  summary_ko: SFH7070 센서 2개·OPA2333 아날로그 회로·STM32F411을 통합한 2-layer PPG 보드. KiCad·Gerber·drill 파일.
+  summary_en: A two-layer PPG board combining two SFH7070 sensors, OPA2333 analog front ends, and STM32F411. KiCad, Gerber, and drill files.
   status: DESIGN + GERBER
   status_class: source
   status_label_ko: KiCad 원본·제조 출력물
@@ -902,8 +900,8 @@
     - Built STM32F411RETx power, clock, SWD, and UART circuitry
     - Laid out two SFH7070 inputs and OPA2333-based low-noise analog paths
     - Added a bottom ground plane, routed two layers, and generated fabrication files
-  boundary_ko: 설계·배선·제조 파일 단계까지 확인했습니다. 실제 PPG waveform, SNR, filter cutoff, 생체신호 정확도와 차량용 규격 시험 결과는 현재 자료에 없습니다.
-  boundary_en: The available work reaches schematic, routing, and fabrication-output stages. The archive does not include measured PPG waveforms, SNR, filter cutoff, biosignal accuracy, or automotive qualification results.
+  boundary_ko: '자료 범위: 회로·배선·제조 출력. 후속 계측: PPG 파형·SNR·필터 차단주파수·생체신호 정확도.'
+  boundary_en: 'Available artifacts: schematics, routing, and fabrication outputs. Follow-up measurements: PPG waveforms, SNR, filter cutoff, and biosignal accuracy.'
   problem_ko: 작은 광학 신호를 다루는 analog front-end와 MCU의 clock·digital interface를 한 PCB에서 배치하면서 전원과 return path를 관리하는 문제입니다.
   problem_en: The task was to place a small-signal optical front end alongside MCU clocks and digital interfaces while managing power and return paths on one PCB.
   architecture_ko: 두 SFH7070 sensor → OPA2333 증폭·filter stage → STM32F411 ADC A0/A1 → UART, SWD debug와 8 MHz·32.768 kHz clock 지원.
@@ -995,8 +993,8 @@
   title_en: Legacy Embedded System Architecture & Mixed-Signal Interfaces
   domain_ko: Hardware Reverse Engineering · Mixed-Signal · System Integration
   domain_en: Hardware Reverse Engineering · Mixed-Signal · System Integration
-  summary_ko: Macintosh Color Classic과 Olympic-S를 CPU·메모리·버스·영상·저장·통신 계층으로 분석하고, BlueSCSI·Raspberry Pi로 이어지는 레거시-현대 bridge와 검증 계획을 정리했습니다.
-  summary_en: Analyzes the Macintosh Color Classic and Olympic-S across compute, memory, bus, video, storage, and communication layers, then defines a legacy-modern bridge and validation plan using BlueSCSI and Raspberry Pi.
+  summary_ko: Macintosh Color Classic·Olympic-S의 CPU·메모리·영상·저장·통신 분석. BlueSCSI·Raspberry Pi 연동 구조.
+  summary_en: CPU, memory, video, storage, and communication analysis of the Macintosh Color Classic and Olympic-S, with a BlueSCSI/Raspberry Pi bridge design.
   status: ANALYSIS + TEST PLAN
   status_class: source
   status_label_ko: 실물·원문 분석과 후속 계측 계획
@@ -1023,8 +1021,8 @@
     - Mapped CPU, RAM, ROM, ASIC, TTL, and connector blocks on 68030- and Z80-era boards
     - Decomposed RGBS, DIN-5, SCSI, ADB, RS-422, and cassette interfaces into signal and electrical checks
     - Defined BlueSCSI, Pico-W, and Raspberry Pi data paths plus continuity, level, termination, and ripple tests
-  boundary_ko: 실물·사진·원문으로 확인한 항목과 추정 항목을 분리했습니다. RGB amplitude·sync polarity·75 Ω termination·케이블 continuity·SAVE/LOAD round-trip·DaynaPORT TCP 연결은 다음 계측 및 구현 항목이며, 현재 완료 결과에는 포함하지 않았습니다.
-  boundary_en: Direct observations are separated from photo- or document-based inference. RGB amplitude, sync polarity, 75-ohm termination, cable continuity, cassette SAVE/LOAD round-trip, and DaynaPORT TCP integration remain future measurements or implementations.
+  boundary_ko: '근거: 실물·PCB marking·OS 화면·원문 매뉴얼. 후속 시험: RGBS level·termination·케이블 continuity·카세트 SAVE/LOAD·DaynaPORT TCP.'
+  boundary_en: 'Sources: hardware, PCB markings, OS screens, and original manuals. Follow-up tests: RGBS levels, termination, cable continuity, cassette SAVE/LOAD, and DaynaPORT TCP.'
   problem_ko: 세대와 전기적 가정이 다른 두 컴퓨터, CRT, 카세트, SCSI 장치를 안전하게 연결하려면 커넥터 모양이 아니라 신호 topology·level·termination·protocol을 먼저 확정해야 합니다.
   problem_en: Safely connecting computers, CRTs, cassette storage, and SCSI devices from different generations requires validating signal topology, levels, termination, and protocol rather than matching connector shapes.
   architecture_ko: Olympic-S Z80·64 KB memory·TTL/glue logic·RGBS·카세트·64-contact bus와 Color Classic 68030·10 MB DRAM·ADB·RS-422·SCSI를 분석하고, BlueSCSI/Pico-W와 Raspberry Pi backend를 현대 데이터·검증 계층으로 배치했습니다.
@@ -1072,3 +1070,109 @@
   pages_ko: https://fierce-rodent-308.notion.site/Legacy-Embedded-System-Architecture-3d5518ac7a59818d901bfbf9cb4a4602
   pages_en: https://fierce-rodent-308.notion.site/Legacy-Embedded-System-Architecture-3d5518ac7a59818d901bfbf9cb4a4602
   repository: https://github.com/Dororok9061/dororok9061.github.io/tree/main/project-archives/legacy-embedded-system
+
+- id: dca1000evm
+  title_ko: DCA1000EVM Raw ADC 디버깅
+  title_en: DCA1000EVM Raw ADC Debugging
+  domain_ko: Radar · LVDS · Ethernet · Hardware Debugging
+  domain_en: Radar · LVDS · Ethernet · Hardware Debugging
+  summary_ko: IWR6843–DCA1000EVM 원시 ADC 수집 장애 분석. 제어 UDP·LVDS 데이터·펌웨어·전원 경로별 진단 기록.
+  summary_en: 'Raw ADC capture fault isolation across IWR6843 and DCA1000EVM: control UDP, LVDS data, firmware, and power paths.'
+  status: DIAGNOSTIC RECORD
+  status_class: source
+  status_label_ko: 제어 UDP 관측 · Raw ADC 0 packets
+  status_label_en: Control UDP observed · raw ADC 0 packets
+  image_webp: /assets/images/projects/mmwave-visualizer/wireshark-dca-control-udp.webp
+  image_jpg: /assets/images/projects/mmwave-visualizer/wireshark-dca-control-udp.webp
+  image_width: 1000
+  image_height: 406
+  alt_ko: 192.168.33.30에서 192.168.33.180 UDP 4096으로 향하는 짧은 제어 packet을 필터링한 Wireshark 화면
+  alt_en: Wireshark filtered to short UDP control datagrams from 192.168.33.30 to port 4096 on 192.168.33.180
+  evidence_ko:
+  - Wireshark 제어 UDP 기록
+  - UniFlash·Tera Term·mmWave Studio 진단 화면
+  - 'Raw capture log: received packets = 0'
+  evidence_en:
+  - Wireshark control-UDP records
+  - UniFlash, Tera Term, and mmWave Studio diagnostic screens
+  - 'Raw capture log: received packets = 0'
+  contribution_ko:
+  - 제어·데이터 경로 분리와 포트별 패킷 확인
+  - 펌웨어 기록·직렬 포트·실행 환경 오류 추적
+  - 발열·전원·연결 상태에 따른 점검 순서 구성
+  contribution_en:
+  - Separated control and data paths and filtered packets by port
+  - Traced firmware, serial-port, and runtime errors
+  - Organized checks around thermal, power, and connectivity observations
+  boundary_ko: '관측 결과: 제어 UDP 교환·펌웨어 기록, Raw ADC 0 packets. 상태: 원시 데이터 수집 장애. 후속 점검: LVDS 설정·전원·하드웨어.'
+  boundary_en: 'Observed: control-UDP exchange and firmware programming; zero raw ADC packets. Status: capture fault. Follow-up checks:
+    LVDS settings, power, and hardware.'
+  problem_ko: 제어 패킷이 보이는 상태에서 Raw ADC 데이터가 수신되지 않는 원인 분리.
+  problem_en: Isolate the cause of missing raw ADC data while control packets are visible.
+  architecture_ko: 'IWR6843 ADC → LVDS → DCA1000 FPGA·DDR3L → Ethernet → PC. 별도 제어 경로: UART·UDP.'
+  architecture_en: IWR6843 ADC → LVDS → DCA1000 FPGA/DDR3L → Ethernet → PC, with separate UART/UDP control paths.
+  stack_ko:
+  - IWR6843ISK
+  - DCA1000EVM
+  - Wireshark
+  - UniFlash
+  - Tera Term
+  - mmWave Studio
+  stack_en:
+  - IWR6843ISK
+  - DCA1000EVM
+  - Wireshark
+  - UniFlash
+  - Tera Term
+  - mmWave Studio
+  data_flow_ko: 설정·제어 UDP와 Raw ADC payload를 포트·패킷 길이·capture log로 구분.
+  data_flow_en: Distinguish configuration/control UDP from raw ADC payload using ports, packet lengths, and capture logs.
+  methods_ko:
+  - IP·UDP port filter로 background traffic과 제어 패킷 분리
+  - UniFlash 기록 상태와 UART 응답 비교
+  - Studio 오류·0-packet log·하드웨어 발열 기록
+  methods_en:
+  - Filtered IP/UDP ports to separate background traffic and control packets
+  - Compared UniFlash status and UART responses
+  - Recorded Studio errors, zero-packet logs, and hardware heating
+  results_ko:
+  - 제어 UDP 패킷 관측
+  - 'Raw ADC 수신: 0 packets'
+  - 36개 고유 진단 화면과 경로별 점검 기록
+  results_en:
+  - Control UDP packets observed
+  - 'Raw ADC receive count: 0 packets'
+  - 36 distinct diagnostic screens with checks organized by path
+  gallery:
+  - webp: /assets/images/projects/mmwave-visualizer/wireshark-dca-control-udp.webp
+    jpg: /assets/images/projects/mmwave-visualizer/wireshark-dca-control-udp.webp
+    width: 1000
+    height: 406
+    alt_ko: 192.168.33.30에서 192.168.33.180 UDP 4096으로 향하는 짧은 제어 packet을 필터링한 Wireshark 화면
+    alt_en: Wireshark filtered to short UDP control datagrams from 192.168.33.30 to port 4096 on 192.168.33.180
+    caption_ko: Wireshark 제어 UDP · port 4096
+    caption_en: Wireshark control UDP · port 4096
+  - webp: /assets/images/projects/mmwave-visualizer/uniflash-program-success.webp
+    jpg: /assets/images/projects/mmwave-visualizer/uniflash-program-success.webp
+    width: 1000
+    height: 583
+    alt_ko: UniFlash에서 IWR6843 SFLASH erase와 META IMAGE download 및 Program Load 완료 메시지를 확인한 화면
+    alt_en: UniFlash console confirming IWR6843 SFLASH erase, meta-image download, and program-load completion
+    caption_ko: UniFlash 펌웨어 기록 완료 화면
+    caption_en: UniFlash programming completion
+  - webp: /assets/images/projects/mmwave-visualizer/dca1000-zero-packet-log.webp
+    jpg: /assets/images/projects/mmwave-visualizer/dca1000-zero-packet-log.webp
+    width: 742
+    height: 452
+    alt_ko: DCA1000 raw capture log에서 수신 packet 수가 0으로 기록된 화면
+    alt_en: DCA1000 raw-capture log showing zero received packets
+    caption_ko: Raw ADC 수신 결과 · 0 packets
+    caption_en: Raw ADC receive result · 0 packets
+  categories:
+  - rf-radar-signal
+  - embedded
+  ko_url: /projects/dca1000evm/
+  en_url: /en/projects/dca1000evm/
+  repository: https://github.com/Dororok9061/dororok9061.github.io/tree/main/project-archives/mmwave-visualizer
+  pages_ko: /blog/2026/09/09/dca1000evm-troubleshooting-data-path/
+  pages_en: /en/blog/2026/09/09/dca1000evm-troubleshooting-data-path/

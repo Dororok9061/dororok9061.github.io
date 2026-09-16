@@ -3,7 +3,7 @@ title: Preserving evaluation conditions for AUC and F1 in PPG-HRV classification
 title_en: Preserving evaluation conditions for AUC and F1 in PPG-HRV classification
 description: Why subject splits, folds, preprocessing, confusion matrices, and paper-reported metrics are not merged into one performance value.
 date: 2026-07-31 00:51:00 +0900
-updated: 2026-08-01 18:41:00 +0900
+updated: 2026-09-17 12:00:00 +0900
 study_date: 2026-07-31
 lang: en
 translation_key: biomedical-metric-conditions
@@ -81,10 +81,10 @@ Each cross-validation fold needs preserved train, validation, and test subject l
 
 ## Paper result and code archive {#results}
 
-The paper abstract reports average AUC **0.85** and F1-score **0.82**. Before comparing a separate five-fold CSV archive, I need to confirm that its dataset scope, folds, and aggregation match the paper. I therefore keep the two sets of values in separate rows instead of averaging them.
+The paper abstract and conclusion report AUC **0.99** and F1-score **0.992**. A separate five-fold CSV archive retains its dataset scope, folds, and aggregation conditions.
 
 Each result bundle should retain its source file, dataset scope, exclusions, split unit, fold count, preprocessing version, model checkpoint, and metric code. Participant raw signals remain private; only group-level aggregates and a reproducible procedure are public.
 
 ## Unverified items {#limits}
 
-The saved files were not enough to rerun every fold with the same subject split and preprocessing version. I therefore list the paper-table values and saved code-run values separately. My next step is to rebuild the subject-group split list and fold predictions, then compare the metric calculation.
+Paper tables and archived fold results are separate evaluation records. Direct comparison requires the subject-group split, preprocessing version, and per-fold predictions.

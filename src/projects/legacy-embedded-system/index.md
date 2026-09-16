@@ -9,9 +9,8 @@ alternate_url: /en/projects/legacy-embedded-system/
 alternate_lang: en
 ---
 
-두 장비를 빈티지 수집품이 아니라 연산·메모리·저장·영상·통신 계층이 드러난
-임베디드 실험 플랫폼으로 다뤘다. PCB marking, OS 화면, 원문 매뉴얼과 커넥터
-사진을 교차검증해 확인·추정·후속 측정 항목을 분리했다.
+Color Classic과 Olympic-S를 CPU·메모리·저장·영상·통신 계층으로 분석했다. PCB marking·OS 화면·원문 매뉴얼을 기능 블록과 인터페이스 표에 연결한다.
 
-BlueSCSI와 Raspberry Pi 연동은 설계한 데이터 경로이며, DaynaPORT TCP 연결과
-RGBS 전기 특성, 카세트 SAVE/LOAD는 다음 구현·계측 항목으로 명시했다.
+BlueSCSI·Raspberry Pi 연동 자료는 데이터 경로 설계와 RGBS·SCSI·카세트·TCP 계측 계획으로 구성된다.
+
+[기술 자료·장비 기록](https://github.com/Dororok9061/dororok9061.github.io/tree/main/project-archives/legacy-embedded-system)

@@ -3,7 +3,7 @@ title: 설계 파일, 재실행 결과와 실제 측정을 섞지 않는 방법
 title_en: How I keep design files, reruns, and physical measurements separate
 description: 남아 있는 파일과 새 실행 로그, 실제 장비 측정을 프로젝트 설명에 연결한 방법.
 date: 2026-07-31 00:10:00 +0900
-updated: 2026-08-01 18:10:00 +0900
+updated: 2026-09-17 12:00:00 +0900
 study_date: 2026-07-31
 lang: ko
 translation_key: evidence-status
@@ -47,32 +47,34 @@ toc:
 
 ## 파일을 찾은 뒤 먼저 한 일 {#start}
 
-예전 과제 폴더를 열면 source, 화면 캡처, 보고서, 새 실행 로그가 한곳에 섞여 있었다. 나는 파일이 있다는 이유만으로 “다시 실행했다”고 쓰지 않기로 했다. 생성 시점과 도구를 먼저 적고, 현재 환경에서 실행한 것은 명령과 새 로그를 따로 묶었다.
+설계 파일·저장 화면·보고서·새 실행 로그는 생성 시점과 도구 정보를 기준으로 분류한다. 실행 묶음에는 명령·입력·출력 로그를 포함한다.
 
 <figure><picture><source srcset="/assets/images/projects/fpga-architecture.webp" type="image/webp"><img src="/assets/images/projects/fpga-architecture.jpg" alt="Shift Register, Circular Queue, Memory-Based Driver Checker 구조의 FPGA delay logic" width="1200" height="517" loading="lazy"></picture><figcaption>구조도는 설계 차이를 설명하고, 실제 동작 확인은 regression log가 맡는다.</figcaption></figure>
 
 ## 세 종류를 나눈 기준 {#three}
 
-첫째는 설계와 당시 화면이다. 회로, RTL, Cadence 캡처가 남아 있으면 무엇을 만들었는지 설명할 수 있다. 둘째는 새 실행이다. 도구 버전, 명령, 입력, 출력 로그가 함께 있어야 현재 환경에서 돌린 결과라고 적었다. 셋째는 장비 측정이다. 장비명, 설정, 단위와 원자료가 없으면 simulation 수치를 물리 측정으로 바꾸지 않았다.
+자료 유형은 세 가지다. 설계·기존 화면은 회로와 구현 구조, 재실행은 도구 버전·명령·입출력, 장비 측정은 장비명·설정·단위·원자료를 기준으로 기록한다.
 
 ## 프로젝트에 적용한 예 {#examples}
 
 ### FPGA Delay Logic
 
-SystemVerilog source와 testbench를 Icarus로 실행해 Project 1의 20개 check, Project 2의 26개 equivalence check, Project 3의 3개 scenario를 확인했다. Quartus timing·power·Fmax report는 찾지 못했으므로 그 수치를 쓰지 않았다.
+7월 Icarus 기록: Project 1의 20 checks, Project 2의 26 equivalence checks, Project 3의 3 scenarios. 평가 유형: 기능 시뮬레이션.
+
+[9월 GTKWave·RTL·테스트벤치 실행 기록](/projects/fpga-delay-logic/#gallery)
 
 ### FMCW Radar
 
-분석 코드, 취득 firmware, 설정 문서와 hardware 사진을 확인했다. 논문에는 600초 동시취득과 848개 대응 beat가 보고돼 있다. Radar morphology에서 얻은 AO·AC 후보 시점을 valve의 직접 측정값이나 임상 성능으로 부르지 않았다.
+자료: 분석 코드·취득 firmware·설정 문서·hardware 사진. 논문 결과: 600초 동시취득·848개 대응 beat·Radar morphology 기반 AO·AC 후보 시점.
 
 ### PPG-HRV
 
-논문 초록의 AUC 0.85와 F1 0.82는 논문에 보고된 값으로 적었다. 별도 fold CSV와 섞거나 현재 환경에서 재학습한 수치처럼 쓰지 않았다.
+논문 Abstract·Conclusion 지표: AUC 0.99·F1 0.992. 별도 fold CSV에는 해당 코드 실행의 평가 조건을 표기한다.
 
 ## 수치를 쓰는 방법 {#writing}
 
-수치 옆에는 어디서 나온 값인지 한 문장으로 붙였다. simulation pass 수, 논문 보고 지표, 장비 측정값을 서로 다른 표나 문장에 놓았다. 실행하지 않은 합성이나 장비 시험은 빈칸을 억지로 채우지 않고 다음에 필요한 report와 조건을 메모했다.
+수치는 실행 로그·논문·계측 원자료의 출처와 연결한다. 후속 합성·장비 시험에는 필요한 report와 조건을 명시한다.
 
 ## 계속 확인할 부분 {#limits}
 
-외부 저장소, licensed tool, 물리 장비는 나중에 사용할 수 없게 될 수 있다. 그래서 새로 실행할 때마다 기존 파일을 덮어쓰지 않고 날짜가 붙은 로그와 환경 정보를 추가한다. 이 방식은 모든 결과의 영구 재현을 보장하지 않지만, 내가 어디까지 직접 확인했는지는 다시 따라갈 수 있게 한다.
+실행 이력은 날짜별 로그·도구 환경·입력 파일로 보관한다. 이전 결과를 유지하고 새 실행 자료를 추가하는 방식이다.

@@ -9,6 +9,6 @@ alternate_url: /projects/defense-systems/
 alternate_lang: ko
 ---
 
-Public material focuses on educational traceability and reproduced
-calculations. Sensitive real-system specifications or operationally deployable
-procedures are not provided.
+Educational Counter-UAS, EW jammer, and KF-21 reliability cases, using public references and hypothetical conditions for requirements tracing, trade-offs, and FMEA calculations.
+
+[Cases and calculation records](/en/defense/)

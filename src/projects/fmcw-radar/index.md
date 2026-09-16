@@ -9,6 +9,7 @@ alternate_url: /en/projects/fmcw-radar/
 alternate_lang: en
 ---
 
-ECG R-peak를 기준으로 SCG와 FMCW Radar 파형을 정렬하고 AO·AC 후보 시점을
-비교했다. 이 후보는 Radar phase의 형태를 분석한 시점이며 판막을 직접 촬영한
-영상은 아니다.
+ECG R-peak를 기준으로 SCG와 FMCW Radar 파형을 정렬한 600초 동시취득 실험. 848개 대응 beat에서 Radar phase morphology 기반 AO·AC 후보 시점을 비교했다.
+
+- [KIEE 2026 제1저자 논문](/publications/kiee2026-fmcw-aoac/)
+- [분석 코드·설정·export 문서](https://github.com/Dororok9061/fmcw-radar-aoac-cardiac-analysis)

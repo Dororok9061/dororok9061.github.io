@@ -70,19 +70,19 @@ decision → GPIO LED/buzzer + I2C LCD
 
 A reproducible TCP/IP boundary needs message length, reconnect policy, and sender/receiver roles. File IPC needs protection against a consumer reading a partially written file, such as an atomic rename or explicit ready flag. GPIO needs active-level documentation; I2C needs the LCD address and error handling.
 
-The saved code shows the network, file IPC, GPIO, and I2C paths, but it does not preserve every packet schema and timeout. I still need to rerun packet-loss recovery and stale-file cleanup before describing their behavior.
+Source paths: network, file IPC, GPIO, and I²C. Recovery evaluation requires packet schemas, timeouts, packet-loss handling, and stale-file cleanup conditions.
 
 ## What the prototype proves {#prototype}
 
 <figure><picture><source srcset="/assets/images/projects/drowsiness-contact-sheet.webp" type="image/webp"><img src="/assets/images/projects/drowsiness-contact-sheet.jpg" alt="Contact sheet showing Raspberry Pi hardware, LCD, sensor wiring, and public source views" width="780" height="1100" loading="lazy"></picture><figcaption>Public source and physical-prototype evidence shown together.</figcaption></figure>
 
-The photographs show the Raspberry Pi hardware, LCD, sensor wiring, and assembly. Reading the PPG-server and image/EAR-processing modules alongside them made the two-node data path clear. I did not put the screen values into a performance table because their calibration conditions are unknown.
+Raspberry Pi, LCD, sensor-wiring, and assembly photographs align with the PPG-server and image/EAR modules to show the two-node data path. Displayed values are prototype outputs.
 
 ## Failures and unmeasured items {#failures}
 
 A two-node design must handle missing frames, dropped TCP connections, stale file state, failed I2C writes, and sensor timeouts. The public material does not verify every retry and fallback path.
 
-I did not find saved measurements for end-to-end latency, sensitivity, specificity, false-alarm rate, or long-duration stability, so I do not present those values as measured performance.
+Prototype records: hardware photographs, PPG server, image/EAR modules, and alarm paths. Follow-up measurements: end-to-end latency, sensitivity, specificity, false-alarm rate, and long-duration stability.
 
 ## Next verification {#next}
 

@@ -27,6 +27,8 @@ alternate_lang: ko
     </div>
   </header>
 
+  {% include project-shortcuts.html project_id='viscan' id='project-files' %}
+
   <nav class="research-jump-nav" aria-label="On this page">
     <span class="research-jump-nav__label">On this page</span>
     <div class="research-jump-nav__links">
@@ -71,7 +73,7 @@ alternate_lang: ko
       <div class="research-flow-step"><span class="research-flow-step__index">03</span><strong>Guidance</strong><p>MediaPipe Pose and camera–radar fusion</p></div>
       <div class="research-flow-step"><span class="research-flow-step__index">04</span><strong>Measurement</strong><p>Ultrasound, rPPG, report, and reset</p></div>
     </div>
-    <figcaption id="viscan-flow-caption">Disclosure-safe state flow for the ViScan system.</figcaption>
+    <figcaption id="viscan-flow-caption">ViScan state-based processing flow.</figcaption>
   </figure>
 
   <section id="patent" class="research-section boundary-panel">
@@ -82,7 +84,7 @@ alternate_lang: ko
       <div><dt>Filing date</dt><dd>August 18, 2026</dd></div>
       <div><dt>Applicants</dt><dd>Dankook University Cheonan Campus Industry-Academic Cooperation Foundation and Hansono Co., Ltd.</dd></div>
       <div><dt>Role</dt><dd>Co-inventor</dd></div>
-      <div><dt>Legal status</dt><dd>Patent application filed. This does not mean that a patent has been granted or that rights have been finally established.</dd></div>
+      <div><dt>Legal status</dt><dd>Patent application filed.</dd></div>
     </dl>
   </section>
 </main>

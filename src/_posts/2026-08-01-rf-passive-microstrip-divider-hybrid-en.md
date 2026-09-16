@@ -99,7 +99,7 @@ The quadrature hybrid forms a rectangle with 35.35 Ω horizontal lines and 50 Ω
 
 ## Simulation-only interpretation {#interpretation}
 
-This note connects calculations in the report to earlier Cadence screens. I did not rerun the netlist or measure a fabricated network with a VNA. My next step is to recreate the same sweep and inspect marker frequency, port definitions, and dB conventions together.
+Sources: report calculations and archived Cadence screens. Follow-up comparison conditions: matching frequency sweep, marker frequency, port definitions, and dB conventions. Fabricated-network VNA measurement is a separate experimental stage.
 
 ## Previous and next {#navigation}
 

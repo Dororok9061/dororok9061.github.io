@@ -1,0 +1,4 @@
+{% assign badge_paper = include.publication %}
+<span class="evidence-badge evidence-badge--measured">{% if badge_paper.user_author_position == 1 %}{% if include.lang == 'en' %}First author{% else %}제1저자{% endif %}{% else %}{% if include.lang == 'en' %}Co-author{% else %}공동저자{% endif %}{% endif %} · {{ badge_paper.user_author_position }}/{{ badge_paper.authors_en.size }}</span>
+<span class="evidence-badge evidence-badge--source">{% if include.lang == 'en' %}Conference proceedings{% else %}학술대회 논문집{% endif %}</span>
+{% if badge_paper.presentation_type and badge_paper.presentation_type != empty %}<span class="evidence-badge evidence-badge--source">{{ badge_paper.presentation_type }}</span>{% endif %}

@@ -9,6 +9,7 @@ alternate_url: /projects/coursework/
 alternate_lang: ko
 ---
 
-Evidence is classified as Source-Derived, Rerun, Existing Archive, Portfolio
-Redraw, or Proposal so that earlier archives are not presented as new
-measurements.
+Code, circuits, calculations, and waveforms from VHDL, control, motors, power, and RF coursework. Available run records include commands and outputs.
+
+- [Course materials](/en/coursework/)
+- [Code and calculation repository](https://github.com/Dororok9061/electrical-engineering-coursework-portfolio)

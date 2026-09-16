@@ -9,11 +9,9 @@ alternate_url: /projects/solarcell-mppt-pcb/
 alternate_lang: ko
 ---
 
-I traced the 12-V input, 5-V/3.3-V rails, STM32F401, USB/UART, and three
-measurement-module connectors from the mainboard. At module level, I decomposed
-the eight-channel current-sensing, ADC, voltage-amplification, and DAC paths and
-cross-checked the schematic, PCB, and BOM files.
+The STM32F401 mainboard records cover its 12-V input, 5-V/3.3-V rails, USB/UART, and measurement-module connectors. The module separates eight-channel current sensing, ADC, voltage amplification, and DAC paths.
 
-The 12-channel MPPT concept references published work by Kelzenberg, Loke, and
-Atwater. The public archive links to that source and omits the paper PDF and the
-original author's Gerbers where redistribution terms were unclear.
+- [Mainboard/module schematics and BOM](https://github.com/Dororok9061/dororok9061.github.io/tree/main/project-archives/solarcell-mppt-pcb/source)
+- [Power, measurement, and communication design](/en/blog/2026/09/04/solarcell-mppt-pcb/)
+
+Reference for the 12-channel MPPT structure: the public work by Kelzenberg, Loke, and Atwater.

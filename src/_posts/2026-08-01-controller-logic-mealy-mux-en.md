@@ -70,7 +70,7 @@ The transition path uses three states. <code>st0</code> has no useful prefix, <c
 
 ## Tracing 01010101 {#stimulus}
 
-The stored testbench deasserts reset and applies <code>01010101</code> at 20 ns intervals. Following the table by hand completes 101 at the fourth, sixth, and eighth input positions. I did not rerun GHDL or Vivado simulation while writing this note, so these are source-level expectations rather than a new waveform result.
+The stored testbench applies <code>01010101</code> at 20 ns intervals after reset. The state-transition table predicts 101 detection at the fourth, sixth, and eighth inputs. Result type: source-level hand calculation.
 
 <figure><img src="{{ '/assets/images/study/coursework/controller-logic-waveform.webp' | relative_url }}" alt="Saved waveform showing 01010101 input, st0 st1 st2 states, and dout pulses" width="1200" height="514"><figcaption>I followed the saved input and state transitions together.</figcaption></figure>
 

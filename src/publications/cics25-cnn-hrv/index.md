@@ -10,4 +10,8 @@ alternate_lang: en
 image: /assets/img/publications/cics25_cnn_first_page.jpg
 ---
 
-공개 PDF와 DBpia 레코드에서 제목·저자·pp. 291–292가 일치하는 것을 확인했고, 해당 레코드 URL을 함께 연결했습니다.
+CICS’25 논문집 pp. 291–292 · 제1저자 류형록. 공개 PDF·DBpia 레코드·PPG 취득 및 분류 코드를 연결한다.
+
+[관련 연구·코드](/projects/ppg-hrv/)
+
+[논문 원본 PDF](/assets/papers/cics25-cnn-hrv.pdf)

@@ -9,11 +9,10 @@ alternate_url: /projects/mmwave-visualizer/
 alternate_lang: ko
 ---
 
-I installed the IWR6843 EVM in the test space and adjusted sensor height,
-orientation, FOV, range, and thresholds. I then traced the C674x DSS processing
-structure, DSS-to-MSS data movement, and the roles of the two UART links before
-comparing live 3D point-cloud and target-tracking updates.
+The IWR6843 setup uses sensor height, orientation, FOV, range, and threshold settings matched to the room. C674x DSS processing and DSS–MSS transfer feed the 115200-bps CLI and 921600-bps data UART paths, ending in 3D point-cloud and target-tracking views.
 
-This work uses TI Radar Toolbox and SDK examples for integration and analysis. It
-does not include new MSS source development or a medical-accuracy assessment of
-the vital-sign display.
+- [Sensor configuration and tracking run](/en/blog/2026/09/04/mmwave-visualizer-people-tracking/)
+- [DCA1000EVM raw ADC capture debugging](/en/projects/dca1000evm/)
+- [TI target configuration and records](https://github.com/Dororok9061/dororok9061.github.io/tree/main/project-archives/mmwave-visualizer)
+
+Software base: TI Radar Toolbox and SDK examples. Archived artifacts: DSS build records, MSS binary, and Visualizer screens.

@@ -70,7 +70,7 @@ toc:
 
 ## 01010101 따라가기 {#stimulus}
 
-저장된 testbench는 reset을 내린 뒤 <code>01010101</code>을 20 ns 간격으로 넣는다. 상태표대로 종이에 따라가면 네 번째, 여섯 번째, 여덟 번째 입력에서 101이 완성된다. 이 계산은 코드의 전이 규칙을 손으로 확인한 것이며, 이번 정리에서 GHDL이나 Vivado simulation을 다시 돌리지는 않았다.
+저장된 testbench 입력은 reset 해제 후 20 ns 간격의 <code>01010101</code>이다. 상태표의 전이 규칙에 따른 101 검출 위치는 네 번째·여섯 번째·여덟 번째 입력이다. 결과 유형: 소스 기반 수계산.
 
 <figure><img src="{{ '/assets/images/study/coursework/controller-logic-waveform.webp' | relative_url }}" alt="01010101 입력과 st0, st1, st2 상태, dout pulse가 표시된 저장 파형" width="1200" height="514"><figcaption>당시 저장한 파형에서 입력과 상태 전이를 함께 따라갔다.</figcaption></figure>
 

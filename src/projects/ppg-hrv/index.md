@@ -9,5 +9,8 @@ alternate_url: /en/projects/ppg-hrv/
 alternate_lang: en
 ---
 
-PPG peak에서 IBI와 HRV feature를 만들고 CNN·Transformer 모델을 비교했다.
-논문 표의 수치와 별도 코드 실행에서 저장한 수치는 평가 조건이 달라 각각 적었다.
+PPG peak에서 IBI·HRV 특징을 만들고 CNN·Transformer 분류 모델을 비교한 연구. 논문 평균 지표와 코드의 fold 결과는 각 평가 조건과 함께 수록했다.
+
+- [CICS’25 제1저자 논문](/publications/cics25-cnn-hrv/)
+- [논문 PDF](https://github.com/Dororok9061/PPG-HRV-Cognitive-Load-CNN/blob/main/references/paper.pdf)
+- [PPG 취득·전처리·모델 코드](https://github.com/Dororok9061/PPG-HRV-Cognitive-Load-CNN)

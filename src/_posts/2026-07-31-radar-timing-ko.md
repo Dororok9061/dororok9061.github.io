@@ -65,7 +65,7 @@ ROI가 움직이거나 respiration 성분이 커지면 cardiac morphology가 바
 
 ECG R-peak index를 기준으로 앞뒤 window를 잘라 beat를 만든다. 동일 beat에서 SCG reference timing과 Radar morphology를 비교한다. Beat length가 다르면 resampling 또는 정규화 방식이 결과를 바꿀 수 있으므로 원 sample index와 변환된 beat axis를 함께 보존해야 한다.
 
-논문에는 **600초 동시취득**과 **848개 대응 beat 분석**을 적었다. 이번 글에서도 그 수치를 논문 결과로 표시하고, 새로 다시 실행한 값처럼 바꾸지 않았다.
+논문 보고 결과: **600초 동시취득**, **848개 대응 beat 분석**.
 
 ## AO·AC Candidate Timing {#candidates}
 

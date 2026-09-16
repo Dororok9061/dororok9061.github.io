@@ -9,6 +9,10 @@ alternate_url: /projects/fpga-delay-logic/
 alternate_lang: ko
 ---
 
-Executed with free Icarus Verilog on 2026-09-16. The gallery shows actual GTKWave and VS Code windows at their original aspect ratios. The current 31/32-cycle checks are a separate run from the historical 20/26-check regressions.
+Icarus Verilog run dated 2026-09-16: Project 1 passed 31 checked cycles, Project 2 passed 32 checked cycles, and Project 3 passed three scenarios. All error counts are zero.
 
-[RTL / Testbench / VCD / Logs](https://github.com/Dororok9061/fpga-delay-logic-design-verification/tree/main/runs/2026-09-16)
+The gallery contains GTKWave waveforms, VS Code RTL/testbench screens, and source-derived gate/register diagrams.
+
+[RTL, testbenches, VCDs, and run logs](https://github.com/Dororok9061/fpga-delay-logic-design-verification/tree/main/runs/2026-09-16)
+
+The July 20/26-check regressions and September 31/32-cycle checks are separate runs.

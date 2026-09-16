@@ -1,0 +1,16 @@
+- id: vret-digital-rehabilitation
+  title_ko: 단계별 VRET 및 생체·행동 데이터 정량 분석 기반 정신 재활 통합 디지털 치료 시스템
+  title_en: Integrated digital therapy for mental rehabilitation using staged VRET and quantitative physiological and behavioral data analysis
+  organization: 중소기업기술정보진흥원
+  start_date: 2026-06-01
+  end_date: 2026-08-31
+  role_ko: 연구원보 (펌웨어 개발)
+  role_en: Assistant researcher (firmware development)
+- id: tremor-cognitive-rehabilitation
+  title_ko: 손 떨림 감지 및 글쓰기·운동 미션 기반 인지장애 평가 및 재활치료 성과 반영 시스템 개발
+  title_en: Cognitive impairment assessment and rehabilitation outcome system using hand-tremor detection and writing and exercise tasks
+  organization: 중소기업기술정보진흥원
+  start_date: 2026-06-01
+  end_date: 2026-08-31
+  role_ko: 연구원보 (펌웨어 개발)
+  role_en: Assistant researcher (firmware development)

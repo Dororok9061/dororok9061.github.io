@@ -9,12 +9,8 @@ alternate_url: /projects/legacy-embedded-system/
 alternate_lang: ko
 ---
 
-I treated the two computers as embedded experiment platforms whose compute,
-memory, storage, video, and communication layers remain physically visible.
-PCB markings, OS screens, source manuals, and connector photographs were
-cross-checked while direct observations, inferences, and pending measurements
-were kept separate.
+Color Classic and Olympic-S records map CPU, memory, storage, video, and communication layers. PCB markings, OS screens, and source manuals support the functional-block and interface tables.
 
-The BlueSCSI and Raspberry Pi paths are designed extensions. DaynaPORT TCP,
-RGBS electrical measurements, and cassette SAVE/LOAD remain implementation and
-measurement work rather than completed results.
+The BlueSCSI/Raspberry Pi material covers a bridge data-path design and RGBS, SCSI, cassette, and TCP measurement plans.
+
+[Technical and hardware records](https://github.com/Dororok9061/dororok9061.github.io/tree/main/project-archives/legacy-embedded-system)

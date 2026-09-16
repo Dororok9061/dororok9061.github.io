@@ -99,7 +99,7 @@ Quadrature hybrid는 위아래 수평선에 35.35 Ω, 좌우 수직선에 50 Ω�
 
 ## Simulation으로만 해석 {#interpretation}
 
-이번 글에서는 보고서 계산과 당시 Cadence 화면을 연결했다. 새 netlist를 실행하거나 VNA로 제작 회로를 측정하지 않았다. 다음에는 동일한 주파수 sweep 조건을 다시 만들고 marker, port 정의, dB 기준을 한 화면에서 확인할 생각이다.
+자료: 보고서 계산·기존 Cadence 화면. 후속 비교 조건: 동일 주파수 sweep, marker frequency, port 정의와 dB 기준. 제작 회로의 VNA 계측은 별도 실험 단계다.
 
 ## 이전 글과 다음 글 {#navigation}
 

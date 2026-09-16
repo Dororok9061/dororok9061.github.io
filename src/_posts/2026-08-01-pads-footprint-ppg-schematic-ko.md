@@ -51,7 +51,7 @@ PADS를 처음 배울 때 저장한 Decal Wizard 화면과 PPG schematic·layout
 
 <figure>
   <img src="{{ '/assets/images/learning/coursework/pads-footprint-ppg-schematic.svg' | relative_url }}" alt="서로 독립된 사례로 배치한 여섯 pad SOIC decal과 OPA2333, filter, SN74LVC logic PPG 화면" width="1200" height="630">
-  <figcaption>왼쪽과 오른쪽은 별도 저장 화면에서 읽은 두 학습 사례다. 두 artifact가 같은 package를 공유한다고 뜻하지 않는다.</figcaption>
+  <figcaption>별개 학습 사례: 6-pin SOIC decal과 PPG schematic·layout.</figcaption>
 </figure>
 
 ## 6-pin SOIC 치수 {#footprint}
@@ -91,7 +91,7 @@ Decal Wizard 화면에서 pin count를 6으로 두고 SMD pad 폭 0.6 mm, 길이
   → OPA2333 output stage
   → SN74LVC logic interface
   → PPG capture의 placement view</code></pre>
-  <figcaption>저장된 화면에서 보이는 기능 블록만 연결했다. 부품값이나 cutoff frequency를 새로 추정하지 않았다.</figcaption>
+  <figcaption>저장된 PPG 회로 화면의 기능 블록: 증폭·RC 필터·logic interface.</figcaption>
 </figure>
 
 ## Layout 화면에서 본 것 {#layout}

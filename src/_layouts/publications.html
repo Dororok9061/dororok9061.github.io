@@ -10,11 +10,11 @@ layout: default
 
   <section class="research-summary" aria-labelledby="research-summary-title">
     <h2 id="research-summary-title">{% if page.lang == 'en' %}Research Topics{% else %}연구 주제{% endif %}</h2>
-    <p>{% if page.lang == 'en' %}I presented two first-author conference papers on biomedical signal processing: PPG-based HRV modeling and non-contact FMCW radar cardiac-signal analysis. Both appear in conference proceedings and were presented as posters.{% else %}생체신호 처리 분야에서 PPG 기반 HRV 모델링과 비접촉 FMCW Radar 심장신호 분석을 연구해 제1저자 학술대회 논문 2편을 발표했습니다. 두 논문 모두 학술대회 논문집에 수록하고 포스터로 발표했습니다.{% endif %}</p>
+    <p>{% if page.lang == 'en' %}Three conference proceedings papers: two as first author and one as third author. HRV-based cognitive-task classification, FMCW cardiac timing, and ultrasound–smart-mirror integration.{% else %}학술대회 논문집 수록 3편: 제1저자 2편·공동저자 1편. HRV 인지 과제 분류, FMCW 심장신호 분석, 초음파–스마트미러 융합 연구.{% endif %}</p>
   </section>
 
   <section aria-labelledby="first-author-title">
-    <h2 id="first-author-title">{% if page.lang == 'en' %}First-Author Publications{% else %}제1저자 논문{% endif %}</h2>
+    <h2 id="first-author-title">{% if page.lang == 'en' %}Publications and author roles{% else %}논문·저자 역할{% endif %}</h2>
     <div class="publication-stack">
       {% for publication in site.data.publications %}
         {% include publication-card.html publication=publication lang=page.lang %}
@@ -23,7 +23,7 @@ layout: default
   </section>
 
   <div class="publication-index-grid">
-    <section><h2>{% if page.lang == 'en' %}Conference & Poster Presentations{% else %}학술대회·포스터 발표{% endif %}</h2><p>{% if page.lang == 'en' %}CICS’25 (2025.10) and the 57th KIEE Summer Conference (2026.07), both as first author with poster preparation and presentation participation.{% else %}CICS’25(2025.10)와 대한전기학회 제57회 하계학술대회(2026.07)에서 제1저자로 포스터 제작 및 발표에 참여했습니다.{% endif %}</p></section>
+    <section><h2>{% if page.lang == 'en' %}Conference presentations{% else %}학술대회 발표{% endif %}</h2><p>CICS’25 · 2025.10.23<br>KIEE 2026 · 2026.07.10</p></section>
     <section><h2>{% if page.lang == 'en' %}Related Code and Projects{% else %}관련 코드·프로젝트{% endif %}</h2><p><a href="{% if page.lang == 'en' %}{{ '/en/projects/ppg-hrv/' | relative_url }}{% else %}{{ '/projects/ppg-hrv/' | relative_url }}{% endif %}">PPG–HRV</a> · <a href="{% if page.lang == 'en' %}{{ '/en/projects/fmcw-radar/' | relative_url }}{% else %}{{ '/projects/fmcw-radar/' | relative_url }}{% endif %}">FMCW Radar</a></p></section>
   </div>
   <div class="prose">{{ content }}</div>

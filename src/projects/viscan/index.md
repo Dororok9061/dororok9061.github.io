@@ -27,6 +27,8 @@ alternate_lang: en
     </div>
   </header>
 
+  {% include project-shortcuts.html project_id='viscan' id='project-files' %}
+
   <nav class="research-jump-nav" aria-label="이 페이지">
     <span class="research-jump-nav__label">이 페이지</span>
     <div class="research-jump-nav__links">
@@ -71,7 +73,7 @@ alternate_lang: en
       <div class="research-flow-step"><span class="research-flow-step__index">03</span><strong>Guidance</strong><p>MediaPipe Pose와 Camera–Radar Fusion</p></div>
       <div class="research-flow-step"><span class="research-flow-step__index">04</span><strong>Measurement</strong><p>초음파·rPPG·Report·Reset</p></div>
     </div>
-    <figcaption id="viscan-flow-caption">ViScan의 공개 가능한 상태 기반 처리 흐름입니다.</figcaption>
+    <figcaption id="viscan-flow-caption">ViScan 상태 기반 처리 흐름</figcaption>
   </figure>
 
   <section id="patent" class="research-section boundary-panel">
@@ -82,7 +84,7 @@ alternate_lang: en
       <div><dt>출원일</dt><dd>2026년 8월 18일</dd></div>
       <div><dt>출원인</dt><dd>단국대학교 천안캠퍼스 산학협력단·주식회사 한소노 공동출원</dd></div>
       <div><dt>역할</dt><dd>공동발명자</dd></div>
-      <div><dt>법적 상태</dt><dd>특허출원 완료. 등록 특허 또는 권리 확정 상태를 의미하지 않습니다.</dd></div>
+      <div><dt>법적 상태</dt><dd>특허출원 접수</dd></div>
     </dl>
   </section>
 </main>

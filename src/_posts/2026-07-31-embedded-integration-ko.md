@@ -70,19 +70,19 @@ decision → GPIO LED/buzzer + I2C LCD
 
 TCP/IP 경계에는 sender/receiver address, message length, reconnect 정책이 필요하다. File IPC는 producer가 쓰는 중 consumer가 읽지 않도록 임시 파일과 atomic rename 또는 명시적 ready flag가 필요하다. GPIO는 LED·buzzer의 active level, I2C는 LCD address와 update 실패 처리까지 기록해야 재현할 수 있다.
 
-공개 자료는 network, file IPC, GPIO, I2C라는 경로를 확인시켜 주지만 모든 packet schema와 timeout 값을 완전하게 보존하지는 않는다. 그래서 packet loss 복구나 stale file 제거가 구현됐다고 추가로 주장하지 않는다.
+소스의 통신 경로는 network·file IPC·GPIO·I²C다. 복구 동작 평가에는 packet schema·timeout·packet loss·stale file 처리 조건이 필요하다.
 
 ## 실제 Prototype에서 확인한 것 {#prototype}
 
 <figure><picture><source srcset="/assets/images/projects/drowsiness-contact-sheet.webp" type="image/webp"><img src="/assets/images/projects/drowsiness-contact-sheet.jpg" alt="졸음 모니터의 Raspberry Pi, LCD, sensor wiring과 공개 source 화면을 모은 contact sheet" width="780" height="1100" loading="lazy"></picture><figcaption>공개 source와 실제 prototype 사진을 한 화면에서 비교한 contact sheet.</figcaption></figure>
 
-사진에서 Raspberry Pi, LCD, sensor 배선과 조립 상태를 확인했다. Repository의 PPG server와 image/EAR processing module을 함께 읽으니 두 node의 data path가 실제 prototype에서 어떻게 이어지는지 보였다. 화면에 보이는 값은 calibration 조건을 알 수 없어 정량 성능표에는 넣지 않았다.
+Raspberry Pi·LCD·센서 배선·조립 사진과 PPG server·image/EAR 처리 소스가 두 node의 데이터 경로를 보여준다. 화면 값의 자료 유형은 프로토타입 출력이다.
 
 ## 실패처리와 미측정 항목 {#failures}
 
 분산된 두 node에서 필요한 실패처리는 camera frame 누락, TCP 연결 끊김, 오래된 file state, I2C write 실패, sensor read timeout이다. 현재 공개 자료만으로 각 실패가 어떤 retry와 fallback을 거치는지 모두 검증할 수 없다.
 
-end-to-end latency, sensitivity, specificity, false-alarm rate와 장시간 안정성의 저장된 측정값은 찾지 못했다. 그래서 이 수치들은 실제 성능 결과처럼 쓰지 않았다.
+프로토타입 기록: 장비 사진·PPG server·image/EAR 처리 모듈·경고 경로. 후속 측정 지표: end-to-end latency·sensitivity·specificity·false-alarm rate·장시간 안정성.
 
 ## 다음 검증 {#next}
 

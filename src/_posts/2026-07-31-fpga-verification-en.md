@@ -90,4 +90,6 @@ Data equality alone is insufficient. Output valid one cycle early, or stale data
 
 ## Next Quartus run {#quartus-next}
 
-I ran the functional simulation, but I did not find Quartus synthesis, timing, resource, power, Fmax, or numerical PPA reports. I therefore make no numerical claim that the circular queue uses fewer registers or memory resources on a target FPGA. The next run will synthesize both architectures for the same device and constraints while preserving the commands and original reports.
+The July record covers Icarus functional simulation. A PPA comparison requires synthesis resource, timing, and power reports for the same device and constraints.
+
+[2026-09-16 run: GTKWave, RTL, and testbenches](/en/projects/fpga-delay-logic/#gallery)

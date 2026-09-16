@@ -1,0 +1,31 @@
+{% assign shortcut_items = site.data.project_shortcuts %}
+{% if include.project_id %}{% assign shortcut_items = shortcut_items | where: 'id', include.project_id %}{% endif %}
+{% assign shortcut_lang = page.lang | default: 'ko' %}
+{% assign shortcut_id = include.id | default: 'project-directory' %}
+{% if shortcut_items.size > 0 %}
+<section class="project-shortcuts{% if include.project_id %} project-shortcuts--focused{% endif %}" aria-labelledby="{{ shortcut_id }}-title" id="{{ shortcut_id }}">
+  <div class="project-shortcuts__heading">
+    <h2 id="{{ shortcut_id }}-title">{% if include.project_id %}{% if shortcut_lang == 'en' %}Open the files{% else %}자료 바로가기{% endif %}{% else %}{% if shortcut_lang == 'en' %}Projects, papers, and files{% else %}프로젝트·논문·자료 바로가기{% endif %}{% endif %}</h2>
+  </div>
+  <div class="project-shortcuts__grid">
+    {% for shortcut in shortcut_items %}
+    {% if shortcut_lang == 'en' %}
+      {% assign shortcut_title = shortcut.title_en %}{% assign shortcut_summary = shortcut.summary_en %}{% assign shortcut_url = shortcut.url_en %}
+    {% else %}
+      {% assign shortcut_title = shortcut.title_ko %}{% assign shortcut_summary = shortcut.summary_ko %}{% assign shortcut_url = shortcut.url_ko %}
+    {% endif %}
+    <article class="project-shortcuts__card">
+      <h3 class="project-shortcuts__title"><a href="{{ shortcut_url | relative_url }}">{{ shortcut_title }}</a></h3>
+      <p class="project-shortcuts__summary">{{ shortcut_summary }}</p>
+      <div class="project-shortcuts__links">
+        {% for shortcut_link in shortcut.links %}
+          {% if shortcut_lang == 'en' %}{% assign shortcut_href = shortcut_link.url_en %}{% assign shortcut_label = shortcut_link.label_en %}{% else %}{% assign shortcut_href = shortcut_link.url_ko %}{% assign shortcut_label = shortcut_link.label_ko %}{% endif %}
+          {% assign shortcut_first_char = shortcut_href | slice: 0 %}
+          <a href="{% if shortcut_first_char == '/' %}{{ shortcut_href | relative_url }}{% else %}{{ shortcut_href }}{% endif %}">{{ shortcut_label }}</a>
+        {% endfor %}
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}

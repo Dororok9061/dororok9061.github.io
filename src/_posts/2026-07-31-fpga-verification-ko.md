@@ -90,4 +90,6 @@ Driver는 reset, 연속 valid, valid gap, delay 변경, buffer wrap 조건을 �
 
 ## Quartus에서 이어서 할 일 {#quartus-next}
 
-Functional simulation은 직접 실행했다. 아직 Quartus synthesis report, timing analyzer, resource utilization, power, Fmax, numerical PPA report는 찾지 못했다. 그래서 Circular Queue가 실제 FPGA에서 더 적은 register 또는 memory resource를 쓴다는 수치는 적지 않았다. 다음에는 같은 constraint와 device 설정으로 두 architecture를 합성하고 report 원본과 명령을 함께 보존할 예정이다.
+7월 기록의 결과 범위는 Icarus functional simulation이다. PPA 비교에는 동일 device·constraint에서 얻은 합성 resource·timing·power report가 필요하다.
+
+[2026-09-16 실행: GTKWave 파형·RTL·테스트벤치](/projects/fpga-delay-logic/#gallery)

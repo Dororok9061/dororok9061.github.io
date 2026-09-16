@@ -9,4 +9,8 @@ alternate_url: /en/publications/kiee2026-fmcw-aoac/
 alternate_lang: en
 ---
 
-2쪽 원본 Proceedings PDF에서 pp. 2413–2414를 확인했고, 제공받은 첫 페이지 표지를 이 페이지에 실었습니다.
+KIEE 2026 하계학술대회 논문집 pp. 2413–2414 · 제1저자 류형록. 원본 논문집과 첫 페이지를 기준으로 정리한 서지 정보.
+
+[실험 구성·파형·분석 코드](/projects/fmcw-radar/)
+
+[논문 원본 PDF](/assets/papers/kiee2026-fmcw-aoac.pdf)

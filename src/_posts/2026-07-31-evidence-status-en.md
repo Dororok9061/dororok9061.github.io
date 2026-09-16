@@ -3,7 +3,7 @@ title: How I keep design files, reruns, and physical measurements separate
 title_en: How I keep design files, reruns, and physical measurements separate
 description: A practical way to connect surviving files, fresh logs, and physical measurements to project explanations.
 date: 2026-07-31 00:11:00 +0900
-updated: 2026-08-01 18:11:00 +0900
+updated: 2026-09-17 12:00:00 +0900
 study_date: 2026-07-31
 lang: en
 translation_key: evidence-status
@@ -47,32 +47,34 @@ toc:
 
 ## What I do after finding a file {#start}
 
-Old coursework folders mix source, screenshots, reports, and fresh logs. I do not call a project rerun merely because a file exists. I record when and how it was created, then bind any current execution to its command and new log.
+Source, screenshots, reports, and run logs are classified by creation date and tool environment. Run bundles retain commands, inputs, and output logs.
 
 <figure><picture><source srcset="/assets/images/projects/fpga-architecture.webp" type="image/webp"><img src="/assets/images/projects/fpga-architecture.jpg" alt="Shift register, circular queue, and memory-based driver-checker structures" width="1200" height="517" loading="lazy"></picture><figcaption>The diagram explains architecture; regression logs establish the behavior I actually ran.</figcaption></figure>
 
 ## Three kinds of material {#three}
 
-Design files and historical screens explain what existed. Fresh runs need a tool version, command, input, and output. Physical measurements need an instrument, settings, units, and raw-data context. A simulation number does not become a measurement simply because a prototype photograph also exists.
+Three record types: design files and historical screens for architecture; fresh runs with tool versions, commands, inputs, and outputs; physical measurements with instrument settings, units, and raw data.
 
 ## Project examples {#examples}
 
 ### FPGA Delay Logic
 
-I ran the public SystemVerilog testbenches with Icarus: 20 checks for Project 1, 26 equivalence checks for Project 2, and three file-driven scenarios for Project 3. I found no Quartus timing, power, Fmax, or resource report, so I did not publish those numbers.
+July Icarus record: Project 1, 20 checks; Project 2, 26 equivalence checks; Project 3, three scenarios. Evaluation type: functional simulation.
+
+[September GTKWave, RTL, and testbench records](/en/projects/fpga-delay-logic/#gallery)
 
 ### FMCW Radar
 
-I reviewed analysis source, acquisition firmware, configuration files, and hardware photographs. The paper reports 600 seconds of concurrent acquisition and 848 corresponding beats. Radar morphology supplies candidate AO/AC timings, not direct valve measurements or clinical performance.
+Artifacts: analysis source, acquisition firmware, configuration files, and hardware photographs. Paper results: 600 seconds, 848 corresponding beats, and morphology-based AO/AC candidate timing.
 
 ### PPG-HRV
 
-The abstract reports AUC 0.85 and F1 0.82. I keep those as paper-reported values rather than merging them with a separate fold archive or calling them a current retraining result.
+Paper abstract/conclusion: AUC 0.99 and F1 0.992. Separate fold CSVs retain the evaluation conditions of their respective code runs.
 
 ## How I report numbers {#writing}
 
-Every number gets a short source statement. Simulation checks, paper metrics, and physical measurements live in separate sentences or tables. When synthesis or hardware testing was not run, I leave the number unset and note the report and conditions needed for the next run.
+Each result links to its run log, paper, or measurement data. Follow-up synthesis and hardware tests specify the reports and conditions required.
 
 ## What still needs checking {#limits}
 
-Repositories, licensed tools, and hardware may later become unavailable. I therefore keep older material and add date-stamped logs and environment details for new work. This does not promise permanent reproducibility, but it preserves the line between what I inspected and what I executed.
+Run history uses date-stamped logs, tool environments, and inputs. New execution records are added alongside the original archive.

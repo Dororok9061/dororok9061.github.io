@@ -9,6 +9,7 @@ alternate_url: /projects/fmcw-radar/
 alternate_lang: ko
 ---
 
-I aligned SCG and FMCW radar waveforms around ECG R-peaks and compared AO and AC
-candidate timing. These candidates come from radar-phase morphology; they are
-not direct images of heart valves.
+A 600-second concurrent-acquisition experiment aligns SCG and FMCW radar to ECG R-peaks. Radar-phase morphology supplies AO/AC candidate timings across 848 corresponding beats.
+
+- [First-author KIEE 2026 paper](/en/publications/kiee2026-fmcw-aoac/)
+- [Analysis code, configuration, and export notes](https://github.com/Dororok9061/fmcw-radar-aoac-cardiac-analysis)

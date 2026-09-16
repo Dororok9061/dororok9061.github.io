@@ -84,7 +84,7 @@ While reading the 25-page gradient-descent module, I plotted loss against (m) an
 
 ## Normalization and convergence {#normalize}
 
-The scale of height and wingspan also changed the gradient scale. I subtracted the mean and divided by the standard deviation, then studied the same model again. These figures are outputs retained in the notebook from that work; I did not present them as a fresh rerun.
+Height and wingspan scales affect gradient magnitudes. Mean subtraction and standard-deviation scaling put both inputs on comparable scales. The figures are archived notebook outputs from that exercise.
 
 <section class="project-gallery" aria-label="Regression comparisons and normalized training"><div>
 <figure><img src="{{ '/assets/images/learning/outta/notebook-12.webp' | relative_url }}" alt="Learned and reference fits over the height and wingspan scatter" width="572" height="432" loading="lazy"><figcaption>Overlaying the two lines made the slope difference visible.</figcaption></figure>

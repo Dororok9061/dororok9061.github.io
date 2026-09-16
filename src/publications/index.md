@@ -2,7 +2,7 @@
 layout: publications
 title: 논문
 eyebrow: Publications
-lead: 대한전기학회 학술대회에서 발표한 제1저자 논문 두 편입니다.
+lead: 제1저자 논문 2편과 공동저자 논문 1편. PPG·HRV, FMCW 심장신호, 초음파 스마트미러 원문 PDF.
 description: CICS’25와 대한전기학회 제57회 하계학술대회 제1저자 Conference Proceedings 논문 및 포스터 발표 기록.
 permalink: /publications/
 lang: ko

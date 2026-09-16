@@ -9,5 +9,6 @@ alternate_url: /projects/drowsiness-monitor/
 alternate_lang: ko
 ---
 
-Prototype photographs show that the integration path existed, but they do not
-substitute for accuracy, latency, sensitivity, or false-alarm measurements.
+A two-node Raspberry Pi prototype splits PPG and camera EAR processing, exchanges results over TCP/IP, and drives GPIO/I²C alarms.
+
+[Acquisition, analysis, and alarm code](https://github.com/Dororok9061/Sleep-monitoring-and-prevention-device)

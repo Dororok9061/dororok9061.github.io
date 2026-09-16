@@ -11,32 +11,11 @@ if (menuButton && navigation) {
   });
 
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
+    if (event.key === "Escape" && menuButton.getAttribute("aria-expanded") === "true" && !document.querySelector("dialog[open]")) {
       menuButton.setAttribute("aria-expanded", "false");
       navigation.classList.remove("is-open");
       menuButton.focus();
     }
-  });
-}
-
-const lightbox = document.querySelector("#publication-lightbox");
-const lightboxImage = lightbox ? lightbox.querySelector(".lightbox__image") : null;
-const lightboxCaption = lightbox ? lightbox.querySelector("figcaption") : null;
-
-document.addEventListener("click", (event) => {
-  const trigger = event.target.closest?.("[data-lightbox]");
-  if (!trigger || !lightbox || !lightboxImage || !lightboxCaption) return;
-  lightboxImage.src = trigger.dataset.lightbox || "";
-  lightboxImage.alt = trigger.dataset.lightboxAlt || "Publication first-page preview";
-  lightboxCaption.textContent = trigger.dataset.lightboxCaption || "";
-  lightbox.showModal();
-});
-
-if (lightbox) {
-  const closeButton = lightbox.querySelector("[data-lightbox-close]");
-  if (closeButton) closeButton.addEventListener("click", () => lightbox.close());
-  lightbox.addEventListener("click", (event) => {
-    if (event.target === lightbox) lightbox.close();
   });
 }
 

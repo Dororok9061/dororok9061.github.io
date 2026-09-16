@@ -65,13 +65,13 @@ ROI movement and respiration can alter cardiac morphology. ROI selection, unwrap
 
 Each R-peak defines a window around one beat. SCG reference timing and radar morphology are compared within that beat. Resampling or length normalization can change timing, so original sample indices and transformed beat coordinates should both be retained.
 
-The paper-reported scope is **600 seconds of concurrent acquisition** and **848 corresponding beats analyzed**. These remain paper-reported values rather than a new rerun.
+Paper-reported results: **600 seconds of concurrent acquisition** and **848 corresponding beats analyzed**.
 
 ## AO/AC candidate timing {#candidates}
 
 AO/AC-related SCG reference points are constructed, then temporally corresponding radar peaks, slope changes, or detector-fusion outputs are selected. Low-SQI or detector-disagreement beats need separate handling. Candidate Timing Interval summaries describe the selected-point distribution.
 
-The AO and AC labels mean **morphology-based candidate timing**. Radar did not image the aortic valve, and valve opening or closure was not independently observed by Doppler echo. The claim is limited to temporal candidates relative to ECG and SCG references.
+AO and AC labels represent **morphology-based candidate timing** relative to ECG and SCG references. Independent Doppler-echo comparison is a follow-up validation stage.
 
 ## Supported results and limits {#evidence}
 

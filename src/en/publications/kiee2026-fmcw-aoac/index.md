@@ -9,4 +9,8 @@ alternate_url: /publications/kiee2026-fmcw-aoac/
 alternate_lang: ko
 ---
 
-I confirmed pp. 2413–2414 in the original two-page proceedings PDF and added the supplied first-page cover to this page.
+KIEE 2026 Summer Conference proceedings, pp. 2413–2414. First author: Hyeong-Rok Ryu. Bibliographic sources: original proceedings and first page.
+
+[Experiment, waveforms, and analysis code](/en/projects/fmcw-radar/)
+
+[Original paper PDF](/assets/papers/kiee2026-fmcw-aoac.pdf)
