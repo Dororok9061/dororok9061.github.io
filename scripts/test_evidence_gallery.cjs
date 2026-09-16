@@ -111,6 +111,7 @@ const markup = (language) => `<!doctype html><html lang="${language}"><body clas
         await page.keyboard.press("Escape");
         assert.equal(await dialog.evaluate((element) => element.open), false);
         assert.equal(await gallery.locator("figure:visible img").getAttribute("alt"), "Figure 2");
+        await page.waitForFunction(() => document.activeElement?.matches(".research-gallery-strip figure:not([hidden]) [data-lightbox]"));
         assert.equal(await gallery.locator("figure:visible [data-lightbox]").evaluate((element) => element === document.activeElement), true);
 
         // Bare article figures are enlarged without changing their source pixels.
@@ -137,6 +138,12 @@ const markup = (language) => `<!doctype html><html lang="${language}"><body clas
       return route.fulfill({ path: target });
     });
     await portal.goto("http://portfolio.test/projects/pcb-visual-inspection/research-portal/", { waitUntil: "networkidle" });
+    assert.equal(await portal.title(), "PCB Visual Inspection Studio");
+    assert.equal(await portal.locator("h1").textContent(), "PCB Visual Inspection Studio");
+    assert.equal(await portal.locator(".material-symbols-outlined:visible").count(), 0);
+    assert.equal(await portal.locator("#actions a[href*='PCB-Visual-Inspection-Studio']").count(), 0);
+    assert.equal(await portal.locator("#actions a[href^='#'][target='_blank']").count(), 0);
+    assert.equal(await portal.locator("body").evaluate((element) => element.scrollWidth <= window.innerWidth + 1), true);
     const portalGallery = portal.locator(".evidence-gallery").first();
     assert.equal(await portalGallery.locator("figure:visible").count(), 1);
     const portalCount = portal.locator(".evidence-gallery-count").first();

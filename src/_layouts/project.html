@@ -47,7 +47,7 @@ layout: default
       <p class="page-heading__lead">{{ project_summary }}</p>
       <span class="evidence-badge evidence-badge--{{ project.status_class }}">{{ project_status }}</span>
       <div class="research-resource-strip" aria-label="{% if page.lang == 'en' %}Project resources{% else %}프로젝트 바로가기{% endif %}">
-        <a href="{{ project.repository }}" target="_blank" rel="noopener noreferrer">⌘ Repository</a>
+        {% if project.repository and project.repository != empty %}<a href="{{ project.repository }}" target="_blank" rel="noopener noreferrer">⌘ Repository</a>{% endif %}
         {% if page.lang == 'en' and project.pages_en %}<a href="{{ project.pages_en }}" target="_blank" rel="noopener noreferrer">↗ Project Page</a>{% endif %}
         {% if page.lang != 'en' and project.pages_ko %}<a href="{{ project.pages_ko }}" target="_blank" rel="noopener noreferrer">↗ Project Page</a>{% endif %}
       </div>
@@ -109,7 +109,7 @@ layout: default
   <section id="resources" class="research-section" aria-labelledby="project-links-title">
     <h2 id="project-links-title">{% if page.lang == 'en' %}Project resources{% else %}프로젝트 자료{% endif %}</h2>
     <div class="button-row">
-      <a class="portfolio-button portfolio-button--primary" href="{{ project.repository }}" target="_blank" rel="noopener noreferrer">Repository</a>
+      {% if project.repository and project.repository != empty %}<a class="portfolio-button portfolio-button--primary" href="{{ project.repository }}" target="_blank" rel="noopener noreferrer">Repository</a>{% endif %}
       {% if page.lang == 'en' and project.pages_en %}<a class="portfolio-button" href="{{ project.pages_en }}" target="_blank" rel="noopener noreferrer">Project Pages</a>{% endif %}
       {% if page.lang != 'en' and project.pages_ko %}<a class="portfolio-button" href="{{ project.pages_ko }}" target="_blank" rel="noopener noreferrer">Project Pages</a>{% endif %}
     </div>

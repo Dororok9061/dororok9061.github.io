@@ -10,4 +10,4 @@ permalink: /projects/pcb-visual-inspection/
 F411 보드 검사 영상에서 프레임 품질 판정·ROI 정렬·특징 추출·이상 탐지로 이어지는 연구다. PatchCore·FR-PatchCore·DINOv3 특징 비교와 방법·결과 그림을 연결한다.
 
 - [품질 판정·정렬·특징 추출·결과 그림](/projects/pcb-visual-inspection/research-portal/#methodology)
-- [PCB Visual Inspection Studio 코드](https://github.com/Dororok9061/PCB-Visual-Inspection-Studio)
+- [공개 결과 그림·표](/projects/pcb-visual-inspection/research-portal/#results)

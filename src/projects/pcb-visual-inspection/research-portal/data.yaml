@@ -1,5 +1,5 @@
-paper_title: "Research Publication Workbench"
-subtitle: "A reusable GitHub Pages and Notion publishing portal for papers, projects, blogs, assignments, and study notes."
+paper_title: "PCB Visual Inspection Studio"
+subtitle: "Image quality checks, ROI registration, and anomaly detection for F411 PCB video. Explore PatchCore, FR-PatchCore, and DINOv3 feature studies through design figures and analysis records."
 authors:
   -
     name: "ROK Research Workspace"
@@ -10,38 +10,26 @@ affiliations:
     index: "1"
     name: "Local CUDA and documentation workspace"
 conference_badges:
-  - "Template structure adapted from the iNdra YAML-driven research page layout."
-  - "PCB Visual Inspection Studio is included as the first evidence-gated case study."
-header_note: "The visual language uses Material Symbols, strict square figures, and source-checked figure planning."
+  - "F411 PCB inspection"
+  - "PatchCore · FR-PatchCore · DINOv3"
+  - "Design figures and local experiment records"
+header_note: "Camera or file input → quality checks → ROI registration → feature extraction → anomaly score, heatmap, and mask."
 buttons:
   -
-    label: "Paper"
-    icon: "article"
-    url: "../../paper/PCB_VISUAL_INSPECTION_STUDIO_PAPER_EN.md"
+    label: "Project overview"
+    url: "/projects/pcb-visual-inspection/"
   -
-    label: "PDF"
-    icon: "picture_as_pdf"
-    url: "../../paper/PCB_VISUAL_INSPECTION_STUDIO_FULL_EN_WITH_PAPER_STYLE_ATLAS.pdf"
+    label: "Method figures"
+    url: "#methodology"
   -
-    label: "Atlas"
-    icon: "view_carousel"
-    url: "../paper_style_atlas/README.md"
+    label: "Figure atlas"
+    url: "#paper-style-atlas"
   -
-    label: "Public Hub"
-    icon: "hub"
-    url: "https://dororok9061.github.io/"
+    label: "Case study"
+    url: "#case-study"
   -
-    label: "GitHub Repo"
-    icon: "code"
-    url: "https://github.com/Dororok9061/PCB-Visual-Inspection-Studio"
-  -
-    label: "Figures"
-    icon: "image"
-    url: "../../figure_index.md"
-  -
-    label: "Notion Hub"
-    icon: "dashboard"
-    url: "https://fierce-rodent-308.notion.site/Engineering-Portfolio-FPGA-Radar-Embedded-Systems-Biomedical-AI-3ab518ac7a598121b666e4c7cce8324c"
+    label: "All projects"
+    url: "/projects/"
 settings:
   max_width: "1180px"
   nav_shadow: true
@@ -52,46 +40,42 @@ settings:
   copy_bibtex_text: "Copy BibTeX"
 metrics:
   -
-    label: "Paper-style figures"
+    label: "Method figures"
+    value: "10"
+    note: "capture, ROI, features, and anomaly maps"
+  -
+    label: "Atlas images"
     value: "62"
-    note: "individual PCB figures, no bundled board"
+    note: "architecture and analysis illustrations"
   -
-    label: "Tables"
-    value: "30"
-    note: "registry-backed"
-  -
-    label: "PDF pages"
-    value: "112/115"
-    note: "KO/EN papers with 62-page atlas"
-  -
-    label: "Portal modes"
-    value: "5"
-    note: "paper, project, blog, assignment, study"
+    label: "Case-study views"
+    value: "4"
+    note: "PCB workflow and review records"
 sections:
   -
     id: "abstract"
-    title: "Abstract"
-    nav_label: "Abstract"
+    title: "Overview"
+    nav_label: "Overview"
     icon: "summarize"
-    content: "This portal turns the PCB Visual Inspection Studio publication package into a reusable research-page system. The structure follows the iNdra-style YAML editing model while widening the scope beyond one PCB paper: papers, software projects, blog posts, assignments, and study notes share the same navigation, button, gallery, evidence, and citation components."
+    content: "The inspection pipeline connects camera or file input, frame quality checks, ROI registration, feature extraction, and anomaly scores, heatmaps, and masks. This page brings together the PCB workflow, model diagrams, and analysis figures."
     components:
       -
         type: "image_gallery"
-        title: "Portal Overview"
+        title: "PCB inspection overview"
         images:
-          - "AssetsWeb/research_portal_matrix.webp"
           - "AssetsWeb/pcb_overview.webp"
-          - "AssetsWeb/github_notion_loop.webp"
+          - "AssetsWeb/pcb_patchcore.webp"
+          - "AssetsWeb/pcb_detection_gate.webp"
   -
     id: "methodology"
-    title: "Methodology"
-    nav_label: "Methodology"
+    title: "Methods"
+    nav_label: "Methods"
     icon: "account_tree"
-    content: "The page is controlled by data.yaml, rendered by script.js, styled by style.css, and decorated with Material Symbols. Missing or rebuilt visual material is planned from source evidence and reviewed before publication, while each final PCB figure is published as its own strict-square image card with click-to-enlarge viewing."
+    content: "Camera and video frames pass through quality checks and ROI registration before ViT, DINO, or PatchCore-style feature extraction. Anomaly scores, heatmaps, and masks support visual review. The figures below show each stage separately."
     components:
       -
         type: "image_gallery"
-        title: "Separate PCB Methodology Figure Cards"
+        title: "PCB method figures"
         images:
           - "AssetsWeb/paper_style/pcb_style_fig31a_capture_quality_gate.webp"
           - "AssetsWeb/paper_style/pcb_style_fig31b_vit_dino_patch_path.webp"
@@ -105,26 +89,25 @@ sections:
           - "AssetsWeb/paper_style/pcb_style_fig31j_dataset_balance.webp"
     subsections:
       -
-        title: "1. Reusable Content Model"
-        content: "Each item is represented as a card with a type, status, figure, source link, and next action."
-        list_type: "check"
+        title: "Image input and registration"
+        content: "The workflow separates source frames from inspection ROIs, checks capture quality, and aligns board regions before feature extraction."
         list:
-          - "Research papers keep abstract/method/results/citation sections."
-          - "Projects keep code, docs, releases, and reproducibility links."
-          - "Blog, assignment, and study entries keep short summaries and learning evidence."
+          - "Camera and file input"
+          - "Capture quality checks"
+          - "PCB ROI alignment"
       -
-        title: "2. Split-Figure Publication Rule"
-        content: "Reference bundles are used only as layout grammar. The homepage, GitHub README, Notion package, and paper atlas link the rebuilt PCB figures one by one instead of publishing a combined contact sheet."
+        title: "Features and inspection outputs"
+        content: "PatchCore, FR-PatchCore, and DINOv3 studies connect patch features and memory-bank comparisons to anomaly maps and masks. Production evaluation criteria include gold-label comparison, defect decisions, and yield."
   -
     id: "paper-style-atlas"
-    title: "Paper-Style Figure Atlas"
+    title: "PCB Figure Atlas"
     nav_label: "Atlas"
     icon: "view_carousel"
-    content: "The atlas redraws the visual structures shown in the provided DINOv3, ViT, FR-PatchCore, U-ViT, TTM, TimeXer, and iTransformer examples, then inserts PCB inspection patches, heat maps, defect scores, attention maps, and evidence-scoped tables. The reference papers are used as layout grammar only; the content is regenerated for this PCB project."
+    content: "PCB-focused explanatory diagrams use visual layouts from DINOv3, ViT, FR-PatchCore, U-ViT, TTM, TimeXer, and iTransformer references. The atlas covers patch features, registration, attention, memory banks, heatmaps, and analysis-table layouts. Reference architectures are listed below."
     components:
       -
         type: "image_gallery"
-        title: "Copied-Structure PCB Figures"
+        title: "Architecture and analysis illustrations"
         images:
           - "AssetsWeb/paper_style/pcb_style_fig01_dinov3_overview.webp"
           - "AssetsWeb/paper_style/pcb_style_fig02_scaling_bubbles.webp"
@@ -210,7 +193,7 @@ sections:
     title: "PCB Case Study"
     nav_label: "PCB Case"
     icon: "memory"
-    content: "The current PCB work remains the first concrete case study. It includes strict-square figures, source-domain PatchCore/DINO pilot evidence, CUDA-oriented training records, camera-probe evidence, and explicit production gates."
+    content: "The PCB case study connects source-domain PatchCore and DINO pilot records, camera-probe examples, and the criteria for evaluating the F411 inspection workflow. The figure set follows input, feature analysis, review, and release records."
     components:
       -
         type: "image_gallery"
@@ -222,67 +205,54 @@ sections:
           - "AssetsWeb/pcb_release_index.webp"
   -
     id: "portfolio"
-    title: "Reusable Portfolio Tracks"
-    nav_label: "Tracks"
+    title: "Inspection Workflow"
+    nav_label: "Workflow"
     icon: "view_kanban"
-    content: "The same page can be reused for a publication website, GitHub project homepage, Notion portfolio summary, technical blog series, assignment archive, or study notebook index."
+    content: "Follow a board image from acquisition to its inspection outputs."
     cards:
       -
-        type: "Paper"
-        icon: "article"
-        title: "Research Paper"
-        text: "Use Abstract, Methodology, Results, Figures, BibTeX, and PDF buttons."
+        type: "01"
+        title: "Input"
+        text: "USB or industrial-camera frames and image files."
       -
-        type: "Project"
-        icon: "terminal"
-        title: "Software Project"
-        text: "Use setup, architecture, release, issue, and reproducibility sections."
+        type: "02"
+        title: "Quality and ROI"
+        text: "Capture quality checks and board-region registration."
       -
-        type: "Blog"
-        icon: "edit_note"
-        title: "Blog Series"
-        text: "Use short cards, figure galleries, and incremental changelog notes."
+        type: "03"
+        title: "Features"
+        text: "ViT, DINO, and PatchCore-style patch representations."
       -
-        type: "Assignment"
-        icon: "task_alt"
-        title: "Course Work"
-        text: "Use problem, method, result, artifact, and reflection fields."
+        type: "04"
+        title: "Anomaly maps"
+        text: "Scores, heatmaps, and masks for defect-region review."
       -
-        type: "Study"
-        icon: "school"
-        title: "Study Notes"
-        text: "Use reading logs, concepts, diagrams, and future-question lists."
+        type: "05"
+        title: "Review"
+        text: "Gold-label comparison, defect decisions, and production-evaluation criteria."
   -
     id: "results"
-    title: "Results and Deliverables"
-    nav_label: "Results"
+    title: "Figures and Records"
+    nav_label: "Records"
     icon: "analytics"
-    content: "The current deliverable set contains bilingual papers, PDFs, figures, tables, equations, GitHub copy, Notion copy, blog entries, and this homepage scaffold. Claims remain evidence-gated rather than overstated."
+    content: "Available material includes PCB architecture diagrams, feature-analysis illustrations, and local experiment records. The project overview connects these materials to the inspection pipeline."
     table:
       -
-        Artifact: "Korean paper"
-        Status: "generated"
-        Path: "docs/paper/PCB_VISUAL_INSPECTION_STUDIO_PAPER_KO.md"
+        Material: "Method figures"
+        Coverage: "10 views"
+        Topics: "Capture quality, ROI, features, heatmaps, masks"
       -
-        Artifact: "English paper"
-        Status: "generated"
-        Path: "docs/paper/PCB_VISUAL_INSPECTION_STUDIO_PAPER_EN.md"
+        Material: "Figure atlas"
+        Coverage: "62 images"
+        Topics: "Architecture, feature analysis, and table layouts"
       -
-        Artifact: "Figure pack"
-        Status: "QA pass"
-        Path: "docs/AssetsWeb/figures"
-      -
-        Artifact: "Notion portfolio"
-        Status: "markdown ready"
-        Path: "docs/publishing/notion"
-      -
-        Artifact: "GitHub Pages portal"
-        Status: "template rebuild"
-        Path: "docs/publishing/homepage"
+        Material: "Case study"
+        Coverage: "4 views"
+        Topics: "PCB workflow, PatchCore, and evaluation criteria"
   -
     id: "citation"
-    title: "Citation"
-    nav_label: "Citation"
+    title: "Reference"
+    nav_label: "Reference"
     icon: "format_quote"
-    content: "Use the citation block for the PCB case study or replace it in data.yaml for another paper."
-    bibtex: "@misc{rok2026pcbworkbench,\\n  title={PCB Visual Inspection Studio and Reusable Research Publication Workbench},\\n  author={ROK Research Workspace},\\n  year={2026},\\n  note={Evidence-gated local publication package}\\n}"
+    content: "Reference for this project documentation page."
+    bibtex: "@misc{ryu2026pcb,\n  title={PCB Visual Inspection Studio},\n  author={Hyeongrok Ryu},\n  year={2026},\n  howpublished={Project documentation},\n  url={https://dororok9061.github.io/projects/pcb-visual-inspection/}\n}"

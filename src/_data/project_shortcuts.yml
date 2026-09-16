@@ -90,10 +90,10 @@
     label_en: Methods and figures
     url_ko: /projects/pcb-visual-inspection/research-portal/#methodology
     url_en: /projects/pcb-visual-inspection/research-portal/#methodology
-  - label_ko: 코드
-    label_en: Code
-    url_ko: https://github.com/Dororok9061/PCB-Visual-Inspection-Studio
-    url_en: https://github.com/Dororok9061/PCB-Visual-Inspection-Studio
+  - label_ko: 결과 그림
+    label_en: Result figures
+    url_ko: /projects/pcb-visual-inspection/research-portal/#results
+    url_en: /projects/pcb-visual-inspection/research-portal/#results
 - id: fmcw-radar
   title_ko: FMCW 심장신호
   title_en: FMCW Cardiac Timing

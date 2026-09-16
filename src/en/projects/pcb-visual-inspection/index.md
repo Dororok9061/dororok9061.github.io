@@ -10,4 +10,4 @@ permalink: /en/projects/pcb-visual-inspection/
 The F411 PCB inspection study connects frame-quality checks, ROI registration, feature extraction, and anomaly detection. The records include PatchCore, FR-PatchCore, and DINOv3 feature studies with method and result figures.
 
 - [Quality checks, registration, features, and figures](/projects/pcb-visual-inspection/research-portal/#methodology)
-- [PCB Visual Inspection Studio code](https://github.com/Dororok9061/PCB-Visual-Inspection-Studio)
+- [Public result figures and tables](/projects/pcb-visual-inspection/research-portal/#results)

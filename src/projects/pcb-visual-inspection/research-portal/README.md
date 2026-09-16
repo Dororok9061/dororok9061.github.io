@@ -1,14 +1,12 @@
-# Research Publication Workbench Homepage
+# PCB Visual Inspection Studio
 
-This directory follows the iNdra-style GitHub Pages layout: edit `data.yaml`, keep `index.html`, `style.css`, `script.js`, and place deployable visual material in `AssetsWeb/`.
+This page presents the PCB inspection workflow: image quality checks, ROI registration, feature extraction, and anomaly scores, heatmaps, and masks.
 
-It is configured as a reusable portal rather than a PCB-only page:
+The public page includes:
 
-- papers
-- software projects
-- blog posts
-- assignments
-- study notes
-- Notion portfolio summaries
+- Ten method figures.
+- A 62-image atlas of architecture and analysis illustrations.
+- Four PCB case-study views.
+- Previous/next image controls, keyboard navigation, and full-size previews.
 
-The PCB Visual Inspection Studio publication remains the first case study and evidence package. The `AssetsWeb/paper_style/` directory contains copied-structure paper-style PCB figures and compact publication tables. Local full-size source captures may remain in `Assets/`, but GitHub Pages uses the optimized WebP mirror.
+Page content lives in matching `data.yaml` and `portal-data.js` files. Image files live in `AssetsWeb/`; the shared gallery viewer retains their proportions. The project overview is available at `/projects/pcb-visual-inspection/`.

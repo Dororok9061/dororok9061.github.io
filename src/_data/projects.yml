@@ -645,9 +645,8 @@
   categories: [computer-vision, research]
   ko_url: /projects/pcb-visual-inspection/
   en_url: /en/projects/pcb-visual-inspection/
-  repository: https://github.com/Dororok9061/PCB-Visual-Inspection-Studio
-  pages_ko: https://dororok9061.github.io/projects/pcb-visual-inspection/research-portal/?fresh=20260808-public-mirror-v1#methodology
-  pages_en: https://dororok9061.github.io/projects/pcb-visual-inspection/research-portal/?fresh=20260808-public-mirror-v1#methodology
+  pages_ko: https://dororok9061.github.io/projects/pcb-visual-inspection/research-portal/#methodology
+  pages_en: https://dororok9061.github.io/projects/pcb-visual-inspection/research-portal/#methodology
 
 - id: mmwave-visualizer
   title_ko: TI mmWave 3D People Tracking Visualizer

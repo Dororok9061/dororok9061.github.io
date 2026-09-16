@@ -44,7 +44,7 @@ function normaliseFigureItem(entry, index) {
 
 function renderPage(data) {
   const safeData = data || {};
-  document.title = safeData.paper_title || "Research Publication Workbench";
+  document.title = safeData.paper_title || "PCB Visual Inspection Studio";
   document.querySelectorAll("[data-bind='paper_title']").forEach((element) => {
     element.textContent = safeData.paper_title || "";
   });
@@ -81,8 +81,10 @@ function renderActions(items) {
   items.forEach((item) => {
     const link = document.createElement("a");
     link.href = item.url || "#";
-    link.target = "_blank";
-    link.rel = "noreferrer";
+    if (/^https?:/.test(link.href) && new URL(link.href).origin !== window.location.origin) {
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+    }
     link.append(icon(item.icon), textElement("span", "", item.label));
     root.appendChild(link);
   });

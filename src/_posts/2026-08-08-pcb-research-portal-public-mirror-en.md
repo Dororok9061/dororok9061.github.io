@@ -1,9 +1,9 @@
 ---
-title: PCB Research Publication Workbench public mirror
-title_en: PCB Research Publication Workbench public mirror
-description: The PCB inspection figure atlas and lightbox flow verified on the local 8765 portal are now reflected in the GitHub Pages blog and project hub.
+title: "PCB Inspection Quality Checks, ROI Registration, and Results"
+title_en: PCB Inspection Quality Checks, ROI Registration, and Results
+description: PCB inspection quality checks, ROI registration, feature extraction, result figures, and public materials.
 date: 2026-08-07 23:56:00 +0900
-updated: 2026-08-10 00:00:00 +0900
+updated: 2026-09-17 00:57:00 +0900
 study_date: 2026-08-07
 lang: en
 translation_key: pcb-research-portal-public-mirror
@@ -22,10 +22,10 @@ tools: [Jekyll, GitHub Pages, Material Icons]
 hardware: [STM32F411, camera]
 software_versions: []
 source_materials:
-  - { title: PCB Research Publication Workbench, type: public-page, public_url: /projects/pcb-visual-inspection/research-portal/?fresh=20260810-main-republish#methodology, file_reference: src/projects/pcb-visual-inspection/research-portal, pages: "", used_for: public mirror }
-  - { title: PCB Visual Inspection Studio repository paper package, type: github-repository, public_url: https://github.com/Dororok9061/PCB-Visual-Inspection-Studio/tree/main/docs/paper, file_reference: docs/paper, pages: "", used_for: paper package }
+  - { title: PCB Visual Inspection Studio, type: public-page, public_url: /projects/pcb-visual-inspection/research-portal/#methodology, file_reference: src/projects/pcb-visual-inspection/research-portal, pages: "", used_for: public mirror }
+  - { title: Archived PCB inspection paper package, type: project-archive, public_url: "", file_reference: "docs/paper; docs/camera_validation_report.md", pages: "", used_for: figure source records }
 prerequisites: [PCB inspection, figure source mapping, GitHub Pages]
-learning_objectives: [sync local portal and public site, publish individual figure atlas, verify click-to-enlarge review flow]
+learning_objectives: [frame quality checks, ROI registration, feature comparison, inspection result analysis]
 related_projects: [pcb-visual-inspection]
 related_posts: [evidence-status]
 tags: [pcb-inspection, github-pages, figure-atlas, lightbox]
@@ -40,20 +40,20 @@ revision_history:
   - date: 2026-08-10
     change: Added primary pipeline and architecture figures to the blog article
 toc:
-  - { id: mirror, title: Public mirror route }
+  - { id: mirror, title: PCB inspection materials }
   - { id: key-figures, title: Key figures }
   - { id: pipeline, title: Pipeline and architecture }
   - { id: results, title: Tables and claim boundary }
   - { id: links, title: Links }
 ---
 
-## Public mirror route {#mirror}
+## PCB inspection materials {#mirror}
 
-The PCB inspection publication workbench that was checked on `127.0.0.1:8765` is now connected to the public GitHub Pages route again.
+Public materials for the PCB inspection study, including methods, architecture, and result figures.
 
-[Open the full Research Publication Workbench](/projects/pcb-visual-inspection/research-portal/?fresh=20260810-main-republish#methodology)
+[Open PCB inspection methods and results](/projects/pcb-visual-inspection/research-portal/#methodology)
 
-The important change is that readers do not have to inspect one bundled contact sheet. The blog now exposes primary paper figures directly, while each card remains clickable through the site lightbox.
+The gallery contains individual method and result figures. Open a figure to move through the enlarged images with the previous and next buttons.
 
 ## Key figures {#key-figures}
 
@@ -88,7 +88,7 @@ The important change is that readers do not have to inspect one bundled contact 
 
 ## Tables and claim boundary {#results}
 
-The public tables are registry-backed publication artifacts and research pilot evidence. They are not production acceptance claims. Live camera frame acquisition and gold-label production metrics remain gated until the supporting dataset is approved.
+Record types: research pilot records and method/result diagrams. Production-evaluation criteria: camera input, gold-label comparison, and defect-detection performance.
 
 <figure>
   <button type="button" data-lightbox="/projects/pcb-visual-inspection/research-portal/AssetsWeb/paper_style/pcb_style_table02_result_tables.webp" data-lightbox-alt="PCB result tables" data-lightbox-caption="PCB result tables">
@@ -99,7 +99,7 @@ The public tables are registry-backed publication artifacts and research pilot e
 
 ## Links {#links}
 
-- GitHub repository: <https://github.com/Dororok9061/PCB-Visual-Inspection-Studio>
-- Camera validation report: <https://github.com/Dororok9061/PCB-Visual-Inspection-Studio/blob/main/docs/camera_validation_report.md>
-- Public research portal: <https://dororok9061.github.io/projects/pcb-visual-inspection/research-portal/?fresh=20260810-main-republish#methodology>
-- Korean version: [PCB Research Publication Workbench 공개 미러](/blog/2026/08/08/pcb-research-portal-public-mirror/?fresh=20260810-main-republish)
+- [Public methods and architecture](/projects/pcb-visual-inspection/research-portal/#methodology)
+- [Public result figures and tables](/projects/pcb-visual-inspection/research-portal/#results)
+- Public research portal: <https://dororok9061.github.io/projects/pcb-visual-inspection/research-portal/#methodology>
+- Korean version: [PCB 검사 품질 판정·ROI 정렬·결과 분석](/blog/2026/08/08/pcb-research-portal-public-mirror/)

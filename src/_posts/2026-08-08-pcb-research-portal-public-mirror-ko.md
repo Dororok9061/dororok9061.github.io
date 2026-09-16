@@ -1,9 +1,9 @@
 ---
-title: PCB Research Publication Workbench 공개 미러
-title_en: PCB Research Publication Workbench public mirror
-description: 로컬 8765 포털에서 검증한 PCB inspection figure atlas와 lightbox 구성을 GitHub Pages 블로그와 프로젝트 허브에 다시 반영했습니다.
+title: "PCB 검사 품질 판정·ROI 정렬·결과 분석"
+title_en: PCB Inspection Quality Checks, ROI Registration, and Results
+description: PCB inspection의 품질 판정·ROI 정렬·특징 추출·결과 그림과 공개 자료 경로.
 date: 2026-08-07 23:55:00 +0900
-updated: 2026-08-10 00:00:00 +0900
+updated: 2026-09-17 00:57:00 +0900
 study_date: 2026-08-07
 lang: ko
 translation_key: pcb-research-portal-public-mirror
@@ -22,10 +22,10 @@ tools: [Jekyll, GitHub Pages, Material Icons]
 hardware: [STM32F411, camera]
 software_versions: []
 source_materials:
-  - { title: PCB Research Publication Workbench, type: public-page, public_url: /projects/pcb-visual-inspection/research-portal/?fresh=20260810-main-republish#methodology, file_reference: src/projects/pcb-visual-inspection/research-portal, pages: "", used_for: public mirror }
-  - { title: PCB Visual Inspection Studio repository paper package, type: github-repository, public_url: https://github.com/Dororok9061/PCB-Visual-Inspection-Studio/tree/main/docs/paper, file_reference: docs/paper, pages: "", used_for: paper package }
+  - { title: PCB Visual Inspection Studio, type: public-page, public_url: /projects/pcb-visual-inspection/research-portal/#methodology, file_reference: src/projects/pcb-visual-inspection/research-portal, pages: "", used_for: public mirror }
+  - { title: Archived PCB inspection paper package, type: project-archive, public_url: "", file_reference: "docs/paper; docs/camera_validation_report.md", pages: "", used_for: figure source records }
 prerequisites: [PCB inspection, figure source mapping, GitHub Pages]
-learning_objectives: [local portal and public site sync, individual figure atlas publication, click-to-enlarge review flow]
+learning_objectives: [frame quality checks, ROI registration, feature comparison, inspection result analysis]
 related_projects: [pcb-visual-inspection]
 related_posts: [evidence-status]
 tags: [pcb-inspection, github-pages, figure-atlas, lightbox]
@@ -40,20 +40,20 @@ revision_history:
   - date: 2026-08-10
     change: Added primary pipeline and architecture figures to the blog
 toc:
-  - { id: mirror, title: 공개 미러 경로 }
+  - { id: mirror, title: PCB 검사 자료 }
   - { id: key-figures, title: 주요 그림 }
   - { id: pipeline, title: 파이프라인과 아키텍처 }
   - { id: results, title: 결과표와 주장 경계 }
   - { id: links, title: 연결 경로 }
 ---
 
-## 공개 미러 경로 {#mirror}
+## PCB 검사 자료 {#mirror}
 
-로컬 `127.0.0.1:8765` 포털에서 확인하던 PCB inspection publication workbench를 GitHub Pages 경로로 다시 연결했습니다.
+PCB 검사 연구의 방법·구조·결과 그림을 모은 공개 자료다.
 
-[전체 Research Publication Workbench 열기](/projects/pcb-visual-inspection/research-portal/?fresh=20260810-main-republish#methodology)
+[PCB 검사 방법·결과 자료 열기](/projects/pcb-visual-inspection/research-portal/#methodology)
 
-이번 반영의 핵심은 contact sheet 하나로 뭉쳐 보이는 방식이 아니라, 논문 본문에서 바로 읽을 수 있는 대표 그림과 개별 확대 가능한 figure card를 함께 노출하는 것입니다. 각 그림은 `data-lightbox`를 통해 클릭하면 크게 볼 수 있습니다.
+대표 그림과 개별 결과를 아래 갤러리에 수록했다. 그림을 누르면 확대 화면에서 이전·다음 버튼으로 이동할 수 있다.
 
 ## 주요 그림 {#key-figures}
 
@@ -88,7 +88,7 @@ toc:
 
 ## 결과표와 주장 경계 {#results}
 
-공개 페이지의 표와 수치는 production acceptance가 아니라, 출판 패키지와 연구용 pilot evidence를 설명하기 위한 registry-backed 결과입니다. 실물 카메라 프레임 수신과 gold-label production 성능은 아직 별도 승인 전입니다.
+자료 유형: 연구용 pilot 기록과 방법·결과 도식. 생산 적용 평가 항목: 실물 카메라 입력·gold-label 대조·결함 판정 성능.
 
 <figure>
   <button type="button" data-lightbox="/projects/pcb-visual-inspection/research-portal/AssetsWeb/paper_style/pcb_style_table02_result_tables.webp" data-lightbox-alt="PCB result tables" data-lightbox-caption="PCB result tables">
@@ -99,7 +99,7 @@ toc:
 
 ## 연결 경로 {#links}
 
-- GitHub repository: <https://github.com/Dororok9061/PCB-Visual-Inspection-Studio>
-- Camera validation report: <https://github.com/Dororok9061/PCB-Visual-Inspection-Studio/blob/main/docs/camera_validation_report.md>
-- Public research portal: <https://dororok9061.github.io/projects/pcb-visual-inspection/research-portal/?fresh=20260810-main-republish#methodology>
-- English version: [PCB Research Publication Workbench public mirror](/en/blog/2026/08/08/pcb-research-portal-public-mirror/?fresh=20260810-main-republish)
+- [공개 방법·구조 자료](/projects/pcb-visual-inspection/research-portal/#methodology)
+- [공개 결과 그림·표](/projects/pcb-visual-inspection/research-portal/#results)
+- Public research portal: <https://dororok9061.github.io/projects/pcb-visual-inspection/research-portal/#methodology>
+- English version: [PCB Inspection Quality Checks, ROI Registration, and Results](/en/blog/2026/08/08/pcb-research-portal-public-mirror/)
