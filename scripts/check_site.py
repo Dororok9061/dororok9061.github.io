@@ -45,7 +45,9 @@ HTTP_RESOURCE = re.compile(
 # generated HTML. The Minecraft research-world landing scene intentionally
 # ships Blender-exported GLB models and the source template audio locally, so
 # keep a separate allowance while retaining the older 1 MB rule everywhere else.
-MAX_SITE_BYTES = 115_000_000
+# The 2026-09-16 FPGA gallery adds 6.93 MB of original PNG captures and
+# lossless WebP copies. Keep the existing per-file limits unchanged.
+MAX_SITE_BYTES = 123_000_000
 LARGE_PUBLIC_ASSET_PREFIXES = (
     "assets/minecraft-world/models/",
     "assets/minecraft-world/audio/music/",

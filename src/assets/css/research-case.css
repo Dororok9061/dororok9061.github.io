@@ -180,6 +180,15 @@
   background: #fff;
 }
 
+/* Actual tool windows and RTL schematics retain their original proportions. */
+.fpga-native-evidence .project-heading img,
+.fpga-native-evidence .research-gallery-strip img {
+  height: auto;
+  max-height: none;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
 .research-citation {
   margin-top: 2rem;
   padding: 1rem;

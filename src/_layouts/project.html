@@ -33,7 +33,7 @@ layout: default
   {% assign project_results = project.results_ko %}
   {% assign project_status = project.status_label_ko %}
 {% endif %}
-<main id="main" class="page page-shell research-case-page">
+<main id="main" class="page page-shell research-case-page{% if page.project_id == 'fpga-delay-logic' %} fpga-native-evidence{% endif %}">
   <nav class="breadcrumbs" aria-label="{% if page.lang == 'en' %}Breadcrumb{% else %}현재 위치{% endif %}">
     <a href="{% if page.lang == 'en' %}{{ '/en/' | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}Home{% else %}홈{% endif %}</a>
     <span aria-hidden="true">/</span>
