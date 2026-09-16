@@ -3,70 +3,180 @@
   title_en: FPGA Programmable Delay Logic
   domain_ko: FPGA · RTL · Digital Verification
   domain_en: FPGA · RTL · Digital Verification
-  summary_ko: 동일한 cycle-delay contract를 Shift Register, Circular Queue, Memory-Based Driver/Checker 구조로 발전시킨 parameterized SystemVerilog 설계입니다.
-  summary_en: A parameterized SystemVerilog design that evolves one cycle-delay contract across shift-register, circular-queue, and memory-based Driver/Checker architectures.
+  summary_ko: Shift Register·Circular Queue·Memory 구조의 SystemVerilog RTL을 무료 Icarus Verilog로 실행하고 실제 GTKWave 파형과 VS Code 코드 화면을 기록했습니다.
+  summary_en: Three SystemVerilog delay architectures executed with Icarus Verilog, documented with actual GTKWave waveforms and VS Code editor
+    screenshots.
   status: EXECUTED
   status_class: executed
   status_label_ko: 기능 시뮬레이션 직접 실행
   status_label_en: Functional simulation rerun
-  image_webp: /assets/images/projects/fpga-architecture.webp
-  image_jpg: /assets/images/projects/fpga-architecture.jpg
-  image_width: 1200
-  image_height: 517
-  alt_ko: Shift Register, Circular Queue, Memory-Based 구조로 발전하는 FPGA delay logic architecture
-  alt_en: FPGA delay-logic architecture progressing from a shift register to circular queue and memory-based design
+  image_webp: /assets/images/projects/fpga-native-20260916/project1-gtkwave_detail.webp
+  image_jpg: /assets/images/projects/fpga-native-20260916/project1-gtkwave_detail.png
+  image_width: 1467
+  image_height: 591
+  alt_ko: Project 1 — Actual GTKWave detail
+  alt_en: Project 1 — Actual GTKWave detail
   evidence_ko:
-    - "Project 1에서 Icarus Verilog test 20개를 통과했습니다."
-    - "Project 2에서 architecture-equivalence test 26개를 통과했습니다."
-    - "Project 3의 file-driven scenario 3개 모두 예상 출력과 일치했습니다."
+  - 'Project 1: 31사이클 검사 PASS, 오류 0'
+  - 'Project 2: 32사이클 검사 PASS, 오류 0'
+  - 'Project 3: 3개 시나리오 PASS — 검사/valid 8/5, 14/4, 17/14'
   evidence_en:
-    - "I passed 20 Icarus Verilog tests in Project 1."
-    - "I passed 26 architecture-equivalence tests in Project 2."
-    - "All three file-driven scenarios in Project 3 matched the expected outputs."
+  - 'Project 1: 31 checked cycles PASS, 0 errors'
+  - 'Project 2: 32 checked cycles PASS, 0 errors'
+  - 'Project 3: 3 scenarios PASS — checked/valid 8/5, 14/4, 17/14'
   contribution_ko:
-    - Parameterized SystemVerilog RTL
-    - Independent reference model
-    - Self-checking testbench와 deterministic regression
+  - Parameterized SystemVerilog RTL
+  - Independent reference model
+  - Self-checking testbench와 deterministic regression
   contribution_en:
-    - Parameterized SystemVerilog RTL
-    - Independent reference model
-    - Self-checking testbench and deterministic regression
-  boundary_ko: Functional simulation까지 실행했습니다. 다음에는 Quartus synthesis와 timing·power·Fmax 분석을 진행하고, 생성된 보고서에서 PPA 수치를 정리할 예정입니다.
-  boundary_en: I completed functional simulation. Next, I plan to run Quartus synthesis and timing, power, and Fmax analysis, then summarize the PPA values from those reports.
-  problem_ko: 동일한 cycle-delay 동작을 여러 RTL architecture로 구현하면서 latency contract와 결과 일치성을 독립적으로 검증하는 문제입니다.
-  problem_en: The project implements one cycle-delay contract across multiple RTL architectures while independently checking latency and output equivalence.
-  architecture_ko: Shift Register → Circular Queue → Memory-Based Driver/Checker로 architecture를 확장하고 독립 reference model과 비교합니다.
-  architecture_en: The architecture progresses from a shift register to a circular queue and a memory-based Driver/Checker, compared against an independent reference model.
-  stack_ko: [SystemVerilog, Icarus Verilog, VHDL, GHDL, Quartus, ModelSim/Questa]
-  stack_en: [SystemVerilog, Icarus Verilog, VHDL, GHDL, Quartus, ModelSim/Questa]
+  - Parameterized SystemVerilog RTL
+  - Independent reference model
+  - Self-checking testbench and deterministic regression
+  boundary_ko: 2026-09-16 기능 시뮬레이션 결과입니다. Quartus·ModelSim 실행 및 합성·PPA는 수행하지 않았습니다. 구조도는 코드에서 도출한 논리 구조이며 합성된 FPGA netlist가 아닙니다.
+  boundary_en: Functional simulation dated 2026-09-16. Quartus, ModelSim and synthesis/PPA were not executed. Schematics describe RTL logic, not
+    a synthesized FPGA netlist.
+  problem_ko: 서로 다른 출력 시점과 invalid-data 규칙을 갖는 세 지연 구조를 해당 테스트벤치 및 기준 벡터로 검증합니다.
+  problem_en: Verify three delay structures against their testbenches and reference vectors, including distinct output timing and invalid-data
+    behavior.
+  architecture_ko: 1·2번은 현재 edge를 포함한 N번째 샘플을 선택하고 invalid 출력은 0입니다. 3번은 N주기 뒤 레지스터 출력으로 내보내며 invalid 구간에는 이전 데이터를 유지합니다.
+  architecture_en: Projects 1/2 select the Nth newest sample including the current edge and output zero when invalid. Project 3 registers the
+    output after N periods and holds invalid data.
+  stack_ko:
+  - SystemVerilog
+  - Icarus Verilog 14.0
+  - GTKWave
+  - VS Code
+  stack_en:
+  - SystemVerilog
+  - Icarus Verilog 14.0
+  - GTKWave
+  - VS Code
   data_flow_ko: Parameter와 입력 vector → DUT와 reference model → cycle-aligned checker → deterministic PASS/FAIL log.
   data_flow_en: Parameters and input vectors → DUT and reference model → cycle-aligned checker → deterministic PASS/FAIL log.
   methods_ko:
-    - Width·depth·delay parameter를 바꿔도 유지되는 RTL contract 정의
-    - DUT와 분리된 reference model 및 self-checking testbench 작성
-    - File-driven scenario와 architecture-equivalence regression 실행
+  - 원본 DUT RTL의 SHA-256 보존
+  - 1·2번에 독립 cycle-history checker 추가, 3번의 file-driven Driver/Checker 사용
+  - 실제 VCD를 GTKWave로 열고 RTL/TB를 VS Code에서 캡처
   methods_en:
-    - Defined an RTL contract that remains stable across width, depth, and delay parameters
-    - Built an independent reference model and self-checking testbench
-    - Executed file-driven scenarios and architecture-equivalence regressions
+  - Preserved original DUT RTL hashes
+  - Added independent history checkers for Projects 1/2; used the file-driven Driver/Checker for Project 3
+  - Opened actual VCDs in GTKWave and captured RTL/TB in VS Code
   results_ko:
-    - Project 1 Icarus Verilog 20 checks PASS
-    - Project 2 architecture-equivalence 26 checks PASS
-    - Project 3 file-driven 3 scenarios PASS
+  - 'Project 1: 31사이클 검사 PASS, 오류 0'
+  - 'Project 2: 32사이클 검사 PASS, 오류 0'
+  - 'Project 3: 3개 시나리오 PASS — 검사/valid 8/5, 14/4, 17/14'
   results_en:
-    - Project 1 passed 20 Icarus Verilog checks
-    - Project 2 passed 26 architecture-equivalence checks
-    - Project 3 passed three file-driven scenarios
+  - 'Project 1: 31 checked cycles PASS, 0 errors'
+  - 'Project 2: 32 checked cycles PASS, 0 errors'
+  - 'Project 3: 3 scenarios PASS — checked/valid 8/5, 14/4, 17/14'
   gallery:
-    - webp: /assets/images/projects/fpga-waveform.webp
-      jpg: /assets/images/projects/fpga-waveform.jpg
-      width: 1200
-      height: 578
-      alt_ko: FPGA programmable delay logic의 file-driven simulation waveform과 timing marker
-      alt_en: File-driven simulation waveform and timing markers for the FPGA programmable delay logic
-      caption_ko: Project 3의 file input으로 실행한 dynamic delay waveform
-      caption_en: Dynamic-delay waveform produced from the Project 3 file input
-  categories: [fpga, digital-verification]
+  - webp: /assets/images/projects/fpga-native-20260916/project1-gtkwave_detail.webp
+    jpg: /assets/images/projects/fpga-native-20260916/project1-gtkwave_detail.png
+    width: 1467
+    height: 591
+    alt_ko: Project 1 — Actual GTKWave detail
+    alt_en: Project 1 — Actual GTKWave detail
+    caption_ko: Project 1 · Actual GTKWave detail · 2026-09-16
+    caption_en: Project 1 · Actual GTKWave detail · 2026-09-16
+  - webp: /assets/images/projects/fpga-native-20260916/project1-gtkwave_full.webp
+    jpg: /assets/images/projects/fpga-native-20260916/project1-gtkwave_full.png
+    width: 1467
+    height: 591
+    alt_ko: Project 1 — Actual GTKWave full
+    alt_en: Project 1 — Actual GTKWave full
+    caption_ko: Project 1 · Actual GTKWave full · 2026-09-16
+    caption_en: Project 1 · Actual GTKWave full · 2026-09-16
+  - webp: /assets/images/projects/fpga-native-20260916/project1-vscode_rtl_testbench.webp
+    jpg: /assets/images/projects/fpga-native-20260916/project1-vscode_rtl_testbench.png
+    width: 1707
+    height: 1019
+    alt_ko: Project 1 — Actual VS Code RTL and testbench
+    alt_en: Project 1 — Actual VS Code RTL and testbench
+    caption_ko: Project 1 · Actual VS Code RTL and testbench · 2026-09-16
+    caption_en: Project 1 · Actual VS Code RTL and testbench · 2026-09-16
+  - webp: /assets/images/projects/fpga-native-20260916/project1-structure.webp
+    jpg: /assets/images/projects/fpga-native-20260916/project1-structure.png
+    width: 2400
+    height: 1640
+    alt_ko: Project 1 — RTL-derived gate/register schematic
+    alt_en: Project 1 — RTL-derived gate/register schematic
+    caption_ko: Project 1 · RTL-derived gate/register schematic · 2026-09-16
+    caption_en: Project 1 · RTL-derived gate/register schematic · 2026-09-16
+  - webp: /assets/images/projects/fpga-native-20260916/project2-gtkwave_detail.webp
+    jpg: /assets/images/projects/fpga-native-20260916/project2-gtkwave_detail.png
+    width: 1467
+    height: 591
+    alt_ko: Project 2 — Actual GTKWave detail
+    alt_en: Project 2 — Actual GTKWave detail
+    caption_ko: Project 2 · Actual GTKWave detail · 2026-09-16
+    caption_en: Project 2 · Actual GTKWave detail · 2026-09-16
+  - webp: /assets/images/projects/fpga-native-20260916/project2-gtkwave_full.webp
+    jpg: /assets/images/projects/fpga-native-20260916/project2-gtkwave_full.png
+    width: 1467
+    height: 591
+    alt_ko: Project 2 — Actual GTKWave full
+    alt_en: Project 2 — Actual GTKWave full
+    caption_ko: Project 2 · Actual GTKWave full · 2026-09-16
+    caption_en: Project 2 · Actual GTKWave full · 2026-09-16
+  - webp: /assets/images/projects/fpga-native-20260916/project2-vscode_rtl_testbench.webp
+    jpg: /assets/images/projects/fpga-native-20260916/project2-vscode_rtl_testbench.png
+    width: 1707
+    height: 1019
+    alt_ko: Project 2 — Actual VS Code RTL and testbench
+    alt_en: Project 2 — Actual VS Code RTL and testbench
+    caption_ko: Project 2 · Actual VS Code RTL and testbench · 2026-09-16
+    caption_en: Project 2 · Actual VS Code RTL and testbench · 2026-09-16
+  - webp: /assets/images/projects/fpga-native-20260916/project2-structure.webp
+    jpg: /assets/images/projects/fpga-native-20260916/project2-structure.png
+    width: 2400
+    height: 1850
+    alt_ko: Project 2 — RTL-derived gate/register schematic
+    alt_en: Project 2 — RTL-derived gate/register schematic
+    caption_ko: Project 2 · RTL-derived gate/register schematic · 2026-09-16
+    caption_en: Project 2 · RTL-derived gate/register schematic · 2026-09-16
+  - webp: /assets/images/projects/fpga-native-20260916/project3-gtkwave_scenario1.webp
+    jpg: /assets/images/projects/fpga-native-20260916/project3-gtkwave_scenario1.png
+    width: 1467
+    height: 591
+    alt_ko: Project 3 — Actual GTKWave scenario1
+    alt_en: Project 3 — Actual GTKWave scenario1
+    caption_ko: Project 3 · Actual GTKWave scenario1 · 2026-09-16
+    caption_en: Project 3 · Actual GTKWave scenario1 · 2026-09-16
+  - webp: /assets/images/projects/fpga-native-20260916/project3-gtkwave_scenario2.webp
+    jpg: /assets/images/projects/fpga-native-20260916/project3-gtkwave_scenario2.png
+    width: 1467
+    height: 591
+    alt_ko: Project 3 — Actual GTKWave scenario2
+    alt_en: Project 3 — Actual GTKWave scenario2
+    caption_ko: Project 3 · Actual GTKWave scenario2 · 2026-09-16
+    caption_en: Project 3 · Actual GTKWave scenario2 · 2026-09-16
+  - webp: /assets/images/projects/fpga-native-20260916/project3-gtkwave_scenario3.webp
+    jpg: /assets/images/projects/fpga-native-20260916/project3-gtkwave_scenario3.png
+    width: 1467
+    height: 591
+    alt_ko: Project 3 — Actual GTKWave scenario3
+    alt_en: Project 3 — Actual GTKWave scenario3
+    caption_ko: Project 3 · Actual GTKWave scenario3 · 2026-09-16
+    caption_en: Project 3 · Actual GTKWave scenario3 · 2026-09-16
+  - webp: /assets/images/projects/fpga-native-20260916/project3-vscode_rtl_testbench.webp
+    jpg: /assets/images/projects/fpga-native-20260916/project3-vscode_rtl_testbench.png
+    width: 1707
+    height: 1019
+    alt_ko: Project 3 — Actual VS Code RTL and testbench
+    alt_en: Project 3 — Actual VS Code RTL and testbench
+    caption_ko: Project 3 · Actual VS Code RTL and testbench · 2026-09-16
+    caption_en: Project 3 · Actual VS Code RTL and testbench · 2026-09-16
+  - webp: /assets/images/projects/fpga-native-20260916/project3-structure.webp
+    jpg: /assets/images/projects/fpga-native-20260916/project3-structure.png
+    width: 2400
+    height: 1850
+    alt_ko: Project 3 — RTL-derived gate/register schematic
+    alt_en: Project 3 — RTL-derived gate/register schematic
+    caption_ko: Project 3 · RTL-derived gate/register schematic · 2026-09-16
+    caption_en: Project 3 · RTL-derived gate/register schematic · 2026-09-16
+  categories:
+  - fpga
+  - digital-verification
   ko_url: /projects/fpga-delay-logic/
   en_url: /en/projects/fpga-delay-logic/
   repository: https://github.com/Dororok9061/fpga-delay-logic-design-verification
