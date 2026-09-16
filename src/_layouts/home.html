@@ -28,7 +28,7 @@ layout: default
       <div class="button-row hero-actions">
         <a class="portfolio-button portfolio-button--primary" href="{% if page.lang == 'en' %}{{ '/en/projects/' | relative_url }}{% else %}{{ '/projects/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}View Projects{% else %}프로젝트 보기{% endif %}</a>
         <a class="portfolio-button" href="{% if page.lang == 'en' %}{{ '/en/publications/' | relative_url }}{% else %}{{ '/publications/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}Research &amp; Publications{% else %}연구·논문{% endif %}</a>
-        <a class="portfolio-button" href="#research-experience">{% if page.lang == 'en' %}Research participation{% else %}연구 참여 이력{% endif %}</a>
+        <a class="portfolio-button" href="#research-participation">{% if page.lang == 'en' %}Research participation{% else %}연구 참여 이력{% endif %}</a>
         <a class="portfolio-button" href="mailto:{{ profile.email }}">Email</a>
         <a class="portfolio-button" href="{{ profile.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a class="portfolio-button" href="{{ profile.github }}" target="_blank" rel="noopener noreferrer">GitHub</a>

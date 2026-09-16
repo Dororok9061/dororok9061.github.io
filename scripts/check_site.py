@@ -47,7 +47,9 @@ HTTP_RESOURCE = re.compile(
 # keep a separate allowance while retaining the older 1 MB rule everywhere else.
 # The 2026-09-16 FPGA gallery adds 6.93 MB of original PNG captures and
 # lossless WebP copies. Keep the existing per-file limits unchanged.
-MAX_SITE_BYTES = 123_000_000
+# Three original paper PDFs (1.57 MB), PDF-rendered previews, and the
+# expanded bilingual directory bring the measured build to 125.21 MB.
+MAX_SITE_BYTES = 127_000_000
 LARGE_PUBLIC_ASSET_PREFIXES = (
     "assets/minecraft-world/models/",
     "assets/minecraft-world/audio/music/",
