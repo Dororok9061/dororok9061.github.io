@@ -1,7 +1,7 @@
 ---
 layout: default
 title: ViScan Smart Mirror
-description: VISCAN engineering case study: CES 2027 Honoree in Digital Health and Sports & Fitness, with system integration and a Korean patent filing.
+description: "VISCAN engineering case study — CES 2027 Honoree in Digital Health and Sports & Fitness, with system integration and a Korean patent filing."
 permalink: /en/projects/viscan/
 lang: en
 alternate_url: /projects/viscan/
