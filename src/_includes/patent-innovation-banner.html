@@ -2,24 +2,26 @@
 <section class="portfolio-main content-section content-section--wide" id="patent-innovation" aria-labelledby="patent-innovation-title">
   <div class="section-heading section-heading--with-link">
     <div>
-      <p class="eyebrow">Patent · CES 2027</p>
-      <h2 id="patent-innovation-title">{% if page.lang == 'en' %}ViScan patent filing and CES submission{% else %}ViScan 특허출원·CES 제출 현황{% endif %}</h2>
-      <p>{% if page.lang == 'en' %}The public portfolio now reflects the completed Korean patent filing and the submitted CES 2027 Innovation Awards application.{% else %}국내 특허 출원번호 발급과 CES 2027 Innovation Awards 신청·제출 완료 내용을 공개 포트폴리오에 반영했습니다.{% endif %}</p>
+      <p class="eyebrow">CES 2027 · Innovation Awards · Patent</p>
+      <h2 id="patent-innovation-title">{% if page.lang == 'en' %}CES 2027 two-category Honoree and patent filing{% else %}CES 2027 혁신상 2개 부문 Honoree · 국내 특허출원{% endif %}</h2>
+      <p>{% if page.lang == 'en' %}VISCAN was named a CES 2027 Innovation Awards Honoree in Digital Health and Sports &amp; Fitness. The product-level recognition and my engineering contributions are presented separately.{% else %}제가 개발에 참여한 VISCAN이 CES 2027 Innovation Awards의 Digital Health와 Sports &amp; Fitness 2개 부문에서 Honoree로 선정되었습니다. 제품 수상과 개인 기술 기여를 구분해 소개합니다.{% endif %}</p>
     </div>
-    <a class="text-link" href="{% if page.lang == 'en' %}{{ '/en/projects/viscan/' | relative_url }}{% else %}{{ '/projects/viscan/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}Open ViScan case study{% else %}ViScan Case Study 보기{% endif %} →</a>
+    <a class="text-link" href="{% if page.lang == 'en' %}{{ '/en/projects/viscan/' | relative_url }}{% else %}{{ '/projects/viscan/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}VISCAN engineering case study{% else %}VISCAN 개발 사례 보기{% endif %} →</a>
   </div>
   <div class="career-focus-grid">
+    <article>
+      <p class="career-focus-grid__label">CES 2027 INNOVATION AWARDS</p>
+      <h3>{% if page.lang == 'en' %}Honoree · 2 categories{% else %}Honoree · 2개 부문 선정{% endif %}</h3>
+      <p><strong>Digital Health · Sports &amp; Fitness</strong></p>
+      <p>{{ profile.ces_award_product_en }}</p>
+      <p>{% if page.lang == 'en' %}My role: C# WPF system integration, camera/Pose guidance, ultrasound SDK integration, user measurement workflows and reliability improvements.{% else %}담당: C# WPF 시스템 통합, 카메라·Pose 기반 측정 안내, 초음파 SDK 연동, 측정 흐름 및 안정화 작업.{% endif %}</p>
+      <p><a class="text-link" href="{{ profile.ces_award_url }}" target="_blank" rel="noopener noreferrer">{% if page.lang == 'en' %}Official CES Honoree listing{% else %}CES 공식 수상 페이지{% endif %} →</a></p>
+    </article>
     <article>
       <p class="career-focus-grid__label">{% if page.lang == 'en' %}KOREAN PATENT APPLICATION{% else %}국내 특허 출원{% endif %}</p>
       <h3>{% if page.lang == 'en' %}{{ profile.patent_title_en }}{% else %}{{ profile.patent_title_ko }}{% endif %}</h3>
       <p><strong>{% if page.lang == 'en' %}Application No.{% else %}출원번호{% endif %}</strong> {{ profile.patent_application_no }} · <strong>{% if page.lang == 'en' %}Filed{% else %}출원일{% endif %}</strong> {% if page.lang == 'en' %}{{ profile.patent_filing_date_en }}{% else %}{{ profile.patent_filing_date_ko }}{% endif %}</p>
       <p>{% if page.lang == 'en' %}{{ profile.patent_role_en }} · {{ profile.patent_applicants_en }}{% else %}{{ profile.patent_role_ko }} · {{ profile.patent_applicants_ko }}{% endif %}</p>
-    </article>
-    <article>
-      <p class="career-focus-grid__label">CES 2027</p>
-      <h3>{% if page.lang == 'en' %}Innovation Awards application submitted{% else %}Innovation Awards 신청·제출 완료{% endif %}</h3>
-      <p>{% if page.lang == 'en' %}{{ profile.ces_innovation_en }}{% else %}{{ profile.ces_innovation_ko }}{% endif %}</p>
-      <p>{% if page.lang == 'en' %}{{ profile.ces_2027_en }}{% else %}{{ profile.ces_2027_ko }}{% endif %}</p>
     </article>
   </div>
 </section>

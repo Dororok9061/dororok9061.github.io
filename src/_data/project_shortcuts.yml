@@ -129,11 +129,15 @@
 - id: viscan
   title_ko: ViScan 스마트미러
   title_en: ViScan Smart Mirror
-  summary_ko: Radar·Vision·초음파 · 특허 출원
-  summary_en: Radar, vision, ultrasound · patent application
+  summary_ko: CES 2027 2개 부문 Honoree · AI Guide·초음파
+  summary_en: CES 2027 two-category Honoree · AI/ultrasound
   url_ko: /projects/viscan/
   url_en: /en/projects/viscan/
   links:
+  - label_ko: CES 2027 공식 수상
+    label_en: CES 2027 Honoree
+    url_ko: https://www.ces.tech/ces-innovation-awards/2027/viscan-ai-guided-ultrasound-mirror-for-muscle-and-fat-tracking/
+    url_en: https://www.ces.tech/ces-innovation-awards/2027/viscan-ai-guided-ultrasound-mirror-for-muscle-and-fat-tracking/
   - label_ko: 초음파 논문 PDF
     label_en: Ultrasound paper PDF
     url_ko: /assets/papers/kiee2026-ultrasound-smartmirror.pdf

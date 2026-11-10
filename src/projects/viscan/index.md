@@ -1,7 +1,7 @@
 ---
 layout: default
 title: ViScan 스마트미러
-description: Radar·Vision AI·Sensor Fusion·초음파 측정을 통합한 ViScan과 CES 2027 제출·국내 특허출원 현황.
+description: VISCAN 스마트미러 시스템 개발, CES 2027 Digital Health 및 Sports & Fitness 2개 부문 Honoree 선정, 특허 출원 현황.
 permalink: /projects/viscan/
 lang: ko
 alternate_url: /en/projects/viscan/
@@ -17,7 +17,7 @@ alternate_lang: en
       <h1>ViScan 스마트미러</h1>
       <p class="page-heading__lead">Radar Presence부터 Face Session, AR Guide, 초음파 측정, rPPG와 Report까지 하나의 상태 기반 파이프라인으로 통합한 스마트미러 프로젝트입니다.</p>
       <div class="research-resource-strip" aria-label="프로젝트 현황">
-        <span>CES 2027 Innovation Awards 제출 완료</span>
+        <span>CES 2027 Honoree · Digital Health &amp; Sports &amp; Fitness</span>
         <span>국내 특허 출원 완료</span>
         <span>CES 2027 부스 운영·시연 예정</span>
       </div>
@@ -32,7 +32,7 @@ alternate_lang: en
   <nav class="research-jump-nav" aria-label="이 페이지">
     <span class="research-jump-nav__label">이 페이지</span>
     <div class="research-jump-nav__links">
-      <a href="#problem">문제 정의</a><a href="#architecture">구조</a><a href="#methodology">구현</a><a href="#results">성과</a><a href="#patent">특허</a>
+      <a href="#problem">문제 정의</a><a href="#architecture">구조</a><a href="#methodology">구현</a><a href="#results">성과</a><a href="#ces-award">CES 2027</a><a href="#patent">특허</a>
     </div>
   </nav>
 
@@ -58,13 +58,24 @@ alternate_lang: en
     <section id="results" class="research-section">
       <p class="eyebrow">04</p><h2>현재 공개 가능한 성과</h2>
       <ul>
-        <li>CES 2027 Innovation Awards 신청·제출 완료</li>
+        <li><strong>CES 2027 Innovation Awards — Digital Health 및 Sports &amp; Fitness 2개 부문 Honoree 선정.</strong> <a href="https://www.ces.tech/ces-innovation-awards/2027/viscan-ai-guided-ultrasound-mirror-for-muscle-and-fat-tracking/" target="_blank" rel="noopener noreferrer">CES 공식 증빙</a></li>
         <li>CES 2027 ViScan 부스 운영 및 제품 시연 예정</li>
         <li>통합시험에서 Radar 20.017 Hz, Camera 14.696 fps, Pose 14.650 Hz 기록</li>
         <li>기술보고서·발표자료·기업 미팅·선행특허 조사와 사업화 전략 수행</li>
       </ul>
     </section>
   </div>
+
+  <section id="ces-award" class="research-section boundary-panel" aria-labelledby="viscan-ces-award-title">
+    <p class="eyebrow">CES 2027 · Innovation Awards</p>
+    <h2 id="viscan-ces-award-title">Digital Health · Sports &amp; Fitness 2개 부문 Honoree</h2>
+    <p><strong>공식 제품명:</strong> VISCAN: AI Guided Ultrasound Mirror for Muscle and Fat Tracking</p>
+    <p>VISCAN은 AI 기반 초음파 측정 위치 안내와 피부·피하지방·근육 두께 분석을 통합한 스마트미러입니다. 이 제품은 CES 2027 Innovation Awards에서 두 개 부문 Honoree로 선정되었으며, 2026년 11월 9일 공식 공개되었습니다.</p>
+    <p><strong>개인 기여:</strong> C# WPF 스마트미러 애플리케이션 통합, 카메라·MediaPipe Pose 기반 AI Guide, 초음파 SDK·B-mode 연동, 측정 상태·결과 시각화·프로필·리포트 기능, 시스템 응답성 및 안정화 문제 해결.</p>
+    <p><strong>협업:</strong> Next-Generation Display COSS의 WE-Meet 프로젝트로 단국대·호서대·한서대 학생이 참여했고, 한소노는 초음파 기술을 지원했으며 단국대 미래영상연구실은 통합 시스템·소프트웨어 개발을 이끌었습니다.</p>
+    <p><a class="text-link" href="https://www.ces.tech/ces-innovation-awards/2027/viscan-ai-guided-ultrasound-mirror-for-muscle-and-fat-tracking/" target="_blank" rel="noopener noreferrer">CES 공식 VISCAN 수상 제품 페이지 →</a></p>
+    <p class="small-note">Honoree는 제품에 대한 선정이며 개인 단독 수상이나 CTA의 의료 성능 인증을 의미하지 않습니다.</p>
+  </section>
 
   <figure class="research-flow-figure" aria-labelledby="viscan-flow-caption">
     <div class="research-flow-figure__grid">
