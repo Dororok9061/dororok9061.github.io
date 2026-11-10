@@ -1,7 +1,7 @@
 ---
 layout: default
 title: ViScan Smart Mirror
-description: ViScan integrates radar, vision AI, sensor fusion, ultrasound measurement, with CES 2027 submission and Korean patent-application milestones.
+description: "VISCAN engineering case study — CES 2027 Honoree in Digital Health and Sports & Fitness, with system integration and a Korean patent filing."
 permalink: /en/projects/viscan/
 lang: en
 alternate_url: /projects/viscan/
@@ -17,7 +17,7 @@ alternate_lang: ko
       <h1>ViScan Smart Mirror</h1>
       <p class="page-heading__lead">A state-driven smart-mirror system that connects Radar Presence, Face Session, AR Guide, ultrasound measurement, rPPG, and report delivery.</p>
       <div class="research-resource-strip" aria-label="Project milestones">
-        <span>CES 2027 Innovation Awards application submitted</span>
+        <span>CES 2027 Honoree · Digital Health &amp; Sports &amp; Fitness</span>
         <span>Korean patent application filed</span>
         <span>CES 2027 booth operation and demonstration planned</span>
       </div>
@@ -32,7 +32,7 @@ alternate_lang: ko
   <nav class="research-jump-nav" aria-label="On this page">
     <span class="research-jump-nav__label">On this page</span>
     <div class="research-jump-nav__links">
-      <a href="#problem">Problem</a><a href="#architecture">Architecture</a><a href="#methodology">Implementation</a><a href="#results">Milestones</a><a href="#patent">Patent filing</a>
+      <a href="#problem">Problem</a><a href="#architecture">Architecture</a><a href="#methodology">Implementation</a><a href="#results">Milestones</a><a href="#ces-award">CES 2027</a><a href="#patent">Patent filing</a>
     </div>
   </nav>
 
@@ -58,13 +58,24 @@ alternate_lang: ko
     <section id="results" class="research-section">
       <p class="eyebrow">04</p><h2>Public milestones</h2>
       <ul>
-        <li>CES 2027 Innovation Awards application submitted</li>
+        <li><strong>CES 2027 Innovation Awards Honoree in Digital Health and Sports &amp; Fitness.</strong> <a href="https://www.ces.tech/ces-innovation-awards/2027/viscan-ai-guided-ultrasound-mirror-for-muscle-and-fat-tracking/" target="_blank" rel="noopener noreferrer">Official CES listing</a></li>
         <li>ViScan booth operation and live product demonstration planned for CES 2027</li>
         <li>Integrated test rates: radar 20.017 Hz, camera 14.696 fps, pose 14.650 Hz</li>
         <li>Technical reports, presentations, company meetings, prior-art review, and commercialization planning completed</li>
       </ul>
     </section>
   </div>
+
+  <section id="ces-award" class="research-section boundary-panel" aria-labelledby="viscan-ces-award-title">
+    <p class="eyebrow">CES 2027 · Innovation Awards</p>
+    <h2 id="viscan-ces-award-title">Honoree in Digital Health and Sports &amp; Fitness</h2>
+    <p><strong>Official product:</strong> VISCAN: AI Guided Ultrasound Mirror for Muscle and Fat Tracking</p>
+    <p>VISCAN combines AI-assisted probe placement with ultrasound measurement of regional skin, subcutaneous-fat and muscle thickness. The product received Honoree designations in two CES 2027 categories, announced on November 9, 2026.</p>
+    <p><strong>My contributions:</strong> C# WPF smart-mirror application integration; camera and MediaPipe Pose AI Guide; ultrasound SDK/B-mode connection; measurement state handling; user profiles, result visualization and reporting; troubleshooting for system responsiveness and reliability.</p>
+    <p><strong>Collaboration:</strong> Developed under the WE-Meet project within Next-Generation Display COSS, with students from Dankook, Hoseo and Hanseo Universities. Hansono provided ultrasound technology support; Dankook University's Future Imaging Research Lab led integrated system and software development.</p>
+    <p><a class="text-link" href="https://www.ces.tech/ces-innovation-awards/2027/viscan-ai-guided-ultrasound-mirror-for-muscle-and-fat-tracking/" target="_blank" rel="noopener noreferrer">View the official CES VISCAN Honoree page →</a></p>
+    <p class="small-note">The Honoree recognition applies to the product, not an individual; it is not a medical-performance certification.</p>
+  </section>
 
   <figure class="research-flow-figure" aria-labelledby="viscan-flow-caption">
     <div class="research-flow-figure__grid">
